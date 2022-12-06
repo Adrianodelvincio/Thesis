@@ -1,0 +1,44 @@
+\documentclass[10pt,a4paper,twoside,titlepage]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\usepackage{frontespizio}
+\usepackage[english]{babel}
+
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[toc,page]{appendix}
+\author{Adriano del Vincio}
+
+
+\begin{document}
+
+\begin{frontespizio}
+\Universita{Univesità di Pisa}
+\Logo[2.5cm]{Introduzione/marchio_unipi_pant541.eps}
+\Dipartimento{Fisica "Enrico Fermi"}
+\Corso[Laurea]{Fisica}
+\Titoletto{Tesi di laurea}
+\Titolo{Commissioning and first data analysis \\ of the Mainz radius experiment.}
+\Candidato[562946]{Adriano Del Vincio}
+\Relatore{Prof. Francesco Forti, Prof.ssa Concettina Sfienti}
+\Annoaccademico{2022-23}
+\end{frontespizio}
+
+\tableofcontents
+
+\input{abstract}
+
+
+\input{Intro}
+\input{Transv}
+\input{Setup}
+\input{Analysis}
+\input{Conclusion}
+\input{appendix}
+
+
+
+\end{document}
