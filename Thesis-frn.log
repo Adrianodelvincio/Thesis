@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.12.6)  6 DEC 2022 17:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.12.6)  6 DEC 2022 18:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Thesis-frn
+**Thesis-frn.tex
 (./Thesis-frn.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21>
@@ -206,25 +206,25 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package epstopdf Info: Source file: <Introduzione/marchio_unipi_pant541.eps>
-(epstopdf)                    date: 2002-06-11 14:11:14
-(epstopdf)                    size: 256851 bytes
-(epstopdf)             Output file: <Introduzione/marchio_unipi_pant541-eps-con
-verted-to.pdf>
-(epstopdf)                    date: 2022-12-06 15:50:03
-(epstopdf)                    size: 40905 bytes
-(epstopdf)             Command: <repstopdf --outfile=Introduzione/marchio_unipi
-_pant541-eps-converted-to.pdf Introduzione/marchio_unipi_pant541.eps>
+Package epstopdf Info: Source file: <Introduzione/cherubino_pant541.eps>
+(epstopdf)                    date: 2001-12-11 10:54:14
+(epstopdf)                    size: 259277 bytes
+(epstopdf)             Output file: <Introduzione/cherubino_pant541-eps-convert
+ed-to.pdf>
+(epstopdf)                    date: 2022-12-06 18:25:55
+(epstopdf)                    size: 39924 bytes
+(epstopdf)             Command: <repstopdf --outfile=Introduzione/cherubino_pan
+t541-eps-converted-to.pdf Introduzione/cherubino_pant541.eps>
 (epstopdf)             \includegraphics on input line 22.
 Package epstopdf Info: Output file is already uptodate.
-<Introduzione/marchio_unipi_pant541-eps-converted-to.pdf, id=1, 566.115pt x 302
-.12875pt>
-File: Introduzione/marchio_unipi_pant541-eps-converted-to.pdf Graphic file (typ
-e pdf)
-<use Introduzione/marchio_unipi_pant541-eps-converted-to.pdf>
-Package pdftex.def Info: Introduzione/marchio_unipi_pant541-eps-converted-to.pd
-f  used on input line 22.
-(pdftex.def)             Requested size: 133.2789pt x 71.13188pt.
+<Introduzione/cherubino_pant541-eps-converted-to.pdf, id=1, 288.07625pt x 294.0
+9875pt>
+File: Introduzione/cherubino_pant541-eps-converted-to.pdf Graphic file (type pd
+f)
+<use Introduzione/cherubino_pant541-eps-converted-to.pdf>
+Package pdftex.def Info: Introduzione/cherubino_pant541-eps-converted-to.pdf  u
+sed on input line 22.
+(pdftex.def)             Requested size: 69.67598pt x 71.13188pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 22.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -234,23 +234,22 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Introduzione/marchio_uni
-pi_pant541-eps-converted-to.pdf>] ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Introduzione/cherubino_p
+ant541-eps-converted-to.pdf>] ) 
 Here is how much of TeX's memory you used:
  2909 strings out of 480129
- 47223 string characters out of 5893409
- 346390 words of memory out of 5000000
+ 47195 string characters out of 5893409
+ 346387 words of memory out of 5000000
  20860 multiletter control sequences out of 15000+600000
  473525 words of font info for 42 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
- 55i,14n,62p,213b,258s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.p
-fb>
-Output written on Thesis-frn.pdf (1 page, 99653 bytes).
+ 55i,14n,62p,217b,258s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
+0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+Output written on Thesis-frn.pdf (1 page, 98650 bytes).
 PDF statistics:
  37 PDF objects out of 1000 (max. 8388607)
  21 compressed objects within 1 object stream
