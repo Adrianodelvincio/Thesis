@@ -1,5 +1,5 @@
 \documentclass[10pt,a4paper,twoside,titlepage]{report}
-\usepackage[utf8]{inputenc}
+%\usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -18,7 +18,7 @@
 \begin{document}
 
 \begin{frontespizio}
-\Logo[2.5cm]{Introduzione/cherubino_pant541.eps}
+\Logo[2.5cm]{Simbolo/cherubino_pant541.eps}
 \Istituzione{Università di Pisa}
 \Dipartimento{Fisica "Enrico Fermi"}
 \Corso[Laurea]{Fisica}
@@ -31,15 +31,15 @@
 
 \tableofcontents
 
-\input{abstract}
+\include{Abstract/abstract}
 
 
-\input{Intro}
-\input{Transv}
-\input{Setup}
-\input{Analysis}
-\input{Conclusion}
-\input{appendix}
+\include{Introduzione/Intro}
+\include{Transverse/Transv}
+\include{ExperimentalSetup/Setup}
+\include{Analysis/Analysis}
+\include{Conclusion/Conclusion}
+\include{Appendix/appendix}
 
 
 
