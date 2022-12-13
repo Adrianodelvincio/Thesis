@@ -4,6 +4,7 @@
 \contentsline {section}{\numberline {1.2}Parity-violating scattering experiment}{2}{}%
 \contentsline {section}{\numberline {1.3}Transverse asymmetry}{2}{}%
 \contentsline {subsection}{\numberline {1.3.1}Motivation}{2}{}%
+\contentsline {subsection}{\numberline {1.3.2}Conventions used}{2}{}%
 \contentsline {chapter}{\numberline {2}Transverse Asymmetry}{3}{}%
 \contentsline {section}{\numberline {2.1}Description of the process}{3}{}%
 \contentsline {subsection}{\numberline {2.1.1}Elastic scattering}{3}{}%
@@ -22,15 +23,15 @@
 \contentsline {section}{\numberline {4.1}Model for fitting the data}{6}{}%
 \contentsline {section}{\numberline {4.2}Data tree}{6}{}%
 \contentsline {section}{\numberline {4.3}Detectors test}{6}{}%
-\contentsline {section}{\numberline {4.4}Analysis}{7}{}%
-\contentsline {subsection}{\numberline {4.4.1}Alignment of the scattering plane}{7}{}%
-\contentsline {subsection}{\numberline {4.4.2}Calibration of the VFCs monitors}{7}{}%
-\contentsline {subsection}{\numberline {4.4.3}Calibration of the PIMO monitors}{7}{}%
+\contentsline {section}{\numberline {4.4}Analysis}{6}{}%
+\contentsline {subsection}{\numberline {4.4.1}Alignment of the scattering plane}{6}{}%
+\contentsline {subsection}{\numberline {4.4.2}Calibration of the VFCs monitors}{6}{}%
+\contentsline {subsection}{\numberline {4.4.3}Calibration of the PIMO, Current and ENMO monitors}{6}{}%
 \contentsline {subsection}{\numberline {4.4.4}Calibration of the pmts}{7}{}%
 \contentsline {subsection}{\numberline {4.4.5}Rates on lead}{7}{}%
 \contentsline {section}{\numberline {4.5} $^{12}C$ asymmetry}{7}{}%
 \contentsline {subsection}{\numberline {4.5.1}least square fit}{7}{}%
-\contentsline {subsection}{\numberline {4.5.2}False asymmetry parameters}{7}{}%
+\contentsline {subsection}{\numberline {4.5.2}False asymmetries}{7}{}%
 \contentsline {subsection}{\numberline {4.5.3}??Boostrap??}{7}{}%
 \contentsline {subsection}{\numberline {4.5.4}??interval estimation??}{7}{}%
 \contentsline {chapter}{\numberline {5}Conclusion and outlook}{8}{}%

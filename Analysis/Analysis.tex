@@ -26,7 +26,26 @@ Explain the test of the two detectors in the lab, how we select the threshold, t
 
 \subsection{Calibration of the VFCs monitors}
 
-\subsection{Calibration of the PIMO monitors}
+\subsection{Calibration of the PIMO, Current and ENMO monitors}
+
+The Enmo calibration is performed in a different from the other monitors. The polarity signal is sent to MAMI, and they produce a signal for the ENMO that somehow (need to investigate exactly how they do that) shows a difference between the first two subevents and the last two. This difference is equal (nominal) to $\SI{22.6}{\kilo \electronvolt}$. The idea now is to produce an histogram for the quantity $\delta E$ (with $E_{18}$ being the energy monitor):
+
+\begin{equation*}
+\delta E = \frac{E_{18}[2] + E_{18}[3]}{2} - \frac{E_{18}[0] + E_{18}[1]}{2} 
+\end{equation*}
+
+3 runs of data where taken with different Beam current. Taking the mean it is possible to exstimate the scaling factor for the ENMO monitors, obtaining the physical quantity in this way
+
+\begin{equation*}
+c_{E18} = \frac{\SI{22.6}{\kilo \electronvolt}}{\overline{\delta E}}
+\end{equation*}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.7\textwidth]{Analysis/Enmo_Calibration.pdf}
+\caption{$\delta E$ for 20 $\SI{20}{\micro \ampere}$}
+\end{figure}
+
 
 \subsection{Calibration of the pmts}
 
