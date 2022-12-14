@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.12.6)  13 DEC 2022 18:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.12.6)  14 DEC 2022 16:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -440,23 +440,43 @@ Chapter 3.
 
  (./Analysis/Analysis.tex
 Chapter 4.
+<Analysis/I13_Calibration.png, id=70, 462.528pt x 346.896pt>
+File: Analysis/I13_Calibration.png Graphic file (type png)
+<use Analysis/I13_Calibration.png>
+Package pdftex.def Info: Analysis/I13_Calibration.png  used on input line 35.
+(pdftex.def)             Requested size: 217.66211pt x 163.24757pt.
+<Analysis/I21_Calibration.png, id=72, 462.528pt x 346.896pt>
+File: Analysis/I21_Calibration.png Graphic file (type png)
+<use Analysis/I21_Calibration.png>
+Package pdftex.def Info: Analysis/I21_Calibration.png  used on input line 36.
+(pdftex.def)             Requested size: 217.66211pt x 163.24757pt.
 [6
 
 
 
 
 ]
-<Analysis/Enmo_Calibration.pdf, id=74, 454.69875pt x 284.06125pt>
+<Analysis/Enmo_Calibration.pdf, id=77, 454.69875pt x 284.06125pt>
 File: Analysis/Enmo_Calibration.pdf Graphic file (type pdf)
 <use Analysis/Enmo_Calibration.pdf>
-Package pdftex.def Info: Analysis/Enmo_Calibration.pdf  used on input line 45.
-(pdftex.def)             Requested size: 338.58632pt x 211.52402pt.
-) [7 <./Analysis/Enmo_Calibration.pdf>]
+Package pdftex.def Info: Analysis/Enmo_Calibration.pdf  used on input line 65.
+(pdftex.def)             Requested size: 241.84843pt x 151.0892pt.
+<Analysis/E18_Calibration.png, id=78, 462.528pt x 346.896pt>
+File: Analysis/E18_Calibration.png Graphic file (type png)
+<use Analysis/E18_Calibration.png>
+Package pdftex.def Info: Analysis/E18_Calibration.png  used on input line 75.
+(pdftex.def)             Requested size: 241.84843pt x 181.38736pt.
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7 <./Analysis/I13_Calibration.png> <./Analysis/I21_Calibration.png> <./Analys
+is/Enmo_Calibration.pdf>] [8 <./Analysis/E18_Calibration.png>]
 \openout2 = `Conclusion/Conclusion.aux'.
 
- (./Conclusion/Conclusion.tex
+
+(./Conclusion/Conclusion.tex
 Chapter 5.
-) [8
+) [9
 
 
 
@@ -464,7 +484,7 @@ Chapter 5.
 ]
 \openout2 = `Appendix/appendix.aux'.
 
- (./Appendix/Appendix.tex [9
+ (./Appendix/Appendix.tex [10
 
 
 
@@ -472,20 +492,20 @@ Chapter 5.
 
 ]
 Appendix A.
-) [10
+) [11
 
 ] (./Thesis.aux (./Abstract/abstract.aux) (./Introduzione/Intro.aux)
 (./Transverse/Transv.aux) (./ExperimentalSetup/Setup.aux)
 (./Analysis/Analysis.aux) (./Conclusion/Conclusion.aux)
 (./Appendix/appendix.aux)) ) 
 Here is how much of TeX's memory you used:
- 9081 strings out of 480129
- 199337 string characters out of 5893409
- 473951 words of memory out of 5000000
- 26869 multiletter control sequences out of 15000+600000
+ 9103 strings out of 480129
+ 199995 string characters out of 5893409
+ 473952 words of memory out of 5000000
+ 26887 multiletter control sequences out of 15000+600000
  475948 words of font info for 53 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
- 71i,10n,79p,541b,661s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,16n,79p,541b,661s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/commodo98/.texlive2021/texmf-var/fonts/pk/l
 jfour/jknappen/ec/tcrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
@@ -500,10 +520,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmsy7.pfb>
-Output written on Thesis.pdf (12 pages, 217348 bytes).
+Output written on Thesis.pdf (13 pages, 274738 bytes).
 PDF statistics:
- 145 PDF objects out of 1000 (max. 8388607)
- 94 compressed objects within 1 object stream
+ 155 PDF objects out of 1000 (max. 8388607)
+ 98 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
