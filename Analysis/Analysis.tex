@@ -6,8 +6,9 @@
 \1 Test of the detectors in the Lab.
 \1 Beam line description.
 \1 Data Analysis
+	\2 thresholds scan
 	\2 Rates on $Pb^{208}$.
-	\2 Stabilization Monitors.
+	\2 Beam related asymmetry correction.
 	\2 $C^{12}$ Asymmetry.
 \end{outline}
 
@@ -18,15 +19,18 @@ Here I have to explain the model used for describing the data, so the problem of
 Explain how we compute all the values for the data tree, the position of the beam on the target, the angle, the correlated-difference values...
 
 \section{Detectors test}
-Explain the test of the two detectors in the lab, how we select the threshold, the correlation of the pmts and coincidence to select the threshold
+Explain the test of the two detectors in the lab, how we select the threshold, the correlation of the pmts and coincidence to select the threshold. Mention also that we observed two knees in the plot of counts vs. attenuation.
 
 \section{Analysis}
 
 \subsection{Alignment of the scattering plane}
 
 \subsection{Calibration of the VFCs monitors}
+Maybe it's important to divide this sections in two different part: the first part where I explain the Vfc convert the input voltage signal to a digital signal. In the second part just mention how we tuned the resistences (for X,Y monitors directly at the output signal with the oscilloscope, while for I21 and I13 monitors we used the data, so I'm able to produce plots only for the second ones).
 
-\subsection{Calibration of the PIMO, Current and ENMO monitors}
+\subsection{Calibration of the PIMO monitors}
+
+\subsection{Current and ENMO monitors}
 
 For the current monitors I13 and I21, we perform the calibration changing the current of the beam and observing the output values of the monitors (Voltage values). The we perform a fit (for the beam current, we used the nominal values that we communicate to MAMI, has the values for the x-axis).
 
@@ -76,20 +80,26 @@ The calibration was performed taking three acquisitions with different current f
 \caption{Calibration of ENMO monitor}
 \end{figure}
 
-
-
-
 \subsection{Calibration of the pmts}
+
+Here it's important to show the plots I made during the beam time. I have to mention the Leo tecniques for the correct interpretation of counts vs attenuation.  
 
 \subsection{Rates on lead}
 
+This section is straightforward. Basically I have to show the single plot of the pmts counts vs. beam current for lead target. However it's possible to do some preliminary studies, for example to calculate the time needed for measuring the asymmetry on lead with a certain error and maybe check from Mott cross section that the observed rate are fine. 
+
 \section{ $^{12}C$ asymmetry}
+
+\subsection{Autocalibration procedure}
 
 \subsection{least square fit}
 
 \subsection{False asymmetries}
+Seems that is possible to obtain rough estimates of the beam related asymmetries with the results from the fit. For Energy and position it's achievable, while for the angles it's quite hard (in principle sounds possible to perform an analytic calculation of the asymmetry related to the incident beam angle, however Anselm told me that quite often those results are in disagrement with the observed even in the sign!).  
 
 \subsection{??Boostrap??}
+
+Although Anselm was against it, now seems possible to increase the precision of the mesurement with a procedure similar to a boostrap. Instead of computing all the quantities inside a single event, it's possible to compute all the important quantities also between different events. In this scenario the statistics can be increased artificially as mutch as we want, with the same amount of data. Of course, it's also simple to abuse of this method, so we should restrict using only events next to each other. However seem reasonable and promising.
 
 \subsection{??interval estimation??}
 
