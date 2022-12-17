@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.12.6)  14 DEC 2022 21:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.12.6)  17 DEC 2022 16:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -467,13 +467,25 @@ File: Analysis/E18_Calibration.png Graphic file (type png)
 Package pdftex.def Info: Analysis/E18_Calibration.png  used on input line 79.
 (pdftex.def)             Requested size: 241.84843pt x 181.38736pt.
  [7 <./Analysis/I13_Calibration.png> <./Analysis/I21_Calibration.png> <./Analys
-is/Enmo_Calibration.pdf>]) [8 <./Analysis/E18_Calibration.png>]
+is/Enmo_Calibration.pdf>]
+<Analysis/Rates_on_lead.png, id=91, 462.528pt x 346.896pt>
+File: Analysis/Rates_on_lead.png Graphic file (type png)
+<use Analysis/Rates_on_lead.png>
+Package pdftex.def Info: Analysis/Rates_on_lead.png  used on input line 93.
+(pdftex.def)             Requested size: 241.84843pt x 181.38736pt.
+<Analysis/Rates_on_leadB.png, id=92, 462.528pt x 346.896pt>
+File: Analysis/Rates_on_leadB.png Graphic file (type png)
+<use Analysis/Rates_on_leadB.png>
+Package pdftex.def Info: Analysis/Rates_on_leadB.png  used on input line 94.
+(pdftex.def)             Requested size: 241.84843pt x 181.38736pt.
+) [8 <./Analysis/E18_Calibration.png>] [9 <./Analysis/Rates_on_Lead.png> <./Ana
+lysis/Rates_on_LeadB.png>]
 \openout2 = `Conclusion/Conclusion.aux'.
 
 
 (./Conclusion/Conclusion.tex
 Chapter 5.
-) [9
+) [10
 
 
 
@@ -481,7 +493,7 @@ Chapter 5.
 ]
 \openout2 = `Appendix/appendix.aux'.
 
- (./Appendix/Appendix.tex [10
+ (./Appendix/Appendix.tex [11
 
 
 
@@ -489,20 +501,20 @@ Chapter 5.
 
 ]
 Appendix A.
-) [11
+) [12
 
 ] (./Thesis.aux (./Abstract/abstract.aux) (./Introduzione/Intro.aux)
 (./Transverse/Transv.aux) (./ExperimentalSetup/Setup.aux)
 (./Analysis/Analysis.aux) (./Conclusion/Conclusion.aux)
 (./Appendix/appendix.aux)) ) 
 Here is how much of TeX's memory you used:
- 9103 strings out of 480129
- 199995 string characters out of 5893409
- 474952 words of memory out of 5000000
- 26887 multiletter control sequences out of 15000+600000
+ 9117 strings out of 480129
+ 200410 string characters out of 5893409
+ 475954 words of memory out of 5000000
+ 26899 multiletter control sequences out of 15000+600000
  475948 words of font info for 53 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
- 71i,16n,79p,607b,661s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,16n,79p,608b,661s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/commodo98/.texlive2021/texmf-var/fonts/pk/l
 jfour/jknappen/ec/tcrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
@@ -517,10 +529,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmsy7.pfb>
-Output written on Thesis.pdf (13 pages, 278099 bytes).
+Output written on Thesis.pdf (14 pages, 342709 bytes).
 PDF statistics:
- 155 PDF objects out of 1000 (max. 8388607)
- 98 compressed objects within 1 object stream
+ 162 PDF objects out of 1000 (max. 8388607)
+ 100 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

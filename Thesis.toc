@@ -37,8 +37,8 @@
 \contentsline {subsection}{\numberline {4.5.1}Autocalibration procedure}{8}{}%
 \contentsline {subsection}{\numberline {4.5.2}least square fit}{8}{}%
 \contentsline {subsection}{\numberline {4.5.3}False asymmetries}{8}{}%
-\contentsline {subsection}{\numberline {4.5.4}??Boostrap??}{8}{}%
+\contentsline {subsection}{\numberline {4.5.4}??Bootstrap??}{8}{}%
 \contentsline {subsection}{\numberline {4.5.5}??interval estimation??}{8}{}%
-\contentsline {chapter}{\numberline {5}Conclusion and outlook}{9}{}%
-\contentsline {chapter}{Appendices}{10}{}%
-\contentsline {chapter}{\numberline {A}Some Appendix}{11}{}%
+\contentsline {chapter}{\numberline {5}Conclusion and outlook}{10}{}%
+\contentsline {chapter}{Appendices}{11}{}%
+\contentsline {chapter}{\numberline {A}Some Appendix}{12}{}%
