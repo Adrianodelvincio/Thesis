@@ -20,10 +20,45 @@ explain how electrons are accelerated, and sent to different experiments.
 
 
 \subsection{Polarized Beam}
-Here a subsection to explain how the polarized electrons are produced. Important to mention the systematic error for the polarization mesurement (in our beam time we couldn't measure with Moller polarimeter, so this discussion is important for future experiment, however it's important to say something about it). Remember to explain how the spin are rotated to the transverse plane, and the $\frac{\lambda}{2}$
+%Here a subsection to explain how the polarized electrons are produced. Important to mention the systematic error for the polarization mesurement (in our beam time we couldn't measure with Moller polarimeter, so this discussion is important for future experiment, however it's important to say something about it). Remember to explain how the spin are rotated to the transverse plane, and the $\frac{\lambda}{2}$
 
-\subsection{Mott polarimenter}
-Briefly explain how the Mott polarimeter works, for measuring the polarization of the beam.
+For the beam-normal single spin asymmetry a vertical polarized beam is necessary. At the MAMI electron accelerator is possible to produce a vertical polarized beam with energy in the range $\SI{180}{\mega \electronvolt} - \SI{855}{\mega \electronvolt}$. In this section the procedure to orient the beam vertically, following an explanation of how the degree of polarizarion of the beam is measured.
+
+The electron source used at MAMI is made by a strained GaAs/GaAsP superlattice photocathode 
+illuminated by circular polarized light. A Pockels cell changes the helicity of the photons impinging on the electrons. The extracted electron has the same helicity of the incoming photon, let's suppose as an example:
+
+\begin{center}
+\begin{equation}
+\feynmandiagram [scale = 0.8, transform shape][baseline = (g)]{
+	a [particle = \(e^{-}\)] -- [fermion] b  -- [fermion] c [particle = \(e^{-}\)],
+	b -- [boson] d [particle = \(\gamma\)],};
+\hspace{2cm}
+(Jz)_{\gamma} = \pm 1 \qquad (Jz)_{e^{-}} = \mp \frac{1}{2} \rightarrow \pm \frac{1}{2}
+\end{equation}
+\end{center}
+
+With the fast change of the Pockels cell it is possible to alternately revert the sign of the polaritazion. By the insertion of a $\lambda/2$ plate between the laser system and the photochatode the polarization orientation of the electron beam can be reversed for each sub-event, useful later for the estimation of systematic errors.
+
+To switch from longitudinal polarization to transverse polarisation, two devices are used: the \textbf{Wien filter} and a \textbf{double solenoid} located in the injection beam line. 
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = \textwidth]{ExperimentalSetup/injection.png}
+\caption{Setup for the trasverse polarization.}
+\end{figure}
+
+Following the picture, the longitudinal polarized electron from the source are rotated first in the XY plane, to obtain the trasverse polarization, then with subsequent double solenoid the spins are rotate in the vertival direction. 
+After this allignement the electrons go through the accelerator to the experimental hall. The spins then precesses during this time in the magnetic fields of the accelerator's bending magnets, following the BMT equation.
+In our experiment, because of the vertical polarization, only the residual horizontal component precedes during the motion. For conventional experiment the polarization vector is rotated by the Wien filter with an angle such that the polarization si longitudinally aligned in the experimental hall, considering that after the rotation, the polarization is affected by another rotation due to the spin precession. The rotation angles of the polarization vector through the accelerator are known from simulations and are also directly measured for relevant energies, for a beam of $SI{570}{ \mega \electronvolt}$ the rotation angle is $\ang{55}$ with an accuracy of $\pm \ang{2}$
+At the beginning MAMI was not developed with the aim a trasverse beam. So it's not possible to measure directly the polarization for the vertical axis. However it's possible, with the existing setup, to exstimate the degree of polarization. For this purpose a Moller, Comport and Mott polarimeters are used. The vertical polarization alignment can be accomplished by the minimization of the horizontal components. 
+
+\newline
+aggiungere ai riferimenti l'articolo: Vertical Beam Polarization at MAMI. 
+
+\subsection{Mott, Compton and Moller polarimenters}
+%Briefly explain how the Mott polarimeter works, for measuring the polarization of the beam.
+
+The total beam polarization is measured by a Moller polarimeter, in the experimental hall, with the beam polarization oriented longitudinally in the experimental hall. The Moller polarimeter can measure the longitudinal polarization of the beam.The other two polarimeters, Compton and Mott, located behind the injector linear accelerator (ILAC), are sensitive to the longitudinal and the trasverse horizontal components of the beam (with an energy around $\SI{3.5}{\mega \electronvolt}$ at this stage). The procedure for the allignment is the following: at the beginning of the beam time the Mott polarimeter is used for different settings of the solenoidal field, with the Wien filter angle nominal equal to $\ang{90}$, minimizing the horizonal polarization component after the rotation performed by the double solenoid. Then a second optimization follows, using the Moller polarimeter for different Wien filter angles. 
 
 \section{A1 spectrometers hall}
 

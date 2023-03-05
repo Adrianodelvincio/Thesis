@@ -30,6 +30,24 @@ Maybe it's important to divide this sections in two different part: the first pa
 
 \subsection{Calibration of the PIMO monitors}
 
+For the calibration of the X Y monitors, we used a target made by three carbon wires placed at a certain distance from each other (that is measuered and is equal to : ...).
+The position of the beam is made slowly changed first in the horizontal direction and then in the vertical direction. We observe that the pmts counts increase to a maximum, that is reached when the beam spot is centered on a carbon wire, and then decrease until the next carbon wire is hit by the beam. With a fit using a gaussian model, is possible to identify the position of the peak of the counts distribution, and from that we can directly derive the scaling factor for the XY monitors:
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=0.7\textwidth]{Analysis/HorizontalCalibration.png}
+\caption{•}
+\end{figure}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=0.45\textwidth]{Analysis/XcheckB.png} 
+\includegraphics[width=0.45\textwidth]{Analysis/XcheckA.png}
+\caption{•}
+\end{figure}
+
+
+
+
 \subsection{Current and ENMO monitors}
 
 For the current monitors I13 and I21, we perform the calibration changing the current of the beam and observing the output values of the monitors (Voltage values). The we perform a fit (for the beam current, we used the nominal values that we communicate to MAMI, has the values for the x-axis).
@@ -58,27 +76,39 @@ The Enmo calibration is performed in a different from the other monitors. The po
 \delta E = \frac{E_{18}[2] + E_{18}[3]}{2} - \frac{E_{18}[0] + E_{18}[1]}{2} 
 \end{equation*}
 
-3 runs of data where taken with different Beam current. Taking the mean it is possible to exstimate the scaling factor for the ENMO monitors, obtaining the physical quantity in this way.
+The data should be distributed with a peak around $\SI{22.6}{\kilo \electronvolt}$. To obtain the correct scaling factor for the values stored in the data tree we plot the voltage values mesured by the ENMO monitor.
+3 runs of data where taken with different Beam current, to study the dependence of the measured quantity from the beam current. From the mean of the distribution it is possible to exstimate the scaling factor for the ENMO monitors, obtaining the physical quantity in the following way:
 
 \begin{equation*}
-c_{E18} = \frac{\SI{22.6}{\kilo \electronvolt}}{\overline{\delta E}}
+C_{E18} = \frac{\SI{22.6}{\kilo \electronvolt}}{\overline{\delta E}}
 \end{equation*}
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width = 0.5\textwidth]{Analysis/Enmo_Calibration.pdf}
+\includegraphics[width = 0.45\textwidth]{Analysis/ENMOvoltage20.pdf}
+\includegraphics[width = 0.45\textwidth]{Analysis/ENMOvoltage15.pdf} 
 \caption{$\delta E$ for 20 $\SI{20}{\micro \ampere}$}
 \end{figure}
 
-Taking the average over $E_{18}$ voltage values, and using the formula above, we obtain the coefficient $c_{E18}$.
-Then, the next step it's to study the dependence of the response of $E_{18}$ on the current.
-The calibration was performed taking three acquisitions with different current for the beam current : $\SI{20}{\micro \ampere}$, $\SI{15}{\micro \ampere}$ and a run without beam. 
+Taking the average over $E_{18}$ voltage values, and using the formula above, we obtain the coefficient $C_{E18}$. To take care of the current depencende of the monitors, the scaling factor to be placed in the standard.config file is: $C_{E18} \overline{I}_{\mu A}$.
+The calibration was performed taking three short acquisitions with different beam current : $\SI{20}{\micro \ampere}$, $\SI{15}{\micro \ampere}$ and a run without beam. 
 
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width = 0.5\textwidth]{Analysis/E18_Calibration.png}
 \caption{Calibration of ENMO monitor}
 \end{figure}
+
+From this we obtain the value $scaling_{E18} = -1595.2$, to obtain the physical quantity from the analysis. As a final check the final histogram for the physical quantity is shown:
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.45\textwidth]{Analysis/ENMOCheck20.pdf}
+\includegraphics[width = 0.45\textwidth]{Analysis/ENMOCheck15.pdf} 
+\caption{Plot for the physical quantities computed in the data tree, for two different current of the beam (on the left $\SI{20}{\micro \ampere}$, $\SI{15}{\micro \ampere}$ on the right)}
+\end{figure}
+
+
 
 \subsection{Calibration of the pmts}
 
@@ -90,8 +120,8 @@ This section is straightforward. Basically I have to show the single plot of the
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width = 0.5\textwidth]{Analysis/Rates_on_lead.png}
-\includegraphics[width = 0.5\textwidth]{Analysis/Rates_on_leadB.png}
+\includegraphics[width = 0.45\textwidth]{Analysis/Rates_on_lead.png}
+\includegraphics[width = 0.45\textwidth]{Analysis/Rates_on_leadB.png}
 \caption{Rates on lead Target, for Detector A (left)}
 \end{figure}
 
