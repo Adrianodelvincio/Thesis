@@ -108,8 +108,6 @@ From this we obtain the value $scaling_{E18} = -1595.2$, to obtain the physical 
 \caption{Plot for the physical quantities computed in the data tree, for two different current of the beam (on the left $\SI{20}{\micro \ampere}$, $\SI{15}{\micro \ampere}$ on the right)}
 \end{figure}
 
-
-
 \subsection{Calibration of the pmts}
 
 Here it's important to show the plots I made during the beam time. I have to mention the Leo tecniques for the correct interpretation of counts vs attenuation.  
@@ -130,6 +128,33 @@ This section is straightforward. Basically I have to show the single plot of the
 \subsection{Autocalibration procedure}
 
 \subsection{least square fit}
+
+When all the calibrations are performed, it is possible to proceed to generate the datafiles fot the fit program. (spiegare in dettaglio come è fatto il programma di analisi)	\newline
+
+For a better visualization of the data, especially to observe the dependence of the asymmetry on the Beam parameters measured, it is useful to take the average asymmetry at regular intervals. From the raw plots of the asymmetries (see below \ref{fig:asyvsparam}), it is clear that the statistical error associated to the asymmetry is the main one, and it's not possible to identify a linear dependence.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.7\textwidth]{Analysis/Asym_vs_monitor.png}
+\caption{Asymmetries vs. Beam parameters}
+\label{fig:asyvsparam}
+\end{figure}
+
+In some plots (X,Y and I) we can identify equally spaced cluster of data. So we decide to compute the averaged asymmetry for each cluster we were able to identify. 
+In the following plots we decided to apply some cuts to the data, selecting only the events where the values of all the monitor are less then 3 standard deviation far from the mean: 
+
+\begin{align*}
+(x_{monitor} - \overline{x}_{monitor} \leq 3 \sigma_{X})
+\end{align*}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.45\textwidth]{Analysis/clustering_X.png}
+\includegraphics[width = 0.45\textwidth]{Analysis/clustering_Y.png} 
+\caption{•}
+\label{fig:averageAsym}
+\end{figure}
+
 
 \subsection{False asymmetries}
 Seems that is possible to obtain rough estimates of the beam related asymmetries with the results from the fit. For Energy and position it's achievable, while for the angles it's quite hard (in principle sounds possible to perform an analytic calculation of the asymmetry related to the incident beam angle, however Anselm told me that quite often those results are in disagrement with the observed even in the sign!).  
