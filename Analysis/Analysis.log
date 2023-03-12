@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.14.0 (TeX Live 2022/dev/Debian)  (format=lualatex 2022.12.6)  9 MAR 2023 21:32
+This is LuaHBTeX, Version 1.14.0 (TeX Live 2022/dev/Debian)  (format=lualatex 2022.12.6)  12 MAR 2023 18:40
  restricted system commands enabled.
 **Analysis.tex
 (./Analysis.tex
@@ -2163,9 +2163,29 @@ l.134 F
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+! Undefined control sequence.
+<write> ...g: Reference `fig:asyvsparam' on page \thepage 
+                                                  \space undefined\on@line .
+l.134 ...asymmetries (see below \ref{fig:asyvsparam}
+                                                  ), it is clear that the st...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `fig:asyvsparam' on page  undefined on input line 134.
+
+
 
 Overfull \hbox (20.0pt too wide) in paragraph at lines 134--135
 []For
+ []
+
+
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 134--135
+[]),
  []
 
 
@@ -2195,7 +2215,7 @@ If that doesn't work, type  X <return>  to quit.
 
 ! Undefined control sequence.
 l.138 \includegraphics
-                    [width = \textwidth]{Asym_vs_monitor.png}
+                    [width = 0.5\textwidth]{Analysis/Asym_vs_monitor.png}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2205,8 +2225,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
 ]
-l.138 \includegraphics[width = \textwidth]
-                                        {Asym_vs_monitor.png}
+l.138 \includegraphics[width = 0.5\textwidth]
+                                           {Analysis/Asym_vs_monitor.png}
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -2214,8 +2234,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 ]
-l.138 \includegraphics[width = \textwidth]
-                                        {Asym_vs_monitor.png}
+l.138 \includegraphics[width = 0.5\textwidth]
+                                           {Analysis/Asym_vs_monitor.png}
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -2226,13 +2246,13 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Missing $ inserted.
 <inserted text> 
 $
-l.138 \includegraphics[width = \textwidth]{Asym_
-                                              vs_monitor.png}
+l.138 ...phics[width = 0.5\textwidth]{Analysis/Asym_
+                                                  vs_monitor.png}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-l.138 ...cs[width = \textwidth]{Asym_vs_monitor.png}
+l.138 ....5\textwidth]{Analysis/Asym_vs_monitor.png}
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -2259,7 +2279,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.140 \end{figure}
+l.141 \end{figure}
                 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2268,7 +2288,7 @@ or  <return>  to continue without it.
 ! Missing $ inserted.
 <inserted text> 
 $
-l.140 \end{figure}
+l.141 \end{figure}
                 
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2279,7 +2299,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing } inserted.
 <inserted text> 
 }
-l.140 \end{figure}
+l.141 \end{figure}
                 
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2288,13 +2308,13 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 136--141
+Overfull \hbox (20.0pt too wide) in paragraph at lines 136--142
 [][hbtp]
  []
 
 
-Overfull \hbox (214.86998pt too wide) in paragraph at lines 136--141
-]Asym$[][]\OML/cmm/m/it/10 s[]onitor:png[]$ 
+Overfull \hbox (214.86998pt too wide) in paragraph at lines 136--142
+0.5]Analysis/Asym$[][]\OML/cmm/m/it/10 s[]onitor:png[][]$ 
  []
 
 
@@ -2304,14 +2324,19 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.142 I
+l.143 I
      n some plots (X,Y and I) we can identify equally spaced cluster of data...
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 142--144
+Overfull \hbox (20.0pt too wide) in paragraph at lines 143--145
 []In
+ []
+
+
+Overfull \hbox (14.6563pt too wide) in paragraph at lines 143--145
+\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 e\OT1/cmr/m/n/10 6$
  []
 
 
@@ -2321,7 +2346,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.145 \begin{align*}
+l.146 \begin{align*}
                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2334,16 +2359,16 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.146 (
-     x_{monitor} - \overline{x_{monitor}} \leq 3 \sigma_{X})
+l.147 (
+     x_{monitor} - \overline{x}_{monitor} \leq 3 \sigma_{X})
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Missing $ inserted.
 <inserted text> 
 $
-l.146 (x_
-       {monitor} - \overline{x_{monitor}} \leq 3 \sigma_{X})
+l.147 (x_
+       {monitor} - \overline{x}_{monitor} \leq 3 \sigma_{X})
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
@@ -2354,7 +2379,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.147 \end{align*}
+l.148 \end{align*}
                 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2363,7 +2388,7 @@ or  <return>  to continue without it.
 ! Missing $ inserted.
 <inserted text> 
 $
-l.147 \end{align*}
+l.148 \end{align*}
                 
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2372,18 +2397,74 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Overfull \hbox (57.99007pt too wide) in paragraph at lines 146--148
+Overfull \hbox (57.99007pt too wide) in paragraph at lines 147--149
 [](x$[][] \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (46.48305pt too wide) in paragraph at lines 146--148
-[] \OMS/cmsy/m/n/10 
+Overfull \hbox (46.48305pt too wide) in paragraph at lines 147--149
+[][] \OMS/cmsy/m/n/10 
  []
 
 
-Overfull \hbox (22.20515pt too wide) in paragraph at lines 146--148
+Overfull \hbox (22.20515pt too wide) in paragraph at lines 147--149
 \OT1/cmr/m/n/10 3\OML/cmm/m/it/10 []\OT1/cmr/m/n/10 )$ 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.150 F
+     or each monitor we use the \textit{curve fit} function of the python li...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.150 ...e fit} function of the python library \text
+                                                  {scipy} to fit the data. E...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 150--151
+[]For
+ []
+
+
+Overfull \hbox (23.39001pt too wide) in paragraph at lines 150--151
+\TU/lmr/m/it/10 curve
+ []
+
+
+Overfull \hbox (8.94pt too wide) in paragraph at lines 150--151
+\TU/lmr/m/it/10 fit
+ []
+
+
+Overfull \hbox (21.85002pt too wide) in paragraph at lines 150--151
+\TU/lmr/m/it/10 write
+ []
+
+
+Overfull \hbox (16.86002pt too wide) in paragraph at lines 150--151
+\TU/lmr/m/it/10 that
+ []
+
+
+Overfull \hbox (25.56pt too wide) in paragraph at lines 150--151
+\TU/lmr/m/it/10 some-
+ []
+
+
+Overfull \hbox (24.66002pt too wide) in paragraph at lines 150--151
+\TU/lmr/m/it/10 where
  []
 
 
@@ -2393,7 +2474,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.149 \begin{figure}
+l.152 \begin{figure}
                   [hbtp]
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2406,14 +2487,23 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.149 \begin{figure}[
+l.152 \begin{figure}[
                    hbtp]
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Undefined control sequence.
-l.151 \includegraphics
-                    [width = 0.45\textwidth]{Analysis/clustering_X.png}
+l.154 \subfloat
+             [][\emph{Asymmetries [ppm] vs X position [$mm$]}]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.155 	{\includegraphics
+                      [width = 0.45\textwidth]{Analysis/clustering_X.png}} \...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2423,8 +2513,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
 ]
-l.151 \includegraphics[width = 0.45\textwidth]
-                                            {Analysis/clustering_X.png}
+l.155 	{\includegraphics[width = 0.45\textwidth]
+                                              {Analysis/clustering_X.png}} \...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -2432,8 +2522,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 ]
-l.151 \includegraphics[width = 0.45\textwidth]
-                                            {Analysis/clustering_X.png}
+l.155 	{\includegraphics[width = 0.45\textwidth]
+                                              {Analysis/clustering_X.png}} \...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -2444,14 +2534,23 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Missing $ inserted.
 <inserted text> 
 $
-l.151 ...idth = 0.45\textwidth]{Analysis/clustering_
-                                                  X.png}
+l.155 ...idth = 0.45\textwidth]{Analysis/clustering_
+                                                  X.png}} \quad
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-l.151 ... 0.45\textwidth]{Analysis/clustering_X.png}
-                                                  
+l.155 ... 0.45\textwidth]{Analysis/clustering_X.png}
+                                                  } \quad
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+l.155 ...0.45\textwidth]{Analysis/clustering_X.png}}
+                                                   \quad
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -2459,8 +2558,17 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 ! Undefined control sequence.
-l.152 \includegraphics
-                    [width = 0.45\textwidth]{Analysis/clustering_Y.png}
+l.156 \subfloat
+             [][\emph{Asymmetries [ppm] vs Y position[$mm$]}]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.157 	{\includegraphics
+                      [width = 0.45\textwidth]{Analysis/clustering_Y.png}} \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2470,8 +2578,8 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
 ]
-l.152 \includegraphics[width = 0.45\textwidth]
-                                            {Analysis/clustering_Y.png}
+l.157 	{\includegraphics[width = 0.45\textwidth]
+                                              {Analysis/clustering_Y.png}} \\
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -2479,8 +2587,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 ]
-l.152 \includegraphics[width = 0.45\textwidth]
-                                            {Analysis/clustering_Y.png}
+l.157 	{\includegraphics[width = 0.45\textwidth]
+                                              {Analysis/clustering_Y.png}} \\
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -2489,16 +2597,392 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 
-! LaTeX Error: \caption outside float.
+! LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.153 \caption
-            {•}
+l.157 ...5\textwidth]{Analysis/clustering_Y.png}} \\
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing $ inserted.
+<inserted text> 
+$
+l.157 ...5\textwidth]{Analysis/clustering_Y.png}} \\
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 152--157
+ [][hbtp] 
+ []
+
+
+Overfull \hbox (27.62999pt too wide) in paragraph at lines 152--157
+ [][\TU/lmr/m/it/10 Asym- 
+ []
+
+
+Overfull \hbox (16.36pt too wide) in paragraph at lines 152--157
+ \TU/lmr/m/it/10 me- 
+ []
+
+
+Overfull \hbox (19.30002pt too wide) in paragraph at lines 152--157
+ \TU/lmr/m/it/10 tries 
+ []
+
+
+Overfull \hbox (24.54001pt too wide) in paragraph at lines 152--157
+ \TU/lmr/m/it/10 [ppm] 
+ []
+
+
+Overfull \hbox (8.69pt too wide) in paragraph at lines 152--157
+ \TU/lmr/m/it/10 vs 
+ []
+
+
+Overfull \hbox (7.43pt too wide) in paragraph at lines 152--157
+ \TU/lmr/m/it/10 X 
+ []
+
+
+Overfull \hbox (13.29001pt too wide) in paragraph at lines 152--157
+ \TU/lmr/m/it/10 po- 
+ []
+
+
+Overfull \hbox (10.74pt too wide) in paragraph at lines 152--157
+ \TU/lmr/m/it/10 si- 
+ []
+
+
+Overfull \hbox (17.12001pt too wide) in paragraph at lines 152--157
+ \TU/lmr/m/it/10 tion 
+ []
+
+
+Overfull \hbox (24.42029pt too wide) in paragraph at lines 152--157
+ \TU/lmr/m/it/10 [$\OML/cmm/m/it/10 mm$\TU/lmr/m/it/10 ]\nullfont ] 
+ []
+
+
+Overfull \hbox (384.6785pt too wide) in paragraph at lines 152--157
+ 0.45]Analysis/clustering$[][]\OML/cmm/m/it/10 :png\OT1/cmr/m/n/10 [][[]][]$ 
+ []
+
+! Undefined control sequence.
+<recently read> \subfloat 
+          
+l.158 \subfloat
+             [][\emph{Asymmetries [ppm] vs $\theta_{x}$ angle [$rad$]}]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.158 \subfloat[
+              ][\emph{Asymmetries [ppm] vs $\theta_{x}$ angle [$rad$]}]
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.159 	{\includegraphics
+                      [width = 0.45\textwidth]{Analysis/clustering_Xp.png}} ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+]
+l.159 	{\includegraphics[width = 0.45\textwidth]
+                                              {Analysis/clustering_Xp.png}} ...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+]
+l.159 	{\includegraphics[width = 0.45\textwidth]
+                                              {Analysis/clustering_Xp.png}} ...
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Missing $ inserted.
+<inserted text> 
+$
+l.159 ...idth = 0.45\textwidth]{Analysis/clustering_
+                                                  Xp.png}} \quad
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+l.159 ...0.45\textwidth]{Analysis/clustering_Xp.png}
+                                                  } \quad
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+l.159 ....45\textwidth]{Analysis/clustering_Xp.png}}
+                                                   \quad
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Undefined control sequence.
+l.160 \subfloat
+             [][\emph{Asymmetries [ppm] vs $\theta_{y}$ angle [$rad$]}]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.161 	{\includegraphics
+                      [width = 0.45\textwidth]{Analysis/clustering_Yp.png}} \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+]
+l.161 	{\includegraphics[width = 0.45\textwidth]
+                                              {Analysis/clustering_Yp.png}} \\
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+]
+l.161 	{\includegraphics[width = 0.45\textwidth]
+                                              {Analysis/clustering_Yp.png}} \\
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.161 ...\textwidth]{Analysis/clustering_Yp.png}} \\
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing $ inserted.
+<inserted text> 
+$
+l.161 ...\textwidth]{Analysis/clustering_Yp.png}} \\
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (27.62999pt too wide) in paragraph at lines 158--161
+ [][][\TU/lmr/m/it/10 Asym- 
+ []
+
+
+Overfull \hbox (16.36pt too wide) in paragraph at lines 158--161
+ \TU/lmr/m/it/10 me- 
+ []
+
+
+Overfull \hbox (19.30002pt too wide) in paragraph at lines 158--161
+ \TU/lmr/m/it/10 tries 
+ []
+
+
+Overfull \hbox (24.54001pt too wide) in paragraph at lines 158--161
+ \TU/lmr/m/it/10 [ppm] 
+ []
+
+
+Overfull \hbox (8.69pt too wide) in paragraph at lines 158--161
+ \TU/lmr/m/it/10 vs 
+ []
+
+
+Overfull \hbox (9.72917pt too wide) in paragraph at lines 158--161
+ \OML/cmm/m/it/10 []$ 
+ []
+
+
+Overfull \hbox (14.31pt too wide) in paragraph at lines 158--161
+ \TU/lmr/m/it/10 an- 
+ []
+
+
+Overfull \hbox (11.76001pt too wide) in paragraph at lines 158--161
+ \TU/lmr/m/it/10 gle 
+ []
+
+
+Overfull \hbox (22.14014pt too wide) in paragraph at lines 158--161
+ \TU/lmr/m/it/10 [$\OML/cmm/m/it/10 rad$\TU/lmr/m/it/10 ]\nullfont ] 
+ []
+
+
+Overfull \hbox (386.61203pt too wide) in paragraph at lines 158--161
+ 0.45]Analysis/clustering$[][]\OML/cmm/m/it/10 p:png\OT1/cmr/m/n/10 [][[]][]$ 
+ []
+
+! Undefined control sequence.
+<recently read> \subfloat 
+          
+l.162 \subfloat
+             [][\emph{Asymmetries [ppm] vs E [$keV$]}]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.162 \subfloat[
+              ][\emph{Asymmetries [ppm] vs E [$keV$]}]
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.163 	{\includegraphics
+                      [width = 0.45\textwidth]{Analysis/clustering_E.png}} \...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+]
+l.163 	{\includegraphics[width = 0.45\textwidth]
+                                              {Analysis/clustering_E.png}} \...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+]
+l.163 	{\includegraphics[width = 0.45\textwidth]
+                                              {Analysis/clustering_E.png}} \...
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Missing $ inserted.
+<inserted text> 
+$
+l.163 ...idth = 0.45\textwidth]{Analysis/clustering_
+                                                  E.png}} \quad
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+l.163 ... 0.45\textwidth]{Analysis/clustering_E.png}
+                                                  } \quad
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+l.163 ...0.45\textwidth]{Analysis/clustering_E.png}}
+                                                   \quad
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Undefined control sequence.
+l.164 \subfloat
+             [][\emph{Asymmetries [ppm] vs I current [arb.unit]}]
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.165 	{\includegraphics
+                      [width = 0.45\textwidth]{Analysis/clustering_I.png}} \...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+]
+l.165 	{\includegraphics[width = 0.45\textwidth]
+                                              {Analysis/clustering_I.png}} \...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+]
+l.165 	{\includegraphics[width = 0.45\textwidth]
+                                              {Analysis/clustering_I.png}} \...
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
 
 
 ! LaTeX Error: \begin{document} ended by \end{figure}.
@@ -2507,7 +2991,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.154 \end{figure}
+l.167 \end{figure}
                 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2516,7 +3000,7 @@ or  <return>  to continue without it.
 ! Missing $ inserted.
 <inserted text> 
 $
-l.154 \end{figure}
+l.167 \end{figure}
                 
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2524,11 +3008,65 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-Missing character: There is no • (U+2022) in font cmr10!
 ! Missing } inserted.
 <inserted text> 
 }
-l.154 \end{figure}
+l.167 \end{figure}
+                
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.167 \end{figure}
+                
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.167 \end{figure}
+                
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.167 \end{figure}
+                
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.167 \end{figure}
+                
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.167 \end{figure}
                 
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2537,23 +3075,167 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 149--155
-[][hbtp]
+Overfull \hbox (27.62999pt too wide) in paragraph at lines 162--168
+[][][\TU/lmr/m/it/10 Asym-
  []
 
 
-Overfull \hbox (65.3262pt too wide) in paragraph at lines 149--155
-0.45]Analysis/clustering$[][]\OML/cmm/m/it/10 :png\OT1/cmr/m/n/10 [\OML/cmm/m/i
-t/10 width \OT1/cmr/m/n/10 =
+Overfull \hbox (16.36pt too wide) in paragraph at lines 162--168
+\TU/lmr/m/it/10 me-
  []
 
 
-Overfull \hbox (136.66312pt too wide) in paragraph at lines 149--155
-\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 45][]$ 
+Overfull \hbox (19.30002pt too wide) in paragraph at lines 162--168
+\TU/lmr/m/it/10 tries
+ []
+
+
+Overfull \hbox (24.54001pt too wide) in paragraph at lines 162--168
+\TU/lmr/m/it/10 [ppm]
+ []
+
+
+Overfull \hbox (8.69pt too wide) in paragraph at lines 162--168
+\TU/lmr/m/it/10 vs
+ []
+
+
+Overfull \hbox (6.78pt too wide) in paragraph at lines 162--168
+\TU/lmr/m/it/10 E
+ []
+
+
+Overfull \hbox (25.09268pt too wide) in paragraph at lines 162--168
+\TU/lmr/m/it/10 [$\OML/cmm/m/it/10 keV$\TU/lmr/m/it/10 ]\nullfont ]
+ []
+
+
+Overfull \hbox (395.77696pt too wide) in paragraph at lines 162--168
+0.45]Analysis/clustering$[][]\OML/cmm/m/it/10 :png\OT1/cmr/m/n/10 [][[]][][]$ 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.169 T
+     he error of each point is computed exploiting the same formula defined ...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 169--170
+[]The
+ []
+
+
+Overfull \hbox (25.02885pt too wide) in paragraph at lines 169--170
+\OML/cmm/m/it/10 N[]$
+ []
+
+
+Overfull \hbox (6.00235pt too wide) in paragraph at lines 169--170
+\OML/cmm/m/it/10 n$
+ []
+
+
+! LaTeX Error: Environment align* undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.171 \begin{align*}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.172 \sigma
+          _{Asym} = \dfrac{1}{\sqrt{2N_{A/B}n}}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing $ inserted.
+<inserted text> 
+$
+l.172 \sigma_
+           {Asym} = \dfrac{1}{\sqrt{2N_{A/B}n}}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Undefined control sequence.
+l.172 \sigma_{Asym} = \dfrac
+                          {1}{\sqrt{2N_{A/B}n}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: \begin{document} ended by \end{align*}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.173 \end{align*}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing $ inserted.
+<inserted text> 
+$
+l.173 \end{align*}
+                
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (57.96074pt too wide) in paragraph at lines 172--174
+[]\OML/cmm/m/it/10 $[][] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (51.03125pt too wide) in paragraph at lines 172--174
+\OT1/cmr/m/n/10 1[]$ 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.175 F
+     rom this plot we can check if the linear model is good enough to descri...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 175--176
+[]From
  []
 
 ! Undefined control sequence.
-l.157 \subsection
+l.177 \subsection
                {False asymmetries}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2568,18 +3250,18 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.157 \subsection{F
+l.177 \subsection{F
                  alse asymmetries}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 157--159
+Overfull \hbox (20.0pt too wide) in paragraph at lines 177--179
 []False
  []
 
 ! Undefined control sequence.
-l.160 \subsection
+l.180 \subsection
                {??Bootstrap??}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2594,13 +3276,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.160 \subsection{?
+l.180 \subsection{?
                  ?Bootstrap??}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 160--161
+Overfull \hbox (20.0pt too wide) in paragraph at lines 180--181
 []??Bootstrap?? 
  []
 
@@ -2611,18 +3293,18 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.162 A
+l.182 A
      lthough Anselm was against it, now seems possible to increase the preci...
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 162--163
+Overfull \hbox (20.0pt too wide) in paragraph at lines 182--183
 []Although
  []
 
 ! Undefined control sequence.
-l.164 \subsection
+l.184 \subsection
                {??interval estimation??}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2637,13 +3319,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.164 \subsection{?
+l.184 \subsection{?
                  ?interval estimation??}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 164--165
+Overfull \hbox (20.0pt too wide) in paragraph at lines 184--185
 []??interval
  []
 
@@ -2656,13 +3338,13 @@ Overfull \hbox (20.0pt too wide) in paragraph at lines 164--165
 
 
 Here is how much of LuaTeX's memory you used:
- 31 strings out of 477805
- 100000,383344 words of node,token memory allocated 60356 words of node memory still in use:
-   276 hlist, 10 vlist, 8 rule, 4 disc, 44 local_par, 1 dir, 36 math, 1502 glue,
- 98 kern, 113 penalty, 6374 glyph, 230 attribute, 39 glue_spec, 230 attribute_li
-st, 1 write nodes
-   avail lists: 2:2,3:50,4:127,5:5,7:62,8:83,10:126
- 20847 multiletter control sequences out of 65536+600000
- 25 fonts using 1345055 bytes
- 18i,3n,12p,583b,95s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 35 strings out of 477805
+ 100000,383344 words of node,token memory allocated 70961 words of node memory still in use:
+   360 hlist, 11 vlist, 9 rule, 24 disc, 50 local_par, 1 dir, 58 math, 1783 glue
+, 136 kern, 139 penalty, 7366 glyph, 289 attribute, 39 glue_spec, 289 attribute_
+list, 3 write nodes
+   avail lists: 2:2,3:31,4:127,5:2,7:62,8:83,10:126
+ 20851 multiletter control sequences out of 65536+600000
+ 27 fonts using 1608431 bytes
+ 18i,5n,12p,583b,121s stack positions out of 5000i,500n,10000p,200000b,80000s
 !  ==> Fatal error occurred, no output PDF file produced!

@@ -60,8 +60,6 @@ At the beginning MAMI was not developed with the aim a trasverse beam. So it's n
 To Measure the polarization of an electron beam different polarimeters can be used. Here we explain briefly the physics underlying the \textit{Mott} polarimeter, used in the experiment.
 Consider an electron beam that is sent towards a nucleus of charge $Ze$. We know from theory that the spin of the incident electron is affected by the electromagnetic field produced by the nucleus. This can be described as:
 
-
-
 \begin{align*}
 \vec{B}_{nucleus} = \frac{-1}{c} \vec{v} \times \vec{E}_{nucleus} = \frac{Ze}{mc r^{3}} \vec{L} \\
 V = - \mu \cdot B_{nucleus} = \frac{Ze}{mcr^{3}} \vec{L} \cdot \vec{S}_{e^{-}}
@@ -70,8 +68,26 @@ V = - \mu \cdot B_{nucleus} = \frac{Ze}{mcr^{3}} \vec{L} \cdot \vec{S}_{e^{-}}
 We can recognize the spin-orbit interaction here. This term yields the polarization dependence of the cross section. The cross section can be model in the following way
 
 \begin{align*}
-\sigma(\theta) = I(\theta) [1 + S(\theta) \vec{P} \cdot ]
+\sigma(\theta) = I(\theta) [1 + S(\theta) \vec{P} \cdot \vec{n} ]
 \end{align*}
+
+Here a scheme to identify the scattering process: 
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.45\textwidth]{ExperimentalSetup/mottFig.png}
+\caption{Scheme of the Mott scattering, the polarization is ortogonal to the plane,  $ \vec{n} \frac{\vec{k} \times \vec{k'}}{|\vec{k} \times \vec{k'}|}$}
+\end{figure}
+
+The direction of $\vec{n}$ dependso on whether scattering to the left or right is being considered. Let's suppose our initial beam has a polarization $P$, and so we compute the asymmetry $A(\theta)$ of the scattered electrons between left ($N_{L}$) and right ($N_{R}$). $N_{L}$ and right $N_{R}$ will be proportional respectively:
+
+
+\begin{align*}
+N_{L} &= N_{\downarrow}[1 + S(\theta)] + N_{\uparrow}[1 - S(\theta)] \\
+N_{R} &= N_{\uparrow}[1 + S(\theta)] + N_{\downarrow}[1 - S(\theta)]  \\
+A(\theta) &= \frac{N_{L} - N_{R}}{N_{L} + N_{R}} = \dfrac{N_{\downarrow}(1 + S(\theta)) + N_{\uparrow}(1 - S(\theta)) - N_{\uparrow}(1 + S(\theta)) + N_{\downarrow}(1 - S(\theta))}{N_{L} + N_{R}} = ... = P \cdot S(\theta)
+\end{align*}
+
 
 The total beam polarization is measured by a Moller polarimeter, in the experimental hall, with the beam polarization oriented longitudinally in the experimental hall. The Moller polarimeter can measure the longitudinal polarization of the beam.The other two polarimeters, Compton and Mott, located behind the injector linear accelerator (ILAC), are sensitive to the longitudinal and the trasverse horizontal components of the beam (with an energy around $\SI{3.5}{\mega \electronvolt}$ at this stage). The procedure for the allignment is the following: at the beginning of the beam time the Mott polarimeter is used for different settings of the solenoidal field, with the Wien filter angle equal (nominal) to $\ang{90}$. The aim is to minimize the horizonal polarization component after the rotation performed by the double solenoid, changing the solenoidal magnetic field. Then a second optimization follows, using the Moller polarimeter for different Wien filter angles is performed. With the new Wien filter settings, another measurement is performed with the Mott polarimeter.
 

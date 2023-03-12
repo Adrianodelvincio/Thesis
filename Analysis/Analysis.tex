@@ -135,26 +135,64 @@ For a better visualization of the data, especially to observe the dependence of 
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width = 0.7\textwidth]{Analysis/Asym_vs_monitor.png}
+\includegraphics[width = 0.5\textwidth]{Analysis/Asym_vs_monitor.png}
 \caption{Asymmetries vs. Beam parameters}
 \label{fig:asyvsparam}
 \end{figure}
 
 In some plots (X,Y and I) we can identify equally spaced cluster of data. So we decide to compute the averaged asymmetry for each cluster we were able to identify. 
-In the following plots we decided to apply some cuts to the data, selecting only the events where the values of all the monitor are less then 3 standard deviation far from the mean: 
+In the following plots we decided to apply some cuts to the data, selecting only the events where the values of all the monitor are less then 3 standard deviation far from the mean. In all the figures the asymmetries are multiplied by a factor of $1e6$ to have the result in ppm (so each y-axis is in ppm). 
 
 \begin{align*}
-(x_{monitor} - \overline{x}_{monitor} \leq 3 \sigma_{X})
+(x_{monitor} - \overline{x}_{monitor}) \leq 3 \cdot \sigma_{X}
 \end{align*}
+
+For each monitor we use the \textit{curve fit} function of the python library \text{scipy} to fit the data. Each Beam parameter is treated separately now, so in principle we are ignoring possible effect of correlation between the X-values (however, from the correlation matrix    \textit{write that somewhere} the effects are negligible)  
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width = 0.45\textwidth]{Analysis/clustering_X.png}
-\includegraphics[width = 0.45\textwidth]{Analysis/clustering_Y.png} 
-\caption{•}
+\subfloat[][\emph{Asymmetries [ppm] vs X position [$mm$]}]
+	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_X.png}} \quad
+\subfloat[][\emph{Asymmetries [ppm] vs Y position[$mm$]}]
+	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_Y.png}} \\
+\subfloat[][\emph{Asymmetries [ppm] vs $\theta_{x}$ angle [$rad$]}]
+	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_Xp.png}} \quad
+\subfloat[][\emph{Asymmetries [ppm] vs $\theta_{y}$ angle [$rad$]}]
+	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_Yp.png}} \\
+\subfloat[][\emph{Asymmetries [ppm] vs E [$keV$]}]
+	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_E.png}} \quad
+\subfloat[][\emph{Asymmetries [ppm] vs I current [arb.unit]}]
+	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_I.png}} \quad
 \label{fig:averageAsym}
 \end{figure}
 
+The error of each point is computed exploiting the same formula defined above (theory section; $N_{A/B}$ averaged pmt counts for each subevents and $n$ number of event in each interval):
+
+\begin{align*}
+\sigma_{Asym} = \dfrac{1}{\sqrt{2N_{A/B}n}}
+\end{align*}
+
+From this plots we can check if the linear model is good enough to descrive the depencence of out data and decide if the it should be useful to apply different cuts for certain beam parameters. We report now a first exstimation of the false asimmetries, later the data will be fitted without treat separately the beam parameters. From that we can learn the effects of the correlation between the data.
+
+
+\begin{tabular}{||c|c|c|c|}
+
+\hline
+pmt: & B0 & B1 & B2 \\ 
+\hline 
+$\frac{dA}{dX} \frac{ppm}{\SI{}{\micro \meter}}$  & $-3.0 \pm 1.9$ & $-3.15 \pm 2$ & $-3.28 \pm 2$ \\ 
+\hline 
+$\frac{dA}{dY} \frac{ppm}{\SI{}{\micro \meter} }$ & $-2.00 \pm 8$ & $-0.16 \pm 7 $ & $-8.45 \pm 9$ \\ 
+\hline 
+$\frac{dA}{d\theta_{y}} \frac{ppm}{\mu rad}$& $-6.18 \pm 31$  & $-9.17 \pm 32$ & $-11 \pm 31$ \\ 
+\hline 
+$\frac{dA}{d\theta_{x}} \frac{ppm}{\mu rad}$ & $-18 \pm 17$ & $ -18 \pm 17 $ & $-15 \pm 19$ \\ 
+\hline 
+$\frac{dA}{dE} \frac{ppm}{\SI{}{\kilo \electronvolt} }$ & $3.9 \pm 16 $ & $9 \pm 16$ & $45 \pm 18 $ \\ 
+\hline 
+$\frac{dA}{dI}$ & $282 \pm 141$ & $301 \pm 128$ & $281 \pm 156$ \\ 
+\hline 
+\end{tabular} 
 
 \subsection{False asymmetries}
 Seems that is possible to obtain rough estimates of the beam related asymmetries with the results from the fit. For Energy and position it's achievable, while for the angles it's quite hard (in principle sounds possible to perform an analytic calculation of the asymmetry related to the incident beam angle, however Anselm told me that quite often those results are in disagrement with the observed even in the sign!).  

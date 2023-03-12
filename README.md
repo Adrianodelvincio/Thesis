@@ -1,6 +1,6 @@
 # Thesis
 
-1. Prepare the idex of the thesis - :white_check_mark:
+1. index of the thesis - :white_check_mark:
 
 	- definire i cuts e binning mediato per ogni monitor
 	- fare fit per ogni monitor
@@ -12,3 +12,4 @@
 	- finire la averaged asymmetry nel programma
 	- preparare documentazione su fit.cc e fit.h da consegnare ad Anselm
 	- fissare riunione con Anselm per discutere se modificare modello lineare o proporre tagli 
+	- Creare un ttree per analizzare i dati anche con root
