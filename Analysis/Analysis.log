@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.14.0 (TeX Live 2022/dev/Debian)  (format=lualatex 2022.12.6)  12 MAR 2023 18:40
+This is LuaHBTeX, Version 1.14.0 (TeX Live 2022/dev/Debian)  (format=lualatex 2022.12.6)  13 MAR 2023 14:23
  restricted system commands enabled.
 **Analysis.tex
 (./Analysis.tex
@@ -2360,7 +2360,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.147 (
-     x_{monitor} - \overline{x}_{monitor} \leq 3 \sigma_{X})
+     x_{monitor} - \overline{x}_{monitor}) \leq 3 \cdot \sigma_{X}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -2368,7 +2368,7 @@ If that doesn't work, type  X <return>  to quit.
 <inserted text> 
 $
 l.147 (x_
-       {monitor} - \overline{x}_{monitor} \leq 3 \sigma_{X})
+       {monitor} - \overline{x}_{monitor}) \leq 3 \cdot \sigma_{X}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
@@ -2402,13 +2402,18 @@ Overfull \hbox (57.99007pt too wide) in paragraph at lines 147--149
  []
 
 
-Overfull \hbox (46.48305pt too wide) in paragraph at lines 147--149
-[][] \OMS/cmsy/m/n/10 
+Overfull \hbox (50.37195pt too wide) in paragraph at lines 147--149
+[][]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 
  []
 
 
-Overfull \hbox (22.20515pt too wide) in paragraph at lines 147--149
-\OT1/cmr/m/n/10 3\OML/cmm/m/it/10 []\OT1/cmr/m/n/10 )$ 
+Overfull \hbox (7.7778pt too wide) in paragraph at lines 147--149
+\OT1/cmr/m/n/10 3 \OMS/cmsy/m/n/10 
+ []
+
+
+Overfull \hbox (13.31624pt too wide) in paragraph at lines 147--149
+\OML/cmm/m/it/10 []$ 
  []
 
 
@@ -3225,7 +3230,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.175 F
-     rom this plot we can check if the linear model is good enough to descri...
+     rom this plots we can check if the linear model is good enough to descr...
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -3234,8 +3239,178 @@ Overfull \hbox (20.0pt too wide) in paragraph at lines 175--176
 []From
  []
 
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.178 \begin{tabular}
+                   {||c|c|c|c|}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+             
+l.183 ... \pm 1.9$ & $-3.15 \pm 2$ & $-3.28 \pm 2$ &
+                                                   $ \frac{ppm}{\SI{}{\micro...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
 ! Undefined control sequence.
-l.177 \subsection
+<argument> \SI 
+    {}{\micro \meter }
+l.183 ...\pm 2$ & $ \frac{ppm}{\SI{}{\micro \meter}}
+                                                   $\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \SI {}{\micro 
+              \meter }
+l.183 ...\pm 2$ & $ \frac{ppm}{\SI{}{\micro \meter}}
+                                                   $\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \SI {}{\micro \meter 
+                     }
+l.183 ...\pm 2$ & $ \frac{ppm}{\SI{}{\micro \meter}}
+                                                   $\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+             
+l.185 ...0 \pm 8$ & $-0.16 \pm 7 $ & $-8.45 \pm 9$ &
+                                                   $\frac{ppm}{\SI{}{\micro ...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Undefined control sequence.
+<argument> \SI 
+    {}{\micro \meter } 
+l.185 ...\pm 9$ & $\frac{ppm}{\SI{}{\micro \meter} }
+                                                  $ \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \SI {}{\micro 
+              \meter } 
+l.185 ...\pm 9$ & $\frac{ppm}{\SI{}{\micro \meter} }
+                                                  $ \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \SI {}{\micro \meter 
+                     } 
+l.185 ...\pm 9$ & $\frac{ppm}{\SI{}{\micro \meter} }
+                                                  $ \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+             
+l.187 ... \pm 31$  & $-9.17 \pm 32$ & $-11 \pm 31$ &
+                                                   $\frac{ppm}{\mu rad}$\\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+             
+l.189 ...8 \pm 17$ & $ -18 \pm 17 $ & $-15 \pm 19$ &
+                                                   $\frac{ppm}{\mu rad}$ \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+             
+l.191 ...$3.9 \pm 16 $ & $9 \pm 16$ & $45 \pm 18 $ &
+                                                   $\frac{ppm}{\SI{}{\kilo \...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+! Undefined control sequence.
+<argument> \SI 
+    {}{\kilo \electronvolt }
+l.191 ...$ & $\frac{ppm}{\SI{}{\kilo \electronvolt}}
+                                                  $\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \SI {}{\kilo 
+             \electronvolt }
+l.191 ...$ & $\frac{ppm}{\SI{}{\kilo \electronvolt}}
+                                                  $\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \SI {}{\kilo \electronvolt 
+                           }
+l.191 ...$ & $\frac{ppm}{\SI{}{\kilo \electronvolt}}
+                                                  $\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+             
+l.193 ... \pm 141$ & $301 \pm 128$ & $281 \pm 156$ &
+                                                   $arb. unit$ \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+Overfull \hbox (194.26132pt too wide) in paragraph at lines 178--196
+[][] 
+ []
+
+! Undefined control sequence.
+l.197 \subsection
                {False asymmetries}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3250,18 +3425,18 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.177 \subsection{F
+l.197 \subsection{F
                  alse asymmetries}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 177--179
+Overfull \hbox (20.0pt too wide) in paragraph at lines 197--199
 []False
  []
 
 ! Undefined control sequence.
-l.180 \subsection
+l.200 \subsection
                {??Bootstrap??}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3276,13 +3451,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.180 \subsection{?
+l.200 \subsection{?
                  ?Bootstrap??}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 180--181
+Overfull \hbox (20.0pt too wide) in paragraph at lines 200--201
 []??Bootstrap?? 
  []
 
@@ -3293,18 +3468,18 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.182 A
+l.202 A
      lthough Anselm was against it, now seems possible to increase the preci...
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 182--183
+Overfull \hbox (20.0pt too wide) in paragraph at lines 202--203
 []Although
  []
 
 ! Undefined control sequence.
-l.184 \subsection
+l.204 \subsection
                {??interval estimation??}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3319,13 +3494,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.184 \subsection{?
+l.204 \subsection{?
                  ?interval estimation??}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 184--185
+Overfull \hbox (20.0pt too wide) in paragraph at lines 204--205
 []??interval
  []
 
@@ -3338,13 +3513,13 @@ Overfull \hbox (20.0pt too wide) in paragraph at lines 184--185
 
 
 Here is how much of LuaTeX's memory you used:
- 35 strings out of 477805
- 100000,383344 words of node,token memory allocated 70961 words of node memory still in use:
-   360 hlist, 11 vlist, 9 rule, 24 disc, 50 local_par, 1 dir, 58 math, 1783 glue
-, 136 kern, 139 penalty, 7366 glyph, 289 attribute, 39 glue_spec, 289 attribute_
-list, 3 write nodes
-   avail lists: 2:2,3:31,4:127,5:2,7:62,8:83,10:126
- 20851 multiletter control sequences out of 65536+600000
+ 37 strings out of 477805
+ 100000,383344 words of node,token memory allocated 80514 words of node memory still in use:
+   485 hlist, 23 vlist, 101 rule, 24 disc, 51 local_par, 1 dir, 120 math, 2256 g
+lue, 166 kern, 141 penalty, 7801 glyph, 424 attribute, 39 glue_spec, 424 attribu
+te_list, 3 write nodes
+   avail lists: 2:2,3:30,4:127,5:8,7:62,8:83,10:126
+ 20853 multiletter control sequences out of 65536+600000
  27 fonts using 1608431 bytes
- 18i,5n,12p,583b,121s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 18i,9n,12p,583b,121s stack positions out of 5000i,500n,10000p,200000b,80000s
 !  ==> Fatal error occurred, no output PDF file produced!

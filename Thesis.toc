@@ -15,30 +15,30 @@
 \contentsline {section}{\numberline {3.1}First description of the experiment}{4}{}%
 \contentsline {section}{\numberline {3.2}Mami}{4}{}%
 \contentsline {subsection}{\numberline {3.2.1}Acceleration stage}{4}{}%
-\contentsline {subsection}{\numberline {3.2.2}Polarized Beam}{4}{}%
-\contentsline {subsection}{\numberline {3.2.3}Mott, Compton and Moller polarimenters}{5}{}%
-\contentsline {section}{\numberline {3.3}A1 spectrometers hall}{6}{}%
-\contentsline {section}{\numberline {3.4}Detectors and beam monitors}{6}{}%
-\contentsline {subsection}{\numberline {3.4.1}Detectors A and B}{6}{}%
-\contentsline {subsection}{\numberline {3.4.2}Monitors and stabilization}{6}{}%
-\contentsline {section}{\numberline {3.5}Electronics}{6}{}%
-\contentsline {chapter}{\numberline {4}Test and beam time analysis}{7}{}%
-\contentsline {section}{\numberline {4.1}Model for fitting the data}{7}{}%
-\contentsline {section}{\numberline {4.2}Data tree}{7}{}%
-\contentsline {section}{\numberline {4.3}Detectors test}{7}{}%
-\contentsline {section}{\numberline {4.4}Analysis}{7}{}%
-\contentsline {subsection}{\numberline {4.4.1}Alignment of the scattering plane}{7}{}%
-\contentsline {subsection}{\numberline {4.4.2}Calibration of the VFCs monitors}{7}{}%
-\contentsline {subsection}{\numberline {4.4.3}Calibration of the PIMO monitors}{8}{}%
-\contentsline {subsection}{\numberline {4.4.4}Current and ENMO monitors}{8}{}%
-\contentsline {subsection}{\numberline {4.4.5}Calibration of the pmts}{11}{}%
-\contentsline {subsection}{\numberline {4.4.6}Rates on lead}{11}{}%
-\contentsline {section}{\numberline {4.5} $^{12}C$ asymmetry}{11}{}%
-\contentsline {subsection}{\numberline {4.5.1}Autocalibration procedure}{11}{}%
-\contentsline {subsection}{\numberline {4.5.2}least square fit}{11}{}%
-\contentsline {subsection}{\numberline {4.5.3}False asymmetries}{13}{}%
-\contentsline {subsection}{\numberline {4.5.4}??Bootstrap??}{13}{}%
-\contentsline {subsection}{\numberline {4.5.5}??interval estimation??}{13}{}%
-\contentsline {chapter}{\numberline {5}Conclusion and outlook}{14}{}%
-\contentsline {chapter}{Appendices}{15}{}%
-\contentsline {chapter}{\numberline {A}Some Appendix}{16}{}%
+\contentsline {subsection}{\numberline {3.2.2}Polarized Beam}{5}{}%
+\contentsline {subsection}{\numberline {3.2.3}Mott, Compton and Moller polarimenters}{6}{}%
+\contentsline {section}{\numberline {3.3}A1 spectrometers hall}{7}{}%
+\contentsline {section}{\numberline {3.4}Detectors and beam monitors}{7}{}%
+\contentsline {subsection}{\numberline {3.4.1}Detectors A and B}{7}{}%
+\contentsline {subsection}{\numberline {3.4.2}Monitors and stabilization}{7}{}%
+\contentsline {section}{\numberline {3.5}Electronics}{7}{}%
+\contentsline {chapter}{\numberline {4}Test and beam time analysis}{8}{}%
+\contentsline {section}{\numberline {4.1}Model for fitting the data}{8}{}%
+\contentsline {section}{\numberline {4.2}Data tree}{8}{}%
+\contentsline {section}{\numberline {4.3}Detectors test}{8}{}%
+\contentsline {section}{\numberline {4.4}Analysis}{8}{}%
+\contentsline {subsection}{\numberline {4.4.1}Alignment of the scattering plane}{8}{}%
+\contentsline {subsection}{\numberline {4.4.2}Calibration of the VFCs monitors}{8}{}%
+\contentsline {subsection}{\numberline {4.4.3}Calibration of the PIMO monitors}{9}{}%
+\contentsline {subsection}{\numberline {4.4.4}Current and ENMO monitors}{9}{}%
+\contentsline {subsection}{\numberline {4.4.5}Calibration of the pmts}{12}{}%
+\contentsline {subsection}{\numberline {4.4.6}Rates on lead}{12}{}%
+\contentsline {section}{\numberline {4.5} $^{12}C$ asymmetry}{12}{}%
+\contentsline {subsection}{\numberline {4.5.1}Autocalibration procedure}{12}{}%
+\contentsline {subsection}{\numberline {4.5.2}least square fit}{12}{}%
+\contentsline {subsection}{\numberline {4.5.3}False asymmetries}{14}{}%
+\contentsline {subsection}{\numberline {4.5.4}??Bootstrap??}{14}{}%
+\contentsline {subsection}{\numberline {4.5.5}??interval estimation??}{14}{}%
+\contentsline {chapter}{\numberline {5}Conclusion and outlook}{15}{}%
+\contentsline {chapter}{Appendices}{16}{}%
+\contentsline {chapter}{\numberline {A}Some Appendix}{17}{}%

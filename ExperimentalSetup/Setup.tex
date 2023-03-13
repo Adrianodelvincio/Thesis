@@ -10,7 +10,20 @@
 
 \section{First description of the experiment}
 
-First description of the experiment, how we want to collect data, new picture of the kinematic of the experiment. Maybe here it's a good point to describe the structure of the event.
+\texttt{First description of the experiment, how we want to collect data, new picture of the kinematic of the experiment. Maybe here it's a good point to describe the structure of the event.} \\
+
+To measure the Beam-Normal single spin asymmetry, a polarized beam of $ \SI{570}{\mega \electronvolt}$ will be sent against a $\SI{10}{\milli \meter}$ $^{12}C$ target. The detectors consist of two fused-silica coupled to 3 (detector B) and 8 (detector A) pmts, which collect the Cherenkov light emitted when an electron pass through the fused-silica. The detector are placed inside the two spectrometer of the A1 hall, which are not used in this experiment due to the high luminosity of the beam ($ \SI{20}{\micro \ampere}$) that is away from their good point of operation. \\
+The photomultipliers asymmetry due the change of the electrons spin is the target of the measurement. The pmts signals are collected and digitalized by the \textbf{NINO} board, after a threshold selection, and sent to the A1 control room computer, where the DAQ program collect the data together with all the data coming from the Beam monitors producing Binary files, which are later analyzed by the analysis program, which is significant part of the work done in the framework of the thesis. \\
+The data collected are divided in \textit{Events} made by 4 \textit{sub-events} in sequence. Each event correspond to a temporal window of $\simeq \SI{80}{\micro \second}$, where each sub-event is $\SI{20}{\micro \second}$ long. Here it's important to clarify that unlike the majority of experiments in high energy physics, an event is made by all the electrons interacting with the detectors during the time interval of the event, and we will refer to this hereafter unless otherwise stated. The division into sub-events reflects the polarization sequence of the beam. The PMTS counts and the beam monitor values are saved for each subevent, along with the time lengh of the event and other values which are required to process beam monitor data.\\ 
+
+\begin{figure}[hbtp]
+\centering
+\subfloat[][\emph{Detector B}]
+	{\includegraphics[width = 0.35\textwidth]{figures/504px-Blackfalcon.jpg}} \quad
+\subfloat[][\emph{Detector A}]
+	{\includegraphics[width = 0.45\textwidth]{figures/IMG_20221110_122246.jpg}} \quad
+\end{figure}
+
 
 \section{Mami}
 How Mami produces polarized electron and how the particle are accelerated (the way Mainz Mikroton is working is completely different from the other accelerators, so maybe this section will be too long).
@@ -18,11 +31,10 @@ How Mami produces polarized electron and how the particle are accelerated (the w
 \subsection{Acceleration stage}
 explain how electrons are accelerated, and sent to different experiments.
 
-
 \subsection{Polarized Beam}
-%Here a subsection to explain how the polarized electrons are produced. Important to mention the systematic error for the polarization mesurement (in our beam time we couldn't measure with Moller polarimeter, so this discussion is important for future experiment, however it's important to say something about it). Remember to explain how the spin are rotated to the transverse plane, and the $\frac{\lambda}{2}$
+\texttt{Here a subsection to explain how the polarized electrons are produced. Important to mention the systematic error for the polarization mesurement (in our beam time we couldn't measure with Moller polarimeter, so this discussion is important for future experiment, however it's important to say something about it). Remember to explain how the spin are rotated to the transverse plane, and the $\frac{\lambda}{2}$} \\
 
-For the beam-normal single spin asymmetry a vertical polarized beam is necessary. At the MAMI electron accelerator is possible to produce a vertical polarized beam with energy in the range $\SI{180}{\mega \electronvolt} - \SI{855}{\mega \electronvolt}$. In this section the procedure to orient the beam vertically, following an explanation of how the degree of polarizarion of the beam is measured.
+For the beam-normal single spin asymmetry a vertical polarized beam is necessary. At the MAMI electron accelerator is possible to produce a vertical polarized beam with energy in the range $\SI{180}{\mega \electronvolt} - \SI{855}{\mega \electronvolt}$ \cite{VerticalMami}. In this section the procedure to orient the beam vertically, following an explanation of how the degree of polarizarion of the beam is measured.
 
 The electron source used at MAMI is made by a strained GaAs/GaAsP superlattice photocathode 
 illuminated by circular polarized light. A Pockels cell changes the helicity of the photons impinging on the electrons. The extracted electron has the same helicity of the incoming photon, let's suppose as an example:
@@ -37,7 +49,7 @@ illuminated by circular polarized light. A Pockels cell changes the helicity of 
 \end{equation}
 \end{center}
 
-With the fast change of the Pockels cell it is possible to alternately revert the sign of the polaritazion. By the insertion of a $\lambda/2$ plate between the laser system and the photochatode the polarization orientation of the electron beam can be reversed for each sub-event, useful later for the estimation of systematic errors.
+With the fast change of the Pockels cell it is possible to alternately revert the sign of the polaritazion. By the insertion of a $\lambda/2$ plate between the laser system and the photochatode the polarization orientation of the electron beam can be reversed for each sub-event, useful later for the estimation of systematic errors. The beam polarization achieved with this source is roughly $80 \% $, for the beam time it was : $0.79 \% $
 
 To switch from longitudinal polarization to transverse polarisation, two devices are used: the \textbf{Wien filter} and a \textbf{double solenoid} located in the injection beam line. 
 
@@ -52,10 +64,9 @@ After this allignement the electrons go through the accelerator to the experimen
 In our experiment, because of the vertical polarization, only the residual horizontal component precedes during the motion. For conventional experiment the polarization vector is rotated by the Wien filter with an angle such that the polarization si longitudinally aligned in the experimental hall, considering that after the rotation, the polarization is affected by another rotation due to the spin precession. The rotation angles of the polarization vector through the accelerator are known from simulations and are also directly measured for relevant energies, for a beam of $\SI{570}{\mega \electronvolt}$ the rotation angle is $\ang{55}$ with an accuracy of $\pm \ang{2}$
 At the beginning MAMI was not developed with the aim a trasverse beam. So it's not possible to measure directly the polarization for the vertical axis. However it's possible, with the existing setup, to exstimate the degree of polarization. For this purpose a Moller, Comport and Mott polarimeters are used. The vertical polarization alignment can be accomplished by the minimization of the horizontal components. 
 
-%aggiungere ai riferimenti l'articolo: Vertical Beam Polarization at MAMI. 
 
 \subsection{Mott, Compton and Moller polarimenters}
-%Briefly explain how the Mott polarimeter works, for measuring the polarization of the beam.
+\texttt{Briefly explain how the Mott polarimeter works, for measuring the polarization of the beam.} \\
 
 To Measure the polarization of an electron beam different polarimeters can be used. Here we explain briefly the physics underlying the \textit{Mott} polarimeter, used in the experiment.
 Consider an electron beam that is sent towards a nucleus of charge $Ze$. We know from theory that the spin of the incident electron is affected by the electromagnetic field produced by the nucleus. This can be described as:
@@ -76,7 +87,7 @@ Here a scheme to identify the scattering process:
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width = 0.45\textwidth]{ExperimentalSetup/mottFig.png}
-\caption{Scheme of the Mott scattering, the polarization is ortogonal to the plane,  $ \vec{n} \frac{\vec{k} \times \vec{k'}}{|\vec{k} \times \vec{k'}|}$}
+\caption{Scheme of the Mott scattering, the polarization is ortogonal to the plane,  $ \vec{n} = \frac{\vec{k} \times \vec{k'}}{|\vec{k} \times \vec{k'}|}$}
 \end{figure}
 
 The direction of $\vec{n}$ dependso on whether scattering to the left or right is being considered. Let's suppose our initial beam has a polarization $P$, and so we compute the asymmetry $A(\theta)$ of the scattered electrons between left ($N_{L}$) and right ($N_{R}$). $N_{L}$ and right $N_{R}$ will be proportional respectively:
@@ -88,8 +99,10 @@ N_{R} &= N_{\uparrow}[1 + S(\theta)] + N_{\downarrow}[1 - S(\theta)]  \\
 A(\theta) &= \frac{N_{L} - N_{R}}{N_{L} + N_{R}} = \dfrac{N_{\downarrow}(1 + S(\theta)) + N_{\uparrow}(1 - S(\theta)) - N_{\uparrow}(1 + S(\theta)) + N_{\downarrow}(1 - S(\theta))}{N_{L} + N_{R}} = ... = P \cdot S(\theta)
 \end{align*}
 
+From the last equation we have a relation which give the beam polarization in terms of $A(\theta)$ (which is what is measured) and the asymmetry function $S(\theta)$ (known also as Sherman function). There are several calculation of the Sherman function, which is well-known for high energy electron scattering.
 
 The total beam polarization is measured by a Moller polarimeter, in the experimental hall, with the beam polarization oriented longitudinally in the experimental hall. The Moller polarimeter can measure the longitudinal polarization of the beam.The other two polarimeters, Compton and Mott, located behind the injector linear accelerator (ILAC), are sensitive to the longitudinal and the trasverse horizontal components of the beam (with an energy around $\SI{3.5}{\mega \electronvolt}$ at this stage). The procedure for the allignment is the following: at the beginning of the beam time the Mott polarimeter is used for different settings of the solenoidal field, with the Wien filter angle equal (nominal) to $\ang{90}$. The aim is to minimize the horizonal polarization component after the rotation performed by the double solenoid, changing the solenoidal magnetic field. Then a second optimization follows, using the Moller polarimeter for different Wien filter angles is performed. With the new Wien filter settings, another measurement is performed with the Mott polarimeter.
+
 
 \section{A1 spectrometers hall}
 
