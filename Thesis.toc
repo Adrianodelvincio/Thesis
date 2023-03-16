@@ -26,19 +26,19 @@
 \contentsline {section}{\numberline {4.1}Model for fitting the data}{8}{}%
 \contentsline {section}{\numberline {4.2}Data tree}{8}{}%
 \contentsline {section}{\numberline {4.3}Detectors test}{8}{}%
-\contentsline {section}{\numberline {4.4}Analysis}{8}{}%
-\contentsline {subsection}{\numberline {4.4.1}Alignment of the scattering plane}{8}{}%
-\contentsline {subsection}{\numberline {4.4.2}Calibration of the VFCs monitors}{8}{}%
+\contentsline {section}{\numberline {4.4}Analysis}{9}{}%
+\contentsline {subsection}{\numberline {4.4.1}Alignment of the scattering plane}{9}{}%
+\contentsline {subsection}{\numberline {4.4.2}Calibration of the VFCs monitors}{9}{}%
 \contentsline {subsection}{\numberline {4.4.3}Calibration of the PIMO monitors}{9}{}%
-\contentsline {subsection}{\numberline {4.4.4}Current and ENMO monitors}{9}{}%
-\contentsline {subsection}{\numberline {4.4.5}Calibration of the pmts}{12}{}%
+\contentsline {subsection}{\numberline {4.4.4}Current and ENMO monitors}{10}{}%
+\contentsline {subsection}{\numberline {4.4.5}Calibration of the pmts}{11}{}%
 \contentsline {subsection}{\numberline {4.4.6}Rates on lead}{12}{}%
-\contentsline {section}{\numberline {4.5} $^{12}C$ asymmetry}{12}{}%
-\contentsline {subsection}{\numberline {4.5.1}Autocalibration procedure}{12}{}%
-\contentsline {subsection}{\numberline {4.5.2}least square fit}{12}{}%
-\contentsline {subsection}{\numberline {4.5.3}False asymmetries}{14}{}%
-\contentsline {subsection}{\numberline {4.5.4}??Bootstrap??}{14}{}%
-\contentsline {subsection}{\numberline {4.5.5}??interval estimation??}{14}{}%
-\contentsline {chapter}{\numberline {5}Conclusion and outlook}{15}{}%
-\contentsline {chapter}{Appendices}{16}{}%
-\contentsline {chapter}{\numberline {A}Some Appendix}{17}{}%
+\contentsline {section}{\numberline {4.5} $^{12}C$ asymmetry}{13}{}%
+\contentsline {subsection}{\numberline {4.5.1}Autocalibration procedure}{13}{}%
+\contentsline {subsection}{\numberline {4.5.2}least square fit}{13}{}%
+\contentsline {subsection}{\numberline {4.5.3}False asymmetries}{16}{}%
+\contentsline {subsection}{\numberline {4.5.4}??Bootstrap??}{16}{}%
+\contentsline {subsection}{\numberline {4.5.5}??interval estimation??}{16}{}%
+\contentsline {chapter}{\numberline {5}Conclusion and outlook}{17}{}%
+\contentsline {chapter}{Appendices}{18}{}%
+\contentsline {chapter}{\numberline {A}Some Appendix}{19}{}%

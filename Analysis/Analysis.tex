@@ -19,8 +19,15 @@ Here I have to explain the model used for describing the data, so the problem of
 Explain how we compute all the values for the data tree, the position of the beam on the target, the angle, the correlated-difference values...
 
 \section{Detectors test}
-\texttt{Explain the test of the two detectors in the lab, how we select the threshold, the correlation of the pmts and coincidence to select the threshold. Mention also that we observed two knees in the plot of counts vs. attenuation.}
+\texttt{Explain the test of the two detectors in the lab, how we select the threshold, the correlation of the pmts and coincidence to select the threshold. Mention also that we observed two knees in the plot of counts vs. attenuation.}\\
 
+The Nino board, which digitizes the signal from the PMTS, has two parameters which can be used to select the internal threshold of the discriminator, to cut the low signals and can be adjusted changing the settings of the DAQ program. These two parameters are \textit{Threshold} and \textit{Attenuation}. \textit{Threshold} means directly the charge value necessary for an impulse certain shape to be accepted by the signal discriminators. However the "physical" threshold can be also modified changing the \textit{attenuation} which act in this simple way:
+
+\begin{align*}
+physical_threshold = C * \frac{Threshold}{Attenuation}
+\end{align*}  
+
+C is a costant which convert from arbitrary units to physical units that \textbf{for now is unknown}. For our purposes, we select threshold values and we modify only the attenuation values. 
 
 \section{Analysis}
 
@@ -109,7 +116,39 @@ From this we obtain the value $scaling_{E18} = -1595.2$, to obtain the physical 
 
 \subsection{Calibration of the pmts}
 
-Here it's important to show the plots I made during the beam time. I have to mention the Leo tecniques for the correct interpretation of counts vs attenuation.  
+\texttt{Here it's important to show the plots I made during the beam time. I have to mention the Leo tecniques for the correct interpretation of counts vs attenuation.}\\
+
+During the beam time, several scans in attenuation were performed, before switching MAMI to produce the polarized beam, to choose the best working point for the PMTS of the detectors. The same procedure used in the laboratory was followed, starting from low attenuation and raising up the values. It's possible to get a simple model to describe the particular shape of the following plot taking into account simple assumptions about the type of electrical noise that affect the Nino board, and the \textit{pdf} of the signal produced by the PMTS.\\
+
+The first assumption ("this is not a true assumption, Anselm has a plot of the digitalize charge that proves that") is that accumulated charge collected by the Nino board is well described by a gaussian distribution, the second one is that for small threshold the charge produced by the signals follows a step-function distribution. To explain, let's think that the distribution of the charge collected is of this type (the following figure is just an example, the values ​​do not describe the data collected):
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.40\textwidth]{Analysis/distribution.pdf}
+\caption{Example of the expected distribution of the PMTs output signal}
+\end{figure}
+
+The probability for a signal to pass the selection is equal to the probability of being in above the threshold, that is the complementary cumulative of the gaussian distribution (probability of being in the right tail):
+
+\begin{align*}
+P(signal > thr) = 1 - \Phi(x) = \dfrac{1 - Erf(\dfrac{x_{thr} - x_{0}}{\sqrt{2} \sigma })}{2}
+\end{align*}
+
+Once we reach the uniform zone, the probability of an even being selected is proportional to the area of the rectangle, which increases linearly decreasing the threshold. Considering the normalization factor, it is straightfoward to fit the data with a model of this type:
+
+\begin{equation}
+\begin{split}
+N(att) = N_{0} \cdot \dfrac{1 + Erf(\dfrac{x_{thr} - x_{0}}{\sqrt{2} \sigma })}{2} \qquad \text{if} \quad att < C  \\
+N(att) = N(C) + m \cdot (att - C) \qquad \text{if} \quad att > C
+\end{split}
+\end{equation}
+
+For the detector B we have the following: 
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.7\textwidth]{Analysis/Fit_attenuation.pdf}
+\caption{•}pdf\end{figure}
+
 
 \subsection{Rates on lead}
 
@@ -150,19 +189,37 @@ For each monitor we use the \textit{curve fit} function of the python library \t
 \begin{figure}[hbtp]
 \centering
 \subfloat[][\emph{Asymmetries [ppm] vs X position [$mm$]}]
-	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_X.png}} \quad
+	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_XB.pdf}} \quad
 \subfloat[][\emph{Asymmetries [ppm] vs Y position[$mm$]}]
-	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_Y.png}} \\
+	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_YB.pdf}} \\
 \subfloat[][\emph{Asymmetries [ppm] vs $\theta_{x}$ angle [$rad$]}]
-	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_Xp.png}} \quad
+	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_XpB.pdf}} \quad
 \subfloat[][\emph{Asymmetries [ppm] vs $\theta_{y}$ angle [$rad$]}]
-	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_Yp.png}} \\
+	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_YpB.pdf}} \\
 \subfloat[][\emph{Asymmetries [ppm] vs E [$keV$]}]
-	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_E.png}} \quad
+	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_EB.pdf}} \quad
 \subfloat[][\emph{Asymmetries [ppm] vs I current [arb.unit]}]
-	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_I.png}} \quad
+	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_IB.pdf}} \quad
 \label{fig:averageAsym}
 \end{figure}
+
+\begin{figure}[hbtp]
+\centering
+\subfloat[][\emph{Asymmetries [ppm] vs X position [$mm$]}]
+	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_XA.pdf}} \quad
+\subfloat[][\emph{Asymmetries [ppm] vs Y position[$mm$]}]
+	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_YA.pdf}} \\
+\subfloat[][\emph{Asymmetries [ppm] vs $\theta_{x}$ angle [$rad$]}]
+	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_XpA.pdf}} \quad
+%\subfloat[][\emph{Asymmetries [ppm] vs $\theta_{y}$ angle [$rad$]}]
+%	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_YpB.pdf}} \\
+%\subfloat[][\emph{Asymmetries [ppm] vs E [$keV$]}]
+%	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_EB.pdf}} \quad
+%\subfloat[][\emph{Asymmetries [ppm] vs I current [arb.unit]}]
+%	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_IB.pdf}} \quad
+\label{fig:averageAsym}
+\end{figure}
+
 
 The error of each point is computed exploiting the same formula defined above (theory section; $N_{A/B}$ averaged pmt counts for each subevents and $n$ number of event in each interval):
 
@@ -177,18 +234,16 @@ From this plots we can check if the linear model is good enough to descrive the 
 \hline
 pmt: & B0 & B1 & B2 & unit \\ 
 \hline 
-$\frac{dA}{dX} $  & $-3.0 \pm 1.9$ & $-3.15 \pm 2$ & $-3.28 \pm 2$ & $ \frac{ppm}{\SI{}{\micro \meter}}$\\ 
+$\frac{dA}{dX} $  & $-66 \pm 37$ & $-65 \pm 37$ & $-80 \pm 47$ & $ \frac{ppm}{\SI{}{\micro \meter}}$\\ 
 \hline 
-$\frac{dA}{dY} $  & $-2.00 \pm 8$  & $-0.16 \pm 7$ & $-8.45 \pm 9$ & $\frac{ppm}{\SI{}{\micro \meter} }$ \\ 
+$\frac{dA}{dY} $  & $34 \pm 219$  & $ 79 \pm 233$ & $ -213 \pm 219$ & $\frac{ppm}{\SI{}{\micro \meter} }$ \\ 
 \hline 
-$\frac{dA}{d\theta_{y}}$ & $-6.18 \pm 31$  & $-9.17 \pm 32$ & $-11 \pm 31$ & $\frac{ppm}{\mu rad}$\\ 
+$\frac{dA}{d\theta_{y}}$ & $-416 \pm 1181$  & $ -443 \pm 1227$ & $-1237 \pm 1130$ & $\frac{ppm}{\mu rad}$\\ 
 \hline 
-$\frac{dA}{d\theta_{x}}$ & $-18 \pm 17$ & $ -18 \pm 17 $ & $-15 \pm 19$ & $\frac{ppm}{\mu rad}$ \\ 
+$\frac{dA}{d\theta_{x}}$ & $-672 \pm 297$ & $ -672 \pm 307 $ & $-845 \pm 380$ & $\frac{ppm}{\mu rad}$ \\ 
 \hline 
-$\frac{dA}{dE}$ & $3.9 \pm 16 $ & $9 \pm 16$ & $45 \pm 18 $ & $\frac{ppm}{\SI{}{\kilo \electronvolt}}$\\ 
-\hline 
-$\frac{dA}{dI}$ & $282 \pm 141$ & $301 \pm 128$ & $281 \pm 156$ & $arb. unit$ \\ 
-\hline 
+$\frac{dA}{dE}$ & $ -0.004 \pm 0.016 $ & $-0.011 \pm 0.016 $ & $ - 0.044 \pm 0.018 $ & $\frac{ppm}{\SI{}{\kilo \electronvolt}}$\\ 
+\hline
 \end{tabular} 
 \end{center}
 

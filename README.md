@@ -13,3 +13,4 @@
 	- [] fissare riunione con Anselm per discutere se modificare modello lineare o proporre tagli 
 	- [] Creare un ttree per analizzare i dati anche con root
 	- [] confrontare risultati del fit con i valori ottenuti da slowvariation beam
+	- [] fare stesso tipo di analisi che si è fatto su detector B anche per il detector A
