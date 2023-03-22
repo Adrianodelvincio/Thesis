@@ -24,7 +24,7 @@ Explain how we compute all the values for the data tree, the position of the bea
 The Nino board, which digitizes the signal from the PMTS, has two parameters which can be used to select the internal threshold of the discriminator, to cut the low signals and can be adjusted changing the settings of the DAQ program. These two parameters are \textit{Threshold} and \textit{Attenuation}. \textit{Threshold} means directly the charge value necessary for an impulse certain shape to be accepted by the signal discriminators. However the "physical" threshold can be also modified changing the \textit{attenuation} which act in this simple way:
 
 \begin{align*}
-physical_threshold = C * \frac{Threshold}{Attenuation}
+threshold_{physical} = C * \frac{Threshold}{Attenuation}
 \end{align*}  
 
 C is a costant which convert from arbitrary units to physical units that \textbf{for now is unknown}. For our purposes, we select threshold values and we modify only the attenuation values. 
