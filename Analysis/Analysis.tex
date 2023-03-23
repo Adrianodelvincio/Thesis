@@ -19,7 +19,7 @@ Here I have to explain the model used for describing the data, so the problem of
 Explain how we compute all the values for the data tree, the position of the beam on the target, the angle, the correlated-difference values...
 
 \section{Detectors test}
-\texttt{Explain the test of the two detectors in the lab, how we select the threshold, the correlation of the pmts and coincidence to select the threshold. Mention also that we observed two knees in the plot of counts vs. attenuation.}\\
+\textbf{Explain the test of the two detectors in the lab, how we select the threshold, the correlation of the pmts and coincidence to select the threshold. Mention also that we observed two knees in the plot of counts vs. attenuation.}\\
 
 The Nino board, which digitizes the signal from the PMTS, has two parameters which can be used to select the internal threshold of the discriminator, to cut the low signals and can be adjusted changing the settings of the DAQ program. These two parameters are \textit{Threshold} and \textit{Attenuation}. \textit{Threshold} means directly the charge value necessary for an impulse certain shape to be accepted by the signal discriminators. However the "physical" threshold can be also modified changing the \textit{attenuation} which act in this simple way:
 
@@ -30,6 +30,19 @@ threshold_{physical} = C * \frac{Threshold}{Attenuation}
 C is a costant which convert from arbitrary units to physical units that \textbf{for now is unknown}. For our purposes, we select threshold values and we modify only the attenuation values. 
 
 \section{Analysis}
+
+One of the main goal for this experiment was to measure the well know trasverse asymmetry of $^{12}C$, already measured before, as a test for the new electronic system. Previous measurements of the Transverse asymmetry have been performed for a carbon target. For this beam-time, the two spektrometers were placed at an angle such that the $Q^{2}$ values of the scattered electron is:
+
+\begin{flushleft}
+\begin{align*}
+& Spektrometer A : \qquad Q^{2} = 0.041337 \qquad \textnormal{without Cut} \\
+& Spektrometer A : \qquad Q^{2} = 0.0394513 \qquad \textnormal{with Cut} \\
+& Spektrometer B : \qquad Q^{2} = 0.0404771 \qquad \textnormal{without Cut} \\
+& Spektrometer B : \qquad Q^{2} = 0.0405843 \qquad \textnormal{with Cut} 
+\end{align*} 
+\end{flushleft}
+
+The $Q^{2}$ values is the same of the last measurement performed at MAMI, and is measured with and without rejecting the inelastic electrons. 
 
 \subsection{Alignment of the scattering plane}
 
@@ -114,18 +127,21 @@ From this we obtain the value $scaling_{E18} = -1595.2$, to obtain the physical 
 \caption{Plot for the physical quantities computed in the data tree, for two different current of the beam (on the left $\SI{20}{\micro \ampere}$, $\SI{15}{\micro \ampere}$ on the right)}
 \end{figure}
 
+
+
 \subsection{Calibration of the pmts}
 
-\texttt{Here it's important to show the plots I made during the beam time. I have to mention the Leo tecniques for the correct interpretation of counts vs attenuation.}\\
+\textbf{Here it's important to show the plots I made during the beam time. I have to mention the Leo tecniques for the correct interpretation of counts vs attenuation.}\\
 
 During the beam time, several scans in attenuation were performed, before switching MAMI to produce the polarized beam, to choose the best working point for the PMTS of the detectors. The same procedure used in the laboratory was followed, starting from low attenuation and raising up the values. It's possible to get a simple model to describe the particular shape of the following plot taking into account simple assumptions about the type of electrical noise that affect the Nino board, and the \textit{pdf} of the signal produced by the PMTS.\\
 
-The first assumption ("this is not a true assumption, Anselm has a plot of the digitalize charge that proves that") is that accumulated charge collected by the Nino board is well described by a gaussian distribution, the second one is that for small threshold the charge produced by the signals follows a step-function distribution. To explain, let's think that the distribution of the charge collected is of this type (the following figure is just an example, the values ​​do not describe the data collected):
+The main assumption ("this is not a true assumption, Anselm has a plot of the digitalize charge that proves that") is that the signal amplitude, in $\SI{}{\milli \volt}$ collected by the Nino board is well described by a gaussian distribution, and for signal with low amplitude, we expect to be well described by an uniform distribution. Just to visualize, let's suppose that the distribution of the signal amplitude collected is of this type (\ref{fig:PDF}) (the following figure is just an example, the values ​​do not describe the data collected):
 
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width = 0.40\textwidth]{Analysis/distribution.pdf}
 \caption{Example of the expected distribution of the PMTs output signal}
+\label{fig:PDF}
 \end{figure}
 
 The probability for a signal to pass the selection is equal to the probability of being in above the threshold, that is the complementary cumulative of the gaussian distribution (probability of being in the right tail):
@@ -143,12 +159,28 @@ N(att) = N(C) + m \cdot (att - C) \qquad \text{if} \quad att > C
 \end{split}
 \end{equation}
 
-For the detector B we have the following: 
+For the detector B we show the result assuming our model: 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width = 0.7\textwidth]{Analysis/Fit_attenuation.pdf}
-\caption{•}pdf\end{figure}
+\includegraphics[width = 0.5\textwidth]{Analysis/Fit_attenuation.pdf}
+\caption{pdf}
+\label{fig:FitAtt}
+\end{figure}
 
+From the fit we obtain three valus for the signal Peak, given in attenuaton units.
+We can check the idea behind this, visualizing the pmt count in a different way. In this plot (\ref{fig:Spectra}) there is a discrete differentiation of the data showed in (\ref{fig:FitAtt}), essentially divide neighboring counts by distance in attenuation. This plot represents roughly the signal spectra that of our pmts. 
+We can see that our assumption is not far from what we see, except for the fact that we are not able to identify the linear area. This is not very importat, sice we have to indenty properly a good point to select all the real signals from the scattered electrons, rejecting the noise. Furthermore, if we look at the plot (), we can understand this behaviour looking that the threshold does not scale linearly with changing the attenuation value, for high values of attenuation, the threshold falls quickly at zero.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale = 0.5]{Analysis/Bspectra.pdf}
+\caption{Recostructed spectra for Detector B, notice that we have \textit{Attenuation} values in the x axis, therefore right and left are swapped with respect to the graph \ref{fig:PDF}.}
+\label{fig:Spectra}
+\end{figure}
+ 
+
+ 
+From the NINO documentation, it's possible to confront these values with 
 
 \subsection{Rates on lead}
 
@@ -161,10 +193,10 @@ This section is straightforward. Basically I have to show the single plot of the
 \caption{Rates on lead Target, for Detector A (left)}
 \end{figure}
 
-\section{ $^{12}C$ asymmetry}
-
+\section{Asymmetry on Carbon}
+.
 \subsection{Autocalibration procedure}
-
+.
 \subsection{least square fit}
 
 When all the calibrations are performed, it is possible to proceed to generate the datafiles fot the fit program. (spiegare in dettaglio come è fatto il programma di analisi)\\
@@ -217,7 +249,7 @@ For each monitor we use the \textit{curve fit} function of the python library \t
 %	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_EB.pdf}} \quad
 %\subfloat[][\emph{Asymmetries [ppm] vs I current [arb.unit]}]
 %	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_IB.pdf}} \quad
-\label{fig:averageAsym}
+\label{fig:averageAsym2}
 \end{figure}
 
 
