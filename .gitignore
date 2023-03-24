@@ -2,7 +2,10 @@ Thesis.log
 Thesis.aux
 Thesis-frn.log
 Thesis-frn.pdf
-Thesis-frn.tex
+Thesis.bbl
+Thesis.blg
+Thesis.out
+Thesis.toc
 Appendix/appendix.aux
 ExperimentalSetup/Setup.tex
 ExperimentalSetup/Setup.log
