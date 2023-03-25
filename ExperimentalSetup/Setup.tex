@@ -32,7 +32,7 @@ explain how electrons are accelerated, and sent to different experiments.
 \subsection{Polarized Beam}
 {\bfseries Here a subsection to explain how the polarized electrons are produced. Important to mention the systematic error for the polarization mesurement (in our beam time we couldn't measure with Moller polarimeter, so this discussion is important for future experiment, however it's important to say something about it). Remember to explain how the spin are rotated to the transverse plane, and the $\frac{\lambda}{2}$}
 
-For the beam-normal single spin asymmetry a vertical polarized beam is necessary. At the MAMI electron accelerator is possible to produce a vertical polarized beam with energy in the range $\SI{180}{\mega \electronvolt} - \SI{855}{\mega \electronvolt}$ \cite{VerticalMami}. In this section the procedure to orient the beam vertically, following an explanation of how the degree of polarizarion of the beam is measured.
+For the beam-normal single spin asymmetry a vertical polarized beam is necessary. At the MAMI electron accelerator is possible to produce a vertical polarized beam with energy in the range $\SI{180}{\mega \electronvolt} - \SI{855}{\mega \electronvolt}$ \cite{Schlimme_2017}. In this section the procedure to orient the beam vertically, following an explanation of how the degree of polarizarion of the beam is measured.
 
 The electron source used at MAMI is made by a strained GaAs/GaAsP superlattice photocathode 
 illuminated by circular polarized light. A Pockels cell changes the helicity of the photons impinging on the electrons. The extracted electron has the same helicity of the incoming photon, let's suppose as an example:
@@ -124,6 +124,30 @@ Describe the two detectors we placed inside the spectrometers, the $Q^{2}$ for o
 \item small boxes for switching from new electronic read-out to the old electronics read-out (spectrometers DAQ)
 \end{itemize}
 
+\subsection{VFCs}
+
+6 parameters that describe the beam are needed to perform the experiment. The raw deta of the beam consist in the position in the $(x,y)$ plane, the incident angles on the target, the current and energy of the beam. All this values are collected using the already existing monitors. \\
+To collect the data from the monitors, single and multichannel, synchronous voltage-to-frequency converters (AD7742) are used. This devices contain an analog modulator that is able to convert the input voltage into an output pulse train, whose frequency is proportional to the input voltage. 
+
+\begin{wrapfloat}{figure}{I}{0pt}
+\includegraphics[width=0.5\textwidth]{ExperimentalSetup/Vfc.png}
+\caption{Frequency versus Voltage}
+\end{wrapfloat}
+
+The VFCs are powerd with an external tension of $\SI{5}{\volt}$, and a differential voltage input in the range ($-V_{ref}$, $V_{ref}$), where $V_{ref}$ is the reference value. Also a external signal, that is indicated with "CLKIN" is provived as a reference signal for the oscillator frequency.
+The analog input signal is sampled with by a switched capacitor, with a rate that is controlled by clock  that can be supplied externally, in our case we used a $\SI{6}{\mega \hertz}$. A scheme of the electronic circuit is drawn here (\textit{aggiungere figura}), the output of the Comparator  is a fixed width pulse (the pulse is initiated by the edge of the clock signal) with a frequency that goes from $0.5 \% \cdot f_{CLKIN}$ to $0.45 \% \cdot f_{CLKIN}$ \cite{VfcDatasheet}, where the first correspond to $\SI{0.0}{ \volt}$ in input and the second to $V_{ref}$. Neglecting possible systematic errors, the relation the output frequency and the input voltage is the following:
+
+\begin{equation}
+V_{in} = \frac{V_{ref}}{40 \% \cdot f_{CLKIN}} (f_{out} - 5\% f_{CLKIN})
+\end{equation}
+
+We control the $f_{CLKIN}$ with the period of the clock. The data are acquired counting the number of pulses that come from the comparator, so we can substitute to $f$ the number of pulses (the two quantities are proportional), and we end with:
+
+\begin{equation}
+V_{in} =  V_{ref}[2 \cdot \dfrac{N_{pulses} - 5 \% N_{CLKN}}{40 \% N_{CLKN}} - 1]
+\end{equation}
+
+\subsection{Nino board}
 The NINO board is our data acquisition system for the pmt counts. It is made by $32$ analog input channels and it'is power with $\pm \SI{5}{\volt}$. Each channel has an attenuator, and the signal pass through that before going to the Comparator, which compare the signal to the threshold. The Output signal is a Low-voltage differential signaling (LVDS). Each comparator can handle eight channel and for each of them it is possible to define a global threshold. With the current settings of NINO board, it is possible to change the threshold of each channel acting on another value, the attenuation, which decreases the value of the global threshold of each single channel. All the value that can be modified are 12 bit numbers, so a setting interval of $(0. ; 4095)$.
 
 \begin{figure}[hbtp]
@@ -136,3 +160,5 @@ The NINO board is our data acquisition system for the pmt counts. It is made by 
 
 Two Nino board are used in the experiment, one for detector A and one for detector B. In principle it is possible to use only 8 and 3 of the 32 channels the are ready to use, considering we have only 3 and 8 pmts to read out. However it is useful to split the analog output signal by the pmts and send it to 4 different channels. So, working with the attenuation value, we can define 4 different threshold values for each pmt. This is something that can improve the noise management. This will be implemented for the future experiments, nevertheless this was not done during our data collection.
 The way we selected the threshold is explained in the following chapter (Analysis).
+
+\subsection{Master Board}

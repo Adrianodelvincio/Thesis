@@ -35,10 +35,10 @@ One of the main goal for this experiment was to measure the well know trasverse 
 
 \begin{flushleft}
 \begin{align*}
-& Spektrometer A : \qquad Q^{2} = 0.041337 \qquad \textnormal{without Cut} \\
-& Spektrometer A : \qquad Q^{2} = 0.0394513 \qquad \textnormal{with Cut} \\
-& Spektrometer B : \qquad Q^{2} = 0.0404771 \qquad \textnormal{without Cut} \\
-& Spektrometer B : \qquad Q^{2} = 0.0405843 \qquad \textnormal{with Cut} 
+& Spektrometer A : \qquad Q^{2} = \SI{0.041337}{\giga \electronvolt} \qquad \textnormal{without Cut} \\
+& Spektrometer A : \qquad Q^{2} = \SI{0.0394513}{\giga \electronvolt} \qquad \textnormal{with Cut} \\
+& Spektrometer B : \qquad Q^{2} = \SI{0.0404771}{\giga \electronvolt} \qquad \textnormal{without Cut} \\
+& Spektrometer B : \qquad Q^{2} = \SI{0.0405843}{\giga \electronvolt} \qquad \textnormal{with Cut} 
 \end{align*} 
 \end{flushleft}
 
@@ -77,7 +77,7 @@ In the scheme \ref{fig:BeamLine} we easily compute the distance between the $Y_{
 c_{Y25} = \dfrac{d_{vertical} [\SI{}{\milli \meter}]}{ Y_{target}} 
 \end{equation}
 
-$c_{Y25}$ indicates the scaling factor of the monitor. 
+$c_{Y25}$ indicates the scaling factor of the monitor. With these values the Analysis program compute the correct beam position, and from that the incident angles in the $x,y$ directions, which are needed later for the analysis.
 
 \begin{figure}[hbtp]
 \centering
@@ -86,11 +86,14 @@ $c_{Y25}$ indicates the scaling factor of the monitor.
 \label{fig:HorizontalCalibration}
 \end{figure}
 
+All this procedure can be easely checked if we plot now the $X$ and $Y$ position for the same two runs of data acquired with the wires. After placing the scaling factors obtained in the standard configuration file, we run the analysis another time and the physical values were computed \ref{fig:CheckHori}
+
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=0.45\textwidth]{Analysis/XcheckB.png} 
 \includegraphics[width=0.45\textwidth]{Analysis/XcheckA.png}
-\caption{•}
+\caption{plot of the pmt Count against the physical values computed by the analysis program. Now the position of the three peaks correspond to the expected values measured for the target.}
+\label{fig:CheckHori}
 \end{figure}
 
 
@@ -240,6 +243,7 @@ In the following plots we decided to apply some cuts to the data, selecting only
 
 For each monitor we use the \textit{curve fit} function of the python library \text{scipy} to fit the data. Each Beam parameter is treated separately now, so in principle we are ignoring possible effect of correlation between the X-values (however, from the correlation matrix    \textit{write that somewhere} the effects are negligible)  
 
+\newpage
 \begin{figure}[hbtp]
 \centering
 \subfloat[][\emph{Asymmetries [ppm] vs X position [$mm$]}]
@@ -303,7 +307,68 @@ $\frac{dA}{dE}$ & $ -0.004 \pm 0.016 $ & $-0.011 \pm 0.016 $ & $ - 0.044 \pm 0.0
 
 
 \subsection{False asymmetries}
-Seems that is possible to obtain rough estimates of the beam related asymmetries with the results from the fit. For Energy and position it's achievable, while for the angles it's quite hard (in principle sounds possible to perform an analytic calculation of the asymmetry related to the incident beam angle, however Anselm told me that quite often those results are in disagrement with the observed even in the sign!).  
+{\bfseries Seems that is possible to obtain rough estimates of the beam related asymmetries with the results from the fit. For Energy and position it's achievable, while for the angles it's quite hard (in principle sounds possible to perform an analytic calculation of the asymmetry related to the incident beam angle, however Anselm told me that quite often those results are in disagrement with the observed even in the sign!).} \\
+
+Until now the values for the false asymmetries were threated as the parameters of the fit. In this section we will investigate how we can obtain another different exstimations, usefult to check the validity of all the process of analysis of the data. \\
+
+For $\frac{dA}{dX}$ and $\frac{dA}{dY}$, we conceptually exploit the possibility of varying the position of the beam on the target, as we did during one of the calibration phases. Using the same \textit{wobbler 16} we asked MAMI to slowly change the beam position on the X and Y monitor. The change in position has the effect to modify the rates for the two detector, and from them it's possible to extract exstimate the two false asymmetries related to the beam position. Now we will see how the two quantities are related.\\
+From the plot .. we see that the counts are scaling linearly with the beam position, so we assume that the $N$ are given by
+
+\begin{align*}
+N(x,...) = N_{0} + m \cdot (x - x_{0})
+\end{align*}
+
+it is clear that the linear model can't be alwaws good, at some point the electron will be deflected completely out of the detector, however for the small variation that the magnets are producing this can be assumed without risk. The we can try to compute the asymmetry for two different beam position $x_{1}$ and $x_{2}$:
+
+\begin{equation}
+\begin{split}
+Asym = \dfrac{N(x_{1}) - N(x_{2})}{N(x_{1}) + N(x_{2})} = \dfrac{N_{0} + m \cdot (x_{1} - x_{0}) - N_{0} - m \cdot (x_{2} - x_{0})}{N(x_{1}) + N(x_{2})} =  \dfrac{m}{2 N_{0} + m \cdot (x_{1} +  x_{2}) - 2m x_{0}}(x_{1} -  x_{2})
+\end{split}
+\end{equation}
+
+We can approximate the denominator deleting the term $ m \cdot (x_{1} +  x_{2})$ which should be small compared to $2N_{0}$. We end with:
+
+\begin{equation}
+Asym = \dfrac{m}{2N_{0} - 2mx_{0}}(x_{1} -  x_{2})
+\end{equation}
+
+The term in front of $(x_{1} - x_{2})$ can be compared to $\frac{dA}{dX}$. $x_{0}$ is arbitrary and can be set to 0. For $N_{0}$, the offset, we substitute the averaged value counts of each pmt for the polarized beam acquisitions ( we remind that the rate are collected during each $\SI{20}{\milli \second}$ time interval of each sub-event).\\
+The data are reported in the table below: \\
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline 
+Pmt & Detector A & Detector B \\ 
+\hline 
+pmt 0 & 84718 & 18925 \\ 
+\hline 
+pmt 1 & 96882 & 18815 \\ 
+\hline 
+pmt 2 & 80604 & 14807 \\ 
+\hline 
+pmt 3 & 65053 & \\ 
+\hline 
+pmt 4 & 45943 & \\ 
+\hline 
+pmt 5 & 46248 & \\ 
+\hline 
+pmt 6 & 37452 & \\ 
+\hline 
+pmt 7 & 25808 & \\ 
+\hline 
+\end{tabular} 
+\end{center}
+ 
+We report the values obtained with this new method ... 
+
+\begin{figure}[hbtp]
+\centering
+\subfloat[][\emph{Plot for slow variation in $x$ direction for detector B.}]
+{\includegraphics[scale=0.5]{Analysis/slowxVariation.pdf}}
+\subfloat[][\emph{Plot for slow variation in $x$ direction for detector B.}]{\includegraphics[scale=0.5]{Analysis/slowyVariation.pdf} }
+\end{figure}
+
+We can investigate also the asymmetries related to the beam energy. For this one we can exploit the theoretical expression for the Mott cross-section, taking the derivative ...
 
 \subsection{??Bootstrap??}
 
