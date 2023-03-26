@@ -126,7 +126,7 @@ Describe the two detectors we placed inside the spectrometers, the $Q^{2}$ for o
 
 \subsection{VFCs}
 
-6 parameters that describe the beam are needed to perform the experiment. The raw deta of the beam consist in the position in the $(x,y)$ plane, the incident angles on the target, the current and energy of the beam. All this values are collected using the already existing monitors. \\
+Some parameters which describe the beam are needed in order to take into account possible effect in the measure of the Trasverse asymmetry. The relevant data are the position in the $(x,y)$ plane, the incident angles on the target, the current and energy of the beam. All this values are collected using the already existing monitors. \\
 To collect the data from the monitors, single and multichannel, synchronous voltage-to-frequency converters (AD7742) are used. This devices contain an analog modulator that is able to convert the input voltage into an output pulse train, whose frequency is proportional to the input voltage. 
 
 \begin{wrapfloat}{figure}{I}{0pt}
@@ -134,7 +134,7 @@ To collect the data from the monitors, single and multichannel, synchronous volt
 \caption{Frequency versus Voltage}
 \end{wrapfloat}
 
-The VFCs are powerd with an external tension of $\SI{5}{\volt}$, and a differential voltage input in the range ($-V_{ref}$, $V_{ref}$), where $V_{ref}$ is the reference value. Also a external signal, that is indicated with "CLKIN" is provived as a reference signal for the oscillator frequency.
+The VFCs are powerd with an external tension of $\SI{5}{\volt}$, and a differential voltage input in the range ($-V_{ref}$, $V_{ref}$) is also applied. An external clock signal, that is indicated with "CLKIN" is provived as a reference signal for the oscillator frequency.
 The analog input signal is sampled with by a switched capacitor, with a rate that is controlled by clock  that can be supplied externally, in our case we used a $\SI{6}{\mega \hertz}$. A scheme of the electronic circuit is drawn here (\textit{aggiungere figura}), the output of the Comparator  is a fixed width pulse (the pulse is initiated by the edge of the clock signal) with a frequency that goes from $0.5 \% \cdot f_{CLKIN}$ to $0.45 \% \cdot f_{CLKIN}$ \cite{VfcDatasheet}, where the first correspond to $\SI{0.0}{ \volt}$ in input and the second to $V_{ref}$. Neglecting possible systematic errors, the relation the output frequency and the input voltage is the following:
 
 \begin{equation}
