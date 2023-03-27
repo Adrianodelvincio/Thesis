@@ -19,15 +19,24 @@ Here I have to explain the model used for describing the data, so the problem of
 Explain how we compute all the values for the data tree, the position of the beam on the target, the angle, the correlated-difference values...
 
 \section{Detectors test}
+
 {\bfseries Explain the test of the two detectors in the lab, how we select the threshold, the correlation of the pmts and coincidence to select the threshold. Mention also that we observed two knees in the plot of counts vs. attenuation.}\\
 
-The Nino board, which digitizes the signal from the PMTS, has two parameters which can be used to select the internal threshold of the discriminator, to cut the low signals and can be adjusted changing the settings of the DAQ program. These two parameters are \textit{Threshold} and \textit{Attenuation}. \textit{Threshold} means directly the charge value necessary for an impulse certain shape to be accepted by the signal discriminators. However the "physical" threshold can be also modified changing the \textit{attenuation} which act in this simple way:
+The Nino board, which digitizes the signal from the PMTS, has two parameters which can be used to select the internal threshold of the discriminator, to cut the low amplitude signals and can be adjusted changing the settings of the DAQ program. These two parameters are \textit{Threshold} and \textit{Attenuation}. \textit{Threshold} means directly the charge value necessary for an impulse certain shape to be accepted by the signal discriminators. However the "physical" threshold can be also modified changing the \textit{attenuation}. The relation between threshold and attenuation is not linear, but follows:
 
-\begin{align*}
-threshold_{physical} = C * \frac{Threshold}{Attenuation}
-\end{align*}  
+\begin{figure}[hbtp]
+ \centering
+ \includegraphics[scale=0.4]{Analysis/ThrvsAtt.png}
+ \caption{Threshold dependence against attenuation}
+ \end{figure}
 
-C is a costant which convert from arbitrary units to physical units that \textbf{for now is unknown}. For our purposes, we select threshold values and we modify only the attenuation values. 
+For our purposes, we select a common threshold values for all the pmts, and we decided to change only the attenuation values.\\
+Before the Beam time, some test of the two detector were performed, to check that the pmts were still working and that the new electronic was able to count properly the pulses and store the data. For this studies, we didn't have a radioactive sources that we could use, so we moved the two detectors in the workshop of the accelerator, using the cosmic ray as a probe.
+
+\subsection{Rate of Cosmic rays}
+
+Knowing that the expected number of event for cosmic rays is about $1 \frac{event}{\SI{}{\centi \meter\squared} \SI{}{\second}$ we can compute the expected values for the number of events. We decided to take 1 minute long acquisition for both the two detectors, this leads to $70$ expected events for detector B  and  $100$ events for detector A.  
+
 
 \section{Analysis}
 

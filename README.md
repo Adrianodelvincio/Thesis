@@ -22,3 +22,4 @@
 - [] Spiegare a grandi linee come funzionano i Monitor del fascio, Resistenza di Shunt e eccitazioni nelle cavità risonanti
 - [] Capire perchè le asimmetrie calcolata con lo slowvariation e dal fit sono in disaccordo per svariati ordini di grandezza
 - [] Iniziare ad impostare l'introduzione, dalle stelle di neutroni all'asimmetria trasversa
+- [] completare paragrafo sui test in laboratorio dei due detector
