@@ -35,7 +35,7 @@ Before the Beam time, some test of the two detector were performed, to check tha
 
 \subsection{Rate of Cosmic rays}
 
-Knowing that the expected number of event for cosmic rays is about $1 \frac{event}{\SI{}{\centi \meter\squared} \SI{}{\second}$ we can compute the expected values for the number of events. We decided to take 1 minute long acquisition for both the two detectors, this leads to $70$ expected events for detector B  and  $100$ events for detector A.  
+Knowing that the expected number of event for cosmic rays is about $1 \frac{event}{\SI{}{\centi \meter\squared} \SI{}{\second}}$ we can compute the expected values for the number of events. We decided to take 1 minute long acquisition for both the two detectors, this leads to $70$ expected events for detector B  and  $100$ events for detector A.  
 
 
 \section{Analysis}
@@ -231,7 +231,18 @@ From the NINO documentation, it's possible to confront these values with
 .
 \subsection{Autocalibration procedure}
 .
-\subsection{least square fit}
+\subsection{Data selection and Fit}
+
+After all the calibration are performed, the analysis program is ready to produce the datafiles suitable to analyze the asymmetry data for Carbon. \\
+The Data file that are produced from the binary files are simply files in txt format, where the data are stored in columns. Before proceeding with the linear fit, however, it is necessary to visualize the data to check that there are no anomalous behaviors. In fact the data can contain moments of loss of the beam burrent and sudden interruptions, loss of polarization of the beam and even setting errors by MAMI operators can affect the experiment. Carbon data were taken from November 2nd to 4th, and consist of $26$ runs, each $1$ hour long.\\
+The first step is to observe the pmt counts and the current trend, in order to be able to identify sudden interruptions of the beam. Here we show the trend over time for a series of 13 runs, taken from the 3rd December: 
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.75\textwidth]{Analysis/BeamExample.pdf}
+\caption{.}
+\label{fig:BeamTime}
+\end{figure}
 
 When all the calibrations are performed, it is possible to proceed to generate the datafiles fot the fit program. (spiegare in dettaglio come è fatto il programma di analisi)\\
 For a better visualization of the data, especially to observe the dependence of the asymmetry on the Beam parameters measured, it is useful to take the average asymmetry at regular intervals. From the raw plots of the asymmetries (see below \ref{fig:asyvsparam}), it is clear that the statistical error associated to the asymmetry is the main one, and it's not possible to identify a linear dependence.

@@ -14,7 +14,8 @@
 - [x] inserire i valori di Q^2
 - [x] studiare la documentazione della NINO board, da quella si può dire qualcosa sul segnale
 
-- [] controllare le run sospette senza stabilizzazione, può aiutare a capire meglio il sistematico (?)
+- [x] controllare le run sospette senza stabilizzazione, può aiutare a capire meglio il sistematico (?)
+- [] controllare le run che potrebbero non avere il fascio polarizzato
 - [] impostare il ricampionamento
 - [] la correlazione Asimmetria e parametri del fascio non è irrilevante, bisogna investigare- [] migliorare l'output del programma
 - [] confrontare i risultati con curve_fit di scipy- [] preparare documentazione su fit.cc e fit.h da consegnare ad Anselm
