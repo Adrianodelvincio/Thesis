@@ -12,11 +12,82 @@
 
 \section{Description of the process}
 
-Explain the scattering process we are studying (at least one figure to visualize the kinematics of the scattering). Mention the link between this process and time-reversal operator. Add two figures for elastic and inelastic scattering.
+{\bfseries Explain the scattering process we are studying (at least one figure to visualize the kinematics of the scattering). Mention the link between this process and time-reversal operator. Add two figures for elastic and inelastic scattering.} \\
+
+The Beam Normal single spin asymmetry, which we will refer for brevity as Transverse asymmetry, originates from the interference of two scattering process. For the purpose of this thesis, we will present the case of electron scattering against a spin $0$ target \cite{Gorchtein_2008}.\\
+
+To understand why the interference of this two scattering amplitude give rise to an asymmetry, we first have to look at the kinematic of the experiment: 
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.4\textwidth]{figures/Kinematic.jpg}
+\caption{•}
+\end{figure}
+
+Where all the momenta are measured respect to the center of mass frame. In the figure we can confront the two situation before and after applying the Time-reversal operator, $\hat{\Theta}$. Looking at the picture we can understand that : 
+
+\begin{itemize}
+\item Before applying $\hat{\Theta}$, we have the incident electron with $\vec{k}$ momenta and the nucleus with $\vec{P}$ momenta, after applying $\hat{\Theta}$ we have that the incident/outgoing electron and the incident/outgoing nucleus are exchanged.
+\item The $\hat{\Theta}$ operator acts also on the spin of the electron. Because we are considering process where the spin doesn't flip, the two situations are not equivalent.
+\item Considering that the process is elastic, the kinematic is the same, taking $\vec{p}$ and $\vec{k}$ as the initial particle momenta, or $\vec{p}'$ and $\vec{k}'$. 
+
+\end{itemize}
+
+The time-reversal operator seems to connect the two different cases of UP and DOWN polarized electron. Our effort is to measure the asymmetry between the two cross section:
+
+\begin{equation}
+A = \frac{\sigma_{\uparrow} - \sigma_{\downarrow}}{\sigma_{\uparrow} + \sigma_{\downarrow}}
+\end{equation}
+
+And it's particularly clear that a non-zero asymmetry depends on how the time-reversal act on the elastic amplitude of the process. \\
+With this idea, let's see in more detail the $\hat{\Theta}$. We know that $\hat{\Theta}$ is an antiunitary operator that can be always seen as:
+
+\begin{align*}
+\hat{\Theta} = U \cdot K
+\end{align*} 
+Where $U$ is an unitary operator, while $K$ is the complex conjugation operator that generates the complex conjugate of each coefficient in front of it. If we cosider a ket describing a system we have that:
+
+\begin{equation}
+Kc \ket{\alpha} = c^{*} K \ket{\alpha}
+\end{equation}
+
+Now, let's consider $H$ as the hamiltonian of our system. We want to apply the $\hat{\Theta}$ operator. We can now use the assumption that the hamiltonian consist of two term, which correspond to the two different scattering process. Because of the electromagnetic interaction conserve $CP$, so also $T$ is conserved, we know in advance that each piece of the hamiltonian commute with $\hat{\Theta}$. Now let's see what happen for an hamiltonian which has an imaginary part:
+
+\begin{equation}
+H = H_{R} + i H_{Im} \quad ; \quad \hat{\Theta} H \hat{\Theta}^{-1}= \hat{\Theta}H_{R} \hat{\Theta}^{-1} + \hat{\Theta} i H_{Im} \hat{\Theta}^{-1} \Rightarrow H_{R} - i H_{Im} \neq H
+\end{equation}
+
+what we understand from these simpe calculation is that to give rise to an asymmetry, we expect an imaginary part of the scattering amplitude different from zero.\\
+At the $\alpha$ leading order, the two process of the electron-Nucleus scattering that give rise to the asymmetry involve the exchange of one-photon-exchange (OPE) and two-photon-exchange (TPE). The Feynman diagrams that describes the processes are the following: 
+
+\begin{figure}
+\[
+\feynmandiagram [scale = 1, transform shape][baseline = (h), horizontal = d to j]{
+	a [particle = \(e^{-}\)] -- [fermion, thick] c -- [fermion, thick ] f -- [fermion, thick] g [particle = \(e^{-}\)],
+	c -- [photon, edge label = \(\gamma\)] d [blob],
+	f -- [photon, edge label = \(\gamma\)] j [blob],
+	h [particle = \(C^{12}\)]-- d -- [fermion, thick] j -- k [particle = \(C^{12}\)] ,
+	};
+\quad
+\feynmandiagram [scale = 1, transform shape][ vertical = c to d]{
+	a [particle = \(e^{-}\)] -- [fermion, thick] c -- [fermion, thick] g [particle = \(e^{-}\)],
+	c -- [photon, edge label' = \(\gamma\), momentum = {[arrow style = red]\(k\)}] d [blob],
+	h [particle = \(C^{12}\)] -- [fermion, thick] d -- [fermion, thick] j [particle = \(C^{12}\)],
+	};
+\]
+\caption{TPE and OPE diagrams in electron nucleus scattering.}
+\end{figure}
+
+
+A seguire come si scrive l'ampiezza per il termine elastico ed inelastico, aggiungere in appendice come viene fatto l'integrale sullo spazio delle fasi e stop. 
+
+
 
 \subsection{Elastic scattering}
 
-Write the amplitude for the elastic (how to manipulate expression, maybe in the appendix). 
+{ \bfseries Write the amplitude for the elastic (how to manipulate expression, maybe in the appendix). }
+
+
 
 \subsection{Inelastic scattering}
 
