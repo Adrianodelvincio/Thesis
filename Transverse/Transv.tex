@@ -98,6 +98,42 @@ Present the theoretical formula for the Transverse asymmetry, and comment on ene
 \section{State of the Experiment}
 
 Write down the formula $\frac{\sigma_{\uparrow} - \sigma_{\downarrow}}{\sigma_{\uparrow} + \sigma_{\downarrow}}$. Hints at how to measure the Transverse asymmetry (remember to mention we have a polarized beam against a unpolarized target). Explain the expected error for the recostructed asymmetry. Furthemore talk about the last mesurements obtained by the other collaborations, an outlook of the current situation. Maybe add also how we proceed to measure the transverse asymmetry, so the structure of the event, polarities patterns...
+\bigskip
 
+We have seen so far how the Transverse Asymmetry is related to the interference between two scattering amplitude, and the theoretical model used to describe the process. The goal from an experimental point of view is to measure this quantity. The challenge is to obtain a valid measure of $A_{n}$, which is of the order of $20$ part per million (ppm), taking into consideration all the possible effects that can interfere. To measure $A_{n}$, the straighfoward method is to prepare an electron beam, with polarized electron, and send it to a fixed target. The scattered electrons are then collected by a detector placed at a certain angle, and now it's possible to obtain the trasverse asymmetry applying the formula:
 
+\begin{equation}
+A_{} (Q,p) = \dfrac{N_{\uparrow}(Q) - N_{\downarrow}(Q)}{N_{\uparrow}(Q) + N_{\downarrow}(Q)} \cdot (\frac{1}{p})   
+\end{equation} 
 
+where we have explained the dependence on the transmitted impulse, on the degree of polarization of the beam.
+In an experiment of this type, several requests are necessary to have an effective data acquisition:
+
+\begin{itemize}
+\item The accelerator must produce a polarized beam, stable over the time, with an high polarization percentage, in order to amplify the effect.
+\item The Beam energy needs to be quite stable, and should not depend on the Polarization state of the electrons. A change in the Beam energy associated with the polarization state, can lead to a different count rate for $N_{\uparrow}$ and $N_{\downarrow}$, would make a contribution that would be added to that of the physical process
+\item The beam must be correctly alligned with the target, and stable. Again if the position of the target changes accordin to the polarization of the electrons, it will produce another contribution to the total asymmetry.
+\item The beam current should not depend on the polarization state of the electrons. If the beam source depends on the polarization, we will have a difference in the event rate and then another false asymmetry.
+\item it's necessary to reject possible double elastic scattering events, which may contribute to the total asymmetry. 
+\end{itemize}
+
+All this demands can be satisfied with an accelerator that has stabilization devices with great precision and that can sustain high beam intensities. This last request is necessary to accumulate enough statistics to measure the transvere asymmetry with an accuracy about 1 ppm, in view of the future PV experiments. We can quantify how the statistical error varies according to the amount of data avaible. With the quite general assumption that the measured rate $N_{\uparrow,\downarrow}$ are gaussian distributed variables, we can compute the expected variance of $A_{n}$:
+
+\begin{equation}
+Var[A_{n}] = \dfrac{1 - A^{2}}{N_{\uparrow} + N_{\downarrow}} 
+\end{equation}
+
+This is the variance associated to a single measurement of the transverse asymmetry. As is well known, the variance scales as $\frac{1}{n}$ as $n$, the number of measures, increases.
+Beacause the $A_{n}$ is expected to be quite small, we can approximate the above formula:
+\begin{align*}
+V[A_{n}] = \dfrac{1}{2N \cdot n}
+\end{align*}
+
+The error associated to the recostructed asymmetry is the square root of the above quantity. If we impose that the error must be $\le 1ppm$ we can easily obtain that the quantity $n\cdot N$:
+
+\begin{align*}
+n\cdot N \le \frac{1}{2} \cdot 10^{12}
+\end{align*} 
+
+We will see later that achievable rates $N_{\uparrow,\downarrow}$ are in the range (20000,100000) for a carbon target. This number can not be increased at will by acting on the beam current. The first reason is obivios: the accelator and the beam source can handle only a certain amount of electrons before loosing their characteristics, furthermore a beam with great intensity for an extended periods of time can damage the carbon target, up to the risk of melting it. 
+Another idea might be to increase the thickness of the target, to take advantage of the larger cross section. However this does not take into account that by doing so the number of double scattering event is increased. To avoid this the scientific community that deals with these nuclear physics measurements respect the convenction that the target thikness should be less than the $10 \%$ of the radiation lenght of the material.

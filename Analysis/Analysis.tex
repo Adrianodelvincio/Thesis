@@ -31,11 +31,13 @@ The Nino board, which digitizes the signal from the PMTS, has two parameters whi
  \end{figure}
 
 For our purposes, we select a common threshold values for all the pmts, and we decided to change only the attenuation values.\\
-Before the Beam time, some test of the two detector were performed, to check that the pmts were still working and that the new electronic was able to count properly the pulses and store the data. For this studies, we didn't have a radioactive sources that we could use, so we moved the two detectors in the workshop of the accelerator, using the cosmic ray as a probe.
+Before the Beam time, some test with the two detectors were performed, to check that the pmts were still working after some years of inactivity, and that the new electronic was able to count properly the pulses and store the data. For this studies, we didn't have a radioactive sources to employ, so we moved the two detectors in the workshop of the accelerator, and we use the cosmic rays rate as a probe. 
 
-\subsection{Rate of Cosmic rays}
+Knowing that the expected number of event for cosmic rays is about $1 \frac{event}{\SI{}{\centi \meter\squared} \SI{}{\second}}$ we can compute the expected values for the number of events. We decided to take 1 minute long acquisition for both the two detectors, this leads to $70$ expected events for detector B  and  $100$ events for detector A.  \smallskip
 
-Knowing that the expected number of event for cosmic rays is about $1 \frac{event}{\SI{}{\centi \meter\squared} \SI{}{\second}}$ we can compute the expected values for the number of events. We decided to take 1 minute long acquisition for both the two detectors, this leads to $70$ expected events for detector B  and  $100$ events for detector A.  
+The first step is to select a good point of work for the threshold. So, fixing the value of the threshold parameter for the NINO board, we took several acquisitions, each of them one minute long, increasing each time the attenuation. We powered the pmts with a negative voltage around $ \SI{-1000}{\volt}$, as suggested in the datasheets, and covered the cherenkov detector with a shielding blanket, to avoid ambient light simulating a signal.
+
+We observed a small knee in the plot, around the zone of 580 − 600 of attenuation, where the number of counts was almost costant, roughly equal to the number of expected events from muons hitting the detector. 
 
 
 \section{Analysis}
