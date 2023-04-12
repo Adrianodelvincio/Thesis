@@ -20,7 +20,7 @@ Explain how we compute all the values for the data tree, the position of the bea
 
 \section{Detectors test}
 
-{\bfseries Explain the test of the two detectors in the lab, how we select the threshold, the correlation of the pmts and coincidence to select the threshold. Mention also that we observed two knees in the plot of counts vs. attenuation.}\\
+{\bfseries Explain the test of the two detectors in the lab, how we select the threshold, the correlation of the pmts and coincidence to select the threshold. Mention also that we observed two knees in the plot of counts vs. attenuation.}
 
 The Nino board, which digitizes the signal from the PMTS, has two parameters which can be used to select the internal threshold of the discriminator, to cut the low amplitude signals and can be adjusted changing the settings of the DAQ program. These two parameters are \textit{Threshold} and \textit{Attenuation}. \textit{Threshold} means directly the charge value necessary for an impulse certain shape to be accepted by the signal discriminators. However the "physical" threshold can be also modified changing the \textit{attenuation}. The relation between threshold and attenuation is not linear, but follows:
 
@@ -172,8 +172,7 @@ From this we obtain the value $scaling_{E18} = -1595.2$, to obtain the physical 
 
 {\bfseries Here it's important to show the plots I made during the beam time. I have to mention the Leo tecniques for the correct interpretation of counts vs attenuation.}
 
-During the beam time, several scans in attenuation were performed, before switching MAMI to produce the polarized beam, to choose the best working point for the PMTS of the detectors. The same procedure used in the laboratory was followed, starting from low attenuation and raising up the values. It's possible to get a simple model to describe the particular shape of the following plot taking into account simple assumptions about the type of electrical noise that affect the Nino board, and the \textit{pdf} of the signal produced by the PMTS.\\
-
+During the beam time, several scans in attenuation were performed, before switching MAMI to produce the polarized beam, to choose the best working point for the PMTS of the detectors. The same procedure used in the laboratory was followed, starting from low attenuation and raising up the values. It's possible to get a simple model to describe the particular shape of the following plot taking into account simple assumptions about the type of electrical noise that affect the Nino board, and the \textit{pdf} of the signal produced by the PMTS.
 The main assumption ("this is not a true assumption, Anselm has a plot of the digitalize charge that proves that") is that the signal amplitude, in $\SI{}{\milli \volt}$ collected by the Nino board is well described by a gaussian distribution, and for signal with low amplitude, we expect to be well described by an uniform distribution. Just to visualize, let's suppose that the distribution of the signal amplitude collected is of this type (\ref{fig:PDF}) (the following figure is just an example, the values ​​do not describe the data collected):
 
 \begin{figure}[hbtp]
@@ -235,17 +234,75 @@ From the NINO documentation, it's possible to confront these values with
 \subsection{Data selection and Fit}
 
 After all the calibration are performed, the analysis program is ready to produce the datafiles suitable to analyze the asymmetry data for Carbon. \\
-The Data file that are produced from the binary files are simply files in txt format, where the data are stored in columns. Before proceeding with the linear fit, however, it is necessary to visualize the data to check that there are no anomalous behaviors. In fact the data can contain moments of loss of the beam burrent and sudden interruptions, loss of polarization of the beam and even setting errors by MAMI operators can affect the experiment. Carbon data were taken from November 2nd to 4th, and consist of $26$ runs, each $1$ hour long.\\
-The first step is to observe the pmt counts and the current trend, in order to be able to identify sudden interruptions of the beam. Here we show the trend over time for a series of 13 runs, taken from the 3rd December: 
+The Data file that are produced from the binary files are simply files in txt format, where the data are stored in columns. Before proceeding with the linear fit, however, it is necessary to visualize the data to check that there are no anomalous behaviors. In fact the data can contain moments of loss of the beam burrent and sudden interruptions, loss of polarization of the beam and even setting errors by MAMI operators can affect the experiment. Carbon data were taken from November 2nd to 4th, and consist of $28$ runs, each $1$ hour long.
+The first step is to observe the pmt counts and the current trend, in order to be able to identify sudden interruptions of the beam. Here we show the trend over time for the series runs: 
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width = 0.75\textwidth]{Analysis/BeamExample.pdf}
-\caption{.}
-\label{fig:BeamTime}
+\subfloat[][\emph{Pmt count trend versus time.In black A0, in green B0} \label{fig::CountTrend}]{
+\includegraphics[width = 0.45\textwidth]{Analysis/BeamExample.pdf}}
+\subfloat[][\emph{Asymmetry trend for pmt A0} \label{fig::AsymTrend}]{
+\includegraphics[width = 0.45\textwidth]{Analysis/AsymmetryTrend.pdf}}
 \end{figure}
 
-When all the calibrations are performed, it is possible to proceed to generate the datafiles fot the fit program. (spiegare in dettaglio come è fatto il programma di analisi)\\
+This plot show that after 10 h of data acquisition the Pmt counts (\ref{fig::CountTrend}) dropped rapidly. If we show the current trend over the time (\ref{fig::CurrentTrend}) we do not see a corresponding decrease in beam intensity. Also the $x,y$ position (\ref{fig::PositionTrend}) and the energy monitor of the beam do not show a strange behavior. So we reject the possibility that at some point one of the stabilization device of the beam stop working. One of the possibilities is that something happen inside the two spectrometers. From the pmt counts we can suggest that the scattered electrons were not hitting our fused-silica detector,
+in fact for pmt B0 we observe roughly 0 counts, and for pmt A0 $20000$ counts, which is compatible with the noisy offset of that pmt. This consideration strongly suggest as to reject those data from the analysis.\\
+Apart from this, we observe in (\ref{analysis}) two steepy variations of the asymmetry around $13.5 h$ and $19 h$. For these data is quite simple to explain why should be rejected: we observe the same steepy variations also for the positions, so in this case the beam was not correctly aligned to the target.
+
+\begin{figure}[hbtp]
+\centering
+\subfloat[][\emph{Current trend over time.} \label{fig::CurrentTrend}]{
+\includegraphics[width = 0.45 \textwidth]{Analysis/CurrentTrend.pdf}}
+\subfloat[][\emph{$X,Y$ beam position over time} \label{fig::PositionTrend}]{
+\includegraphics[width = 0.45\textwidth]{Analysis/XYtrend.pdf} }
+\end{figure}
+
+After this first data selection, we check the correlated-difference data, which will be later used as variables for the fit. We produced histograms for all this quantites, that we remember are computed by the analysis program with the formula:
+
+\begin{align*}
+\delta x =  \frac{(x_{up,1} + x_{up,2})}{2} - \frac{(x_{down,1} + x_{down,2})}{2}
+\end{align*}
+
+We expect, if the stabilization of the beam is correctly set, that those quantities are gaussian distributed. A maximum likelihood fit with a Gaussian model is performed for each beam parameter, with Likelihood Ratio for the goodness of fit (gof). The statistic for the gof is:
+
+\begin{align*}
+\lambda(x) = 2 \sum_{i}^{n} (f_{i}(\mu) - k_{i}(1 + log(\frac{f_{i}(\mu)}{k_{i}})))
+\end{align*}  
+
+$\mu$ are the parameters of the \textit{pdf}, that are mean and variance of the gaussian, and $f_{i}(\mu)$ and $k_{i}$ are respectively the expected value for the i-nth bin and the observed value for the i-nth bin.
+
+\begin{figure}
+\centering 
+\subfloat[][\emph{$X$ position correlated difference}]{
+\includegraphics[width = 0.45\textwidth]{Analysis/X.pdf}} 
+\subfloat[][\emph{$Y$ position correlated difference}]{
+\includegraphics[width = 0.45\textwidth]{Analysis/Y.pdf}}\\
+\subfloat[][\emph{$\theta_{x}$ correlated difference}]{
+\includegraphics[width = 0.45\textwidth]{Analysis/Xp.pdf}}
+\subfloat[][\emph{$\theta_{y}$ correlated difference}]{
+\includegraphics[width = 0.45\textwidth]{Analysis/Yp.pdf}}\\
+\subfloat[][\emph{Energy correlated difference}]{
+\includegraphics[width = 0.45\textwidth]{Analysis/ENMO.pdf}}
+\end{figure}
+
+Looking at the histograms, we see that the beam correlated-difference values are centered around zero, the result are reported below:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline 
+\rule[-1ex]{0pt}{2.5ex} & $X [\mu m]$ & $Y[\mu m]$ & $Xp [\mu rad]$ & $Yp [\mu rad]$ & $E [eV]$ \\ 
+\hline 
+\rule[-1ex]{0pt}{2.5ex} $\mu$ & $1.31 \cdot 10^{-3}$ & $2.4 \cdot 10^{-4}$ & $3.2 \cdot 10^{-8} $ & $3.6 \cdot 10^{-9}$ & $0.0013$ \\ 
+\hline 
+\rule[-1ex]{0pt}{2.5ex} $sigma$ & $3.7 \cdot 10^{-1}$ & $2.9 \cdot 10^{-2}$ & $ 1.9 \cdot 10^{-5} $ & $6.5 \cdot 10^{-6}$ & $0.38$ \\ 
+\hline 
+\end{tabular} 
+\end{center}
+
+these results are encouraging, the stabilization of the beam has meant that only small differences are observed within an event for each monitor. This means that, unless the values for the false asymmetries are not very large, the effect of the beam variation are small.
+
+When all the calibrations are performed, it is possible to proceed to generate the datafiles fot the fit program.
+
 For a better visualization of the data, especially to observe the dependence of the asymmetry on the Beam parameters measured, it is useful to take the average asymmetry at regular intervals. From the raw plots of the asymmetries (see below \ref{fig:asyvsparam}), it is clear that the statistical error associated to the asymmetry is the main one, and it's not possible to identify a linear dependence.
 
 \begin{figure}[hbtp]
@@ -328,11 +385,11 @@ $\frac{dA}{dE}$ & $ -0.004 \pm 0.016 $ & $-0.011 \pm 0.016 $ & $ - 0.044 \pm 0.0
 
 
 \subsection{False asymmetries}
-{\bfseries Seems that is possible to obtain rough estimates of the beam related asymmetries with the results from the fit. For Energy and position it's achievable, while for the angles it's quite hard (in principle sounds possible to perform an analytic calculation of the asymmetry related to the incident beam angle, however Anselm told me that quite often those results are in disagrement with the observed even in the sign!).} \\
+{\bfseries Seems that is possible to obtain rough estimates of the beam related asymmetries with the results from the fit. For Energy and position it's achievable, while for the angles it's quite hard (in principle sounds possible to perform an analytic calculation of the asymmetry related to the incident beam angle, however Anselm told me that quite often those results are in disagrement with the observed even in the sign!).}
 
-Until now the values for the false asymmetries were threated as the parameters of the fit. In this section we will investigate how we can obtain another different exstimations, usefult to check the validity of all the process of analysis of the data. \\
+Until now the values for the false asymmetries were threated as the parameters of the fit. In this section we will investigate how we can obtain another different exstimations, usefult to check the validity of all the process of analysis of the data.
 
-For $\frac{dA}{dX}$ and $\frac{dA}{dY}$, we conceptually exploit the possibility of varying the position of the beam on the target, as we did during one of the calibration phases. Using the same \textit{wobbler 16} we asked MAMI to slowly change the beam position on the X and Y monitor. The change in position has the effect to modify the rates for the two detector, and from them it's possible to extract exstimate the two false asymmetries related to the beam position. Now we will see how the two quantities are related.\\
+For $\frac{dA}{dX}$ and $\frac{dA}{dY}$, we conceptually exploit the possibility of varying the position of the beam on the target, as we did during one of the calibration phases. Using the same \textit{wobbler 16} we asked MAMI to slowly change the beam position on the X and Y monitor. The change in position has the effect to modify the rates for the two detector, and from them it's possible to extract exstimate the two false asymmetries related to the beam position. Now we will see how the two quantities are related.
 From the plot .. we see that the counts are scaling linearly with the beam position, so we assume that the $N$ are given by
 
 \begin{align*}
@@ -354,7 +411,7 @@ Asym = \dfrac{m}{2N_{0} - 2mx_{0}}(x_{1} -  x_{2})
 \end{equation}
 
 The term in front of $(x_{1} - x_{2})$ can be compared to $\frac{dA}{dX}$. $x_{0}$ is arbitrary and can be set to 0. For $N_{0}$, the offset, we substitute the averaged value counts of each pmt for the polarized beam acquisitions ( we remind that the rate are collected during each $\SI{20}{\milli \second}$ time interval of each sub-event).\\
-The data are reported in the table below: \\
+The data are reported in the table below:
 
 \begin{center}
 \begin{tabular}{|c|c|c|}

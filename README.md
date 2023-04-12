@@ -15,12 +15,19 @@
 - [x] studiare la documentazione della NINO board, da quella si può dire qualcosa sul segnale
 
 - [x] controllare le run sospette senza stabilizzazione, può aiutare a capire meglio il sistematico (?)
-- [] controllare le run che potrebbero non avere il fascio polarizzato
-- [] impostare il ricampionamento
-- [] la correlazione Asimmetria e parametri del fascio non è irrilevante, bisogna investigare- [] migliorare l'output del programma
-- [] confrontare i risultati con curve_fit di scipy- [] preparare documentazione su fit.cc e fit.h da consegnare ad Anselm
+- []  ricontrollare la procedura di autocalibration, i valori di Anselm non sembrano essere corretti. (Conteggi negativi, impossibile)
+- []  completare paragrafo teoria contributo elastico.
+- []  iniziare paragrafo contributo intermedio anelastico.
+- [] controllare le run che potrebbero non avere il fascio polarizzato.
+- [] impostare il ricampionamento.
+- [] la correlazione Asimmetria e parametri del fascio non è irrilevante, bisogna investigare
+- [x] migliorare l'output del programma fit.cc, inserire unit test e cambiare formato dati
+- [] confrontare i risultati con curve_fit di scipy
+- [] preparare documentazione su fit.cc e fit.h da consegnare ad Anselm
 - [] Creare un ttree per analizzare i dati anche con root
 - [] Spiegare a grandi linee come funzionano i Monitor del fascio, Resistenza di Shunt e eccitazioni nelle cavità risonanti
 - [] Capire perchè le asimmetrie calcolata con lo slowvariation e dal fit sono in disaccordo per svariati ordini di grandezza
 - [] Iniziare ad impostare l'introduzione, dalle stelle di neutroni all'asimmetria trasversa
 - [] completare paragrafo sui test in laboratorio dei due detector
+- [] chiedere ad Anselm documentazione sulla MasterBoard
+
