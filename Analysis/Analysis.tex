@@ -57,8 +57,8 @@ The Nino board, which digitizes the signal from the PMTS, has two parameters whi
 
 \begin{figure}[hbtp]
  \centering
- \includegraphics[scale=0.4]{Analysis/ThrvsAtt.png}
- \caption{Threshold dependence against attenuation}
+ \subfloat[][\emph{Threshold dependence against attenuation} \label{NinoDocu}]{
+ \includegraphics[scale=0.4]{Analysis/ThrvsAtt.png}}
  \end{figure}
 
 For our purposes, we select a common threshold values for all the pmts, and we decided to change only the attenuation values.\\
@@ -68,8 +68,61 @@ Knowing that the expected number of event for cosmic rays is about $1 \frac{even
 
 The first step is to select a good point of work for the threshold. So, fixing the value of the threshold parameter for the NINO board, we took several acquisitions, each of them one minute long, increasing each time the attenuation. We powered the pmts with a negative voltage around $ \SI{-1000}{\volt}$, as suggested in the datasheets, and covered the cherenkov detector with a shielding blanket, to avoid ambient light simulating a signal.
 
-We observed a small knee in the plot, around the zone of 580 − 600 of attenuation, where the number of counts was almost costant, roughly equal to the number of expected events from muons hitting the detector. 
+\begin{figure}[hbtp]
+\centering
+\subfloat[][\emph{Detector B Counts versus attenuation.}]{
+\includegraphics[width = 0.45\textwidth]{Analysis/AttenuationB.pdf}}
+\subfloat[][\emph{Detector B Counts versus attenuation,the area with constant counts is highlighted }]{
+\includegraphics[width = 0.47 \textwidth]{Analysis/AttenuationBlinear.pdf} }
+\end{figure}
 
+We observed a small knee in the plot, around the zone of 580 − 600 of attenuation, where the number of counts was almost costant, roughly equal to the number of expected events from muons hitting the detector. Then we observe a big edge for attenuation = 1000. Looking at the plot \ref{NinoDocu}, we assume that the attenuation values are so high that electronic noise is no longer rejected, in fact the counts grow enormously. The attenuation was set at 600.
+
+The next step was to study the statistical fluctuation of the counts, so we collected 10 acquisitions, each of them 1 min long. The measured values are reported in the table below:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+Pmt: & 1 & 2 & 3 \\ 
+
+1 & 58 & 60 & 62 \\ 
+\hline 
+2 & 62 & 55 & 59 \\ 
+\hline 
+3 & 61 & 59 & 70 \\ 
+\hline 
+4 & 73 & 66 & 70 \\ 
+\hline 
+5 & 68 & 66 & 56 \\ 
+\hline 
+6 & 59 & 52 & 64 \\ 
+\hline 
+7 & 69 & 74 & 77 \\ 
+\hline 
+8 & 48 & 49 & 57  \\ 
+\hline 
+9 & 70 & 54 & 58 \\ 
+\hline 
+10 & 60 & 61 & 66\\
+\hline
+\end{tabular} 
+\end{center}
+
+This data are interesting to check if the counts are following the theoretical distribution of the events expected for cosmic rays at sea level. If the pmt are working in a good mode, we know that the number of counts should be Poisson-distributed:
+
+\begin{equation}
+Pdf(\mu,k) =  \frac{\mu^{k}}{k!} e^{-\mu}
+\end{equation}
+
+The variance of the poisson distribution is equal to the mean of the counts, and we expect the same behaviour also for the sample mean and the sample variance:
+
+\begin{align*}
+\begin{split}
+\mu_{1} = 62.8	\qquad \sigma^{2}_{1} = 54.40 \qquad r_{12} = 0.66\\
+\mu_{2} = 59.6	\qquad \sigma^{2}_{2} = 57.15 \qquad r_{23} = 0.65\\
+\mu_{3} = 63.9	\qquad \sigma^{2}_{3} = 46.98 \qquad r_{13} = 0.35 \\
+\end{split}
+\end{align*}
 
 \section{Analysis}
 
@@ -241,7 +294,7 @@ For the detector B we show the result assuming our model:
 \end{figure}
 
 From the fit we obtain three valus for the signal Peak, given in attenuaton units.
-We can check the idea behind this, visualizing the pmt count in a different way. In this plot (\ref{fig:FitAtt}) there is a discrete differentiation of the data showed in (\ref{fig:Spectra}). This plot represents roughly the signal spectra of the signal. 
+We can check the idea behind this, visualizing the pmt count in a different way. In this plot (\ref{fig:FitAtt}) there is a discrete differentiation of the data showed in (\ref{fig:Spectra}). This plot represents roughly the signal spectra of the signal (we report for brevity only the plot for detector B, for Detector A the same procedure was followed). 
 We can see that our assumption is not far from what we see, except for the fact that we are not able to identify the linear area. This is not very importat, sice we have to indenty properly a good point to select all the real signals from the scattered electrons, rejecting the noise. Furthermore, if we look at the plot (), we can understand this behaviour looking that the threshold does not scale linearly with changing the attenuation value, for high values of attenuation, the threshold falls quickly at zero.
 
  
@@ -307,15 +360,15 @@ $\mu$ are the parameters of the \textit{pdf}, that are mean and variance of the 
 \begin{figure}
 \centering 
 \subfloat[][\emph{$X$ position correlated difference}]{
-\includegraphics[width = 0.45\textwidth]{Analysis/X.pdf}} 
+\includegraphics[width = 0.3\textwidth]{Analysis/X.pdf}} 
 \subfloat[][\emph{$Y$ position correlated difference}]{
-\includegraphics[width = 0.45\textwidth]{Analysis/Y.pdf}}\\
+\includegraphics[width = 0.3\textwidth]{Analysis/Y.pdf}}
 \subfloat[][\emph{$\theta_{x}$ correlated difference}]{
-\includegraphics[width = 0.45\textwidth]{Analysis/Xp.pdf}}
+\includegraphics[width = 0.3\textwidth]{Analysis/Xp.pdf}} \\
 \subfloat[][\emph{$\theta_{y}$ correlated difference}]{
-\includegraphics[width = 0.45\textwidth]{Analysis/Yp.pdf}}\\
+\includegraphics[width = 0.3\textwidth]{Analysis/Yp.pdf}}
 \subfloat[][\emph{Energy correlated difference}]{
-\includegraphics[width = 0.45\textwidth]{Analysis/ENMO.pdf}}
+\includegraphics[width = 0.3\textwidth]{Analysis/ENMO.pdf}}
 \end{figure}
 
 Looking at the histograms, we see that the beam correlated-difference values are centered around zero, the result are reported below:

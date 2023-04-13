@@ -29,6 +29,7 @@ Capitolo di Analisi:
 - [] discutere le correlazioni tra i parametri del fascio, in particolare mostrare che si può omettere nel modello xp e yp.
 - [] ricontrollare la procedura di autocalibration, i valori di Anselm non sembrano essere corretti. (Conteggi negativi, impossibile)
 - [] completare paragrafo sui test in laboratorio dei due detector
+- [] provare a vedere se c'è un test per controllare se ci sono doppi conteggi, oppure si conta di meno.
 - [] finire l'analisi dello scan in attenuation anche per il detector A
 - [] confrontare i risultati con curve_fit di scipy
 - [] controllare le run che potrebbero non avere il fascio polarizzato.
