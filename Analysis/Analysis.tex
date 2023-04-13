@@ -13,7 +13,38 @@
 \end{outline}
 
 \section{Model for fitting the data}
-Here I have to explain the model used for describing the data, so the problem of the false asymmetry induced by variations in beam position, angle, current and energy. Here is a good point to explain the De Brujin sequence for the polarity patterns
+Here I have to explain the model used for describing the data, so the problem of the false asymmetry induced by variations in beam position, angle, current and energy. Here is a good point to explain the De Brujin sequence for the polarity patterns. \bigskip
+
+One of the problems of the measurement is to take into consideration the various contributions that can change the value of the asymmetry measured by the experimental apparatus. The raw values of the asymmetry can be affected by the variation of the beam parameters during the time. Let's summarize quickly all these effects:
+\begin{itemize}
+\item the pmts counts  can depend on the $(x,y)$ impact position of the beam on the target
+\item the variations of the incident angles $\theta_{x}$and $\theta_{y}$ on the target.
+\item the uncertain associated with the energy of the Beam, a change in the energy associated with the polarization of the beam leads to different rates for the cross section
+\item the uncertain associated with the current of the Beam, in particular a change due to the 
+efficiency of the source in producing electrons polarized in the two opposite directions
+\end{itemize}
+
+All this quantity can influence the asymmetry measured by the pmts, considering also that the expected asymmetry is in the order of ten part per million, and small asymmetry introduced by fluctuations on the beam parameters are not negligible. Correcting directly the false asymmetries that rise from those uncertainties is a tough task, and it's more easy to adopt a different strategy respect to proceed to the analytical/numerical calculation of each of them . Knowing that the beam parameters produced by Mami are quite stable over the time, we can assume that the measured asymmetry are well described by a linear model as the following:
+
+\begin{equation}
+Asym = A_{physical} \cdot P + \delta_{I} + A_{x} \delta x + A_{y} \delta y + A_{\theta_{x}} \delta \theta_{x} + A_{\theta_{y}} \delta \theta_{y}+ A_{E} \delta E 
+\end{equation}
+
+$A_{physical}$ is the aim of the experiment, $A_{x}$ and $A_{y}$ are the asymmetries induced by the variation of the posizion of the beam, $A_{\theta_{x}}$ and $A_{\theta_{y}}$ are the asymmetry associated to angles, $A_{E}$ is the asymmetry associated to the beam energy. 
+The relevant assumption is that, for small variation of the beam, the false asymmetry are linearly dependent on the Beam uncertainties (that are $\delta x, \delta y, \delta \theta_{x}, \delta \theta_{y}, delta_{E}$), so a first order approximation seems valid.\\
+We must clarify now what we mean with $\delta x, \delta y, \delta \theta_{x}, \delta \theta_{y}, delta_{E}$. Resuming the event structure, that we discussed in \ref{FirstDescription}, we have a sequence of 4 different sub-events, with a polarization pattern that is randomly selected between $\uparrow,\downarrow,\downarrow, \uparrow$ and $\downarrow,\uparrow,\uparrow,\downarrow$. During the $\SI{20}{\milli \second}$ ot time lenght of each sub-event, the vfcs make a single measurement of the beam, and the data are saved in the data tree. The task of the analysis program is to use this raw data to calculate the relevant parameters for the analysis. Because we are working with asymmetries, the absolute values of the parameters listed above is not relevant, instead what is relevant are the differencies correlated with polarization state of the beam. Assuming this, $\delta x, \delta y, \delta \theta_{x}, \delta \theta_{y}, delta_{E}$ are replaced with :
+
+\begin{equation}
+\begin{split}
+\delta {x} & = \Bigl(\dfrac{X_{\uparrow}(1) + X_{\uparrow}(2)}{2}\Bigl)  - \Bigl(\dfrac{X_{\downarrow}(1) + X_{\downarrow}(2)}{2}\Bigl)\\
+\delta {y} & = \Bigl(\dfrac{Y_{\uparrow}(1) + Y_{\uparrow}(2)}{2}\Bigl)  - \Bigl(\dfrac{Y_{\downarrow}(1) + Y_{\downarrow}(2)}{2}\Bigl)\\
+\delta {E} & = \Bigl(\dfrac{E_{\uparrow}(1) + E_{\uparrow}(2)}{2}\Bigl)  - \Bigl(\dfrac{E_{\downarrow}(1) + E_{\downarrow}(2)}{2}\Bigl)\\
+\delta {\theta_{x}} & = \Bigl( \dfrac{\theta_{x,\uparrow}(1) + \theta_{x,\uparrow}(2)}{2} \Bigl) - \Bigl(\dfrac{\theta_{x,\downarrow}(1) + \theta_{x,\downarrow}(2)}{2} \Bigl)\\
+\delta {\theta_{y}} & = \Bigl( \dfrac{\theta_{y,\uparrow}(1) + \theta_{y,\uparrow}(2)}{2} \Bigl) - \Bigl(\dfrac{\theta_{y,\downarrow}(1) + \theta_{y,\downarrow}(2)}{2} \Bigl)\\ 
+\end{split}
+\end{equation}
+
+Each value represent the difference between the mean values over the two different polarization state.
 
 \section{Data tree}
 Explain how we compute all the values for the data tree, the position of the beam on the target, the angle, the correlated-difference values...
@@ -302,10 +333,20 @@ Looking at the histograms, we see that the beam correlated-difference values are
 \end{center}
 
 these results are encouraging, the stabilization of the beam has meant that only small differences are observed within an event for each monitor. This means that, unless the values for the false asymmetries are not very large, the effect of the beam variation are small.
+Before proceeding with the fit, we observe how the asymmetry evolves as a function of time.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.5 \textwidth]{Analysis/AveragedAsymmetry.pdf}
+\caption{Averaged asymmetry versus time}
+\end{figure}
+
+In this figure we plot the average of the asymmetries for each pmt, carried out from the beginning up to the instant $t$. The data shown are corrected with the percentage of polarization of the beam ($p \simeq = 0.79$). From this it can be seen how the asymmetry evolves as time increases. If there are still outliers data, we can directly check from this plot there a steepy variation in the data. 
+
 
 When all the calibrations are performed, it is possible to proceed to generate the datafiles fot the fit program.
 
-For a better visualization of the data, especially to observe the dependence of the asymmetry on the Beam parameters measured, it is useful to take the average asymmetry at regular intervals. From the raw plots of the asymmetries (see below \ref{fig:asyvsparam}), it is clear that the statistical error associated to the asymmetry is the main one, and it's not possible to identify a linear dependence.
+For a better visualization of the data, especially to observe the dependence of the asymmetry on the Beam parameters measured, it is useful to take the average asymmetry at regular intervals. From the raw plots of the asymmetries (see below \ref{fig:asyvsparam}), it is clear that the statistical error associated to the asymmetry is the main one, and it's not possible to identify a linear dependence. In the meantime, this plot shows that there is a difference in sign between the values ​​measured by the two detectors, and that at the end the averaged result are on the same order of magnitude of what we expect $\pm 20 \quad ppm$ at our scattering angle $\theta$. These results, coupled with the fact that the correlated differences in beam values ​​are small, suggest that the contribution of false asymmetries is limited.
 
 \begin{figure}[hbtp]
 \centering
@@ -453,8 +494,6 @@ We can investigate also the asymmetries related to the beam energy. For this one
 \subsection{??Bootstrap??}
 
 Although Anselm was against it, now seems possible to increase the precision of the mesurement with a procedure similar to a bootstrap. Instead of computing all the quantities inside a single event, it's possible to compute all the important quantities also between different events. In this scenario the statistics can be increased artificially as mutch as we want, with the same amount of data. Of course, it's also simple to abuse of this method, so we should restrict using only events next to each other. However seem reasonable and promising.
-
-\subsection{??interval estimation??}
 
 
 
