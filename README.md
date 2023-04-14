@@ -30,6 +30,7 @@ Capitolo di Analisi:
 - [] ricontrollare la procedura di autocalibration, i valori di Anselm non sembrano essere corretti. (Conteggi negativi, impossibile)
 - [] completare paragrafo sui test in laboratorio dei due detector
 - [] provare a vedere se c'è un test per controllare se ci sono doppi conteggi, oppure si conta di meno.
+- [] vedere se è possibile estrarre l'incertezza associata ai monito X25 e Y25.
 - [] finire l'analisi dello scan in attenuation anche per il detector A
 - [] confrontare i risultati con curve_fit di scipy
 - [] controllare le run che potrebbero non avere il fascio polarizzato.

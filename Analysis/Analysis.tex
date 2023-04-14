@@ -56,10 +56,10 @@ Explain how we compute all the values for the data tree, the position of the bea
 The Nino board, which digitizes the signal from the PMTS, has two parameters which can be used to select the internal threshold of the discriminator, to cut the low amplitude signals and can be adjusted changing the settings of the DAQ program. These two parameters are \textit{Threshold} and \textit{Attenuation}. \textit{Threshold} means directly the charge value necessary for an impulse certain shape to be accepted by the signal discriminators. However the "physical" threshold can be also modified changing the \textit{attenuation}. The relation between threshold and attenuation is not linear, but follows:
 
 \begin{figure}[hbtp]
- \centering
- \subfloat[][\emph{Threshold dependence against attenuation} \label{NinoDocu}]{
- \includegraphics[scale=0.4]{Analysis/ThrvsAtt.png}}
- \end{figure}
+\centering
+\subfloat[][\emph{Threshold dependence against attenuation} \label{NinoDocu}]{
+\includegraphics[scale=0.4]{Analysis/ThrvsAtt.png}}
+\end{figure}
 
 For our purposes, we select a common threshold values for all the pmts, and we decided to change only the attenuation values.\\
 Before the Beam time, some test with the two detectors were performed, to check that the pmts were still working after some years of inactivity, and that the new electronic was able to count properly the pulses and store the data. For this studies, we didn't have a radioactive sources to employ, so we moved the two detectors in the workshop of the accelerator, and we use the cosmic rays rate as a probe. 
@@ -70,7 +70,7 @@ The first step is to select a good point of work for the threshold. So, fixing t
 
 \begin{figure}[hbtp]
 \centering
-\subfloat[][\emph{Detector B Counts versus attenuation.}]{
+\subfloat[][\emph{Attenuation scan for Detector B}]{
 \includegraphics[width = 0.45\textwidth]{Analysis/AttenuationB.pdf}}
 \subfloat[][\emph{Detector B Counts versus attenuation,the area with constant counts is highlighted }]{
 \includegraphics[width = 0.47 \textwidth]{Analysis/AttenuationBlinear.pdf} }
@@ -124,6 +124,180 @@ The variance of the poisson distribution is equal to the mean of the counts, and
 \end{split}
 \end{align*}
 
+We report also the correlation $r_{xy}$ between the pmt. The result are fine: we are able to see a positive correlation between adjacent pmt, and as expected the correlation is lower in the case of the more distant. This is explained by the lower probability that the photons of Cherenkov radiation light up at the same time the more distant pmt.
+We can test that the data follow a possion distribution using the well-known Gosset test, defined as:
+
+\begin{equation}
+\chi^{2}_{n-1} = \sum_{i = 1}^{n} \dfrac{(Oss_{i} - Att_{i})}{Att_{i}}
+\end{equation}
+
+We report the result obtain with the data for detector B, the test shows that there is good agreement with the hypothesis that the count are really poisson-distributed.
+
+\begingroup
+\setlength{\tabcolsep}{8pt} % Default value: 6pt
+\renewcommand{\arraystretch}{1.2} % Default value: 1
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+Pmt: & 1 & 2 & 3 \\ 
+\hline
+$\chi^{2}_{9}$ & 8.52 & 8.45 & 6.37 \\ 
+\hline
+\end{tabular} 
+\end{center}
+\endgroup
+
+To convince oneself that the pmt are actually measuring signals given by the passage of cosmic rays, and not noise, we exploit the possibility of we exploited the possibility of placing one pmt in coincidence with the others. If we are able to observe correlation between the counts, we can conclude that the detection electronics are working correctly. \\
+One pmt was placed over the detector and we read out the counts simultaneously.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+pmt & 0 & 1 & 2 & 4 (in coincidence) \\ 
+\hline 
+1 & 63 & 57 & 72 & 28 \\ 
+\hline 
+2 & 55 & 51 & 64 & 18 \\ 
+\hline 
+3 & 62 & 53 & 75 & 27 \\ 
+\hline 
+4 & 71 & 62 & 75 & 33 \\ 
+\hline 
+5 & 68 & 59 & 49 & 23 \\ 
+\hline 
+6 & 57 & 55 & 63 & 18 \\ 
+\hline 
+7 & 70 & 64 & 64 & 24 \\ 
+\hline 
+8 & 50 & 69 & 69 & 25 \\ 
+\hline 
+9 & 65 & 62 & 62 & 19 \\ 
+\hline 
+10 & 74 & 71 & 77 & 28 \\ 
+\hline 
+\end{tabular} 
+\end{center} 
+
+As above, we report the sample mean, the variance and the correlation between the pmt in coincidence and the detector B:
+
+\begin{equation*}
+\begin{split}
+\mu_{0} = 63.5 \qquad \sigma^{2} = 58.9 \qquad r_{04} = 0.49 \\
+\mu_{1} = 60.3 \qquad \sigma^{2} = 43.3 \qquad r_{14} = 0.38 \\
+\mu_{2} = 67.0 \qquad \sigma^{2} = 71.1 \qquad r_{24} = 0.65 \\
+\end{split}
+\end{equation*}
+
+We observe a positive correlation $r_{04},r_{14},r_{24}$ for the pmt in coincidence, this is a strong evidence that the signals are correlated and that some particles are hitting the fused silica sequentially. \smallskip
+
+\begingroup
+\setlength{\tabcolsep}{8pt} % Default value: 6pt
+\renewcommand{\arraystretch}{1.2} % Default value: 1
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+Pmt: & 1 & 2 & 3 & pmt in coincidence \\ 
+\hline
+$\chi^{2}_{9}$ & 8.95 & 6.44 & 10.96 & 9.52\\ 
+\hline
+\end{tabular} 
+\end{center}
+\endgroup
+\smallskip
+
+We also check at the oscilloscope if we were able to observe three negative peaks at the same time: 
+
+\begin{figure}
+\centering
+\includegraphics[width = 0.5\textwidth]{Analysis/IMG_20221027_170925.jpg} 
+\end{figure}
+
+The same procedure was followed also for detector A, made by 8 PMTs. We analyzed 4 pmt at a time, having the NINO board available with only 4 channels. The same attenuation scan performed for detector B was done:
+
+\begin{figure}[hbtp]
+
+\centering
+\includegraphics[width = 0.5\textwidth]{Analysis/AttenuationA(4-7).pdf}
+\caption{Attenuation scan for Detector A}
+\end{figure}
+
+We took as above 10 acquisitions 1 minute long:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+pmt & 2 & 1 & 0 & 4 (in coincidence) \\ 
+\hline 
+1 & 91 & 51 & 50 & 27 \\ 
+\hline 
+2 & 86 & 61 & 50 & 7 \\ 
+\hline 
+3 & 58 & 48 & 45 & 18 \\ 
+\hline 
+4 & 95 & 62 & 41 & 29 \\ 
+\hline 
+5 & 69 & 60 & 50 & 21 \\ 
+\hline 
+6 & 85 & 57 & 45 & 19 \\ 
+\hline 
+7 & 66 & 51 & 46 & 28 \\ 
+\hline 
+8 & 74 & 51 & 48 & 22 \\ 
+\hline 
+9 & 77 & 43 & 45 & 17 \\ 
+\hline 
+10 & 62 & 44 & 50 & 29 \\ 
+\hline 
+\end{tabular} 
+\end{center}
+
+\begin{equation*}
+\begin{split}
+\mu_{2} = 76.3 \qquad \sigma^{2} = 160  \\
+\mu_{1} = 52.8 \qquad \sigma^{2} = 47.5 \\
+\mu_{0} = 47.0 \qquad \sigma^{2} = 9.6  \\
+\mu_{4} = 21.7 \qquad \sigma^{2} = 48.2 \\
+\end{split}
+\end{equation*}
+
+For these 4 pmts , the variance of the sample changes significantly from what was observed earlier. We repot in this table the correlation matrix:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+pmt: & 4 & 0 & 1 & 2 \\ 
+\hline 
+4 	 & 1 & -0.18  & -0.21  & -0.06  \\ 
+\hline 
+0 	 & -0.18  & 1 & -0.10  & -0.22  \\ 
+\hline 
+1    & -0.21  & -0.10  & 1 & 0.56  \\ 
+\hline 
+2    & -0.06 & -0.22  & 0.56  & 1 \\ 
+\hline 
+\end{tabular} 
+\end{center}
+
+Here we observe correlation that with negative sign, which are not expected. Also the correlatio between the pmt in coincidence are negative.
+If we try to perform a gosset test, we obtain:
+
+\begingroup
+\setlength{\tabcolsep}{8pt} % Default value: 6pt
+\renewcommand{\arraystretch}{1.2} % Default value: 1
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+Pmt: & 2 & 1 & 0 & pmt in coincidence \\ 
+\hline
+$\chi^{2}_{9}$ & 19.6 & 8.30 & 1.90 & 39.5\\ 
+\hline
+\end{tabular} 
+\end{center}
+\endgroup
+\smallskip
+
+The expected error for the result of this test is $\sigma = \sqrt{2*(n-1)} \simeq 4$. In this case we are observing 3 values that are $2\cdot \sigma $ far from the expected value. All this consideration indicate that the attenuation, or something in the DAQ program is not correctly set. 
+
 \section{Analysis}
 
 One of the main goal for this experiment was to measure the well know trasverse asymmetry of $^{12}C$, already measured before, as a test for the new electronic system. Previous measurements of the Transverse asymmetry have been performed for a carbon target. For this beam-time, the two spektrometers were placed at an angle such that the $Q^{2}$ values of the scattered electron is:
@@ -138,6 +312,8 @@ One of the main goal for this experiment was to measure the well know trasverse 
 \end{flushleft}
 
 The $Q^{2}$ values is the same of the last measurement performed at MAMI, and is measured with and without rejecting the inelastic electrons. 
+
+
 
 \subsection{Alignment of the scattering plane}
 
