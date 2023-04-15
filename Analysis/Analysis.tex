@@ -343,7 +343,7 @@ All this procedure can be easely checked if we plot now the $X$ and $Y$ position
 \end{figure}
 
 
-\subsection{Current and ENMO monitors}
+\subsection{Current and ENMO monitors} \label{CurrentCalibration}
 
 For the current monitors I13 and I21, we perform the calibration changing the current of the beam and observing the output values of the monitors (Voltage values). The we perform a fit (for the beam current, we used the nominal values that we communicate to MAMI, has the values for the x-axis).
 
@@ -454,12 +454,53 @@ From the NINO documentation, it's possible to confront these values with
 \newpage
 \subsection{Autocalibration procedure}
 
+In this section we present the last calibration tecniques needed in the data-process. The autocalibration is a special operation mode of the MAMI accelerator, during which the beam current is made to vary in a controlled way. Through these special runs is possible to obtain again the current scaling factor that we discussed in \ref{CurrentCalibration}. Because the current in varying, it is possible to study the linearity of the pmts. From a linear fit of the pmts counts vs. current intensity the angular coefficient and the offset are measured. The offset is particual important because is give rise of a possible systematic error that influence the final asymmetry result. It is quite simple to demostrate this, if a relation of the type $N = mI + N_{0} $ holds. Consider the following quantity:
+
+\begin{align*}
+\overline{N} = \frac{N_{\uparrow} + N_{\downarrow}}{2}
+\end{align*} 
+
+we can express $N_{\uparrow}$ and $N_{\downarrow}$ in this way:
+
+\begin{align*}
+N_{\uparrow} = \overline{N} + A_{n}\overline{N} \\
+N_{\downarrow} = \overline{N} - A_{n}\overline{N} 
+\end{align*}
+
+Now we suppose that $\overline{N}$ is linear dependent on the current in the way we defined above, so:
+
+\begin{align*}
+N_{\uparrow} = \overline{N} + A_{n}(mI) + N_{0} \\
+N_{\downarrow} = \overline{N} - A_{n}(mI) + N_{0} 
+\end{align*}
+
+if we substitute everything in the definition of the transverse asymmetry:
+
+\begin{equation}
+A^{'} = \dfrac{N_{\uparrow} - N{\downarrow}}{N_{\uparrow} + N{\downarrow}} = \dfrac{A_{n} (2mI)}{ (2mI) + 2N_{0} } = A_{n} \dfrac{1}{1 + \frac{N_{0}}{mI}}
+\end{equation} 
+
+In the last passage we learn that the presence of an offset can decrease the recostructed asymmetry. So it's important to determine quantitatively $N_{0}$ and $m$ in order to be able to take care of this effect. The strategy used is quite simple: every three hours of production data, we asked MAMI to start the autocalibration program. With all the autocalibration runs, we estimate $N_{0}$ for each pmt, separately. Then All this quantities are saved in a file so that the analysis program can retrieve the parameters and subtract them from the pmt counts. \medskip
+\newpage
+During the autocalibration, the beam current is raised from $\SI{9}{\micro \ampere}$ to $\SI{11.125}{\micro \ampere}$ in step of $\SI{0.125}{\micro \ampere}$:
+
 \begin{figure}[!h]
 \centering
-\includegraphics[width = 0.75\textwidth]{Analysis/Autocalib/Current.pdf} 
+\subfloat[][\emph{Autocalibration: in this plot we have the voltage value of I21 monitor. The current is first stabilized around $\SI{10}{\micro \ampere}$, then it is raised from $\SI{9}{\micro \ampere}$ (the step lower down) to $\SI{11.125}{\micro \ampere}$ in step of $\SI{0.125}{\micro \ampere}$.} \label{fig:Autocalibration}]{
+\includegraphics[width = 0.75\textwidth]{Analysis/Autocalib/Current.pdf}}
 \end{figure}
 
-\newpage
+With a linear fit we can estimate the scale and the offset to convert from I21 voltage values to physical values of the current. We do the same for each pmt:
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.5\textwidth]{Analysis/Autocalib/fitB.pdf}
+\caption{Counts vs. current, the error are multiplied by a factor of $20$.}
+\end{figure}
+
+
+
+
 \subsection{Rates on lead}
 
 {\bfseries This section is straightforward. Basically I have to show the single plot of the pmts counts vs. beam current for lead target. However it's possible to do some preliminary studies, for example to calculate the time needed for measuring the asymmetry on lead with a certain error and maybe check from Mott cross section that the observed rate are fine.}
