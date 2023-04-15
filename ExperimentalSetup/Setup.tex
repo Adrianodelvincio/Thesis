@@ -13,7 +13,7 @@
 To measure the Beam-Normal single spin asymmetry, a polarized beam of $ \SI{570}{\mega \electronvolt}$ will be sent against a $\SI{10}{\milli \meter}$ $^{12}C$ target. The detectors consist of two fused-silica coupled to 3 (detector B) and 8 (detector A) pmts, which collect the Cherenkov light emitted when an electron pass through the fused-silica. 
 The detector are placed inside the two spectrometer of the A1 hall, which are not used in this experiment due to the high luminosity of the beam ($ \SI{20}{\micro \ampere}$) that is away from their good point of operation. 
 The photomultipliers asymmetry due the change of the electrons spin is the target of the measurement. The pmts signals are collected and digitalized by the \textbf{NINO} board, after a threshold selection, and sent to the A1 control room computer, where the DAQ program collect the data together with all the data coming from the Beam monitors producing Binary files, which are later analyzed by the analysis program, which is significant part of the work done in the framework of the thesis. 
-The data collected are divided in \textit{Events} made by 4 \textit{sub-events} in sequence. Each event correspond to a temporal window of $\simeq \SI{80}{\micro \second}$, where each sub-event is $\SI{20}{\micro \second}$ long. Here it's important to clarify that unlike the majority of experiments in high energy physics, an event is made by all the electrons interacting with the detectors during the time interval of the event, and we will refer to this hereafter unless otherwise stated. The division into sub-events reflects the polarization sequence of the beam. The PMTS counts and the beam monitor values are saved for each subevent, along with the time lengh of the event and other values which are required to process beam monitor data.\\ 
+The data collected are divided in \textit{Events} made by 4 \textit{sub-events} in sequence. Each event correspond to a temporal window of $\simeq \SI{80}{\micro \second}$, where each sub-event is $\SI{20}{\micro \second}$ long. Here it's important to clarify that unlike the majority of experiments in high energy physics, an event is made by all the electrons interacting with the detectors during the time interval of the event, and we will refer to this hereafter unless otherwise stated. The division into sub-events reflects the polarization sequence of the beam. The PMTS counts and the beam monitor values are saved for each subevent, along with the time lenght of the event measured by in clock cycle by the NINO electronic board which is descrribed in \ref and other values which are required to process beam monitor data.\\ 
 
 The general structure of the event is the following: 
 
@@ -23,6 +23,7 @@ The general structure of the event is the following:
 \caption{Event structure}
 \end{figure}
 
+\newpage
 \section{Mami}
 How Mami produces polarized electron and how the particle are accelerated (the way Mainz Mikroton is working is completely different from the other accelerators, so maybe this section will be too long).
 
@@ -32,10 +33,9 @@ explain how electrons are accelerated, and sent to different experiments.
 \subsection{Polarized Beam}
 {\bfseries Here a subsection to explain how the polarized electrons are produced. Important to mention the systematic error for the polarization mesurement (in our beam time we couldn't measure with Moller polarimeter, so this discussion is important for future experiment, however it's important to say something about it). Remember to explain how the spin are rotated to the transverse plane, and the $\frac{\lambda}{2}$}
 
-For the beam-normal single spin asymmetry a vertical polarized beam is necessary. At the MAMI electron accelerator is possible to produce a vertical polarized beam with energy in the range $\SI{180}{\mega \electronvolt} - \SI{855}{\mega \electronvolt}$ \cite{Schlimme_2017}. In this section the procedure to orient the beam vertically, following an explanation of how the degree of polarizarion of the beam is measured.
+For the beam-normal single spin asymmetry a vertical polarized beam is necessary. At the MAMI electron accelerator is possible to produce a vertical polarized beam with energy in the range $\SI{180}{\mega \electronvolt} - \SI{855}{\mega \electronvolt}$ \cite{Schlimme_2017}. In this section the procedure to orient the beam vertically is presented, following an explanation of how the degree of polarizarion of the beam is measured. \medskip
 
-The electron source used at MAMI is made by a strained GaAs/GaAsP superlattice photocathode 
-illuminated by circular polarized light. A Pockels cell changes the helicity of the photons impinging on the electrons. The extracted electron has the same helicity of the incoming photon, let's suppose as an example:
+The electron source used at MAMI is made by a strained GaAs/GaAsP superlattice photocathode illuminated by circular polarized light. A Pockels cell changes the helicity of the photons impinging on the electrons. The extracted electron has the same helicity of the incoming photon, let's suppose as an example:
 
 \begin{center}
 \begin{equation}
@@ -163,7 +163,8 @@ We control the $f_{CLKIN}$ with the period of the clock. The data are acquired c
 V_{in} =  V_{ref}[2 \cdot \dfrac{N_{pulses} - 5 \% N_{CLKN}}{40 \% N_{CLKN}} - 1]
 \end{equation}
 
-\subsection{Nino board}
+\subsection{Nino board} \label{NINO}
+
 The NINO board is our data acquisition system for the pmt counts. It is made by $32$ analog input channels and it'is power with $\pm \SI{5}{\volt}$. Each channel has an attenuator, and the signal pass through that before going to the Comparator, which compare the signal to the threshold. The Output signal is a Low-voltage differential signaling (LVDS). Each comparator can handle eight channel and for each of them it is possible to define a global threshold. With the current settings of NINO board, it is possible to change the threshold of each channel acting on another value, the attenuation, which decreases the value of the global threshold of each single channel. All the value that can be modified are 12 bit numbers, so a setting interval of $(0. ; 4095)$.
 
 \begin{figure}[hbtp]

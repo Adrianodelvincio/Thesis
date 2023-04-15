@@ -22,24 +22,25 @@ Capitolo sulla teoria:
 - [] presentare i risultati della misura fatta da PREX.
 - [] descrivere il modello lineare usato dopo nell'analisi.
 
+Capitolo Setup sperimentale:
+- [] Spiegare a grandi linee come funzionano i Monitor del fascio, Resistenza di Shunt e eccitazioni nelle cavità risonanti
+- [] chiedere ad Anselm documentazione sulla MasterBoard
+- [] Come si stima l'errore sistematico?
+
 Capitolo di Analisi:
 - [x] migliorare l'output del programma fit.cc, inserire unit test e cambiare formato dati
 - [x] controllare le run sospette senza stabilizzazione, può aiutare a capire meglio il sistematico (?)
 - [x] la correlazione Asimmetria e parametri del fascio non è irrilevante, bisogna investigare
 - [] discutere le correlazioni tra i parametri del fascio, in particolare mostrare che si può omettere nel modello xp e yp.
-- [] ricontrollare la procedura di autocalibration, i valori di Anselm non sembrano essere corretti. (Conteggi negativi, impossibile)
+- [x] ricontrollare la procedura di autocalibration, i valori di Anselm non sembrano essere corretti. (Conteggi negativi, impossibile)
 - [] completare paragrafo sui test in laboratorio dei due detector
 - [] provare a vedere se c'è un test per controllare se ci sono doppi conteggi, oppure si conta di meno.
-- [] vedere se è possibile estrarre l'incertezza associata ai monito X25 e Y25.
-- [] finire l'analisi dello scan in attenuation anche per il detector A
+- [] vedere se è possibile estrarre almeno una stima rozza dell'incertezza associata ai monitor X25/X21 e Y25/Y21.
+- [x] finire l'analisi dello scan in attenuation anche per il detector A
 - [] confrontare i risultati con curve_fit di scipy
 - [] controllare le run che potrebbero non avere il fascio polarizzato.
 - [] Capire perchè le asimmetrie calcolata con lo slowvariation e dal fit sono in disaccordo per svariati ordini di grandezza
 - [] impostare il ricampionamento.
-- [] Creare un ttree per analizzare i dati anche con root
+#- [] Creare un ttree per analizzare i dati anche con root
 
-Capitolo Setup sperimentale:
-- [] Spiegare a grandi linee come funzionano i Monitor del fascio, Resistenza di Shunt e eccitazioni nelle cavità risonanti
-- [] chiedere ad Anselm documentazione sulla MasterBoard
-- [] Come si stima l'errore sistematico?
 
