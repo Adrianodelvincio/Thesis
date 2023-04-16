@@ -476,7 +476,7 @@ N_{\downarrow} = \overline{N} - A_{n}(mI) + N_{0}
 
 if we substitute everything in the definition of the transverse asymmetry:
 
-\begin{equation}
+\begin{equation} \label{eq:Systematic}
 A^{'} = \dfrac{N_{\uparrow} - N{\downarrow}}{N_{\uparrow} + N{\downarrow}} = \dfrac{A_{n} (2mI)}{ (2mI) + 2N_{0} } = A_{n} \dfrac{1}{1 + \frac{N_{0}}{mI}}
 \end{equation} 
 
@@ -490,17 +490,45 @@ During the autocalibration, the beam current is raised from $\SI{9}{\micro \ampe
 \includegraphics[width = 0.75\textwidth]{Analysis/Autocalib/Current.pdf}}
 \end{figure}
 
-With a linear fit we can estimate the scale and the offset to convert from I21 voltage values to physical values of the current. We do the same for each pmt:
+With a linear fit we can estimate the scale and the offset to convert from I21 voltage values to physical values of the current. The procedure in repeated for the $8$ autocalibration acquisition we had during the beam time, so we can also take care of possible variation of the offset of the pmts.
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width = 0.5\textwidth]{Analysis/Autocalib/fitB.pdf}
-\caption{Counts vs. current, the error are multiplied by a factor of $20$.}
+
+\subfloat[][\emph{Current scan for detector B, the error are multiplied by a factor of $20$.}]{
+\includegraphics[width = 0.75\textwidth]{Analysis/Autocalib/fitB.pdf}} \\
+\subfloat[][\emph{Current scan for detector A, the error are \\ multiplied by a factor of $20$.}]{
+\includegraphics[width = 0.5\textwidth]{Analysis/Autocalib/fitA0-3.pdf}}
+\subfloat[][\emph{Current scan for detector A, the error are \\ multiplied by a factor of $20$.}]{
+\includegraphics[width = 0.5\textwidth]{Analysis/Autocalib/fitA4-7.pdf}}
+\caption{Pmt Rates vs current (from I21 monitor), the model used for the fit: $y = mx + q$.}
 \end{figure}
 
+The figures are referred to the data acquired for the first autocalibration. It's interesting to calculate, from the result of the fit, the factor that appears in \ref{eq:Systematic}:
 
+\begin{center}
+\begin{tabular}{lrrr}
+\hline
+ PMT   &  m [$\frac{Counts}{\mu A}$]  & Offset &   Correction factor \\
+\hline
+ B0    & 1750 &  1301 &  0.93 \\
+ B1    & 1742 &  1283 &  0.93 \\
+ B2    & 1406 &   717 &  0.95 \\
+ A0    & 6423 & 20385 &  0.75 \\
+ A1    & 6756 & 29187 &  0.70 \\
+ A2    & 6032 & 20513 &  0.75 \\
+ A3    & 5218 & 12995 &  0.80 \\
+ A4    & 3945 &  6666 &  0.86 \\
+ A5    & 3967 &  6547 &  0.86 \\
+ A6    & 3258 &  4655 &  0.87 \\
+ A7    & 2325 &  2233 &  0.91 \\
+\hline
+\end{tabular}
+\end{center}
 
+Ignoring the presence of the offset lead two consequences: the recostructed asymmetry is lower, on average $ \simeq 10\%$ less than expected, and the Counts are overstimated. Because the error depend on the pmt counts, as seen in \ref{eq:SymmetryError}, this two effect combined add up and worsen the precision and accuracy of the measurement.
 
+\newpage
 \subsection{Rates on lead}
 
 {\bfseries This section is straightforward. Basically I have to show the single plot of the pmts counts vs. beam current for lead target. However it's possible to do some preliminary studies, for example to calculate the time needed for measuring the asymmetry on lead with a certain error and maybe check from Mott cross section that the observed rate are fine.}
