@@ -9,7 +9,6 @@
 
 \section{First description of the experiment} \label{FirstDescription}
 
-{\bfseries First description of the experiment, how we want to collect data, new picture of the kinematic of the experiment. Maybe here it's a good point to describe the structure of the event}
 To measure the Beam-Normal single spin asymmetry, a polarized beam of $ \SI{570}{\mega \electronvolt}$ will be sent against a $\SI{10}{\milli \meter}$ $^{12}C$ target. The detectors consist of two fused-silica coupled to 3 (detector B) and 8 (detector A) pmts, which collect the Cherenkov light emitted when an electron pass through the fused-silica. 
 The detector are placed inside the two spectrometer of the A1 hall, which are not used in this experiment due to the high luminosity of the beam ($ \SI{20}{\micro \ampere}$) that is away from their good point of operation. 
 The photomultipliers asymmetry due the change of the electrons spin is the target of the measurement. The pmts signals are collected and digitalized by the \textbf{NINO} board, after a threshold selection, and sent to the A1 control room computer, where the DAQ program collect the data together with all the data coming from the Beam monitors producing Binary files, which are later analyzed by the analysis program, which is significant part of the work done in the framework of the thesis. 
@@ -131,6 +130,85 @@ The fused silica size for detector B is $(\SI{7}{\centi \meter},\SI{10}{\centi \
 
 \subsection{Monitors and stabilization}
 {\bfseries Explain how the monitors for the beam parameters work. (this section could be long, however the way these parameters are measured is particular, so it's important to explain everything properly).}
+
+In MAMI, several monitors are placed along the beam line in order to to check beam quality and measure parameters such as current intensity, energy and relative position of the beam. This section summarize an explanation of the operating principles of the monitors installed at MAMI. The explanation will be partial, some details will be given in the appendix, however for a complete discussion please refer to the following paper ( \cite{M_Dehn}).
+
+The monitors avaible at MAMI are quite specific for the standard of the particle accelerators. Resonant cavities are used to measure the various quantities, with the underlying physical principle that the passage of charged particles through these cavities can excitate some electromagnetic resonant modes\footnote{TM mode, where the magnetic field is completely trasverse respect to particle momenta} which can be detected and analyzed by an analogic circuit to measure the beam parameters.
+Before going into the details, is necessary to define some quantities that will be used later in the explanation. We define $r_{s}$, the Shunt-impendence as :
+
+\begin{equation}
+r_{s} = \frac{|V_{\|}|^{2}}{P}
+\end{equation}
+
+$P$ is the power absorbed by the cavity when a particle excites one of the resonant mode, instead $V_{\|}$ in defined as the effective voltage surpassed by a charged particle along a straight line, which can be computed as:
+
+\begin{align*}
+V_{\|} = \frac{1}{q}  \int_{s_{0}}^{s^{1}} \vec{E}_{s} \vec{e_{s}} \,ds
+\end{align*}
+
+The Shunt impedence is a measure of the interaction strenght between a cavity and a charged particle, and can be espressed also in another way, introducing the $Q$ value of the cavity, $W$ the maximum energy stored and $f_{r}$ the frequency of resonance:
+
+\begin{align*}
+r_{s} = \dfrac{|V_{\|}|^{2} Q}{2 \pi f_{r} W}
+\end{align*}
+
+When the beam travel through the cavity, the particles release enery that excites the oscillascion mode. The power $P_{HF}$ extracted from the beam is related to the beam current: 
+
+\begin{align*}
+P = \iota^{2} r_{s}
+\end{align*}
+
+An antenna is used to decouple part of the energy from the cavity and send it to a circuit which produces an analog output signal. Indicating with $\kappa$ the coupling costant of the antenna, the previous relation need to be modified introducing a new factor $ \frac{\kappa}{(1 + \kappa)^2}$. In a Cylindrical resonator, the same type installed at MAMI, the resonance frequency of the different oscillascion modes is expressed by the formula 
+
+\begin{align*}
+f_{m,n,p} = \frac{c}{2\pi \sqrt{\epsilon_{r} \mu_{r}}} \sqrt{(\frac{x_{m,n}}{R})^{2} + (\frac{p \pi}{L})^{2}}
+\end{align*}
+
+The costant in the formula are:
+
+\begin{itemize}
+\item $c$ is the light speed.
+\item $\epsilon_{r}, \mu_{r}$ are the magnetic and dielectric costant of the material.
+\item $x_{m,n}$ it the n-th zero of the m-th Bessel function.
+\item $R$ and $L$ are the radius of the cylindrical cavity and his lenght.
+\item $p$ I dont' know yet.
+\end{itemize}
+
+This formula can be obtained solving the Maxwell equations with cylindrical boundary condition, the eigenvalues are the given by the formula above. \\
+If the frequency of the Beam bunch is equal to the resonant frequency $f_{m,n,p}$ of the cavity, a TM mode is excited. At MAMI high quality monitors are installed, quantitatively all the monitors have a $Q \simeq 10000$, that means that $\frac{\nu}{\delta \nu} \simeq 10000$. This means that the frequency of the beam buch must be very close to the frequency of the resonant cavity. At MAMI the frequency used for all the resonators is $\SI{2.449532}{\giga \hertz}$ or a multiple of it. The beam bunch frequency is the same, and it's controlled by the MAMI-master oscillation signal, that is the reference signal for all the MAMI monitors.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.5 \textwidth]{ExperimentalSetup/Cavità.jpg}
+\caption{Scheme of the Cylindrical cavities installed at MAMI. In red we have the $TM_{110}$ mode, used to measure the position of the beam, in yellow the $TM_{010}$ mode, to measure the intensity of the beam.}
+\end{figure}
+
+Depending on the $TM$ mode excited, we have a different signal in the cavity, so a different signal collected by the antenna. The relevant quantity that is detected is the power $P_{HF}$ absorbed by the antenna. For the $TM_{010}$ mode, the power is 
+
+\begin{equation}
+P_{HF} = i^{2} r_{010} \frac{\kappa}{(1 + \kappa)^{2}}
+\end{equation}
+
+The power absorbed by the antenna is directly dependent on the beam current. Because the rage values are typically in the range of $\SI{}{\pico \watt}$ to $\SI{}{\milli \watt }$, the signal is processed in close proximity of the installed monitors. In the signal process, the input signal of the antenna in coupled to the master-oscillascion signal, so the output signal is given by the formula:
+
+\begin{equation}
+U = \sqrt{P_{HF}} \cos(\phi - \phi_{LO})
+\end{equation}
+
+the phase $\phi$ is the phase of the resonant mode or the phase of the beam bunch, while the phase $\phi_{LO}$ is the phase respect to the master-oscillation signal, and can be adjusted by a phase shifter of the circuit. The output voltage signal can be read out with the oscilloscope or digitalized and saved with other devices. To measure the beam intensity is important to minimize $\phi - \phi_{LO}$, to maximixe the signal amplitude, and then the output signal is ready to be analyzed. \\
+The measurement of the $x,y$ position follows in principle the same procedure. In this case the $TM_{110}$ is acquired. The reason is clear, because it's possible to calculate that for this mode the $r_{shunt}$ is proportional to the beam position on the $x,y$ plane. So The power absorbed by the antenna can be written:
+
+\begin{equation}
+P_{HF} = i^{2} r_{110} \frac{\kappa}{(1 + \kappa)^{2}} K x^{2}
+\end{equation} 
+ 
+with the output signal prortional to the square root of the absorbed power, we end with:
+
+\begin{equation}
+x,y = \sqrt(P_{HF}) = costant \cdot \frac{U}{i}  
+\end{equation} 
+
+With this is clear how it's possible to measure all the important quantity related to the beam that will be used for the analysis.
 
 \section{Electronics}
 {\bfseries Short introduction about the old electronics setup and why a new versions is needed, then describe all the electronics used for our experiment:}

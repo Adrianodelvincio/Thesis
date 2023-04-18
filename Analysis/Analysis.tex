@@ -439,9 +439,19 @@ For the detector B we show the result assuming our model:
 \begin{figure}[hbtp]
 \centering
 \subfloat[][\emph{Attenuation scan for the pmts of detector B} \label{fig:FitAtt}]
-{\includegraphics[width = 0.5\textwidth]{Analysis/Fit_attenuation.pdf}}
-\subfloat[][\emph{Recostructed spectra for Detector B, notice that we have \textit{Attenuation} values in the x axis, therefore right and left are swapped with respect to the graph \ref{fig:PDF}.} \label{fig:Spectra}]
-{\includegraphics[scale = 0.5]{Analysis/Bspectra.pdf}}
+{\includegraphics[width = 0.75\textwidth]{Analysis/Fit_attenuation.pdf}}
+\end{figure}
+
+\begin{figure}
+\centering
+\subfloat[][\emph{B0} ]
+{\includegraphics[scale = 0.5]{Analysis/CalibrationPMT/B0.pdf}}
+\subfloat[][\emph{B1}]
+{\includegraphics[scale = 0.5]{Analysis/CalibrationPMT/B1.pdf}}\\
+\subfloat[][\emph{B2}]
+{\includegraphics[scale = 0.5]{Analysis/CalibrationPMT/B1.pdf}}
+\label{fig:Spectra}
+\caption{Recostructed spectra for Detector B, notice that we have \textit{Attenuation} values in the x axis, therefore right and left are swapped with respect to the graph \ref{fig:PDF}.}
 \end{figure}
 
 From the fit we obtain three valus for the signal Peak, given in attenuaton units.
@@ -490,7 +500,7 @@ During the autocalibration, the beam current is raised from $\SI{9}{\micro \ampe
 \includegraphics[width = 0.75\textwidth]{Analysis/Autocalib/Current.pdf}}
 \end{figure}
 
-With a linear fit we can estimate the scale and the offset to convert from I21 voltage values to physical values of the current. The procedure in repeated for the $8$ autocalibration acquisition we had during the beam time, so we can also take care of possible variation of the offset of the pmts.
+With a linear fit we can estimate the scale and the offset to convert from I21 voltage values to physical values of the current. The procedure in repeated for the $8$ autocalibration acquisition we had during the beam time, so we can also take care of possible variations during the time.
 
 \begin{figure}[hbtp]
 \centering
@@ -498,13 +508,13 @@ With a linear fit we can estimate the scale and the offset to convert from I21 v
 \subfloat[][\emph{Current scan for detector B, the error are multiplied by a factor of $20$.}]{
 \includegraphics[width = 0.75\textwidth]{Analysis/Autocalib/fitB.pdf}} \\
 \subfloat[][\emph{Current scan for detector A, the error are \\ multiplied by a factor of $20$.}]{
-\includegraphics[width = 0.5\textwidth]{Analysis/Autocalib/fitA0-3.pdf}}
+\includegraphics[width = 0.49\textwidth]{Analysis/Autocalib/fitA0-3.pdf}}
 \subfloat[][\emph{Current scan for detector A, the error are \\ multiplied by a factor of $20$.}]{
-\includegraphics[width = 0.5\textwidth]{Analysis/Autocalib/fitA4-7.pdf}}
+\includegraphics[width = 0.49\textwidth]{Analysis/Autocalib/fitA4-7.pdf}}
 \caption{Pmt Rates vs current (from I21 monitor), the model used for the fit: $y = mx + q$.}
 \end{figure}
 
-The figures are referred to the data acquired for the first autocalibration. It's interesting to calculate, from the result of the fit, the factor that appears in \ref{eq:Systematic}:
+The figures are referred to the data acquired for the first autocalibration. It's interesting to calculate, from the result of the fit, the factor that appears in \ref{eq:Systematic}: \bigskip
 
 \begin{center}
 \begin{tabular}{lrrr}
@@ -526,7 +536,7 @@ The figures are referred to the data acquired for the first autocalibration. It'
 \end{tabular}
 \end{center}
 
-Ignoring the presence of the offset lead two consequences: the recostructed asymmetry is lower, on average $ \simeq 10\%$ less than expected, and the Counts are overstimated. Because the error depend on the pmt counts, as seen in \ref{eq:SymmetryError}, this two effect combined add up and worsen the precision and accuracy of the measurement.
+Ignoring the presence of the offset lead two consequences: the recostructed asymmetry is lower, on average $ \simeq 10\%$ less than expected, and the Counts are overstimated. Because the error depend on the pmt counts, as seen in \ref{eq:Error}, this two effect combined add up and worsen the precision and accuracy of the measurement.
 
 \newpage
 \subsection{Rates on lead}
