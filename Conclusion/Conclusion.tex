@@ -1,9 +1,76 @@
-\chapter{Result}
+\chapter{Result} \label{result}
 
 \begin{itemize}
 \item result of the analysis
 \end{itemize}
 
+In this chapter we report the result obtained for the data-analysis. irst we report the averaged asimmetries with and without correcting by the pmt offset
+
+\begin{table}[!ht]
+\centering
+\subfloat[][\emph{Asimmetries, with offset not subtracted.} \label{table:NotCorrected}]{ 
+\begin{tabular}{c|c|c}
+\hline
+ PMT   &   Average &   $\sigma$ \\
+\hline
+ B0    & -17.4244  &  6.4 \\
+ B1    & -16.0518  &  6.2 \\
+ B2    & -18.0161  &  7.1 \\
+ A0    &  10.1818  &  3.0 \\
+ A1    &   9.24624 &  2.8 \\
+ A2    &  11.6655  &  3.1 \\
+ A3    &  11.2402  &  3.4  \\
+ A4    &  13.1436  &  4.1 \\
+ A5    &  14.7085  &  4.1 \\
+ A6    &  12.1429  &  4.5 \\
+ A7    &  12.7505  &  5.4 \\
+\hline
+\end{tabular}} \qquad
+\subfloat[][\emph{Asimmetries with offsets subtracted}\label{table:OffsetCorrected}]{
+\begin{tabular}{lrr} 
+\hline
+ PMT   &   Average &   \sigma \\
+\hline
+ B0    &  -18.2878 &  6.4  \\
+ B1    &  -16.6853 &  6.4 \\
+ B2    &  -18.5515 &  7.2 \\
+ A0    &   12.885  &  3.0 \\
+ A1    &   12.2368 &  2.8 \\
+ A2    &   14.7177 &  3.1 \\
+ A3    &   13.5512 &  3.4  \\
+ A4    &   14.9812 &  4.1 \\
+ A5    &   16.6329 &  4.1 \\
+ A6    &   13.5496 &  4.5 \\
+ A7    &   13.8055 &  5.4 \\
+\hline
+\end{tabular}}
+\qquad
+\subfloat[][]{
+\begin{tabular}{c|c}
+\hline
+ PMT   &        c \\
+\hline
+ B0    & 0.95 \\
+ B1    & 0.96 \\
+ B2    & 0.97 \\
+ A0    & 0.79 \\
+ A1    & 0.76 \\
+ A2    & 0.79 \\
+ A3    & 0.83 \\
+ A4    & 0.88 \\
+ A5    & 0.88 \\
+ A6    & 0.90 \\
+ A7    & 0.92 \\
+\hline
+\end{tabular}}
+\caption{Averaged asymmetries over all the events. The values are corrected subtracting $\overline{A}_{I}$ and considering the effective polarization $p$ of the beam}
+\end{table}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.75\textwidth]{Analysis/Dataselection/FirstResult.pdf}
+\caption{•}
+\end{figure}
 
 
 \chapter{Conclusion and outlook} \label{conclusion}

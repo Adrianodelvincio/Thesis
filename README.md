@@ -23,9 +23,10 @@ Capitolo sulla teoria:
 - [] descrivere il modello lineare usato dopo nell'analisi.
 
 Capitolo Setup sperimentale:
-- [] Spiegare a grandi linee come funzionano i Monitor del fascio, Resistenza di Shunt e eccitazioni nelle cavità risonanti
+- [x] Spiegare a grandi linee come funzionano i Monitor del fascio, Resistenza di Shunt e eccitazioni nelle cavità risonanti
 - [] chiedere ad Anselm documentazione sulla MasterBoard
 - [] Come si stima l'errore sistematico?
+- [] discutere la stabilizzazione del fascio.
 
 Capitolo di Analisi:
 - [x] migliorare l'output del programma fit.cc, inserire unit test e cambiare formato dati
@@ -37,7 +38,8 @@ Capitolo di Analisi:
 - [] provare a vedere se c'è un test per controllare se ci sono doppi conteggi, oppure si conta di meno.
 - [] vedere se è possibile estrarre almeno una stima rozza dell'incertezza associata ai monitor X25/X21 e Y25/Y21.
 - [x] finire l'analisi dello scan in attenuation anche per il detector A
-- [] confrontare i risultati con curve_fit di scipy
+- [x] confrontare i risultati con curve_fit di scipy
+- [] rivedere il modello che si è usato per fare la calibrazione delle pmt.
 - [] controllare le run che potrebbero non avere il fascio polarizzato.
 - [] Capire perchè le asimmetrie calcolata con lo slowvariation e dal fit sono in disaccordo per svariati ordini di grandezza
 - [] impostare il ricampionamento.
