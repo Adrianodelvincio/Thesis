@@ -40,9 +40,16 @@ Capitolo di Analisi:
 - [x] finire l'analisi dello scan in attenuation anche per il detector A
 - [x] confrontare i risultati con curve_fit di scipy
 - [] rivedere il modello che si è usato per fare la calibrazione delle pmt.
-- [] controllare le run che potrebbero non avere il fascio polarizzato.
+- [x] controllare le run che potrebbero non avere il fascio polarizzato.
 - [] Capire perchè le asimmetrie calcolata con lo slowvariation e dal fit sono in disaccordo per svariati ordini di grandezza
 - [] impostare il ricampionamento.
 #- [] Creare un ttree per analizzare i dati anche con root
 
+CORREZIONI FORTI
+- [] scrivere l'introduzione di carattere generale di 2/3 pagine in cui si riassuma il lavoro di tesi.
+- [] inserire uno schema dell'acceleratore e una dei detector
+- [] cambiare la struttura della tesi, spezzare in due il capitolo analysis, la prima parte detector test and calibration, la seconda asymmetry on carbon
+- [] introdurre prima di ogni capitolo un cappello che introduca cosa di tratterà
+- [] tutti i commenti nella tesi vanno definiti con un comando
+- [] i plot dei conteggi in funzione della soglia in mV vanno ricontrollati
 
