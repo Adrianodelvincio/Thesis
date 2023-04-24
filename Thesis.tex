@@ -7,6 +7,7 @@
 \usepackage{subfig}
 
 \usepackage{hyperref}
+\hypersetup{hidelinks}
 \usepackage{frontespizio}
 \usepackage[english]{babel}
 \usepackage{outlines}
@@ -22,8 +23,9 @@
 
 \tikzfeynmanset{every blob = {minimum size = 3mm}}
 
-\begin{document}
+\newcommand{\commento}[1]{{\bfseries #1 \medskip}}
 
+\begin{document}
 \begin{frontespizio}
 \Logo[2.5cm]{Simbolo/cherubino_pant541.eps}
 \Istituzione{Università di Pisa}
@@ -38,7 +40,7 @@
 
 \tableofcontents
 
-
+% Capitoli tesi
 \include{Abstract/abstract}
 \include{Introduzione/Intro}
 \include{Transverse/Transv}
@@ -49,5 +51,4 @@
 
 \bibliography{bib.bib}
 \bibliographystyle{plain}
-
 \end{document}

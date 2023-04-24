@@ -49,7 +49,7 @@ CORREZIONI FORTI
 - [] scrivere l'introduzione di carattere generale di 2/3 pagine in cui si riassuma il lavoro di tesi.
 - [] inserire uno schema dell'acceleratore e una dei detector
 - [] cambiare la struttura della tesi, spezzare in due il capitolo analysis, la prima parte detector test and calibration, la seconda asymmetry on carbon
-- [] introdurre prima di ogni capitolo un cappello che introduca cosa di tratterà
+- [] introdurre prima di ogni capitolo un cappello che introduca cosa si tratterà
 - [] tutti i commenti nella tesi vanno definiti con un comando
 - [] i plot dei conteggi in funzione della soglia in mV vanno ricontrollati
 
