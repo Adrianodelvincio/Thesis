@@ -565,7 +565,7 @@ The result reported in the table can be confronted with the final result that ar
 
 \chapter{Data Analysis: Asymmetry on Carbon and Rates on Lead target.}
 
-\subsection{Rates on lead}
+\section{Rates on lead}
 
 \commento{This section is straightforward. Basically I have to show the single plot of the pmts counts vs. beam current for lead target. However it's possible to do some preliminary studies, for example to calculate the time needed for measuring the asymmetry on lead with a certain error and maybe check from Mott cross section that the observed rate are fine.}
 
@@ -576,7 +576,7 @@ The result reported in the table can be confronted with the final result that ar
 \caption{Rates on lead Target, for Detector A (left)}
 \end{figure}
 
-\subsection{Model for fitting the data}
+\section{Model for fitting the data}
 \commento{Here I have to explain the model used for describing the data, so the problem of the false asymmetry induced by variations in beam position, angle, current and energy.}
 \bigskip
 
@@ -611,7 +611,7 @@ We must clarify now what we mean with $\delta x, \delta y, \delta \theta_{x}, \d
 
 Each value represent the difference between the mean values over the two different polarization state.
 
-\subsection{Data pre-selection and Fit}
+\section{Data pre-selection and Fit}
 
 After all the calibration are performed, the analysis program is ready to produce the datafiles suitable to analyze the asymmetry data for Carbon. \\
 The Data file that are produced from the binary files are simply files in txt format, where the data are stored in columns. Before proceeding with the linear fit, however, it is necessary to visualize the data to check that there are no anomalous behaviors. In fact the data can contain moments of loss of the beam burrent and sudden interruptions, loss of polarization of the beam and even setting errors by MAMI operators can affect the experiment. Carbon data were taken from November 2nd to 4th, and consist of $28$ runs, each $1$ hour long.
@@ -759,7 +759,7 @@ The error of each point is computed exploiting the same formula defined above (t
 
 
 
-\subsection{False asymmetries}
+\section{False asymmetries}
 \commento{Seems that is possible to obtain rough estimates of the beam related asymmetries with the results from the fit. For Energy and position it's achievable, while for the angles it's quite hard (in principle sounds possible to perform an analytic calculation of the asymmetry related to the incident beam angle, however Anselm told me that quite often those results are in disagrement with the observed even in the sign!).}
 
 Until now the values for the false asymmetries were threated as the parameters of the fit. In this section we will investigate how we can obtain another different exstimations, usefult to check the validity of all the process of analysis of the data.
@@ -829,7 +829,7 @@ We report the values obtained with this new method ...
 We can investigate also the asymmetries related to the beam energy. For this one we can exploit the theoretical expression for the Mott cross-section, taking the derivative ...
 
 We can investigate the Current asymmetries, because we have the autocalibration procedure, so from the scale factor we can check if the current asymmetri is compatible with $1$ as assumed or not.
-\subsection{??Bootstrap??}
+\section{??Bootstrap??}
 
 \commento{Although Anselm was against it, now seems possible to increase the precision of the mesurement with a procedure similar to a bootstrap. Instead of computing all the quantities inside a single event, it's possible to compute all the important quantities also between different events. In this scenario the statistics can be increased artificially as mutch as we want, with the same amount of data. Of course, it's also simple to abuse of this method, so we should restrict using only events next to each other. However seem reasonable and promising.}
 
