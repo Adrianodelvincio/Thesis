@@ -343,7 +343,7 @@ All this procedure can be easely checked if we plot now the $X$ and $Y$ position
 \end{figure}
 
 
-\subsection{Current and ENMO monitors} \label{CurrentCalibration}
+\subsection{Current (PIMO) and energy monitors (ENMO) calibration.} \label{CurrentCalibration}
 
 For the current monitors I13 and I21, we perform the calibration changing the current of the beam and observing the output values of the monitors (Voltage values). The we perform a fit (for the beam current, we used the nominal values that we communicate to MAMI, has the values for the x-axis).
 
@@ -477,7 +477,7 @@ Specifical values of $a,b,c,d$ are suggested in the NINO board documentation. So
 \end{figure}
 
 \newpage
-\subsection{Autocalibration procedure}
+\subsection{Autocalibration procedure} \label{Autocalib}
 
 In this section we present the last calibration tecniques needed in the data-process. The autocalibration is a special operation mode of the MAMI accelerator, during which the beam current is made to vary in a controlled way. Through these special runs is possible to obtain again the current scaling factor that we discussed in \ref{CurrentCalibration}. Because the current in varying, it is possible to study the linearity of the pmts. From a linear fit of the pmts counts vs. current intensity the angular coefficient and the offset are measured. The offset is particual important because give rise of a possible systematic error that influence the final asymmetry result. It is quite simple to demostrate this, if a relation of the type $N = mI + N_{0} $ holds. Consider the following quantity:
 
@@ -755,25 +755,8 @@ The error of each point is computed exploiting the same formula defined above (t
 \sigma_{Asym} = \dfrac{1}{\sqrt{2N_{A/B} \cdot n}}
 \end{align*}
 
-From this plots we can check if the linear model is good enough to descrive the depencence of out data and decide if the it should be useful to apply different cuts for certain beam parameters. We report now a first exstimation of the false asimmetries, later the data will be fitted without treat separately the beam parameters. From that we can learn the effects of the correlation between the data.
 
-\begin{center}
-\begin{tabular}{||c|c|c|c|c|}
-\hline
-pmt: & B0 & B1 & B2 & unit \\ 
-\hline 
-$\frac{dA}{dX} $  & $-66 \pm 37$ & $-65 \pm 37$ & $-80 \pm 47$ & $ \frac{ppm}{\SI{}{\micro \meter}}$\\ 
-\hline 
-$\frac{dA}{dY} $  & $34 \pm 219$  & $ 79 \pm 233$ & $ -213 \pm 219$ & $\frac{ppm}{\SI{}{\micro \meter} }$ \\ 
-\hline 
-$\frac{dA}{d\theta_{y}}$ & $-416 \pm 1181$  & $ -443 \pm 1227$ & $-1237 \pm 1130$ & $\frac{ppm}{\mu rad}$\\ 
-\hline 
-$\frac{dA}{d\theta_{x}}$ & $-672 \pm 297$ & $ -672 \pm 307 $ & $-845 \pm 380$ & $\frac{ppm}{\mu rad}$ \\ 
-\hline 
-$\frac{dA}{dE}$ & $ -0.004 \pm 0.016 $ & $-0.011 \pm 0.016 $ & $ - 0.044 \pm 0.018 $ & $\frac{ppm}{\SI{}{\kilo \electronvolt}}$\\ 
-\hline
-\end{tabular} 
-\end{center}
+
 
 
 \subsection{False asymmetries}
@@ -788,13 +771,24 @@ From the plot .. we see that the counts are scaling linearly with the beam posit
 N(x,...) = N_{0} + m \cdot (x - x_{0})
 \end{align*}
 
-it is clear that the linear model can't be alwaws good, at some point the electron will be deflected completely out of the detector, however for the small variation that the magnets are producing this can be assumed without risk. The we can try to compute the asymmetry for two different beam position $x_{1}$ and $x_{2}$:
+it is clear that the linear model can't be alwaws good, at some point the electron will be deflected completely out of the detector, and so the counts will fall rapidly to zero. However, the magnets used to deflect the beam are producing small variation in the position, on the order of hundredths of a millimeters.
+Let's suppose that the beam position for two sub-events is $x_{1}$ and $x_{2}$, we can calculate the asymmetry between the two event, taking care of the possible effects due to the different position. We write explicitly: 
 
 \begin{equation}
 \begin{split}
 Asym = \dfrac{N(x_{1}) - N(x_{2})}{N(x_{1}) + N(x_{2})} = \dfrac{N_{0} + m \cdot (x_{1} - x_{0}) - N_{0} - m \cdot (x_{2} - x_{0})}{N(x_{1}) + N(x_{2})} =  \dfrac{m}{2 N_{0} + m \cdot (x_{1} +  x_{2}) - 2m x_{0}}(x_{1} -  x_{2})
 \end{split}
 \end{equation}
+
+In this equation three differents parameters appear: $N_{0}$ is the offset of the linear model, $m$ is the agular coefficient, or the slope, and $x_{0}$ is the initial position respect to we compute the position variation. The first two terms are obtained by a linear fit, while $x_{0}$ is fixed conveniently. \\
+
+\begin{figure}[hbtp]
+\centering
+\subfloat[][\emph{Plot for slow variation in $x$ direction for detector B.}]
+{\includegraphics[scale=0.5]{Analysis/slowxVariation.pdf}}
+\subfloat[][\emph{Plot for slow variation in $x$ direction for detector B.}]{\includegraphics[scale=0.5]{Analysis/slowyVariation.pdf}}
+\end{figure}
+
 
 We can approximate the denominator deleting the term $ m \cdot (x_{1} +  x_{2})$ which should be small compared to $2N_{0}$. We end with:
 
@@ -831,12 +825,6 @@ pmt 7 & 25808 & \\
  
 We report the values obtained with this new method ... 
 
-\begin{figure}[hbtp]
-\centering
-\subfloat[][\emph{Plot for slow variation in $x$ direction for detector B.}]
-{\includegraphics[scale=0.5]{Analysis/slowxVariation.pdf}}
-\subfloat[][\emph{Plot for slow variation in $x$ direction for detector B.}]{\includegraphics[scale=0.5]{Analysis/slowyVariation.pdf} }
-\end{figure}
 
 We can investigate also the asymmetries related to the beam energy. For this one we can exploit the theoretical expression for the Mott cross-section, taking the derivative ...
 

@@ -8,7 +8,7 @@
 \item confront with the theory.
 \end{itemize}}
 
-In this chapter we report the result obtained for the data-analysis. irst we report the averaged asimmetries with and without correcting by the pmt offset
+In this chapter we report the result obtained for the data-analysis. First we report the averaged asimmetries with and without subtracting the pmt offset. From the asymmetry results, we can compute the factor $c$ as the ratio between the final asymmetries with and without subtracting the offset. The values can be directly confronted with the ones defined in \ref{Autocalib}. We see a good agreement. All the values are in reported in ppm (part-per-million).
 
 \begin{table}[!ht]
 \centering
@@ -49,8 +49,8 @@ In this chapter we report the result obtained for the data-analysis. irst we rep
 \hline
 \end{tabular}}
 \qquad
-\subfloat[][]{
-\begin{tabular}{c|c}
+\subfloat[][\emph{$c$ factor, as defined in \ref{eq:Systematic}} \label{table:Cfactor}]{
+\begin{tabular}{c|c} 
 \hline
  PMT   &        c \\
 \hline
@@ -70,11 +70,30 @@ In this chapter we report the result obtained for the data-analysis. irst we rep
 \caption{Averaged asymmetries over all the events. The values are corrected subtracting $\overline{A}_{I}$ and considering the effective polarization $p$ of the beam}
 \end{table}
 
+The asymmetries are shown with the errors in the following plot. The error are obtained with the formula:
+\begin{align*}
+\sigma = \sqrt{\frac{1}{2 N \cdot n}}
+\end{align*}
+
+To Obtain a final asymmetry for detector A and B, the asymmetries for each plot are averaged using the formula:
+
+\begin{equation}
+\overline{A_{n}} = \sum_{i = 0}^{n_{PMT}} \dfrac{ w_{i} A_{i}}{\sum_{i = 0}^{n_{PMT}} w_{i}}
+\end{equation}
+
+This is a weighted mean, and $w_{i} = \frac{1}{\sigma^{2}_{i}}$. This formula is applied to take care of the different statistical error for different pmts.
+
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width = 0.80\textwidth]{Analysis/Dataselection/FirstResult.pdf}
 \caption{Plot of the asymmetries ordered by the pmt label, the result are the average event per event, corrected by the beam asymmetry current and for the polarization $p$ percentage.}
 \end{figure}
+
+The final result obtained, without any further analysis, are: 
+\begin{itemize}
+\item Asymmetry for detector A, $A_{A} =  23.1 \pm 1.6$ ppm.
+\item Asymmetry for detector B, $A_{B} = -22.7 \pm 4.7$ ppm.
+\end{itemize}
 
 
 \chapter{Conclusion and outlook} \label{conclusion}
