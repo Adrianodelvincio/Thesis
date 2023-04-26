@@ -565,17 +565,81 @@ The result reported in the table can be confronted with the final result that ar
 
 \chapter{Data Analysis: Asymmetry on Carbon and Rates on Lead target.}
 
+After having described all the calibrations needed, we are ready to analyze the data and measure the \transv from the data collected in second part of the beam time. In this chapter we explain the procedure for the pre-selection of the data (for example the removal of the events with large variation of the beam parameters) and the procedure used to analyze the recostructed asymmetry in order to obtain in the end a point exstimation for $A_{n}$. A section is dedicate to the measurement performed with lead target: the experimental rates measure using the detectors setup described here (\commento{mettere riferimento}) are reported; through the knowledge of the expected counts per sub-event, we calculate the amount of statistics needed to measure the \transv on $Pb$ with an accuracy of $1 ppm$. In the end we discuss the problem of the false asymmetries that can affect the final result, and also a raw exstimation of the systematic error is perfomed, in the end. 
+
 \section{Rates on lead}
 
-\commento{This section is straightforward. Basically I have to show the single plot of the pmts counts vs. beam current for lead target. However it's possible to do some preliminary studies, for example to calculate the time needed for measuring the asymmetry on lead with a certain error and maybe check from Mott cross section that the observed rate are fine.}
+After all the calibrations are finally perfomed, the experimetal setup is ready to take real "production" data 
+to achieve the objectives of the experiment. The first goal of the experiment is to measure the rates on $Pb$ target.
+The lead target installed is a made by a thin layer with a thickness of $\SI{0.5}{\milli \meter}$, and it's not isotopically pure. The expected rates are given by the Mott cross section, that we report here \commento{mettere la sezione d'urto Mott, provare a fare i calcoli e vedere se torna}.\medskip
+
+We took $14$ acquisitions lasting $\simeq 2,5$ minutes, which corresponds to $6950$ events. For each of these acquisitions we set the beam current at different values, ranging from $\SI{10}{\micro \ampere}$ to $\SI{22}{\micro \ampere}$ of intesity. The Rates are then reported as a function of the current, a linear model is used to fit the data.
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width = 0.45\textwidth]{Analysis/Rates_on_lead.png}
-\includegraphics[width = 0.45\textwidth]{Analysis/Rates_on_leadB.png}
-\caption{Rates on lead Target, for Detector A (left)}
+\includegraphics[width = 0.9\textwidth]{Analysis/LeadRates/LeadRates.pdf}
+\label{fig:Lead}
+\caption{Rates on lead Target in function of the beam current. The Rates for each PMT of detector A (on the left), and detector B (on the right) are reported.}
 \end{figure}
 
+The angular coefficient $m$ and the offset $q$ are reported in the table below. 
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lllr}
+\hline
+ pmt   & m [\SI{}{\micro \ampere}]          & q                &  $\chi^{2}$ (dof = 9) \\
+\hline
+ A0    & 501.42 +/- 2.17 & 256.55 +/- 39.57 & 13.7521  \\
+ A1    & 605.77 +/- 2.31 & 226.11 +/- 42.04 & 13.3783  \\
+ A2    & 495.01 +/- 1.47 & 163.04 +/- 26.83 &  6.95713 \\
+ A3    & 345.68 +/- 1.6  & 113.4 +/- 29.16  & 12.1727  \\
+ A4    & 232.58 +/- 0.9  & 74.38 +/- 16.44  &  5.36892 \\
+ A5    & 241.95 +/- 0.74 & 65.79 +/- 13.51  &  3.48398 \\
+ A6    & 205.79 +/- 0.65 & 52.38 +/- 11.87  &  3.0892  \\
+ A7    & 143.42 +/- 0.47 & 36.49 +/- 8.55   &  2.26341 \\
+ B0    & 92.55 +/- 0.34  & -16.88 +/- 6.16  &  2.05286 \\
+ B1    & 92.29 +/- 0.33  & -16.9 +/- 5.97   &  1.92163 \\
+ B2    & 68.48 +/- 0.32  & -9.34 +/- 5.91   &  2.81988 \\
+\hline
+\end{tabular}
+\end{table}
+
+In this other plot we show the residuals: \commento{metti i residui, ma non sono poi coì interessanti da studiare}.
+
+The pmt Counts with this target, increase from $100$ counts for detector B to $500$ counts every $\SI{1}{\micro \ampere}$.  The experimental error $\sigma$ related to the asymmetry was studied in \commento{aggiungi richiamo}, we recover the formula:
+
+\begin{equation}
+\sigma = \sqrt{\dfrac{1}{2 N \cdot n}}
+\end{equation}
+
+we remind to the reader that $N$ are the Counts per sub-event, while  $n$ is the number of event analyzed.
+Now exstimate the amount of statistic needed to measure the asymmetry with some degree of accuracy. Let's suppose that we want to obtain, for each pmt, an error not greater than $4 ppm$. With this accuracy, the asymmetry obtained for detectro A will have an error given by $\frac{4ppm}{\sqrt{n_{pmt}}} \simeq 1.5 ppm$.
+We computed the time needed to achieve this accuracy for both the two detectors, given in total hours of beam-time. To simplify the calculation, we assumed that every pmt rates of detector A and B are equal to the averaged counts obtained from the plot above \ref{fig:Lead}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c|c|c}
+\hline
+   current I &   T [h] Det A &   T [h] Det B \\
+\hline
+        10   &       344 &      1487  \\
+        12.5 &       277 &      1185   \\
+        15   &       232 &      985 \\
+        17.5 &       199 &      843 \\
+        20   &       175 &      737 \\
+\hline
+\end{tabular}
+\end{table}
+
+As we will see in the next part of this chapter, focused on the asymmetry on carbon target, the amount of time needed to obtain an accuracy of $\simeq 1.5 ppm$ is roughly $15 h$ with $\SI{10}{\micro \ampere}$. The same measurement with lead will need 23 times the statistic accumulated for Carbon. This involves more experimenta difficulties:
+
+\begin{itemize}
+\item deterioration of lead target.
+\item need to develop a target cooling system.
+\item monitor the radioactivity levels in the experimental hall.
+\end{itemize}  
+ 
 \section{Model for fitting the data}
 \commento{Here I have to explain the model used for describing the data, so the problem of the false asymmetry induced by variations in beam position, angle, current and energy.}
 \bigskip
@@ -756,9 +820,6 @@ The error of each point is computed exploiting the same formula defined above (t
 \end{align*}
 
 
-
-
-
 \section{False asymmetries}
 \commento{Seems that is possible to obtain rough estimates of the beam related asymmetries with the results from the fit. For Energy and position it's achievable, while for the angles it's quite hard (in principle sounds possible to perform an analytic calculation of the asymmetry related to the incident beam angle, however Anselm told me that quite often those results are in disagrement with the observed even in the sign!).}
 
@@ -780,7 +841,7 @@ Asym = \dfrac{N(x_{1}) - N(x_{2})}{N(x_{1}) + N(x_{2})} = \dfrac{N_{0} + m \cdot
 \end{split}
 \end{equation}
 
-In this equation three differents parameters appear: $N_{0}$ is the offset of the linear model, $m$ is the agular coefficient, or the slope, and $x_{0}$ is the initial position respect to we compute the position variation. The first two terms are obtained by a linear fit, while $x_{0}$ is fixed conveniently. \\
+In this equation three differents parameters appear: $N_{0}$ is the offset of the linear model, $m$ is the agular coefficient, or the slope, and $x_{0}$ is the initial position respect to we compute the position variation. The first two terms are obtained by a linear fit, while $x_{0}$ is fixed conveniently.
 
 \begin{figure}[hbtp]
 \centering
