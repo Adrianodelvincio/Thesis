@@ -300,6 +300,17 @@ The $Q^{2}$ values is the same of the last measurement performed at MAMI, and is
 For the calibration of the X Y monitors, we used two target made by three carbon wires at a certain distance from each other, aligned horizontaly and vertically. The distance between the two center of the external wires is $ d_{horizontal} = \SI{2.38}{\milli \meter}$ for the target alligned horizontally and $d_{vertical} = \SI{2.33}{\milli \meter}$ for the other one.
 When the horizontal wires target is cetered, we turn on the beam, and we take some data slowly changing the horizontal beam direction. The beam direction is changed by MAMI operators, varying the Magnetic field of the \textit{Wobbler 16} magnets (\ref{fig:BeamLine}):
 
+\begin{wrapfigure}{r}{0.4\textwidth}
+%\setlength{\columnsep}{10pt}%
+\centering
+\includegraphics[width = 0.35\textwidth]{ExperimentalSetup/target.pdf}
+\caption{Target frame installed during the experiment, on the top we have the two targets made by three carbon wires that are used to calibrate the positions monitors. Then the carbon target and the two lead targets.}
+\end{wrapfigure}
+
+ Then we repeat the same procedure with the other target, for the vertical direction. We observe that the pmts counts increase to a maximum, that is reached when the beam spot is centered on the carbon wire, and then decrease until the next carbon wire is hit by the beam.\\
+We plot the pmt data \textit{versus} the $X25,X21,Y25,Y21$, given in $\SI{}{\volt}$. 
+Given that we know the real distance between the two external wires, we can obtain the correct scaling factors to calculate the X and Y position values ​​of the beam. To identify the three peaks in of the carbon target, we fit the data using a gaussian model (see \ref{fig:HorizontalCalibration}). The mean $\mu$ represents the center of the wire, given in $\SI{}{\volt}$.
+
 \begin{figure}[hbtp]
 \centering
 \includegraphics[scale=0.4]{figures/XYMOCalibBeamLine.svg.pdf}
@@ -307,10 +318,6 @@ When the horizontal wires target is cetered, we turn on the beam, and we take so
 \label{fig:BeamLine}
 \end{figure}
 
-
- Then we repeat the same procedure with the other target, for the vertical direction. We observe that the pmts counts increase to a maximum, that is reached when the beam spot is centered on the carbon wire, and then decrease until the next carbon wire is hit by the beam.\\
-We plot the pmt data \textit{versus} the $X25,X21,Y25,Y21$, given in $\SI{}{\volt}$. 
-Given that we know the real distance between the two external wires, we can obtain the correct scaling factors to calculate the X and Y position values ​​of the beam. To identify the three peaks in of the carbon target, we fit the data using a gaussian model (see \ref{fig:HorizontalCalibration}). The mean $\mu$ represents the center of the wire, given in $\SI{}{\volt}$.
 Looking at the Beam line, we assume that the beam travels in a straight line. Let's consider the \textit{Wobbler 16} magnet the "$0$" of a coordinate system, with the $z$ axis pointing to the target (left direction in the beam scheme). The Beam parameters are measured by the Monitors $X/Y_{21}, X/Y_{25}$, which are located at some distance respect to the target. Suppose we are working only with the $Y_{25}$ monitor (the procedure is the same for the others). The Beam $y$ position is described by:
 
 \begin{align*}
@@ -469,7 +476,7 @@ f(att) = \dfrac{a}{(x - b)^{c} + d}
 
 Specifical values of $a,b,c,d$ are suggested in the NINO board documentation. So the spectra values in physical units are represented by: 
 
-\begin{figure}[!h]
+\begin{figure}[h]
 \centering
 \subfloat[][]{\includegraphics[width = 0.45\textwidth]{Analysis/CalibrationPMT/voltB0.pdf} }
 \subfloat[][]{\includegraphics[width = 0.45\textwidth]{Analysis/CalibrationPMT/voltB1.pdf} }\\
@@ -536,7 +543,7 @@ With a linear fit we can estimate the scale and the offset to convert from I21 v
 \newpage
 The figures are referred to the data acquired for the first autocalibration. It's interesting to calculate, from the result of the fit, the factor that appears in \ref{eq:Systematic}:
 
-\begin{table}[h]
+\begin{table}[ht]
 \centering
 \begin{tabular}{c|c|c|c}
 \hline
@@ -563,7 +570,7 @@ The result reported in the table can be confronted with the final result that ar
 
 
 
-\chapter{Data Analysis: Asymmetry on Carbon and Rates on Lead target.}
+\chapter{Asymmetry on Carbon and Rates on Lead target.}
 
 After having described all the calibrations needed, we are ready to analyze the data and measure the \transv from the data collected in second part of the beam time. In this chapter we explain the procedure for the pre-selection of the data (for example the removal of the events with large variation of the beam parameters) and the procedure used to analyze the recostructed asymmetry in order to obtain in the end a point exstimation for $A_{n}$. A section is dedicate to the measurement performed with lead target: the experimental rates measure using the detectors setup described here (\commento{mettere riferimento}) are reported; through the knowledge of the expected counts per sub-event, we calculate the amount of statistics needed to measure the \transv on $Pb$ with an accuracy of $1 ppm$. In the end we discuss the problem of the false asymmetries that can affect the final result, and also a raw exstimation of the systematic error is perfomed, in the end. 
 
@@ -578,13 +585,12 @@ We took $14$ acquisitions lasting $\simeq 2,5$ minutes, which corresponds to $69
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width = 0.9\textwidth]{Analysis/LeadRates/LeadRates.pdf}
-\label{fig:Lead}
 \caption{Rates on lead Target in function of the beam current. The Rates for each PMT of detector A (on the left), and detector B (on the right) are reported.}
 \end{figure}
 
 The angular coefficient $m$ and the offset $q$ are reported in the table below. 
 
-\begin{table}[h]
+\begin{table}[ht]
 \centering
 \begin{tabular}{lllr}
 \hline
@@ -615,9 +621,9 @@ The pmt Counts with this target, increase from $100$ counts for detector B to $5
 
 we remind to the reader that $N$ are the Counts per sub-event, while  $n$ is the number of event analyzed.
 Now exstimate the amount of statistic needed to measure the asymmetry with some degree of accuracy. Let's suppose that we want to obtain, for each pmt, an error not greater than $4 ppm$. With this accuracy, the asymmetry obtained for detectro A will have an error given by $\frac{4ppm}{\sqrt{n_{pmt}}} \simeq 1.5 ppm$.
-We computed the time needed to achieve this accuracy for both the two detectors, given in total hours of beam-time. To simplify the calculation, we assumed that every pmt rates of detector A and B are equal to the averaged counts obtained from the plot above \ref{fig:Lead}
+We computed the time needed to achieve this accuracy for both the two detectors, given in total hours of beam-time. To simplify the calculation, we assumed that every pmt rates of detector A and B are equal to the averaged counts obtained from the plot above.
 
-\begin{table}[h]
+\begin{table}[ht]
 \centering
 \begin{tabular}{c|c|c}
 \hline
@@ -733,7 +739,8 @@ $\mu$ are the parameters of the \textit{pdf}, that are mean and variance of the 
 
 Looking at the histograms, we see that the beam correlated-difference values are centered around zero, the result are reported below:
 
-\begin{center}
+\begin{table}
+\centering
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline 
 \rule[-1ex]{0pt}{2.5ex} & $X [\mu m]$ & $Y[\mu m]$ & $Xp [\mu rad]$ & $Yp [\mu rad]$ & $E [eV]$ \\ 
@@ -742,10 +749,45 @@ Looking at the histograms, we see that the beam correlated-difference values are
 \hline 
 \rule[-1ex]{0pt}{2.5ex} $sigma$ & $3.7 \cdot 10^{-1}$ & $2.9 \cdot 10^{-2}$ & $ 1.9 \cdot 10^{-5} $ & $6.5 \cdot 10^{-6}$ & $0.38$ \\ 
 \hline 
-\end{tabular} 
-\end{center}
+\end{tabular}
+\label{parametri} 
+\caption{Beam parameters}
+\end{table}
 
-these results are encouraging, the stabilization of the beam has meant that only small differences are observed within an event for each monitor. This means that, unless the values for the false asymmetries are not very large, the effect of the beam variation are small.
+these results are encouraging, the stabilization of the beam has meant that only small differences are observed within an event for each monitor. This means that, unless the values for the false asymmetries are not very large, the effect of the beam variation are small. we will have the opportunity to verify this hypothesis in the raw result. \bigskip
+After removing the outliers, we mention a problem encountered during the data taking which took place on the night of the 2nd December. During that night the beam a wrong setting from the MAMI operators caused the beam to lose the polarization. We find out this problem only the next day, so we had not en evidence of how many hours of beam were lost. Unfortunatelly,  because this happened during the night, nobody could save the polarization measurement of the beam.
+All the stabilization monitors were active, so the data show apparently the same behaviour of the good data taken during the first day of acquisition. We can't proceed with an arbitrary cut of the data, we risk to cut off also good data or perform an incomplete removal. However it's importat to indentify the data with this problem, ignoring this produce a overall measurement that is decrease respect to the theoretical prediction. This is the worst scenario, because we could not identify the presence, for example, of any other systematic effects related to the electronics system, therefore also the testing of the electronics is not possible.\\
+ 
+The procedure to identify the runs with $0\%$ polarization rely to the exstimation of the correlation coefficient of the PMTs counts. \\
+For every event we have two type of polarization sequence. The polarization $\vec{P}$ of each sub-event is identified with $+1$ and $-1$, that correspond to up and down $\overline{P}$. This values are part of the data tree, and form a sequence $p_{i}$ of the type: $+1-1-1+1,+1-1-1+1,-1+1+1-1$, where i is the index to the i-th sub-events analyzed. If the $\overline{P}$ is different from zero, we expect, due to the \transv, a difference in the number of scattered electrons between sub-events with different $p_{i}$. This lead to a positive/negative correlation between the sequence $p_{i}$ and the pmt data. In case of $\vec{P} = \vec{0}$, the expected values for the correlation should be zero. \\
+We applied this strategy with the hope to identify and remove the block of data with $A_{n} \simeq 0$. The correlation $c$ coefficient between the $p_{i}$ and the pmt sequence $N_{i}$ of counts is computed every $t = 1 h$, that correspond to $45000$ events. We plot the averaged correlation for detector A and B, and the correlation of the two detectors together (with the reverse sign for detector B).
+
+\begin{figure}[hbtp]
+\centering
+\subfloat[][]{
+\includegraphics[width = 0.5\textwidth]{Analysis/Dataselection/Correlation.pdf}}
+\subfloat[][]{
+\includegraphics[width = 0.47\textwidth]{Analysis/Dataselection/OverallCorr.pdf}
+}
+\caption{Plot of the correlation fot the two detectors on the left, and the global correlation on the right. We clearly observe zero for a block of run starting at time $t = 12 h$, until $t = 19 h$.}
+\end{figure}
+
+This let us to identify the block of runs with the issues of $\vec{P} = \vec{0}$. It's important to double check that validity of this method seeing if the correspondi asymmetry is compatible with $0$. If we have these two evidences together, this confirms this last series of cuts. The asymmetries measured for suspicious runs are:
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width= 0.5\textwidth]{Analysis/Dataselection/Nopolarity.pdf}
+\caption{•}
+\end{figure}
+
+This plot unequivocally shows that all the asymmetries measured for each PMTs for both detector A and B are compatible with zero. It is therefore reasonably certain that such data should not be included in the main analysis. However, this data is not useless. From them we can extract a reasonable estimate of possible systematic errors affecting our experimental setup. We report here the averaged asymmetries with the correspondig error for these runs:
+\begin{itemize}
+\item asymmetry $A =  -2.49 \pm 2.14$
+\item asymmetry $B =  -7.83 \pm 6.50$
+\end{itemize}
+
+Even if every pmt is $1\sigma$ far from $A_{n} = 0$, the averaged values are negative and $2\sigma$ far from 0. This is an evidene of possible presence of a systematic effects.
+
 Before proceeding with the fit, we observe how the asymmetry evolves as a function of time.
 
 \begin{figure}[hbtp]
@@ -758,8 +800,7 @@ In this figure we plot the average of the asymmetries for each pmt, carried out 
 
 
 When all the calibrations are performed, it is possible to proceed to generate the datafiles fot the fit program.
-
-For a better visualization of the data, especially to observe the dependence of the asymmetry on the Beam parameters measured, it is useful to take the average asymmetry at regular intervals. From the raw plots of the asymmetries (see below \ref{fig:asyvsparam}), it is clear that the statistical error associated to the asymmetry is the main one, and it's not possible to identify a linear dependence. In the meantime, this plot shows that there is a difference in sign between the values ​​measured by the two detectors, and that at the end the averaged result are on the same order of magnitude of what we expect $\pm 20 \quad ppm$ at our scattering angle $\theta$. These results, coupled with the fact that the correlated differences in beam values ​​are small, suggest that the contribution of false asymmetries is limited.
+For a better visualization of the data, especially to observe the dependence of the asymmetry on the Beam parameters measured, it is useful to take the average asymmetry at regular intervals. From the raw plots of the asymmetries (see below \ref{fig:asyvsparam}), it is clear that the statistical error is too hight to identify a linear structure in the dependence of the asymmetry. 
 
 \begin{figure}[hbtp]
 \centering
@@ -768,14 +809,13 @@ For a better visualization of the data, especially to observe the dependence of 
 \label{fig:asyvsparam}
 \end{figure}
 
-In some plots (X,Y and I) we can identify equally spaced cluster of data. So we decide to compute the averaged asymmetry for each cluster we were able to identify. 
-In the following plots we decided to apply some cuts to the data, selecting only the events where the values of all the monitor are less then 3 standard deviation far from the mean. In all the figures the asymmetries are multiplied by a factor of $1e6$ to have the result in ppm (so each y-axis is in ppm). 
+In all the figures the asymmetries are given in [ppm] units. The data are selected removing the correlated-difference that are $5\sigma$ far from the mean values, that we have reported in the table (\ref{parametri}) 
 
 \begin{align*}
 (x_{monitor} - \overline{x}_{monitor}) \leq 3 \cdot \sigma_{X}
 \end{align*}
 
-For each monitor we use the \textit{curve fit} function of the python library \text{scipy} to fit the data. Each Beam parameter is treated separately now, so in principle we are ignoring possible effect of correlation between the X-values (however, from the correlation matrix    \textit{write that somewhere} the effects are negligible)  
+For each monitor we use the \textit{curve fit} function of the python library \text{scipy} to fit the data. Each Beam parameter is treated separately now, so in principle we are ignoring possible effect of correlation between the beam values. We are aware about this fact, the false asymmetries recostructed with this method can be affected by this bias. However this representation of the data offers a clear and understandable way to identify the presence of a linear structure in the data.
 
 \newpage
 \begin{figure}[hbtp]

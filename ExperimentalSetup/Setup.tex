@@ -10,7 +10,7 @@
 
 \section{Overview of the experiment.} \label{FirstDescription}
 
-To measure the Beam-Normal single spin asymmetry, a polarized beam of $ \SI{570}{\mega \electronvolt}$ will be sent against a $\SI{10}{\milli \meter}$ $^{12}C$ target. The detectors consist of two fused-silica coupled to 3 (detector B) and 8 (detector A) pmts, which collect the Cherenkov light emitted when an electron pass through the fused-silica. 
+To measure the Beam-Normal single spin asymmetry, a polarized beam of $ \SI{570}{\mega \electronvolt}$ will be sent against a $\SI{10}{\milli \meter}$ width of $^{12}C$ target. The detectors consist of two fused-silica coupled to 3 (detector B) and 8 (detector A) pmts, which collect the Cherenkov light emitted when an electron pass through the fused-silica. 
 The detector are placed inside the two spectrometer of the A1 hall, which are not used in this experiment due to the high luminosity of the beam ($ \SI{20}{\micro \ampere}$) that is away from their good point of operation. 
 The photomultipliers asymmetry due the change of the electrons spin is the target of the measurement. The pmts signals are collected and digitalized by the \textbf{NINO} board, after a threshold selection, and sent to the A1 control room computer, where the DAQ program collect the data together with all the data coming from the Beam monitors producing Binary files, which are later analyzed by the analysis program, which is significant part of the work done in the framework of the thesis. 
 The data collected are divided in \textit{Events} made by 4 \textit{sub-events} in sequence. Each event correspond to a temporal window of $\simeq \SI{80}{\micro \second}$, where each sub-event is $\SI{20}{\micro \second}$ long. Here it's important to clarify that unlike the majority of experiments in high energy physics, an event is made by all the electrons interacting with the detectors during the time interval of the event, and we will refer to this hereafter unless otherwise stated. The division into sub-events reflects the polarization sequence of the beam. The PMTS counts and the beam monitor values are saved for each subevent, along with the time lenght of the event (measured by in clock cycle by the NINO electronic board \ref{NINO}), and other values which are required to process beam monitor data.\\ 
@@ -19,7 +19,7 @@ The general structure of the event is the following:
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width = 0.45\textwidth]{figures/EventStructure.jpg}
+\includegraphics[width = 0.55\textwidth]{ExperimentalSetup/EventStructure.pdf}
 \caption{Event structure}
 \end{figure}
 
@@ -103,6 +103,8 @@ From the last equation we have a relation which give the beam polarization in te
 
 The total beam polarization is measured by a Moller polarimeter, in the experimental hall, with the beam polarization oriented longitudinally in the experimental hall. The Moller polarimeter can measure the longitudinal polarization of the beam.The other two polarimeters, Compton and Mott, located behind the injector linear accelerator (ILAC), are sensitive to the longitudinal and the trasverse horizontal components of the beam (with an energy around $\SI{3.5}{\mega \electronvolt}$ at this stage). The procedure for the allignment is the following: at the beginning of the beam time the Mott polarimeter is used for different settings of the solenoidal field, with the Wien filter angle equal (nominal) to $\ang{90}$. The aim is to minimize the horizonal polarization component after the rotation performed by the double solenoid, changing the solenoidal magnetic field. Then a second optimization follows, using the Moller polarimeter for different Wien filter angles is performed. With the new Wien filter settings, another measurement is performed with the Mott polarimeter.
 
+\subsection{Moller and Compton polarimeters}
+
 
 \section{Experimental hall setup.}
 
@@ -141,9 +143,9 @@ In the experiment, we will measure the \transv at two angles of scattering, so t
 \begin{figure}[hbtp]
 \centering
 \subfloat[][\emph{Detector B scheme.}]{
-\includegraphics[width = 0.45\textwidth ]{ExperimentalSetup/Detectors/DetectorB.pdf}}
+\includegraphics[width = 0.40\textwidth ]{ExperimentalSetup/Detectors/DetectorB.pdf}}
 \subfloat[][\emph{Detector A scheme.}]{
-\includegraphics[width = 0.60\textwidth ]{ExperimentalSetup/Detectors/detectorA.pdf}}
+\includegraphics[width = 0.55\textwidth ]{ExperimentalSetup/Detectors/detectorA.pdf}}
 \end{figure}
 
 
@@ -165,13 +167,12 @@ With the new electronics, all the single electron are counted, and this will all
 Here we report the characteristic of the two detector that are relevant for the data analysis: 
 
 \begin{itemize}
-\item detector B size:
-\item detector A size:
-\item Number of dynodes:
-\item Voltage :
-\item refraction index $n$ of the fused-silica:
+\item detector B size (lenght, hight, depht): $\SI{7}{\centi \meter} \times \SI{10}{\centi \meter} \times \SI{1}{\centi \meter}$
+\item detector A size (lenght, hight, depht): $\SI{7}{\centi \meter} \times \SI{30}{\centi \meter} \times \SI{1}{\centi \meter}$
+\item Number of dynodes: \commento{inserire il numero di dynodes, magari un accenno all'amplificazione}.
+\item The Power voltage for the pmt in negative, in the range of ($\SI{-900}{\volt}$, $\SI{-1100}{\volt}$)
+\item refraction index $n$ of the fused-silica is $1.45$.
 \end{itemize}
-The fused silica size for detector B is $(\SI{7}{\centi \meter},\SI{10}{\centi \meter})$. 
 
 
 \subsection{Beam monitors.}
@@ -225,7 +226,7 @@ If the frequency of the Beam bunch is equal to the resonant frequency $f_{m,n,p}
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width = 0.5 \textwidth]{ExperimentalSetup/Cavità.jpg}
+\includegraphics[width = 0.6 \textwidth]{ExperimentalSetup/Monitors.pdf}
 \caption{Scheme of the Cylindrical cavities installed at MAMI. In red we have the $TM_{110}$ mode, used to measure the position of the beam, in yellow the $TM_{010}$ mode, to measure the intensity of the beam.}
 \end{figure}
 

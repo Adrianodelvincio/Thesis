@@ -27,29 +27,31 @@ Capitolo Setup sperimentale:
 - [] chiedere ad Anselm documentazione sulla MasterBoard
 - [] Come si stima l'errore sistematico?
 - [] discutere la stabilizzazione del fascio.
+- [] spiegare il funzionamento polarimetro Moller e Compton, spiegare perchè sarà utilizzato il moller in futuro.
 
 Capitolo di Analisi:
 - [x] migliorare l'output del programma fit.cc, inserire unit test e cambiare formato dati
 - [x] controllare le run sospette senza stabilizzazione, può aiutare a capire meglio il sistematico (?)
 - [x] la correlazione Asimmetria e parametri del fascio non è irrilevante, bisogna investigare
-- [] discutere le correlazioni tra i parametri del fascio, in particolare mostrare che si può omettere nel modello xp e yp.
 - [x] ricontrollare la procedura di autocalibration, i valori di Anselm non sembrano essere corretti. (Conteggi negativi, impossibile)
+- [x] controllare le run che potrebbero non avere il fascio polarizzato.
+- [x] finire l'analisi dello scan in attenuation anche per il detector A
+- [x] confrontare i risultati con curve_fit di scipy
 - [] completare paragrafo sui test in laboratorio dei due detector
 - [] provare a vedere se c'è un test per controllare se ci sono doppi conteggi, oppure si conta di meno.
 - [] vedere se è possibile estrarre almeno una stima rozza dell'incertezza associata ai monitor X25/X21 e Y25/Y21.
-- [x] finire l'analisi dello scan in attenuation anche per il detector A
-- [x] confrontare i risultati con curve_fit di scipy
+- [] discutere le correlazioni tra i parametri del fascio, in particolare mostrare che si può omettere nel modello xp e yp.
 - [] rivedere il modello che si è usato per fare la calibrazione delle pmt.
-- [x] controllare le run che potrebbero non avere il fascio polarizzato.
 - [] Capire perchè le asimmetrie calcolata con lo slowvariation e dal fit sono in disaccordo per svariati ordini di grandezza
 - [] impostare il ricampionamento.
 #- [] Creare un ttree per analizzare i dati anche con root
 
 CORREZIONI FORTI
-- [] scrivere l'introduzione di carattere generale di 2/3 pagine in cui si riassuma il lavoro di tesi.
-- [] inserire uno schema dell'acceleratore e una dei detector
-- [] cambiare la struttura della tesi, spezzare in due il capitolo analysis, la prima parte detector test and calibration, la seconda asymmetry on carbon
-- [] introdurre prima di ogni capitolo un cappello che introduca cosa si tratterà
-- [] tutti i commenti nella tesi vanno definiti con un comando
-- [] i plot dei conteggi in funzione della soglia in mV vanno ricontrollati
 
+- [x] inserire uno schema dell'acceleratore e una dei detector.
+- [x] cambiare la struttura della tesi, spezzare in due il capitolo analysis, la prima parte detector test and calibration, la seconda asymmetry on carbon.
+- [x] introdurre prima di ogni capitolo un cappello introduttivo.
+- [x] tutti i commenti nella tesi vanno definiti con un comando.
+- [] i plot dei conteggi in funzione della soglia in mV vanno ricontrollati.
+- [] chiedera a igors come ha ottenuto i dati di threshold vs attenuation.
+- [] scrivere l'introduzione di carattere generale di 2/3 pagine in cui si riassuma il lavoro di tesi.
