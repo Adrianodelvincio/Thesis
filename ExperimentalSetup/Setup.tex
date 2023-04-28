@@ -288,7 +288,7 @@ V_{in} = \frac{V_{ref}}{40 \% \cdot f_{CLKIN}} (f_{out} - 5\% f_{CLKIN})
 
 We control the $f_{CLKIN}$ with the period of the clock. The data are acquired counting the number of pulses that come from the comparator, so we can substitute to $f$ the number of pulses (the two quantities are proportional), and we end with:
 
-\begin{equation}
+\begin{equation} \label{eq:Vfc}
 V_{in} =  V_{ref}[2 \cdot \dfrac{N_{pulses} - 5 \% N_{CLKN}}{40 \% N_{CLKN}} - 1]
 \end{equation}
 

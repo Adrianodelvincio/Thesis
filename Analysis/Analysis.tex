@@ -290,12 +290,12 @@ The $Q^{2}$ values is the same of the last measurement performed at MAMI, and is
 
 
 
-\subsection{Alignment of the scattering plane}
+\subsection{Alignment of the scattering plane.}
 
-\subsection{Calibration of the VFCs monitors}
+\subsection{Calibration of the VFCs monitors.}
 \commento{Maybe it's important to divide this sections in two different part: the first part where I explain the Vfc convert the input voltage signal to a digital signal. In the second part just mention how we tuned the resistences (for X,Y monitors directly at the output signal with the oscilloscope, while for I21 and I13 monitors we used the data, so I'm able to produce plots only for the second ones).}
 
-\subsection{Calibration of the PIMO monitors}
+\subsection{Beam monitors calibration.}
 
 For the calibration of the X Y monitors, we used two target made by three carbon wires at a certain distance from each other, aligned horizontaly and vertically. The distance between the two center of the external wires is $ d_{horizontal} = \SI{2.38}{\milli \meter}$ for the target alligned horizontally and $d_{vertical} = \SI{2.33}{\milli \meter}$ for the other one.
 When the horizontal wires target is cetered, we turn on the beam, and we take some data slowly changing the horizontal beam direction. The beam direction is changed by MAMI operators, varying the Magnetic field of the \textit{Wobbler 16} magnets (\ref{fig:BeamLine}):
@@ -348,29 +348,39 @@ All this procedure can be easely checked if we plot now the $X$ and $Y$ position
 \caption{plot of the pmt Count against the physical values computed by the analysis program. Now the position of the three peaks correspond to the expected values measured for the target.}
 \label{fig:CheckHori}
 \end{figure}
-
+\newpage
 
 \subsection{Current (PIMO) and energy monitors (ENMO) calibration.} \label{CurrentCalibration}
 
-For the current monitors I13 and I21, we perform the calibration changing the current of the beam and observing the output values of the monitors (Voltage values). The we perform a fit (for the beam current, we used the nominal values that we communicate to MAMI, has the values for the x-axis).
+The last two calibration needed for the analysis are about the energy and the current intensity of the beam, which are indicated with PIMO (current monitor) and ENMO (energy monitor). 
+The values that we measure are given by VFCs counts. We remind the reader how the VFCs monitors operate: the input signal from the beam is transformed in a pulse wave whose frequency is proportional to the input voltage.  The signal is so proportional to various quantities that we want to measure, however we need to determine the correct scaling factor and possible offsets to conver these quantities in physical units ready for the analysis. For this beam time the current is measured in $\SI{}{\micro \ampere}$ and the beam energy is given in $\SI{}{\electronvolt}$.\smallskip
+
+For the current monitors I13 and I21, the raw counts are converted in digitalized voltage values with the formula shown in (\ref{eq:Vfc}). The relation between these values given in $\SI{}{\volt}$ and the real values in $\SI{}{\micro \ampere}$ and $\SI{}{\electronvolt}$ is linear:
+\begin{align*}
+I(\SI{}{\micro \ampere}) = m I(\SI{}{\volt}) + q
+\end{align*}
+
+To determine the two coefficients, the beam current was raised from $\SI{10}{\micro \ampere}$ to $\SI{22}{\micro \ampere}$ in several step. For each step we confront the nominal values of the current, cominicated by the MAMI operators which control the beam, with the values in $\SI{}{\volt}$ measured. The following plot show the procedure described:
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width = 0.5\textwidth]{Analysis/Calibrations/ScanI21I13.pdf}
+\caption{Current scan for the calibration, each step correspond to a run with a different beam current.}
+\label{fig:ScanCurrent}
+\end{figure}
+
+The calibrations consist in retrieving $m$ and $q$ with a linear fit. Then the parameters are added in the standard configuration file, together with the other calibration parameters, and can be loaded by the analysis program to process the data.  
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width = 0.45\textwidth]{Analysis/I13_Calibration.png}
-\includegraphics[width = 0.45\textwidth]{Analysis/I21_Calibration.png} 
-\caption{•}
+\includegraphics[width = 0.45\textwidth]{Analysis/Calibrations/I13.pdf}
+\includegraphics[width = 0.45\textwidth]{Analysis/Calibrations/I21.pdf} 
+\caption{Calibrations plots for PIMO I21 and PIMO I13, the errors are multiplied by $25$.}
+\label{fig:PimoCalib}
 \end{figure}
 
-For the two monitors we are able to compute the offset and scale factor:
-
-\begin{equation}
-\begin{split}
-I^{volt}_{13} = m_{13} \cdot I^{Nom}_{13} + q_{13}\\
-c_{13} = \frac{1}{m} \qquad offset = -\frac{q_{13}}{m}
-\end{split}
-\end{equation}
-
-The same formula for current monitor I21.
+The values obtained from the fit of nominal beam current vs. voltage values are shown in the figure \ref{fig:PimoCalib}. The $\chi^{2}$ values are higher than the expected. This is not unexpected, the errors in both the plots are computed with the sampling standard deviation formula applied to the sequence of voltage values $I21\/ I13$ ($\sigma_{vfc}$, the standard deviation computed for each step in \ref{fig:ScanCurrent}), and it is related to precision of the analog to digital converter VFCs. The errors are then propagated to the $y$ axis showed in the plot. \smallskip
+Yet, we are understimating the error associated with nominal current $I$, in fact the accuracy associated with the beam current, set by the accelerator operators, was not disclosed, and we suspect that is not negligible compared to $\sigma_{vfc}$. \bigskip  
 
 The Enmo calibration is performed in a different way from the other monitors. The polarity signal is sent to MAMI, and they produce a signal for the ENMO that somehow (need to investigate exactly how they do that) shows a difference between the first two subevents and the last two. This difference is equal (nominal) to $\SI{22.6}{\kilo \electronvolt}$. The idea now is to produce an histogram for the quantity $\delta E$ (with $E_{18}$ being the energy monitor):
 
@@ -397,7 +407,7 @@ The calibration was performed taking three short acquisitions with different bea
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width = 0.5\textwidth]{Analysis/E18_Calibration.png}
+%\includegraphics[width = 0.5\textwidth]{Analysis/E18_Calibration.png}
 \caption{Calibration of ENMO monitor}
 \end{figure}
 
@@ -515,7 +525,7 @@ A^{'} = \dfrac{N_{\uparrow} - N{\downarrow}}{N_{\uparrow} + N{\downarrow}} = \df
 In the last passage we learn that the presence of an offset can decrease the recostructed asymmetry. So it's important to determine quantitatively $N_{0}$ and $m$ in order to be able to take care of this effect. The strategy used is quite simple: every three hours of production data, we asked MAMI to start the autocalibration program. With all the autocalibration runs, we estimate $N_{0}$ for each pmt, separately. Then All this quantities are saved in a file so that the analysis program can retrieve the parameters and subtract them from the pmt counts. \medskip
 In this way every three hours the pmt are corrected, this take care also of the possibility that the the linearity of the pmts can change after hours of use of the pmts (for example it can decrease the efficiency).
 
-During the autocalibration, the beam current is raised from $\SI{9}{\micro \ampere}$ to $\SI{11.125}{\micro \ampere}$ in step of $\SI{0.125}{\micro \ampere}$: \newpage
+During the autocalibration, the beam current is raised from $\SI{9}{\micro \ampere}$ to $\SI{11.125}{\micro \ampere}$ in step of $\SI{0.125}{\micro \ampere}$:
 
 \begin{figure}[ht]
 \centering
@@ -739,9 +749,10 @@ $\mu$ are the parameters of the \textit{pdf}, that are mean and variance of the 
 
 Looking at the histograms, we see that the beam correlated-difference values are centered around zero, the result are reported below:
 
-\begin{table}
+\begin{table} 
 \centering
-\begin{tabular}{|c|c|c|c|c|c|}
+\caption{Beam parameters Histograms}
+\begin{tabular}{|c|c|c|c|c|c|} 
 \hline 
 \rule[-1ex]{0pt}{2.5ex} & $X [\mu m]$ & $Y[\mu m]$ & $Xp [\mu rad]$ & $Yp [\mu rad]$ & $E [eV]$ \\ 
 \hline 
@@ -750,8 +761,7 @@ Looking at the histograms, we see that the beam correlated-difference values are
 \rule[-1ex]{0pt}{2.5ex} $sigma$ & $3.7 \cdot 10^{-1}$ & $2.9 \cdot 10^{-2}$ & $ 1.9 \cdot 10^{-5} $ & $6.5 \cdot 10^{-6}$ & $0.38$ \\ 
 \hline 
 \end{tabular}
-\label{parametri} 
-\caption{Beam parameters}
+\label{Tab:parametri} 
 \end{table}
 
 these results are encouraging, the stabilization of the beam has meant that only small differences are observed within an event for each monitor. This means that, unless the values for the false asymmetries are not very large, the effect of the beam variation are small. we will have the opportunity to verify this hypothesis in the raw result. \bigskip
@@ -809,7 +819,7 @@ For a better visualization of the data, especially to observe the dependence of 
 \label{fig:asyvsparam}
 \end{figure}
 
-In all the figures the asymmetries are given in [ppm] units. The data are selected removing the correlated-difference that are $5\sigma$ far from the mean values, that we have reported in the table (\ref{parametri}) 
+In all the figures the asymmetries are given in [ppm] units. The data are selected removing the correlated-difference that are $5\sigma$ far from the mean values, that we have reported in the table (\ref{Tab:parametri}) 
 
 \begin{align*}
 (x_{monitor} - \overline{x}_{monitor}) \leq 3 \cdot \sigma_{X}
