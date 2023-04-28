@@ -28,6 +28,7 @@ Capitolo Setup sperimentale:
 - [] Come si stima l'errore sistematico?
 - [] discutere la stabilizzazione del fascio.
 - [] spiegare il funzionamento polarimetro Moller e Compton, spiegare perchè sarà utilizzato il moller in futuro.
+- [] pockels cell.
 
 Capitolo di Analisi:
 - [x] migliorare l'output del programma fit.cc, inserire unit test e cambiare formato dati

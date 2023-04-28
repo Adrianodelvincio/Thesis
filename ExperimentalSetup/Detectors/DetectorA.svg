@@ -28,7 +28,7 @@
      inkscape:lockguides="false"
      inkscape:zoom="1.0824912"
      inkscape:cx="306.69995"
-     inkscape:cy="286.83836"
+     inkscape:cy="287.76215"
      inkscape:window-width="1545"
      inkscape:window-height="956"
      inkscape:window-x="1541"
@@ -37,6 +37,46 @@
      inkscape:current-layer="layer1" />
   <defs
      id="defs27047">
+    <marker
+       style="overflow:visible"
+       id="Arrow3"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Arrow3"
+       markerWidth="4.2071066"
+       markerHeight="6.9999995"
+       viewBox="0 0 4.2071068 7"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:round"
+         d="M 3,-3 0,0 3,3"
+         id="arrow3"
+         transform="rotate(180,0.125,0)"
+         sodipodi:nodetypes="ccc" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker23111"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Arrow1"
+       markerWidth="4.0606599"
+       markerHeight="6.7071061"
+       viewBox="0 0 4.0606602 6.7071068"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:butt"
+         d="M 3,-3 0,0 3,3"
+         id="path23109"
+         transform="rotate(180,0.125,0)"
+         sodipodi:nodetypes="ccc" />
+    </marker>
     <marker
        style="overflow:visible"
        id="marker48221"
@@ -443,7 +483,7 @@
        inkscape:path-effect="#path-effect38073"
        inkscape:original-d="m 148.4766,93.646935 c -0.0826,4.320235 -0.16541,8.640195 -0.24853,12.959865 -23.2887,11.23912 -46.57673,22.47751 -69.865504,33.71584" />
     <rect
-       style="fill:#212121;fill-opacity:0.13;stroke:#241c1c;stroke-width:0.55;stroke-linejoin:bevel;stroke-miterlimit:0.2;stroke-dasharray:none"
+       style="fill:#212121;fill-opacity:0.29195783;stroke:#241c1c;stroke-width:0.55;stroke-linejoin:bevel;stroke-miterlimit:0.2;stroke-dasharray:none"
        id="rect38075"
        width="58.653107"
        height="14.651287"
@@ -655,7 +695,7 @@
          id="tspan50674"
          style="stroke-width:0.091"
          x="178.36653"
-         y="63.746353">Optical grase</tspan></text>
+         y="63.746353">Optical grease</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:4.5861px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.091;stroke-linejoin:bevel;stroke-miterlimit:0.2;stroke-dasharray:none;stroke-opacity:1"
@@ -670,13 +710,54 @@
     <text
        xml:space="preserve"
        style="font-size:4.5861px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.091;stroke-linejoin:bevel;stroke-miterlimit:0.2;stroke-dasharray:none;stroke-opacity:1"
-       x="102.56773"
-       y="20.388084"
+       x="106.62849"
+       y="18.96788"
        id="text64730"><tspan
          sodipodi:role="line"
          id="tspan64728"
          style="stroke-width:0.091"
-         x="102.56773"
-         y="20.388084">DETECTOR A</tspan></text>
+         x="106.62849"
+         y="18.96788">DETECTOR A</tspan></text>
+    <path
+       style="fill:#212121;fill-opacity:0.291958;stroke:#241c1c;stroke-width:0.53;stroke-linejoin:bevel;stroke-miterlimit:0.2;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker23111);marker-end:url(#marker23111)"
+       d="m 45.805019,25.842361 0.07847,16.999112"
+       id="path23107" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.25px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;fill:#212121;fill-opacity:0.291958;stroke:#241c1c;stroke-width:0.53;stroke-linejoin:bevel;stroke-miterlimit:0.2;stroke-dasharray:none;stroke-opacity:1"
+       x="31.071001"
+       y="42.11475"
+       id="text23907"><tspan
+         sodipodi:role="line"
+         id="tspan23905"
+         style="stroke-width:0.53;font-size:3.25px"
+         x="31.071001"
+         y="42.11475" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.58001px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.091;stroke-linejoin:bevel;stroke-miterlimit:0.2;stroke-dasharray:none;stroke-opacity:1"
+       x="36.365162"
+       y="36.063889"
+       id="text24819"><tspan
+         sodipodi:role="line"
+         id="tspan24817"
+         style="font-size:4.58001px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.091;stroke-dasharray:none;stroke-opacity:1"
+         x="36.365162"
+         y="36.063889">7 cm</tspan></text>
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.491;stroke-linejoin:bevel;stroke-miterlimit:0.2;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow3);marker-end:url(#Arrow3)"
+       d="m 53.466887,22.06517 99.884973,-0.1806"
+       id="path29075" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.58002px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linejoin:bevel;stroke-miterlimit:0.2;stroke-dasharray:none;stroke-opacity:1"
+       x="163.2525"
+       y="23.161753"
+       id="text29773"><tspan
+         sodipodi:role="line"
+         id="tspan29771"
+         style="stroke-width:0.1;stroke-dasharray:none"
+         x="163.2525"
+         y="23.161753">30 cm</tspan></text>
   </g>
 </svg>

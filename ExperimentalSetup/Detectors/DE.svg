@@ -25,13 +25,13 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="1.0824912"
-     inkscape:cx="210.16337"
-     inkscape:cy="222.6346"
-     inkscape:window-width="1920"
-     inkscape:window-height="1043"
-     inkscape:window-x="1366"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1"
+     inkscape:cx="212.93476"
+     inkscape:cy="226.79168"
+     inkscape:window-width="1804"
+     inkscape:window-height="912"
+     inkscape:window-x="1439"
+     inkscape:window-y="78"
+     inkscape:window-maximized="0"
      inkscape:current-layer="layer1"
      showguides="false" />
   <defs
@@ -265,7 +265,7 @@
        transform="matrix(0,-0.91672699,0.91976722,0,-30.769268,172.48797)"><tspan
          x="80.356506"
          y="129.93935"
-         id="tspan6202">PMT B0</tspan></text>
+         id="tspan36304">PMT B0</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.88724px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;opacity:1;fill:none;fill-opacity:1;stroke:#241c1c;stroke-width:0.426984;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -462,29 +462,29 @@
          y="53.305099" /></text>
     <text
        xml:space="preserve"
-       style="font-style:italic;font-size:3.52777px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.276;stroke-linejoin:bevel;stroke-miterlimit:0.2;stroke-dasharray:none;stroke-opacity:1"
+       style="font-style:italic;font-size:3.52777px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.076;stroke-linejoin:bevel;stroke-miterlimit:0.2;stroke-dasharray:none;stroke-opacity:1"
        x="70.443413"
        y="56.539413"
        id="text5912"><tspan
          sodipodi:role="line"
          id="tspan5910"
-         style="stroke-width:0.276"
+         style="stroke-width:0.076;stroke-dasharray:none"
          x="70.443413"
-         y="56.539413">7cm</tspan></text>
+         y="56.539413">7 cm</tspan></text>
     <path
        style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.276;stroke-linejoin:bevel;stroke-miterlimit:0.2;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker7153);marker-end:url(#marker7153)"
        d="m 82.350781,44.027547 33.606989,-0.185546 v 0"
        id="path5950" />
     <text
        xml:space="preserve"
-       style="font-style:italic;font-size:3.52777px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.276;stroke-linejoin:bevel;stroke-miterlimit:0.2;stroke-dasharray:none;stroke-opacity:1"
-       x="121.1982"
-       y="44.146049"
+       style="font-style:italic;font-size:3.52777px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.076;stroke-linejoin:bevel;stroke-miterlimit:0.2;stroke-dasharray:none;stroke-opacity:1"
+       x="122.94178"
+       y="44.634892"
        id="text6130"><tspan
          sodipodi:role="line"
          id="tspan6128"
-         style="stroke-width:0.276"
-         x="121.1982"
-         y="44.146049">10cm</tspan></text>
+         style="stroke-width:0.076;stroke-dasharray:none"
+         x="122.94178"
+         y="44.634892">10 cm</tspan></text>
   </g>
 </svg>

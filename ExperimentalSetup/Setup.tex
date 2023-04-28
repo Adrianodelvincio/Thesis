@@ -69,20 +69,20 @@ At the beginning MAMI was not developed with the aim a trasverse beam. So it's n
 {\bfseries Briefly explain how the Mott polarimeter works, for measuring the polarization of the beam.}
 
 To Measure the polarization of an electron beam different polarimeters can be used. Here we explain briefly the physics underlying the \textit{Mott} polarimeter, used in the experiment.
-Consider an electron beam that is sent towards a nucleus of charge $Ze$. We know from theory that the spin of the incident electron is affected by the electromagnetic field produced by the nucleus. This can be described as:
+Consider an electron beam that is sent towards a nucleus of charge $Ze$. We know from theory that the spin of the incident electron is affected by the electromagnetic field produced by the nucleus. This can be described calculatin the magnetic field seen by a particle with speed $\vec{v}$ near a nucleus:
 
 \begin{align*}
-\vec{B}_{nucleus} = \frac{-1}{c} \vec{v} \times \vec{E}_{nucleus} = \frac{Ze}{mc r^{3}} \vec{L} \\
+\vec{B}_{nucleus} = \frac{-\vec{v} \times \vec{E}_{nucleus}}{c}  = \frac{Ze}{mc r^{3}} \vec{L} \\
 V = - \mu \cdot B_{nucleus} = \frac{Ze}{mcr^{3}} \vec{L} \cdot \vec{S}_{e^{-}}
 \end{align*}
 
-We can recognize the spin-orbit interaction here. This term yields the polarization dependence of the cross section. The cross section can be model in the following way
+The second equation represent the spin-orbit interaction potential. This term yields the polarization dependence of the cross section, and it is exploited to obtain the polarization of the incident particles. Indeed the cross section can be model highlighting the dependencies on the spin $\vec{S}$:
 
 \begin{align*}
 \sigma(\theta) = I(\theta) [1 + S(\theta) \vec{P} \cdot \vec{n} ]
 \end{align*}
 
-Here a scheme to identify the scattering process: 
+Let's consider an incident particle that scatter from a nucleus at an angle $\theta$, as shown in the figure:
 
 \begin{figure}[hbtp]
 \centering
@@ -90,14 +90,15 @@ Here a scheme to identify the scattering process:
 \caption{Scheme of the Mott scattering, the polarization is ortogonal to the plane,  $ \vec{n} = \frac{\vec{k} \times \vec{k'}}{|\vec{k} \times \vec{k'}|}$}
 \end{figure}
 
-The direction of $\vec{n}$ dependso on whether scattering to the left or right is being considered. Let's suppose our initial beam has a polarization $P$, and so we compute the asymmetry $A(\theta)$ of the scattered electrons between left ($N_{L}$) and right ($N_{R}$). $N_{L}$ and right $N_{R}$ will be proportional respectively:
+The direction of $\vec{n}$ depends on whether scattering to the left or right is being considered. Let's suppose our initial beam has a polarization $P$, and so we compute the asymmetry $A(\theta)$ of the scattered electrons between left ($N_{L}$) and right ($N_{R}$). $N_{L}$ and right $N_{R}$ will be proportional respectively:
 
 
 \begin{align*}
 N_{L} &= N_{\downarrow}[1 + S(\theta)] + N_{\uparrow}[1 - S(\theta)] \\
 N_{R} &= N_{\uparrow}[1 + S(\theta)] + N_{\downarrow}[1 - S(\theta)]  \\
-A(\theta) &= \frac{N_{L} - N_{R}}{N_{L} + N_{R}} = \dfrac{N_{\downarrow}(1 + S(\theta)) + N_{\uparrow}(1 - S(\theta)) - N_{\uparrow}(1 + S(\theta)) + N_{\downarrow}(1 - S(\theta))}{N_{L} + N_{R}} = ... = P \cdot S(\theta)
+A(\theta) = \frac{N_{L} - N_{R}}{N_{L} + N_{R}} &= \dfrac{N_{\downarrow}(1 + S(\theta)) + N_{\uparrow}(1 - S(\theta)) - N_{\uparrow}(1 + S(\theta)) + N_{\downarrow}(1 - S(\theta))}{N_{L} + N_{R}} = ... = P \cdot S(\theta)
 \end{align*}
+
 
 From the last equation we have a relation which give the beam polarization in terms of $A(\theta)$ (which is what is measured) and the asymmetry function $S(\theta)$ (known also as Sherman function). There are several calculation of the Sherman function, which is well-known for high energy electron scattering.
 
@@ -111,13 +112,42 @@ The total beam polarization is measured by a Moller polarimeter, in the experime
 \commento{Describing the A1 room, how the spectrometers are operating (+ figures), a picture of the target and the important parameters, like thickness. Also mention the convention to use target with$10 \%$ of the radiation lenght, to avoid double scattering.  Mention that we need the Wobbler magnet to change the hitting position of the beam to prevent the target from melting. Here it's important to mention that the electron are deflected on the vertiacal direction, because of the high beam intensity
 Then add a picture of the beam-line.}
 
+Until now we have described how MAMI produce and accelerate the electrons, however we do not presented the structure where the beam is delivered and various experimets are carried out. \\
+MAMI has 3 different hall, named with the capital letter A followed with a number, which indicate also the different collaboration that work with the experiments. In A2, as an example, photo-nuclear reactions are studied to investigate the foundamental physics at the scale of nuclear dimensions. The experimental hall where the experiment treated described in this thesis is conducted is the A1 hall. We will describe briefly the main operating detectors that are installed and the details that are interesting for the \transv measurement. \bigskip
+
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width = 0.5\textwidth]{ExperimentalSetup/A1_Dietro.pdf}
-\caption{Picture of the A1 spectrometers hall. The spectrometers are the blue and red detectors on the left and right. The detector can be rotated using a system of railtracks that are visible at the bottom of image. The electrons are scattered and then deflected in the vertical direction by the magnetic field (green lines). This picture is taken from behing the target, so we see the beam-dumps. The target is rougfly at the center of the image where the two green lines join.}
+\includegraphics[width = 0.6\textwidth]{ExperimentalSetup/Accelerator.pdf}
+\caption{Scheme of the accelerator, with the different experimental hall. Actually the A4 hall is restructured, in fact it will host the future Mesa accelerator.}
 \end{figure}
 
+In A1, experiment with fixed target are conducted. The electrons can be delivered with an energy up to $\SI{1.6}{\giga \electronvolt}$, after passing the last acceleration stage (HDSM, in the figure). Because the electron energy of our experiment is $\SI{570}{\mega \electronvolt}$, the beam will pass through the first accelation steps, the linac (linear accelerator) and Race-track system and when the desidered energy is achieved the electrons will be sent to the A1 experimental hall. \medskip
 
+Inside A1 hall three large magnetic spectrometers are placed on a circular railtrack the target chamber. These spectrometers where designed and built in $1993$ to perform high precision measurement of electron scattering in coincidence with other hadron detection, with an high resolution in the determination of the particle momenta $\frac{\delta p}{p} < 10^{-4}$. The spectrometers develop vertically with an height of $\SI{15}{\meter}$, for this reason the scattered electrons and the other particles are deflected with the use of the magnetic field respect to the scattering plane. The following figure shows the path the particle scattered from the target:
+
+\begin{SCfigure}[50][ht]
+\centering
+\caption{Image of the spectrometers of A1 hall. The spectrometers can be rotated using a system of railtracks that are visible at the bottom of image. The electrons are scattered and then deflected in the vertical direction by the magnetic field (green lines). This picture is taken from behind the target, so we see the beam-dumps. The target is rougly at the center of the image where the two green lines join.}\label{fig:TwoDetectors}
+\includegraphics[width = 0.5\textwidth]{ExperimentalSetup/A1_Dietro.pdf}
+\end{SCfigure}
+
+The spectrometers used for the \transv are the ones shown in the picture. The are multiple reasons why the particle are deflected on the vertical directon, we summarized them in two points: 
+\begin{itemize}
+\item reason of space, due to the fact the an horizontal setup would not fit with the dimension of the building in addiction to the fact that this would not allow to rotate the spectrometers by a variety of angles that the vertical orientation does
+\item reduce background and noise, in fact the high beam intensity that is possible to reach at MAMI is a source of noise and background event wich can be cut off detecting the particle far from the interaction point. \commento{ultimo punto da verificare!!!}
+\end{itemize}      
+
+Once a particle is scattered in the acceptance region of the detectors, the magnetic field deflect the particle that passes through a drift chamber, which occupies the first third in height of the spectrometers. When the particle is at the height of the platform in the figure, it impinge on a layer of plastic scintillator, and after that a Cherenkov detector which measures the particle speed $\vec{v}$. We have a picture of the spectrometers internal, taken during the installation of the two detectors (that will be presented in the next section) \ref{fig:internal}.
+\newpage
+\begin{SCfigure}[50][ht]
+\centering
+\caption{Internal of the A spectrometer, the image is taken looking at the detector from the platform in the other image on the left. Normally the walls are closed, this image was taken during the installation of the detector A inside the red spectrometer.}
+\includegraphics[width = 0.6\textwidth]{ExperimentalSetup/Detectors/position.pdf}
+\label{fig:internal}
+
+\end{SCfigure}
+
+The determination of both the particle speed $\vec{v}$ and momenta (drift chamber) allows to identify the particles. Despite the possibilities offered by the already existing setup, for the beam time of interest none of these components was used directly in the estimation of $A_{n}$. The reason is due to the high intensity of the beam that is used in the experiment, which is far from the optimal operating conditions of the componets, that are suited for rates lower than the ones expected for beam normal single spin measurements. The spectrometers then will de used indirectly for the allignment of scattered electron to
 
 \section{Detectors and beam monitors}
 
@@ -150,7 +180,7 @@ In the experiment, we will measure the \transv at two angles of scattering, so t
 
 
 These  two detectors are placed inside the spektrometers presented in \commento{aggiungere referenza}, between the top of the drift-chamber, which occupies the first third in height of the spectrometer, and just below a panel of scintillator. During the beam time the drift chamber of the spektrometers is turn off, and also the pmts coupled to the spektrometer scintillators are not powered.\\
-As we mention above, the scattered electron are deflected in the vertical direction by the magnetic field of the spektrometer. This is not common for an particle accelerator. The reason is due to the high intensity beam that can produce a strong noise, if the detector are placed too close the scattering point (\commento{magari è meglio chiede ad Anselm, perchè non posso liquidarla in due righe così}).\\ 
+As we mention above, the scattered electron are deflected in the vertical direction by the magnetic field of the spektrometer. 
 At this moment, it is important to mention the differencies between the new and the old electronic setup. In the old electronic setup the output signal of the pmts was integrated during the time interval of each sub-event, and therefore the single scattered electron could not be counted. The advantage of this method is that the electronics is more simple, in fact there in no need to develop a fast counter, unlike the new setup, where the new electronic take into account of every pulses. However, this old method is effected by a baseline noise and it's not good for the future experiments with lead target, where the expected rates are lower than the rates on carbon.
 With the new electronics, all the single electron are counted, and this will allow the future measurements with lead, improving the accuracy. 
 
@@ -297,12 +327,11 @@ V_{in} =  V_{ref}[2 \cdot \dfrac{N_{pulses} - 5 \% N_{CLKN}}{40 \% N_{CLKN}} - 1
 The NINO board is our data acquisition system for the pmt counts. It is made by $32$ analog input channels and it'is power with $\pm \SI{5}{\volt}$. Each channel has an attenuator, and the signal pass through that before going to the Comparator, which compare the signal to the threshold. The Output signal is a Low-voltage differential signaling (LVDS). Each comparator can handle eight channel and for each of them it is possible to define a global threshold. With the current settings of NINO board, it is possible to change the threshold of each channel acting on another value, the attenuation, which decreases the value of the global threshold of each single channel. All the value that can be modified are 12 bit numbers, so a setting interval of $(0. ; 4095)$.
 
 \begin{figure}[hbtp]
- 
- \centering
- \includegraphics[scale= 0.4]{figures/NINO.pdf}
- \caption{Nino Board}
- \label{fig:NinoBoard}
- \end{figure}
+\centering
+%\includegraphics[scale= 0.4]{figures/NINO.pdf}
+\caption{Nino Board}
+\label{fig:NinoBoard}
+\end{figure}
 
 Two Nino board are used in the experiment, one for detector A and one for detector B. In principle it is possible to use only 8 and 3 of the 32 channels the are ready to use, considering we have only 3 and 8 pmts to read out. However it is useful to split the analog output signal by the pmts and send it to 4 different channels. So, working with the attenuation value, we can define 4 different threshold values for each pmt. This is something that can improve the noise management. This will be implemented for the future experiments, nevertheless this was not done during our data collection.
 The way we selected the threshold is explained in the following chapter (Analysis).
