@@ -15,8 +15,12 @@
 - [x] studiare la documentazione della NINO board, da quella si può dire qualcosa sul segnale
 - [x] preparare documentazione su fit.cc e fit.h da consegnare ad Anselm
 
-Capitolo sulla teoria:
+Introduzione 
+- [] scrivere abstract/introduzione di carattere generale
 - [] Iniziare ad impostare l'introduzione, dalle stelle di neutroni all'asimmetria trasversa
+
+Capitolo sulla teoria:
+
 - [] iniziare paragrafo contributo intermedio anelastico.
 - [] completare paragrafo teoria contributo elastico.
 - [] presentare i risultati della misura fatta da PREX.
@@ -55,4 +59,3 @@ CORREZIONI FORTI
 - [x] tutti i commenti nella tesi vanno definiti con un comando.
 - [] i plot dei conteggi in funzione della soglia in mV vanno ricontrollati.
 - [] chiedera a igors come ha ottenuto i dati di threshold vs attenuation.
-- [] scrivere l'introduzione di carattere generale di 2/3 pagine in cui si riassuma il lavoro di tesi.
