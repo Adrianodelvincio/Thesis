@@ -49,7 +49,9 @@ Capitolo di Analisi:
 - [] rivedere il modello che si è usato per fare la calibrazione delle pmt.
 - [] Capire perchè le asimmetrie calcolata con lo slowvariation e dal fit sono in disaccordo per svariati ordini di grandezza
 - [] impostare il ricampionamento.
-#- [] Creare un ttree per analizzare i dati anche con root
+- [] inserire istogrammi asimmetrie per ogni pmt.
+- [x] mettere il valore simulato della correlazione nel plot.
+- [] correggere i cuts e completare il capitolo di analisi.
 
 CORREZIONI FORTI
 
@@ -59,3 +61,4 @@ CORREZIONI FORTI
 - [x] tutti i commenti nella tesi vanno definiti con un comando.
 - [] i plot dei conteggi in funzione della soglia in mV vanno ricontrollati.
 - [] chiedera a igors come ha ottenuto i dati di threshold vs attenuation.
+- [] rivedere l'abstract

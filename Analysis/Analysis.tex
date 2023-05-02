@@ -631,7 +631,7 @@ The pmt Counts with this target, increase from $100$ counts for detector B to $5
 \end{equation}
 
 we remind to the reader that $N$ are the Counts per sub-event, while  $n$ is the number of event analyzed.
-Now exstimate the amount of statistic needed to measure the asymmetry with some degree of accuracy. Let's suppose that we want to obtain, for each pmt, an error not greater than $4 ppm$. With this accuracy, the asymmetry obtained for detectro A will have an error given by $\frac{4ppm}{\sqrt{n_{pmt}}} \simeq 1.5 ppm$.
+Now estimate the amount of statistic needed to measure the asymmetry with some degree of accuracy. Let's suppose that we want to obtain, for each pmt, an error not greater than $4 ppm$. With this accuracy, the asymmetry obtained for detectro A will have an error given by $\frac{4ppm}{\sqrt{n_{pmt}}} \simeq 1.5 ppm$.
 We computed the time needed to achieve this accuracy for both the two detectors, given in total hours of beam-time. To simplify the calculation, we assumed that every pmt rates of detector A and B are equal to the averaged counts obtained from the plot above.
 
 \begin{table}[ht]
@@ -694,21 +694,21 @@ Each value represent the difference between the mean values over the two differe
 
 \section{Data pre-selection and Fit}
 
-After all the calibration are performed, the analysis program is ready to produce the datafiles suitable to analyze the asymmetry data for Carbon. \\
-The Data file that are produced from the binary files are simply files in txt format, where the data are stored in columns. Before proceeding with the linear fit, however, it is necessary to visualize the data to check that there are no anomalous behaviors. In fact the data can contain moments of loss of the beam burrent and sudden interruptions, loss of polarization of the beam and even setting errors by MAMI operators can affect the experiment. Carbon data were taken from November 2nd to 4th, and consist of $28$ runs, each $1$ hour long.
-The first step is to observe the pmt counts and the current trend, in order to be able to identify sudden interruptions of the beam. Here we show the trend over time for the series runs: 
+After all the calibration are performed, the analysis program is ready to produce the data-files suitable to analyze the asymmetry data for Carbon. \\
+The Data file that are produced from the binary files are simply files in txt format, where the data are stored in columns. Before proceeding with the linear fit, however, it is necessary to visualize the data to check that there are no anomalous behaviors. In fact the data can contain moments of loss of the beam current and sudden interruptions, loss of polarization of the beam and even setting errors by MAMI operators can affect the experiment. Carbon data were taken from November 2nd to 4th, and consist of $28$ runs, each $1$ hour long.
+The first step is to observe the pmt counts and the current trend, in order to be able to identify sudden interruptions of the beam, outliers and to check the behaviour. Here we show the trend over time for the series runs: 
 
 \begin{figure}[hbtp]
 \centering
-\subfloat[][\emph{Pmt count trend versus time.In black A0, in green B0} \label{fig::CountTrend}]{
+\subfloat[][\emph{Counts vs. time, the plot represent the Count trend versus time, made for all the runs acquired during the beam time. The conversion from event number to time is made knowing that each event correspond to $\SI{80}{\milli \second}$. A total of 22 hours of beam was collected.} \label{fig::CountTrend}]{
 \includegraphics[width = 0.45\textwidth]{Analysis/Dataselection/BeamExample.pdf}}
 \subfloat[][\emph{Asymmetry trend for pmt A0} \label{fig::AsymTrend}]{
 \includegraphics[width = 0.45\textwidth]{Analysis/Dataselection/AsymmetryTrend.pdf}}
 \end{figure}
 
-This plot show that after 10 h of data acquisition the Pmt counts (\ref{fig::CountTrend}) dropped rapidly. If we show the current trend over the time (\ref{fig::CurrentTrend}) we do not see a corresponding decrease in beam intensity. Also the $x,y$ position (\ref{fig::PositionTrend}) and the energy monitor of the beam do not show a strange behavior. So we reject the possibility that at some point one of the stabilization device of the beam stop working. One of the possibilities is that something happen inside the two spectrometers. From the pmt counts we can suggest that the scattered electrons were not hitting our fused-silica detector,
-in fact for pmt B0 we observe roughly 0 counts, and for pmt A0 $20000$ counts, which is compatible with the noisy offset of that pmt. This consideration strongly suggest as to reject those data from the analysis.\\
-Apart from this, we observe in (\ref{analysis}) two steepy variations of the asymmetry around $13.5 h$ and $19 h$. For these data is quite simple to explain why should be rejected: we observe the same steepy variations also for the positions, so in this case the beam was not correctly aligned to the target.
+This plot show that after 10 h of data acquisition the Pmt counts (\ref{fig::CountTrend}) dropped rapidly. If we show the current trend over the time (\ref{fig::CurrentTrend}) we do not see a corresponding decrease in beam intensity. Also the $x,y$ position (\ref{fig::PositionTrend}) and the energy monitor of the beam do not show a strange behavior, so we reject the possibility that the beam was not properly aligned to the target. \\
+We have the strong suspect that this issue come from a failure to be attributed to the NINO board. In fact for all the pmts, during that time interval, the  counts are equal to the offsets measured with the auto-calibration run. Our suspect is that the threshold and attenuation settings that are loaded during the initialization of the DAQ program were not set correctly. For the analysis, those data are rejected completely.\\
+Apart from this, we observe in (\ref{analysis}) sudden variations of the asymmetry around $13.5 h$ and $19 h$, that correspond to decreases in the plot on the left. We reject these data because we observe the same variation also for the current monitor, which means that the beam intensity fall quickly to $0$ for a short period of time. 
 
 \begin{figure}[hbtp]
 \centering
@@ -718,21 +718,15 @@ Apart from this, we observe in (\ref{analysis}) two steepy variations of the asy
 \includegraphics[width = 0.45\textwidth]{Analysis/Dataselection/XYtrend.pdf} }
 \end{figure}
 
-After this first data selection, we check the correlated-difference data, which will be later used as variables for the fit. We produced histograms for all this quantites, that we remember are computed by the analysis program with the formula:
+After this first general data selection, we focus our attention on the correlated-difference data, which are important to estimate the contributions of the false-asymmetries. 
 
 \begin{align*}
 \delta x =  \frac{(x_{up,1} + x_{up,2})}{2} - \frac{(x_{down,1} + x_{down,2})}{2}
 \end{align*}
 
-We expect, if the stabilization of the beam is correctly set, that those quantities are gaussian distributed. A maximum likelihood fit with a Gaussian model is performed for each beam parameter, with Likelihood Ratio for the goodness of fit (gof). The statistic for the gof is:
-
-\begin{align*}
-\lambda(x) = 2 \sum_{i}^{n} (f_{i}(\mu) - k_{i}(1 + log(\frac{f_{i}(\mu)}{k_{i}})))
-\end{align*}  
-
-$\mu$ are the parameters of the \textit{pdf}, that are mean and variance of the gaussian, and $f_{i}(\mu)$ and $k_{i}$ are respectively the expected value for the i-nth bin and the observed value for the i-nth bin.
-
-\newpage
+An histogram is produced for each beam parameter correlated-difference. These plots are useful to study the beam-stabilization, which is an essential feature of the experiment to decrease the contributions of the false asymmetries to the total asymmetry.
+We expect, if the stabilization of the beam is working, that all the correlated differences are distributed around zero, which implies that there is no systematic difference when the beam is polarized in one direction respect to the other. 
+The \textit{pdf} which described the data is expected to be well-described by a gaussian distribution, from the knowledge of the previous experiments.   
 
 \begin{figure}
 \centering 
@@ -748,7 +742,14 @@ $\mu$ are the parameters of the \textit{pdf}, that are mean and variance of the 
 \includegraphics[width = 0.3\textwidth]{Analysis/Dataselection/ENMO.pdf}}
 \end{figure}
 
-Looking at the histograms, we see that the beam correlated-difference values are centered around zero, the result are reported below:
+a maximum likelihood fit with a Gaussian model is performed for each beam parameter, with Likelihood Ratio for the goodness of fit (gof). The statistic for the gof is:
+
+\begin{align*}
+\lambda(x) = 2 \sum_{i}^{n} (f_{i}(\mu) - k_{i}(1 + log(\frac{f_{i}(\mu)}{k_{i}})))
+\end{align*}  
+
+$\mu$ are the parameters of the \textit{pdf}, that are mean and variance of the gaussian, and $f_{i}(\mu)$ and $k_{i}$ are respectively the expected value for the i-nth bin and the observed value for the i-nth bin.
+
 
 \begin{table} 
 \centering
@@ -765,13 +766,33 @@ Looking at the histograms, we see that the beam correlated-difference values are
 \label{Tab:parametri} 
 \end{table}
 
-these results are encouraging, the stabilization of the beam has meant that only small differences are observed within an event for each monitor. This means that, unless the values for the false asymmetries are not very large, the effect of the beam variation are small. we will have the opportunity to verify this hypothesis in the raw result. \bigskip
-After removing the outliers, we mention a problem encountered during the data taking which took place on the night of the 2nd December. During that night the beam a wrong setting from the MAMI operators caused the beam to lose the polarization. We find out this problem only the next day, so we had not en evidence of how many hours of beam were lost. Unfortunatelly,  because this happened during the night, nobody could save the polarization measurement of the beam.
-All the stabilization monitors were active, so the data show apparently the same behaviour of the good data taken during the first day of acquisition. We can't proceed with an arbitrary cut of the data, we risk to cut off also good data or perform an incomplete removal. However it's importat to indentify the data with this problem, ignoring this produce a overall measurement that is decrease respect to the theoretical prediction. This is the worst scenario, because we could not identify the presence, for example, of any other systematic effects related to the electronics system, therefore also the testing of the electronics is not possible.\\
+these results are encouraging, the stabilization has the consequence that only small differences are observed within an event for each monitor. So, unless the values for the false asymmetries are very large, the effect of the beam variation on the reconstructed asymmetry should be small compared to the physical effect $A_{n}$.
+
+After removing the outliers, we mention an issue which took place on the night of the 2nd December; MAMI operators that were controlling the first stage of the accelerator, because of a wrong setting, switched from polarized beam to non- polarized. This issue introduce a big systematic error that is potentially able to decrease the experimental \transv. We find out this problem only the next day, so we had not en evidence of how many hours of beam were lost. Unfortunately,  because this happened during the night, nobody could save the polarization measurement of the beam and identify the runs affected by this problem. This is a serious trouble, if we are not able to identify the runs that share this problem, out measurements are affected by a bias that is not possible to disentangle from any other systematic effects related to the electronics system used, therefore also the electronic testing is not possible. 
+
+All the stabilization monitors were active, so the data show apparently the same behaviour of the data with the correct polarization. We can't proceed with an arbitrary cut of the data, because there is the risk to cut off also good data or perform an incomplete removal. The next phase of the analysis is focused on describing a clear method used to identify the data and remove them from the analysis.
  
-The procedure to identify the runs with $0\%$ polarization rely to the exstimation of the correlation coefficient of the PMTs counts. \\
-For every event we have two type of polarization sequence. The polarization $\vec{P}$ of each sub-event is identified with $+1$ and $-1$, that correspond to up and down $\overline{P}$. This values are part of the data tree, and form a sequence $p_{i}$ of the type: $+1-1-1+1,+1-1-1+1,-1+1+1-1$, where i is the index to the i-th sub-events analyzed. If the $\overline{P}$ is different from zero, we expect, due to the \transv, a difference in the number of scattered electrons between sub-events with different $p_{i}$. This lead to a positive/negative correlation between the sequence $p_{i}$ and the pmt data. In case of $\vec{P} = \vec{0}$, the expected values for the correlation should be zero. \\
-We applied this strategy with the hope to identify and remove the block of data with $A_{n} \simeq 0$. The correlation $c$ coefficient between the $p_{i}$ and the pmt sequence $N_{i}$ of counts is computed every $t = 1 h$, that correspond to $45000$ events. We plot the averaged correlation for detector A and B, and the correlation of the two detectors together (with the reverse sign for detector B).
+The procedure to identify the runs with $0\%$ polarization rely to the estimation of the correlation coefficient of the PMTs counts. For every event we have two type of polarization sequence. The polarization $\vec{P}$ of each sub-event is identified with $+1$ and $-1$, that correspond to up and down $\overline{P}$. This values are part of the data tree, and form a sequence $p_{i}$ of the type: $+1-1-1+1$, where i is the index to the i-th sub-events analyzed. If the $\overline{P}$ is different from zero, we expect, due to the \transv, a difference in the number of scattered electrons between sub-events with different $p_{i}$. \medskip
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline 
+sub-event & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ 
+\hline 
+Polarity & +1 & -1 & -1 & +1 & +1 & -1 & -1 & +1 \\ 
+\hline 
+pmt B0 & 101 & 99 & 98 & 102 & 100 & 99 & 97 & 103 \\ 
+\hline 
+pmt B.. & ... & ... & ... & ... & ... & ... & ... & ... \\ 
+\hline
+\end{tabular}
+\caption{Example of the Polarity sequence and pmt counts that are saved in the analysis program. The values of the pmt counts given are for example. }
+\end{table}
+
+
+This lead to a positive/negative correlation between the sequence $p_{i}$ and the pmt data. In case of $\vec{P} = \vec{0}$, the expected values for the correlation should be zero. \\
+We applied this strategy with the hope to identify and remove the block of data with $A_{n} \simeq 0$. The correlation $c$ between the $p_{i}$ and the pmt sequence $N_{i}$ of counts is computed every $t = 1 h$, that correspond to $45000$ events. We plot the averaged correlation for detector A and B, and the correlation of the two detectors together (with the reverse sign for detector B).
 
 \begin{figure}[hbtp]
 \centering
@@ -780,18 +801,39 @@ We applied this strategy with the hope to identify and remove the block of data 
 \subfloat[][]{
 \includegraphics[width = 0.47\textwidth]{Analysis/Dataselection/OverallCorr.pdf}
 }
-\caption{Plot of the correlation fot the two detectors on the left, and the global correlation on the right. We clearly observe zero for a block of run starting at time $t = 12 h$, until $t = 19 h$.}
+\caption{Plot of the correlation for detector A and on the left, and combining the two detectors results on the right. It's possible to identify a block of run starting at time $t = 12 h$ until $t = 19 h$ where the correlation is small and compatible with $0$. The values can be confronted with the montecarlo, whose error band is in yellow.}
+\label{fig:PolarityCheck}
 \end{figure}
 
-This let us to identify the block of runs with the issues of $\vec{P} = \vec{0}$. It's important to double check that validity of this method seeing if the correspondi asymmetry is compatible with $0$. If we have these two evidences together, this confirms this last series of cuts. The asymmetries measured for suspicious runs are:
+The correlations coefficient $c$ is clearly dependent on the $\vec{P}$. is we observe that $c$ is compatible with zero, we have an evidence of the block of runs to be removed from the analysis.
+The values are reported in figure \ref{fig:PolarityCheck}. The errors for each point are computed with the formula:
+
+\begin{align*}
+\sigma_{c} = \sqrt{\dfrac{1 - c^{2}}{N - 2}}
+\end{align*} 
+
+The plots show also the expected values for the $c$ computed with a simple simulation, using the values of $A_{n} = 22.5 ppm$ and $P = 0.79$ as an input. The simulation results are obtained following these steps:
+
+\begin{itemize}
+\item A sequence of the type $+1,-1,-1,+1$ is generated, long $45000$ events.
+\item For each sub-event of the previous sequence, the pmt counts are generated: the counts are sampled from a gaussian distribution with $\mu$ and $\sigma^{2}$ equal to the values measured for both the detectors. To reproduce the correlation with the polarity sequence, the values are shifted accordingly  by a factor $\mu \cdot A_{n} \cdot P$  
+\item The previous step is repeated 25 times, and for each iteration we compute and save the correlation between the polarity sequences and the counts.
+\item From the values saved, we compute the mean $c$ (the dotted line in plot \ref{fig:PolarityCheck}) and $\sigma_{c}$.
+\end{itemize}
+
+Looking at the plots, we observe for detector A a block of runs where $c$ is compatible with 0, in contrast with the values expected from the simulation. Due to the higher error, the corresponding plot for detector B is not clear to interpret, however the plot on the right with the overall results for A and B confirms the evidence for A.
+This let us to identify the block of runs that show a behaviour compatible with $\vec{P} = \vec{0}$. It's important to double check that validity of this method seeing if the corresponding asymmetry is compatible with $0$ \ref{fig:ZeroAsym}.
 
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width= 0.5\textwidth]{Analysis/Dataselection/Nopolarity.pdf}
-\caption{•}
+\caption{Raw-asymmetry computed for the block of runs with $P = 0$. Except for one pmt of detector A, all the values are compatible with $0$ in $1\sigma$.}
+\label{fig:ZeroAsym}
 \end{figure}
 
-This plot unequivocally shows that all the asymmetries measured for each PMTs for both detector A and B are compatible with zero. It is therefore reasonably certain that such data should not be included in the main analysis. However, this data is not useless. From them we can extract a reasonable estimate of possible systematic errors affecting our experimental setup. We report here the averaged asymmetries with the correspondig error for these runs:
+This plot unequivocally shows that all the asymmetries measured for each PMTs for both detector A and B are compatible with zero. It is therefore reasonably certain that such data should not be included in the main analysis.\\
+Even if those data are not useful in reconstructing the final asymmetry, they can be used to check the presence of a small offset in the data:
+
 \begin{itemize}
 \item asymmetry $A =  -2.49 \pm 2.14$
 \item asymmetry $B =  -7.83 \pm 6.50$
@@ -811,14 +853,8 @@ In this figure we plot the average of the asymmetries for each pmt, carried out 
 
 
 When all the calibrations are performed, it is possible to proceed to generate the datafiles fot the fit program.
-For a better visualization of the data, especially to observe the dependence of the asymmetry on the Beam parameters measured, it is useful to take the average asymmetry at regular intervals. From the raw plots of the asymmetries (see below \ref{fig:asyvsparam}), it is clear that the statistical error is too hight to identify a linear structure in the dependence of the asymmetry. 
+For a better visualization of the data, especially to observe the dependence of the asymmetry on the Beam parameters measured, it is useful to take the average asymmetry at regular intervals. From the raw plots of the asymmetries (see below, it is clear that the statistical error is too hight to identify a linear structure in the dependence of the asymmetry. 
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width = 0.5\textwidth]{Analysis/Asym_vs_monitor.png}
-\caption{Asymmetries vs. Beam parameters}
-\label{fig:asyvsparam}
-\end{figure}
 
 In all the figures the asymmetries are given in [ppm] units. The data are selected removing the correlated-difference that are $5\sigma$ far from the mean values, that we have reported in the table (\ref{Tab:parametri}) 
 
@@ -826,11 +862,11 @@ In all the figures the asymmetries are given in [ppm] units. The data are select
 (x_{monitor} - \overline{x}_{monitor}) \leq 3 \cdot \sigma_{X}
 \end{align*}
 
-For each monitor we use the \textit{curve fit} function of the python library \text{scipy} to fit the data. Each Beam parameter is treated separately now, so in principle we are ignoring possible effect of correlation between the beam values. We are aware about this fact, the false asymmetries recostructed with this method can be affected by this bias. However this representation of the data offers a clear and understandable way to identify the presence of a linear structure in the data.
+For each monitor we use the \textit{curve fit} function of the python library \text{scipy} to fit the data. Each Beam parameter is treated separately now, so in principle we are ignoring possible effect of correlation between the beam values. We are aware about this fact, the false asymmetries reconstructed with this method can be affected by this bias. However this representation of the data offers a clear and understandable way to identify the presence of a linear structure in the data.
 
-\newpage
 \begin{figure}[hbtp]
 \centering
+\begin{comment}
 \subfloat[][\emph{Asymmetries [ppm] vs X position [$mm$]}]
 	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_XB.pdf}} \quad
 \subfloat[][\emph{Asymmetries [ppm] vs Y position[$mm$]}]
@@ -844,10 +880,12 @@ For each monitor we use the \textit{curve fit} function of the python library \t
 \subfloat[][\emph{Asymmetries [ppm] vs I current [arb.unit]}]
 	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_IB.pdf}} \quad
 \label{fig:averageAsym}
+\end{comment}
 \end{figure}
 
 \begin{figure}[hbtp]
 \centering
+\begin{comment}
 \subfloat[][\emph{Asymmetries [ppm] vs X position [$mm$]}]
 	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_XA.pdf}} \quad
 \subfloat[][\emph{Asymmetries [ppm] vs Y position[$mm$]}]
@@ -860,6 +898,7 @@ For each monitor we use the \textit{curve fit} function of the python library \t
 %	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_EB.pdf}} \quad
 %\subfloat[][\emph{Asymmetries [ppm] vs I current [arb.unit]}]
 %	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_IB.pdf}} \quad
+\end{comment}
 \label{fig:averageAsym2}
 \end{figure}
 
