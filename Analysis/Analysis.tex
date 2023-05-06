@@ -665,7 +665,7 @@ As we will see in the next part of this chapter, focused on the asymmetry on car
 \item monitor the radioactivity levels in the experimental hall.
 \end{itemize}  
  
-\section{Model for fitting the data}
+\section{Model for fitting the data} \label{Model}
 \commento{Here I have to explain the model used for describing the data, so the problem of the false asymmetry induced by variations in beam position, angle, current and energy.}
 \bigskip
 
@@ -678,15 +678,15 @@ One of the problems of the measurement is to take into consideration the various
 efficiency of the source in producing electrons polarized in the two opposite directions
 \end{itemize}
 
-All this quantity can influence the asymmetry measured by the pmts, considering also that the expected asymmetry is in the order of ten part per million, and small asymmetry introduced by fluctuations on the beam parameters are not negligible. Correcting directly the false asymmetries that rise from those uncertainties is a tough task, and it's more easy to adopt a different strategy respect to proceed to the analytical/numerical calculation of each of them . Knowing that the beam parameters produced by Mami are quite stable over the time, we can assume that the measured asymmetry are well described by a linear model as the following:
+All this quantity, which we will indicate in general with $\delta q$ can influence the asymmetry measured by the pmts, considering also that the expected asymmetry is in the order of ten part per million, and small asymmetry introduced by fluctuations on the beam parameters are not negligible. Correcting directly the false asymmetries that rise from those uncertainties is a tough task, and it's more easy to adopt a different strategy respect to proceed to the analytical/numerical calculation of each of them . Knowing that the beam parameters produced by Mami are quite stable over the time, we can assume that the measured asymmetry are well described by a linear model as the following:
 
 \begin{equation}
 Asym = A_{physical} \cdot P + \delta_{I} + A_{x} \delta x + A_{y} \delta y + A_{\theta_{x}} \delta \theta_{x} + A_{\theta_{y}} \delta \theta_{y}+ A_{E} \delta E 
 \end{equation}
 
-$A_{physical}$ is the aim of the experiment, $A_{x}$ and $A_{y}$ are the asymmetries induced by the variation of the posizion of the beam, $A_{\theta_{x}}$ and $A_{\theta_{y}}$ are the asymmetry associated to angles, $A_{E}$ is the asymmetry associated to the beam energy. 
+$A_{physical}$ is the aim of the experiment, $A_{x}$ and $A_{y}$ are the asymmetries induced by the variation of the position of the beam, $A_{\theta_{x}}$ and $A_{\theta_{y}}$ are the asymmetry associated to angles, $A_{E}$ is the asymmetry associated to the beam energy. 
 The relevant assumption is that, for small variation of the beam, the false asymmetry are linearly dependent on the Beam uncertainties (that are $\delta x, \delta y, \delta \theta_{x}, \delta \theta_{y}, delta_{E}$), so a first order approximation seems valid.\\
-We must clarify now what we mean with $\delta x, \delta y, \delta \theta_{x}, \delta \theta_{y}, delta_{E}$. Resuming the event structure, that we discussed in \ref{FirstDescription}, we have a sequence of 4 different sub-events, with a polarization pattern that is randomly selected between $\uparrow,\downarrow,\downarrow, \uparrow$ and $\downarrow,\uparrow,\uparrow,\downarrow$. During the $\SI{20}{\milli \second}$ ot time lenght of each sub-event, the vfcs make a single measurement of the beam, and the data are saved in the data tree. The task of the analysis program is to use this raw data to calculate the relevant parameters for the analysis. Because we are working with asymmetries, the absolute values of the parameters listed above is not relevant, instead what is relevant are the differencies correlated with polarization state of the beam. Assuming this, $\delta x, \delta y, \delta \theta_{x}, \delta \theta_{y}, delta_{E}$ are replaced with :
+We must clarify now what we mean with $\delta x, \delta y, \delta \theta_{x}, \delta \theta_{y}, delta_{E}$. Resuming the event structure, that we discussed in \ref{FirstDescription}, we have a sequence of 4 different sub-events, with a polarization pattern that is randomly selected between $\uparrow,\downarrow,\downarrow, \uparrow$ and $\downarrow,\uparrow,\uparrow,\downarrow$. During the $\SI{20}{\milli \second}$ of time length of each sub-event, the vfcs make a single measurement of the beam, and the data are saved in the data tree. The task of the analysis program is to use this raw data to calculate the relevant parameters for the analysis. Because we are working with asymmetries, the absolute values of the parameters listed above is not relevant, instead what is relevant are the differences correlated with polarization state of the beam. Assuming this, $\delta x, \delta y, \delta \theta_{x}, \delta \theta_{y}, delta_{E}$ are replaced with :
 
 \begin{equation}
 \begin{split}
@@ -698,7 +698,26 @@ We must clarify now what we mean with $\delta x, \delta y, \delta \theta_{x}, \d
 \end{split}
 \end{equation}
 
-Each value represent the difference between the mean values over the two different polarization state.
+Each $\delta q$ represents the variation of one of the parameters of the beam within an event, so.
+One may wonder why the model doesn't contain a parameter $A_{I}$ to describe the false asymmetry due to the current. We can show theoretically that the values of $A_{I}$ is equal to $1$. Starting from the definition of rate $\Gamma$:
+
+\begin{equation}
+\Gamma = \frac{dN}{dt} = I_{0} \, \sigma \, \frac{n_{t}}{S}
+\end{equation}
+
+where $I_{0}$ is the beam current, $n_{t}$ is the density of the target, and S is the surface of the beam. If we substitute everything in the definition of $A$:
+
+\begin{equation}
+A_{I} = \dfrac{\frac{dN_{\uparrow}}{dt} - \frac{dN_{\downarrow}}{dt}}{\frac{dN_{\uparrow}}{dt} + \frac{dN_{\downarrow}}{dt}} = \dfrac{\sigma_{\uparrow} I_{0 \uparrow} - \sigma_{\downarrow} I_{0 \downarrow}}{\sigma_{\uparrow} I_{0 \uparrow} + \sigma_{\downarrow} I_{0 \downarrow}}
+\end{equation}
+
+It should be clear now that the current asymmetry $A_{I}$ is equal to 1, and to take care of the contributions of the current we only need to compute $\delta_{I}$: 
+
+\begin{align*}
+A_{tot} = A_{n} + \dfrac{I_{0 \uparrow} - I_{0 \downarrow}}{I_{0 \uparrow} + I_{0 \downarrow}} = A_{n} + \delta_{I}
+\end{align*}
+
+This is a direct consequence of the fact that the luminosity is proportional to the beam current, so we don't need to add a new parameter to the model.
 
 \section{Data pre-selection and Fit}
 
@@ -726,19 +745,18 @@ Apart from this, we observe in (\ref{analysis}) sudden variations of the asymmet
 \includegraphics[width = 0.45\textwidth]{Analysis/Dataselection/XYtrend.pdf} }
 \end{figure}
 
-After this first general data selection, we focus our attention on the correlated-difference data, which are important to estimate the contributions of the false-asymmetries. 
+Now we focus our attention on the correlated-difference values. We remind the reader that these quantities, that are used as independent variables for the fit, as explained before, are defined as 
 
 \begin{align*}
 \delta x =  \frac{(x_{up,1} + x_{up,2})}{2} - \frac{(x_{down,1} + x_{down,2})}{2}
 \end{align*}
 
-An histogram is produced for each beam parameter correlated-difference. These plots are useful to study the beam-stabilization, which is an essential feature of the experiment to decrease the contributions of the false asymmetries to the total asymmetry.
-We expect, if the stabilization of the beam is working, that all the correlated differences are distributed around zero, which implies that there is no systematic difference when the beam is polarized in one direction respect to the other. 
-The \textit{pdf} which described the data is expected to be well-described by a gaussian distribution, from the knowledge of the previous experiments.   
+and are calculated within each single event, to identify the differences with respect to the various quantities such as position, energy... which correspond to different states of polarization.
+Several histograms are produced (\ref{fig:IstogrammiParametri}). These plots are useful to quantify the stabilization of the beam: we expect that all the correlated differences are distributed around zero, which implies that there is no systematic difference when the beam has one polarization state respect to the other. The mean $\mu$ and the standard deviation $\sigma$ of the data are reported in the table (\ref{Tab:parametri}) 
 
 \begin{figure}
 \centering 
-\subfloat[][\emph{$X$ position correlated difference}]{
+\subfloat[][\emph{$X$ position correlated difference} \label{fig:IstogrammiParametri}]{
 \includegraphics[width = 0.3\textwidth]{Analysis/Dataselection/X.pdf}} 
 \subfloat[][\emph{$Y$ position correlated difference}]{
 \includegraphics[width = 0.3\textwidth]{Analysis/Dataselection/Y.pdf}}
@@ -748,20 +766,21 @@ The \textit{pdf} which described the data is expected to be well-described by a 
 \includegraphics[width = 0.3\textwidth]{Analysis/Dataselection/Yp.pdf}}
 \subfloat[][\emph{Energy correlated difference}]{
 \includegraphics[width = 0.3\textwidth]{Analysis/Dataselection/ENMO.pdf}}
+\subfloat[][\emph{Current asymmetry}]{
+\includegraphics[width = 0.3\textwidth]{Analysis/Dataselection/Current.pdf}}
 \end{figure}
 
-a maximum likelihood fit with a Gaussian model is performed for each beam parameter, with Likelihood Ratio for the goodness of fit (gof). The statistic for the gof is:
 
-\begin{align*}
-\lambda(x) = 2 \sum_{i}^{n} (f_{i}(\mu) - k_{i}(1 + log(\frac{f_{i}(\mu)}{k_{i}})))
-\end{align*}  
-
-$\mu$ are the parameters of the \textit{pdf}, that are mean and variance of the gaussian, and $f_{i}(\mu)$ and $k_{i}$ are respectively the expected value for the i-nth bin and the observed value for the i-nth bin.
-
+%The \textit{pdf} which described the data is expected to be well-described by a gaussian distribution, from the knowledge of the previous experiments.
+%a maximum likelihood fit with a Gaussian model is performed for each beam parameter, with Likelihood Ratio for the goodness of fit (gof). The statistic for the gof is:
+%\begin{align*}
+%\lambda(x) = 2 \sum_{i}^{n} (f_{i}(\mu) - k_{i}(1 + log(\frac{f_{i}(\mu)}{k_{i}})))
+%\end{align*}  
+%$\mu$ are the parameters of the \textit{pdf}, that are mean and variance of the gaussian, and $f_{i}(\mu)$ and $k_{i}$ are respectively the expected value for the i-nth bin and the observed value %for the i-nth bin.
 
 \begin{table} 
 \centering
-\caption{Beam parameters Histograms}
+\caption{Beam parameters:}
 \begin{tabular}{|c|c|c|c|c|c|} 
 \hline 
 \rule[-1ex]{0pt}{2.5ex} & $X [\mu m]$ & $Y[\mu m]$ & $Xp [\mu rad]$ & $Yp [\mu rad]$ & $E [eV]$ \\ 
@@ -774,10 +793,20 @@ $\mu$ are the parameters of the \textit{pdf}, that are mean and variance of the 
 \label{Tab:parametri} 
 \end{table}
 
-these results are encouraging, the stabilization has the consequence that only small differences are observed within an event for each monitor. So, unless the values for the false asymmetries are very large, the effect of the beam variation on the reconstructed asymmetry should be small compared to the physical effect $A_{n}$.
 
-After removing the outliers, we mention an issue which took place on the night of the 2nd December; MAMI operators that were controlling the first stage of the accelerator, because of a wrong setting, switched from polarized beam to non- polarized. This issue introduce a big systematic error that is potentially able to decrease the experimental \transv. We find out this problem only the next day, so we had not en evidence of how many hours of beam were lost. Unfortunately,  because this happened during the night, nobody could save the polarization measurement of the beam and identify the runs affected by this problem. This is a serious trouble, if we are not able to identify the runs that share this problem, out measurements are affected by a bias that is not possible to disentangle from any other systematic effects related to the electronics system used, therefore also the electronic testing is not possible. 
+Looking at the values of the mean and the corresponding error $\sigma$ reported in the plots legend, we observe that mean of $X,Y,\theta_{x},\theta_{y},E$ are compatible with $0$. These results are encouraging: we are not able to identify a systematic difference between polarization $+1$ and $-1$. A systematic difference would have produced a value $\mu$ shifted from zero, and a corresponding effect on $A_{n}$. 
+With our assumption that the false asymmetries are well described by a linear model, observing that $\mu$ is small and compatible with zero for all the parameters, together with the evidence that 
+$\delta q$ are distributed symmetrical around zero, it could be stated that by averaging the asymmetry results
 
+\begin{align*}
+\overline{A} = A_{n} \cdot P + \overline{\delta_{I}} + \overline{\delta_{x}}A_{x} + \overline{\delta_{y}} A_{y} + \overline{\delta_{\theta_{x}}} A_{\theta_{x}} + \overline{\delta_{\theta_{y}}} A_{\theta_{y}} + \overline{\delta_{E}}A_{E} =\\= A_{n} \cdot P + \overline{\delta_{I}} + A_{x}\cdot 0 + A_{y} \cdot 0 +  A_{\theta_{x}} \cdot 0 +  A_{\theta_{y}} \cdot 0 + A_{E} \cdot 0 = A_{n} \cdot P + \overline{\delta_{I}}
+\end{align*}  
+
+The contributions related to the false asymmetry should in principle cancel out. We will discuss later, when we will introduce the fit results, whether the reasoning presented reflects reality.\bigskip
+
+After discussing the removal of the outliers, now will discuss in details the issue regarding the polarization of the Beam. To observe a \transv, it is essential to have a correctly polarized beam.
+Unfortunately, we found out that part of the data where acquired with a Beam made by non-polarized electrons. The reason is that during the second night of the beam-time, MAMI operators that controls the quality of the beam switched from polarized beam to non-polarized, unintentionally. These wrong data were acquired during the night of 2nd December and we discovered this problem only the next day. We had no evidence of how many hours of beam were lost. Because this happened during the night, nobody could save the polarization measurement of the beam and identify the runs affected by this problem.
+This issue introduces a big systematic error that is potentially decreases the reconstructed $A_{n}$. It is important to identify the runs that share this problem, otherwise the measurements are affected by a bias that is not possible to disentangle from any other systematic effects related to the electronics system of the experiment, therefore also the electronic testing is not possible. 
 All the stabilization monitors were active, so the data show apparently the same behaviour of the data with the correct polarization. We can't proceed with an arbitrary cut of the data, because there is the risk to cut off also good data or perform an incomplete removal. The next phase of the analysis is focused on describing a clear method used to identify the data and remove them from the analysis.
  
 The procedure to identify the runs with $0\%$ polarization rely to the estimation of the correlation coefficient of the PMTs counts. For every event we have two type of polarization sequence. The polarization $\vec{P}$ of each sub-event is identified with $+1$ and $-1$, that correspond to up and down $\overline{P}$. This values are part of the data tree, and form a sequence $p_{i}$ of the type: $+1-1-1+1$, where i is the index to the i-th sub-events analyzed. If the $\overline{P}$ is different from zero, we expect, due to the \transv, a difference in the number of scattered electrons between sub-events with different $p_{i}$. \medskip
@@ -840,53 +869,91 @@ This let us to identify the block of runs that show a behaviour compatible with 
 \end{figure}
 
 This plot unequivocally shows that all the asymmetries measured for each PMTs for both detector A and B are compatible with zero. It is therefore reasonably certain that such data should not be included in the main analysis.\\
-Even if those data are not useful in reconstructing the final asymmetry, they can be used to check the presence of a small offset in the data:
+Even if those data are not useful in reconstructing the final asymmetry, they are still useful to check the presence of systematic effects. Because we are reasonably sure that $P = 0$ for these data, the presence of a small deviation from $A = 0$ is a way to identify the presence of an offset. These data are treated likewise the other data with right polarization setting.
 
-\begin{itemize}
-\item asymmetry $A =  -2.49 \pm 2.14$
-\item asymmetry $B =  -7.83 \pm 6.50$
-\end{itemize}
+\subsection{Fit with a linear model}
 
-Even if every pmt is $1\sigma$ far from $A_{n} = 0$, the averaged values are negative and $2\sigma$ far from 0. This is an evidene of possible presence of a systematic effects.
+To retrieve the asymmetry $A_{n}$ from the data, we assume a linear model where the asymmetries depend on the beam parameters, in the way we discussed before (\ref{Model}). The contributions due to variations of the beam within an events are described with 5 parameters, that are  $A_{x},A_{y},A_{\theta_{x}},A_{\theta_{y}},A_{E}$.
+The data are analyzed both using python libraries, and with a fit program implemented in the framework of this thesis. To analyze the data with python, it is used the \textit{curvefit} function implemented in the python library \textit{scipy}.
+The fit program implements a well know algorithm used in linear regression: the ordinary least square algorithm (OLS).
+The OLS algorithm is basic algorithm, the easiest to implement and robust. It relies on few important hypothesis about the characteristics of the data. In principle we could handle all the analysis relying entirely on python. The decision to implements a fit program by ourself is due to the fact that in this way we interface directly to the analysis program, that is written in \textit{c++} code. 
+the assumption underlying linear regression is that there is a relation between the data of this type:
 
-Before proceeding with the fit, we observe how the asymmetry evolves as a function of time.
+\begin{equation}
+ y \, = \, \vec{x} \cdot \vec{\beta} + \epsilon
+\end{equation}
+
+$\vec{x}$ are the independent variables, $\vec{\beta}$ are the parameters and $\epsilon$ is a noise, that is supposed to be gaussian distributed (however, the robustness of the OLS algorithm let to relax this request). Another important assumption is that the linear variables are not correlated. 
+This last request is particularly important, as related data cannot be processed with either of the two algorithms used.
+Before proceeding with the fit, it is necessary to verify this assumption. \medskip
+The first step so is to compute the correlation matrix for the beam parameters, we report in a table the values obtained:
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline 
+•            & X & Y & $\theta_{x}$ & $\theta_{y}$ & E \\ 
+\hline 
+X            & 1 & -0.019 & -0.995 & 0.056 & 0.036 \\ 
+\hline 
+Y            & -0.019 & 1 & 0.006 & -0.647 & 0.005 \\ 
+\hline 
+$\theta_{x}$ & -0.995 & 0.006 & 1  & -0.005 & -0.05 \\ 
+\hline 
+$\theta_{y}$ & 0.056 & -0.647 & -0.05 & 1 & -0.003 \\ 
+\hline 
+E            & 0.036 & 0.005 & -0.05  & -0.003  & 1 \\ 
+\hline 
+\end{tabular} 
+\end{table}
+
+It's immediate to observe that for $(\theta_{x},X);(\theta_{y},Y)$ the values for the correlation are high compared to the other parameters. 
+
+\begin{figure}[ht]
+\centering
+\subfloat[][\emph{}]{
+\includegraphics[width = 0.45 \textwidth]{Analysis/Fit/X_Xp.pdf} }
+\subfloat[][\emph{}]{
+\includegraphics[width = 0.45 \textwidth]{Analysis/Fit/Y_Yp.pdf}}\\
+\subfloat[][\emph{}]{
+\includegraphics[width = 0.45 \textwidth]{Analysis/Fit/Y_X.pdf}}
+\end{figure}
+
+The plots confirm the linear dependence between those parameters. With this evidence, it's clear that the have to modify the model to fit the data. We decided to include as linear independent variables only : $I,X,Y,E$.
+
+Before proceeding with the fit, it's interesting to study how $A_{n}$ evolves with the increase of the data. What we intend is to plot the averaged values $\overline{A_{n}}$ as the number of data increases, where the average is made on all data collected from time $t = 0$ up to time $t = t_{1}$. 
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width = 0.8 \textwidth]{Analysis/Dataselection/AveragedAsymmetry.pdf}
-\caption{Plot of the Asymmetry versus time. For a point time $t_{1}$, we plot the mean over all the asymmetries collected from $t = 0$ to $t = t_{1}$. Each line represents the asymmetries measured for a specific pmt (in \textcolor{blue}{blue} detector B and in \textcolor{red}{red} detector A). The values are corrected for the beam polarization, multiplying by $\frac{1}{p}$. We plot also the error, which is one standard deviation $\sigma$ from the mean.}
+\subfloat[][\emph{Plot of the Asymmetry versus time. The plot show the average over all the events collected from $t = 0$ to $t = t_{1}$. Each line represents $A_{n}$ measured for  pmt (in \textcolor{blue}{blue} detector B and in \textcolor{red}{red} detector A). The values are corrected for the beam polarization, multiplying by $\frac{1}{p}$. No further correction is applied.}]{
+\includegraphics[width = 0.5 \textwidth]{Analysis/Dataselection/AveragedAsymmetry.pdf}}
+\subfloat[][\emph{Averaged asymmetry for detector A and B. The dotted line correspond to $1\sigma$ error.}]
+{\includegraphics[width = 0.5 \textwidth]{Analysis/Dataselection/AveragedAsymmetry2.pdf}}
+\caption{}
 \end{figure}
 
-In this figure we plot the average of the asymmetries for each pmt, carried out from the beginning up to the instant $t$. The data shown are corrected with the percentage of polarization of the beam ($p \simeq = 0.79$). From this it can be seen how the asymmetry evolves as time increases. If there are still outliers data, we can directly check from this plot there a steepy variation in the data. 
+These plots are useful to check that the asymmetries converge to a certain value, and that there are no steepy variations that could be related to the presence of remaining outliers. Besides this we observe that the sign of the asymmetries for the two detector are opposite, in agreement with what we expect from the kinematic.
+For a better visualization of the data, especially to observe the dependence of the asymmetry on the Beam parameters measured, it is useful to plot $A$ versus each of the beam parameters. Unfortunately, the statistical error associated to the asymmetry is too high to appreciate whether there is a linear dependence in the data. For example here we plot $A$ versus $X$.
 
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.5\textwidth]{Analysis/Fit/A_vs_X.pdf}
+\caption{•}
+\end{figure}
 
-When all the calibrations are performed, it is possible to proceed to generate the datafiles fot the fit program.
-For a better visualization of the data, especially to observe the dependence of the asymmetry on the Beam parameters measured, it is useful to take the average asymmetry at regular intervals. From the raw plots of the asymmetries (see below, it is clear that the statistical error is too hight to identify a linear structure in the dependence of the asymmetry. 
+We see large vertical band of points, and it's quite hard to identify values trend. A different approach is to divide the $X$ axis in small interval, like the procedure of binning, and average all the asymmetries that fall in the same interval. This reduce the dimensionality of the data, and let us to see if our assumption of the linearity is true.
 
-
-In all the figures the asymmetries are given in [ppm] units. The data are selected removing the correlated-difference that are $5\sigma$ far from the mean values, that we have reported in the table (\ref{Tab:parametri}) 
-
-\begin{align*}
-(x_{monitor} - \overline{x}_{monitor}) \leq 3 \cdot \sigma_{X}
-\end{align*}
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.5\textwidth]{Analysis/Fit/Xfit.pdf}
+\caption{•}
+\end{figure}
 
 For each monitor we use the \textit{curve fit} function of the python library \text{scipy} to fit the data. Each Beam parameter is treated separately now, so in principle we are ignoring possible effect of correlation between the beam values. We are aware about this fact, the false asymmetries reconstructed with this method can be affected by this bias. However this representation of the data offers a clear and understandable way to identify the presence of a linear structure in the data.
 
 \begin{figure}[hbtp]
 \centering
 \begin{comment}
-\subfloat[][\emph{Asymmetries [ppm] vs X position [$mm$]}]
-	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_XB.pdf}} \quad
-\subfloat[][\emph{Asymmetries [ppm] vs Y position[$mm$]}]
-	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_YB.pdf}} \\
-\subfloat[][\emph{Asymmetries [ppm] vs $\theta_{x}$ angle [$rad$]}]
-	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_XpB.pdf}} \quad
-\subfloat[][\emph{Asymmetries [ppm] vs $\theta_{y}$ angle [$rad$]}]
-	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_YpB.pdf}} \\
-\subfloat[][\emph{Asymmetries [ppm] vs E [$keV$]}]
-	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_EB.pdf}} \quad
-\subfloat[][\emph{Asymmetries [ppm] vs I current [arb.unit]}]
-	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_IB.pdf}} \quad
 \label{fig:averageAsym}
 \end{comment}
 \end{figure}
@@ -894,24 +961,12 @@ For each monitor we use the \textit{curve fit} function of the python library \t
 \begin{figure}[hbtp]
 \centering
 \begin{comment}
-\subfloat[][\emph{Asymmetries [ppm] vs X position [$mm$]}]
-	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_XA.pdf}} \quad
-\subfloat[][\emph{Asymmetries [ppm] vs Y position[$mm$]}]
-	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_YA.pdf}} \\
-\subfloat[][\emph{Asymmetries [ppm] vs $\theta_{x}$ angle [$rad$]}]
-	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_XpA.pdf}} \quad
-%\subfloat[][\emph{Asymmetries [ppm] vs $\theta_{y}$ angle [$rad$]}]
-%	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_YpB.pdf}} \\
-%\subfloat[][\emph{Asymmetries [ppm] vs E [$keV$]}]
-%	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_EB.pdf}} \quad
-%\subfloat[][\emph{Asymmetries [ppm] vs I current [arb.unit]}]
-%	{\includegraphics[width = 0.45\textwidth]{Analysis/clustering_IB.pdf}} \quad
 \end{comment}
 \label{fig:averageAsym2}
 \end{figure}
 
 
-The error of each point is computed exploiting the same formula defined above (theory section; $N_{A/B}$ averaged pmt counts for each subevents and $n$ number of event in each interval):
+The error of each point is computed exploiting the same formula defined above (theory section; $N_{A/B}$ averaged pmt counts for each sub-events and $n$ number of event in each interval):
 
 \begin{align*}
 \sigma_{Asym} = \dfrac{1}{\sqrt{2N_{A/B} \cdot n}}
@@ -919,18 +974,18 @@ The error of each point is computed exploiting the same formula defined above (t
 
 
 \section{False asymmetries}
-\commento{Seems that is possible to obtain rough estimates of the beam related asymmetries with the results from the fit. For Energy and position it's achievable, while for the angles it's quite hard (in principle sounds possible to perform an analytic calculation of the asymmetry related to the incident beam angle, however Anselm told me that quite often those results are in disagrement with the observed even in the sign!).}
+\commento{Seems that is possible to obtain rough estimates of the beam related asymmetries with the results from the fit. For Energy and position it's achievable, while for the angle it's quite hard (in principle sounds possible to perform an analytic calculation of the asymmetry related to the incident beam angle, however Anselm told me that quite often those results are in disagrement with the observed even in the sign!).}
 
-Until now the values for the false asymmetries were threated as the parameters of the fit. In this section we will investigate how we can obtain another different exstimations, usefult to check the validity of all the process of analysis of the data.
+Until now the values for the false asymmetries were threated as the parameters of the fit. In this section we will investigate how we can obtain another different estimations, useful to check the validity of all the process of analysis of the data.
 
-For $\frac{dA}{dX}$ and $\frac{dA}{dY}$, we conceptually exploit the possibility of varying the position of the beam on the target, as we did during one of the calibration phases. Using the same \textit{wobbler 16} we asked MAMI to slowly change the beam position on the X and Y monitor. The change in position has the effect to modify the rates for the two detector, and from them it's possible to extract exstimate the two false asymmetries related to the beam position. Now we will see how the two quantities are related.
+For $\frac{dA}{dX}$ and $\frac{dA}{dY}$, we conceptually exploit the possibility of varying the position of the beam on the target, as we did during one of the calibration phases. Using the same \textit{wobbler 16} we asked MAMI to slowly change the beam position on the X and Y monitor. The change in position has the effect to modify the rates for the two detector, and from them it's possible to extract estimate the two false asymmetries related to the beam position. Now we will see how the two quantities are related.
 From the plot .. we see that the counts are scaling linearly with the beam position, so we assume that the $N$ are given by
 
 \begin{align*}
 N(x,...) = N_{0} + m \cdot (x - x_{0})
 \end{align*}
 
-it is clear that the linear model can't be alwaws good, at some point the electron will be deflected completely out of the detector, and so the counts will fall rapidly to zero. However, the magnets used to deflect the beam are producing small variation in the position, on the order of hundredths of a millimeters.
+it is clear that the linear model can't be always good, at some point the electron will be deflected completely out of the detector, and so the counts will fall rapidly to zero. However, the magnets used to deflect the beam are producing small variation in the position, on the order of hundredths of a millimeters.
 Let's suppose that the beam position for two sub-events is $x_{1}$ and $x_{2}$, we can calculate the asymmetry between the two event, taking care of the possible effects due to the different position. We write explicitly: 
 
 \begin{equation}
@@ -939,7 +994,7 @@ Asym = \dfrac{N(x_{1}) - N(x_{2})}{N(x_{1}) + N(x_{2})} = \dfrac{N_{0} + m \cdot
 \end{split}
 \end{equation}
 
-In this equation three differents parameters appear: $N_{0}$ is the offset of the linear model, $m$ is the agular coefficient, or the slope, and $x_{0}$ is the initial position respect to we compute the position variation. The first two terms are obtained by a linear fit, while $x_{0}$ is fixed conveniently.
+In this equation three different parameters appear: $N_{0}$ is the offset of the linear model, $m$ is the agular coefficient, or the slope, and $x_{0}$ is the initial position respect to we compute the position variation. The first two terms are obtained by a linear fit, while $x_{0}$ is fixed conveniently.
 
 \begin{figure}[hbtp]
 \centering
@@ -987,7 +1042,7 @@ We report the values obtained with this new method ...
 
 We can investigate also the asymmetries related to the beam energy. For this one we can exploit the theoretical expression for the Mott cross-section, taking the derivative ...
 
-We can investigate the Current asymmetries, because we have the autocalibration procedure, so from the scale factor we can check if the current asymmetri is compatible with $1$ as assumed or not.
+We can investigate the Current asymmetries, because we have the auto-calibration procedure, so from the scale factor we can check if the current asymmetri is compatible with $1$ as assumed or not.
 \section{??Bootstrap??}
 
 \commento{Although Anselm was against it, now seems possible to increase the precision of the mesurement with a procedure similar to a bootstrap. Instead of computing all the quantities inside a single event, it's possible to compute all the important quantities also between different events. In this scenario the statistics can be increased artificially as mutch as we want, with the same amount of data. Of course, it's also simple to abuse of this method, so we should restrict using only events next to each other. However seem reasonable and promising.}

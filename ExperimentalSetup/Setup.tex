@@ -8,14 +8,14 @@
 \item Detectors A and B.
 \end{itemize}}
 
-\paragraph{introduction} This chapter presents briefly the structure and the characteristics of the Mainz microtron accelerator (MAMI), where the \transv asymmetry is measured, and the experimental setup used. Particual attention is shown in the the description of the beam monitors, which measure the beam parameters. This monitors are quite specific in the perspective of the particle accelerators. Following the overview of MAMI and the acceleration stages, the experimental hall and the specific electronics devices to acquire and process the data are presented. 
+\paragraph{introduction} This chapter presents briefly the structure and the characteristics of the Mainz microtron accelerator (MAMI), where the \transv asymmetry is measured, and the experimental setup used. Particular attention is shown in the the description of the beam monitors, that are quite specific for the standard of particle accelerators. Following an overview of MAMI and the acceleration stages, the experimental hall and the specific electronics devices to acquire and process the data are presented. 
 
 \section{Overview of the experiment.} \label{FirstDescription}
 
 To measure the Beam-Normal single spin asymmetry, a polarized beam of $ \SI{570}{\mega \electronvolt}$ will be sent against a $\SI{10}{\milli \meter}$ width of $^{12}C$ target. The detectors consist of two fused-silica coupled to 3 (detector B) and 8 (detector A) pmts, which collect the Cherenkov light emitted when an electron pass through the fused-silica. 
 The detector are placed inside the two spectrometer of the A1 hall, which are not used in this experiment due to the high luminosity of the beam ($ \SI{20}{\micro \ampere}$) that is away from their good point of operation. 
 The photomultipliers asymmetry due the change of the electrons spin is the target of the measurement. The pmts signals are collected and digitalized by the \textbf{NINO} board, after a threshold selection, and sent to the A1 control room computer, where the DAQ program collect the data together with all the data coming from the Beam monitors producing Binary files, which are later analyzed by the analysis program, which is significant part of the work done in the framework of the thesis. 
-The data collected are divided in \textit{Events} made by 4 \textit{sub-events} in sequence. Each event correspond to a temporal window of $\simeq \SI{80}{\micro \second}$, where each sub-event is $\SI{20}{\micro \second}$ long. Here it's important to clarify that unlike the majority of experiments in high energy physics, an event is made by all the electrons interacting with the detectors during the time interval of the event, and we will refer to this hereafter unless otherwise stated. The division into sub-events reflects the polarization sequence of the beam. The PMTS counts and the beam monitor values are saved for each subevent, along with the time lenght of the event (measured by in clock cycle by the NINO electronic board \ref{NINO}), and other values which are required to process beam monitor data.\\ 
+The data collected are divided in \textit{Events} made by 4 \textit{sub-events} in sequence. Each event correspond to a temporal window of $\simeq \SI{80}{\micro \second}$, where each sub-event is $\SI{20}{\micro \second}$ long. Here it's important to clarify that unlike the majority of experiments in high energy physics, an event is made by all the electrons interacting with the detectors during the time interval of the event, and we will refer to this hereafter unless otherwise stated. The division into sub-events reflects the polarization sequence of the beam. The PMTS counts and the beam monitor values are saved for each sub-event, along with the time length of the event (measured by in clock cycle by the NINO electronic board \ref{NINO}), and other values which are required to process beam monitor data.\\ 
 
 The general structure of the event is the following: 
 
@@ -130,7 +130,7 @@ Inside A1 hall three large magnetic spectrometers are placed on a circular railt
 \begin{SCfigure}[50][ht]
 \centering
 \caption{Image of the spectrometers of A1 hall. The spectrometers can be rotated using a system of railtracks that are visible at the bottom of image. The electrons are scattered and then deflected in the vertical direction by the magnetic field (green lines). This picture is taken from behind the target, so we see the beam-dumps. The target is rougly at the center of the image where the two green lines join.}\label{fig:TwoDetectors}
-\includegraphics[width = 0.5\textwidth]{ExperimentalSetup/A1_Dietro.pdf}
+\includegraphics[width = 0.45\textwidth]{ExperimentalSetup/A1_Dietro.pdf}
 \end{SCfigure}
 
 The spectrometers used for the \transv are the ones shown in the picture. The are multiple reasons why the particle are deflected on the vertical directon, we summarized them in two points: 
@@ -144,9 +144,8 @@ Once a particle is scattered in the acceptance region of the detectors, the magn
 \begin{SCfigure}[50][ht]
 \centering
 \caption{Internal of the A spectrometer. This image was taken during the installation of the detector A inside the red spectrometer, that is accessible from the platform visible in the other picture : \ref{fig:TwoDetectors}}
-\includegraphics[width = 0.6\textwidth]{ExperimentalSetup/Detectors/position.pdf}
+\includegraphics[width = 0.45\textwidth]{ExperimentalSetup/Detectors/position.pdf}
 \label{fig:internal}
-
 \end{SCfigure}
 
 The determination of both the particle speed $\vec{v}$ and momenta (drift chamber) allows to identify the particles. Despite the possibilities offered by the already existing setup, for the beam time of interest none of these components was used directly in the estimation of $A_{n}$. The reason is due to the high intensity of the beam that is used in the experiment, which is far from the optimal operating conditions of the componets, that are suited for rates lower than the ones expected for beam normal single spin measurements. The spectrometers then will de used indirectly for the allignment of scattered electron to
@@ -339,3 +338,11 @@ Two Nino board are used in the experiment, one for detector A and one for detect
 The way we selected the threshold is explained in the following chapter (Analysis).
 
 \subsection{Master Board}
+
+\begin{figure}[hbtp]
+
+\centering
+\includegraphics[width = \textwidth]{ExperimentalSetup/masterboard.pdf}
+\caption{Scheme of the master-board, the device that coordinates all the electronics for the experiments, and send the data to the computer in the control room.}
+\end{figure}
+
