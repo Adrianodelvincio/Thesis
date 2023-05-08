@@ -25,15 +25,30 @@ For the calibrations, since several beam parameters are needed for the analysis,
 
 \commento{Explain the test of the two detectors in the lab, how we select the threshold, the correlation of the pmts and coincidence to select the threshold. Mention also that we observed two knees in the plot of counts vs. attenuation.}
 
-The Nino board, which digitizes the signal from the PMTS, has two parameters which can be used to select the internal threshold of the discriminator, to cut the low amplitude signals and can be adjusted changing the settings of the DAQ program. These two parameters are \textit{Threshold} and \textit{Attenuation}. \textit{Threshold} means directly the charge value necessary for an impulse certain shape to be accepted by the signal discriminators. However the "physical" threshold can be also modified changing the \textit{attenuation}. The relation between threshold and attenuation is not linear, but follows:
+The Nino board, which digitizes the signal from the PMTS, has two parameters which can be used to select the internal threshold of the discriminator, to cut out the low amplitude signals, that are indicated as threshold and attenuation. The threshold and attenuation values can be adjusted changing the settings of the DAQ program.
+For our purpose, we fix the threshold values equal to $600$ for all the detectors. We remind the reader that the values should be in the range ($0,4000$). 
+It is desirable to work with the "physical" values, i.e switch from these arbitrary units to the correct value in $\SI{}{\milli \volt}$. The relation between attenuation and threshold it is not linear, some data are available with which to study the conversion function \commento{chiede a Igor come ha ottenuto questi dati.}
 
 \begin{figure}[hbtp]
 \centering
-\subfloat[][\emph{Threshold dependence against attenuation} \label{NinoDocu}]{
-\includegraphics[scale=0.4]{Analysis/ThrvsAtt.png}}
+\subfloat[][\emph{Threshold dependence against attenuation} \label{fig:ThrvsAtt}]{
+\includegraphics[scale=0.4]{Analysis/Calibrations/ThrvsAtt.pdf}}
 \end{figure}
 
-For our purposes, we select a common threshold values for all the pmts, and we decided to change only the attenuation values.\\
+The function used for the conversion is 
+
+\begin{equation}
+Threshold = \dfrac{a}{(att - b)^{3}} + c
+\end{equation}
+
+The values obtained from the fit are:
+
+\begin{itemize}
+\item $a = - 802111053 \, \frac{\SI{}{\milli \volt}}{[arb.unit]}$
+\item $b = 382 \, [arb. unit]$
+\item $c =  \SI{-6.1}{\milli \volt}$
+\end{itemize}
+
 Before the Beam time, some test with the two detectors were performed, to check that the pmts were still working after some years of inactivity, and that the new electronic was able to count properly the pulses and store the data. For this studies, we didn't have a radioactive sources to employ, so we moved the two detectors in the workshop of the accelerator, and we use the cosmic rays rate as a probe. 
 
 Knowing that the expected number of event for cosmic rays is about $1 \frac{event}{\SI{}{\centi \meter\squared} \SI{}{\second}}$ we can compute the expected values for the number of events. We decided to take 1 minute long acquisition for both the two detectors, this leads to $70$ expected events for detector B  and  $100$ events for detector A.  \smallskip
@@ -295,36 +310,35 @@ The $Q^{2}$ values is the same of the last measurement performed at MAMI, and is
 \subsection{Calibration of the VFCs monitors.}
 \commento{Maybe it's important to divide this sections in two different part: the first part where I explain the Vfc convert the input voltage signal to a digital signal. In the second part just mention how we tuned the resistences (for X,Y monitors directly at the output signal with the oscilloscope, while for I21 and I13 monitors we used the data, so I'm able to produce plots only for the second ones).}
 
+\newpage
 \subsection{Beam monitors calibration.}
 
-For the calibration of the X Y monitors, we used two target made by three carbon wires at a certain distance from each other, aligned horizontaly and vertically. The distance between the two center of the external wires is $ d_{horizontal} = \SI{2.38}{\milli \meter}$ for the target alligned horizontally and $d_{vertical} = \SI{2.33}{\milli \meter}$ for the other one.
-When the horizontal wires target is cetered, we turn on the beam, and we take some data slowly changing the horizontal beam direction. The beam direction is changed by MAMI operators, varying the Magnetic field of the \textit{Wobbler 16} magnets (\ref{fig:BeamLine}):
+For the calibration of the X Y monitors, we used two target made by three carbon wires at a certain distance from each other, aligned horizontally and vertically. The distance between the two center of the external wires is $ d_{horizontal} = \SI{2.38}{\milli \meter}$ for the target aligned horizontally and $d_{vertical} = \SI{2.33}{\milli \meter}$ for the other one.
+With the two special targets aligned, we turn on the beam, asking MAMI operators to slowly change the beam position. The beam position can be changed by varying the Magnetic field produced by the \textit{Wobbler 16} magnets (\ref{fig:BeamLine}):
 
-\begin{figure}
-\centering
-\includegraphics[width = 0.5\textwidth]{ExperimentalSetup/target.pdf}
-\caption{Target frame installed during the experiment. On the top we have the two targets made by three carbon wires that are used to calibrate the positions monitors. Then the carbon target and the two lead targets.}
-\end{figure}
 
-\begin{comment}
-\begin{wrapfigure}{r}{0.4\textwidth}
+\begin{figure}[htb]
 %\setlength{\columnsep}{10pt}%
 \centering
-\includegraphics[width = 0.35\textwidth]{ExperimentalSetup/target.pdf}
+\includegraphics[width = 0.40\textwidth]{ExperimentalSetup/target.pdf}
 \caption{Target frame installed during the experiment, on the top we have the two targets made by three carbon wires that are used to calibrate the positions monitors. Then the carbon target and the two lead targets.}
-\end{wrapfigure}
-\end{comment}
- 
-Then we repeat the same procedure with the other target, for the vertical direction. We observe that the pmts counts increase to a maximum, that is reached when the beam spot is centered on the carbon wire, and then decrease until the next carbon wire is hit by the beam.\\
-We plot the pmt data \textit{versus} the $X25,X21,Y25,Y21$, given in $\SI{}{\volt}$. 
-Given that we know the real distance between the two external wires, we can obtain the correct scaling factors to calculate the X and Y position values ​​of the beam. To identify the three peaks in of the carbon target, we fit the data using a gaussian model (see \ref{fig:HorizontalCalibration}). The mean $\mu$ represents the center of the wire, given in $\SI{}{\volt}$.
+\end{figure}
 
+
+We took to acquisitions for horizontal and vertical wires target, changing the $x$ and $y$ position of the beam respectively.
+Looking at the pmt counts, we observe that the counts increase to a maximum, that is reached when the beam spot is centered on the carbon wire, and then decrease until the next carbon wire is hit by the beam.\\
+We plot the pmt data \textit{versus} the $X25,X21,Y25,Y21$, given in $\SI{}{\volt}$. 
+Given that we know the real distance between the two external wires, we can obtain the correct scaling factors to calculate the X and Y position from the voltage values. To identify the three peaks in of the carbon target, we fit the data using a gaussian model (see \ref{fig:HorizontalCalibration}). The mean $\mu$ represents the center of the wire, given in $\SI{}{\volt}$.
+
+
+\newpage
 \begin{figure}[hbtp]
 \centering
 \includegraphics[scale=0.4]{figures/XYMOCalibBeamLine.svg.pdf}
 \caption{Beam line scheme.}
 \label{fig:BeamLine}
 \end{figure}
+
 
 Looking at the Beam line, we assume that the beam travels in a straight line. Let's consider the \textit{Wobbler 16} magnet the "$0$" of a coordinate system, with the $z$ axis pointing to the target (left direction in the beam scheme). The Beam parameters are measured by the Monitors $X/Y_{21}, X/Y_{25}$, which are located at some distance respect to the target. Suppose we are working only with the $Y_{25}$ monitor (the procedure is the same for the others). The Beam $y$ position is described by:
 
@@ -343,7 +357,7 @@ $c_{Y25}$ indicates the scaling factor of the monitor. With these values the Ana
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=0.4\textwidth]{Analysis/HorizontalCalibration.png}
-\caption{•}
+\caption{}
 \label{fig:HorizontalCalibration}
 \end{figure}
 
@@ -428,44 +442,27 @@ From this we obtain the value $scaling_{E18} = -1595.2$, to obtain the physical 
 \caption{Plot for the physical quantities computed in the data tree, for two different current of the beam (on the left $\SI{20}{\micro \ampere}$, $\SI{15}{\micro \ampere}$ on the right)}
 \end{figure}
 
-
-
 \subsection{Calibration of the pmts}
 
 \commento{Here it's important to show the plots I made during the beam time. I have to mention the Leo tecniques for the correct interpretation of counts vs attenuation.}
 
-During the beam time, several scans in attenuation were performed, before switching MAMI to produce the polarized beam, to choose the best working point for the PMTS of the detectors. The same procedure used in the laboratory was followed, starting from low attenuation and raising up the values. It's possible to get a simple model to describe the particular shape of the following plot taking into account simple assumptions about the type of electrical noise that affect the Nino board, and the \textit{pdf} of the signal produced by the PMTS.
-The main assumption ("this is not a true assumption, Anselm has a plot of the digitalize charge that proves that") is that the signal amplitude, in $\SI{}{\milli \volt}$ collected by the Nino board is well described by a gaussian distribution, and for signal with low amplitude, we expect to be well described by an uniform distribution. Just to visualize, let's suppose that the distribution of the signal amplitude collected is of this type (\ref{fig:PDF}) (the following figure is just an example, the values ​​do not describe the data collected):
-
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width = 0.40\textwidth]{Analysis/distribution.pdf}
-\caption{Example of the expected distribution of the PMTs output signal}
-\label{fig:PDF}
-\end{figure}
-
-The probability for a signal to pass the selection is equal to the probability of being in above the threshold, that is the complementary cumulative of the gaussian distribution (probability of being in the right tail):
-
-\begin{align*}
-P(signal > thr) = 1 - \Phi(x) = \dfrac{1 - Erf(\dfrac{x_{thr} - x_{0}}{\sqrt{2} \sigma })}{2}
-\end{align*}
-
-Once we reach the uniform zone, the probability of an even being selected is proportional to the area of the rectangle, which increases linearly decreasing the threshold. Considering the normalization factor, it is straightfoward to fit the data with a model of this type:
-
-\begin{equation}
-\begin{split}
-N(att) = N_{0} \cdot \dfrac{1 + Erf(\dfrac{x_{thr} - x_{0}}{\sqrt{2} \sigma })}{2} \qquad \text{if} \quad att < C  \\
-N(att) = N(C) + m \cdot (att - C) \qquad \text{if} \quad att > C
-\end{split}
-\end{equation}
-
-For the detector B we show the result assuming our model: 
+During the beam time, several scans in attenuation were performed, before switching MAMI to produce the polarized beam, to choose the best working point for the PMTS of the detectors. The same procedure used in the laboratory was followed, so with a beam intensity of $\SI{10}{\micro \ampere}$ we acquire data run one minute long, increasing each time the attenuation.
 
 \begin{figure}[hbtp]
 \centering
 \subfloat[][\emph{Attenuation scan for the pmts of detector B} \label{fig:AttScan}]
-{\includegraphics[width = 0.75\textwidth]{Analysis/CalibrationPMT/Fit_attenuation.pdf}}
+{\includegraphics[width = 0.5\textwidth]{Analysis/CalibrationPMT/AttenuationScanB.pdf}}
+\subfloat[][\emph{Attenuation scan for the pmts of detector B}]
+{\includegraphics[width = 0.5\textwidth]{Analysis/CalibrationPMT/AttenuationScanA.pdf}}
 \end{figure}
+
+
+From the fit we obtain three valus for the signal Peak, given in attenuaton units.
+We can check the idea behind this, visualizing the pmt count in a different way. Because we would like to visualize the number of electrons that generate a certain signal in the detector, we can think of differentiating the data showed in the plot \ref{fig:AttScan}. The differentiation consist in the difference between the Counts at a certain point and the previous one, and dividing by the increment in attenuation:
+
+\begin{align*}
+Spectra = \frac{N(att_{i}) - N(att_{i-1})}{att_{i} - att_{i-1}} 
+\end{align*}
 
 \begin{figure}
 \centering
@@ -475,24 +472,17 @@ For the detector B we show the result assuming our model:
 {\includegraphics[scale = 0.5]{Analysis/CalibrationPMT/B1.pdf}}\\
 \subfloat[][\emph{B2}]
 {\includegraphics[scale = 0.5]{Analysis/CalibrationPMT/B2.pdf}}
-\caption{Recostructed spectra for Detector B, notice that we have \textit{Attenuation} values in the x axis, therefore right and left are swapped with respect to the graph \ref{fig:PDF}.}
+\caption{Recostructed spectra for Detector B}
 \end{figure}
 
-From the fit we obtain three valus for the signal Peak, given in attenuaton units.
-We can check the idea behind this, visualizing the pmt count in a different way. Because we would like to visualize the number of electrons that generate a certain signal in the detector, we can think of differentiating the data showed in the plot \ref{fig:AttScan}. The differentiation consist in the difference between the Counts at a certain point and the previous one, and dividing by the increment in attenuation:
-
-\begin{align*}
-Spectra = \frac{N(att_{i}) - N(att_{i-1})}{att_{i} - att_{i-1}} 
-\end{align*}
-
 In this way we compute a discrete derivative of the plot showed in \ref{fig:AttScan}, which represent $\frac{\partial N}{\partial att}$. This is, in fact, the spectra of the signal, still given in attenuation units \ref{fig:Spectra}.\\
-This plot are used to identify a good point to select the attenuation values. If we look at the plot (), we can see that the physical threshold does not scale linearly with changing the attenuation value, and for high values of attenuation, the threshold falls quickly at zero. Looking at the signal spectra, we indentify the first peak as the electron signal, and the other peak for higher attenuation values (on the right), correspond to very low threshold values, so it is noise that we want to reject. We select the values of the attenuation downstream ot the two distributions, taking all the pulses from the electron and rejecting rejecting most signal events. This is sufficient to carry out the calibration of the pmts. However, if we want to identify the physical threshold and want to obtain a plot of the spectra given in physical units, instead of attenuation unit, we can use a simple model to convert attenuation values to $\SI{}{\milli \volt}$:
+This plot are used to identify a good point to select the attenuation values. If we look at the plots \ref{fig:Spectra}, we can see that the physical threshold does not scale linearly with changing the attenuation value, and for high values of attenuation, the threshold falls quickly at zero. Looking at the signal spectra, we identify the first peak as the electron signal, and the other peak for higher attenuation values (on the right), correspond to very low threshold values: the noise that we want to reject. We select the values of the attenuation downstream ot the two distributions, taking all the pulses from the electron and rejecting rejecting most signal events. This is sufficient to carry out the calibration of the pmts. However, if we want to identify the physical threshold and want to obtain a plot of the spectra given in physical units, instead of attenuation unit, we can use a simple model to convert attenuation values to $\SI{}{\milli \volt}$:
 
 \begin{align*}
-f(att) = \dfrac{a}{(x - b)^{c} + d}
+f(att) = \dfrac{a}{(x - b)^{3} + d}
 \end{align*} 
 
-Specifical values of $a,b,c,d$ are suggested in the NINO board documentation. So the spectra values in physical units are represented by: 
+So the spectra values in physical units are represented by: 
 
 \begin{figure}[h]
 \centering
@@ -500,6 +490,42 @@ Specifical values of $a,b,c,d$ are suggested in the NINO board documentation. So
 \subfloat[][]{\includegraphics[width = 0.45\textwidth]{Analysis/CalibrationPMT/voltB1.pdf} }\\
 \subfloat[][]{\includegraphics[width = 0.45\textwidth ]{Analysis/CalibrationPMT/voltB2.pdf} }
 \end{figure}
+
+We discuss now a simple model that we used to describe how the pmt Counts vary when we raise the attenuation. From \ref{fig:Spectra}, we assume that the two peaks are described by two gaussian distributions. Now if we think about the the probability for a signal to pass the selection, this quantity is equal to the probability of being in below the attenuation value. Using now the fact that the probability are given by the cumulative of the gaussian distribution (probability of being in the right tail) it is straightforward to deduce:
+
+\begin{align*}
+P(signal > thr) = \, \Phi(x) = \dfrac{1 + Erf(\dfrac{x - \mu}{\sqrt{2} \sigma })}{2}
+\end{align*}
+
+Considering that we have the sum of two gaussian distribution, we end with:
+
+\begin{equation}
+\begin{split}
+N(att) = \frac{n_{1} + n_{2}}{2} + (\frac{n_{1}}{2}) Erf(\dfrac{x - \mu_{1}}{\sqrt{2} \sigma_{1} })   + (\frac{n_{2}}{2}) Erf(\dfrac{x - \mu_{2}}{\sqrt{2} \sigma_{2}}) \\
+\end{split}
+\end{equation}
+
+This model is used to fit the data. The result is shown in the following picture, the parameters obtained from the fit are reported below:
+
+\begin{figure}
+\centering
+\includegraphics[width = 0.45\textwidth ]{Analysis/CalibrationPMT/Fit_attenuation.pdf}
+\end{figure}
+
+\begin{table}
+\centering
+\begin{tabular}{c|c|c|c|c|c|c}
+\hline
+ PMT   &  $\mu_{1}$         &  $\sigma_{1}$         & $\mu_{2}$          & $\sigma_{2}$   & n1                & n2                 \\
+\hline
+ B0    & 538.0 +/- 1.3 & 19.4 +/- 1.1 & 798 +/- 8 & 103 +/- 4 & 34277 +/- 662 & 64244 +/- 1538 \\
+ B1    & 536.4 +/- 0.9 & 18.2 +/- 0.7 & 783 +/- 5 & 89 +/- 2  & 34053 +/- 475 & 61636 +/- 1109 \\
+ B2    & 582.8 +/- 1.2 & 25.9 +/- 1.0 & 824 +/- 8 & 88 +/- 6  & 32880 +/- 758 & 37930 +/- 1245 \\
+\hline
+\end{tabular}
+\end{table}
+
+From these result we measure the mean $\mu_{1}$ and $\mu_{2}$ for the signal and the background. The correct value of attenuation is set 
 
 \newpage
 \subsection{Autocalibration procedure} \label{Autocalib}
@@ -834,9 +860,9 @@ We applied this strategy with the hope to identify and remove the block of data 
 \begin{figure}[hbtp]
 \centering
 \subfloat[][]{
-\includegraphics[width = 0.5\textwidth]{Analysis/Dataselection/Correlation.pdf}}
+\includegraphics[width = 1\textwidth]{Analysis/Dataselection/Correlation.pdf}} \\
 \subfloat[][]{
-\includegraphics[width = 0.47\textwidth]{Analysis/Dataselection/OverallCorr.pdf}
+\includegraphics[width = 0.5\textwidth]{Analysis/Dataselection/OverallCorr.pdf}
 }
 \caption{Plot of the correlation for detector A and on the left, and combining the two detectors results on the right. It's possible to identify a block of run starting at time $t = 12 h$ until $t = 19 h$ where the correlation is small and compatible with $0$. The values can be confronted with the montecarlo, whose error band is in yellow.}
 \label{fig:PolarityCheck}
@@ -925,11 +951,13 @@ Before proceeding with the fit, it's interesting to study how $A_{n}$ evolves wi
 
 \begin{figure}[hbtp]
 \centering
-\subfloat[][\emph{Plot of the Asymmetry versus time. The plot show the average over all the events collected from $t = 0$ to $t = t_{1}$. Each line represents $A_{n}$ measured for  pmt (in \textcolor{blue}{blue} detector B and in \textcolor{red}{red} detector A). The values are corrected for the beam polarization, multiplying by $\frac{1}{p}$. No further correction is applied.}]{
+
+\subfloat[][\emph{Averaged asymmetries for each pmt.}]{
 \includegraphics[width = 0.5 \textwidth]{Analysis/Dataselection/AveragedAsymmetry.pdf}}
 \subfloat[][\emph{Averaged asymmetry for detector A and B. The dotted line correspond to $1\sigma$ error.}]
 {\includegraphics[width = 0.5 \textwidth]{Analysis/Dataselection/AveragedAsymmetry2.pdf}}
-\caption{}
+
+\caption{Plot of the Asymmetry versus time. The plot show the average over all the events collected from $t = 0$ to $t = t_{1}$. Each line represents $A_{n}$ measured for  pmt (in \textcolor{blue}{blue} detector B and in \textcolor{red}{red} detector A). The values are corrected for the beam polarization, multiplying by $\frac{1}{p}$. No further correction is applied.}
 \end{figure}
 
 These plots are useful to check that the asymmetries converge to a certain value, and that there are no steepy variations that could be related to the presence of remaining outliers. Besides this we observe that the sign of the asymmetries for the two detector are opposite, in agreement with what we expect from the kinematic.
@@ -941,15 +969,52 @@ For a better visualization of the data, especially to observe the dependence of 
 \caption{•}
 \end{figure}
 
-We see large vertical band of points, and it's quite hard to identify values trend. A different approach is to divide the $X$ axis in small interval, like the procedure of binning, and average all the asymmetries that fall in the same interval. This reduce the dimensionality of the data, and let us to see if our assumption of the linearity is true.
+We see large vertical band of points, and it's quite hard to identify a trend in the values. A different approach is to divide the $X$ axis in small interval, like the procedure of binning, and average all the asymmetries that fall in the same interval. This reduce the dimensionality of the data, and let us to see if our assumption of the linearity is true.
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width = 0.5\textwidth]{Analysis/Fit/Xfit.pdf}
-\caption{•}
+\subfloat[][\emph{ $A$ versus $\delta x$, the linear model is the red line, the second used to fit the data is a polynomial, represented in blue.}]{ \includegraphics[width = 0.5\textwidth]{Analysis/Fit/Xfit.pdf}}
+\subfloat[][]{ \includegraphics[width = 0.5\textwidth]{Analysis/Fit/Yfit.pdf}}\\
+\subfloat[][]{ \includegraphics[width = 0.5\textwidth]{Analysis/Fit/Efit.pdf}}
 \end{figure}
 
-For each monitor we use the \textit{curve fit} function of the python library \text{scipy} to fit the data. Each Beam parameter is treated separately now, so in principle we are ignoring possible effect of correlation between the beam values. We are aware about this fact, the false asymmetries reconstructed with this method can be affected by this bias. However this representation of the data offers a clear and understandable way to identify the presence of a linear structure in the data.
+We decided to analyze the data considering each beam parameter separately, too. Because the correlation between the remaining parameters is approximately $0$, we can ignore possible correlation between the parameters and this should not introduce a bias. For the $X$ and $Y$ positions, Two model are used to fit the data. The first one is the linear model: 
+
+\begin{equation}
+A = m \, \delta x + A_{phys}
+\end{equation}
+
+For the second model, we decided to use the following polynomial:
+
+\begin{equation}
+A = c \, \delta x^{5} + m \, \delta x + A_{phys}
+\end{equation}
+
+This choice is due to the fact that we observe that $A$ increases near the tails of the plot, the odd exponent is due to the fact that $A$ has a different sign, positive for left and negative for right.
+For the energy $E$, we propose a third model, because the asymmetry $A$ tends to decrease if we move further from the origin, so a parabola seems the correct choice:
+
+\begin{equation}
+A = c \, \delta x ^{2} + m \, \delta x + A_{phy}
+\end{equation}
+
+The values of the fit are reported in the plot. The $\chi^{2}$ of the fit are reported here
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline 
+detector A & $X$ & $Y$ & $E$ \\ 
+\hline 
+linear fit $\chi^{2}_{17}$ & 99 & 59 & 94 \\ 
+\hline 
+model $\chi^{2}_{16}$ & 76 & 55 & 78 \\ 
+\hline 
+\end{tabular} 
+\end{table}
+
+The $\chi^{2}$ values are higher that the expected and we observe that the values for the model 2 are lower than the ones of linear fit.
+This high values can be explained with two considerations: the first one is that this procedure of averaging the data based on $x$ interval leads to the loss of information that can influence the fit, the second consideration is that we are ignoring the possible error in the determination of $\delta x$.
+Despite this, we observe that the for the $\delta x$ and $\delta y$ the values associated to $A_{phys}$ are  almost the same considering the first or the second model.
 
 \begin{figure}[hbtp]
 \centering

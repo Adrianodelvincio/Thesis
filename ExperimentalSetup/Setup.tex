@@ -310,8 +310,8 @@ To collect the data from the monitors, single and multichannel, synchronous volt
 \caption{Frequency versus Voltage}
 \end{wrapfloat}
 
-The VFCs are powerd with an external tension of $\SI{5}{\volt}$, and a differential voltage input in the range ($-V_{ref}$, $V_{ref}$) is also applied. An external clock signal, that is indicated with "CLKIN" is provived as a reference signal for the oscillator frequency.
-The analog input signal is sampled with by a switched capacitor, with a rate that is controlled by clock  that can be supplied externally, in our case we used a $\SI{6}{\mega \hertz}$. A scheme of the electronic circuit is drawn here (\textit{aggiungere figura}), the output of the Comparator  is a fixed width pulse (the pulse is initiated by the edge of the clock signal) with a frequency that goes from $0.5 \% \cdot f_{CLKIN}$ to $0.45 \% \cdot f_{CLKIN}$ \cite{VfcDatasheet}, where the first correspond to $\SI{0.0}{ \volt}$ in input and the second to $V_{ref}$. Neglecting possible systematic errors, the relation the output frequency and the input voltage is the following:
+The VFCs are powerd with an external tension of $\SI{5}{\volt}$, and a differential voltage input in the range ($-V_{ref}$, $V_{ref}$) is also applied. An external clock signal, that is indicated with "CLKIN" is provided as a reference signal for the oscillator frequency.
+The analog input signal is sampled with by a switched capacitor, with a rate that is controlled by clock that can be supplied externally, in our case we used a $\SI{6}{\mega \hertz}$. A scheme of the electronic circuit is drawn here (\textit{aggiungere figura}), the output of the Comparator  is a fixed width pulse (the pulse is initiated by the edge of the clock signal) with a frequency that goes from $0.5 \% \cdot f_{CLKIN}$ to $0.45 \% \cdot f_{CLKIN}$ \cite{VfcDatasheet}, where the first correspond to $\SI{0.0}{ \volt}$ in input and the second to $V_{ref}$. Neglecting possible systematic errors, the relation the output frequency and the input voltage is the following:
 
 \begin{equation}
 V_{in} = \frac{V_{ref}}{40 \% \cdot f_{CLKIN}} (f_{out} - 5\% f_{CLKIN})
@@ -325,16 +325,17 @@ V_{in} =  V_{ref}[2 \cdot \dfrac{N_{pulses} - 5 \% N_{CLKN}}{40 \% N_{CLKN}} - 1
 
 \subsection{Nino board} \label{NINO}
 
-The NINO board is our data acquisition system for the pmt counts. It is made by $32$ analog input channels and it'is power with $\pm \SI{5}{\volt}$. Each channel has an attenuator, and the signal pass through that before going to the Comparator, which compare the signal to the threshold. The Output signal is a Low-voltage differential signaling (LVDS). Each comparator can handle eight channel and for each of them it is possible to define a global threshold. With the current settings of NINO board, it is possible to change the threshold of each channel acting on another value, the attenuation, which decreases the value of the global threshold of each single channel. All the value that can be modified are 12 bit numbers, so a setting interval of $(0. ; 4095)$.
+The NINO board is our data acquisition system for the pmt counts. It is made by $32$ analog input channels and it is powered with $\pm \SI{5}{\volt}$. Each channel has an attenuator, and the signal pass through that before going to the Comparator, which compare the signal to the threshold. The Output signal is a Low-voltage differential signaling (LVDS). Each comparator can handle eight channel and for each of them it is possible to define a global threshold. With the current settings of NINO board, it is possible to change the threshold of each channel acting on another value, the attenuation, which decreases the value of the global threshold. All the value that can be modified are 12 bit numbers, so a setting interval of $(0. ; 4095)$. \medskip
+The NINO board is designed in such a way that collects the Input charge of the signal, operating with a $\SI{30}{\pico \farad}$. The output signal amplitude is proportional to the input charge, and it is sent to the discriminator. Our interest is only to count the number of scattered electron, so we do not intend to measure the input charge, but only a signal is produced or not.
 
 \begin{figure}[hbtp]
 \centering
-%\includegraphics[scale= 0.4]{figures/NINO.pdf}
+\includegraphics[width = 0.75\textwidth]{ExperimentalSetup/NINO.jpg}
 \caption{Nino Board}
 \label{fig:NinoBoard}
 \end{figure}
 
-Two Nino board are used in the experiment, one for detector A and one for detector B. In principle it is possible to use only 8 and 3 of the 32 channels the are ready to use, considering we have only 3 and 8 pmts to read out. However it is useful to split the analog output signal by the pmts and send it to 4 different channels. So, working with the attenuation value, we can define 4 different threshold values for each pmt. This is something that can improve the noise management. This will be implemented for the future experiments, nevertheless this was not done during our data collection.
+Two Nino board are used in the experiment, one for detector A and one for detector B. For the experiment discussed in this thesis, we will use only 8 channel for detector A and 3 channel for detector B, since this is the number of the input signals coming from the two detectors. For the future experiments more channel will be used, splitting the analog input signal in 4 different signal, sending it to 4 different input channel of the board. This is useful because changing individually the attenuation value, we can define 4 different thresholds for the same signal coming from a single pmt. This is something useful to compare different values of threshold, for example to study how the noise affect the measurement, and see what is the right compromise between signal and noise  .
 The way we selected the threshold is explained in the following chapter (Analysis).
 
 \subsection{Master Board}

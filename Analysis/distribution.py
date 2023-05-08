@@ -9,6 +9,7 @@ z = np.concatenate((x,y))
 
 plt.tick_params(labelleft=False, left=False)
 plt.tick_params(labelbottom=False, bottom=False)
+plt.grid()
 plt.hist(z, bins = 100, density = True, histtype = 'step',  label = 'signal', color = 'black')
 plt.vlines(x = 22, ymin = -0.01, ymax = 0.15, colors = 'black', linestyle = '--', label = "threshold")
 plt.xlabel("signal pulse height [mV]")
