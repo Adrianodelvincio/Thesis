@@ -63,7 +63,7 @@ The first step is to select a good point of work for the threshold. So, fixing t
 \includegraphics[width = 0.47 \textwidth]{Analysis/AttenuationBlinear.pdf} }
 \end{figure}
 
-We observed a small knee in the plot, around the zone of 580 − 600 of attenuation, where the number of counts was almost costant, roughly equal to the number of expected events from muons hitting the detector. Then we observe a big edge for attenuation = 1000. Looking at the plot \ref{NinoDocu}, we assume that the attenuation values are so high that electronic noise is no longer rejected, in fact the counts grow enormously. The attenuation was set at 600.
+We observed a small knee in the plot, around the zone of 580 − 600 of attenuation, where the number of counts was almost costant, roughly equal to the number of expected events from muons hitting the detector. Then we observe a big edge for attenuation = 1000. Looking at the plot \ref{fig:ThrvsAtt}, we assume that the attenuation values are so high that electronic noise is no longer rejected, in fact the counts grow enormously. The attenuation was set at 600.
 
 The next step was to study the statistical fluctuation of the counts, so we collected 10 acquisitions, each of them 1 min long. The measured values are reported in the table below:
 
@@ -476,13 +476,16 @@ Spectra = \frac{N(att_{i}) - N(att_{i-1})}{att_{i} - att_{i-1}}
 \end{figure}
 
 In this way we compute a discrete derivative of the plot showed in \ref{fig:AttScan}, which represent $\frac{\partial N}{\partial att}$. This is, in fact, the spectra of the signal, still given in attenuation units \ref{fig:Spectra}.\\
-This plot are used to identify a good point to select the attenuation values. If we look at the plots \ref{fig:Spectra}, we can see that the physical threshold does not scale linearly with changing the attenuation value, and for high values of attenuation, the threshold falls quickly at zero. Looking at the signal spectra, we identify the first peak as the electron signal, and the other peak for higher attenuation values (on the right), correspond to very low threshold values: the noise that we want to reject. We select the values of the attenuation downstream ot the two distributions, taking all the pulses from the electron and rejecting rejecting most signal events. This is sufficient to carry out the calibration of the pmts. However, if we want to identify the physical threshold and want to obtain a plot of the spectra given in physical units, instead of attenuation unit, we can use a simple model to convert attenuation values to $\SI{}{\milli \volt}$:
+This plot are used to identify a good point to select the attenuation values. If we look at the plots \ref{fig:ThrvsAtt}, we can see that the physical threshold does not scale linearly with changing the attenuation value, and for high values of attenuation, the threshold falls quickly at zero. Looking at the signal spectra, we identify the first peak as the electron signal. The other peak, for higher attenuation values (on the right), correspond to very low threshold values, and it is identified as the background noise. 
+We selected the values of the attenuation between the peaks of the two distributions, maximizing the signal acceptance and trying to reject the background as much as possible.
+Our discussion so far is sufficient to carry out the calibration of the pmts and take data to measure the asymmetry. However, we would like to identify the physical threshold in $\SI{}{\milli \volt}$ instead of attenuation unit. We can use the conversion function that we discussed in \ref{fig:ThrvsAtt}:
 
 \begin{align*}
 f(att) = \dfrac{a}{(x - b)^{3} + d}
 \end{align*} 
 
-So the spectra values in physical units are represented by: 
+We point out that the parameters of this function have been obtained from data that have not been acquired during this thesis work, moreover the threshold value in the program that controls the NINO board is slightly different (we always used 600, the data are taken with 750), therefore the values in volts need probably to be rescaled by some factor, but for our discussion we are interested in a raw estimation of the signal peak:
+With this conversion, we show the same plots in \ref{fig:Spectra}, with the values in the x-axis in $\SI{}{\volt}$ now.
 
 \begin{figure}[h]
 \centering
@@ -490,6 +493,8 @@ So the spectra values in physical units are represented by:
 \subfloat[][]{\includegraphics[width = 0.45\textwidth]{Analysis/CalibrationPMT/voltB1.pdf} }\\
 \subfloat[][]{\includegraphics[width = 0.45\textwidth ]{Analysis/CalibrationPMT/voltB2.pdf} }
 \end{figure}
+
+We know see clearly two peaks, the signal and the background, that are reversed respect to \ref{fig:Spectra}.
 
 We discuss now a simple model that we used to describe how the pmt Counts vary when we raise the attenuation. From \ref{fig:Spectra}, we assume that the two peaks are described by two gaussian distributions. Now if we think about the the probability for a signal to pass the selection, this quantity is equal to the probability of being in below the attenuation value. Using now the fact that the probability are given by the cumulative of the gaussian distribution (probability of being in the right tail) it is straightforward to deduce:
 
