@@ -16,7 +16,7 @@
 - [x] preparare documentazione su fit.cc e fit.h da consegnare ad Anselm
 
 Introduzione 
-- [] scrivere abstract/introduzione di carattere generale
+- [x] scrivere abstract/introduzione di carattere generale
 - [] Iniziare ad impostare l'introduzione, dalle stelle di neutroni all'asimmetria trasversa
 
 Capitolo sulla teoria:
@@ -28,7 +28,9 @@ Capitolo sulla teoria:
 
 Capitolo Setup sperimentale:
 - [x] Spiegare a grandi linee come funzionano i Monitor del fascio, Resistenza di Shunt e eccitazioni nelle cavità risonanti
-- [] chiedere ad Anselm documentazione sulla MasterBoard
+- [x] chiedere ad Anselm documentazione sulla MasterBoard
+- [] descrizione acceleratore MAMI.
+- [] rivedere spiegazione della polarizzazione degli elettroni.
 - [] Come si stima l'errore sistematico?
 - [] discutere la stabilizzazione del fascio.
 - [] spiegare il funzionamento polarimetro Moller e Compton, spiegare perchè sarà utilizzato il moller in futuro.
@@ -42,25 +44,27 @@ Capitolo di Analisi:
 - [x] controllare le run che potrebbero non avere il fascio polarizzato.
 - [x] finire l'analisi dello scan in attenuation anche per il detector A
 - [x] confrontare i risultati con curve_fit di scipy
-- [] provare a vedere se c'è un test per controllare se ci sono doppi conteggi, oppure si conta di meno.
-- [] vedere se è possibile estrarre almeno una stima rozza dell'incertezza associata ai monitor X25/X21 e Y25/Y21.
-- [] rivedere il modello che si è usato per fare la calibrazione delle pmt.
+- [x] rivedere il modello che si è usato per fare la calibrazione delle pmt.
+- [x] mettere il valore simulato della correlazione nel plot.
+- [x] rivedere l'abstract
+- [x] correggere i cuts e completare il capitolo di analisi.
+- [x] inserire istogrammi asimmetrie per ogni pmt.
+- [x] discutere le correlazioni tra i parametri del fascio, in particolare mostrare che si può omettere nel modello xp e yp.
+
+- [] menzionare falsa asimmetria corrente
+- [] finire di analizzare i dati senza polarità, mostrare asimmetria 0 e fare il fit
+- [] completare paragrafo sui test in laboratorio dei due detector
 - [] Capire perchè le asimmetrie calcolata con lo slowvariation e dal fit sono in disaccordo per svariati ordini di grandezza
 - [] impostare il ricampionamento.
-- [x] mettere il valore simulato della correlazione nel plot.
-
-- [] rivedere l'abstract
-- [] completare paragrafo sui test in laboratorio dei due detector
-- [] correggere i cuts e completare il capitolo di analisi.
-- [] inserire istogrammi asimmetrie per ogni pmt.
-- [] discutere le correlazioni tra i parametri del fascio, in particolare mostrare che si può omettere nel modello xp e yp.
-
+- [] provare a vedere se c'è un test per controllare se ci sono doppi conteggi, oppure si conta di meno.
+- [] vedere se è possibile estrarre almeno una stima rozza dell'incertezza associata ai monitor X25/X21 e Y25/Y21.
 
 CORREZIONI FORTI
 - [x] inserire uno schema dell'acceleratore e una dei detector.
 - [x] cambiare la struttura della tesi, spezzare in due il capitolo analysis, la prima parte detector test and calibration, la seconda asymmetry on carbon.
 - [x] introdurre prima di ogni capitolo un cappello introduttivo.
 - [x] tutti i commenti nella tesi vanno definiti con un comando.
+
 - [] i plot dei conteggi in funzione della soglia in mV vanno ricontrollati.
 - [] chiedera a igors come ha ottenuto i dati di threshold vs attenuation.
 

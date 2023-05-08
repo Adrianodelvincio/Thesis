@@ -51,9 +51,9 @@ The electron source used at MAMI is made by a strained GaAs/GaAsP superlattice p
 \end{equation}
 \end{center}
 
-With the fast change of the Pockels cell it is possible to alternately revert the sign of the polaritazion. By the insertion of a $\lambda/2$ plate between the laser system and the photochatode the polarization orientation of the electron beam can be reversed for each sub-event, useful later for the estimation of systematic errors. The beam polarization achieved with this source is roughly $80 \% $, for the beam time it was : $0.79 \% $
+With the fast change of the Pockels cell it is possible to alternately revert the sign of the polarization. By the insertion of a $\lambda/2$ plate between the laser system and the photo-cathode the polarization orientation of the electron beam can be reversed for each sub-event, useful later for the estimation of systematic errors. The beam polarization achieved with this source is roughly $80 \% $, for the beam time it was : $0.79 \% $
 
-To switch from longitudinal polarization to transverse polarisation, two devices are used: the \textbf{Wien filter} and a \textbf{double solenoid} located in the injection beam line. 
+To switch from longitudinal polarization to transverse polarization, two devices are used: the \textbf{Wien filter} and a \textbf{double solenoid} located in the injection beam line. 
 
 \begin{figure}[hbtp]
 \centering
@@ -61,17 +61,18 @@ To switch from longitudinal polarization to transverse polarisation, two devices
 \caption{Setup for the trasverse polarization.}
 \end{figure}
 
-Following the picture, the longitudinal polarized electron from the source are rotated first in the XY plane, to obtain the trasverse polarization, then with subsequent double solenoid the spins are rotate in the vertival direction. 
-After this allignement the electrons go through the accelerator to the experimental hall. The spins then precesses during this time in the magnetic fields of the accelerator's bending magnets, following the BMT equation.
-In our experiment, because of the vertical polarization, only the residual horizontal component precedes during the motion. For conventional experiment the polarization vector is rotated by the Wien filter with an angle such that the polarization si longitudinally aligned in the experimental hall, considering that after the rotation, the polarization is affected by another rotation due to the spin precession. The rotation angles of the polarization vector through the accelerator are known from simulations and are also directly measured for relevant energies, for a beam of $\SI{570}{\mega \electronvolt}$ the rotation angle is $\ang{55}$ with an accuracy of $\pm \ang{2}$
-At the beginning MAMI was not developed with the aim a trasverse beam. So it's not possible to measure directly the polarization for the vertical axis. However it's possible, with the existing setup, to exstimate the degree of polarization. For this purpose a Moller, Comport and Mott polarimeters are used. The vertical polarization alignment can be accomplished by the minimization of the horizontal components. 
+Following the picture, the spin of the electrons from the source are rotated first in the XY plane with a $90^{\circ}$ rotation, then the subsequent double solenoid align the spin to the vertical direction with another $90^{\circ}$ rotation. 
+Once the beam pass the double solenoid, the electrons go through linac, the microtron and in the end to the experimental hall, where the target of the experiments is installed. During the acceleration stage, the spins follow the precession motion due to the various magnetic fields of the accelerator; the equation that determine how the spin precession for relativistic electrons is the BMT equation.
+However, the magnetic field of the various bending magnets, for example the magnets of the microtron, is always parallel to the vertical direction, and to the electrons polarization, too; so only the residual horizontal component precedes during the motion. For conventional experiment that involve a longitudinal polarization, after the first spin rotation, there is a further rotation due to the motion in the accelerator. Because of this, the rotation made by the Wien is set in such a way that after the second rotation due to the motion in the accelerator, the polarization has the correct alignment in the experimental hall. The rotation angles of the polarization vector through the accelerator are known from simulations and are also directly measured for relevant energies, for a beam of $\SI{570}{\mega \electronvolt}$ the rotation angle is $\ang{55}$ with an accuracy of $\pm \ang{2}$. In our case, this further rotation has only a small effect to the residual horizontal component, whose effect is negligible compared to the $A_{n}$ that we want to measure.
+
+At the beginning MAMI was not developed for experiment with transverse polarization. So it's not possible to measure directly the transverse component. However combining the measurement in the $XY$ plane, with the existing setup, it is possible to get the polarization value also in that direction. For this purpose a Moller, Comport and Mott polarimeters are used.
 
 
 \subsection{Polarization measurement.}
 {\bfseries Briefly explain how the Mott polarimeter works, for measuring the polarization of the beam.}
 
 To Measure the polarization of an electron beam different polarimeters can be used. Here we explain briefly the physics underlying the \textit{Mott} polarimeter, used in the experiment.
-Consider an electron beam that is sent towards a nucleus of charge $Ze$. We know from theory that the spin of the incident electron is affected by the electromagnetic field produced by the nucleus. This can be described calculatin the magnetic field seen by a particle with speed $\vec{v}$ near a nucleus:
+Consider an electron beam that is sent towards a nucleus of charge $Ze$. We know from theory that the spin of the incident electron is affected by the electromagnetic field produced by the nucleus. This can be described calculation the magnetic field seen by a particle with speed $\vec{v}$ near a nucleus:
 
 \begin{align*}
 \vec{B}_{nucleus} = \frac{-\vec{v} \times \vec{E}_{nucleus}}{c}  = \frac{Ze}{mc r^{3}} \vec{L} \\
