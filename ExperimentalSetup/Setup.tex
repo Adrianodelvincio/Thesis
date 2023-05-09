@@ -13,9 +13,9 @@
 \section{Overview of the experiment.} \label{FirstDescription}
 
 To measure the Beam-Normal single spin asymmetry, a polarized beam of $ \SI{570}{\mega \electronvolt}$ will be sent against a $\SI{10}{\milli \meter}$ width of $^{12}C$ target. The detectors consist of two fused-silica coupled to 3 (detector B) and 8 (detector A) pmts, which collect the Cherenkov light emitted when an electron pass through the fused-silica. 
-The detector are placed inside the two spectrometer of the A1 hall, which are not used in this experiment due to the high luminosity of the beam ($ \SI{20}{\micro \ampere}$) that is away from their good point of operation. 
-The photomultipliers asymmetry due the change of the electrons spin is the target of the measurement. The pmts signals are collected and digitalized by the \textbf{NINO} board, after a threshold selection, and sent to the A1 control room computer, where the DAQ program collect the data together with all the data coming from the Beam monitors producing Binary files, which are later analyzed by the analysis program, which is significant part of the work done in the framework of the thesis. 
-The data collected are divided in \textit{Events} made by 4 \textit{sub-events} in sequence. Each event correspond to a temporal window of $\simeq \SI{80}{\micro \second}$, where each sub-event is $\SI{20}{\micro \second}$ long. Here it's important to clarify that unlike the majority of experiments in high energy physics, an event is made by all the electrons interacting with the detectors during the time interval of the event, and we will refer to this hereafter unless otherwise stated. The division into sub-events reflects the polarization sequence of the beam. The PMTS counts and the beam monitor values are saved for each sub-event, along with the time length of the event (measured by in clock cycle by the NINO electronic board \ref{NINO}), and other values which are required to process beam monitor data.\\ 
+The detector are placed inside the two spectrometer of the A1 hall, which are not used in this experiment due to the high luminosity of the beam ($ \SI{20}{\micro \ampere}$) that is above their limits of operation. 
+The asymmetry due the change of the electrons spin is the aim of the measurement. The pmts signals are collected and digitalized by the \textbf{NINO} board, after a threshold selection, and sent to the A1 control room computer, where the DAQ program collect the data together with all the data coming from the Beam monitors producing Binary files, which are later analyzed by the analysis program, which is significant part of the work done in the framework of the thesis. 
+The data collected are divided in \textit{Events} made by 4 \textit{sub-events} in sequence. Each event correspond to a temporal window of $\simeq \SI{80}{\micro \second}$, where each sub-event is $\SI{20}{\micro \second}$ long. Here it's important to clarify that unlike the majority of experiments in high energy physics, an event is made by all the electrons interacting with the detectors during the time interval of the event, and we will refer to this hereafter unless otherwise stated. The division into sub-events reflects the polarization sequence of the beam. The PMTs counts and the beam monitor values are saved for each sub-event, along with the time length of the event (measured by in clock cycle by the NINO electronic board \ref{NINO}), and other values which are required to process beam monitor data.
 
 The general structure of the event is the following: 
 
@@ -25,7 +25,7 @@ The general structure of the event is the following:
 \caption{Event structure}
 \end{figure}
 
-The two polarity pattern are selected randomly using a De Brujing sequence, (\textbf{spiegare cosa è e come è implementata}). For each event the asymmetry $A_{n}$ is computed, along with 
+The two polarity pattern are selected randomly using a De Brujing sequence, (\textbf{spiegare cosa è e come è implementata}). For each event we have a single measure of $A_{n}$, defined ad the asymmetry between the $\uparrow$ adn $\downarrow$ sub-events.
 
 \newpage
 \section{Mami}
@@ -115,8 +115,8 @@ The total beam polarization is measured by a Moller polarimeter, in the experime
 \commento{Describing the A1 room, how the spectrometers are operating (+ figures), a picture of the target and the important parameters, like thickness. Also mention the convention to use target with$10 \%$ of the radiation lenght, to avoid double scattering.  Mention that we need the Wobbler magnet to change the hitting position of the beam to prevent the target from melting. Here it's important to mention that the electron are deflected on the vertiacal direction, because of the high beam intensity
 Then add a picture of the beam-line.}
 
-Until now we have described how MAMI produce and accelerate the electrons, however we do not presented the structure where the beam is delivered and various experimets are carried out. \\
-MAMI has 3 different hall, named with the capital letter A followed with a number, which indicate also the different collaboration that work with the experiments. In A2, as an example, photo-nuclear reactions are studied to investigate the foundamental physics at the scale of nuclear dimensions. The experimental hall where the experiment treated described in this thesis is conducted is the A1 hall. We will describe briefly the main operating detectors that are installed and the details that are interesting for the \transv measurement. \bigskip
+Until now we have described how MAMI produce and accelerate the electrons, however we do not presented the structure where the beam is delivered and various experiments are carried out. \\
+MAMI has 3 different hall, named with the capital letter A followed with a number, which indicate also the different collaboration that work with the experiments. In A2, as an example, photo-nuclear reactions are studied to investigate the fundamental physics at the scale of nuclear dimensions. The experimental hall where the experiment treated described in this thesis is conducted is the A1 hall. We will describe briefly the main operating detectors that are installed and the details that are interesting for the \transv measurement. \bigskip
 
 \begin{figure}[hbtp]
 \centering
@@ -124,30 +124,47 @@ MAMI has 3 different hall, named with the capital letter A followed with a numbe
 \caption{Scheme of the accelerator, with the different experimental hall. Actually the A4 hall is restructured, in fact it will host the future Mesa accelerator.}
 \end{figure}
 
-In A1, experiment with fixed target are conducted. The electrons can be delivered with an energy up to $\SI{1.6}{\giga \electronvolt}$, after passing the last acceleration stage (HDSM, in the figure). Because the electron energy of our experiment is $\SI{570}{\mega \electronvolt}$, the beam will pass through the first accelation steps, the linac (linear accelerator) and Race-track system and when the desidered energy is achieved the electrons will be sent to the A1 experimental hall. \medskip
+In A1, experiment with fixed target are conducted. The electrons can be delivered with an energy up to $\SI{1.6}{\giga \electronvolt}$, after passing the last acceleration stage (HDSM, in the figure). Because the electron energy of our experiment is $\SI{570}{\mega \electronvolt}$, the beam will pass through the first acceleration steps, the linac (linear accelerator) and Race-track system and when the desired energy is achieved the electrons will be sent to the A1 experimental hall. \medskip
 
-Inside A1 hall three large magnetic spectrometers are placed on a circular railtrack the target chamber. These spectrometers where designed and built in $1993$ to perform high precision measurement of electron scattering in coincidence with other hadron detection, with an high resolution in the determination of the particle momenta $\frac{\delta p}{p} < 10^{-4}$. The spectrometers develop vertically with an height of $\SI{15}{\meter}$, for this reason the scattered electrons and the other particles are deflected with the use of the magnetic field respect to the scattering plane. The following figure shows the path the particle scattered from the target:
+Inside A1 hall three large magnetic spectrometers are placed on a circular rail-track the target chamber. These spectrometers where designed and built in $1993$ to perform high precision measurement of electron scattering in coincidence with other hadron detection, with an high resolution in the determination of the particle momenta $\frac{\delta p}{p} < 10^{-4}$. The spectrometers develop vertically with an height of $\SI{15}{\meter}$, for this reason the scattered electrons and the other particles are deflected with the use of the magnetic field respect to the scattering plane. The following figure shows the path the particle scattered from the target:
+
+\begin{comment}
+\begin{wrapfloat}{figure}{I}{0pt}
+\includegraphics[width=0.4\textwidth]{ExperimentalSetup/Detectors/position.pdf}
+\caption{Internal of the A spectrometer. This image was taken during the installation of the detector A inside the red spectrometer, that is accessible from the platform visible in the other picture : \ref{fig:TwoDetectors}}
+\end{wrapfloat}
+\end{comment}
+
 
 \begin{SCfigure}[50][ht]
 \centering
-\caption{Image of the spectrometers of A1 hall. The spectrometers can be rotated using a system of railtracks that are visible at the bottom of image. The electrons are scattered and then deflected in the vertical direction by the magnetic field (green lines). This picture is taken from behind the target, so we see the beam-dumps. The target is rougly at the center of the image where the two green lines join.}\label{fig:TwoDetectors}
+\caption{Image of the spectrometers of A1 hall. The spectrometers can be rotated using a system of railtracks that are visible at the bottom of image. The electrons are scattered and then deflected in the vertical direction by the magnetic field (green lines). This picture is taken from behind the target, so we see the beam-dumps. The target is roughly at the center of the image where the two green lines join. The electron are coming on the opposite direction, respect to the spectrometers.}\label{fig:TwoDetectors}
 \includegraphics[width = 0.45\textwidth]{ExperimentalSetup/A1_Dietro.pdf}
 \end{SCfigure}
 
-The spectrometers used for the \transv are the ones shown in the picture. The are multiple reasons why the particle are deflected on the vertical directon, we summarized them in two points: 
+
+The spectrometers used for the \transv are the ones shown in the picture. The are multiple reasons why the particle are deflected on the vertical direction, we summarized them in two points: 
 \begin{itemize}
 \item reason of space, due to the fact the an horizontal setup would not fit with the dimension of the building in addiction to the fact that this would not allow to rotate the spectrometers by a variety of angles that the vertical orientation does
 \item reduce background and noise, in fact the high beam intensity that is possible to reach at MAMI is a source of noise and background event wich can be cut off detecting the particle far from the interaction point. \commento{ultimo punto da verificare!!!}
 \end{itemize}      
 
 Once a particle is scattered in the acceptance region of the detectors, the magnetic field deflect the particle that passes through a drift chamber, which occupies the first third in height of the spectrometers. When the particle is at the height of the platform in the figure, it impinge on a layer of plastic scintillator, and after that a Cherenkov detector which measures the particle speed $\vec{v}$. We have a picture of the spectrometers internal, taken during the installation of the two detectors (that will be presented in the next section) \ref{fig:internal}.
-\newpage
-\begin{SCfigure}[50][ht]
+
+\begin{wrapfloat}{figure}{I}{0pt}
+\includegraphics[width=0.4\textwidth]{ExperimentalSetup/Detectors/position.pdf}
+\caption{Internal of the A spectrometer. This image was taken during the installation of the detector A inside the red spectrometer, that is accessible from the platform visible in the other picture : \ref{fig:TwoDetectors}}
+\label{fig:internal}
+\end{wrapfloat}
+
+\begin{comment}
+\begin{SCfigure}[30][ht]
 \centering
 \caption{Internal of the A spectrometer. This image was taken during the installation of the detector A inside the red spectrometer, that is accessible from the platform visible in the other picture : \ref{fig:TwoDetectors}}
-\includegraphics[width = 0.45\textwidth]{ExperimentalSetup/Detectors/position.pdf}
+\includegraphics[width = 0.40\textwidth]{ExperimentalSetup/Detectors/position.pdf}
 \label{fig:internal}
 \end{SCfigure}
+\end{comment}
 
 The determination of both the particle speed $\vec{v}$ and momenta (drift chamber) allows to identify the particles. Despite the possibilities offered by the already existing setup, for the beam time of interest none of these components was used directly in the estimation of $A_{n}$. The reason is due to the high intensity of the beam that is used in the experiment, which is far from the optimal operating conditions of the componets, that are suited for rates lower than the ones expected for beam normal single spin measurements. The spectrometers then will de used indirectly for the allignment of scattered electron to
 
@@ -157,8 +174,8 @@ The determination of both the particle speed $\vec{v}$ and momenta (drift chambe
 \commento{Describe the two detectors we placed inside the spectrometers, the $Q^{2}$ for our mesurement. The way the counts are collected, so the expected signal for the Čerenkov detector. Explain also how we will use the old detectors of the two spektrometers to align the elastic scattering plane to our detectors.
 \begin{itemize}
 \item explain the two detector, the type of cristal used. 
-\item how the pmt are coupled to the cristal, the number of dynodes of the pmt, the power supply.
-\item add an picture/scheme of the pmt.
+\item how the PMT are coupled to the cristal, the number of dynodes of the PMT, the power supply.
+\item add an picture/scheme of the PMT.
 \item explain why a diffusor is not needed.
 \item what kind of optical coupling is used?
 \item dimensions of the two detectors.
@@ -168,7 +185,7 @@ The determination of both the particle speed $\vec{v}$ and momenta (drift chambe
 
 In this section we will describe the electronics and the detectors used to measure the \transv .
 For this experiment we are going to measure the \transv at to different agles. The electrons detection is 
-made via two thin blocks of fused-silica that are coupled to pmts. When a scattered electron hit the fused-silica (refractive index $n = 1.45$) Cherenkov light is emitted. The emitted cherenkov light can interact with the electrons of the material, which, in turn, can hits the PMT dyode. This sequence of event triggers the pmt and produce an output signal.
+made via two thin blocks of fused-silica that are coupled to PMTs. When a scattered electron hit the fused-silica (refractive index $n = 1.45$) Cherenkov light is emitted. The emitted cherenkov light can interact with the electrons of the material, which, in turn, can hits the PMT dyode. This sequence of event triggers the PMT and produce an output signal.
 
 In the experiment, we will measure the \transv at two angles of scattering, so two detectors are installed and read-out indipendently. The two detector are made by 3 PMTs and 8 PMTs coupled with two blocks of fused-silica, a scheme of the detector is shown below:
 
@@ -181,9 +198,9 @@ In the experiment, we will measure the \transv at two angles of scattering, so t
 \end{figure}
 
 
-These  two detectors are placed inside the spektrometers presented in \commento{aggiungere referenza}, between the top of the drift-chamber, which occupies the first third in height of the spectrometer, and just below a panel of scintillator. During the beam time the drift chamber of the spektrometers is turn off, and also the pmts coupled to the spektrometer scintillators are not powered.\\
+These  two detectors are placed inside the spektrometers presented in \commento{aggiungere referenza}, between the top of the drift-chamber, which occupies the first third in height of the spectrometer, and just below a panel of scintillator. During the beam time the drift chamber of the spektrometers is turn off, and also the PMTs coupled to the spektrometer scintillators are not powered.\\
 As we mention above, the scattered electron are deflected in the vertical direction by the magnetic field of the spektrometer. 
-At this moment, it is important to mention the differencies between the new and the old electronic setup. In the old electronic setup the output signal of the pmts was integrated during the time interval of each sub-event, and therefore the single scattered electron could not be counted. The advantage of this method is that the electronics is more simple, in fact there in no need to develop a fast counter, unlike the new setup, where the new electronic take into account of every pulses. However, this old method is effected by a baseline noise and it's not good for the future experiments with lead target, where the expected rates are lower than the rates on carbon.
+At this moment, it is important to mention the differencies between the new and the old electronic setup. In the old electronic setup the output signal of the PMTs was integrated during the time interval of each sub-event, and therefore the single scattered electron could not be counted. The advantage of this method is that the electronics is more simple, in fact there in no need to develop a fast counter, unlike the new setup, where the new electronic take into account of every pulses. However, this old method is effected by a baseline noise and it's not good for the future experiments with lead target, where the expected rates are lower than the rates on carbon.
 With the new electronics, all the single electron are counted, and this will allow the future measurements with lead, improving the accuracy. 
 
 \begin{figure}[hbtp]
@@ -202,7 +219,7 @@ Here we report the characteristic of the two detector that are relevant for the 
 \item detector B size (lenght, hight, depht): $\SI{7}{\centi \meter} \times \SI{10}{\centi \meter} \times \SI{1}{\centi \meter}$
 \item detector A size (lenght, hight, depht): $\SI{7}{\centi \meter} \times \SI{30}{\centi \meter} \times \SI{1}{\centi \meter}$
 \item Number of dynodes: \commento{inserire il numero di dynodes, magari un accenno all'amplificazione}.
-\item The Power voltage for the pmt in negative, in the range of ($\SI{-900}{\volt}$, $\SI{-1100}{\volt}$)
+\item The Power voltage for the PMT in negative, in the range of ($\SI{-900}{\volt}$, $\SI{-1100}{\volt}$)
 \item refraction index $n$ of the fused-silica is $1.45$.
 \end{itemize}
 
@@ -294,7 +311,7 @@ With this is clear how it's possible to measure all the important quantity relat
 \section{Electronics}
 \commento{Short introduction about the old electronics setup and why a new versions is needed, then describe all the electronics used for our experiment:
 \begin{itemize}
-\item Nino board for collecting the data from the pmts
+\item Nino board for collecting the data from the PMTs
 \item VFCs for collecting the data from X21,X25,Y21,Y25,ENMO,I21,I13
 \item master board for collecting the monitors data/controlling the source/wobbler magnets.
 \item small boxes for switching from new electronic read-out to the old electronics read-out (spectrometers DAQ)
@@ -326,7 +343,7 @@ V_{in} =  V_{ref}[2 \cdot \dfrac{N_{pulses} - 5 \% N_{CLKN}}{40 \% N_{CLKN}} - 1
 
 \subsection{Nino board} \label{NINO}
 
-The NINO board is our data acquisition system for the pmt counts. It is made by $32$ analog input channels and it is powered with $\pm \SI{5}{\volt}$. Each channel has an attenuator, and the signal pass through that before going to the Comparator, which compare the signal to the threshold. The Output signal is a Low-voltage differential signaling (LVDS). Each comparator can handle eight channel and for each of them it is possible to define a global threshold. With the current settings of NINO board, it is possible to change the threshold of each channel acting on another value, the attenuation, which decreases the value of the global threshold. All the value that can be modified are 12 bit numbers, so a setting interval of $(0. ; 4095)$. \medskip
+The NINO board is our data acquisition system for the PMT counts. It is made by $32$ analog input channels and it is powered with $\pm \SI{5}{\volt}$. Each channel has an attenuator, and the signal pass through that before going to the Comparator, which compare the signal to the threshold. The Output signal is a Low-voltage differential signaling (LVDS). Each comparator can handle eight channel and for each of them it is possible to define a global threshold. With the current settings of NINO board, it is possible to change the threshold of each channel acting on another value, the attenuation, which decreases the value of the global threshold. All the value that can be modified are 12 bit numbers, so a setting interval of $(0. ; 4095)$. \medskip
 The NINO board is designed in such a way that collects the Input charge of the signal, operating with a $\SI{30}{\pico \farad}$. The output signal amplitude is proportional to the input charge, and it is sent to the discriminator. Our interest is only to count the number of scattered electron, so we do not intend to measure the input charge, but only a signal is produced or not.
 
 \begin{figure}[hbtp]
@@ -336,7 +353,7 @@ The NINO board is designed in such a way that collects the Input charge of the s
 \label{fig:NinoBoard}
 \end{figure}
 
-Two Nino board are used in the experiment, one for detector A and one for detector B. For the experiment discussed in this thesis, we will use only 8 channel for detector A and 3 channel for detector B, since this is the number of the input signals coming from the two detectors. For the future experiments more channel will be used, splitting the analog input signal in 4 different signal, sending it to 4 different input channel of the board. This is useful because changing individually the attenuation value, we can define 4 different thresholds for the same signal coming from a single pmt. This is something useful to compare different values of threshold, for example to study how the noise affect the measurement, and see what is the right compromise between signal and noise  .
+Two Nino board are used in the experiment, one for detector A and one for detector B. For the experiment discussed in this thesis, we will use only 8 channel for detector A and 3 channel for detector B, since this is the number of the input signals coming from the two detectors. For the future experiments more channel will be used, splitting the analog input signal in 4 different signal, sending it to 4 different input channel of the board. This is useful because changing individually the attenuation value, we can define 4 different thresholds for the same signal coming from a single PMT. This is something useful to compare different values of threshold, for example to study how the noise affect the measurement, and see what is the right compromise between signal and noise  .
 The way we selected the threshold is explained in the following chapter (Analysis).
 
 \subsection{Master Board}

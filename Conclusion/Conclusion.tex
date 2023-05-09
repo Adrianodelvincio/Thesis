@@ -31,7 +31,7 @@ In this chapter we report the result obtained for the data-analysis. First we re
 \hline
 \end{tabular}} \qquad
 \subfloat[][\emph{Asymmetries with offsets subtracted}\label{table:OffsetCorrected}]{
-\begin{tabular}{lrr} 
+\begin{tabular}{c|c|c} 
 \hline
  PMT   &   Average &   \sigma \\
 \hline
@@ -97,41 +97,45 @@ The overall results for the two detectors are:
 
 
 \section{Best fit}
-The result obtained from the linear fit of the asymmetries versus the beam parameters are reported here, together with the false asymmetry values. In this case the model is quite simple: only $X$, $Y$, $E$ are the beam parameters considered:
+The result obtained from the linear fit of the asymmetries versus the beam parameters are reported here, together with the false asymmetry values. In this case the model is quite simple: only $X$, $Y$, $E$ are the beam parameters:
 
-\begin{table}[h] \label{Tab:FitResult}
+The result for detector A:
+\begin{table}[h] 
 \centering
-\begin{tabular}{|c|c|c|c|c|}
+\begin{tabular}{c|c|c|c|c|c}
 \hline
- PMT   & An             & Ax              & Ay                 & Ae              \\
+ PMT   & $A_{n}$    & $A_{x}$          & $A_{y}$            & $A_{e}$         & $\chi^{2}_{reduced}$ \\
 \hline
- A0    & 23.44 +/- 4.36 	& 50.27 +/- 27.43  & -70.44 +/- 134.97  & 12.47 +/- 11.57 \\
- A1    & 22.61 +/- 4.18     & -7.87 +/- 26.32  & -145.75 +/- 129.5  & 23.52 +/- 11.1  \\
- A2    & 22.57 +/- 4.32     & -29.71 +/- 27.2  & -78.12 +/- 133.84  & 12.2 +/- 11.47  \\
- A3    & 22.42 +/- 4.58 	& -3.13 +/- 28.8   & -241.41 +/- 141.72 & 2.83 +/- 12.15  \\
- A4    & 24.16 +/- 4.87     & 32.1 +/- 30.64   & -141.52 +/- 150.76 & 7.53 +/- 12.92  \\
- A5    & 26.65 +/- 4.91     & 13.29 +/- 30.93  & 144.98 +/- 152.18  & -3.39 +/- 13.04 \\
- A6    & 19.45 +/- 5.29     & -10.47 +/- 33.29 & 88.43 +/- 163.79   & 2.69 +/- 14.04  \\
- A7    & 19.93 +/- 5.96     & -10.63 +/- 37.5  & 17.68 +/- 184.52   & 19.43 +/- 15.82 \\
+ A0    & 24 $\pm$ 4 & 53 $\pm$ 27.4  & -45 $\pm$ 135  & 11.8 $\pm$ 12 & 1.000 $\pm$ 0.002   \\
+ A1    & 23 $\pm$ 4 & -4.9 $\pm$ 26.3  & -122 $\pm$ 130 & 23.3 $\pm$ 11 & 1.001 $\pm$ 0.002 \\
+ A2    & 23 $\pm$ 4 & -26 $\pm$ 27.2 & -61 $\pm$ 134  & 12.4 $\pm$ 12 & 1.000 $\pm$ 0.002   \\
+ A3    & 23 $\pm$ 5 & 0 $\pm$ 28.8   & -218 $\pm$ 142 & 2.9 $\pm$ 12  & 0.999 $\pm$ 0.002 \\
+ A4    & 24 $\pm$ 5 & 36 $\pm$ 30.7  & -122 $\pm$ 151 & 7.6 $\pm$ 12  & 1.000 $\pm$ 0.002   \\
+ A5    & 27 $\pm$ 5 & 17 $\pm$ 30.9  & 161 $\pm$ 152  & -2.9 $\pm$ 13 & 1.001 $\pm$ 0.002 \\
+ A6    & 20 $\pm$ 5 & -7 $\pm$ 33.3  & 104 $\pm$ 164  & 2.5 $\pm$ 14  & 1.000 $\pm$ 0.002   \\
+ A7    & 20 $\pm$ 6 & -7.8 $\pm$ 37.5  & 41 $\pm$ 185   & 19.8 $\pm$ 16 & 1.001 $\pm$ 0.002 \\
 \hline
 \end{tabular}
-\caption{fit result for each pmt of detector A.}
+\caption{fit result with the linear model, for detector A.}
+\label{tb:resultA}
 \end{table}
 
+the result for detector B:
 \begin{table}[h]
 \centering
-\begin{tabular}{|c|c|c|c|c|}
+\begin{tabular}{c|c|c|c|c|c}
 \hline
- PMT   & An             & Bx              & By                 & Be              \\
+ PMT   & An         & Bx         & By           & Be        & $\chi^{2}_{reduced}$\\
 \hline
- B0    & -22.07 +/- 7.78 & -86.57 +/- 40.33 & -243.16 +/- 186.0  & 21.52 +/- 17.62 \\
- B1    & -21.21 +/- 7.8  & -92.12 +/- 40.43 & -167.71 +/- 186.45 & 14.53 +/- 17.66 \\
- B2    & -25.7 +/- 8.79  & -92.33 +/- 45.56 & -383.48 +/- 210.09 & -24.04 +/- 19.9 \\
+ B0    & -22 +/- 8  & -87 +/- 40 & -243 +/- 186 & 21 +/- 18 & 1.000 $\pm$ 0.002\\
+ B1    & -21 +/- 8  & -92 +/- 40 & -167 +/- 187 & 14 +/- 18 & 1.000 $\pm$ 0.002\\
+ B2    & -26 +/- 9  & -92 +/- 46 & -383 +/- 210 & -24 +/- 20& 1.000 $\pm$ 0.002\\
 \hline
 \end{tabular}
-\caption{fit result for each pmt of detector A.}
+\caption{fit result with the linear model, for detector B.}
 \end{table}
 
+The overall result for $A_{n}$ for both the two detectors:
 
 \begin{table}
 \centering
@@ -143,7 +147,7 @@ The result obtained from the linear fit of the asymmetries versus the beam param
  B          & -22 $\pm$ 5   \\
 \hline
 \end{tabular}
-\caption{Fit for detector A, the asymmetries are averaged on the 8 different pmts of the detector.}
+\caption{Overall result for detector A and B.}
 \end{table}
 
 \chapter{Conclusion and outlook} \label{conclusion}
