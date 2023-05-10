@@ -695,7 +695,7 @@ The PMT Counts with this target, increase from $100$ counts for detector B to $5
 \end{equation}
 
 we remind to the reader that $N$ are the Counts per sub-event, while  $n$ is the number of event analyzed.
-Now estimate the amount of statistic needed to measure the asymmetry with some degree of accuracy. Let's suppose that we want to obtain, for each PMT, an error not greater than $4 ppm$. With this accuracy, the asymmetry obtained for detectro A will have an error given by $\frac{4ppm}{\sqrt{n_{PMT}}} \simeq 1.5 ppm$.
+Now estimate the amount of statistic needed to measure the asymmetry with some degree of accuracy. Let's suppose that we want to obtain, for each PMT, an error not greater than $4 ppm$. With this accuracy, the asymmetry obtained for detector A will have an error given by $\frac{4ppm}{\sqrt{n_{PMT}}} \simeq 1.5 ppm$.
 We computed the time needed to achieve this accuracy for both the two detectors, given in total hours of beam-time. To simplify the calculation, we assumed that every PMT rates of detector A and B are equal to the averaged counts obtained from the plot above.
 
 \begin{table}[ht]
@@ -826,6 +826,7 @@ Several histograms are produced (\ref{fig:IstogrammiParametri}). These plots are
 \includegraphics[width = 0.4\textwidth]{Analysis/Dataselection/Current.pdf}}
 \end{figure}
 
+Every histogram is generated with $100$ bins. For the current correlated-difference, we find out that the values of the VFCs resistance, which controls $V_{ref}$ value, was set to high. Because of this the precision of the monitor is low, compared to the other, and we observe isolated peaks in the plot. This indicated that for the incoming experiment we have to increase $V_{ref}$ in order to to have a precision comparable to that of other monitors. 
 
 %The \textit{pdf} which described the data is expected to be well-described by a gaussian distribution, from the knowledge of the previous experiments.
 %a maximum likelihood fit with a Gaussian model is performed for each beam parameter, with Likelihood Ratio for the goodness of fit (gof). The statistic for the gof is:
@@ -857,7 +858,11 @@ With our assumption that the false asymmetries are well described by a linear mo
 \overline{A} = A_{n} \cdot P + \overline{\delta_{I}} + \overline{\delta_{x}}A_{x} + \overline{\delta_{y}} A_{y} + \overline{\delta_{\theta_{x}}} A_{\theta_{x}} + \overline{\delta_{\theta_{y}}} A_{\theta_{y}} + \overline{\delta_{E}}A_{E} =\\= A_{n} \cdot P + \overline{\delta_{I}} + A_{x}\cdot 0 + A_{y} \cdot 0 +  A_{\theta_{x}} \cdot 0 +  A_{\theta_{y}} \cdot 0 + A_{E} \cdot 0 = A_{n} \cdot P + \overline{\delta_{I}}
 \end{align*}  
 
-The contributions related to the false asymmetry should in principle cancel out. We will discuss later, when we will introduce the fit results, whether our assumption reflects the reality. For now let's assume that the only false asymmetry that has an effect is the current false asymmetry, so the final result should be corrected subtracting the values $-1.23 \, ppm$. \bigskip
+The contributions related to the false asymmetry should in principle cancel out. We will discuss later, when we will introduce the fit results, whether our assumption reflects the reality. We assume that the false asymmetry that has an effect is $\delta I$: $\overline{\delta I}$ is equal $-1.23 \, ppm$, and we will subtract that to the final result:
+
+\begin{align*}
+A_{n} = \overline{A_{tot}} - \overline{\delta I}
+\end{align*}
 
 After discussing the removal of the outliers, now will discuss in details the issue regarding the polarization of the Beam. To observe a \transv, it is essential to have a correctly polarized beam.
 Unfortunately, we found out that part of the data where acquired with a Beam made by non-polarized electrons. The reason is that during the second night of the beam-time, MAMI operators that controls the quality of the beam switched from polarized beam to non-polarized, unintentionally. These wrong data were acquired during the night of 2nd December and we discovered this problem only the next day. We had no evidence of how many hours of beam were lost. Because this happened during the night, nobody could save the polarization measurement of the beam and identify the runs affected by this problem.
@@ -1129,13 +1134,9 @@ PMT 7 & 25808 & \\
  
 We report the values obtained with this new method ... 
 
+\commento{We can investigate also the asymmetries related to the beam energy. For this one we can exploit the theoretical expression for the Mott cross-section, taking the derivative ...
+We can investigate the Current asymmetries, because we have the auto-calibration procedure, so from the scale factor we can check if the current asymmetri is compatible with $1$ as assumed or not.}
 
-We can investigate also the asymmetries related to the beam energy. For this one we can exploit the theoretical expression for the Mott cross-section, taking the derivative ...
-
-We can investigate the Current asymmetries, because we have the auto-calibration procedure, so from the scale factor we can check if the current asymmetri is compatible with $1$ as assumed or not.
-\section{??Bootstrap??}
-
-\commento{Although Anselm was against it, now seems possible to increase the precision of the mesurement with a procedure similar to a bootstrap. Instead of computing all the quantities inside a single event, it's possible to compute all the important quantities also between different events. In this scenario the statistics can be increased artificially as mutch as we want, with the same amount of data. Of course, it's also simple to abuse of this method, so we should restrict using only events next to each other. However seem reasonable and promising.}
 
 
 
