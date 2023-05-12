@@ -408,7 +408,7 @@ For the current monitors I13 and I21, the raw counts are converted in digitalize
 I(\SI{}{\micro \ampere}) = m I(\SI{}{\volt}) + q
 \end{align*}
 
-To determine the two coefficients, the beam current was raised from $\SI{10}{\micro \ampere}$ to $\SI{22}{\micro \ampere}$ in several step. For each step we confront the nominal values of the current, cominicated by the MAMI operators which control the beam, with the values in $\SI{}{\volt}$ measured. The following plot show the procedure described:
+To determine the two coefficients, the beam current was raised from $\SI{10}{\micro \ampere}$ to $\SI{22}{\micro \ampere}$ in several step. For each step we confront the nominal values of the current with the values in $\SI{}{\volt}$ measured. The following plot show the procedure described:
 
 \begin{figure}[ht]
 \centering
@@ -430,36 +430,49 @@ The calibrations consist in retrieving $m$ and $q$ with a linear fit. Then the p
 The values obtained from the fit of nominal beam current vs. voltage values are shown in the figure \ref{fig:PimoCalib}. The $\chi^{2}$ values are higher than the expected. This is not unexpected, the errors in both the plots are computed with the sampling standard deviation formula applied to the sequence of voltage values $I21\/ I13$ ($\sigma_{vfc}$, the standard deviation computed for each step in \ref{fig:ScanCurrent}), and it is related to precision of the analog to digital converter VFCs. The errors are then propagated to the $y$ axis showed in the plot. \smallskip
 Yet, we are underestimating the error associated with nominal current $I$, in fact the accuracy associated with the beam current, set by the accelerator operators, was not disclosed, and we suspect that is not negligible compared to $\sigma_{vfc}$. \bigskip  
 
-The ENMO calibration is performed in a different way from the other monitors. The polarity signal is sent to MAMI, and they produce a signal for the ENMO that somehow (need to investigate exactly how they do that) shows a difference between the first two sub-events and the last two. This difference is equal (nominal) to $\SI{22.6}{\kilo \electronvolt}$. The idea now is to produce an histogram for the quantity $\delta E$ (with $E_{18}$ being the energy monitor):
+The ENMO calibration is performed in a different way from the other monitors. The energy calibrations is made with a particular procedure that is automatically made by MAMI operators, and exploit the polarity signal which controls the beam polarization at the source of the acceleration. Mami operators use the signal to create artificially a difference in the beam energy that is correlated to the beam polarity. This difference is equal (nominal) to $\SI{22.6}{\kilo \electronvolt}$, and consist in the last two sub-events with higher energy respect to the first two. Because we know the nominal difference, the calibration consist in computing the correct scaling factor which convert from $\SI{}{\volt}$ to $\SI{}{\kilo \electronvolt}$. The quantity that is relevant for the calibration is $\delta E$ (with $E_{18}$ being the energy monitor):
 
 \begin{equation*}
-\delta E = \frac{E_{18}[2] + E_{18}[3]}{2} - \frac{E_{18}[0] + E_{18}[1]}{2} 
+\delta E = \frac{E_{18}[3] + E_{18}[3]}{2} - \frac{E_{18}[0] + E_{18}[1]}{2} 
 \end{equation*}
 
-The data should be distributed with a peak around $\SI{22.6}{\kilo \electronvolt}$. To obtain the correct scaling factor for the values stored in the data tree we plot the voltage values measured by the ENMO monitor.
-3 runs of data where taken with different Beam current, to study the dependence of the measured quantity from the beam current. From the mean of the distribution it is possible to estimate the scaling factor for the ENMO monitors, obtaining the physical quantity in the following way:
+An histogram of $\delta E$ should show a single peak whose values correspond to $\SI{22.6}{\kilo \electronvolt}$.
+For this calibration, we took 3 different acquisition, which differ for the different values of the beam current. We remind that the output voltage signal from the XY monitor is proportional to the current, as mentioned in \ref{eq:SignalToVfc}, so we have that:
 
-\begin{equation*}
-C_{E18} = \frac{\SI{22.6}{\kilo \electronvolt}}{\overline{\delta E}}
-\end{equation*}
+\begin{equation}
+U[\SI{}{\volt}] = \frac{1}{C_{E18}} \, \cdot  i \cdot E
+\end{equation}
+
+So, if we invert the relation we have that:
+
+\begin{equation}
+\frac{E}{U} = C_{E18} \, \cdot \frac{1}{i} \qquad  C_{18} = \frac{E}{U} \, \cdot i
+\end{equation}  
+
+And we have the scaling factor.
 
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width = 0.45\textwidth]{Analysis/ENMOvoltage20.pdf}
 \includegraphics[width = 0.45\textwidth]{Analysis/ENMOvoltage15.pdf} 
-\caption{$\delta E$ for 20 $\SI{20}{\micro \ampere}$}
+\caption{Histograms or $\delta E$ with the beam current $\SI{20}{\micro \ampere}$ on the left and $\SI{15}{\micro \ampere}$ on the right.}
 \end{figure}
 
-Taking the average over $E_{18}$ voltage values, and using the formula above, we obtain the coefficient $C_{E18}$. To take care of the current dependence of the monitors, the scaling factor to be placed in the standard.config file is: $C_{E18} \overline{I}_{\mu A}$.
-The calibration was performed taking three short acquisitions with different beam current : $\SI{20}{\micro \ampere}$, $\SI{15}{\micro \ampere}$ and a run without beam. 
 
 \begin{figure}[hbtp]
 \centering
-%\includegraphics[width = 0.5\textwidth]{Analysis/E18_Calibration.png}
-\caption{Calibration of ENMO monitor}
+\includegraphics[width = 0.5\textwidth]{Analysis/Calibrations/E18_Calibration.pdf}
+\caption{Calibration of ENMO monitor, plot of the ENMO voltage values versus the current.}
 \end{figure}
 
-From this we obtain the value $c_{E18} = -1595.2$ necessary to convert from Voltage units to $\SI{}{\kilo \electronvolt}$ the physical quantity for the analysis. As a final check the final histogram for the physical quantity is shown:
+
+$C_{E18}$ is obtained taking the coefficient parameter $m$ from the fit and substituting in:
+
+\begin{align*}
+C_{E18} =  \frac{\SI{22.6}{\kilo \electronvolt}}{m}
+\end{align*}
+
+From this we obtain the value $C_{E18} = +1595.2$ necessary to convert from Voltage units to $\SI{}{\kilo \electronvolt}$. Using the value, we can show an histogram of $\delta E$ in physical units, as a check of our procedure:
 
 \begin{figure}[hbtp]
 \centering
@@ -498,11 +511,12 @@ Spectra = \frac{N(att_{i}) - N(att_{i-1})}{att_{i} - att_{i-1}}
 {\includegraphics[scale = 0.5]{Analysis/CalibrationPMT/B1.pdf}}\\
 \subfloat[][\emph{B2}]
 {\includegraphics[scale = 0.5]{Analysis/CalibrationPMT/B2.pdf}}
-\caption{Recostructed spectra for Detector B}
+\caption{Reconstructed spectra for Detector B}
 \end{figure}
 
-In this way we compute a discrete derivative of the plot showed in \ref{fig:AttScan}, which represent $\frac{\partial N}{\partial att}$. This is, in fact, the spectra of the signal, still given in attenuation units \ref{fig:Spectra}.\\
-This plot are used to identify a good point to select the attenuation values. If we look at the plots \ref{fig:ThrvsAtt}, we can see that the physical threshold does not scale linearly with changing the attenuation value, and for high values of attenuation, the threshold falls quickly at zero. Looking at the signal spectra, we identify the first peak as the electron signal. The other peak, for higher attenuation values (on the right), correspond to very low threshold values, and it is identified as the background noise. 
+In this way we compute a discrete derivative of the plot showed in \ref{fig:AttScan}, which represent $\frac{\partial N}{\partial att}$. This is, in fact, the spectra of the signal, still given in attenuation units \ref{fig:Spectra}.
+This plot are used to identify a good point to select the attenuation values. If we look at the plots \ref{fig:ThrvsAtt}, we can see that the physical threshold does not scale linearly with changing the attenuation value, and for high values of attenuation, the threshold falls quickly at zero. 
+Looking at the signal spectra, we identify the first peak as the electron signal. The other peak, for higher attenuation values (on the right), correspond to very low threshold values, and it is identified as the background noise. 
 We selected the values of the attenuation between the peaks of the two distributions, maximizing the signal acceptance and trying to reject the background as much as possible.
 Our discussion so far is sufficient to carry out the calibration of the PMTs and take data to measure the asymmetry. However, we would like to identify the physical threshold in $\SI{}{\milli \volt}$ instead of attenuation unit. We can use the conversion function that we discussed in \ref{fig:ThrvsAtt}:
 
@@ -981,7 +995,7 @@ It's immediate to observe that for $(\theta_{x},X);(\theta_{y},Y)$ the values fo
 
 The plots confirm the linear dependence between those parameters. With this evidence, it's clear that the have to modify the model to fit the data. We decided to include as linear independent variables only : $I,X,Y,E$.
 
-Before proceeding with the fit, it's interesting to study how $A_{n}$ evolves with the increase of the data. What we intend is to plot the averaged values $\overline{A_{n}}$ as the number of data increases, where the average is made on all data collected from time $t = 0$ up to time $t = t_{1}$. 
+Before proceeding with the fit, it's interesting to study how $A_{n}$ evolves with the increase of the data. What we intend is to plot the averaged values $\overline{A_{n}}$ as the number of data increases, where the average is made on all data collected from time $t = 0$ up to time $t = t_{1}$ (\ref{fig:AsymOverTime}). 
 
 \begin{figure}[hbtp]
 \centering
@@ -992,6 +1006,7 @@ Before proceeding with the fit, it's interesting to study how $A_{n}$ evolves wi
 {\includegraphics[width = 0.5 \textwidth]{Analysis/Dataselection/AveragedAsymmetry2.pdf}}
 
 \caption{Plot of the Asymmetry versus time. The plot show the average over all the events collected from $t = 0$ to $t = t_{1}$. Each line represents $A_{n}$ measured for  PMT (in \textcolor{blue}{blue} detector B and in \textcolor{red}{red} detector A). The values are corrected for the beam polarization, multiplying by $\frac{1}{p}$. No further correction is applied.}
+\label{fig:AsymOverTime}
 \end{figure}
 
 These plots are useful to check that the asymmetries converge to a certain value, and that there are no steepy variations that could be related to the presence of remaining outliers. Besides this we observe that the sign of the asymmetries for the two detector are opposite, in agreement with what we expect from the kinematic.

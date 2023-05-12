@@ -37,8 +37,13 @@ If we substitute in the formula above $k=2$ and $n = 6$, we have a total of $\si
 \section{Mami}
 \commento{ How Mami produces polarized electron and how the particle are accelerated (the way Mainz Mikroton is working is completely different from the other accelerators, so maybe this section will be too long).}
 
+MAMI is the electron accelerator located in Mainz, which provides a continuous wave, high intensity, polarized electron beam for nuclear physics experiments with fixed-target. The concept of the Mainz microtron accelerator is born in the early 1970s, when the researchers of the nuclear physics institute were investigating the possibility of generalizing the concept of the racetrack microtron (RTM), that consists in a linear accelerator (linac) and two deflection magnets ($180^{\circ}$ magnet, see the figure), placed at the two side of the linac, that make the electrons recirculate. The goal of the collaboration which develop MAMI was to produce a continuous beam, with energies above $\SI{1}{\giga \electronvolt}$ and beam intensities up to $\SI{100}{\micro \ampere}$ for high efficiency in fixed-target experiments. 
+
 \subsection{Acceleration stage.}
 \commento{explain how electrons are accelerated, and sent to different experiments.} \medskip
+
+
+
 
 \subsection{Polarized Beam.}
 \commento{Here a subsection to explain how the polarized electrons are produced. Important to mention the systematic error for the polarization measurement (in our beam time we couldn't measure with Moller polarimeter, so this discussion is important for future experiment, however it's important to say something about it). Remember to explain how the spin are rotated to the transverse plane, and the $\frac{\lambda}{2}$} \medskip
@@ -266,7 +271,7 @@ An antenna is used to decouple part of the energy from the cavity and send it to
 f_{m,n,p} = \frac{c}{2\pi \sqrt{\epsilon_{r} \mu_{r}}} \sqrt{(\frac{x_{m,n}}{R})^{2} + (\frac{p \pi}{L})^{2}}
 \end{align*}
 
-The costant in the formula are:
+The constant in the formula are:
 
 \begin{itemize}
 \item $c$ is the light speed.
@@ -304,13 +309,19 @@ The measurement of the $x,y$ position follows in principle the same procedure. I
 P_{HF} = i^{2} r_{110} \frac{\kappa}{(1 + \kappa)^{2}} K x^{2}
 \end{equation} 
  
-with the output signal prortional to the square root of the absorbed power, we end with:
+The output signal, that is read by our setup, is proportional to the square root of the absorbed power:
 
 \begin{equation}
-x,y = \sqrt(P_{HF}) = costant \cdot \frac{U}{i}  
+\sqrt(P_{HF}) = costant \cdot U \, \cdot \, i   \cdot x
 \end{equation} 
 
-With this is clear how it's possible to measure all the important quantity related to the beam that will be used for the analysis.
+The beam parameter are then given inverting the above formula 
+
+\begin{equation} \label{eq:SignalToVfc}
+x \simeq \frac{\sqrt(P_{HF})}{i}
+\end{equation}
+
+Where the exact conversion coefficients are not known, and are determined during the calibration phase, at the beginning of the beam time.
 
 \subsection{Beam stabilization.}
 
