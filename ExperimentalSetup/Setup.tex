@@ -25,9 +25,15 @@ The general structure of the event is the following:
 \caption{Event structure}
 \end{figure}
 
-The two polarity pattern are selected randomly using a De Brujing sequence, (\textbf{spiegare cosa è e come è implementata}). For each event we have a single measure of $A_{n}$, defined ad the asymmetry between the $\uparrow$ adn $\downarrow$ sub-events.
+For each event we have a single measure of $A_{n}$, defined ad the asymmetry between the $\uparrow$ and $\downarrow$ sub-events.
+At the beginning of an Event on of the two polarity pattern are selected randomly using a De Bruijn sequence. A De Bruijn sequence of order n is defined as a cyclic sequence where every sub-sequence of length appear only once. We have to different polarization pattern, the ones shown in the figure, that can be represented as $1$ and $0$. For this experiment, the De Bruijn sequence is of order $n = 6$ bits; this correspond to all the possible sequence of $1$ and $0$ with a length equal to $6$, which are $64$ different sub-sequence.
+It's possible to demonstrate that exist exactly $N_{bruijn}$ sequences: 
+\begin{align*}
+N_{bruijn} = \frac{(k!)^{k^{n-1}}}{k^{n}}
+\end{align*}
+If we substitute in the formula above $k=2$ and $n = 6$, we have a total of $\simeq 67 \cdot 10^{6}$ different sequences. The seed of the De Bruijn sequence is generated with a random number generator, and the sequence is used to select between $\uparrow,\downarrow,\downarrow, \uparrow$  and $\downarrow,\uparrow,\uparrow,\downarrow$. at this point it could be objected why so much care is taken in choosing randomly the two sequences. At a first glance is certainly easier to select one of the two polarization pattern and reproduce it for every sub-event. However, this doesn't protect from systematic effects. Specifically, there could be an asymmetry due to the latency time when the polarization flip from $\uparrow$ to $\downarrow$ and vice versa. Because of this, to assure that there is no asymmetry within a single event, the two possible polarity patterns like $\uparrow, \uparrow, \downarrow ,\downarrow $  and  $\downarrow ,\downarrow ,\uparrow, \uparrow$ are not considered. The reason is that for event with this structure, the polarization flips only one time, and this can be related to systematic effects.  On the other hand, two polarization flip should cancel out the systematic error.
 
-\newpage
+
 \section{Mami}
 \commento{ How Mami produces polarized electron and how the particle are accelerated (the way Mainz Mikroton is working is completely different from the other accelerators, so maybe this section will be too long).}
 
@@ -35,11 +41,11 @@ The two polarity pattern are selected randomly using a De Brujing sequence, (\te
 \commento{explain how electrons are accelerated, and sent to different experiments.} \medskip
 
 \subsection{Polarized Beam.}
-\commento{Here a subsection to explain how the polarized electrons are produced. Important to mention the systematic error for the polarization mesurement (in our beam time we couldn't measure with Moller polarimeter, so this discussion is important for future experiment, however it's important to say something about it). Remember to explain how the spin are rotated to the transverse plane, and the $\frac{\lambda}{2}$} \medskip
+\commento{Here a subsection to explain how the polarized electrons are produced. Important to mention the systematic error for the polarization measurement (in our beam time we couldn't measure with Moller polarimeter, so this discussion is important for future experiment, however it's important to say something about it). Remember to explain how the spin are rotated to the transverse plane, and the $\frac{\lambda}{2}$} \medskip
 
-For the beam-normal single spin asymmetry a vertical polarized beam is necessary. At the MAMI electron accelerator is possible to produce a vertical polarized beam with energy in the range $\SI{180}{\mega \electronvolt} - \SI{855}{\mega \electronvolt}$ \cite{Schlimme_2017}. In this section the procedure to orient the beam vertically is presented, following an explanation of how the degree of polarizarion of the beam is measured. \medskip
+For the beam-normal single spin asymmetry a vertical polarized beam is necessary. At the MAMI electron accelerator is possible to produce a vertical polarized beam with energy in the range $\SI{180}{\mega \electronvolt} - \SI{855}{\mega \electronvolt}$ \cite{Schlimme_2017}. In this section the procedure to orient the beam vertically is presented, following an explanation of how the degree of polarization of the beam is measured. \medskip
 
-The electron source used at MAMI is made by a strained GaAs/GaAsP superlattice photocathode illuminated by circular polarized light. A Pockels cell changes the helicity of the photons impinging on the electrons. The extracted electron has the same helicity of the incoming photon, let's suppose as an example:
+The electron source used at MAMI is made by a strained GaAs/GaAsP super-lattice photo-cathode illuminated by circular polarized light. A Pockels cell changes the helicity of the photons impinging on the electrons. The extracted electron has the same helicity of the incoming photon, let's suppose as an example:
 
 \begin{center}
 \begin{equation}

@@ -929,7 +929,7 @@ This let us to identify the block of runs that show a behaviour compatible with 
 \end{figure}
 
 This plot unequivocally shows that all the asymmetries measured for each PMTs for both detector A and B are compatible with zero. It is therefore reasonably certain that such data should not be included in the main analysis.\\
-Even if those data are not useful in reconstructing the final asymmetry, they are still useful to check the presence of systematic effects. Because we are reasonably sure that $P = 0$ for these data, the presence of a small deviation from $A = 0$ is a way to identify the presence of an offset. These data are treated likewise the other data with right polarization setting.
+Even if those data are not useful in reconstructing the final asymmetry, they are still useful to check the presence of systematic effects. Because we are reasonably sure that $P = 0$ for these data, the presence of a small deviation from $A = 0$ is a way to identify the presence of an offset. These data are treated likewise the other data with right polarization setting. The data are analyzed separately and the result are reported in the conclusion. 
 
 \subsection{Fit with a linear model}
 
@@ -1054,7 +1054,7 @@ model $\chi^{2}_{16}$ & 76 & 55 & 78 \\
 
 The $\chi^{2}$ values are higher that the expected and we observe that the values for the model 2 are lower than the ones of linear fit.
 This high values can be explained with two considerations: the first one is that this procedure of averaging the data based on $x$ interval leads to the loss of information that can influence the fit, the second consideration is that we are ignoring the possible error in the determination of $\delta x$.
-Despite this, we observe that the for the $\delta x$ and $\delta y$ the values associated to $A_{phys}$ are almost the same considering the first or the second model. For $\delta E$ we see that $A_{n}$ is slightly different. It was therefore chosen to use both the linear models:
+Despite this, we observe that using a model with more complicated dependencies doesn't change  the values of $A_{phys}$. Because of this we don't see a strong evidence to change the linear model: 
 
 \begin{equation}
 A_{tot} = A_{phy} \cdot P + \delta_{I} + A_{x} \delta x + A_{y} \delta y + A_{E} \delta E 
@@ -1065,9 +1065,9 @@ A_{tot} = A_{phy} \cdot P + \delta_{I} + A_{x} \delta x + A_{y} \delta y + A_{E}
 A_{tot} = A_{phy} \cdot P + \delta_{I} + A_{x} \delta x + A_{y} \delta y + A_{E} \delta E + c_{x} \, \delta x^{5} + c_{y} \, \delta y^{5} + c_{E} \, \delta E ^{3}
 \end{equation}}
 
-the result are reported in \ref{tb:resultA}.
+the result of the fit are reported in \ref{tb:resultA}, together with the final result of the asymmetry for detector A and B.
 
-
+\newpage
 \section{False asymmetries}
 \commento{Seems that is possible to obtain rough estimates of the beam related asymmetries with the results from the fit. For Energy and position it's achievable, while for the angle it's quite hard (in principle sounds possible to perform an analytic calculation of the asymmetry related to the incident beam angle, however Anselm told me that quite often those results are in disagrement with the observed even in the sign!).}
 
