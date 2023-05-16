@@ -32,7 +32,7 @@ It's possible to demonstrate that exist exactly $N_{bruijn}$ sequences:
 N_{bruijn} = \frac{(k!)^{k^{n-1}}}{k^{n}}
 \end{align*}
 If we substitute in the formula above $k=2$ and $n = 6$, we have a total of $\simeq 67 \cdot 10^{6}$ different sequences. The seed of the De Bruijn sequence is generated with a random number generator, and the sequence is used to select between $\uparrow,\downarrow,\downarrow, \uparrow$  and $\downarrow,\uparrow,\uparrow,\downarrow$. at this point it could be objected why so much care is taken in choosing randomly the two sequences. At a first glance is certainly easier to select one of the two polarization pattern and reproduce it for every sub-event. However, this doesn't protect from systematic effects.
-Let's suppose that we have a noise, whose frequency is roughly $\SI{10-20}{\hertz}$. This kind of noise could in principle increase the rates for one polarizations state and decrease the other. The solution to reduce the noise effect is to randomize the pattern. 
+Let's suppose that we have a noise, whose frequency is roughly $\SI{10}{\hertz}$. This kind of noise could in principle increase the rates for one polarizations state and decrease the other. The solution to reduce the noise effect is to randomize the pattern. 
 In the end, there is another reason why a debruijn sequence is useful. During each polarization flip, we observe a short, transient reduction of the beam current. This reduction in the beam intensity has more influence on patterns where there are more inversion of the polarity respect to the other. With a debruijn sequence we assure that we have a identical number of pairs of patterns, meaning that:
 
 \begin{itemize}
@@ -65,10 +65,9 @@ A racetrack microtron, as the one shown in the figure, is characterized by the e
 
 $U_{Linac}$ is the maximum voltage of the linac, and $\phi$ is the phase of the beam relative to the maximum of HF. Because the particle are accelerated by the linac, the beam consist in individual packets (bunches) whose rate correspond to the $\omega$ of HF. In order for the electrons to be accelerated for each recirculation step, they must arrive at the beginning of the linac with the correct phase $\phi$. For this it is important that the flight-time per cycle must be an integer or a multiple of the HF period.
 
-\begin{align*} \label{eq:frequency}
+\begin{equation} \label{eq:frequency}
 f = \frac{1}{2 \pi} \cdot \dfrac{q}{\gamma m_{0}} \cdot B
-\end{align*}
-
+\end{equation}
 From this overview two conclusion can be drawn:
 \begin{itemize}
 \item To accelerate slow electrons, with $\gamma = (1,10)$, a magnetic field of $\SI{0.1}{\tesla}$ is used, in order to work with frequencies of ($\SI{2}{\giga \hertz}$,$\SI{2}{\giga \hertz}$), that are easy to control. However with higher energies the bending radii is higher, with a small magnetic field.
@@ -180,6 +179,7 @@ The total beam polarization is measured by a Moller polarimeter, in the experime
 \subsection{Moller and Compton polarimeters}
 
 
+\newpage
 \section{Experimental hall setup.}
 
 \commento{Describing the A1 room, how the spectrometers are operating (+ figures), a picture of the target and the important parameters, like thickness. Also mention the convention to use target with$10 \%$ of the radiation lenght, to avoid double scattering.  Mention that we need the Wobbler magnet to change the hitting position of the beam to prevent the target from melting. Here it's important to mention that the electron are deflected on the vertiacal direction, because of the high beam intensity
