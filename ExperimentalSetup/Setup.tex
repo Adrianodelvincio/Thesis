@@ -31,19 +31,78 @@ It's possible to demonstrate that exist exactly $N_{bruijn}$ sequences:
 \begin{align*}
 N_{bruijn} = \frac{(k!)^{k^{n-1}}}{k^{n}}
 \end{align*}
-If we substitute in the formula above $k=2$ and $n = 6$, we have a total of $\simeq 67 \cdot 10^{6}$ different sequences. The seed of the De Bruijn sequence is generated with a random number generator, and the sequence is used to select between $\uparrow,\downarrow,\downarrow, \uparrow$  and $\downarrow,\uparrow,\uparrow,\downarrow$. at this point it could be objected why so much care is taken in choosing randomly the two sequences. At a first glance is certainly easier to select one of the two polarization pattern and reproduce it for every sub-event. However, this doesn't protect from systematic effects. Specifically, there could be an asymmetry due to the latency time when the polarization flip from $\uparrow$ to $\downarrow$ and vice versa. Because of this, to assure that there is no asymmetry within a single event, the two possible polarity patterns like $\uparrow, \uparrow, \downarrow ,\downarrow $  and  $\downarrow ,\downarrow ,\uparrow, \uparrow$ are not considered. The reason is that for event with this structure, the polarization flips only one time, and this can be related to systematic effects.  On the other hand, two polarization flip should cancel out the systematic error.
+If we substitute in the formula above $k=2$ and $n = 6$, we have a total of $\simeq 67 \cdot 10^{6}$ different sequences. The seed of the De Bruijn sequence is generated with a random number generator, and the sequence is used to select between $\uparrow,\downarrow,\downarrow, \uparrow$  and $\downarrow,\uparrow,\uparrow,\downarrow$. at this point it could be objected why so much care is taken in choosing randomly the two sequences. At a first glance is certainly easier to select one of the two polarization pattern and reproduce it for every sub-event. However, this doesn't protect from systematic effects.
+Let's suppose that we have a noise, whose frequency is roughly $\SI{10-20}{\hertz}$. This kind of noise could in principle increase the rates for one polarizations state and decrease the other. The solution to reduce the noise effect is to randomize the pattern. 
+In the end, there is another reason why a debruijn sequence is useful. During each polarization flip, we observe a short, transient reduction of the beam current. This reduction in the beam intensity has more influence on patterns where there are more inversion of the polarity respect to the other. With a debruijn sequence we assure that we have a identical number of pairs of patterns, meaning that:
 
+\begin{itemize}
+\item $25\%$ : $\uparrow,\downarrow,\downarrow, \uparrow$ ; $\uparrow,\downarrow,\downarrow, \uparrow$
+\item $25\%$ : $\downarrow,\uparrow, \uparrow,\downarrow$ ; $\downarrow,\uparrow, \uparrow,\downarrow$
+\item $25\%$ : $\downarrow,\uparrow, \uparrow,\downarrow$ ; $\uparrow,\downarrow,\downarrow, \uparrow$
+\item $25\%$ : $\uparrow,\downarrow,\downarrow, \uparrow$ ; $\downarrow,\uparrow, \uparrow,\downarrow$
+\end{itemize}
+
+In the top rows we have 4 inversion, while in the two lower rows we have 5 inversion. \smallskip
+Later we will describes the other details of the experiment; in the next sections we will present briefly MAMI accelerator, where the experiment is performed. 
 
 \section{Mami}
 \commento{ How Mami produces polarized electron and how the particle are accelerated (the way Mainz Mikroton is working is completely different from the other accelerators, so maybe this section will be too long).}
 
-MAMI is the electron accelerator located in Mainz, which provides a continuous wave, high intensity, polarized electron beam for nuclear physics experiments with fixed-target. The concept of the Mainz microtron accelerator is born in the early 1970s, when the researchers of the nuclear physics institute were investigating the possibility of generalizing the concept of the racetrack microtron (RTM), that consists in a linear accelerator (linac) and two deflection magnets ($180^{\circ}$ magnet, see the figure), placed at the two side of the linac, that make the electrons recirculate. The goal of the collaboration which develop MAMI was to produce a continuous beam, with energies above $\SI{1}{\giga \electronvolt}$ and beam intensities up to $\SI{100}{\micro \ampere}$ for high efficiency in fixed-target experiments. 
+MAMI is the electron accelerator located in Mainz, which provides a continuous wave, high intensity, polarized beam for nuclear physics experiments with fixed-target. The concept of the Mainz microtron accelerator is born in the early 1970s, when the researchers of the nuclear physics institute were investigating the possibility of generalizing the concept of the racetrack microtron (RTM), that consists in a linear accelerator (linac) and two deflection magnets ($180^{\circ}$ magnet, see the figure). The particle recirculate, due to the deflection magnets, several time in the linac, and each time they gain energy.  The goal of the collaboration which develop MAMI was to produce a continuous beam, with energies above $\SI{1}{\giga \electronvolt}$ and beam intensities up to $\SI{100}{\micro \ampere}$ for high efficiency in fixed-target experiments.
 
-\subsection{Acceleration stage.}
-\commento{explain how electrons are accelerated, and sent to different experiments.} \medskip
+\begin{figure}[hbtp]
 
+\centering
+\includegraphics[width = 0.75\textwidth]{ExperimentalSetup/RacetrackMicrotronSketch.pdf}
+\caption{Racetrack Microtron. The particles are sent to the linac, and the two deflection magnets make the particles recirculate, until the momenta exceed the capability of the magnetic field.}
+\end{figure}
 
+A racetrack microtron, as the one shown in the figure, is characterized by the energy gain per-cycle $\delta E$ given by the high-frequency electromagnetic field (HF). The energy gain is: 
 
+\begin{align*}
+\delta E \, = \, e U_{Linac} \cdot cos(\phi)
+\end{align*} 
+
+$U_{Linac}$ is the maximum voltage of the linac, and $\phi$ is the phase of the beam relative to the maximum of HF. Because the particle are accelerated by the linac, the beam consist in individual packets (bunches) whose rate correspond to the $\omega$ of HF. In order for the electrons to be accelerated for each recirculation step, they must arrive at the beginning of the linac with the correct phase $\phi$. For this it is important that the flight-time per cycle must be an integer or a multiple of the HF period.
+
+\begin{align*} \label{eq:frequency}
+f = \frac{1}{2 \pi} \cdot \dfrac{q}{\gamma m_{0}} \cdot B
+\end{align*}
+
+From this overview two conclusion can be drawn:
+\begin{itemize}
+\item To accelerate slow electrons, with $\gamma = (1,10)$, a magnetic field of $\SI{0.1}{\tesla}$ is used, in order to work with frequencies of ($\SI{2}{\giga \hertz}$,$\SI{2}{\giga \hertz}$), that are easy to control. However with higher energies the bending radii is higher, with a small magnetic field.
+\item For high energy electrons $\gamma > 10$, to reduce the size of the deflection magnets, it is useful to increase the Magnetic field up to $\SI{1}{\tesla}$ of more. This let to accelerate the electrons using the same technology for $f \simeq \SI{}{\giga \hertz}$.
+\end{itemize}
+
+These conclusions justify the structure of MAMI: a cascade of microtrons to reach each time higher energies with the same acceleration frequency at each stage. \medskip
+MAMI is composed by a sequence of 4 different microtrons, to achieve energies of $\SI{1.6}{\giga \electronvolt}$. The first stage, shown in the picture (\ref{fig:Accelerator}), is composed by two small microtrons that accelerate the particle to $\SI{14}{\mega \electronvolt}$ in 18 revolutions. The Particle then are sent to the RTM3 (race track microtron 3), that is a large microtron that can accelerate the particle up to $\SI{855}{\mega \electronvolt}$. These 3 microtrons forms MAMI-B, which started operation in 1990-91. A four stage, MAMI-C, was built and started operation in 2007. This four stage is made by 4 bending magnets, with a bending angle of $90^{\circ}$, and it is designed to achieve energies of $\SI{1.6}{\giga \electronvolt}$. The design is different from the other race-track microtrons, and will not be explained, as it is not necessary for the experiment to reach such high energies.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=0.75\textwidth]{ExperimentalSetup/Racetrack.jpg}
+\caption{Picture of the Racetrack RTM3 in MAMI-B. The Green square at the bottom is one of the deflector magnets, the other one is below the point where the photo was taken. The linac stage is on the left. The tubes at the center of the figure are the paths that the particle cross during the recirculation. The further away from the linac the greater the energy.}
+\end{figure}
+
+The operation principles of a microtron are simple to be described. First we conside the gyro-radius for relativist electrons, that is:
+
+\begin{equation}
+\qquad r = \dfrac{E \beta}{qcB}
+\end{equation}
+
+To have a coherent conditions, we must have that the flight-time $\tau = \frac{\lambda}{c}$ of the first recirculation must be an integer multiple of the HF \ref{eq:frequency}. This means that:
+
+\begin{align*}
+\lambda = \tau c =\dfrac{ 2 \pi c R }{\beta c} = \dfrac{2 \pi E}{q B} = m \lambda_{HF}
+\end{align*}
+
+For the other recirculation, we must have that the flight-time at energies $E_{i} = E_{n-1} + \delta E$ must be increased by an integer multiple of HF, too. This lead to the second equation:
+
+\begin{align*}
+\dfrac{2 \pi \delta E}{q B} = n \lambda_{HF}
+\end{align*}
+
+The minimum gain per cycle is then determined only by the strength of the magnetic field and wavelength $\lambda_{HF}$. These two equations together controls the dinamic of the race-track microtrons,
 
 \subsection{Polarized Beam.}
 \commento{Here a subsection to explain how the polarized electrons are produced. Important to mention the systematic error for the polarization measurement (in our beam time we couldn't measure with Moller polarimeter, so this discussion is important for future experiment, however it's important to say something about it). Remember to explain how the spin are rotated to the transverse plane, and the $\frac{\lambda}{2}$} \medskip
@@ -133,6 +192,7 @@ MAMI has 3 different hall, named with the capital letter A followed with a numbe
 \centering
 \includegraphics[width = 0.6\textwidth]{ExperimentalSetup/Accelerator.pdf}
 \caption{Scheme of the accelerator, with the different experimental hall. Actually the A4 hall is restructured, in fact it will host the future Mesa accelerator.}
+\label{fig:Accelerator}
 \end{figure}
 
 In A1, experiment with fixed target are conducted. The electrons can be delivered with an energy up to $\SI{1.6}{\giga \electronvolt}$, after passing the last acceleration stage (HDSM, in the figure). Because the electron energy of our experiment is $\SI{570}{\mega \electronvolt}$, the beam will pass through the first acceleration steps, the linac (linear accelerator) and Race-track system and when the desired energy is achieved the electrons will be sent to the A1 experimental hall. \medskip
