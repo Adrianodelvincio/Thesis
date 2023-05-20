@@ -330,18 +330,13 @@ One of the main goal for this experiment was to measure the well know trasverse 
 
 The $Q^{2}$ values is the same of the last measurement performed at MAMI, and is measured with and without rejecting the inelastic electrons. 
 
-
-
 \subsection{Alignment of the scattering plane.}
 
-\subsection{Calibration of the VFCs monitors.}
-\commento{Maybe it's important to divide this sections in two different part: the first part where I explain the Vfc convert the input voltage signal to a digital signal. In the second part just mention how we tuned the resistences (for X,Y monitors directly at the output signal with the oscilloscope, while for I21 and I13 monitors we used the data, so I'm able to produce plots only for the second ones).}
+\subsection{Beam monitors calibration, XY monitors}
 
-\newpage
-\subsection{Beam monitors calibration.}
-
-For the calibration of the X Y monitors, we used two target made by three carbon wires at a certain distance from each other, aligned horizontally and vertically. The distance between the two center of the external wires is $ d_{horizontal} = \SI{2.38}{\milli \meter}$ for the target aligned horizontally and $d_{vertical} = \SI{2.33}{\milli \meter}$ for the other one.
-With the two special targets aligned, we turn on the beam, asking MAMI operators to slowly change the beam position. The beam position can be changed by varying the Magnetic field produced by the \textit{Wobbler 16} magnets (\ref{fig:BeamLine}):
+For the calibration of the X Y monitors, special target are used. In the target frame (\ref{fig:targetFrame}) there are two targets made by three carbon wires that are at a fixed distance each other, horizontally and vertically aligned. The distance between the center of the two external wires is measured, and it is equal to $ d_{horizontal} = \SI{2.38}{\milli \meter}$ for the horizontal wires and $d_{vertical} = \SI{2.33}{\milli \meter}$ for the other one.
+The procedure to retrieve the correct scaling factor, to convert from the raw-data in $\SI{}{\volt}$ to $\SI{}{\micro \meter}$, is the following: we ask MAMI operators to slowly change the beam position, in the horizontal and vertical direction for the horizontal and vertical target. The beam position can be changed by varying the Magnetic field produced by the \textit{Wobbler 16} magnets (\ref{fig:BeamLine}). 
+During this slow variation, our detectors are measuring the rates of scattered electrons, that increase when the beam hit one of the three wires and and decrease when the beam is centered between two wires. We plot the detector counts versus the $XY$ monitors values, in voltage, and we estimate the position given in voltage of the two external peaks. This values can be used, together with the distance $d_{horizontal};d_{vertical}$ already measured, to compute the scaling factors. This procedure is repeated for $X21/Y21$ and $X25/Y25$ monitors.
 
 
 \begin{figure}[htb]
@@ -349,10 +344,9 @@ With the two special targets aligned, we turn on the beam, asking MAMI operators
 \centering
 \includegraphics[width = 0.40\textwidth]{ExperimentalSetup/target.pdf}
 \caption{Target frame installed during the experiment, on the top we have the two targets made by three carbon wires that are used to calibrate the positions monitors. Then the carbon target and the two lead targets.}
+\label{fig:targetFrame}
 \end{figure}
 
-
-We took to acquisitions for horizontal and vertical wires target, changing the $x$ and $y$ position of the beam respectively.
 Looking at the PMT counts, we observe that the counts increase to a maximum, that is reached when the beam spot is centered on the carbon wire, and then decrease until the next carbon wire is hit by the beam.\\
 We plot the pmt data \textit{versus} the $X25,X21,Y25,Y21$, given in $\SI{}{\volt}$. 
 Given that we know the real distance between the two external wires, we can obtain the correct scaling factors to calculate the X and Y position from the voltage values. To identify the three peaks in of the carbon target, we fit the data using a gaussian model (see \ref{fig:HorizontalCalibration}). The mean $\mu$ represents the center of the wire, given in $\SI{}{\volt}$.
@@ -382,17 +376,20 @@ $c_{Y25}$ indicates the scaling factor of the monitor. With these values the Ana
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width=0.4\textwidth]{Analysis/HorizontalCalibration.png}
-\caption{}
+\subfloat[][]{
+\includegraphics[width=0.4\textwidth]{Analysis/HorizontalCalibration.pdf}}
+\subfloat[][]{
+\includegraphics[width=0.4\textwidth]{Analysis/HorizontalCalibrationX25.pdf}}
+\caption{Plot of the averaged count of detector B, with the slow variations of the beam position in the horizontal direction. The three peaks occur when the beam is aligned with the center of the wire. The values on the X axis are in $\SI{}{\volt}$}
 \label{fig:HorizontalCalibration}
 \end{figure}
 
-All this procedure can be easely checked if we plot now the $X$ and $Y$ position for the same two runs of data acquired with the wires. After placing the scaling factors obtained in the standard configuration file, we run the analysis another time and the physical values were computed \ref{fig:CheckHori}
+All this procedure can be  checked if we plot now the $X$ and $Y$ position for the same two runs of data acquired with the wires. After placing the scaling factors obtained in the standard configuration file, we run the analysis another time and the physical values were computed \ref{fig:CheckHori}
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width=0.45\textwidth]{Analysis/XcheckB.png} 
-\includegraphics[width=0.45\textwidth]{Analysis/XcheckA.png}
+\includegraphics[width=0.45\textwidth]{Analysis/XcheckB.pdf} 
+\includegraphics[width=0.45\textwidth]{Analysis/XcheckA.pdf}
 \caption{plot of the PMT Count against the physical values computed by the analysis program. Now the position of the three peaks correspond to the expected values measured for the target.}
 \label{fig:CheckHori}
 \end{figure}
