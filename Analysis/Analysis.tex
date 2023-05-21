@@ -931,7 +931,7 @@ The plots show also the expected values for the $c$ computed with a simple simul
 \end{itemize}
 
 Looking at the plots, we observe for detector A a block of runs where $c$ is compatible with 0, in contrast with the values expected from the simulation. Due to the higher error, the corresponding plot for detector B is not clear to interpret, however the plot on the right with the overall results for A and B confirms the evidence for A.
-This let us to identify the block of runs that show a behaviour compatible with $\vec{P} = \vec{0}$. It's important to double check that validity of this method seeing if the corresponding asymmetry is compatible with $0$ \ref{fig:ZeroAsym}.
+This let us to identify the block of runs that show a behaviour compatible with $\vec{P} = \vec{0}$. It's important to check that validity of this method seeing if the corresponding asymmetry is compatible with $0$ \ref{fig:ZeroAsym}.
 
 \begin{figure}[hbtp]
 \centering
@@ -940,7 +940,13 @@ This let us to identify the block of runs that show a behaviour compatible with 
 \label{fig:ZeroAsym}
 \end{figure}
 
-This plot unequivocally shows that all the asymmetries measured for each PMTs for both detector A and B are compatible with zero. It is therefore reasonably certain that such data should not be included in the main analysis.\\
+The asymmetry values for this block of runs shows an unexpected behaviour. For both the two detectors we observe negative values. The weighted mean for the two detector is :
+\begin{itemize}
+\item $A_{B} = -7 \pm 5$ ppm
+\item $A_{A} = -5 \pm 2$ ppm
+\end{itemize}
+
+The values are not compatible with zero, but are compatible with each other. It is therefore reasonably certain that such data should not be included in the main analysis, because we observe a negative asymmetry for both the two detector is not compatible with the presence of a polarized beam. \\
 Even if those data are not useful in reconstructing the final asymmetry, they are still useful to check the presence of systematic effects. Because we are reasonably sure that $P = 0$ for these data, the presence of a small deviation from $A = 0$ is a way to identify the presence of an offset. These data are treated likewise the other data with right polarization setting. The data are analyzed separately and the result are reported in the conclusion. 
 
 \subsection{Fit with a linear model}
@@ -1138,7 +1144,7 @@ PMT 7 & 23593 & \\
 \end{tabular} 
 \end{center}
  
-The values for the false asymmetries obtained with this method are: 
+The values for the false asymmetries obtained with this method are:
 
 \begin{table}[h]
 \centering
@@ -1161,7 +1167,7 @@ The values for the false asymmetries obtained with this method are:
 \end{tabular}
 \end{table}
 
-
+These values are not in agreement with $A_{x}$ and $A_{y}$ obtained from the fit (\ref{tb:resultA}). However, there is the strong suspect that the strong correlations between
 
 \subsection{Energy asymmetry}
 
@@ -1224,7 +1230,7 @@ We compute the above formula withe the constant A,B,C,D defined in \ref{eq:Mott}
 A_{E} = - \frac{1}{2} \dfrac{2 + CE_{0}}{E_{0} + E_{0}^{2}C} 
 \end{equation}
 
-The result, applying the above formula is $A_{e} = -1.75 \, \frac{ppm}{\SI{}{\kilo \electronvolt}}$. We can compare this result with the values obtained from the fit. The results are in agreement with the sign, if fact we expect a negative effect related to the beam variation. However, the false asymmetries from the fit are 1 order higher than the values computed here.
+The result, applying the above formula is $A_{e} = -1.75 \, \frac{ppm}{\SI{}{\kilo \electronvolt}}$. We can compare this result with the values obtained from the fit. The results are in agreement with the sign, if fact we expect a negative effect related to the beam variation. However, the false asymmetries from the fit are 1 order higher than the values computed here. A possible reason could be that we are underestimating other contributions that seems to be important with the energy variation.
 
 \commento{We can investigate also the asymmetries related to the beam energy. For this one we can exploit the theoretical expression for the Mott cross-section, taking the derivative ...
 We can investigate the Current asymmetries, because we have the auto-calibration procedure, so from the scale factor we can check if the current asymmetry is compatible with $1$ as assumed or not.}
