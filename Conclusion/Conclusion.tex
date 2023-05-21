@@ -8,7 +8,7 @@
 \item confront with the theory.
 \end{itemize}}
 
-In this chapter we report the result obtained for the data-analysis. First we report the averaged asymmetries with and without subtracting the pmt offset. From the asymmetry results, we can compute the factor $c$ as the ratio between the final asymmetries with and without subtracting the offset. The values can be directly confronted with the ones defined in \ref{Autocalib}. We see a good agreement. All the values are in reported in ppm (part-per-million).
+In this chapter we report the result obtained for the data-analysis. First we report the averaged asymmetries with and without subtracting the pmt offset. The sign of the asymmetry is given by the sign of the cross product between $\vec{k}$ incident electron and $\vec{k'}$ scattered electron. So we expect to see a positive sign for detector A and negative sign for detector B. From the asymmetry results, we can compute the factor $c$ as the ratio between the final asymmetries with and without subtracting the offset. The values can be directly confronted with the ones defined in \ref{Autocalib}. All the values are in reported in ppm.
 
 \begin{table}[ht]
 \centering
@@ -70,18 +70,14 @@ In this chapter we report the result obtained for the data-analysis. First we re
 \caption{Averaged asymmetries over all the events. The values are corrected subtracting $\overline{A}_{I}$ and considering the effective polarization $p$ of the beam}
 \end{table}
 
-The asymmetries are shown with the errors in the following plot. The error are obtained with the formula:
-\begin{align*}
-\sigma = \sqrt{\frac{1}{2 N \cdot n}}
-\end{align*}
-
+The asymmetries are shown with the corresponding errors in the following plot.
 To Obtain a final asymmetry for detector A and B, the asymmetries for each plot are averaged using the formula:
 
 \begin{equation}
 \overline{A_{n}} = \sum_{i = 0}^{n_{PMT}} \dfrac{ w_{i} A_{i}}{\sum_{i = 0}^{n_{PMT}} w_{i}}
 \end{equation}
 
-This is a weighted mean, and $w_{i} = \frac{1}{\sigma^{2}_{i}}$. This formula is applied to take care of the different statistical error for different pmts.
+This is a weighted mean, and $w_{i} = \frac{1}{\sigma^{2}_{i}}$. This formula must be used to take care of the different statistical error of the PMTs.
 
 \begin{figure}[hbtp]
 \centering
@@ -90,10 +86,10 @@ This is a weighted mean, and $w_{i} = \frac{1}{\sigma^{2}_{i}}$. This formula is
 $\overline{\delta I}$. }
 \end{figure}
 
-The overall results for the two detectors are: 
+The overall results for the two detectors, without applying further cuts, are: 
 \begin{itemize}
-\item Asymmetry for detector A, $A_{A} =  23.1 \pm 1.6$ ppm.
-\item Asymmetry for detector B, $A_{B} = -23 \pm 5$ ppm.
+\item Asymmetry for detector A, $A_{A} =  23.6 \pm 1.7$ ppm.
+\item Asymmetry for detector B, $A_{B} = -21 \pm 5$ ppm.
 \end{itemize}
 
 \newpage
@@ -136,9 +132,9 @@ the result for detector B:
 \caption{fit result with the linear model, for detector B.}
 \end{table}
 
-The overall result for $A_{n}$ for both the two detectors:
+The final results of the \transv for the two detectors, for a $Q^{2} = \SI{0.04}{\giga \electronvolt \squared}$, computed with the weighted mean is:
 
-\begin{table}
+\begin{table}[h]
 \centering
 \begin{tabular}{c|c}
 \hline
@@ -150,8 +146,7 @@ The overall result for $A_{n}$ for both the two detectors:
 \end{tabular}
 \caption{Overall result for detector A and B.}
 \end{table}
-
-The sign of the asymmetry is given by the cross-product between the sign of the cross product between $\vec{k}$ incident electron and $\vec{k'}$ scattered electron. So it is negative for detector B, 
+ 
 
 \chapter{Conclusion and outlook} \label{conclusion}
 

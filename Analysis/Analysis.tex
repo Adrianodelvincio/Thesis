@@ -321,10 +321,10 @@ One of the main goal for this experiment was to measure the well know trasverse 
 
 \begin{flushleft}
 \begin{align*}
-& Spektrometer A : \qquad Q^{2} = \SI{0.041337}{\giga \electronvolt} \qquad \textnormal{without Cut} \\
-& Spektrometer A : \qquad Q^{2} = \SI{0.0394513}{\giga \electronvolt} \qquad \textnormal{with Cut} \\
-& Spektrometer B : \qquad Q^{2} = \SI{0.0404771}{\giga \electronvolt} \qquad \textnormal{without Cut} \\
-& Spektrometer B : \qquad Q^{2} = \SI{0.0405843}{\giga \electronvolt} \qquad \textnormal{with Cut} 
+& det. A : \qquad Q^{2} = \SI{0.041337}{\giga \electronvolt \squared} \qquad \textnormal{without Cut} \\
+& det. A : \qquad Q^{2} = \SI{0.0394513}{\giga \electronvolt \squared} \qquad \textnormal{with Cut} \\
+& det. B : \qquad Q^{2} = \SI{0.0404771}{\giga \electronvolt \squared} \qquad \textnormal{without Cut} \\
+& det. B : \qquad Q^{2} = \SI{0.0405843}{\giga \electronvolt \squared} \qquad \textnormal{with Cut} 
 \end{align*} 
 \end{flushleft}
 
@@ -1101,7 +1101,7 @@ Asym = \dfrac{N(x_{1}) - N(x_{2})}{N(x_{1}) + N(x_{2})} = \dfrac{N_{0} + m \cdot
 \end{split}
 \end{equation}
 
-In this equation three different parameters appear: $N_{0}$ is the offset of the linear model, $m$ is the agular coefficient, or the slope, and $x_{0}$ is the initial position respect to we compute the position variation. The first two terms are obtained by a linear fit, while $x_{0}$ is fixed conveniently.
+In this equation three different parameters appear: $N_{0}$ is the offset of the linear model, $m$ is the angular coefficient, or the slope, and $x_{0}$ is the initial position respect to we compute the position variation. The first two terms are obtained by a linear fit, while $x_{0}$ is fixed conveniently.
 
 \begin{figure}[hbtp]
 \centering
@@ -1111,43 +1111,122 @@ In this equation three different parameters appear: $N_{0}$ is the offset of the
 \end{figure}
 
 
-We can approximate the denominator deleting the term $ m \cdot (x_{1} +  x_{2})$ which should be small compared to $2N_{0}$. We end with:
+We can approximate the denominator deleting the term $ m \cdot (x_{1} +  x_{2})$ which should be equal, at first order, to $- 2m x_{0}$, and should cancel out. We end with:
 
 \begin{equation}
-Asym = \dfrac{m}{2N_{0} - 2mx_{0}}(x_{1} -  x_{2})
+Asym = \dfrac{m}{2N_{0}}(x_{1} -  x_{2})
 \end{equation}
 
-The term in front of $(x_{1} - x_{2})$ can be compared to $\frac{dA}{dX}$. $x_{0}$ is arbitrary and can be set to 0. For $N_{0}$, the offset, we substitute the averaged value counts of each PMT for the polarized beam acquisitions ( we remind that the rate are collected during each $\SI{20}{\milli \second}$ time interval of each sub-event).\\
+The term in front of $(x_{1} - x_{2})$ can be compared to $\frac{dA}{dX}$. For $N_{0}$, the offset, we substitute the averaged value counts of each PMT for the polarized beam acquisitions ( we remind that the rate are collected during each $\SI{20}{\milli \second}$ time interval of each sub-event).\\
 The data are reported in the table below:
 
 \begin{center}
 \begin{tabular}{|c|c|c|}
 \hline 
 PMT & Detector A & Detector B \\ 
-\hline 
-PMT 0 & 84718 & 18925 \\ 
-\hline 
-PMT 1 & 96882 & 18815 \\ 
-\hline 
-PMT 2 & 80604 & 14807 \\ 
-\hline 
-PMT 3 & 65053 & \\ 
-\hline 
-PMT 4 & 45943 & \\ 
-\hline 
-PMT 5 & 46248 & \\ 
-\hline 
-PMT 6 & 37452 & \\ 
-\hline 
-PMT 7 & 25808 & \\ 
+\hline
+PMT 0 & 63733 & 17609 \\ 
+PMT 1 & 67262 & 17514 \\ 
+PMT 2 & 59782 & 14055 \\ 
+PMT 3 & 51736 & \\ 
+PMT 4 & 39057 & \\ 
+PMT 5 & 39667 & \\ 
+PMT 6 & 32768 & \\ 
+PMT 7 & 23593 & \\ 
 \hline 
 \end{tabular} 
 \end{center}
  
-We report the values obtained with this new method ... 
+The values for the false asymmetries obtained with this method are: 
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c|c|c}
+\hline
+ 'PMT' & $A_{x}$ $\SI{}{\per \micro \meter}$&   $A_{y}$ $\SI{}{\per \micro \meter}$ \\
+\hline
+ B0 & 692 & 795 \\
+ B1 & 395 & 682 \\
+ B2 & 289 & 601 \\
+ A0 & 233 & 533 \\
+ A1 & 223 & 518 \\
+ A2 & 202 & 493 \\
+ A3 & 190 & 473 \\
+ A4 & 211 & 503 \\
+ A5 & 214 & 506 \\
+ A6 & 217 & 510 \\
+ A7 & 220 & 514 \\
+\hline
+\end{tabular}
+\end{table}
+
+
+
+\subsection{Energy asymmetry}
+
+For the energy asymmetry, a different method is necessary. We directly compute the Mott cross-section of the electron-carbon elastic scattering, and from that we can derive the false asymmetry due to energy variation.
+We start from the formula of the expected rates:
+
+\begin{equation}
+\frac{events}{time} = n_{e} N_{t} v_{e} \frac{\partial \sigma}{\partial \Omega} (\partial \Omega_{a}) \epsilon 
+\end{equation} 
+
+Where:
+\begin{itemize}
+\item $n_{e}$ electron density of the beam.
+\item $N_t$ Number of scattering centers of the carbon target.
+\item $v_{e}$ electron speed.
+\item $\partial \Omega_{a}$ solid angle acceptance of the spectrometers.
+\item $\epsilon$ detector efficiency.
+\end{itemize}
+
+We do not need to compute directly the expected rate for the two detectors, because some terms cancel out when substituted in the formula for the asymmetry, the only relevant term is the cross section:
+
+\begin{align*}
+A = A_{n} + \dfrac{\sigma(E_{1}) - \sigma(E_{2})}{\sigma(E_{1}) + \sigma(E_{2})}
+\end{align*}
+
+Because $\partial \Omega_{a}$ is a common term in the numerator and in the denominator, we can simplify the expression and substitute $\sigma $ with $ \frac{\partial \sigma}{ \partial \Omega}$.
+The Mott cross section is given by the formula below:
+
+\begin{equation} \label{eq:Mott}
+\dfrac{\partial \sigma}{\partial \Omega} = \dfrac{Z^{2} \alpha (\hbar c)^2}{E^{2} sin^{4}(\frac{\theta}{2})} \cdot \frac{E'}{E} \cdot  cos(\frac{\theta}{2}) \cdot F^{2}(\vec{q}) 
+\end{equation}
+
+Where the first term is the Rutherford cross-section, the second term represent the recoil of the nucleus, the third terms is the $cos(\frac{\theta}{2})$, and the last term is the nucleus form factor. The Recoil term can be written:
+
+\begin{align*}
+\dfrac{E'}{E} = \dfrac{1}{1 + \frac{E}{Mc^{2}} (1 - cos(\theta))}
+\end{align*}
+
+With this final substitution we can rewrite the Mott cross section as:
+\begin{align*}
+\dfrac{\partial \sigma}{\partial \Omega} = \dfrac{D}{AE^{2}} \cdot \dfrac{1}{1 + EC} \cdot B \cdot F^{2}(\vec{q})
+\end{align*}
+ 
+To compute the false asymmetry related to energy, we always assume that for small energy variation, a first order approximation is valid:
+
+\begin{align*}
+\sigma (E_{1}) \simeq \sigma(E_{0}) + \frac{\partial \sigma}{\partial E} (E_{1} - E_{0})
+\end{align*}
+
+The approximations is done for small variations around the beam energy, which is $\SI{570}{\mega \electronvolt}$.
+Now it is possible to compute the false asymmetry, the searched expression is:
+
+\begin{equation}
+A_{E} = \dfrac{\partial \sigma}{\partial E \partial \Omega} \cdot  (2 \dfrac{\partial \sigma}{\partial \Omega})^{-1}
+\end{equation}
+
+We compute the above formula withe the constant A,B,C,D defined in \ref{eq:Mott}.
+
+\begin{equation}
+A_{E} = - \frac{1}{2} \dfrac{2 + CE_{0}}{E_{0} + E_{0}^{2}C} 
+\end{equation}
+
+The result, applying the above formula is $A_{e} = -1.75 \, \frac{ppm}{\SI{}{\kilo \electronvolt}}$. We can compare this result with the values obtained from the fit. The results are in agreement with the sign, if fact we expect a negative effect related to the beam variation. However, the false asymmetries from the fit are 1 order higher than the values computed here.
 
 \commento{We can investigate also the asymmetries related to the beam energy. For this one we can exploit the theoretical expression for the Mott cross-section, taking the derivative ...
-We can investigate the Current asymmetries, because we have the auto-calibration procedure, so from the scale factor we can check if the current asymmetri is compatible with $1$ as assumed or not.}
+We can investigate the Current asymmetries, because we have the auto-calibration procedure, so from the scale factor we can check if the current asymmetry is compatible with $1$ as assumed or not.}
 
 
 
