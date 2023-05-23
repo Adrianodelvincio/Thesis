@@ -97,15 +97,16 @@ The strong correlation between the neutron skin thickness and $L$ is clear in th
 
 \begin{figure}[hbtp]
  \centering
- \includegraphics[width=0.50\textwidth]{Introduzione/color-online-Neutron-skin-of-208-Pb-against-slope-of-the-symmetry-energy-The-linear.pdf}
- \caption{Neutron skin thickness of $^{208}Pb$ as a function of the slope of the symmetry energy $L$.}
+ \includegraphics[width=0.75\textwidth]{Introduzione/LvsR.pdf}
+ \caption{Neutron skin thickness of $^{208}Pb$ as a function of the slope of the symmetry energy $L$. The error bars represent $\pm \SI{0.06}{\femto \meter}$ and $\pm \SI{0.03}{\femto \meter}$ for the future experiments of PREX-II and MREX. Notice the different scale for x and y axis: the uncertainty for the neutron skin measurement is amplified for the correspondent values of $L$ }
+ \label{fig:LvsR}
  \end{figure}
  
 A strong correlation is present between the values of the symmetry energy and the neutron skin thickness, and measuring the second give the access to the first. 
 
 \section{Parity-violating scattering experiment}
 
-The parity violating electron scattering seems to be the most promising method in order to determine the neutron-skin thickness for $^{208}Pb$. The advantage of this method is that it is free from the many uncertainties associated to strong interaction. The main disadvantage is the necessity to accumulate large statistics, because the reaction are mediated by the weak interaction, that produce a smaller amplitude compared to electromagnetic and strong interaction. 
+The parity violating electron scattering seems to be the most promising method in order to determine the neutron-skin thickness for $^{208}Pb$. The choice of lead is due to the significant neutron excess and stability of lead nuclei ($^{208}Pb$ is a double magic nucleus). The advantage of this method is that it is free from the many uncertainties associated to strong interaction. The main disadvantage is the necessity to accumulate large statistics, because the reaction are mediated by the weak interaction, that produce a smaller amplitude compared to electromagnetic and strong interaction. 
 The parity violating scattering is high sensitive to the neutron density because, as mention above, the weak charge of the neutron is higher compared to the weak charge of the proton.
 In this reaction, longitudinally polarized electrons are elastically scattered off a lead target. The important quantity to determine is the parity violating asymmetry $A_{PV}$, the difference in cross section between the scattering of right and left handed electrons. 
 
@@ -122,15 +123,29 @@ A_{PV} \simeq \dfrac{G_{F} Q^{2}}{4 \pi \alpha} \cdot \dfrac{Q_{W} F_{W}(Q^{2})}
 $G_{F}$ is the Fermi constant, $Q^{2}$ is the transferred momentum, Z and $Q_{W}$ is the electric and weak charge of the nucleus. The Charged form factor of the lead nucleus is known with high accuracy (precision of 0.02 \%), so in this limit the only quantity that is unknown is $F_{W}(Q^{2})$. In the long wavelength approximation, the weak form factor at single value of momentum transfer is given by:
 
 \begin{equation}
-F_{W}(Q^{2}) = \frac{1}{Q_{W}}
+F_{W}(Q^{2}) = \frac{1}{Q_{W}} \int \rho_{W}(r) \dfrac{sin(Qr)}{Qr} d^{3}r = (1 - \frac{Q^{2}}{6} R^{2}_{W} + \frac{Q^{4}}{120}R^{4}_{W} + ...)  
 \end{equation}
+
+The form factor is normalized in such a way that $F_{W}(Q^{2} = 0) = 1$. The weak charge radius correspond to $R^{2}_{W} = -6 \frac{\partial F_{W}}{\partial Q^{2}}\Bigr|_{\substack{Q^{2} = 0}}$. Now it is clear that parity-violating experiment are a promising method to extract information about neutron density. The effort is represented by the small values of $A_{pv}$ asymmetry. Typical values are on the order of $1 \, ppm$ or less, for lead target. This requires high statistic to reduce the uncertainty of the measurement. 
+In 2012 PREX collaboration measured for the first time through parity-violating experiment the neutron skin, the values is:
+
+\begin{align*}
+\delta r_{np} = 0.33^{+0.16}_{-0.18} \SI{}{\femto \meter}
+\end{align*}
+
+The error associated to this first measurement is not enough small to provide significant constraints on the values of $L$. Because of this, the MREX experiment has the objective of measuring the neutron radius of lead with a precision of $0.5 \%$  ($\pm \SI{0.03}{\femto \meter}$). This high precision is needed to decrease the uncertainty associated to L. For example, the left plot in \ref{fig:LvsR}, shows the correlation between the neutron skin thickness of $^{208}Pb$ and the slope of the symmetry energy as predicted by FSUGold model (\cite{Fattoyev_2011}). With a precision of $\pm \SI{0.03}{\femto \meter}$, $L$ is determined with $\pm \SI{12.1}{\mega \electronvolt}$.
 
 \section{Transverse asymmetry}
 
 \commento{Here we have to introduce the aim of this thesis: the transverse asymmetry is a source of background for the parity-violating experiments. Furthermore the theory is not working well for some nuclei ($^{208}Pb$), so mention PREX paper about the last measurement on carbon and lead, the problem that they measure $0$ transverse asymmetry.}
 
+The parity-violating scattering has numerous advantages for extracting the neutron-skin thickness of nuclei. However, the asymmetry to measure is rather small. The important effort is to reduce at most possible systematic effects that can alter the result of the measurement. One of the principal source of background for the measurement of $A_{PV}$ is a different process that concerns transverse polarized electrons. The different polarization of the electrons produce an asymmetry that is called beam normal single spin asymmetry, or transverse asymmetry $A_{n}$. Because such asymmetries are typically one order higher that the parity-violating ones, a small normal component of the beam polarization during parity-violating experiment can produce a systematic effect that alter the final result. The subject of this thesis is the measurement of transverse asymmetry $A_{n}$ for carbon target, performed at MAMI, the Mainz microton accelerator. The choice of carbon target is due to the fact that the transverse asymmetry for carbon is well known and already measured at MAMI; the expected asymmetry is roughly $20 \, ppm$ , thus it is particularly suited for a commissioning of the new experimental setup. In this section don't introduce physics of this process, that will be extensively treated in the next chapter. However, we mention that such measurement are challenging because they require calculation of box diagrams with intermediate excited states \cite{Gorchtein_2008}.
+After the determination on $A_{n}$ for $^{12}C$, the next step of the MREX experiment will be the determination of the \trasv for $^{208}Pb$. As already mentioned, this is mandatory to constrain the systematic effects of PV experiment. However, it is also interesting because for last measurement performed by PREX \cite{PhysRevLett.109.192501} the \transv for $^{208}Pb$ target is compatible with zero, and this is in striking disagreement with the theoretical predictions. 
+
+
+
 \subsection{Motivation}
-\commento{Here present all the motivation for this thesis, so the fact that we want to measure the rates on lead for the future experiment, test the new electronics, measure another time the trasverse asymmetry on $^{12}C$}
+\commento{Here present all the motivation for this thesis, so the fact that we want to measure the rates on lead for the future experiment, test the new electronics, measure another time the transverse asymmetry on $^{12}C$}
 
 \subsection{Conventions used}
 \commento{It could be useful, here, to have a subsection to explain the terminology for this thesis, to avoid misunderstanding.}

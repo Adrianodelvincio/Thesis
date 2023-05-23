@@ -970,7 +970,7 @@ The first step so is to compute the correlation matrix for the beam parameters, 
 \centering
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline 
-•            & X & Y & $\theta_{x}$ & $\theta_{y}$ & E \\ 
+             & X & Y & $\theta_{x}$ & $\theta_{y}$ & E \\ 
 \hline 
 X            & 1 & -0.019 & -0.995 & 0.056 & 0.036 \\ 
 \hline 
@@ -1008,7 +1008,6 @@ Before proceeding with the fit, it's interesting to study how $A_{n}$ evolves wi
 \includegraphics[width = 0.5 \textwidth]{Analysis/Dataselection/AveragedAsymmetry.pdf}}
 \subfloat[][\emph{Averaged asymmetry for detector A and B. The dotted line correspond to $1\sigma$ error.}]
 {\includegraphics[width = 0.5 \textwidth]{Analysis/Dataselection/AveragedAsymmetry2.pdf}}
-
 \caption{Plot of the Asymmetry versus time. The plot show the average over all the events collected from $t = 0$ to $t = t_{1}$. Each line represents $A_{n}$ measured for  PMT (in \textcolor{blue}{blue} detector B and in \textcolor{red}{red} detector A). The values are corrected for the beam polarization, multiplying by $\frac{1}{p}$. No further correction is applied.}
 \label{fig:AsymOverTime}
 \end{figure}
@@ -1018,12 +1017,13 @@ For a better visualization of the data, especially to observe the dependence of 
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width = 0.75\textwidth]{Analysis/Fit/A_vs_X.pdf}
-\caption{Measure of PMT A0 versus X beam position. The statistical uncertainties of the asymmetry doesn't let to recognize the presence of a linear dependence in the data.}
+\includegraphics[width = 0.5\textwidth]{Analysis/Fit/A_vs_X.pdf}
+\caption{PMT A0 asymmetries versus X beam position. Becasue of the statistical uncertainties, it is not possible to visualize a linear dependence in the data.}
 \end{figure}
 
 We see large vertical band of points, and it's quite hard to identify a trend in the values. A different approach is to divide the $X$ axis in small interval, like the procedure of binning, and average all the asymmetries that fall in the same interval. This reduce the dimensionality of the data, and let us to see if our assumption of the linearity is true. Each point represents the overall asymmetry for a particular interval of $X$ ,$Y$ and $E$. 
 
+\newpage
 \begin{figure}[hbtp]
 \centering
 \subfloat[][\emph{ $A$ versus $\delta x$, the linear model is the red line, the second used to fit the data is a polynomial, represented in blue.}]{ \includegraphics[width = 0.5\textwidth]{Analysis/Fit/Xfit.pdf}}
@@ -1058,7 +1058,7 @@ This choice is due to the fact that we observe that $A$ increases near the tails
 
 The values of the fit are reported in the plots. The $\chi^{2}$ of the fit are reported here
 
-\begin{table}
+\begin{table}[h]
 \centering
 \begin{tabular}{|c|c|c|c|}
 \hline 
@@ -1066,7 +1066,7 @@ detector A & $X$ & $Y$ & $E$ \\
 \hline 
 linear fit $\chi^{2}_{17}$ & 99 & 59 & 94 \\ 
 \hline 
-model $\chi^{2}_{16}$ & 76 & 55 & 78 \\ 
+alternative model $\chi^{2}_{16}$ & 76 & 55 & 78 \\ 
 \hline 
 \end{tabular} 
 \end{table}
@@ -1086,7 +1086,6 @@ A_{tot} = A_{phy} \cdot P + \delta_{I} + A_{x} \delta x + A_{y} \delta y + A_{E}
 
 the result of the fit are reported in \ref{tb:resultA}, together with the final result of the asymmetry for detector A and B.
 
-\newpage
 \section{False asymmetries}
 \commento{Seems that is possible to obtain rough estimates of the beam related asymmetries with the results from the fit. For Energy and position it's achievable, while for the angle it's quite hard (in principle sounds possible to perform an analytic calculation of the asymmetry related to the incident beam angle, however Anselm told me that quite often those results are in disagrement with the observed even in the sign!).}
 
