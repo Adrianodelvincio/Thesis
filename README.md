@@ -17,7 +17,9 @@
 
 Introduzione 
 - [x] scrivere abstract/introduzione di carattere generale
-- [] Iniziare ad impostare l'introduzione, dalle stelle di neutroni all'asimmetria trasversa
+- [x] Iniziare ad impostare l'introduzione, dalle stelle di neutroni all'asimmetria trasversa
+- [] ampliare parte sulla descrizione dell'asimmetria transversa
+
 
 Capitolo sulla teoria:
 
@@ -29,11 +31,11 @@ Capitolo sulla teoria:
 Capitolo Setup sperimentale:
 - [x] Spiegare a grandi linee come funzionano i Monitor del fascio, Resistenza di Shunt e eccitazioni nelle cavità risonanti
 - [x] chiedere ad Anselm documentazione sulla MasterBoard
-- [] descrizione acceleratore MAMI.
+- [x] descrizione acceleratore MAMI.
+- [x] spiegare il funzionamento polarimetro Moller e Compton, spiegare perchè sarà utilizzato il moller in futuro.
 - [] rivedere spiegazione della polarizzazione degli elettroni.
 - [] Come si stima l'errore sistematico?
 - [] discutere la stabilizzazione del fascio.
-- [] spiegare il funzionamento polarimetro Moller e Compton, spiegare perchè sarà utilizzato il moller in futuro.
 - [] pockels cell.
 
 Capitolo di Analisi:
@@ -50,12 +52,10 @@ Capitolo di Analisi:
 - [x] correggere i cuts e completare il capitolo di analisi.
 - [x] inserire istogrammi asimmetrie per ogni pmt.
 - [x] discutere le correlazioni tra i parametri del fascio, in particolare mostrare che si può omettere nel modello xp e yp.
-
-- [] menzionare falsa asimmetria corrente
-- [] finire di analizzare i dati senza polarità, mostrare asimmetria 0 e fare il fit
+- [x] menzionare falsa asimmetria corrente
+- [x] finire di analizzare i dati senza polarità, mostrare asimmetria 0 e fare il fit
 - [] completare paragrafo sui test in laboratorio dei due detector
 - [] Capire perchè le asimmetrie calcolata con lo slowvariation e dal fit sono in disaccordo per svariati ordini di grandezza
-- [] impostare il ricampionamento.
 - [] provare a vedere se c'è un test per controllare se ci sono doppi conteggi, oppure si conta di meno.
 - [] vedere se è possibile estrarre almeno una stima rozza dell'incertezza associata ai monitor X25/X21 e Y25/Y21.
 
@@ -64,9 +64,8 @@ CORREZIONI FORTI
 - [x] cambiare la struttura della tesi, spezzare in due il capitolo analysis, la prima parte detector test and calibration, la seconda asymmetry on carbon.
 - [x] introdurre prima di ogni capitolo un cappello introduttivo.
 - [x] tutti i commenti nella tesi vanno definiti con un comando.
-
-- [] i plot dei conteggi in funzione della soglia in mV vanno ricontrollati.
-- [] chiedera a igors come ha ottenuto i dati di threshold vs attenuation.
+- [x] i plot dei conteggi in funzione della soglia in mV vanno ricontrollati.
+- [x] chiedera a igors come ha ottenuto i dati di threshold vs attenuation.
 
 
 
