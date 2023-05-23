@@ -242,7 +242,7 @@ The determination of both the particle speed $\vec{v}$ and momenta (drift chambe
 \section{Detectors and beam monitors}
 
 \subsection{Detectors A and B}
-\commento{Describe the two detectors we placed inside the spectrometers, the $Q^{2}$ for our mesurement. The way the counts are collected, so the expected signal for the Čerenkov detector. Explain also how we will use the old detectors of the two spektrometers to align the elastic scattering plane to our detectors.
+\commento{Describe the two detectors we placed inside the spectrometers, the $Q^{2}$ for our mesurement. The way the counts are collected, so the expected signal for the Čerenkov detector. Explain also how we will use the old detectors of the two spectrometers to align the elastic scattering plane to our detectors.
 \begin{itemize}
 \item explain the two detector, the type of cristal used. 
 \item how the PMT are coupled to the cristal, the number of dynodes of the PMT, the power supply.
@@ -255,10 +255,10 @@ The determination of both the particle speed $\vec{v}$ and momenta (drift chambe
 
 
 In this section we will describe the electronics and the detectors used to measure the \transv .
-For this experiment we are going to measure the \transv at to different agles. The electrons detection is 
-made via two thin blocks of fused-silica that are coupled to PMTs. When a scattered electron hit the fused-silica (refractive index $n = 1.45$) Cherenkov light is emitted. The emitted cherenkov light can interact with the electrons of the material, which, in turn, can hits the PMT dyode. This sequence of event triggers the PMT and produce an output signal.
+For this experiment we are going to measure the \transv at to different angles. The electrons detection is 
+made via two thin blocks of fused-silica that are coupled to PMTs. When a scattered electron hit the fused-silica (refractive index $n = 1.45$) Cherenkov light is emitted. The emitted Cherenkov light can interact with the electrons of the material, which, in turn, can hits the PMT dynode. This sequence of event triggers the PMT and produce an output signal.
 
-In the experiment, we will measure the \transv at two angles of scattering, so two detectors are installed and read-out indipendently. The two detector are made by 3 PMTs and 8 PMTs coupled with two blocks of fused-silica, a scheme of the detector is shown below:
+In the experiment, we will measure the \transv at two angles of scattering, so two detectors are installed and read-out independently. The two detector are made by 3 PMTs and 8 PMTs coupled with two blocks of fused-silica, a scheme of the detector is shown below:
 
 \begin{figure}[hbtp]
 \centering
@@ -269,8 +269,8 @@ In the experiment, we will measure the \transv at two angles of scattering, so t
 \end{figure}
 
 
-These  two detectors are placed inside the spektrometers presented in \commento{aggiungere referenza}, between the top of the drift-chamber, which occupies the first third in height of the spectrometer, and just below a panel of scintillator. During the beam time the drift chamber of the spektrometers is turn off, and also the PMTs coupled to the spektrometer scintillators are not powered.\\
-As we mention above, the scattered electron are deflected in the vertical direction by the magnetic field of the spektrometer. 
+These  two detectors are placed inside the spectrometers presented in \commento{aggiungere referenza}, between the top of the drift-chamber, which occupies the first third in height of the spectrometer, and just below a panel of scintillator. During the beam time the drift chamber of the spectrometers is turn off, and also the PMTs coupled to the spectrometer scintillators are not powered.\\
+As we mention above, the scattered electron are deflected in the vertical direction by the magnetic field of the spectrometer. 
 At this moment, it is important to mention the differencies between the new and the old electronic setup. In the old electronic setup the output signal of the PMTs was integrated during the time interval of each sub-event, and therefore the single scattered electron could not be counted. The advantage of this method is that the electronics is more simple, in fact there in no need to develop a fast counter, unlike the new setup, where the new electronic take into account of every pulses. However, this old method is effected by a baseline noise and it's not good for the future experiments with lead target, where the expected rates are lower than the rates on carbon.
 With the new electronics, all the single electron are counted, and this will allow the future measurements with lead, improving the accuracy. 
 
@@ -362,7 +362,15 @@ The power absorbed by the antenna is directly dependent on the beam current. Bec
 U = \sqrt{P_{HF}} \cos(\phi - \phi_{LO})
 \end{equation}
 
-the phase $\phi$ is the phase of the resonant mode or the phase of the beam bunch, while the phase $\phi_{LO}$ is the phase respect to the master-oscillation signal, and can be adjusted by a phase shifter of the circuit. The output voltage signal can be read out with the oscilloscope or digitalized and saved with other devices. To measure the beam intensity is important to minimize $\phi - \phi_{LO}$, to maximixe the signal amplitude, and then the output signal is ready to be analyzed. \\
+the phase $\phi$ is the phase of the resonant mode or the phase of the beam bunch, while the phase $\phi_{LO}$ is the phase respect to the master-oscillation signal, and can be adjusted by a phase shifter of the circuit. The output voltage signal can be read out with the oscilloscope or digitalized and saved with other devices. To measure the beam intensity is important to minimize $\phi - \phi_{LO}$, to maximize the signal amplitude, and then the output signal is ready to be analyzed.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.5\textwidth]{ExperimentalSetup/PIMOphase.pdf}
+\caption{Plot of the phase $\phi$ versus the output signal. The phase optimization was done selecting the working point in correspondence of the peak.}
+\end{figure}
+
+
 The measurement of the $x,y$ position follows in principle the same procedure. In this case the $TM_{110}$ is acquired. The reason is clear, because it's possible to calculate that for this mode the $r_{shunt}$ is proportional to the beam position on the $x,y$ plane. So The power absorbed by the antenna can be written:
 
 \begin{equation}
