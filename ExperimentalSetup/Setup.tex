@@ -1,4 +1,4 @@
-\chapter{Experimental setup.} 
+\chapter{Experimental setup} 
 \commento{
 \begin{itemize}
 \item description of MAMI, how the beam is produced, how the electrons are polarized.
@@ -8,9 +8,9 @@
 \item Detectors A and B.
 \end{itemize}}
 
-\paragraph{introduction} This chapter presents briefly the structure and the characteristics of the Mainz microtron accelerator (MAMI), where the \transv asymmetry is measured, and the experimental setup used. Particular attention is shown in the the description of the beam monitors, that are quite specific for the standard of particle accelerators. Following an overview of MAMI and the acceleration stages, the experimental hall and the specific electronics devices to acquire and process the data are presented. 
+\paragraph{} This chapter presents briefly the structure and the characteristics of the Mainz microtron accelerator (MAMI), where the \transv asymmetry is measured, and the experimental setup used. Particular attention is shown in the the description of the beam monitors, that are quite specific for the standard of particle accelerators. Following an overview of MAMI and the acceleration stages, the experimental hall and the specific electronics devices to acquire and process the data are presented. 
 
-\section{Overview of the experiment.} \label{FirstDescription}
+\section{Overview of the Experiment} \label{FirstDescription}
 
 To measure the Beam-Normal single spin asymmetry, a polarized beam of $ \SI{570}{\mega \electronvolt}$ will be sent against a $\SI{10}{\milli \meter}$ width of $^{12}C$ target. The detectors consist of two fused-silica coupled to 3 (detector B) and 8 (detector A) pmts, which collect the Cherenkov light emitted when an electron pass through the fused-silica. 
 The detector are placed inside the two spectrometer of the A1 hall, which are not used in this experiment due to the high luminosity of the beam ($ \SI{20}{\micro \ampere}$) that is above their limits of operation. 
@@ -103,13 +103,13 @@ For the other recirculation, we must have that the flight-time at energies $E_{i
 
 The minimum gain per cycle is then determined only by the strength of the magnetic field and wavelength $\lambda_{HF}$. These two equations together controls the dinamic of the race-track microtrons,
 
-\subsection{Polarized Beam.}
+\subsection{Polarized Beam}
 \commento{Here a subsection to explain how the polarized electrons are produced. Important to mention the systematic error for the polarization measurement (in our beam time we couldn't measure with Moller polarimeter, so this discussion is important for future experiment, however it's important to say something about it). Remember to explain how the spin are rotated to the transverse plane, and the $\frac{\lambda}{2}$} \medskip
 
-For the beam-normal single spin asymmetry a vertical polarized beam is necessary. At the MAMI electron accelerator is possible to produce a vertical polarized beam with energy in the range $\SI{180}{\mega \electronvolt} - \SI{855}{\mega \electronvolt}$ \cite{Schlimme_2017}. In this section the procedure to orient the beam vertically is presented, following an explanation of how the degree of polarization of the beam is measured. \medskip
+For the beam-normal single spin asymmetry a vertical polarized beam is necessary. At the MAMI electron accelerator is possible to produce a vertical polarized beam with energy in the range $\SI{180}{\mega \electronvolt} - \SI{855}{\mega \electronvolt}$ \cite{Schlimme_2017}. In this section the procedure to orient the beam vertically is presented, following an explanation of how the degree of polarization is measured. \medskip
 
-The electron source used at MAMI is made by a strained GaAs/GaAsP super-lattice photo-cathode illuminated by circular polarized light. A Pockels cell changes the helicity of the photons impinging on the electrons. The extracted electron has the same helicity of the incoming photon, let's suppose as an example:
-
+The electron source used at MAMI is made by a strained GaAs/GaAsP super-lattice photo-cathode illuminated by circular polarized light. To alternate the sign of the light polarization, a fast Pockels cell ( \cite{}) is installed in the optical system of the electron source. The Pockels cell is a wave plate controlled by the electric field, that changes the helicity of the photons impinging on the electrons. A Pockels cell exploit the Pockels effect, that affect crystal with particular characteristics (lack of inversion symmetry). For this type of materials the refractive index is linear dependent on the applied electric field. By controlling the refractive index with the electric field, the polarization state of the incident light beam is altered.
+Once an photons imping on and electron, the extracted electron carries the same helicity of the incoming photon:
 \begin{center}
 \begin{equation}
 \feynmandiagram [scale = 0.8, transform shape][baseline = (g)]{
@@ -120,24 +120,27 @@ The electron source used at MAMI is made by a strained GaAs/GaAsP super-lattice 
 \end{equation}
 \end{center}
 
-With the fast change of the Pockels cell it is possible to alternately revert the sign of the polarization. By the insertion of a $\lambda/2$ plate between the laser system and the photo-cathode the polarization orientation of the electron beam can be reversed for each sub-event, useful later for the estimation of systematic errors. The beam polarization achieved with this source is roughly $80 \% $, for the beam time it was : $0.79 \% $
+With the fast change of the Pockels cell it is possible to alternately revert the sign of the polarization. By the insertion of a $\lambda/2$ plate between the laser system and the photo-cathode the global polarization orientation of the electron beam can be reversed. This is particularly useful because this directly change the sign of the physical asymmetry measured by the detectors, and allows to identify systematic errors. This is useful done for longer beam time, where two sets of data are taken, reversing the orientation of the $\lambda/2$  wave plate. By comparing the results for the two sets of data, the influence of the optical system on the asymmetry measurement is estimated. During the beam time of interest for this thesis, the $\lambda/2$ wave plate orientation was fixed. During previous beam time (\cite{Esser:2018vdp}). The beam polarization achieved with this source is roughly $P = 80 \% $, so the measured asymmetry are:
 
-To switch from longitudinal polarization to transverse polarization, two devices are used: the \textbf{Wien filter} and a \textbf{double solenoid} located in the injection beam line. 
+\begin{align*}
+A_{measured} = P \cdot A_{n}
+\end{align*}
+
+The polarizations of the electrons just extracted from the source is still longitudinal. The Magnetic field is needed in ordet to rotate $\vec{P}$ from longitudinal polarization to transverse. For this purpose two devices are used: the \textbf{Wien filter} and a \textbf{double solenoid} located in the injection beam line, close to the the optical source: 
 
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width = \textwidth]{ExperimentalSetup/injection.png}
-\caption{Setup for the trasverse polarization.}
+\caption{Beam line projection. This figure is taken from the paper \cite{Schlimme_2017}}
 \end{figure}
 
 Following the picture, the spin of the electrons from the source are rotated first in the XY plane with a $90^{\circ}$ rotation, then the subsequent double solenoid align the spin to the vertical direction with another $90^{\circ}$ rotation. 
-Once the beam pass the double solenoid, the electrons go through linac, the microtron and in the end to the experimental hall, where the target of the experiments is installed. During the acceleration stage, the spins follow the precession motion due to the various magnetic fields of the accelerator; the equation that determine how the spin precession for relativistic electrons is the BMT equation.
-However, the magnetic field of the various bending magnets, for example the magnets of the microtron, is always parallel to the vertical direction, and to the electrons polarization, too; so only the residual horizontal component precedes during the motion. For conventional experiment that involve a longitudinal polarization, after the first spin rotation, there is a further rotation due to the motion in the accelerator. Because of this, the rotation made by the Wien is set in such a way that after the second rotation due to the motion in the accelerator, the polarization has the correct alignment in the experimental hall. The rotation angles of the polarization vector through the accelerator are known from simulations and are also directly measured for relevant energies, for a beam of $\SI{570}{\mega \electronvolt}$ the rotation angle is $\ang{55}$ with an accuracy of $\pm \ang{2}$. In our case, this further rotation has only a small effect to the residual horizontal component, whose effect is negligible compared to the $A_{n}$ that we want to measure.
-
+Once the beam pass the double solenoid, the electrons go through linac, the microtron and in the end to the experimental hall, where the target of the experiments is installed. During the acceleration stage, the spin follows the precession motion due to the various magnetic fields of the accelerator, the precession, for a relativistic particle, is determined by the BMT equation.
+However it is not necessary, due to our particular experimental setup, the BMT equation is quite simple: the magnetic field of the various bending magnets that constitute the microtron-cascade are always parallel to the vertical direction, because of this the cross product $\vec{B} \times \vec{P} = 0$, and the polarization remain constant. Only the residual horizontal component precedes during the motion. For conventional experiment that involve longitudinal polarization, after the first spin rotation due to Wien filter and the bending magnets close to the electrons source, there is a further rotation to be considered, due to the motion of the particle during the acceleration and recirculation in the microtron. Because of this, the rotation made by the Wien is set in such a way that after the second rotation due to the motion in the accelerator, the polarization has the correct alignment in the experimental hall. The rotation angles of the polarization vector through the accelerator are known from simulations and are also directly measured for relevant energies, for a beam of $\SI{570}{\mega \electronvolt}$ the rotation angle is $\ang{55}$ with an accuracy of $\pm \ang{2}$. In our case, this further rotation has only a small effect to the residual horizontal component, whose effect is negligible because it is accurately minimized by MAMI operators at the beginning of the beam time. Besides this, the effect of a small horizontal polarization on the asymmetry is small, knowing that typically the transverse asymmetries are one order higher that the $PV$.
 At the beginning MAMI was not developed for experiment with transverse polarization. So it's not possible to measure directly the transverse component. However combining the measurement in the $XY$ plane, with the existing setup, it is possible to get the polarization value also in that direction. For this purpose a Moller, Comport and Mott polarimeters are used.
 
 
-\subsection{Polarization measurement.}
+\subsection{Polarization Measurement}
 {\bfseries Briefly explain how the Mott polarimeter works, for measuring the polarization of the beam.}
 
 To Measure the polarization of an electron beam different polarimeters can be used. Here we explain briefly the physics underlying the \textit{Mott} polarimeter, used in the experiment.
@@ -179,8 +182,7 @@ The total beam polarization is measured by a Moller polarimeter, in the experime
 \subsection{Moller and Compton polarimeters}
 
 
-\newpage
-\section{Experimental hall setup.}
+\section{Experimental Hall Setup}
 
 \commento{Describing the A1 room, how the spectrometers are operating (+ figures), a picture of the target and the important parameters, like thickness. Also mention the convention to use target with$10 \%$ of the radiation lenght, to avoid double scattering.  Mention that we need the Wobbler magnet to change the hitting position of the beam to prevent the target from melting. Here it's important to mention that the electron are deflected on the vertiacal direction, because of the high beam intensity
 Then add a picture of the beam-line.}
@@ -195,7 +197,14 @@ MAMI has 3 different hall, named with the capital letter A followed with a numbe
 \label{fig:Accelerator}
 \end{figure}
 
-In A1, experiment with fixed target are conducted. The electrons can be delivered with an energy up to $\SI{1.6}{\giga \electronvolt}$, after passing the last acceleration stage (HDSM, in the figure). Because the electron energy of our experiment is $\SI{570}{\mega \electronvolt}$, the beam will pass through the first acceleration steps, the linac (linear accelerator) and Race-track system and when the desired energy is achieved the electrons will be sent to the A1 experimental hall. \medskip
+In A1, experiment with fixed target are conducted. The electrons can be delivered with an energy up to $\SI{1.6}{\giga \electronvolt}$, after passing the last acceleration stage (HDSM, in the figure). Because the electron energy of our experiment is $\SI{570}{\mega \electronvolt}$, the beam will pass through the first acceleration steps, the linac (linear accelerator) and Race-track system and when the desired energy is achieved the electrons will be sent to the A1 experimental hall. 
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = \textwidth]{figures/twoSpektrometer.jpg}
+\caption{Picture of the A1 spectrometers hall, the spectrometers red and blue are used during this experiment. At the center of the picture is possible to observe the scattering chamber.}
+\end{figure}
+
 
 Inside A1 hall three large magnetic spectrometers are placed on a circular rail-track the target chamber. These spectrometers where designed and built in $1993$ to perform high precision measurement of electron scattering in coincidence with other hadron detection, with an high resolution in the determination of the particle momenta $\frac{\delta p}{p} < 10^{-4}$. The spectrometers develop vertically with an height of $\SI{15}{\meter}$, for this reason the scattered electrons and the other particles are deflected with the use of the magnetic field respect to the scattering plane. The following figure shows the path the particle scattered from the target:
 
@@ -220,28 +229,23 @@ The spectrometers used for the \transv are the ones shown in the picture. The ar
 \item reduce background and noise, in fact the high beam intensity that is possible to reach at MAMI is a source of noise and background event wich can be cut off detecting the particle far from the interaction point. \commento{ultimo punto da verificare!!!}
 \end{itemize}      
 
-Once a particle is scattered in the acceptance region of the detectors, the magnetic field deflect the particle that passes through a drift chamber, which occupies the first third in height of the spectrometers. When the particle is at the height of the platform in the figure, it impinge on a layer of plastic scintillator, and after that a Cherenkov detector which measures the particle speed $\vec{v}$. We have a picture of the spectrometers internal, taken during the installation of the two detectors (that will be presented in the next section) \ref{fig:internal}.
+Once a particle is scattered in the acceptance region of the detectors, the magnetic field deflect the particle that passes through a drift chamber, which occupies the first third in height of the spectrometers. When the particle is at the height of the platform in the figure, 
+it impinge on a layer of plastic scintillator, and after that a Cherenkov detector which measures the particle speed $\vec{v}$.We have a picture of the spectrometers internal, taken during the installation of the two detectors (that will be presented in the next section) \ref{fig:internal}.
 
-\begin{wrapfloat}{figure}{I}{0pt}
-\includegraphics[width=0.4\textwidth]{ExperimentalSetup/Detectors/position.pdf}
-\caption{Internal of the A spectrometer. This image was taken during the installation of the detector A inside the red spectrometer, that is accessible from the platform visible in the other picture : \ref{fig:TwoDetectors}}
-\label{fig:internal}
-\end{wrapfloat}
-
-\begin{comment}
-\begin{SCfigure}[30][ht]
+\begin{wrapfigure}{R}{0cm}
 \centering
-\caption{Internal of the A spectrometer. This image was taken during the installation of the detector A inside the red spectrometer, that is accessible from the platform visible in the other picture : \ref{fig:TwoDetectors}}
-\includegraphics[width = 0.40\textwidth]{ExperimentalSetup/Detectors/position.pdf}
+\includegraphics[width=0.4\textwidth]{ExperimentalSetup/Detectors/position.pdf}
+\caption{Internal of the spectrometer. This image was taken during the installation of the detector A inside the red spectrometer, that is accessible from the platforms visible in the picture : \ref{fig:TwoDetectors}}
+\vspace{-200pt}
 \label{fig:internal}
-\end{SCfigure}
-\end{comment}
+\end{wrapfigure}
 
-The determination of both the particle speed $\vec{v}$ and momenta (drift chamber) allows to identify the particles. Despite the possibilities offered by the already existing setup, for the beam time of interest none of these components was used directly in the estimation of $A_{n}$. The reason is due to the high intensity of the beam that is used in the experiment, which is far from the optimal operating conditions of the componets, that are suited for rates lower than the ones expected for beam normal single spin measurements. The spectrometers then will de used indirectly for the allignment of scattered electron to
+The determination of both the particle speed $\vec{v}$ and momenta (drift chamber) allows to identify the particles. Despite the possibilities offered by the already existing setup, for the beam time of interest none of these components was used directly in the estimation of $A_{n}$. The reason is due to the high intensity of the beam that is used in the experiment, which is far from the optimal operating conditions of the components, that are suited for rates lower than the ones expected for beam normal single spin measurements. The spectrometers are used indirectly for the alignment of scattered electrons to the focal plane of our detectors.
 
-\section{Detectors and beam monitors}
+\newpage
+\section{Detectors and Beam Monitors}
 
-\subsection{Detectors A and B}
+\subsection{Detector Description}
 \commento{Describe the two detectors we placed inside the spectrometers, the $Q^{2}$ for our mesurement. The way the counts are collected, so the expected signal for the Čerenkov detector. Explain also how we will use the old detectors of the two spectrometers to align the elastic scattering plane to our detectors.
 \begin{itemize}
 \item explain the two detector, the type of cristal used. 
@@ -295,7 +299,7 @@ Here we report the characteristic of the two detector that are relevant for the 
 \end{itemize}
 
 
-\subsection{Beam monitors.}
+\subsection{Beam Monitors}
 \commento{Explain how the monitors for the beam parameters work. (this section could be long, however the way these parameters are measured is particular, so it's important to explain everything properly).}
 
 In MAMI, several monitors are placed along the beam line in order to to check beam quality and measure parameters such as current intensity, energy and relative position of the beam. This section summarize an explanation of the operating principles of the monitors installed at MAMI. The explanation will be partial, some details will be given in the appendix, however for a complete discussion please refer to the following paper ( \cite{M_Dehn}).
@@ -391,7 +395,7 @@ x \simeq \frac{\sqrt(P_{HF})}{i}
 
 Where the exact conversion coefficients are not known, and are determined during the calibration phase, at the beginning of the beam time.
 
-\subsection{Beam stabilization.}
+\subsection{Beam stabilization}
 
 \section{Electronics}
 \commento{Short introduction about the old electronics setup and why a new versions is needed, then describe all the electronics used for our experiment:
@@ -426,7 +430,7 @@ We control the $f_{CLKIN}$ with the period of the clock. The data are acquired c
 V_{in} =  V_{ref}[2 \cdot \dfrac{N_{pulses} - 5 \% N_{CLKN}}{40 \% N_{CLKN}} - 1]
 \end{equation}
 
-\subsection{Nino board} \label{NINO}
+\subsection{Nino Board} \label{NINO}
 
 The NINO board is our data acquisition system for the PMT counts. It is made by $32$ analog input channels and it is powered with $\pm \SI{5}{\volt}$. Each channel has an attenuator, and the signal pass through that before going to the Comparator, which compare the signal to the threshold. The Output signal is a Low-voltage differential signaling (LVDS). Each comparator can handle eight channel and for each of them it is possible to define a global threshold. With the current settings of NINO board, it is possible to change the threshold of each channel acting on another value, the attenuation, which decreases the value of the global threshold. All the value that can be modified are 12 bit numbers, so a setting interval of $(0. ; 4095)$. \medskip
 The NINO board is designed in such a way that collects the Input charge of the signal, operating with a $\SI{30}{\pico \farad}$. The output signal amplitude is proportional to the input charge, and it is sent to the discriminator. Our interest is only to count the number of scattered electron, so we do not intend to measure the input charge, but only a signal is produced or not.
