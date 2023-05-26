@@ -18,37 +18,7 @@ in order to calculate, from the raw data, the final data ready for the analysis.
 The test in the lab consist in checking that the photo-multipliers are working and that the electronics that take care of acquiring the data do not have any errors.
 For the calibrations, since several beam parameters are needed for the analysis, it's important to obtain the correct scaling factor to convert the Raw Data collected by the \textit{VFC}s to data with the right physical units. The important quantities are the $X,Y$ impact point coordinates of the beam,the energy $E$, the beam current $I$ and the scattering angles $\theta_{x}$ and $\theta_{y}$.
 
-\section{Data Tree Implementation}
 
-Referring to the next picture, we now discuss briefly the structure of the data that is implemented in the analysis program, this is important to clarify how data analysis will be developed:
-
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width = 0.75\textwidth]{ExperimentalSetup/EventStructure.pdf}
-\caption{}
-\end{figure}
-
-The base class that is implemented in the analysis program is the \textit{Event} class. As we mention above in \ref{FirstDescription}, we do not intend to keep track of the single scattered electron, instead we analyze time series of $\SI{80}{\milli \second}$, in which we simply count all the electrons detected in this time interval. The work-flow of the analysis program is load the binary file collected during the beam time, parsing  one event at a time and processing the raw-data from the beam monitors and the detectors. During the execution of the program data files in \textit{.txt} are generated and filled with the processed data ready. The output data-file can be analyzed with any software package, such as root or python, to get the value of the asymmetry $A_{n}$. 
-The picture shows that every event is divided into $4$ sub-events. For each different sub-event a precise state of the polarization is defined, 
-$+1$ for $S = \uparrow$ and $-1$ for $S = \downarrow$. Every sub-event is $\SI{20}{\milli \second}$ long; during this time interval master-board receives all the data coming from the monitors and the detectors and sent them to the data-acquisition program (DAQ) that produces the binary-files, which are the input of the main analy\begin{figure}[hbtp]
-
-\centering
-\includegraphics[width = 0.75\textwidth]{Analysis/Electronic_scheme.pdf}
-\caption{Scheme of the data flow.}
-\end{figure}
-sis program.
-
- It is important to note that for each sub-event, a single measurement is acquired from the beam monitors, which is intended as a time average of the various signals on the 20 milliseconds of sub-event duration. The sampling rate is then equal to $\SI{50}{\hertz}$.
-
-This structure of the data is quite specific for particle physics experiment. The main reason for this setup is connected with the need to avoid as much as possible that the variations of intensity, position and energy of the beams induce an effect that add to $A_{n}$. Considering only small time series, it is assumed that the beam is quite stable, in order to reduce undesired effects.
-Nevertheless, the contribution of these effects, which are indicated for brevity as false asymmetries, is considered in the final model.
-Several values are saved with the number of scattered electrons, for each event. Here we will present briefly all the various quantities that are saved, and the general structure of the data tree:
-
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width = 0.8\textwidth]{Analysis/EventClass.pdf}
-\caption{Scheme of the Event class, the structure of the data treen is shown here in a simplified version, for the complete reference see appendix.}
-\end{figure}
 
 \section{Nino Board}
 In this section we explain briefly simple test that we performed to control that the two detectors are working properly.Before going into detail it is important to describe again the operation of the NINO board, which interfaces directly with detectors.
@@ -610,12 +580,6 @@ During the autocalibration, the beam current is raised from $\SI{9}{\micro \ampe
 
 With a linear fit we can estimate the scale and the offset to convert from I21 voltage values to physical values of the current. The procedure in repeated for the $8$ autocalibration acquisition we had during the beam time, so we can also take care of possible variations during the time.
 
-\begin{figure}[ht]
-\centering
-\subfloat[][\emph{Current scan for detector B, the error are multiplied by a factor of $20$.}]{
-\includegraphics[width = 0.5\textwidth]{Analysis/Autocalib/fitB.pdf}} \\
-\end{figure}
-
 \begin{figure}[hbtp]
 \centering
 \subfloat[][\emph{Current scan for detector A, the error are \\ multiplied by a factor of $20$.}]{
@@ -623,6 +587,12 @@ With a linear fit we can estimate the scale and the offset to convert from I21 v
 \subfloat[][\emph{Current scan for detector A, the error are \\ multiplied by a factor of $20$.}]{
 \includegraphics[width = 0.49\textwidth]{Analysis/Autocalib/fitA4-7.pdf}}
 \caption{PMT Rates vs current (from I21 monitor), the model used for the fit: $y = mx + q$.}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\subfloat[][\emph{Current scan for detector B, the error are multiplied by a factor of $20$.}]{
+\includegraphics[width = 0.5\textwidth]{Analysis/Autocalib/fitB.pdf}} \\
 \end{figure}
 
 \newpage
@@ -652,8 +622,38 @@ Ignoring the presence of the offset lead two consequences: the recostructed asym
 The result reported in the table can be confronted with the final result that are reported in \ref{result}. 
 
 \newpage
+\section{Data Tree Implementation}
 
+Referring to the next picture, we now discuss briefly the structure of the data that is implemented in the analysis program, this is important to clarify how data analysis will be developed:
 
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.75\textwidth]{ExperimentalSetup/EventStructure.pdf}
+\caption{}
+\end{figure}
+
+The base class that is implemented in the analysis program is the \textit{Event} class. As we mention above in \ref{FirstDescription}, we do not intend to keep track of the single scattered electron, instead we analyze time series of $\SI{80}{\milli \second}$, in which we simply count all the electrons detected in this time interval. The work-flow of the analysis program is load the binary file collected during the beam time, parsing  one event at a time and processing the raw-data from the beam monitors and the detectors. During the execution of the program data files in \textit{.txt} are generated and filled with the processed data ready. The output data-file can be analyzed with any software package, such as root or python, to get the value of the asymmetry $A_{n}$. 
+The picture shows that every event is divided into $4$ sub-events. For each different sub-event a precise state of the polarization is defined, 
+$+1$ for $S = \uparrow$ and $-1$ for $S = \downarrow$. Every sub-event is $\SI{20}{\milli \second}$ long; during this time interval master-board receives all the data coming from the monitors and the detectors and sent them to the data-acquisition program (DAQ) that produces the binary-files, which are the input of the main analy\begin{figure}[hbtp]
+
+\centering
+\includegraphics[width = 0.75\textwidth]{Analysis/Electronic_scheme.pdf}
+\caption{Scheme of the data flow.}
+\end{figure}
+sis program.
+
+ It is important to note that for each sub-event, a single measurement is acquired from the beam monitors, which is intended as a time average of the various signals on the 20 milliseconds of sub-event duration. The sampling rate is then equal to $\SI{50}{\hertz}$.
+This structure of the data is quite specific. The main reason for this setup is connected with the need to avoid as much as possible that the variations of intensity, position and energy of the beams induce an effect that add to $A_{n}$. Considering only small time series, it is assumed that the beam is quite stable, in order to reduce undesired effects.
+Nevertheless, the contribution of these effects, which are indicated for brevity as false asymmetries, is considered in the final model.
+Several values are saved with the number of scattered electrons, for each event. The general structure of the data tree, with the important quantities, is reported here:
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.8\textwidth]{Analysis/EventClass.pdf}
+\caption{Scheme of the Event class, the structure of the data treen is shown here in a simplified version, for the complete reference see appendix.}
+\end{figure}
+
+The analysis program read the binaries files, convert from binary to decimal values and compute the beam parameters from the raw data of the monitors,   filling the data tree shown in the figure. The Scheme above contains only the more relevant variables, and complete list is given in the appendix. We have 5 different classes, that are contained in the main \textit{Event} class. The asymmetry values are stored in the two separated classes, \textit{Det A} and \textit{Det B}. The Analysis program read and analyze one event at a time, can produce also histograms for a fast visualization of the data, and generates the final output files in \textit{txt} format for the data analysis.  
 
 \chapter{Asymmetry on Carbon and Rates on Lead target.}
 
@@ -1022,7 +1022,7 @@ The first step so is to compute the correlation matrix for the beam parameters, 
 
 \begin{table}[hbtp]
 \centering
-\begin{tabular}{|c|c|c|c|c|c|c}
+\begin{tabular}{c|c|c|c|c|c|c}
 \hline 
              & $X$ & $Y$ & $\theta_{x}$ & $\theta_{y}$ & $E$ & $I$\\ 
 \hline 
