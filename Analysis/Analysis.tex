@@ -317,7 +317,7 @@ We observe negative correlation between the pmts, something not expected. After 
 
 \section{Calibration}
 
-One of the main goal for this experiment was to measure the well know trasverse asymmetry of $^{12}C$, already measured before, as a test for the new electronic system. Previous measurements of the Transverse asymmetry have been performed for a carbon target. For this beam-time, the two spektrometers were placed at an angle such that the $Q^{2}$ values of the scattered electron is:
+For the \transv on $^{12}C$ represent an ideal test for the new electronic system. Previous measurements of the $A_{n}$ have been performed at MAMI for carbon target (\cite{}). For this beam-time, the red spectrometer is placed at the angle of $+22.5^{\circ}$, and the blue one at $-22.5^{\circ}$, respect to the longitudinal direction. For these two angle, we have the same kinematics and $Q^{2}$ values of the previous measurement. The exact values are reported here: 
 
 \begin{flushleft}
 \begin{align*}
@@ -698,7 +698,6 @@ The angular coefficient $m$ and the offset $q$ are reported in the table below.
 \end{tabular}
 \end{table}
 
-In this other plot we show the residuals: \commento{metti i residui, ma non sono poi coì interessanti da studiare}.
 
 The PMT Counts with this target, increase from $100$ counts for detector B to $500$ counts every $\SI{1}{\micro \ampere}$.  The experimental error $\sigma$ related to the asymmetry was studied in \commento{aggiungi richiamo}, we recover the formula:
 
@@ -822,7 +821,7 @@ Now we focus our attention on the correlated-difference values. We remind the re
 and are calculated within each single event, to identify the differences with respect to the various quantities such as position, energy... which correspond to different states of polarization.
 Several histograms are produced (\ref{fig:IstogrammiParametri}). These plots are useful to quantify the stabilization of the beam: we expect that all the correlated differences are distributed around zero, which implies that there is no systematic difference when the beam has one polarization state respect to the other. The mean $\mu$ and the standard deviation $\sigma$ of the data are reported in the table (\ref{Tab:parametri}) 
 
-\begin{figure}
+\begin{figure}[hbtp]
 \centering 
 \subfloat[][\emph{$X$ position correlated difference} \label{fig:IstogrammiParametri}]{
 \includegraphics[width = 0.4\textwidth]{Analysis/Dataselection/X.pdf}} 
@@ -840,14 +839,8 @@ Several histograms are produced (\ref{fig:IstogrammiParametri}). These plots are
 
 Every histogram is generated with $100$ bins. For the current correlated-difference, we find out that the values of the VFCs resistance, which controls $V_{ref}$ value, was set to high. Because of this the precision of the monitor is low, compared to the other, and we observe isolated peaks in the plot. This indicated that for the incoming experiment we have to increase $V_{ref}$ in order to to have a precision comparable to that of other monitors. 
 
-%The \textit{pdf} which described the data is expected to be well-described by a gaussian distribution, from the knowledge of the previous experiments.
-%a maximum likelihood fit with a Gaussian model is performed for each beam parameter, with Likelihood Ratio for the goodness of fit (gof). The statistic for the gof is:
-%\begin{align*}
-%\lambda(x) = 2 \sum_{i}^{n} (f_{i}(\mu) - k_{i}(1 + log(\frac{f_{i}(\mu)}{k_{i}})))
-%\end{align*}  
-%$\mu$ are the parameters of the \textit{pdf}, that are mean and variance of the gaussian, and $f_{i}(\mu)$ and $k_{i}$ are respectively the expected value for the i-nth bin and the observed value %for the i-nth bin.
 
-\begin{table} 
+\begin{table}[hbtp]
 \centering
 \caption{Beam parameters:}
 \begin{tabular}{c|c|c|c|c|c|c} 
@@ -883,7 +876,7 @@ All the stabilization monitors were active, so the data show apparently the same
  
 The procedure to identify the runs with $0\%$ polarization rely to the estimation of the correlation coefficient of the PMTs counts. For every event we have two type of polarization sequence. The polarization $\vec{P}$ of each sub-event is identified with $+1$ and $-1$, that correspond to up and down $\overline{P}$. This values are part of the data tree, and form a sequence $p_{i}$ of the type: $+1-1-1+1$, where i is the index to the i-th sub-events analyzed. If the $\overline{P}$ is different from zero, we expect, due to the \transv, a difference in the number of scattered electrons between sub-events with different $p_{i}$. \medskip
 
-\begin{table}[ht]
+\begin{table}[hbtp]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
 \hline 
@@ -906,7 +899,7 @@ We applied this strategy with the hope to identify and remove the block of data 
 \begin{figure}[hbtp]
 \centering
 \subfloat[][]{
-\includegraphics[width = 1\textwidth]{Analysis/Dataselection/Correlation.pdf}} \\
+\includegraphics[width = 0.9\textwidth]{Analysis/Dataselection/Correlation.pdf}} \\
 \subfloat[][]{
 \includegraphics[width = 0.5\textwidth]{Analysis/Dataselection/OverallCorr.pdf}
 }
@@ -947,8 +940,69 @@ The asymmetry values for this block of runs shows an unexpected behaviour. For b
 \end{itemize}
 
 The values are not compatible with zero, but are compatible with each other. It is therefore reasonably certain that such data should not be included in the main analysis, because we observe a negative asymmetry for both the two detector is not compatible with the presence of a polarized beam. \\
-Even if those data are not useful in reconstructing the final asymmetry, they are still useful to check the presence of systematic effects. Because we are reasonably sure that $P = 0$ for these data, the presence of a small deviation from $A = 0$ is a way to identify the presence of an offset. These data are treated likewise the other data with right polarization setting. The data are analyzed separately and the result are reported in the conclusion. 
+At this point, it is interesting to study the distribution of the asymmetries measured by the two detectors. Our main assumption is that the asymmetries values are distributed following a normal distribution, around the physical value $A_{n}$. We have produced several histograms to show the PMTs asymmetries. For every histogram we use a gaussian function to fit the data, the reduced $\chi^{2}$ is reported in the table below:
 
+\begin{table}[hbtp]
+\centering
+\begin{tabular}{c|c}
+\hline 
+Pmt & reduced $\chi^{2}$ \\ 
+\hline
+B0 & $1.2 \pm 0.2$ \\ 
+B1 & $0.9 \pm 0.2$ \\ 
+B2 & $1.23 \pm 0.2$ \\
+A0 & $1.2 \pm 0.2$ \\ 
+A1 & $0.7 \pm 0.2$ \\ 
+A2 & $0.7 \pm 0.2$ \\ 
+A3 & $0.9 \pm 0.2$ \\ 
+A4 & $1.4 \pm 0.2$ \\ 
+A5 & $0.7 \pm 0.2$ \\ 
+A6 & $1.1 \pm 0.2$ \\ 
+A7 & $1.7 \pm 0.2$ \\ 
+\hline 
+\end{tabular}
+\caption{Reduced $\chi^{2}$ for the gaussian fit of the asymmetry data. The expected value is $1$, the result are generally in agreement with the expected value.  } 
+\end{table}
+
+From the values obtained, we don't see a strong evidence to reject our hypothesis. The histograms are reported below:
+
+
+\begin{figure}[hbtp]
+\centering
+\subfloat[][]{
+\includegraphics[width = 0.40\textwidth]{Analysis/Histogram/B0.pdf}}
+\subfloat[][]{
+\includegraphics[width = 0.40\textwidth]{Analysis/Histogram/B1.pdf}}\\
+\subfloat[][]{
+\includegraphics[width = 0.40\textwidth]{Analysis/Histogram/B2.pdf}
+}
+\caption{Histogram of the Asymmetry for Detector B.}
+\end{figure}
+
+
+
+We see a good agreement with the hypothesis of normal distributed data . The histograms for detector A are reported below:
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.40\textwidth]{Analysis/Histogram/A0.pdf} 
+\includegraphics[width = 0.40\textwidth]{Analysis/Histogram/A1.pdf}\\
+\includegraphics[width = 0.40\textwidth]{Analysis/Histogram/A2.pdf} 
+\includegraphics[width = 0.40\textwidth]{Analysis/Histogram/A3.pdf}
+\caption{Histogram of the Asymmetry for Detector A.}
+\end{figure}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.40\textwidth]{Analysis/Histogram/A4.pdf}
+\includegraphics[width = 0.40\textwidth]{Analysis/Histogram/A5.pdf}\\
+\includegraphics[width = 0.40\textwidth]{Analysis/Histogram/A6.pdf}
+\includegraphics[width = 0.40\textwidth]{Analysis/Histogram/A7.pdf}
+\caption{Histogram of the Asymmetry for Detector A.}
+\end{figure}
+
+\newpage
+\newpage
 \subsection{Fit with a Linear Model}
 
 To retrieve the asymmetry $A_{n}$ from the data, we assume a linear model where the asymmetries depend on the beam parameters, in the way we discussed before (\ref{Model}). The contributions due to variations of the beam within an events are described with 5 parameters, that are  $A_{x},A_{y},A_{\theta_{x}},A_{\theta_{y}},A_{E}$.
@@ -966,28 +1020,30 @@ This last request is particularly important, as related data cannot be processed
 Before proceeding with the fit, it is necessary to verify this assumption. \medskip
 The first step so is to compute the correlation matrix for the beam parameters, we report in a table the values obtained:
 
-\begin{table}[ht]
+\begin{table}[hbtp]
 \centering
-\begin{tabular}{|c|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|c}
 \hline 
-             & X & Y & $\theta_{x}$ & $\theta_{y}$ & E \\ 
+             & $X$ & $Y$ & $\theta_{x}$ & $\theta_{y}$ & $E$ & $I$\\ 
 \hline 
-X            & 1 & -0.019 & -0.995 & 0.056 & 0.036 \\ 
+$X$            & 1 & -0.02 & -0.99 & 0.06 & 0.04  & -0.03\\ 
 \hline 
-Y            & -0.019 & 1 & 0.006 & -0.647 & 0.005 \\ 
+$Y$            & -0.02 & 1 & 0.01 & -0.65 & 0.01  & -0.02\\ 
 \hline 
-$\theta_{x}$ & -0.995 & 0.006 & 1  & -0.005 & -0.05 \\ 
+$\theta_{x}$ & -0.99 & 0.006 & 1  & -0.005 & -0.05 & 0.03\\ 
 \hline 
-$\theta_{y}$ & 0.056 & -0.647 & -0.05 & 1 & -0.003 \\ 
+$\theta_{y}$ & 0.06 & -0.65 & -0.05 & 1 & -0.003  & 0.03\\ 
 \hline 
-E            & 0.036 & 0.005 & -0.05  & -0.003  & 1 \\ 
+$E$            & 0.04 & 0.005 & -0.05  & -0.003  & 1 & 0.26\\ 
 \hline 
+$I$            & -0.03 & -0.02 & 0.03  & 0.03 & 0.26 & 1\\ 
+\hline
 \end{tabular} 
 \end{table}
 
 It's immediate to observe that for $(\theta_{x},X);(\theta_{y},Y)$ the values for the correlation are high compared to the other parameters. 
 
-\begin{figure}[ht]
+\begin{figure}[hbtp]
 \centering
 \subfloat[][\emph{}]{
 \includegraphics[width = 0.45 \textwidth]{Analysis/Fit/X_Xp.pdf} }
@@ -1005,9 +1061,9 @@ Before proceeding with the fit, it's interesting to study how $A_{n}$ evolves wi
 \centering
 
 \subfloat[][\emph{Averaged asymmetries for each PMT.}]{
-\includegraphics[width = 0.5 \textwidth]{Analysis/Dataselection/AveragedAsymmetry.pdf}}
+\includegraphics[width = 0.45 \textwidth]{Analysis/Dataselection/AveragedAsymmetry.pdf}}
 \subfloat[][\emph{Averaged asymmetry for detector A and B. The dotted line correspond to $1\sigma$ error.}]
-{\includegraphics[width = 0.5 \textwidth]{Analysis/Dataselection/AveragedAsymmetry2.pdf}}
+{\includegraphics[width = 0.45 \textwidth]{Analysis/Dataselection/AveragedAsymmetry2.pdf}}
 \caption{Plot of the Asymmetry versus time. The plot show the average over all the events collected from $t = 0$ to $t = t_{1}$. Each line represents $A_{n}$ measured for  PMT (in \textcolor{blue}{blue} detector B and in \textcolor{red}{red} detector A). The values are corrected for the beam polarization, multiplying by $\frac{1}{p}$. No further correction is applied.}
 \label{fig:AsymOverTime}
 \end{figure}
@@ -1018,31 +1074,22 @@ For a better visualization of the data, especially to observe the dependence of 
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width = 0.5\textwidth]{Analysis/Fit/A_vs_X.pdf}
-\caption{PMT A0 asymmetries versus X beam position. Becasue of the statistical uncertainties, it is not possible to visualize a linear dependence in the data.}
+\caption{PMT A0 asymmetries versus X beam position. Because of the statistical uncertainties, it is not possible to visualize a linear dependence in the data.}
 \end{figure}
 
-The statistical error associated to $A$ is too high to identify clear identify a trend in the values. A different approach is to divide the $X$ axis in small interval, like the procedure of binning, and average all the asymmetries that fall in the same interval. This reduce the dimensionality of the data and decrease the statistical fluctuations. For a plot of this type each point represents the overall asymmetry for a particular interval of $X$ ,$Y$ and $E$.
+The statistical error associated to $A$ is too high to identify a trend in the values. A different approach is to divide the $X$ axis in small interval, like the procedure of binning, and average all the asymmetries that fall in the same interval. This reduce the amount of data, but decrease the statistical fluctuations. For a plot of this type each point represents the overall asymmetry for a particular interval of $X$ ,$Y$ and $E$.
  
-\begin{figure}[h]
+\begin{figure}[hbtp]
 \centering
-\subfloat[][\emph{ $A$ versus $\delta x$, the linear model is the red line, the second used to fit the data is a polynomial, represented in blue.}]{ \includegraphics[width = 0.5\textwidth]{Analysis/Fit/pmtA0_X.pdf}}
-\subfloat[][]{ \includegraphics[width = 0.5\textwidth]{Analysis/Fit/pmtA0_Y.pdf}}\\
-\subfloat[][]{ \includegraphics[width = 0.5\textwidth]{Analysis/Fit/pmtA0_E.pdf}}
+\subfloat[][]{ 	\includegraphics[width = 0.45\textwidth]{Analysis/Fit/pmtA0_X.pdf}}
+\subfloat[][]{ 	\includegraphics[width = 0.45\textwidth]{Analysis/Fit/pmtA0_Y.pdf}}\\
+\subfloat[][]{ 	\includegraphics[width = 0.5\textwidth]{Analysis/Fit/pmtA0_E.pdf}}
+\caption{ $A$ versus $\delta x$, $\delta y$ and $\delta E$. The plot are generated with 50 equally spaced bins. The red line is the best fit with a linear model.}
 \end{figure} 
 
-From these plots, in this case we reported for brevity only the asymmetries for the pmt A0 of detector A (the other plots are in the appendix) it's possible to check the presence of a linear dependence in the data. 
-The errors shown are computed with the same formula defined in \ref{eq:Error}, and the best fit results with a linear model are reported in the legend:
-
-\begin{align*}
-\sigma_{Asym} = \dfrac{1}{\sqrt{2N_{A/B} \cdot n}}
-\end{align*}
-
-We decided to analyze the data considering each beam parameter separately, too. Because we already delete the beam parameters with high correlations, this should not produce a bias. The plots are generated with 50 bins, equally spaced. 
-
-
-
-
-Another approach that we can use to further reduce the fluctuations due to the high statistical error of $A_{n}$ is to do an additional average for all the PMTs of each detector. This procedure decrease the error of a factor $np.sqrt(8)$ for detector A and $\sqrt(3)$ for detector B. However, this procedure doesn't take care of the different linear dependencies on the beam parameters, therefore this approach is not immune to possible errors.
+We report for brevity only the values for pmt A0 of detector A. In this case is is more simple to identify the presence of a linear dependence in the data. 
+The errors are computed with the formula defined in equation \ref{eq:Error}, considering each interval separately.
+Another approach that we can use to further reduce the fluctuations due to the high statistical error of $A_{n}$ is to do an additional average for all the PMTs of each detector. This procedure decrease the error of a factor $\sqrt{8}$ for detector A and $\sqrt{3}$ for detector B. However, this procedure doesn't take care of the different linear dependencies on the beam parameters for the various PMTs considered, so this last procedure is not immune from a possible bias. 
 
 \begin{figure}[hbtp]
 \centering
@@ -1051,9 +1098,7 @@ Another approach that we can use to further reduce the fluctuations due to the h
 \subfloat[][]{ \includegraphics[width = 0.5\textwidth]{Analysis/Fit/Efit.pdf}}
 \end{figure}
 
-
-
-For the $X$ and $Y$ positions, Two model are used to fit the data. The first one is the linear model: 
+For the $X$ and $Y$ positions, Two models are used to fit the data. The first one is the linear model: 
 
 \begin{equation}
 A = m \, \delta x + A_{phys}
@@ -1103,12 +1148,12 @@ A_{tot} = A_{phy} \cdot P + \delta_{I} + A_{x} \delta x + A_{y} \delta y + A_{E}
 the result of the fit are reported in \ref{tb:resultA}, together with the final result of the asymmetry for detector A and B.
 
 \section{False Asymmetries}
-\commento{Seems that is possible to obtain rough estimates of the beam related asymmetries with the results from the fit. For Energy and position it's achievable, while for the angle it's quite hard (in principle sounds possible to perform an analytic calculation of the asymmetry related to the incident beam angle, however Anselm told me that quite often those results are in disagrement with the observed even in the sign!).}
+\commento{Seems that is possible to obtain rough estimates of the beam related asymmetries with the results from the fit. For Energy and position it's achievable, while for the angle it's quite hard (in principle sounds possible to perform an analytic calculation of the asymmetry related to the incident beam angle, however Anselm told me that quite often those results are not in agreement with the observed even in the sign!).}
 
 Until now the values for the false asymmetries were threated as the parameters of the fit. In this section we will investigate how we can obtain another different estimations, useful to check the validity of all the process of analysis of the data.
 
 For $\frac{dA}{dX}$ and $\frac{dA}{dY}$, we conceptually exploit the possibility of varying the position of the beam on the target, as we did during one of the calibration phases. Using the same \textit{wobbler 16} we asked MAMI to slowly change the beam position on the X and Y monitor. The change in position has the effect to modify the rates for the two detector, and from them it's possible to extract estimate the two false asymmetries related to the beam position. Now we will see how the two quantities are related.
-From the plot .. we see that the counts are scaling linearly with the beam position, so we assume that the $N$ are given by
+From the plot \ref{fig:SlowPosition} we see that the counts are scaling linearly with the beam position, so we assume that the $N$ are given by
 
 \begin{align*}
 N(x,...) = N_{0} + m \cdot (x - x_{0})
@@ -1130,6 +1175,8 @@ In this equation three different parameters appear: $N_{0}$ is the offset of the
 \subfloat[][\emph{Plot for slow variation in $x$ direction for detector B.}]
 {\includegraphics[scale=0.5]{Analysis/slowxVariation.pdf}}
 \subfloat[][\emph{Plot for slow variation in $x$ direction for detector B.}]{\includegraphics[scale=0.5]{Analysis/slowyVariation.pdf}}
+\caption{Plot of the pmt occurrences versus the $X$ position. The $X$ position was slowly changed during this acquisition.}
+\label{fig:SlowPosition}
 \end{figure}
 
 
@@ -1247,8 +1294,6 @@ A_{E} = - \frac{1}{2} \dfrac{2 + CE_{0}}{E_{0} + E_{0}^{2}C}
 
 The result, applying the above formula is $A_{e} = -1.75 \, \frac{ppm}{\SI{}{\kilo \electronvolt}}$. We can compare this result with the values obtained from the fit. The results are in agreement with the sign, if fact we expect a negative effect related to the beam variation. However, the false asymmetries from the fit are 1 order higher than the values computed here. A possible reason could be that we are underestimating other contributions that seems to be important with the energy variation.
 
-\commento{We can investigate also the asymmetries related to the beam energy. For this one we can exploit the theoretical expression for the Mott cross-section, taking the derivative ...
-We can investigate the Current asymmetries, because we have the auto-calibration procedure, so from the scale factor we can check if the current asymmetry is compatible with $1$ as assumed or not.}
 
 
 
