@@ -25,18 +25,18 @@ Capitolo sulla teoria:
 
 - [] iniziare paragrafo contributo intermedio anelastico.
 - [] completare paragrafo teoria contributo elastico.
-- [] presentare i risultati della misura fatta da PREX.
-- [] descrivere il modello lineare usato dopo nell'analisi.
+- [x] presentare i risultati della misura fatta da PREX.
+- [x] descrivere il modello lineare usato dopo nell'analisi.
 
 Capitolo Setup sperimentale:
 - [x] Spiegare a grandi linee come funzionano i Monitor del fascio, Resistenza di Shunt e eccitazioni nelle cavità risonanti
 - [x] chiedere ad Anselm documentazione sulla MasterBoard
 - [x] descrizione acceleratore MAMI.
 - [x] spiegare il funzionamento polarimetro Moller e Compton, spiegare perchè sarà utilizzato il moller in futuro.
-- [] rivedere spiegazione della polarizzazione degli elettroni.
+- [x] rivedere spiegazione della polarizzazione degli elettroni.
 - [] Come si stima l'errore sistematico?
 - [] discutere la stabilizzazione del fascio.
-- [] pockels cell.
+- [x] pockels cell.
 
 Capitolo di Analisi:
 - [x] migliorare l'output del programma fit.cc, inserire unit test e cambiare formato dati
@@ -54,9 +54,8 @@ Capitolo di Analisi:
 - [x] discutere le correlazioni tra i parametri del fascio, in particolare mostrare che si può omettere nel modello xp e yp.
 - [x] menzionare falsa asimmetria corrente
 - [x] finire di analizzare i dati senza polarità, mostrare asimmetria 0 e fare il fit
-- [] completare paragrafo sui test in laboratorio dei due detector
-- [] Capire perchè le asimmetrie calcolata con lo slowvariation e dal fit sono in disaccordo per svariati ordini di grandezza
-- [] provare a vedere se c'è un test per controllare se ci sono doppi conteggi, oppure si conta di meno.
+- [x] completare paragrafo sui test in laboratorio dei due detector
+- [x] Capire perchè le asimmetrie calcolata con lo slowvariation e dal fit sono in disaccordo per svariati ordini di grandezza
 - [] vedere se è possibile estrarre almeno una stima rozza dell'incertezza associata ai monitor X25/X21 e Y25/Y21.
 
 CORREZIONI FORTI
