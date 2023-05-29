@@ -1,23 +1,12 @@
 
 \chapter{Transverse Asymmetry} \label{transv}
 
-\commento{
-\begin{itemize}
-\item Physics behind the $A_{n}$ asymmetry, dependence on $Q^{2}$, the formula $\frac{\sigma_{\uparrow} - \sigma_{\downarrow}}{\sigma_{\uparrow} + \sigma_{\downarrow}}$
-\item state of the art of the Exp.
-\item Model description: so scattering amplitude, theoretical prediction
-\item Expected error $ \delta A_{t} $
-\item open question: problems with lead, dependence of $E_{beam}$, dependence from Z, Z/A
-\end{itemize}}
-
 \paragraph{}
 This chapter is focused on describing the theory behind the \transv . The \transv arises from interference between two scattering amplitudes and it is deeply connected with the Time-reversal operator. These two contributions due to the electromagnetic interaction between the incident electron and the nucleus are explained by showing what are the limits of current theory and what are the most important terms in theoretical prediction. The chapter ends by presenting the problem of the anomalous observation made by PREX of zero transverse asymmetry and a study on the accuracy with which it is possible to measure the asymmetry. 
 
 \section{Description of the Process}
 
-\commento{Explain the scattering process we are studying (at least one figure to visualize the kinematics of the scattering). Mention the link between this process and time-reversal operator. Add two figures for elastic and inelastic scattering.} 
-
-The Beam Normal single spin asymmetry, which we will refer for brevity as Transverse asymmetry, originates from the interference of two scattering process. For the purpose of this thesis, we will present the case of electron scattering against a spin $0$ target \cite{Gorchtein_2008}.
+The Beam Normal single spin asymmetry, which we will refer for brevity as Transverse asymmetry, originates from the interference of two scattering process. The theory of the electron scattering against a spin $0$ target is extensively treated in \cite{Gorchtein_2008}.
 To understand why the interference of this two scattering amplitude give rise to an asymmetry, we first have to look at the kinematic of the experiment: 
 
 \begin{figure}[hbtp]
@@ -42,12 +31,12 @@ A = \frac{\sigma_{\uparrow} - \sigma_{\downarrow}}{\sigma_{\uparrow} + \sigma_{\
 \end{equation}
 
 And it's particularly clear that a non-zero asymmetry depends on how the time-reversal act on the elastic amplitude of the process. \\
-With this idea, let's see in more detail the $\hat{\Theta}$. We know that $\hat{\Theta}$ is an antiunitary operator that can be always seen as:
+With this idea, let's see in more detail the $\hat{\Theta}$. We know that $\hat{\Theta}$ is an anti-unitary operator that can be always seen as:
 
 \begin{align*}
 \hat{\Theta} = U \cdot K
 \end{align*} 
-Where $U$ is an unitary operator, while $K$ is the complex conjugation operator that generates the complex conjugate of each coefficient in front of it. If we cosider a ket describing a system we have that:
+Where $U$ is an unitary operator, while $K$ is the complex conjugation operator that generates the complex conjugate of each coefficient in front of it. If we consider a ket describing a system we have that:
 
 \begin{equation}
 Kc \ket{\alpha} = c^{*} K \ket{\alpha}
@@ -59,10 +48,10 @@ Now, let's consider $H$ as the hamiltonian of our system. We want to apply the $
 H = H_{R} + i H_{Im} \quad ; \quad \hat{\Theta} H \hat{\Theta}^{-1}= \hat{\Theta}H_{R} \hat{\Theta}^{-1} + \hat{\Theta} i H_{Im} \hat{\Theta}^{-1} \Rightarrow H_{R} - i H_{Im} \neq H
 \end{equation}
 
-what we understand from these simpe calculation is that to give rise to an asymmetry, we expect an imaginary part of the scattering amplitude different from zero.\\
+what we understand from these simple calculation is that to give rise to an asymmetry, we expect an imaginary part of the scattering amplitude different from zero.\\
 At the $\alpha$ leading order, the two process of the electron-Nucleus scattering that give rise to the asymmetry involve the exchange of one-photon-exchange (OPE) and two-photon-exchange (TPE). The Feynman diagrams that describes the processes are the following: 
 
-\begin{figure}
+\begin{figure}[hbtp]
 \[
 \feynmandiagram [scale = 1, transform shape][baseline = (h), horizontal = d to j]{
 	a [particle = \(e^{-}\)] -- [fermion, thick] c -- [fermion, thick ] f -- [fermion, thick] g [particle = \(e^{-}\)],
@@ -78,21 +67,84 @@ At the $\alpha$ leading order, the two process of the electron-Nucleus scatterin
 	};
 \]
 \caption{TPE and OPE diagrams in electron nucleus scattering.}
+\label{fig:FeynmannDiagrams}
 \end{figure}
 
+The important quantity to compute the cross section is the scattering amplitude. The scattering amplitude is given by the two contributions: the exchange of a single virtual photon $A_{1}$ and the terms given by the two photon exchange $A_{2}$. In general we can write that the total scattering amplitude $S$:
 
-A seguire come si scrive l'ampiezza per il termine elastico ed inelastico, aggiungere in appendice come viene fatto l'integrale sullo spazio delle fasi e stop. 
+\begin{equation}
+S = \dfrac{e^{2}}{Q^{2}} \overline{u}(k') [ \, m_{e} A_{2} + A_{1} \slashed{P} \,] \overline{u}(k)
+\end{equation}
 
+Where in this expression $\vec{P} = \frac{\vec{p} + \vec{p}'}{2}$. The second term $A_{1}$ has a simple expression, given by the form factor of the nucleus:
 
+\begin{align*}
+A_{1} = 2Z F_{N}(Q^{2})
+\end{align*} 
 
-\subsection{Elastic Scattering}
+This expression is obtained if we look at the \ref{fig:FeynmannDiagrams}. For the one photon exchange the first vertex connects the incident and scattered electron, whose expression is given by $-ie \gamma^{\mu}$. The second vertex connect the carbon nucleus with the virtual photon. The carbon is threated like as a spin $0$ particle, and the contribution due to the charge density in enshrined in the form factor. The lagrangian term for a vertex of this type is given by the formula: 
 
-\commento{Write the amplitude for the elastic (how to manipulate expression, maybe in the appendix).} \medskip
+\begin{equation}
+\Lagr_{interaction} = +ieA_{\mu}(\Phi \partial^{\mu} \Phi^{\dag} - \Phi^{\dag}\partial_{\mu} \Phi)
+\end{equation}
 
+For the spin 0 field $\Phi$. This is not the only piece of the lagrangian: there exist another term of interaction, that involves a vertex with four particles which is not of our interest. This interaction term give rise to the Feynmann rule for spin 0 particle, and we have to substitute for this vertex:
 
-\subsection{Inelastic Scattering}
+\begin{align*}
+-ie(p + p')_{\mu}
+\end{align*} 
 
-\commento{Explain how it's possible to compute the inelastic expression, what kind of approximations are used (optical theorem...)} \medskip
+And we recognize, apart from a factor 2, $\slashed{P}$ which multiplies $A_{1}$. The last term is the feynmann propagator for the photon, that give the $\frac{1}{Q^{2}}$ term. This first part of the scattering amplitude is T-even, and it is purely real, so it is the imaginary part of the two photon exchange which give rise to the asymmetry. The expression that connects the amplitude with the \transv is given by:
+
+\begin{equation} \label{eq:integral}
+A_{n} = -\frac{m_{e}}{\sqrt{s}} tan \bigl (\frac{\theta_{CM}}{2} \bigl) \dfrac{\Im(A_{2})}{ZF_{N}(Q^{2})}
+\end{equation}
+
+Looking at this formula, the theoretical effort to compute the transverse asymmetry is given by the imaginary part of $A_{2}$. The calculation of this quantity is theoretically challenging, due to the fact that at energies of $\simeq \SI{1}{\giga \electronvolt}$ of incident electrons, contributions from intermediate excited states become important. Because of this, the contribution of $A_{2}$ are given by the sum of elastic intermediate state and inelastic terms, which involve hadronic excitations.
+
+\subsection{Hadronic Tensor}
+
+The imaginary part $A_{2}$ is related to the two-photon exchange. To compute this quantity, we have to perform an integration over the internal momenta of the electron $k_{1}$ (see figure \ref{fig:FeynmannDiagrams}). This contribution, following \cite{Gorchtein_2008}, is given by:
+
+\begin{equation}
+\Im(A_{2}) = e^{4} \frac{1}{(2\pi)^{2}} \int \dfrac{l_{\mu \nu} \cdot W^{\mu \nu}}{2E_{1} Q_{1}^{2} Q_{2}^{2}} d^{3}\vec{k_{1}}
+\end{equation}
+
+Two new terms appear in this expression. The first term is $l_{\mu \nu}$, named leptonic tensor. This term is given computing the Amplitude for the upper part of the diagram, which involve the incident and scattered electron:
+
+\begin{equation}
+l_{\mu \nu} = \overline{u}(k') \gamma_{\nu} (\slashed{k}_{1} + m_{e}) \gamma_{\mu} u(k)
+\end{equation}
+
+In this expression is immediate to recognize the feynmann rules for fermion vertex. The term $(\slashed{k_{1} + m_{e}})$ comes from the fermion propagator of the internal electron, which is:
+
+\begin{align*}
+\dfrac{i(\slashed{p} + m)}{p^{2} + m^{2}}
+\end{align*}
+
+The other term is $W^{\mu \nu}$, the hadronic tensor. For the elastic contribution this term is simply given by the feynmann rules for vertex with spin 0 particles, with the proper correction of the form factor, so we can write:
+
+\begin{equation}
+W_{\mu \nu} = \pi \delta((p + k - k_{1})^{2} - M^{2}) (2p + q_{1})_{\mu} (2p' + q_{2})_{\nu} \times Z^{2} F_{N}(Q_{1})  F_{N}(Q_{2})
+\end{equation}
+
+At this point, one can substitute in the integral above, and compute the contribution of the transverse asymmetry due to the elastic term. This first terms scales with the nuclear charge $Z\alpha$, and this is important for electron scattering with heavy nuclei. However, this mechanism is important in the energy range of few MeV, and has a minor impact, although not negligible, for higher energy, such as the energy of interest for this thesis.
+For the inelastic contributions, the structure of the hadronic tensor is different. Realistic estimate are given only for nearly forward scattering angles. The hadronic tensor is given in terms of the structure functions $W_{1,2}$
+
+\begin{equation}
+W^{\mu \nu} = 2 \pi W_{1}(\omega^{2},Q_{1}^{2}) \Bigl( -g^{\mu \nu} + \dfrac{P^{\mu}q_{1}^{\nu} +  P^{\nu}q_{2}^{\mu}}{(P \overline{K})} - \dfrac{q_{1} q_{2}}{(P \overline{K})^{2}}P^{\mu}P^{\nu} \Bigl)
+\end{equation}
+
+Several assumption are made to threat this new term. The structure function, for forward scattering angles, can be approximated by a function containing the Compton form factor of the nucleus, neglecting some dependence on $Q_{1,2}$ that let to simplify the integral in equation \ref{eq:integral}. It is beyond our scope to go into a detailed description, which can be found in the articles (\cite{Gorchtein_2006}, \cite{Gorchtein_2008}, \cite{Koshchii_2021}). We emphasize however that for the estimation of the inelastic intermediate state, theoretical calculation are affected by the approximation of forward angles and other assumptions due to lack of data in the dependence of some important variables, such as the Compton form factor for carbon 12, the Compton slope parameter and the use of the approximated Callavan-Gross relation. In summary, the theoretical prediction for the \transv are reliable for small scattering angle, that correspond to lower values ​​of the transfer momentum $Q$; the experimental data measure by PREX \cite{HAPPEX:2012fud} for $^{1}H$, $^{4}He$, and $^{12}C$ at $Q$ values of $\SI{0.31}{\giga \electronvolt}$, $\SI{0.28}{\giga \electronvolt}$ and $\SI{0.1}{\giga \electronvolt}$, respectively, are in agreement with the theoretical prediction. The last measurement performed at MAMI for $^{12}C$ \cite{Esser:2018vdp} for higher values of transfer momentum, shows a discrete agreement with the theoretical prediction, considering also the systematic uncertainties associated to the poorly known Compton slope parameter.
+\newline
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale = 0.5]{Transverse/medium.png}
+\caption{Transverse asymmetry measured at MAMI for $^{12}C$ target \cite{Esser:2018vdp}. Theoretical calculation for $E_{beam} = \SI{570}{\mega \electronvolt}$  is shown.}
+\end{figure}
+
+  
 
 \subsection{Model Description}
 \commento{Present the theoretical formula for the Transverse asymmetry, and comment on energy, Z, Z/A depencencies adding together the elastic and inelastic contributions, we end with the following formula which describes the process \cite{PhysRevLett.121.022503}:}\medskip
@@ -103,12 +155,12 @@ A_{N} = C_{0} \cdot log(\dfrac{Q^{2}}{m_{e}^{2} c^{2}}) \dfrac{F_{Compton}(Q^{2}
 
 \section{State of the Experiment}
 
-\commento{Write down the formula $\frac{\sigma_{\uparrow} - \sigma_{\downarrow}}{\sigma_{\uparrow} + \sigma_{\downarrow}}$. Hints at how to measure the Transverse asymmetry (remember to mention we have a polarized beam against a unpolarized target). Explain the expected error for the recostructed asymmetry. Furthemore talk about the last mesurements obtained by the other collaborations, an outlook of the current situation. Maybe add also how we proceed to measure the transverse asymmetry, so the structure of the event, polarities patterns...} \medskip
+\commento{Write down the formula $\frac{\sigma_{\uparrow} - \sigma_{\downarrow}}{\sigma_{\uparrow} + \sigma_{\downarrow}}$. Hints at how to measure the Transverse asymmetry (remember to mention we have a polarized beam against a unpolarized target). Explain the expected error for the reconstructed asymmetry. Furthermore talk about the last measurement obtained by the other collaborations, an outlook of the current situation. Maybe add also how we proceed to measure the transverse asymmetry, so the structure of the event, polarities patterns...} \medskip
 
-We have seen so far how the Transverse Asymmetry is related to the interference between two scattering amplitude, and the theoretical model used to describe the process. The goal from an experimental point of view is to measure this quantity. The challenge is to obtain a valid measure of $A_{n}$, which is of the order of $20$ part per million (ppm), taking into consideration all the possible effects that can interfere. To measure $A_{n}$, the straighfoward method is to prepare an electron beam, with polarized electron, and send it to a fixed target. The scattered electrons are then collected by a detector placed at a certain angle, and now it's possible to obtain the trasverse asymmetry applying the formula:
+We have seen so far how the Transverse Asymmetry is related to the interference between two scattering amplitude, and the theoretical model used to describe the process. The goal from an experimental point of view is to measure this quantity. The challenge is to obtain a valid measure of $A_{n}$, which is of the order of $20$ part per million (ppm), taking into consideration all the possible effects that can interfere. To measure $A_{n}$, the straightforward method is to prepare an electron beam, with polarized electron, and send it to a fixed target. The scattered electrons are then collected by a detector placed at a certain angle, and now it's possible to obtain the transverse asymmetry applying the formula:
 
 \begin{equation}
-A_{} (Q,p) = \dfrac{N_{\uparrow}(Q) - N_{\downarrow}(Q)}{N_{\uparrow}(Q) + N_{\downarrow}(Q)} \cdot (\frac{1}{p})   
+A_{N} (Q,p) = \dfrac{N_{\uparrow}(Q) - N_{\downarrow}(Q)}{N_{\uparrow}(Q) + N_{\downarrow}(Q)} \cdot (\frac{1}{p})   
 \end{equation} 
 
 where we have explained the dependence on the transmitted impulse, on the degree of polarization of the beam.
@@ -117,19 +169,20 @@ In an experiment of this type, several requests are necessary to have an effecti
 \begin{itemize}
 \item The accelerator must produce a polarized beam, stable over the time, with an high polarization percentage, in order to amplify the effect.
 \item The Beam energy needs to be quite stable, and should not depend on the Polarization state of the electrons. A change in the Beam energy associated with the polarization state, can lead to a different count rate for $N_{\uparrow}$ and $N_{\downarrow}$, would make a contribution that would be added to that of the physical process
-\item The beam must be correctly alligned with the target, and stable. Again if the position of the target changes accordin to the polarization of the electrons, it will produce another contribution to the total asymmetry.
+\item The beam must be correctly aligned with the target, and stable. Again if the position of the target changes according to the polarization of the electrons, it will produce another contribution to the total asymmetry.
 \item The beam current should not depend on the polarization state of the electrons. If the beam source depends on the polarization, we will have a difference in the event rate and then another false asymmetry.
 \item it's necessary to reject possible double elastic scattering events, which may contribute to the total asymmetry. 
 \end{itemize}
 
-All this demands can be satisfied with an accelerator that has stabilization devices with great precision and that can sustain high beam intensities. This last request is necessary to accumulate enough statistics to measure the transvere asymmetry with an accuracy about 1 ppm, in view of the future PV experiments. We can quantify how the statistical error varies according to the amount of data avaible. With the quite general assumption that the measured rate $N_{\uparrow,\downarrow}$ are gaussian distributed variables, we can compute the expected variance of $A_{n}$:
+All this demands can be satisfied with an accelerator that has stabilization devices with great precision and that can sustain high beam intensities. This last request is necessary to accumulate enough statistics to measure the transverse asymmetry with an accuracy about 1 ppm, in view of the future PV experiments. We can quantify how the statistical error varies according to the amount of data available. With the quite general assumption that the measured rate $N_{\uparrow,\downarrow}$ are gaussian distributed variables, we can compute the expected variance of $A_{n}$:
 
 \begin{equation}
 Var[A_{n}] = \dfrac{1 - A^{2}}{N_{\uparrow} + N_{\downarrow}} 
 \end{equation}
 
-This is the variance associated to a single measurement of the transverse asymmetry. As is well known, the variance scales as $\frac{1}{n}$ as $n$, the number of measures, increases.
-Beacause the $A_{n}$ is expected to be quite small, we can approximate the above formula:
+This is the variance associated to a single measurement of the transverse asymmetry. As is well known, the variance scales as 
+$\frac{1}{n}$ as $n$, the number of measures, increases.
+Because the $A_{n}$ is expected to be quite small, we can approximate the above formula:
 \begin{equation} 
 V[A_{n}] = \dfrac{1}{2N \cdot n}  \label{eq:Error}
 \end{equation}
@@ -140,5 +193,5 @@ The error associated to the reconstructed asymmetry is the square root of the ab
 n\cdot N \le \frac{1}{2} \cdot 10^{12}
 \end{align*} 
 
-We will see later that achievable rates $N_{\uparrow,\downarrow}$ are in the range (20000,100000) for a carbon target. This number can not be increased at will by acting on the beam current. The first reason is obivios: the accelator and the beam source can handle only a certain amount of electrons before loosing their characteristics, furthermore a beam with great intensity for an extended periods of time can damage the carbon target, up to the risk of melting it. 
-Another idea might be to increase the thickness of the target, to take advantage of the larger cross section. However this does not take into account that by doing so the number of double scattering event is increased. To avoid this the scientific community that deals with these nuclear physics measurements respect the convenction that the target thikness should be less than the $10 \%$ of the radiation lenght of the material.
+We will see later that achievable rates $N_{\uparrow,\downarrow}$ are in the range (20000,60000) counts per event for a carbon target. This number can not be increased at will by acting on the beam current. The first reason is oblivious: the beam source can produce only a certain amount of electrons before loosing, furthermore a beam with great intensity for an extended periods of time can damage the carbon target up to the risk of melting it. 
+Another idea might be to increase the thickness of the target, to take advantage of the larger cross section. However this does not take into account that by doing so the number of double scattering event is increased. To avoid this the scientific community that deals with these nuclear physics measurements respect the convention that the target thickness should be less than the $10 \%$ of the radiation length of the material.

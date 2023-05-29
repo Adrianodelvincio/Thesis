@@ -2,6 +2,14 @@
 
 1. index of the thesis - :white_check_mark:
 
+LAST THINGS TO DO:
+
+- [] beam stabilization
+- [] alignment of the scattering plane to the detector
+- [] Model description
+- [] Compton Moller polarimeters
+- [] Master board
+
 - [x] definire i cuts e binning mediato per ogni monitor 
 - [x] fare fit per ogni monitor
 - [x] mettere gli errori statistici ai punti
@@ -23,8 +31,8 @@ Introduzione
 
 Capitolo sulla teoria:
 
-- [] iniziare paragrafo contributo intermedio anelastico.
-- [] completare paragrafo teoria contributo elastico.
+- [x] iniziare paragrafo contributo intermedio anelastico.
+- [x] completare paragrafo teoria contributo elastico.
 - [x] presentare i risultati della misura fatta da PREX.
 - [x] descrivere il modello lineare usato dopo nell'analisi.
 
@@ -65,6 +73,11 @@ CORREZIONI FORTI
 - [x] tutti i commenti nella tesi vanno definiti con un comando.
 - [x] i plot dei conteggi in funzione della soglia in mV vanno ricontrollati.
 - [x] chiedera a igors come ha ottenuto i dati di threshold vs attenuation.
+
+
+
+
+
 
 
 
