@@ -34,8 +34,8 @@ Signal with a large time width and a small amplitude can generate the same accum
 
 \begin{figure}[hbtp]
 \centering
-\subfloat[][\emph{Threshold dependence against attenuation} \label{fig:ThrvsAtt}]{
-\includegraphics[scale=0.4]{Analysis/Calibrations/ThrvsAtt.pdf}}
+\subfloat[][\emph{Threshold dependence against attenuation. The values are obtained for a fixed shape of the input signal.} \label{fig:ThrvsAtt}]{
+\includegraphics[scale=0.75]{Analysis/Calibrations/ThrvsAtt.pdf}}
 \end{figure}
 
 The data show represent the values of the amplitude of the input signals (in $\SI{}{\milli \volt}$) versus attenuation, the function used for the conversion is obtained from the fit of the data, the function used is the following: 
@@ -397,7 +397,7 @@ The calibrations consist in retrieving $m$ and $q$ with a linear fit. Then the p
 The values obtained from the fit of nominal beam current vs. voltage values are shown in the figure \ref{fig:PimoCalib}. The $\chi^{2}$ values are higher than the expected. This is not unexpected, the errors in both the plots are computed with the sampling standard deviation formula applied to the sequence of voltage values $I21\/ I13$ ($\sigma_{vfc}$, the standard deviation computed for each step in \ref{fig:ScanCurrent}), and it is related to precision of the analog to digital converter VFCs. The errors are then propagated to the $y$ axis showed in the plot. \smallskip
 Yet, we are underestimating the error associated with nominal current $I$, in fact the accuracy associated with the beam current, set by the accelerator operators, was not disclosed, and we suspect that is not negligible compared to $\sigma_{vfc}$. \bigskip  
 
-The ENMO calibration is performed in a different way from the other monitors. The energy calibrations is made with a particular procedure that is automatically made by MAMI operators, and exploit the polarity signal which controls the beam polarization at the source of the acceleration. Mami operators use the signal to create artificially a difference in the beam energy that is correlated to the beam polarity. This difference is equal (nominal) to $\SI{22.6}{\kilo \electronvolt}$, and consist in the last two sub-events with higher energy respect to the first two. Because we know the nominal difference, the calibration consist in computing the correct scaling factor which convert from $\SI{}{\volt}$ to $\SI{}{\kilo \electronvolt}$. The quantity that is relevant for the calibration is $\delta E$ (with $E_{18}$ being the energy monitor):
+The ENMO calibration is performed in a different way from the other monitors. The energy calibrations is made with a particular procedure that is automatically made by MAMI operators, and exploit the polarity signal which controls the beam polarization at the source of the acceleration. MAMI operators use the signal to create artificially a difference in the beam energy that is correlated to the beam polarity. This difference is equal (nominal) to $\SI{22.6}{\kilo \electronvolt}$, and consist in the last two sub-events with higher energy respect to the first two. Because we know the nominal difference, the calibration consist in computing the correct scaling factor which convert from $\SI{}{\volt}$ to $\SI{}{\kilo \electronvolt}$. The quantity that is relevant for the calibration is $\delta E$ (with $E_{18}$ being the energy monitor) is:
 
 \begin{equation*}
 \delta E = \frac{E_{18}[3] + E_{18}[3]}{2} - \frac{E_{18}[0] + E_{18}[1]}{2} 
@@ -416,7 +416,8 @@ So, if we invert the relation we have that:
 \frac{E}{U} = C_{E18} \, \cdot \frac{1}{i} \qquad  C_{18} = \frac{E}{U} \, \cdot i
 \end{equation}  
 
-And we have the scaling factor.
+This is the final formula to compute the correct conversion factor for the energy monitor. 
+For this calibration we have 3 different acquisition, that differs only for the beam current. For one acquisition we set the beam current to $0$, to observe the presence of an offset. For the other two we set the current to $\SI{15}{\micro \ampere}$ and $\SI{20}{\micro \ampere}$.
 
 \begin{figure}[hbtp]
 \centering
@@ -425,6 +426,7 @@ And we have the scaling factor.
 \caption{Histograms or $\delta E$ with the beam current $\SI{20}{\micro \ampere}$ on the left and $\SI{15}{\micro \ampere}$ on the right.}
 \end{figure}
 
+For this three values of $\delta E$ we perform a linear fit, studying the dependence on the beam current, which is expected to be linear:
 
 \begin{figure}[hbtp]
 \centering
@@ -432,8 +434,7 @@ And we have the scaling factor.
 \caption{Calibration of ENMO monitor, plot of the ENMO voltage values versus the current.}
 \end{figure}
 
-
-$C_{E18}$ is obtained taking the coefficient parameter $m$ from the fit and substituting in:
+The $C_{E18}$ conversion parameter is obtained taking the coefficient parameter $m$ from the fit and substituting in the expression:
 
 \begin{align*}
 C_{E18} =  \frac{\SI{22.6}{\kilo \electronvolt}}{m}
@@ -626,14 +627,7 @@ The result reported in the table can be confronted with the final result that ar
 \newpage
 \section{Data Tree Implementation}
 
-Referring to the next picture, we now discuss briefly the structure of the data that is implemented in the analysis program, this is important to clarify how data analysis will be developed:
-
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width = 0.75\textwidth]{ExperimentalSetup/EventStructure.pdf}
-\caption{}
-\end{figure}
-
+Referring to the picture \ref{fig:EventStructure}, we now discuss briefly the structure of the data that is implemented in the analysis program, important to clarify how data analysis will be developed.
 The base class that is implemented in the analysis program is the \textit{Event} class. As we mention above in \ref{FirstDescription}, we do not intend to keep track of the single scattered electron, instead we analyze time series of $\SI{80}{\milli \second}$, in which we simply count all the electrons detected in this time interval. The work-flow of the analysis program is load the binary file collected during the beam time, parsing  one event at a time and processing the raw-data from the beam monitors and the detectors. During the execution of the program data files in \textit{.txt} are generated and filled with the processed data ready. The output data-file can be analyzed with any software package, such as root or python, to get the value of the asymmetry $A_{n}$. 
 The picture shows that every event is divided into $4$ sub-events. For each different sub-event a precise state of the polarization is defined, 
 $+1$ for $S = \uparrow$ and $-1$ for $S = \downarrow$. Every sub-event is $\SI{20}{\milli \second}$ long; during this time interval master-board receives all the data coming from the monitors and the detectors and sent them to the data-acquisition program (DAQ) that produces the binary-files, which are the input of the main analy\begin{figure}[hbtp]
