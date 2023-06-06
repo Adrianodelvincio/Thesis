@@ -570,10 +570,10 @@ We are supposing that the offset $N_{0}$, we assume that the present offset does
 A^{'} = \dfrac{N_{\uparrow} - N{\downarrow}}{N_{\uparrow} + N{\downarrow}} = \dfrac{A_{n} (2mI)}{ (2mI) + 2N_{0} } = A_{n} \dfrac{1}{1 + \frac{N_{0}}{mI}}
 \end{equation} 
 
-In the last passage we learn that the presence of an offset can decrease the recostructed asymmetry. So it's important to determine quantitatively $N_{0}$ and $m$ in order to be able to take care of this effect. The strategy used is quite simple: every three hours of production data, we asked MAMI to start the auto-calibration program. With all the auto-calibration runs, we estimate $N_{0}$ for each PMT, separately. Then All this quantities are saved in a file so that the analysis program can retrieve the parameters and subtract them from the PMT counts. \medskip
+In the last passage we learn that the presence of an offset can decrease the reconstructed asymmetry. So it's important to determine quantitatively $N_{0}$ and $m$ in order to be able to take care of this effect. The strategy used is quite simple: every three hours of production data, we asked MAMI to start the auto-calibration program. With all the auto-calibration runs, we estimate $N_{0}$ for each PMT, separately. Then All this quantities are saved in a file so that the analysis program can retrieve the parameters and subtract them from the PMT counts. \medskip
 In this way every three hours the PMT are corrected, this take care also of the possibility that the the linearity of the PMTs can change after hours of use of the PMTs (for example it can decrease the efficiency).
 
-During the autocalibration, the beam current is raised from $\SI{9}{\micro \ampere}$ to $\SI{11.125}{\micro \ampere}$ in step of $\SI{0.125}{\micro \ampere}$:
+During the auto-calibration, the beam current is raised from $\SI{9}{\micro \ampere}$ to $\SI{11.125}{\micro \ampere}$ in step of $\SI{0.125}{\micro \ampere}$:
 
 \begin{figure}[ht]
 \centering
@@ -598,8 +598,7 @@ With a linear fit we can estimate the scale and the offset to convert from I21 v
 \includegraphics[width = 0.5\textwidth]{Analysis/Autocalib/fitB.pdf}} \\
 \end{figure}
 
-\newpage
-The figures are referred to the data acquired for the first auto-calibration. It's interesting to calculate, from the result of the fit, the factor that appears in \ref{eq:Systematic}:
+The figures are referred to the data acquired for the first auto-calibration. We report the values of slope and offset measured during the first auto-calibration run. These data are valuable because we can compute the decreasing factor $c$ that appears in \ref{eq:Systematic}:
 
 \begin{table}[ht]
 \centering
@@ -620,7 +619,8 @@ The figures are referred to the data acquired for the first auto-calibration. It
  A7  & 2325 &  2233 &  0.91 \\
 \hline
 \end{tabular}
-\caption{Angular coefficient and offset obtained for the auto-calibration. The third column is contains the estimation of $c$, as defined in equation \ref{eq:Systematic} }
+\caption{Angular coefficient and offset obtained for the auto-calibration. The third column is contains the estimation of $c$, as defined in equation \ref{eq:Systematic}}
+\label{table:PMToffset}
 \end{table}
 Ignoring the presence of the offset lead two consequences: the recostructed asymmetry is lower, on average $ \simeq 10\%$ less than expected, and the Counts are overstimated. Because the error depend on the PMT counts, as seen in \ref{eq:Error}, this two effect combined add up and worsen the precision and accuracy of the measurement.\\
 The result reported in the table can be confronted with the final result that are reported in \ref{result}. 

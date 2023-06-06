@@ -2,6 +2,18 @@
 
 \section{Abbreviations}
 
+Here we report a list of common abbreviation:
+
+\begin{itemize}
+\item \textbf{ENMO}: energy monitor.
+\item \textbf{PIMO}: current monitor.
+\item \textbf{BNSSA}: beam normal single spin asymmetry.
+\item \textbf{VFC}: voltage to frequency converter.
+\item \textbf{PMT}: photomultiplier tube.
+\item \textbf{RTM}: race track microtron.
+\item \textbf{XYMO}: position monitor.
+\end{itemize} 
+
 \section{Transverse asymmetry}
 
 \section{Data Tree}
@@ -28,7 +40,7 @@ The position $X$ and $Y$ are computed assuming that the accelerated electrons ar
 
 \begin{align*}
 y &= m_{y} \cdot z + q_{y} \\
-x &= m_{x} \cdot x + q_{x}
+x &= m_{x} \cdot z + q_{x}
 \end{align*}
 
 The values that we are looking for are $q_{x}$ and $q_{y}$, x and y intercept. 
@@ -52,7 +64,7 @@ the solution for $q_{y}$ is identical. The scattering angles $\theta_{x}$ and $\
 \theta_{x} = \dfrac{X_{25} - X_{21}}{Z_{25} - Z_{21}}
 \end{equation}
 
-With these values, the analysis program compute the correlated differences for the angle and position parameter, that are used later in for the fit.
+With these values, the analysis program compute the correlated differences for the angle and position parameter, that are the independent variables for the linear fit.
 
 
 \end{appendices}

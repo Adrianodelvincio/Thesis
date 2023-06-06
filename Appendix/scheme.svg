@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="181.8372mm"
+   height="79.991714mm"
+   viewBox="0 0 181.8372 79.991714"
    version="1.1"
    id="svg5"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09, custom)"
@@ -25,8 +25,8 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="1.2646927"
-     inkscape:cx="461.77226"
-     inkscape:cy="360.95725"
+     inkscape:cx="408.00426"
+     inkscape:cy="192.53689"
      inkscape:window-width="1717"
      inkscape:window-height="972"
      inkscape:window-x="1546"
@@ -77,7 +77,8 @@
   <g
      inkscape:label="Livello 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(-14.240584,-44.556446)">
     <path
        style="fill:none;stroke:#000000;stroke-width:0.499999;stroke-linejoin:bevel;stroke-miterlimit:0.2;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleStart)"
        d="m 28.473353,93.018535 139.830357,0.02832"
