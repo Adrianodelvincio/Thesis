@@ -418,7 +418,7 @@ So, if we invert the relation we have that:
 This is the final formula to compute the correct conversion factor for the energy monitor. 
 For this calibration we have 3 different acquisition, that differs only for the beam current. For one acquisition we set the beam current to $0$, to observe the presence of an offset. For the other two we set the current to $\SI{15}{\micro \ampere}$ and $\SI{20}{\micro \ampere}$.
 
-\begin{figure}[hbtp]
+\begin{figure}[!h]
 \centering
 \includegraphics[width = 0.45\textwidth]{Analysis/ENMOvoltage20.pdf}
 \includegraphics[width = 0.45\textwidth]{Analysis/ENMOvoltage15.pdf} 
@@ -427,7 +427,7 @@ For this calibration we have 3 different acquisition, that differs only for the 
 
 For this three values of $\delta E$ we perform a linear fit, studying the dependence on the beam current, which is expected to be linear:
 
-\begin{figure}[!hbtp]
+\begin{figure}[!h]
 \centering
 \includegraphics[width = 0.5\textwidth]{Analysis/Calibrations/E18_Calibration.pdf}
 \caption{Calibration of ENMO monitor, plot of the ENMO voltage values versus the current.}
@@ -441,7 +441,7 @@ C_{E18} =  \frac{\SI{22.6}{\kilo \electronvolt}}{m}
 
 From this we obtain the value $C_{E18} = +1595.2$ necessary to convert from Voltage units to $\SI{}{\kilo \electronvolt}$. Using the value, we can show an histogram of $\delta E$ in physical units, as a check of our procedure:
 
-\begin{figure}[!hbtp]
+\begin{figure}[!h]
 \centering
 \includegraphics[width = 0.45\textwidth]{Analysis/ENMOCheck20.pdf}
 \includegraphics[width = 0.45\textwidth]{Analysis/ENMOCheck15.pdf} 
@@ -451,7 +451,6 @@ From this we obtain the value $C_{E18} = +1595.2$ necessary to convert from Volt
 \subsection{Calibration of the PMTs}
 
 \commento{Here it's important to show the plots I made during the beam time. I have to mention the Leo tecniques for the correct interpretation of counts vs attenuation.}
-
 During the beam time, several scans in attenuation were performed, before switching MAMI to produce the polarized beam, to choose the best working point for the PMTS of the detectors. The same procedure used in the laboratory was followed, so with a beam intensity of $\SI{10}{\micro \ampere}$ we acquire data run one minute long, increasing each time the attenuation.
 
 \begin{figure}[hbtp]
@@ -462,7 +461,7 @@ During the beam time, several scans in attenuation were performed, before switch
 {\includegraphics[width = 0.5\textwidth]{Analysis/CalibrationPMT/AttenuationScanA.pdf}}
 \end{figure}
 
-From the fit we obtain three valus for the signal Peak, given in attenuaton units.
+From the fit we obtain three values for the signal Peak, given in attenuaton units.
 We can check the idea behind this, visualizing the PMT count in a different way. Because we would like to visualize the number of electrons that generate a certain signal in the detector, we can think of differentiating the data showed in the plot \ref{fig:AttScan}. The differentiation consist in the difference between the Counts at a certain point and the previous one, and dividing by the increment in attenuation:
 
 \begin{align*}
