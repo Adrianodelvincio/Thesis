@@ -15,13 +15,13 @@
 \paragraph{}
 In this chapter we discuss the electronic test that have been carried out in the laboratory, and the calibrations that need to be done
 in order to calculate, from the raw data, the final data ready for the analysis.
-The test in the lab consist in checking that the photo-multipliers are working and that the electronics that take care of acquiring the data do not have any errors.
-For the calibrations, since several beam parameters are needed for the analysis, it's important to obtain the correct scaling factor to convert the Raw Data collected by the \textit{VFC}s to data with the right physical units. The important quantities are the $X,Y$ impact point coordinates of the beam,the energy $E$, the beam current $I$ and the scattering angles $\theta_{x}$ and $\theta_{y}$.
+During the lab test we check that the photo-multipliers are working and can reveal real signal, and that the electronics for the detector read-out is in good status.
+Instead the calibrations consist in the determination of the scaling factors, needed by the analysis program, to convert the Raw Data collected by the \textit{VFC}s to data with the correct physical units. The important beam parameters are the $X,Y$ impact point coordinates of the beam, the beam energy $E$, the beam current $I$ and the scattering angles $\theta_{x}$ and $\theta_{y}$. In the end, we discuss the auto-calibration procedure, which is needed in order to correct the data, removing non-desired effects due to the presence of an offset in the PMTs counts.
 
 
 
 \section{Nino Board}
-In this section we explain briefly simple test that we performed to control that the two detectors are working properly.Before going into detail it is important to describe again the operation of the NINO board, which interfaces directly with detectors.
+In this section we explain briefly simple test that we performed to control that the two detectors are working properly. Before going into detail it is important to describe again the operation of the NINO board, which interfaces directly with detectors.
 The Nino board, which digitizes the signal from the PMTS, has two parameters which can be used to select the internal threshold of the discriminator, to cut out the low amplitude signals, that are indicated as threshold and attenuation. The threshold and attenuation values can be adjusted changing the settings of the DAQ program.
 For our purpose, we fix the threshold values equal to $600$ for all the detectors. We remind the reader that the values should be in the range ($0,4000$). 
 It is desirable to work with the "physical" values, i.e switch from these arbitrary units to the correct value in $\SI{}{\milli \volt}$. The relation between attenuation and threshold it is not linear, the reason is that the NINO board is designed in such a way that collects the input charge coming from the signal. In principle it is even not possible to define a unique value for the threshold in $\SI{}{\milli \volt}$, because signals that produce the same charge can have shape and amplitude different from each other. In simple word, from the definition of the current:
@@ -30,7 +30,7 @@ It is desirable to work with the "physical" values, i.e switch from these arbitr
 Q = I \, \cdot \, time
 \end{align}
 
-Signal with a large time width and a small amplitude can generate the same accumulation of charge respect to narrow signal with high voltage amplitude. Despite this, some data have been acquired by the A1 collaboration, with which it's possible to define a raw conversion function from attenuation units to threshold. The basic idea is to fix th time-length and the shape of signal and vary the amplitude, then we can observe the minimum value of attenuation for which the NINO board collects the input signal. We are aware that for electrons that hit the detectors, the shape of the signal cold different, and are not fixed, however this procedure let us to have at least a first rough estimate of the threshold value.
+Signal with a large time width and a small amplitude can generate the same accumulation of charge with respect to narrow signal with high voltage amplitude. Despite this, some data have been acquired by the A1 collaboration, with which it's possible to define a raw conversion function from attenuation units to threshold. The basic idea is to fix the time-length and the shape of signal and vary the amplitude, then we can observe the minimum value of attenuation for which the NINO board collects the input signal. We are aware that for electrons that hit the detectors, the shape of the signal is different, and are not fixed, however this conversion function provides a rough estimate of the threshold value.
 
 \begin{figure}[hbtp]
 \centering
@@ -38,7 +38,7 @@ Signal with a large time width and a small amplitude can generate the same accum
 \includegraphics[scale=0.75]{Analysis/Calibrations/ThrvsAtt.pdf}}
 \end{figure}
 
-The data show represent the values of the amplitude of the input signals (in $\SI{}{\milli \volt}$) versus attenuation, the function used for the conversion is obtained from the fit of the data, the function used is the following: 
+The data shown represent the values of the amplitude of the input signals (in $\SI{}{\milli \volt}$) versus attenuation, the function used for the conversion is obtained from the fit of the data, the function used is the following: 
 
 \begin{equation}
 Threshold = \dfrac{a}{(att - b)^{3}} + c
@@ -54,9 +54,9 @@ The values obtained from the fit are:
 
 \section{Detector Test}
 
-Before the Beam time, some test with the two detectors were performed, to check that the pmts were still working after some years of inactivity, and that the new electronic was able to count properly the pulses and store the data. For this studies, we didn't have a radioactive sources to employ, so we moved the two detectors in the workshop of the accelerator, and we use the cosmic rays rate as a probe. 
+Before the Beam time, some test with the two detectors were performed, to check that the PMTs were still working after some years of inactivity, and that the new electronic was able to count properly the pulses and store the data. For this studies, we didn't have a radioactive sources to employ. Anyway, with a radioactive source the shape of the signal would be different from the expected, since the typical energies of nuclear decay are $ \SI{1}{\mega \electronvolt} \gtrsim  E$, with little production of Cherenkov light in the fused-silica bars. The approach we used is to exploit the cosmic rays as a probe, and we moved the two detectors in the workshop of the accelerator. 
 
-Knowing that the expected number of event for cosmic rays is about $1 \frac{event}{\SI{}{\centi \meter\squared} \SI{}{\second}}$ we can compute the expected values for the number of events. We decided to take 1 minute long acquisition for both the two detectors, this leads to $70$ expected events for detector B  and  $100$ events for detector A.  \smallskip
+Knowing that the expected number of event for cosmic rays is about $1 \frac{event}{\SI{}{\centi \meter\squared} \SI{}{\second}}$ we can compute the expected values for the number of events. We decided to take 1 minute long acquisition for both the two detectors, this leads to $70$ expected events for detector B  and  $210$ events for detector A.  \smallskip
 
 The first step is to select a good point of work for the threshold. So, fixing the value of the threshold parameter for the NINO board, we took several acquisitions, each of them one minute long, increasing each time the attenuation. We powered the pmts with a negative voltage around $ \SI{-1000}{\volt}$, as suggested in the data-sheets, and covered the cherenkov detector with a shielding blanket, to avoid ambient light simulating a signal.
 
@@ -66,7 +66,7 @@ The first step is to select a good point of work for the threshold. So, fixing t
 \includegraphics[width = 0.45\textwidth]{Analysis/AttenuationB.pdf}}
 \end{figure}
 
-We observed a small knee in the plot, around the zone of 580 − 600 of attenuation, where the number of counts was almost constant, roughly equal to the number of expected events from muons hitting the detector. Then we observe a big edge for attenuation = 1000. Looking at the plot \ref{fig:ThrvsAtt}, we assume that the attenuation values are so high that electronic noise is no longer rejected, in fact the counts grow enormously. The attenuation was set at 600.
+We observed a small knee in the plot, around the zone of 580 − 600 of attenuation, where the number of counts was almost constant, roughly equal to the number of expected events from muons hitting the detector. Then we observe a big edge for attenuation = 1000. Looking at the plot \ref{fig:ThrvsAtt}, we assume that the attenuation values are so high that electronic noise is no longer rejected, in fact the counts grow enormously. The attenuation was set at 600 as a starting point for the experiment.
 
 The next step was to study the statistical fluctuation of the counts, so we collected 10 acquisitions, each of them 1 min long. The measured values are reported in the table below:
 
@@ -97,7 +97,7 @@ Pmt: & 1 & 2 & 3 \\
 \end{tabular} 
 \end{center}
 
-This data are interesting to check if the counts are following the theoretical distribution of the events expected for cosmic rays at sea level. If the pmt are working in a good mode, we know that the number of counts should be Poisson-distributed:
+These data are interesting, we can check if the counts are following the theoretical distribution of the events expected for cosmic rays at sea level. If the PMTs are working in a good mode, we know that the number of counts should be Poisson-distributed:
 
 \begin{equation}
 Pdf(\mu,k) =  \frac{\mu^{k}}{k!} e^{-\mu}
@@ -113,7 +113,7 @@ The variance of the Poisson distribution is equal to the mean of the counts, and
 \end{split}
 \end{align*}
 
-We report also the correlation $r_{xy}$ between the pmt. The result are fine: we are able to see a positive correlation between adjacent pmt, and as expected the correlation is lower in the case of the more distant. This is explained by the lower probability that the photons of Cherenkov radiation light up at the same time pmts that are far away from each other.
+We report also the correlation $r_{xy}$ between the pmt. The result are fine: we are able to see a positive correlation between adjacent PMT, and as expected the correlation is lower in the case of the more distant. This is explained by the lower probability that the photons of Cherenkov radiation light up at the same time pmts that are far away from each other.
 We can test that the data follow a Poisson distribution using the well-known Gosset test, defined as:
 
 \begin{equation}
@@ -287,14 +287,14 @@ We observe negative correlation between the pmts, something not expected. After 
 
 \section{Calibration}
 
-For the \transv on $^{12}C$ represent an ideal test for the new electronic system. Previous measurements of the $A_{n}$ have been performed at MAMI for carbon target (\cite{}). For this beam-time, the red spectrometer is placed at the angle of $+22.5^{\circ}$, and the blue one at $-22.5^{\circ}$, respect to the longitudinal direction. For these two angle, we have the same kinematics and $Q^{2}$ values of the previous measurement. The exact values are reported here: 
+For the transverse asymmetry on $^{12}C$ represent an ideal test for the new electronic system. Previous measurements of the $A_{n}$ have been performed at MAMI for carbon target (\cite{}). For this beam-time, the red spectrometer is placed at the angle of $+22.5^{\circ}$, and the blue one at $-22.5^{\circ}$, respect to the longitudinal direction. For these two angle, we have the same kinematics and $Q^{2}$ values of the previous measurement. The exact values are reported here: 
 
 \begin{flushleft}
 \begin{align*}
-& det. A : \qquad Q^{2} = \SI{0.041337}{\giga \electronvolt \squared} \qquad \textnormal{without Cut} \\
-& det. A : \qquad Q^{2} = \SI{0.0394513}{\giga \electronvolt \squared} \qquad \textnormal{with Cut} \\
-& det. B : \qquad Q^{2} = \SI{0.0404771}{\giga \electronvolt \squared} \qquad \textnormal{without Cut} \\
-& det. B : \qquad Q^{2} = \SI{0.0405843}{\giga \electronvolt \squared} \qquad \textnormal{with Cut} 
+& det. A : \qquad Q^{2} = \SI{0.0413}{\giga \electronvolt \squared} \qquad \textnormal{without Cut} \\
+& det. A : \qquad Q^{2} = \SI{0.0395}{\giga \electronvolt \squared} \qquad \textnormal{with Cut} \\
+& det. B : \qquad Q^{2} = \SI{0.041}{\giga \electronvolt \squared} \qquad \textnormal{without Cut} \\
+& det. B : \qquad Q^{2} = \SI{0.041}{\giga \electronvolt \squared} \qquad \textnormal{with Cut} 
 \end{align*} 
 \end{flushleft}
 
@@ -302,9 +302,13 @@ The $Q^{2}$ values is the same of the last measurement performed at MAMI, and is
 
 \subsection{Alignment of the Scattering Plane.}
 
+The scattered electrons are deflected upward by the magnetic field inside the spectrometers A and B. However, the spectrometer detectors and systems are not directly used to measure the transverse asymmetry, due to the high current intensity, which would damage the electronics.
+Instead of the spectrometer detectors, the scattered electrons are measured by the two detectors A and B, described in section \ref{detectors}, installed between the drift chamber and the scintillator of the spectrometer (see figure \ref{fig:internal}). So the scattered particles must be aligned to the fused-silica bars, primarily.
+This procedure is performed using a low current mode of the beam ($I = \SI{5}{\nano \ampere}$). For this mode the spectrometer systems can be used to detect the particles. Because we know the position of our detector A and B inside the spectrometers, we can use the Cherenkov detector of the spectrometer to visualize where the electrons are deflected. Changing the configuration of the magnetic field, we orient the electrons towards the fused-silica bars of detector A and B. Once we achieved a good alignment, we turned off the spectrometers system, performing subsequent calibrations using only our detectors. 
+
 \subsection{Beam Monitor Calibration, XY Monitor}
 
-For the calibration of the X Y monitors, special target are used. In the target frame (see figure \ref{fig:targetFrame}) there are two targets made by three carbon wires that are at a fixed distance each other, horizontally and vertically aligned. The distance between the center of the two external wires is measured, and it is equal to $ d_{horizontal} = \SI{2.38}{\milli \meter}$ for the horizontal wires and $d_{vertical} = \SI{2.33}{\milli \meter}$ for the other one.
+For the calibration of the X Y monitors, special targets are used. In the target frame (see figure \ref{fig:targetFrame}) there are two targets made by three carbon wires that are at a fixed distance each other, horizontally and vertically aligned. The distance between the center of the two external wires is measured, and it is equal to $ d_{horizontal} = \SI{2.38}{\milli \meter}$ for the horizontal wires and $d_{vertical} = \SI{2.33}{\milli \meter}$ for the other one.
 The procedure to retrieve the correct scaling factor, to convert from the raw-data in $\SI{}{\volt}$ to $\SI{}{\micro \meter}$, is the following: we ask MAMI operators to slowly change the beam position, in the horizontal and vertical direction for the horizontal and vertical target. The beam position can be changed by varying the Magnetic field produced by the \textit{Wobbler 16} magnets (see figure \ref{fig:BeamLine}). 
 During this slow variation, our detectors are measuring the rates of scattered electrons, that increase when the beam hit one of the three wires and and decrease when the beam is centered between two wires. We plot the detector counts versus the $XY$ monitors values, in voltage, and we estimate the position given in voltage of the two external peaks. This values can be used, together with the distance $d_{horizontal};d_{vertical}$ already measured, to compute the scaling factors. This procedure is repeated for $X21/Y21$ and $X25/Y25$ monitors.
 
