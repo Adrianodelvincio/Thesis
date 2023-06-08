@@ -22,7 +22,7 @@ The general structure of the event is the following:
 
 \begin{figure}[hbtp] 
 \centering
-\includegraphics[width = 0.55\textwidth]{ExperimentalSetup/EventStructure.pdf}
+\includegraphics[width = 0.75\textwidth]{ExperimentalSetup/EventStructure.pdf}
 \caption{General structure of the event. The gate-length of each event is synchronized with the power grid frequency, to reduce possible effect of $\SI{50}{\hertz}$ noise.}
 \label{fig:EventStructure}
 \end{figure}
@@ -337,7 +337,7 @@ Depending on the $TM$ mode excited, we have a different signal in the cavity, so
 P_{HF} = i^{2} r_{010} \frac{\kappa}{(1 + \kappa)^{2}}
 \end{equation}
 
-The power absorbed by the antenna is directly dependent on the beam current. Because the rage values are typically in the range of $\SI{}{\pico \watt}$ to $\SI{}{\milli \watt }$, the signal is processed in close proximity of the installed monitors. In the signal process, the input signal of the antenna in coupled to the master-oscillascion signal, so the output signal is given by the formula:
+The power absorbed by the antenna is directly dependent on the beam current. Because the rage values are typically in the range of $\SI{}{\pico \watt}$ to $\SI{}{\milli \watt }$, the signal is processed in close proximity of the installed monitors. In the signal process, the input signal of the antenna in coupled to the master-oscillation signal, so the output signal is given by the formula:
 
 \begin{equation}
 U = \sqrt{P_{HF}} \cos(\phi - \phi_{LO})
@@ -350,7 +350,6 @@ the phase $\phi$ is the phase of the resonant mode or the phase of the beam bunc
 \includegraphics[width = 0.5\textwidth]{ExperimentalSetup/PIMOphase.pdf}
 \caption{Plot of the phase $\phi$ versus the output signal. The phase optimization was done selecting the working point in correspondence of the peak.}
 \end{figure}
-
 
 The measurement of the $x,y$ position follows in principle the same procedure. In this case the $TM_{110}$ is acquired. The reason is clear, because it is possible to calculate that for this mode the $r_{shunt}$ is proportional to the beam position on the $x,y$ plane. So The power absorbed by the antenna can be written:
 
@@ -396,6 +395,7 @@ To collect the data from the monitors, single and multichannel, synchronous volt
 \begin{wrapfloat}{figure}{I}{0pt}
 \includegraphics[width=0.5\textwidth]{ExperimentalSetup/Vfc.pdf}
 \caption{Frequency versus Voltage}
+\vspace{10pt}
 \end{wrapfloat}
 
 The VFCs are powered with an external voltage of $\SI{5}{\volt}$. They measure an input voltage in the range of ($-V_{ref}$, $V_{ref}$). An external clock signal, with a frequency $F_{CLKIN} = \SI{5.88}{\mega \hertz}$ is created externally and synchronous to the gate-length.

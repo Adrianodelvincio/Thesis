@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper,twoside,notitlepage]{report}
+\documentclass[11pt,a4paper,twoside,notitlepage,openright]{report}
 %\usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -31,9 +31,12 @@
 \newcommand{\transv}{transverse asymmetry}
 \pagestyle{headings}
 \sidecaptionvpos{figure}{t}
-\setlength\intextsep{0pt}
-
+%\setlength\intextsep{2pt}
+\setlength{\textfloatsep}{10pt plus 1.0pt minus 1.0pt}
 \author{Adriano del Vincio}
+
+
+
 \begin{document}
 \begin{frontespizio}
 \Logo[2.5cm]{Simbolo/cherubino_pant541.eps}
@@ -50,7 +53,8 @@
 \title{Commissioning and first data analysis of the Mainz Radius Experiment.}
 \date{} 
 \tableofcontents
-
+\listoffigures
+\listoftables
 % Capitoli tesi
 \include{Abstract/abstract}
 \include{Introduzione/Intro}
