@@ -26,8 +26,8 @@
      showgrid="false"
      inkscape:lockguides="false"
      inkscape:zoom="1.2646927"
-     inkscape:cx="438.44644"
-     inkscape:cy="219.81625"
+     inkscape:cx="439.23714"
+     inkscape:cy="219.81624"
      inkscape:window-width="1920"
      inkscape:window-height="1043"
      inkscape:window-x="1366"
@@ -36,6 +36,17 @@
      inkscape:current-layer="layer1" />
   <defs
      id="defs2">
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect1435"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
     <inkscape:path-effect
        effect="bspline"
        id="path-effect3594"
@@ -576,25 +587,20 @@
     <text
        xml:space="preserve"
        style="font-size:3px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.312999;stroke-linejoin:bevel;stroke-miterlimit:0.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       x="13.864525"
-       y="45.208164"
+       x="15.648382"
+       y="47.165375"
        id="text3194"><tspan
          sodipodi:role="line"
-         id="tspan3192"
          style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.313"
-         x="13.864525"
-         y="45.208164">Mami source</tspan><tspan
-         sodipodi:role="line"
-         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.313"
-         x="13.864525"
-         y="48.958164"
-         id="tspan3196">Polarity bit</tspan></text>
+         x="15.648382"
+         y="47.165375"
+         id="tspan3196">Mami source</tspan></text>
     <path
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.312999;stroke-linejoin:bevel;stroke-miterlimit:0.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker2449)"
-       d="m 13.744342,50.859999 c 3.340445,4.231421 6.680591,8.462464 17.15341,11.623495 10.47282,3.161031 28.077412,5.252053 45.682064,7.343082"
+       d="m 46.484898,64.212167 c 4.461978,3.074958 8.923562,6.149645 13.93943,7.085273 5.015868,0.935627 10.585722,-0.267628 16.155488,-1.470864"
        id="path3214"
        inkscape:path-effect="#path-effect3216"
-       inkscape:original-d="m 13.744342,50.859999 c 3.340479,4.231394 6.680625,8.462437 10.020641,12.693386 17.605562,2.09137 35.210154,4.182392 52.814833,6.273191"
+       inkscape:original-d="m 46.484898,64.212167 c 4.46194,3.075014 8.923523,6.149701 13.385022,9.224247 5.570342,-1.203039 11.140196,-2.406294 16.709896,-3.609838"
        sodipodi:nodetypes="ccc" />
     <rect
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.282282;stroke-linejoin:bevel;stroke-miterlimit:0.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
@@ -709,5 +715,46 @@
          x="197.47639"
          y="100.37553"
          id="tspan3666">Asymmetry</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.4;stroke-linejoin:bevel;stroke-miterlimit:0.2;stroke-dasharray:none;stroke-opacity:1"
+       id="rect395"
+       width="9.6591749"
+       height="5.0960517"
+       x="41.97414"
+       y="59.169388" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.3;stroke-linejoin:bevel;stroke-miterlimit:0.2;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker3452)"
+       d="M 46.427821,64.584203 C 39.80308,65.960168 33.17827,67.336147 27.701378,64.999445 22.224487,62.662743 17.895935,56.613204 13.567083,50.563244"
+       id="path1433"
+       inkscape:path-effect="#path-effect1435"
+       inkscape:original-d="M 46.427821,64.584203 C 39.803144,65.960474 33.178334,67.336453 26.552995,68.712222 22.224537,62.662707 17.895985,56.613168 13.567083,50.563244"
+       sodipodi:nodetypes="ccc" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.49999px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#030303;fill-opacity:1;stroke:none;stroke-width:0.3;stroke-linejoin:bevel;stroke-miterlimit:0.2;stroke-dasharray:none;stroke-opacity:1"
+       x="37.722389"
+       y="56.503994"
+       id="text1611"><tspan
+         sodipodi:role="line"
+         id="tspan1609"
+         style="fill:#030303;fill-opacity:1;stroke:none;stroke-width:0.3"
+         x="37.722389"
+         y="56.503994" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#030303;fill-opacity:1;stroke:none;stroke-width:0.3;stroke-linejoin:bevel;stroke-miterlimit:0.2;stroke-dasharray:none;stroke-opacity:1"
+       x="33.605709"
+       y="53.562996"
+       id="text2071"><tspan
+         sodipodi:role="line"
+         id="tspan2069"
+         style="font-size:3px;stroke-width:0.3"
+         x="33.605709"
+         y="53.562996">Polarity sequence</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:3px;stroke-width:0.3"
+         x="33.605709"
+         y="57.312996"
+         id="tspan2073">generator</tspan></text>
   </g>
 </svg>
