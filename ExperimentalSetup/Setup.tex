@@ -1,40 +1,31 @@
 \chapter{Experimental setup} 
-\commento{
-\begin{itemize}
-\item description of MAMI, how the beam is produced, how the electrons are polarized.
-\item description of A1.
-\item description of beam stabilization, how the monitors measure the beam parameters.
-\item Electronics description, DAQ system, VFC monitors.
-\item Detectors A and B.
-\end{itemize}}
 
-\paragraph{} This chapter presents briefly the structure and the characteristics of the Mainz microtron accelerator (MAMI), where the \transv is measured, and the experimental setup used. Particular attention is shown in the the description of the beam monitors, that are quite specific for the standard of particle accelerators. Following an overview of MAMI and the acceleration stages, the experimental hall and the specific electronics devices to acquire and process the data are presented. 
+\paragraph{} This chapter presents briefly the structure and the characteristics of the Mainz microtron accelerator (MAMI), where the experiment is setup and the transverse asymmetry is measured. Particular attention is given in the the description of the beam monitors, different from the standard of particle accelerators. Following an overview of MAMI and the acceleration stages, the experimental hall, the detectors and the electronic devices used to acquire and process the data are presented. 
 
 \section{Overview of the Experiment} \label{FirstDescription}
 
-To measure the Beam-Normal single spin asymmetry, a polarized beam of $ \SI{570}{\mega \electronvolt}$ will be sent against a $\SI{10}{\milli \meter}$ width of $^{12}C$ target. The detectors consist of two fused-silica bars coupled to 3 (detector B) and 8 (detector A) pmts, which collect the Cherenkov light emitted when an electron pass through the fused-silica. 
-The detector are placed inside the two spectrometer of the A1 hall, the detectors of which are not used in this experiment due to the high luminosity of the beam ($ \SI{20}{\micro \ampere}$) that is above their limits of operation. 
-The asymmetry due the change of the electrons spin is the aim of the measurement. The pmts signals are collected and digitalized by the \textbf{NINO} board, after a threshold selection, and sent to the A1 control room computer, where the DAQ program collect the data together with all the data coming from the Beam monitors producing Binary files, which are later analyzed by the analysis program, which is significant part of the work done in the framework of the thesis. 
-The data collected are divided in \textit{Events} made by 4 \textit{sub-events} in sequence. Each event correspond to a temporal window of $\simeq \SI{80}{\milli \second}$, where each sub-event is $\SI{20}{\milli \second}$ long.
- Here it's important to clarify that unlike the majority of experiments in high energy physics, an event is made by all the electrons interacting with the detectors during the time interval of the event, and we will refer to this hereafter unless otherwise stated. The division into sub-events reflects the polarization sequence of the beam. The PMTs counts and the beam monitor values are saved for each sub-event, along with the time length of the event, and other values which are required to process beam monitor data.
+To measure the Beam-Normal single spin asymmetry, a polarized beam of $ \SI{570}{\mega \electronvolt}$ is sent against a $\SI{10}{\milli \meter}$ thick $^{12}C$ target. The detectors consist of two fused-silica bars coupled to 3 (detector B) and 8 (detector A) PMTs, which collect the Cherenkov light emitted when an electron pass through the fused-silica. 
+The detector are placed inside the two spectrometer of the A1 hall, whose standard detectors are not used in this experiment because of the high beam current ($ \SI{20}{\micro \ampere}$) that is above their limits of operation. 
+The asymmetry between the two orientations of the electron spin is the goal of the measurement. The PMT signals are collected and digitalized by the \textbf{NINO} board, after a threshold selection, and sent to the A1 control room computer, where the DAQ program collect the data together with all the data coming from the beam monitors. The produced  binary files are later analyzed by the analysis program, which is a significant part of the work done in the framework of the thesis. 
+The data collected are divided in \textit{events} made by 4 \textit{sub-events} in sequence. Each event corresponds to a temporal window of $\simeq \SI{80}{\milli \second}$, where each sub-event is $\SI{20}{\milli \second}$ long.
+Here it is important to clarify that, unlike the majority of experiments in high energy physics, an event is not a single interaction, but is made by all the electrons interacting with the detectors during the specified time interval. The division into sub-events reflects the polarization sequence of the beam. The PMT counts and the beam monitor values are saved for each sub-event, along with the time length of the event (measured in clock cycles by the NINO electronic board) and other values which are required to process beam monitor data.
 The general structure of the event is the following: 
 
 \begin{figure}[hbtp] 
 \centering
 \includegraphics[width = 0.75\textwidth]{ExperimentalSetup/EventStructure.pdf}
-\caption{General structure of the event. The gate-length of each event is synchronized with the power grid frequency, to reduce possible effect of $\SI{50}{\hertz}$ noise.}
+\caption{General structure of the event. The gate-length of each event is synchronized with the power grid frequency, to reduce possible effects of $\SI{50}{\hertz}$ noise.}
 \label{fig:EventStructure}
 \end{figure}
 
-The particular choice of $\SI{20}{\milli \second}$ for the sub-event is due to avoid possible, not desired effects generated by the power grid frequency ($f = \SI{50}{\hertz}$). The gate-length of each sub-events is synchronized with the period of the power grid frequency, to ensure that electronic noise does not produce effects between nearby sub-events.
-For each event we have a single measure of $A_{n}$, defined ad the asymmetry between the $\uparrow$ and $\downarrow$ sub-events.
-At the beginning of an Event one of the two polarity pattern is selected using a De Bruijn sequence. A De Bruijn sequence of order n is defined as a cyclic sequence where every sub-sequence of length appear only once. We have two different polarization pattern, the ones shown in the figure, that can be represented as $1$ and $0$. For this experiment, the De Bruijn sequence is of order $n = 6$ bits; this correspond to all the possible sequence of $1$ and $0$ with a length equal to $6$, which are $64$ different sub-sequence.
-It's possible to demonstrate that exist exactly $N_{bruijn}$ sequences: 
+The particular choice of $\SI{20}{\milli \second}$ for the sub-event is made to avoid undesirable effects generated by the power grid frequency ($\SI{50}{\hertz}$). The gate-length of each sub-events is synchronized with the period of the power grid frequency: this ensures that an entire oscillation of the current of the power grid takes place within the same sub-event. This cancels out the $\SI{50}{\hertz}$ noise and avoid to produce effects between nearby sub-events.
+For each event we have a single measurement of $A_{n}$, defined as the asymmetry between the $\uparrow$ and $\downarrow$ sub-events. It is important to avoid the creation of fake asymmetries by correlated noise or other external sources. For this reason polarization states are concatenate following the two patterns $\uparrow, \downarrow, \downarrow, \uparrow$. In addiction at the beginning of an event one of the two polarization pattern is selected using a De Bruijn sequence. A De Bruijn sequence of order n is defined as a cyclic sequence where every sub-sequence of length n appear only once. We have two different polarization pattern, the ones shown in the figure, that can be represented as $1$ and $0$. For this experiment, the De Bruijn sequence is of order $n = 6$ bits; this correspond to all the possible sequences of $1$ and $0$ with a length equal to $6$, which are $64$ different sub-sequence.
+It is possible to demonstrate that the number of exactly $N_{De Bruijn}$ sequences is: 
 \begin{align*}
 N_{bruijn} = \frac{(k!)^{k^{n-1}}}{k^{n}}
 \end{align*}
-If we substitute in the formula above $k=2$ and $n = 6$, we have a total of $\simeq 67 \cdot 10^{6}$ different sequences. The seed of the De Bruijn sequence is generated with a pseudo random number generator, and the sequence is used to select between $\uparrow,\downarrow,\downarrow, \uparrow$  and $\downarrow,\uparrow,\uparrow,\downarrow$. At this point it could be objected why so much care is taken in choosing randomly the two sequences. At a first glance is certainly easier to select one of the two polarization pattern and reproduce it for every sub-event. However, this does not protect from systematic effects that arise from electronic or beam noise with frequencies similar to the frequency of the polarity patter.  
-An electronic noise, with a frequency roughly $\SI{10}{\hertz}$ could in principle increase the rates for one polarizations state and decrease the other. The adopted solution to reduce possible effect is to randomize the pattern selection. In the end, there is another reason why a debruijn sequence is useful. During each polarization flip, we observe a short, transient reduction of the beam current. This reduction in the beam intensity has more influence on patterns where there are more inversion of the polarity respect to the other. With a debruijn sequence we assure that we have a identical number of pairs of patterns, meaning that:
+If we substitute in the formula above $k=2$ and $n = 6$, we have a total of $\simeq 67 \cdot 10^{6}$ different sequences. The seed of the De Bruijn sequence is generated with a pseudo random number generator, and the sequence is used to select between $\uparrow,\downarrow,\downarrow, \uparrow$  and $\downarrow,\uparrow,\uparrow,\downarrow$. At this point it could be objected why so much care is taken in choosing randomly the two sequences. At a first glance is certainly easier to select one of the two polarization pattern and reproduce it for every sub-event. However, this does not protect from systematic effects that arise from electronic or beam noise with frequencies similar to the frequency of the polarization pattern.  
+An electronic noise, with a frequency roughly $\SI{10}{\hertz}$ could in principle increase the rates for one polarizations state and decrease the other. The adopted solution to reduce possible effect is to randomize the pattern selection. In the end, there is another reason why a De Bruijn sequence is useful. During each polarization flip, we observe a short, transient reduction of the beam current. This reduction in the beam intensity has more influence on patterns where there are more inversion of the polarization respect to the other. With a De Bruijn sequence we ensure that we have a identical number of pairs of patterns, meaning that:
 
 \begin{itemize}
 \item $25\%$ : $\uparrow,\downarrow,\downarrow, \uparrow$ ; $\uparrow,\downarrow,\downarrow, \uparrow$
@@ -47,36 +38,53 @@ In the top rows we have 4 inversion, while in the two lower rows we have 5 inver
 Later we will describes the other details of the experiment; in the next sections we will present briefly MAMI accelerator, where the experiment is performed. 
 
 \section{Mami}
-\commento{ How Mami produces polarized electron and how the particle are accelerated (the way Mainz Mikroton is working is completely different from the other accelerators, so maybe this section will be too long).}
 
-MAMI is the electron accelerator located in Mainz, which provides a continuous wave, high intensity, polarized beam for nuclear physics experiments with fixed-target. The concept of the Mainz microtron accelerator is born in the early 1970s, when the researchers of the nuclear physics institute were investigating the possibility of generalizing the concept of the racetrack microtron (RTM), that consists in a linear accelerator (linac) and two deflection magnets ($180^{\circ}$ magnet, see the figure). The particle recirculate, due to the deflection magnets, several time in the linac, and each time they gain energy.  The goal of the collaboration which develop MAMI was to produce a continuous beam, with energies above $\SI{1}{\giga \electronvolt}$ and beam intensities up to $\SI{100}{\micro \ampere}$ for high efficiency in fixed-target experiments.
+MAMI is the electron accelerator located in Mainz, which provides a continuous wave \footnote{The electron beam is made by bunches of electrons, in sequence. In MAMI the separation between subsequent bunches is so small that it is not possible, with the available instrumentation, to distinguish it from a continuous flow of particles.}, high intensity, polarized beam for nuclear physics fixed-target experiments. The concept of the Mainz microtron accelerator was born in the early 1970s, when the researchers of the nuclear physics institute were investigating the possibility of generalizing the concept of the racetrack microtron (RTM), that consists in a linear accelerator (linac) and two deflection magnets ($180^{\circ}$ magnet, see figure \ref{fig:RaceTrackSketch}). The particle recirculate, due to the deflection magnets, several time in the linac, and each time they gain energy.  The goal of the collaboration which developed MAMI was to produce a continuous beam, with energies above $\SI{1}{\giga \electronvolt}$ and beam intensities up to $\SI{100}{\micro \ampere}$.
 
 \begin{figure}[hbtp]
 
 \centering
 \includegraphics[width = 0.75\textwidth]{ExperimentalSetup/RacetrackMicrotronSketch.pdf}
 \caption{Racetrack Microtron. The particles are sent to the linac, and the two deflection magnets make the particles recirculate, until the momenta exceed the capability of the magnetic field.}
+\label{fig:RaceTrackSketch}
 \end{figure}
 
-A racetrack microtron, as the one shown in the figure, is characterized by the energy gain per-cycle $\delta E$ given by the high-frequency electromagnetic field (HF). The energy gain is: 
+A racetrack microtron, is characterized by the energy gain per-cycle $\delta E$ given by the high-frequency electromagnetic field (HF). The energy gain for a single acceleration cavity of the linac is: 
 
 \begin{align*}
 \delta E \, = \, e U_{Linac} \cdot cos(\phi)
 \end{align*} 
 
-$U_{Linac}$ is the maximum voltage of the linac, and $\phi$ is the phase of the beam relative to the maximum of HF. Because the particle are accelerated by the linac, the beam consist in individual packets (bunches) whose rate correspond to the $\omega$ of HF. In order for the electrons to be accelerated for each recirculation step, they must arrive at the beginning of the linac with the correct phase $\phi$. For this it is important that the flight-time per cycle must be an integer or a multiple of the HF period.
+$U_{Linac}$ is the maximum voltage of the linac, and $\phi$ is the phase of the beam relative to the maximum of HF. Because the particle are accelerated by the linac, the beam consist in individual packets (bunches) whose rate correspond to the frequency of HF. In order for the electrons to be accelerated for each recirculation step, they must arrive at the beginning of the linac with the correct phase $\phi$. Therefore the flight-time per cycle must be an integer or a multiple of the HF period. The time of flight is made of two terms: the first is the time that an electron needs to travel in the magnetic field of two $180^{\circ}$ bending magnets, that is the cyclotron period, while the second term is given by the straight sections. 
+
+\begin{equation} \label{eq:TimeofFlight}
+T = \dfrac{2 \pi \gamma m_{e} }{qB} + \dfrac{L}{v}
+\end{equation}
+
+where $B$ is the magnetic field, $q$ and $m_{e}$ are the charge and mass of the electron, and $L$ is the length of the straight section of the accelerator. The frequency is the given by the formula:
 
 \begin{equation} \label{eq:frequency}
-f = \frac{1}{2 \pi} \cdot \dfrac{q}{\gamma m_{0}} \cdot B
+f = \dfrac{qB}{2 \pi \gamma m_{e} + \frac{LqB}{v}} 
 \end{equation}
+
 From this overview two conclusion can be drawn:
+
 \begin{itemize}
-\item To accelerate slow electrons, with $\gamma = (1,10)$, a magnetic field of $\SI{0.1}{\tesla}$ is used, in order to work with frequencies of ($\SI{2}{\giga \hertz}$,$\SI{2}{\giga \hertz}$), that are easy to control. However with higher energies the bending radii is higher, with a small magnetic field.
-\item For high energy electrons $\gamma > 10$, to reduce the size of the deflection magnets, it is useful to increase the Magnetic field up to $\SI{1}{\tesla}$ of more. This let to accelerate the electrons using the same technology for $f \simeq \SI{}{\giga \hertz}$.
+\item To accelerate slow electrons, with $\gamma = (1,10)$, a magnetic field of $\SI{0.1}{\tesla}$ is used, in order to work with frequencies of ($\SI{2}{\giga \hertz}$,$\SI{4}{\giga \hertz}$), that are easy to control. However with higher energies, and with a small magnetic field, the bending radii is higher and uneconomical.
+\item For high energy electrons $\gamma > 10$, to reduce the size of the deflection magnets, it is useful to increase the magnetic field up to $\SI{1}{\tesla}$ of more, with the same band of frequencies $\simeq \SI{}{\giga \hertz}$.
 \end{itemize}
 
-These conclusions justify the structure of MAMI: a cascade of microtrons to reach each time higher energies with the same acceleration frequency at each stage. \medskip
-MAMI is composed by a sequence of 4 different microtrons, to achieve energies of $\SI{1.6}{\giga \electronvolt}$. The first stage, shown in figure \ref{fig:Accelerator}, is composed by two small microtrons. The first microtron RTM1 accelerate the particle to $\SI{14}{\mega \electronvolt}$ in 18 revolutions. The electrons are then sent to the second microtron that can accelerate the particle up to $\SI{180}{\mega \electronvolt}$. After passing the first stage, the beam is sent to the RTM3 (race track microtron 3), a large microtron with an end point energy of $\SI{855}{\mega \electronvolt}$. These 3 microtrons forms MAMI-B, which started operation in 1990-91. A fourth stage, MAMI-C, was built and started operation in 2007. This fourth stage is made by 4 bending magnets, with a bending angle of $90^{\circ}$, and it is designed to achieve energies of $\SI{1.6}{\giga \electronvolt}$. The design is different from the other race-track microtrons, and will not be explained, as it is not necessary for the experiment to reach such high energies.
+These conclusions justify the structure of MAMI: a cascade of microtrons to reach each time higher energies with the same acceleration frequency at each stage.
+MAMI is composed by a sequence of 4 different microtrons, reaching $\SI{1.6}{\giga \electronvolt}$. 
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.6\textwidth]{ExperimentalSetup/Accelerator.pdf}
+\caption{Scheme of the accelerator, with the different experimental halls. A third hall previously used for the A4 experiment, measuring the strange quark content of the proton, is now being used for the novel MESA accelerator and its experiments.}
+\label{fig:Accelerator}
+\end{figure}
+
+The first stage, shown in figure \ref{fig:Accelerator}, is composed by two small microtrons. The first microtron RTM1 accelerate the particles to $\SI{14}{\mega \electronvolt}$ in 18 revolutions. The electrons are then sent to the second microtron that can accelerate up to $\SI{180}{\mega \electronvolt}$. After passing the first stage, the beam is sent to the RTM3 (race track microtron 3), a large microtron with an end point energy of $\SI{855}{\mega \electronvolt}$. These 3 microtrons forms MAMI-B, which started operation in 1990-91. A fourth stage, MAMI-C, was built and started operation in 2007. This fourth stage is made by 4 bending magnets, with a bending angle of $90^{\circ}$, and it is designed to achieve energies of $\SI{1.6}{\giga \electronvolt}$. The design is different from the other race-track microtrons, and will not be explained, as it is not necessary for the experiment to reach such high energies.
 
 \begin{figure}[hbtp]
 \centering
@@ -84,33 +92,32 @@ MAMI is composed by a sequence of 4 different microtrons, to achieve energies of
 \caption{Picture of the Racetrack RTM3 in MAMI-B. The Green square at the bottom is one of the deflector magnets, the other one is below the point where the photo was taken. The linac stage is on the left. The tubes at the center of the figure are the paths that the particle cross during the recirculation. The further away from the linac the greater the energy.}
 \end{figure}
 
-The operation principles of a microtron are simple to be described. First we conside the gyro-radius for relativist electrons, that is:
+The operation principles of a microtron are simple to be described. First we consider the gyro-radius for relativist electrons of energy $E$, that is:
 
 \begin{equation}
 \qquad r = \dfrac{E \beta}{qcB}
 \end{equation}
 
-To have a coherent conditions, we must have that the flight-time $\tau = \frac{\lambda}{c}$ of the first recirculation must be an integer multiple of the HF, see equation \ref{eq:frequency}. This means that:
+To have a coherent conditions, we must have that the flight-time $\tau = \frac{\lambda}{c}$ of the first recirculation must be an integer multiple of the HF wavelength $\lambda_{HF} = \frac{c}{f_{HF}}$, see equation \ref{eq:frequency}. This means that:
 
 \begin{align*}
-\lambda = \tau c =\dfrac{ 2 \pi c R }{\beta c} = \dfrac{2 \pi E}{q B} = m \lambda_{HF}
+\lambda = \tau c =\dfrac{ 2 \pi c R }{\beta c} + \frac{Lc}{v} = \dfrac{2 \pi E}{q B} + L = m \lambda_{HF}
 \end{align*}
 
-For the other recirculation, we must have that the flight-time at energies $E_{i} = E_{n-1} + \delta E$ must be increased by an integer multiple of HF, too. This lead to the second equation:
+For the other recirculation, we must have that the flight-time at energies $E_{n} = E_{n-1} + \delta E$ must be increased by an integer multiple of HF, too. This lead to the second equation:
 
 \begin{align*}
 \dfrac{2 \pi \delta E}{q B} = n \lambda_{HF}
 \end{align*}
 
-The minimum gain per cycle is then determined only by the strength of the magnetic field and wavelength $\lambda_{HF}$. These two equations together controls the dynamic of the race-track microtrons,
+The minimum gain per cycle is then determined only by the strength of the magnetic field and wavelength $\lambda_{HF}$. These two equations together controls the dynamic of the race-track microtrons.
 
 \subsection{Polarized Beam}
-\commento{Here a subsection to explain how the polarized electrons are produced. Important to mention the systematic error for the polarization measurement (in our beam time we couldn't measure with Moller polarimeter, so this discussion is important for future experiment, however it's important to say something about it). Remember to explain how the spin are rotated to the transverse plane, and the $\frac{\lambda}{2}$} \medskip
 
-For the beam-normal single spin asymmetry a vertical polarized beam is necessary. At the MAMI electron accelerator is possible to produce a vertical polarized beam with energy in the range $\SI{180}{\mega \electronvolt} - \SI{855}{\mega \electronvolt}$ \cite{Schlimme:2016rrp}. In this section the procedure to orient the beam vertically is presented, following an explanation of how the degree of polarization is measured. \medskip
+For the beam-normal single spin asymmetry a vertically polarized beam is necessary. At the MAMI electron accelerator it is possible to produce a vertically polarized beam with energy in the range $\SI{180}{\mega \electronvolt} - \SI{855}{\mega \electronvolt}$ \cite{Schlimme:2016rrp}. In this section the procedure to orient the spin vertically is presented, following an explanation of how the degree of polarization is measured. \smallskip
 
-The electron source used at MAMI is made by a strained GaAs/GaAsP super-lattice photo-cathode illuminated by circular polarized light. To alternate the sign of the light polarization, a fast Pockels cell ( \cite{}) is installed in the optical system of the electron source. The Pockels cell is a wave plate controlled by the electric field, that changes the helicity of the photons impinging on the electrons. A Pockels cell exploits the Pockels effect, that affects crystal with particular characteristics (lack of inversion symmetry). For this type of materials the refractive index is linearly dependent on the applied electric field. By controlling the refractive index with the electric field, the polarization state of the incident light beam is altered.
-Once an photons imping on and electron, the extracted electron carries the same helicity of the incoming photon:
+The electron source used at MAMI is made by a strained GaAs/GaAsP super-lattice photo-cathode illuminated by circularly polarized light. To alternate the sign of the light polarization, a fast Pockels cell (\cite{Goldstein}) is installed in the optical system of the electron source. The Pockels cell is a wave plate controlled by the electric field, that changes the helicity of the photons impinging on the electrons. A Pockels cell exploits the Pockels effect, that affects crystal with particular characteristics (lack of inversion symmetry). For this type of materials the refractive index is linearly dependent on the applied electric field. By controlling the refractive index with the electric field, the polarization state of the incident light beam is altered.
+The extracted electron carries the same helicity of the incoming photon because of angular momentum conservation:
 \begin{center}
 \begin{equation}
 \feynmandiagram [scale = 0.8, transform shape][baseline = (g)]{
@@ -121,30 +128,35 @@ Once an photons imping on and electron, the extracted electron carries the same 
 \end{equation}
 \end{center}
 
-With the fast change of the Pockels cell it is possible to alternately revert the sign of the polarization. By the insertion of a $\lambda/2$ plate between the laser system and the photo-cathode the global polarization orientation of the electron beam can be reversed. This is particularly useful because this directly change the sign of the physical asymmetry measured by the detectors, and allows to identify systematic errors. This is useful done for longer beam time, where two sets of data are taken, reversing the orientation of the $\lambda/2$  wave plate. By comparing the results for the two sets of data, the influence of the optical system on the asymmetry measurement is estimated and can be corrected in the end result of the asymmetry. During the beam time of interest for this thesis, the $\lambda/2$ wave plate orientation was fixed. During previous beam time (\cite{Esser:2018vdp}). The beam polarization achieved with this source is roughly $P = 80 \% $, so the measured asymmetry are:
+With the fast change of the Pockels cell it is possible to alternate the sign of the polarization. By the insertion of a $\lambda/2$ plate between the laser system and the photo-cathode the global polarization orientation of the electron beam can be reversed. This is particularly useful because this directly changes the sign of the asymmetry measured by the detectors, and allows to identify systematic errors. This is usually done for longer beam time, where two sets of data are taken, reversing the orientation of the $\lambda/2$  wave plate. By comparing the results for the two sets of data, the influence of the optical system on the asymmetry measurement is estimated and can be corrected for the final result of the asymmetry. During the beam time of interest for this thesis, the $\lambda/2$ wave plate orientation was fixed. The beam polarization achieved with this source is roughly $P = 80 \% $, so the measured asymmetry are:
 
 \begin{align*}
 A_{measured} = P \cdot A_{n}
 \end{align*}
 
-The polarizations of the electrons just extracted from the source is still longitudinal. The Magnetic field is needed in order to rotate $\vec{P}$ from longitudinal polarization to transverse. For this purpose two devices are used: the \textbf{Wien filter} and a \textbf{double solenoid} located in the injection beam line, close to the the optical source: 
+The polarizations of the electrons just extracted from the source is longitudinal. A magnetic field is needed to rotate $\vec{P}$ from longitudinal to transverse orientation. For this purpose two devices are used: the \textbf{Wien filter} and a double solenoid located in the injection beam line, close to the the optical source, as show in figure \ref{fig:Iniezione}:
 
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width = \textwidth]{ExperimentalSetup/injection.png}
 \caption{Beam line projection. This figure is taken from the paper \cite{Schlimme:2016rrp}}
+\label{fig:Iniezione}
 \end{figure}
 
-Following the picture, the spin of the electrons from the source are rotated first in the XY plane with a $90^{\circ}$ rotation, then the subsequent double solenoid align the spin to the vertical direction with another $90^{\circ}$ rotation. 
-Once the beam passes the double solenoid, the electrons go through the linac, the microtron and in the end to the experimental hall, where the target of the experiments is installed. During the acceleration stage, the spin follows the precession motion due to the various magnetic fields of the accelerator, the precession, for a relativistic particle, is determined by the BMT equation.
-However it is not necessary, due to our particular experimental setup, the BMT equation is quite simple: the magnetic field of the various bending magnets that constitute the microtron-cascade are always parallel to the vertical direction, because of this the cross product $\vec{B} \times \vec{P} = 0$, and the polarization remain constant. Only the residual horizontal component precedes during the motion. For conventional experiment that involve longitudinal polarization, after the first spin rotation due to Wien filter and the bending magnets close to the electrons source, there is a further rotation to be considered, due to the motion of the particle during the acceleration and recirculation in the microtron. Because of this, the rotation made by the Wien is set in such a way that after the second rotation due to the motion in the accelerator, the polarization has the correct alignment in the experimental hall. The rotation angles of the polarization vector through the accelerator are known from simulations and are also directly measured for relevant energies, for a beam of $\SI{570}{\mega \electronvolt}$ the rotation angle is $\ang{55}$ with an accuracy of $\pm \ang{2}$. In our case, this further rotation has only a small effect to the residual horizontal component, whose effect is negligible because it is accurately minimized by MAMI operators at the beginning of the beam time. Besides this, the effect of a small horizontal polarization on the asymmetry is small, knowing that typically the transverse asymmetries are one order higher that the $PV$.
-At the beginning MAMI was not developed for experiment with transverse polarization. So it's not possible to measure directly the transverse component. However combining the measurement in the $XY$ plane, with the existing setup, it is possible to get the polarization value also in that direction. For this purpose a Moller, Comport and Mott polarimeters are used.
-
+Looking at the picture, the longitudinal direction corresponds to the $Z$ axis. The $X$ axis is parallel to the second blue arrow, just after the Wien filter, and the $Y$ axis is orthogonal to the page. 
+The spin is rotated primarily in the $X$ direction, with a $90^{\circ}$ rotation, then the subsequent double solenoid align the spin to the vertical direction, with another $90^{\circ}$ rotation. 
+Once the beam passes the double solenoid, the electrons go through the linac, the microtron and in the end to the experimental hall, where the target of the experiments is installed. During the acceleration stage, the spin follows the precession motion due to the various magnetic fields of the accelerator, as determined by the BMT equation. However in our experimental setup, the magnetic field of the various bending magnets that constitute the microtron-cascade are always parallel to the polarization in vertical direction, so that the cross product $\vec{B} \times \vec{P} = 0$, and the polarization remain constant. Only the residual horizontal component precedes during the motion. For conventional experiment that involve longitudinal polarization, after the first spin rotation due to Wien filter and the bending magnets, there is a further rotation to be considered, due to the motion of the particle during the acceleration and recirculation in the microtron. Because of this, the rotation made by the Wien is set in such a way that after the second rotation due to the motion in the accelerator, the polarization has the correct alignment in the experimental hall. The rotation angles of the polarization vector through the accelerator are known from simulations and are also directly measured for relevant energies, for a beam of $\SI{570}{\mega \electronvolt}$ the rotation angle is $\ang{55}$ with an accuracy of $\pm \ang{2}$. In our case, this further rotation has only a small effect to the residual horizontal component. This horizontal component was accurately minimized by MAMI operators at the beginning of the beam time, and its effects the measurement are negligible. MAMI was not developed for experiments with transverse polarization. So it's not possible to measure directly the transverse component. However the vertical polarization is deduced from the determination of the total beam polarization and the residual horizontal components. For this purpose a Moller, Comport and Mott polarimeters are used.
 
 \subsection{Polarization Measurement}
+Three polarimeters are installed in MAMI: Mott, M\o ller and Compton polarimeters. Compton and Mott polarimeter are located behind the injector linear accelerator (see figure \ref{fig:Accelerator}), close to the beam source, where the electrons, with an energy of $\SI{3.5}{\mega \electronvolt}$, have already passed the Wien filter and the double solenoid. The M\o ller polarimeter, instead, is installed in the spectrometer hall, where the beam is delivered. The M\o ller polarimeter is sensitive only to the longitudinal component of the polarization, while the Mott and Compton polarimeter are sensitive to the $Z$ and $X$ component. 
+When the beam is polarized longitudinally, the total polarization can be measured by a M\o ller polarimeter, in the spectrometers hall. The procedure for the alignment is the following: at the beginning of the beam time the Mott polarimeter is used for different settings of the solenoid field, with the Wien filter angle equal (nominal) to $\ang{90}$. The aim is to minimize the horizontal polarization component ($P_{x}$) after the rotation performed by the double solenoid, changing the solenoid magnetic field. Then a second minimization follows, using the M\o ller polarimeter and changing Wien filter  rotation angles. In this way we minimize also the longitudinal component ($P_{z}$). With the new Wien filter settings, another measurement is performed with the Mott polarimeter. With this procedure, the $P_{x}$ and $P_{z}$ components are completely minimized, with the result that the beam polarization is parallel to the $Y$ axis. 
 
-To Measure the polarization of an electron beam different polarimeters can be used. Here we explain briefly the physics underlying the \textit{Mott} polarimeter, used in the experiment.
-Consider an electron beam that is sent towards a nucleus of charge $Ze$. We know from theory \cite{MottElectron} that the spin of the incident electron interacts with the electromagnetic field produced by the nucleus.
+In the last measurement of $A_{n}$ at MAMI \cite{Esser:2018vdp} the Moller and Mott polarimeters were available. In this way, it is also possible to estimate the systematic uncertainty for the degree of polarization, which is the relevant contribution to the total systematic uncertainty of the final measurements of $A_{n}$. The systematic effects obtained during the previous experiment were of the order of $1 \, ppm$. For the experiment described in this thesis, we performed the minimization described before only with the Mott polarimeter, obtaining a measure of the transverse polarization $P = 0.79\%$. This means that we could not estimate the systematic uncertainty of the polarization.
+
+\subsection{Mott Polarimeter}
+
+In this section we describe the theory of the Mott polarimeter. The Mott polarimeter exploit the asymmetry in the scattering cross section due to the spin, to measure the polarization of the beam. 
+Let's suppose that we have an electron beam that is sent towards a nucleus of charge $Ze$. We know from theory \cite{MottElectron} that the spin of the incident electron interacts with the electromagnetic field produced by the nucleus.
 The magnetic field seen by a particle with speed $\vec{v}$ near a nucleus is:
 
 \begin{align*}
@@ -154,25 +166,31 @@ The magnetic field seen by a particle with speed $\vec{v}$ near a nucleus is:
 This magnetic field is coupled with the magnetic momenta of the electron $\mu_{e}$.
 
 \begin{equation}
-V = - \mu \cdot B_{nucleus} = \frac{Ze}{mcr^{3}} \vec{L} \cdot \vec{S}_{e^{-}}
+V = - \vec{\mu} \cdot \vec{B}_{nucleus} = \frac{Ze}{mcr^{3}} \vec{L} \cdot \vec{S}_{e^{-}}
 \end{equation}
 
-The second equation represents the spin-orbit interaction potential. This term yields the polarization dependence of the cross section, and it is exploited to obtain the polarization of the incident particles. Indeed the cross section can be modeled highlighting the dependencies on the spin $\vec{S}$:
-
-\begin{align*}
-\sigma(\theta) = I(\theta) [1 + S(\theta) \vec{P} \cdot \vec{n} ]
-\end{align*}
-
-Let's consider an incident particle that scatters from a nucleus at an angle $\theta$, as shown in the figure:
+The second equation represents the spin-orbit interaction potential. This term yields the polarization dependence of the cross section. . Let's consider an incident particle that scatters from a nucleus at an angle $\theta$, as shown in the figure:
 
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width = 0.45\textwidth]{ExperimentalSetup/mottFig.png}
-\caption{Scheme of the Mott scattering, the polarization is ortogonal to the plane,  $ \vec{n} = \frac{\vec{k} \times \vec{k'}}{|\vec{k} \times \vec{k'}|}$}
+\caption{Scheme of the Mott scattering, the polarization is orthogonal to the plane,  $ \vec{n} = \frac{\vec{k} \times \vec{k'}}{|\vec{k} \times \vec{k'}|}$}
 \end{figure}
 
-The direction of $\vec{n}$ depends on whether scattering to the left or right is being considered. Let's suppose our initial beam has a polarization $P$, and so we compute the asymmetry $A(\theta)$ of the scattered electrons between left ($N_{L}$) and right ($N_{R}$). $N_{L}$ and right $N_{R}$ will be proportional respectively:
+The cross section can be modeled highlighting the dependencies on the polarization $\vec{P}$:
 
+\begin{align*}
+\dfrac{\partial\sigma(\theta)}{\partial \Omega} = I(\theta) [1 + S(\theta) \vec{P} \cdot \vec{n} ]
+\end{align*}
+
+In the equation above, the cross section is divided in two terms: $I{\theta}$ represents term that does not depend on the polarization, the second contains the dependence on the polarization, where $S(\theta)$ is the Sherman function, or the asymmetry function \cite{10.1063/1.1143371}. The unit vector $\vec{n}$ is normal to the scattering plane, and it is defined as:
+
+\begin{align*}
+\vec{n} = \dfrac{k \times k'}{|k \times k'|}
+\end{align*}
+
+Where $k$ and $k'$ are the wave vectors associated with the incident and scattered electrons. The direction of $\vec{n}$ is parallel to the angular momentum $L$, and depends on whether scattering to the left or to the right is being considered.
+Let's suppose our initial beam has a polarization $P$, and so we compute the asymmetry $A(\theta)$ of the scattered electrons between left ($N_{L}$) and right ($N_{R}$). $N_{L}$ and right $N_{R}$ will be proportional respectively:
 
 \begin{align*}
 N_{L} &= N_{\downarrow}[1 + S(\theta)] + N_{\uparrow}[1 - S(\theta)] \\
@@ -180,15 +198,7 @@ N_{R} &= N_{\uparrow}[1 + S(\theta)] + N_{\downarrow}[1 - S(\theta)]  \\
 A(\theta) = \frac{N_{L} - N_{R}}{N_{L} + N_{R}} &= \dfrac{N_{\downarrow}(1 + S(\theta)) + N_{\uparrow}(1 - S(\theta)) - N_{\uparrow}(1 + S(\theta)) + N_{\downarrow}(1 - S(\theta))}{N_{L} + N_{R}} = ... = P \cdot S(\theta)
 \end{align*}
 
-
 From the last equation we have a relation which give the beam polarization in terms of $A(\theta)$ (which is what is measured) and the asymmetry function $S(\theta)$ (known also as Sherman function). There are several calculation of the Sherman function, which is well-known for high energy electron scattering.
-
-The total beam polarization is measured by a Moller polarimeter, in the experimental hall, with the beam polarization oriented longitudinally in the experimental hall. The Moller polarimeter can measure the longitudinal polarization of the beam.The other two polarimeters, Compton and Mott, located behind the injector linear accelerator (ILAC), are sensitive to the longitudinal and the transverse horizontal components of the beam (with an energy around $\SI{3.5}{\mega \electronvolt}$ at this stage). The procedure for the alignment is the following: at the beginning of the beam time the Mott polarimeter is used for different settings of the solenoid field, with the Wien filter angle equal (nominal) to $\ang{90}$. The aim is to minimize the horizontal polarization component after the rotation performed by the double solenoid, changing the solenoid magnetic field. Then a second optimization follows, using the Moller polarimeter for different Wien filter angles is performed. With the new Wien filter settings, another measurement is performed with the Mott polarimeter.
-
-\subsection{Moller and Compton polarimeters}
-
-In MAMI there are installed other two polarimeters, Compton and Moller polarimeters. For the previous beam time \cite{Esser:2018vdp} the Moller and Mott measurement were used together. In this way the systematic uncertainty for the degree of polarization was obtained, which determine the systematic uncertainty associated to the final measurements of the asymmetry. The systematic effects obtained during the previous experiment were of the order of $1 \, ppm$. For the experiment described in this thesis, we have only the Mott measurement of the polarization, which is $P = 0.79\%$. In fact, the goal is to retrieve similar results of the previous experiment, which would corroborate the new electronic setup developed in prevision of the future experiment with lead target. Because of this, it is not a priority to measure the systematic effect due to the absolute degree of the polarization, even because the amount of statistics that will be accumulated causes the statistical error to be greater than the systematic one, 
-which will therefore have a greater contribution.
 
 \newpage
 \section{Experimental Hall Setup}
@@ -197,15 +207,7 @@ which will therefore have a greater contribution.
 Then add a picture of the beam-line.}
 
 Until now we have described how MAMI produce to accelerate the electrons, however we have not presented the structure where the beam is delivered and various experiments are carried out.
-Actually MAMI has 2 different hall, named with the capital letter A followed with a number, which indicate also the different collaboration that work with the experiments. In A2, as an example, photo-nuclear reactions are studied to investigate the fundamental physics at the scale of nuclear dimensions. The experimental hall where the experiment treated described in this thesis is conducted is the A1 hall. We will describe briefly the main operating detectors that are installed and the details that are interesting for the \transv  measurement. 
-
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width = 0.6\textwidth]{ExperimentalSetup/Accelerator.pdf}
-\caption{Scheme of the accelerator, with the different experimental halls. A third hall previously used for the A4 experiment, measuring the strange quark content of the proton, is now being used for the novel MESA accelerator and its experiments.}
-\label{fig:Accelerator}
-\end{figure}
-
+Actually MAMI has 2 different hall, named with the capital letter A followed with a number, which indicate also the different collaboration that work with the experiments. In A2, as an example, photo-nuclear reactions are studied to investigate the fundamental physics at the scale of nuclear dimensions. The experimental hall where the experiment treated described in this thesis is conducted is the A1 hall. We will describe briefly the main operating detectors that are installed and the details that are interesting for the \transv  measurement.
 In A1, experiment with fixed targets are conducted. The electrons can be delivered with an energy up to $\SI{1.6}{\giga \electronvolt}$, after passing the last acceleration stage (HDSM, in the figure). Because the electron energy of our experiment is $\SI{570}{\mega \electronvolt}$, the beam will pass through the first acceleration steps, the linac (linear accelerator) and Race-track system and when the desired energy is achieved the electrons will be sent to the A1 experimental hall. 
 
 \begin{figure}[!h]
@@ -295,7 +297,7 @@ r_{s} = \frac{|V_{\|}|^{2}}{P}
 $P$ is the power absorbed by the cavity when a particle excites one of the resonant mode, instead $V_{\|}$ is defined as the effective voltage surpassed by a charged particle along a straight line, which can be computed as:
 
 \begin{align*}
-V_{\|} = \frac{1}{q}  \int_{s_{0}}^{s^{1}} \vec{E}_{s} \vec{e_{s}} \,ds
+V_{\|} = \frac{1}{q}  \int_{s_{0}}^{s^{1}} \vec{E}_{s} \cdot  \,d \vec{s}
 \end{align*}
 
 The Shunt impedance is a measure of the interaction strength between a cavity and a charged particle, and can be expressed also in another way, introducing the $Q$ value of the cavity, $W$ the maximum energy stored and $f_{r}$ the frequency of resonance:
@@ -307,7 +309,7 @@ r_{s} = \dfrac{|V_{\|}|^{2} Q}{2 \pi f_{r} W}
 When the beam travels through the cavity, the particles release energy that excites the  mode. The power $P_{HF}$ extracted from the beam is related to the beam current: 
 
 \begin{align*}
-P = \iota^{2} r_{s}
+P = \i^{2} r_{s}
 \end{align*}
 
 An antenna is used to decouple part of the energy from the cavity and send it to a circuit which produces an analog output signal. Indicating with $\kappa$ the coupling constant of the antenna, the previous relation needs to be modified introducing a new factor $ \frac{\kappa}{(1 + \kappa)^2}$. In a Cylindrical resonator, the same type installed at MAMI, the resonance frequency of the different oscillascion modes is expressed by the formula 
@@ -391,7 +393,7 @@ The beam stabilization is an essential component of the experiment. The values o
 \end{itemize}}
 
 
-\subsection{VFCs}
+\subsection{Voltage to Frequency Converter}
 
 Some parameters which describe the beam are needed in order to take into account possible effect in the measure of the transverse asymmetry. The relevant data are the position in the $(x,y)$ plane, the incident angles on the target, the current and energy of the beam. All this values are collected using the already existing monitors. \\
 To collect the data from the monitors, single and multichannel, synchronous voltage-to-frequency converters (AD7742) are used. This devices contain an analog modulator that is able to convert the input voltage into an output pulse train, whose frequency is proportional to the input voltage. 
