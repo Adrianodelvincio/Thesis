@@ -147,15 +147,16 @@ Looking at the picture, the longitudinal direction corresponds to the $Z$ axis. 
 The spin is rotated primarily in the $X$ direction, with a $90^{\circ}$ rotation, then the subsequent double solenoid align the spin to the vertical direction, with another $90^{\circ}$ rotation. 
 Once the beam passes the double solenoid, the electrons go through the linac, the microtron and in the end to the experimental hall, where the target of the experiments is installed. During the acceleration stage, the spin follows the precession motion due to the various magnetic fields of the accelerator, as determined by the BMT equation. However in our experimental setup, the magnetic field of the various bending magnets that constitute the microtron-cascade are always parallel to the polarization in vertical direction, so that the cross product $\vec{B} \times \vec{P} = 0$, and the polarization remain constant. Only the residual horizontal component precedes during the motion. For conventional experiment that involve longitudinal polarization, after the first spin rotation due to Wien filter and the bending magnets, there is a further rotation to be considered, due to the motion of the particle during the acceleration and recirculation in the microtron. Because of this, the rotation made by the Wien is set in such a way that after the second rotation due to the motion in the accelerator, the polarization has the correct alignment in the experimental hall. The rotation angles of the polarization vector through the accelerator are known from simulations and are also directly measured for relevant energies, for a beam of $\SI{570}{\mega \electronvolt}$ the rotation angle is $\ang{55}$ with an accuracy of $\pm \ang{2}$. In our case, this further rotation has only a small effect to the residual horizontal component. This horizontal component was accurately minimized by MAMI operators at the beginning of the beam time, and its effects the measurement are negligible. MAMI was not developed for experiments with transverse polarization. So it's not possible to measure directly the transverse component. However the vertical polarization is deduced from the determination of the total beam polarization and the residual horizontal components. For this purpose a Moller, Comport and Mott polarimeters are used.
 
-\subsection{Polarization Measurement}
+\subsection{Vertical Polarization Measurement}
 Three polarimeters are installed in MAMI: Mott, M\o ller and Compton polarimeters. Compton and Mott polarimeter are located behind the injector linear accelerator (see figure \ref{fig:Accelerator}), close to the beam source, where the electrons, with an energy of $\SI{3.5}{\mega \electronvolt}$, have already passed the Wien filter and the double solenoid. The M\o ller polarimeter, instead, is installed in the spectrometer hall, where the beam is delivered. The M\o ller polarimeter is sensitive only to the longitudinal component of the polarization, while the Mott and Compton polarimeter are sensitive to the $Z$ and $X$ component. 
-When the beam is polarized longitudinally, the total polarization can be measured by a M\o ller polarimeter, in the spectrometers hall. The procedure for the alignment is the following: at the beginning of the beam time the Mott polarimeter is used for different settings of the solenoid field, with the Wien filter angle equal (nominal) to $\ang{90}$. The aim is to minimize the horizontal polarization component ($P_{x}$) after the rotation performed by the double solenoid, changing the solenoid magnetic field. Then a second minimization follows, using the M\o ller polarimeter and changing Wien filter  rotation angles. In this way we minimize also the longitudinal component ($P_{z}$). With the new Wien filter settings, another measurement is performed with the Mott polarimeter. With this procedure, the $P_{x}$ and $P_{z}$ components are completely minimized, with the result that the beam polarization is parallel to the $Y$ axis. 
+When the beam is polarized longitudinally, the total polarization can be measured by a M\o ller polarimeter, in the spectrometers hall. The procedure for the alignment is the following: at the beginning of the beam time the Mott polarimeter is used for different settings of the solenoid field, with the Wien filter angle equal (nominal) to $\ang{90}$. The aim is to minimize the horizontal polarization component ($P_{x}$) after the rotation performed by the double solenoid, changing the solenoid magnetic field. Then a second minimization follows, using the M\o ller polarimeter and changing Wien filter  rotation angles. In this way we minimize also the longitudinal component ($P_{z}$). With the new Wien filter settings, another measurement is performed with the Mott polarimeter. With this procedure, the $P_{x}$ and $P_{z}$ components are completely minimized, with the result that the beam polarization is parallel to the $Y$ axis.
+At this point, the polarization is correctly aligned, and the experiments can start. The last polarimeter, the Compton, is used to measure the variation of the degree of polarization during time. 
 
-In the last measurement of $A_{n}$ at MAMI \cite{Esser:2018vdp} the Moller and Mott polarimeters were available. In this way, it is also possible to estimate the systematic uncertainty for the degree of polarization, which is the relevant contribution to the total systematic uncertainty of the final measurements of $A_{n}$. The systematic effects obtained during the previous experiment were of the order of $1 \, ppm$. For the experiment described in this thesis, we performed the minimization described before only with the Mott polarimeter, obtaining a measure of the transverse polarization $P = 0.79\%$. This means that we could not estimate the systematic uncertainty of the polarization.
+In the last measurement of $A_{n}$ at MAMI \cite{Esser:2018vdp} the Moller and Mott polarimeters were available. In this way, it is also possible to estimate the systematic uncertainty for the degree of polarization, which is the relevant contribution to the total systematic uncertainty of the final measurements of $A_{n}$. The systematic effects obtained during the previous experiment were about $1 \, ppm$. For the experiment described in this thesis, we performed the minimization described before only with the Mott polarimeter, obtaining a measure of the transverse polarization $P = 0.79\%$. This means that we could not estimate the systematic uncertainty of the polarization.
 
 \subsection{Mott Polarimeter}
 
-In this section we describe the theory of the Mott polarimeter. The Mott polarimeter exploit the asymmetry in the scattering cross section due to the spin, to measure the polarization of the beam. 
+In this section we describe the theory of the Mott polarimeter. The Mott polarimeter exploits the asymmetry in the cross section due to the spin dependence. From the asymmetry we can to measure the polarization of the beam. 
 Let's suppose that we have an electron beam that is sent towards a nucleus of charge $Ze$. We know from theory \cite{MottElectron} that the spin of the incident electron interacts with the electromagnetic field produced by the nucleus.
 The magnetic field seen by a particle with speed $\vec{v}$ near a nucleus is:
 
@@ -169,19 +170,20 @@ This magnetic field is coupled with the magnetic momenta of the electron $\mu_{e
 V = - \vec{\mu} \cdot \vec{B}_{nucleus} = \frac{Ze}{mcr^{3}} \vec{L} \cdot \vec{S}_{e^{-}}
 \end{equation}
 
-The second equation represents the spin-orbit interaction potential. This term yields the polarization dependence of the cross section. . Let's consider an incident particle that scatters from a nucleus at an angle $\theta$, as shown in the figure:
+The second equation represents the spin-orbit interaction potential. This term yields the polarization dependence of the cross section. Let's consider an incident particle that scatters from a nucleus at an angle $\theta$, as shown in the figure:
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width = 0.45\textwidth]{ExperimentalSetup/mottFig.png}
+\includegraphics[width = 0.45\textwidth]{ExperimentalSetup/MottScattering.pdf}
 \caption{Scheme of the Mott scattering, the polarization is orthogonal to the plane,  $ \vec{n} = \frac{\vec{k} \times \vec{k'}}{|\vec{k} \times \vec{k'}|}$}
+\label{fig:MottScatt}
 \end{figure}
 
 The cross section can be modeled highlighting the dependencies on the polarization $\vec{P}$:
 
-\begin{align*}
+\begin{equation} \label{eq:MottCross}
 \dfrac{\partial\sigma(\theta)}{\partial \Omega} = I(\theta) [1 + S(\theta) \vec{P} \cdot \vec{n} ]
-\end{align*}
+\end{equation}
 
 In the equation above, the cross section is divided in two terms: $I{\theta}$ represents term that does not depend on the polarization, the second contains the dependence on the polarization, where $S(\theta)$ is the Sherman function, or the asymmetry function \cite{10.1063/1.1143371}. The unit vector $\vec{n}$ is normal to the scattering plane, and it is defined as:
 
@@ -190,25 +192,34 @@ In the equation above, the cross section is divided in two terms: $I{\theta}$ re
 \end{align*}
 
 Where $k$ and $k'$ are the wave vectors associated with the incident and scattered electrons. The direction of $\vec{n}$ is parallel to the angular momentum $L$, and depends on whether scattering to the left or to the right is being considered.
-Let's suppose our initial beam has a polarization $P$, and so we compute the asymmetry $A(\theta)$ of the scattered electrons between left ($N_{L}$) and right ($N_{R}$). $N_{L}$ and right $N_{R}$ will be proportional respectively:
+Let's suppose our initial beam has a polarization $P$, that can also be expressed as:
+
+\begin{align*}
+P = \frac{N_{\uparrow} - N_{\downarrow}}{N_{\uparrow} + N_{\downarrow}}
+\end{align*}
+
+Where $N_{\uparrow}$ and $N_{\downarrow}$ are the number of electrons with spin up and spin down. The Mott polarimeter measure the number $N$ of scattered electrons at a fixed angle $\theta$, in the two directions right and left (figure \ref{fig:MottScatt}). Using the equation \ref{eq:MottCross}, the scattered electrons to the left side $N_{L}$ and to the right side $N_{R}$ are equal to: 
 
 \begin{align*}
 N_{L} &= N_{\downarrow}[1 + S(\theta)] + N_{\uparrow}[1 - S(\theta)] \\
-N_{R} &= N_{\uparrow}[1 + S(\theta)] + N_{\downarrow}[1 - S(\theta)]  \\
-A(\theta) = \frac{N_{L} - N_{R}}{N_{L} + N_{R}} &= \dfrac{N_{\downarrow}(1 + S(\theta)) + N_{\uparrow}(1 - S(\theta)) - N_{\uparrow}(1 + S(\theta)) + N_{\downarrow}(1 - S(\theta))}{N_{L} + N_{R}} = ... = P \cdot S(\theta)
+N_{R} &= N_{\uparrow}[1 + S(\theta)] + N_{\downarrow}[1 - S(\theta)]
 \end{align*}
 
-From the last equation we have a relation which give the beam polarization in terms of $A(\theta)$ (which is what is measured) and the asymmetry function $S(\theta)$ (known also as Sherman function). There are several calculation of the Sherman function, which is well-known for high energy electron scattering.
+The asymmetry $A(\theta)$ of the scattered electron between left ($N_{L}$) and right ($N_{R}$) is given by:
+
+\begin{align*}
+A(\theta) = \frac{N_{L} - N_{R}}{N_{L} + N_{R}} &= \dfrac{N_{\downarrow}(1 + S(\theta)) + N_{\uparrow}(1 - S(\theta)) - N_{\uparrow}(1 + S(\theta)) - N_{\downarrow}(1 - S(\theta))}{N_{L} + N_{R}} = \\ 
+&= \dfrac{(N_{\uparrow} - N_{\downarrow})}{(N_{\uparrow} + N_{\downarrow})}S(\theta) =  P \cdot S(\theta)
+\end{align*}
+
+The last step of the equation gives the beam polarization in terms of $A(\theta)$, the asymmetry measured by the Mott polarimeter, and the function $S(\theta)$, the Sherman function. The Mott polarimeter in MAMI, installed after the double solenoid, measures the scattering asymmetry $A(\theta)$ for electrons of $\SI{3.5}{\mega \electronvolt}$ with a thin gold target.  
 
 \newpage
 \section{Experimental Hall Setup}
 
-\commento{Describing the A1 room, how the spectrometers are operating (+ figures), a picture of the target and the important parameters, like thickness. Also mention the convention to use target with $10 \%$ of the radiation length, to avoid double scattering.  Mention that we need the Wobbler magnet to change the hitting position of the beam to prevent the target from melting. Here it's important to mention that the electron are deflected on the vertical direction, because of the high beam intensity
-Then add a picture of the beam-line.}
-
 Until now we have described how MAMI produce to accelerate the electrons, however we have not presented the structure where the beam is delivered and various experiments are carried out.
-Actually MAMI has 2 different hall, named with the capital letter A followed with a number, which indicate also the different collaboration that work with the experiments. In A2, as an example, photo-nuclear reactions are studied to investigate the fundamental physics at the scale of nuclear dimensions. The experimental hall where the experiment treated described in this thesis is conducted is the A1 hall. We will describe briefly the main operating detectors that are installed and the details that are interesting for the \transv  measurement.
-In A1, experiment with fixed targets are conducted. The electrons can be delivered with an energy up to $\SI{1.6}{\giga \electronvolt}$, after passing the last acceleration stage (HDSM, in the figure). Because the electron energy of our experiment is $\SI{570}{\mega \electronvolt}$, the beam will pass through the first acceleration steps, the linac (linear accelerator) and Race-track system and when the desired energy is achieved the electrons will be sent to the A1 experimental hall. 
+MAMI experimental halls are named with the capital letter A followed with a number. In A2, for example, photo-nuclear reactions are studied to investigate the fundamental physics at the scale of nuclear dimensions. The experimental hall where the experiment described in this thesis is conducted is the A1 hall. We will describe briefly the main operating detectors that are installed and the details that are interesting for the transverse asymmetry measurement.
+In A1 hall the beam is delivered with energy in a range starting from $\SI{180}{\mega \electronvolt}$ up to $\SI{1.6}{\giga \electronvolt}$. Energy greater than $\SI{855}{\mega \electronvolt}$ are reached with the last acceleration stage HDSM, shown in figure \ref{fig:Accelerator}. Because the electron energy of our experiment is $\SI{570}{\mega \electronvolt}$, the beam passes only through the first acceleration steps, and is extracted from the RTM3 and directly sent to the A1 experimental hall, without going through the HSDM stage. 
 
 \begin{figure}[!h]
 \centering
@@ -217,36 +228,38 @@ In A1, experiment with fixed targets are conducted. The electrons can be deliver
 \label{fig:TwoSpektr}
 \end{figure}
 
-Inside A1 hall three large magnetic spectrometers are placed on a circular rail-track around the target chamber (figure \ref{fig:TwoSpektr}). They where designed and built in $1993$ to perform high precision measurement of electron scattering in coincidence with other hadron detection, with an high resolution in the determination of the particle momenta $\frac{\delta p}{p} < 10^{-4}$. The spectrometers develop vertically with an height of $\SI{15}{\meter}$, for this reason the scattered electrons and the other particles are deflected with the use of the magnetic field respect to the scattering plane. The following figure shows the path the particle scattered from the target:
+Inside A1 hall three large magnetic spectrometers are placed on a circular rail-track around the target chamber (figure \ref{fig:TwoSpektr}). They where designed and built in $1993$ to perform high precision measurement of electron scattering in coincidence with other hadron detection, with an high resolution in the determination of the particle momenta $\frac{\delta p}{p} < 10^{-4}$. The spectrometers develop vertically with a height of $\SI{15}{\meter}$, for this reason the scattered electrons and the other particles are deflected with respect to the scattering plane with the use of magnetic fields. The figure \ref{fig:TwoDetectors} shows the path of the particles scattered from the target. The spectrometers used for the transverse asymmetry measurement are the red and blue ones. There are multiple reasons why the particle are deflected on the vertical direction, we summarized them in two points: 
+
+\begin{itemize}
+\item reason of space, due to the fact that a horizontal setup would not fit with the dimension of the building in addiction to the fact that this would not allow to rotate the spectrometers by a variety of angles that the vertical orientation does
+\item reduce background and noise, in fact the high beam intensity that is possible to reach at MAMI is a source of noise and background event which can be cut off detecting the particle far from the interaction point.
+\end{itemize}    
+
 \begin{SCfigure}[30][!ht]
 \centering
-\caption{Image of the spectrometers of A1 hall. The spectrometers can be rotated using a system of rail-tracks that are visible at the bottom of the image. The electrons are scattered and then deflected in the vertical direction by the magnetic field (green lines). This picture is taken from behind the target. The target is roughly at the center of the image where the two green lines join. The electron are coming from the opposite direction, respect with the spectrometers.}\label{fig:TwoDetectors}
+\caption{Image of the spectrometers of A1 hall. The spectrometers can be rotated using a system of rail-tracks that are visible at the bottom of the image. The electrons are scattered and then deflected in the vertical direction by the magnetic field (green lines). This picture is taken from behind the target. The target is roughly at the center of the image where the two green lines join. The electron are coming from the opposite direction, with respect to the spectrometers.}\label{fig:TwoDetectors}
 \includegraphics[width = 0.5\textwidth]{ExperimentalSetup/A1_Dietro.pdf}
 \end{SCfigure}
-The spectrometers used for the transverse asymmetry are the ones shown in the picture. There are multiple reasons why the particle are deflected on the vertical direction, we summarized them in two points: 
-\begin{itemize}
-\item reason of space, due to the fact the an horizontal setup would not fit with the dimension of the building in addiction to the fact that this would not allow to rotate the spectrometers by a variety of angles that the vertical orientation does
-\item reduce background and noise, in fact the high beam intensity that is possible to reach at MAMI is a source of noise and background event which can be cut off detecting the particle far from the interaction point.
-\end{itemize}      
+  
 Once a particle is scattered in the acceptance region of the spectrometers, it is deflected by the magnetic field and passes through the drift chamber, which occupies the first third in height of the spectrometers. 
-When the particle is at the height of the platform in the figure \ref{fig:TwoDetectors}, it impinges on a layer of plastic scintillator, and after that a Cherenkov detector which measures the particle speed $\vec{v}$. We show a picture \ref{fig:internal} of the spectrometers internal, taken during the installation of the detector A.The determination of both the particle speed $\vec{v}$ and momenta (drift chamber) allows to identify the particles. Despite the possibilities offered by the already existing setup, for the beam time of interest none of these components was used directly in the estimation of $A_{n}$. The reason is due to the high intensity of the beam that is used in the experiment, which is far from the optimal operating conditions of the components, that are suited for rates lower than the ones expected for beam normal single spin measurements. The spectrometers are used indirectly for the alignment of scattered electrons to the focal plane of our detectors.
-
+When the particle is at the height of the platform in the figure \ref{fig:TwoDetectors}, it impinges on a layer of plastic scintillator, and after that a Cherenkov detector  measures the particle speed $v$. In figure \ref{fig:internal} the spectrometer A internal, taken during the installation of detector A, is shown. The determination of both the particle speed $v$ and momenta (drift chamber) allows particle identification.
 \begin{SCfigure}[30][!h]
 \centering
 \caption{Internal of the spectrometer. This image was taken during the installation of the detector A inside the red spectrometer, that is accessible from the platforms visible in the picture \ref{fig:TwoDetectors}}
-\includegraphics[width=0.45\textwidth]{ExperimentalSetup/Detectors/position.pdf}
+\includegraphics[width=0.30\textwidth]{ExperimentalSetup/Detectors/position.pdf}
 \label{fig:internal}
-\end{SCfigure}
+\end{SCfigure} 
+
+Despite the possibilities offered by the already existing setup, for the beam time of interest none of these components was used directly in the estimation of $A_{n}$. The reason is due to the high intensity of the beam that is used in the experiment, which is far from the optimal operating conditions of the components, that are suited for rates lower than the ones expected for beam normal single spin measurements. The spectrometers are used indirectly, for the alignment of scattered electrons to our detection system.
 
 
-\newpage
 \section{Detector Description} \label{detectors}
-In this section we will describe the electronics and the detectors used to measure the \transv .
-For this experiment we are going to measure the \transv at one fixed angle, corresponding to a transferred momentum of $Q = \SI{0.2}{\giga \electronvolt}$. The electrons detection is 
-made via two thin blocks of fused-silica that are coupled to PMTs. When a scattered electron hits the fused-silica (refractive index $n = 1.45$) Cherenkov light is emitted. The emitted Cherenkov light can interact with the electrons of the material, which, in turn, can hits the PMT dynode. This sequence of event triggers the PMT and produce an output signal.
+In this section we will describe the electronics and the detectors used to measure the transverse spin asymmetry.
+For this experiment we are going to measure the transverse asymmetry at one fixed angle, corresponding to a transferred momentum of $Q = \SI{0.2}{\giga \electronvolt}$. The electrons detection is 
+made via two thin blocks of fused-silica that are coupled to PMTs. When a scattered electron hits the fused-silica (refractive index $n = 1.45$) Cherenkov light is emitted. The emitted Cherenkov light can extract one electron in the photocathode, which will be amplified by the PMT dynode structure. This sequence of event triggers the PMT and produce an output signal.
 
 In the experiment two detectors are installed and read-out independently. The detector A is placed at an angle of $+\theta$, while detector B is placed at $-\theta$. We expect to measure the same absolute value of the transverse asymmetry, with an opposite sign due to the different orientation. 
-The two detector are made by 3 PMTs and 8 PMTs coupled with two blocks of fused-silica, a scheme of the detector is shown below:
+The two detector are made by 3 PMTs and 8 PMTs coupled with two blocks of fused-silica, as shown in \ref{fig:NostriDetector}:
 
 \begin{figure}[hbtp]
 \centering
@@ -254,12 +267,12 @@ The two detector are made by 3 PMTs and 8 PMTs coupled with two blocks of fused-
 \includegraphics[width = 0.40\textwidth ]{ExperimentalSetup/Detectors/DetectorB.pdf}}
 \subfloat[][\emph{Detector A scheme.}]{
 \includegraphics[width = 0.55\textwidth ]{ExperimentalSetup/Detectors/detectorA.pdf}}
+\label{fig:NostriDetector}
 \end{figure}
 
-These two detectors are placed inside the spectrometers presented in \commento{aggiungere referenza}, between the top of the drift-chamber, which occupies the first third in height of the spectrometer, and just below a panel of scintillator. During the experiment, the drift chamber of the spectrometers is turn off, and also the PMTs coupled to the spectrometer scintillators are not powered.
-As we mention above, the scattered electron are deflected in the vertical direction by the magnetic field of the spectrometer. 
-At this moment, it is important to mention the differences between the new and the old electronic setup. In the old electronic setup the output signal of the PMTs was integrated during the time interval of each sub-event, and therefore the single scattered electron could not be counted. The advantage of this method is that the electronics is more simple. However, this old method is affected by a baseline noise and it is not good for the future experiments with lead target, where the expected rates are lower than the rates on carbon.
-With the new electronics, all the single electrons are counted, and this will allow the future measurements with lead, improving the accuracy. 
+These two detectors are placed inside the spectrometers presented in \ref{fig:TwoDetectors}, between the top of the drift-chamber, which occupies the first third in height of the spectrometer, and just below the panel of scintillator. During the experiment, the drift chamber of the spectrometers is turn off, and also the PMTs coupled to the spectrometer scintillators are not powered.
+As we mentioned above, the scattered electron are deflected in the vertical direction by the magnetic field of the spectrometer. It is important to mention the differences between the new and the old electronic setup. In the old electronic setup the output signal of the PMTs was integrated during the time interval of each sub-event, and therefore the single scattered electron could not be counted. The advantage of this method is that the electronics is simpler. However, this old method is affected by a baseline noise and it is not good for the future experiments with lead target, where the expected rates are lower than the rates on carbon.
+With the new electronics, the single electrons are counted, and this will enable the future measurements with lead, improving the accuracy. 
 
 \begin{figure}[hbtp]
 \centering
@@ -276,60 +289,57 @@ Here we report the characteristic of the two detector that are relevant for the 
 \begin{itemize}
 \item detector B size: $\SI{7}{\centi \meter} \times \SI{10}{\centi \meter} \times \SI{1}{\centi \meter}$
 \item detector A size: $\SI{7}{\centi \meter} \times \SI{30}{\centi \meter} \times \SI{1}{\centi \meter}$
-\item Number of dynodes: 12
+\item Number of dynodes of the PMT: 12
 \item The Power voltage for the PMT in negative, in the range of ($\SI{-900}{\volt}$, $\SI{-1100}{\volt}$)
 \item refraction index $n$ of the fused-silica is $1.45$.
 \end{itemize}
 
 
 \section{Beam Monitors}
-\commento{Explain how the monitors for the beam parameters work. (this section could be long, however the way these parameters are measured is particular, so it is important to explain everything properly).}
 
-In MAMI, several monitors are placed along the beam line in order to to check beam quality and measure parameters such as current intensity, energy and relative position of the beam. This section summarizes an explanation of the operating principles of the monitors installed at MAMI. The explanation will be partial, some details will be given in the appendix, however for a complete discussion please refer to the following paper (\cite{M_Dehn}).
-
-The monitors available at MAMI are quite specific for the standard of the particle accelerators. Resonant cavities are used to measure the various quantities, with the underlying physical principle that the passage of charged particles through these cavities can excitate some electromagnetic resonant modes\footnote{TM mode, where the magnetic field is completely trasverse respect to particle momenta} which can be detected and analyzed by an analog circuit to measure the beam parameters.
-Before going into the details, is necessary to define some quantities that will be used later in the explanation. We define $r_{s}$, the Shunt-impedance as :
+In MAMI, several monitors are placed along the beam line to check the beam quality and measure parameters such as current intensity, energy and relative position of the beam. This section summarizes the operating principles of the monitors installed at MAMI. Some details will be given in the appendix, for a complete discussion please refer to the following paper \cite{M_Dehn}.
+The monitors available at MAMI are constitutes by resonant cavities. With the resonant cavities it is possible to measure the various quantities, with the underlying physical principle that the passage of charged particles through these cavities can excitate some electromagnetic resonant modes\footnote{TM mode, where the magnetic field is completely transverse respect to particle momenta} which can be detected and analyzed by an analog circuit to measure the beam parameters.
+Before going into the details, it is necessary to define some quantities that will be used later in the discussion. We define the Shunt-impedance $r_{s}$ as:
 
 \begin{equation}
 r_{s} = \frac{|V_{\|}|^{2}}{P}
 \end{equation}
 
-$P$ is the power absorbed by the cavity when a particle excites one of the resonant mode, instead $V_{\|}$ is defined as the effective voltage surpassed by a charged particle along a straight line, which can be computed as:
+Where $P$ is the power absorbed by the cavity when a particle excites one of the resonant mode, and $V_{\|}$ is defined as the effective voltage experienced by a charged particle along a straight line, which can be computed as:
 
 \begin{align*}
 V_{\|} = \frac{1}{q}  \int_{s_{0}}^{s^{1}} \vec{E}_{s} \cdot  \,d \vec{s}
 \end{align*}
 
-The Shunt impedance is a measure of the interaction strength between a cavity and a charged particle, and can be expressed also in another way, introducing the $Q$ value of the cavity, $W$ the maximum energy stored and $f_{r}$ the frequency of resonance:
+The Shunt impedance is a measure of the interaction strength between a cavity and a charged particle, and can also be expressed using the $Q$ value of the cavity, the maximum energy stored $W$ and the frequency of resonance $f_{r}$:
 
 \begin{align*}
 r_{s} = \dfrac{|V_{\|}|^{2} Q}{2 \pi f_{r} W}
 \end{align*}
 
-When the beam travels through the cavity, the particles release energy that excites the  mode. The power $P_{HF}$ extracted from the beam is related to the beam current: 
+When the beam travels through the cavity, the particles lose energy that excites the mode. The power $P_{HF}$ extracted from the beam is related to the beam current: 
+
+\begin{equation}
+P = i^{2} r_{s}
+\end{equation}
+
+An antenna is used to decouple part of the energy from the cavity and send it to a circuit which produces an analog output signal. Indicating with $\kappa$ the coupling constant of the antenna, the previous relation needs to be modified introducing a new factor $ \frac{\kappa}{(1 + \kappa)^2}$. In a cylindrical resonator, the type installed at MAMI, the resonance frequencies of the different oscillation modes are expressed by the formula: 
 
 \begin{align*}
-P = \i^{2} r_{s}
-\end{align*}
-
-An antenna is used to decouple part of the energy from the cavity and send it to a circuit which produces an analog output signal. Indicating with $\kappa$ the coupling constant of the antenna, the previous relation needs to be modified introducing a new factor $ \frac{\kappa}{(1 + \kappa)^2}$. In a Cylindrical resonator, the same type installed at MAMI, the resonance frequency of the different oscillascion modes is expressed by the formula 
-
-\begin{align*}
-f_{m,n,p} = \frac{c}{2\pi \sqrt{\epsilon_{r} \mu_{r}}} \sqrt{(\frac{x_{m,n}}{R})^{2} + (\frac{p \pi}{L})^{2}}
+f_{m,n,p} = \frac{c}{2\pi \sqrt{\epsilon_{r} \mu_{r}}} \sqrt{\bigl(\frac{x_{m,n}}{R} \bigl)^{2} + \bigl(\frac{p \pi}{L} \bigl)^{2}}
 \end{align*}
 
 The constant in the formula are:
 
 \begin{itemize}
 \item $c$ is the light speed.
-\item $\epsilon_{r}, \mu_{r}$ are the magnetic and dielectric costant of the material.
+\item $\epsilon_{r}, \mu_{r}$ are the magnetic and dielectric constant of the material.
 \item $x_{m,n}$ it the n-th zero of the m-th Bessel function.
-\item $R$ and $L$ are the radius of the cylindrical cavity and his lenght.
-\item \commento{$p$ I dont' know yet.}
+\item $R$ and $L$ are the radius of the cylindrical cavity and his length.
 \end{itemize}
 
-This formula can be obtained solving the Maxwell equations with cylindrical boundary condition, the eigenvalues are then given by the formula above. \\
-If the frequency of the Beam bunch is equal to the resonant frequency $f_{m,n,p}$ of the cavity, a TM mode is excited. At MAMI high quality monitors are installed, quantitatively all the monitors have a $Q \simeq 10000$, that means that $\frac{\nu}{\delta \nu} \simeq 10000$. This means that the frequency of the beam buch must be very close to the frequency of the resonant cavity. At MAMI the frequency used for all the resonators is $\SI{2.449532}{\giga \hertz}$ or a multiple of it. The beam bunch frequency is the same, and it is controlled by the MAMI-master oscillation signal, that is the reference signal for all the MAMI monitors.
+This formula can be obtained solving the Maxwell equations with cylindrical boundary condition.
+If the frequency of the beam bunch is equal to the resonant frequency $f_{m,n,p}$ of the cavity, a TM mode is excited. At MAMI high quality monitors are installed, with a $Q \simeq 10000$, that means that $\frac{\nu}{\delta \nu} \simeq 10000$. This means that the frequency of the beam buch must be very close to the frequency of the resonant cavity. At MAMI the frequency used for all the resonators is $\SI{2.449532}{\giga \hertz}$ or a multiple of it. The beam bunch frequency is the same, and it is controlled by the MAMI-master oscillation signal, that is the reference signal for all the MAMI monitors.
 
 \begin{figure}[hbtp]
 \centering
@@ -343,18 +353,19 @@ Depending on the $TM$ mode excited, we have a different signal in the cavity, so
 P_{HF} = i^{2} r_{010} \frac{\kappa}{(1 + \kappa)^{2}}
 \end{equation}
 
-The power absorbed by the antenna is directly dependent on the beam current. Because the rage values are typically in the range of $\SI{}{\pico \watt}$ to $\SI{}{\milli \watt }$, the signal is processed in close proximity of the installed monitors. In the signal process, the input signal of the antenna in coupled to the master-oscillation signal, so the output signal is given by the formula:
+The power absorbed by the antenna is directly dependent on the beam current. Because the values are typically in the range of $\SI{}{\pico \watt}$ to $\SI{}{\milli \watt }$, the signal is processed in close proximity of the installed monitors. In the signal processing, the input signal of the antenna in coupled to the master-oscillation signal, so the output signal is given by the formula:
 
 \begin{equation}
 U = \sqrt{P_{HF}} \cos(\phi - \phi_{LO})
 \end{equation}
 
-the phase $\phi$ is the phase of the resonant mode or the phase of the beam bunch, while the phase $\phi_{LO}$ is the phase respect to the master-oscillation signal, and can be adjusted by a phase shifter of the circuit. The output voltage signal can be read out with the oscilloscope or digitalized and saved with other devices. To measure the beam intensity is important to minimize $\phi - \phi_{LO}$, to maximize the signal amplitude, and then the output signal is ready to be analyzed.
+where the phase $\phi$ is the phase of the resonant mode or the phase of the beam bunch, while the phase $\phi_{LO}$ is the phase respect to the master-oscillation signal, and can be adjusted by a phase shifter in the circuit. The output voltage signal can be read out with the oscilloscope or digitalized and saved with other devices. To measure the beam intensity is important to minimize $\phi - \phi_{LO}$ (see figure \ref{fig:PIMO}), to maximize the signal amplitude.
 
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width = 0.5\textwidth]{ExperimentalSetup/PIMOphase.pdf}
 \caption{Plot of the phase $\phi$ versus the output signal. The phase optimization was done selecting the working point in correspondence of the peak.}
+\label{fig:PIMO}
 \end{figure}
 
 The measurement of the $x,y$ position follows in principle the same procedure. In this case the $TM_{110}$ is acquired. The reason is clear, because it is possible to calculate that for this mode the $r_{shunt}$ is proportional to the beam position on the $x,y$ plane. So The power absorbed by the antenna can be written:
@@ -366,18 +377,17 @@ P_{HF} = i^{2} r_{110} \frac{\kappa}{(1 + \kappa)^{2}} K x^{2}
 The output signal, that is read by our setup, is proportional to the square root of the absorbed power:
 
 \begin{equation}
-\sqrt(P_{HF}) = costant \cdot U \, \cdot \, i   \cdot x
+\sqrt{P_{HF}} = constant \cdot U \, \cdot \, i   \cdot x
 \end{equation} 
 
 The beam parameter are then given inverting the above formula 
 
 \begin{equation} \label{eq:SignalToVfc}
-x \simeq \frac{\sqrt(P_{HF})}{i}
+x \simeq \frac{\sqrt{P_{HF}}}{i}
 \end{equation}
 
 Where the exact conversion coefficients are not known, and are determined during the calibration phase, at the beginning of the beam time.
-To measure the beam energy, a different approach is used. In principal, the energy monitor (ENMO) consist of 2 cavities in the RTM3. One is located in the last recirculation pipe, the other one on the part of the beam line, where the acceleration takes place.
-The two monitors are synchronized to the master oscillation and measure the phase of the bunches of electrons. When during their travel from the first cavity to the second cavity, the beam passes through the magnet and does one half turn. Now, if the energy is slightly larger, the radius of the turn will be slightly longer. This means that there is an extra time between the two bunches, that can be measured as a small phase shift in the $\SI{570}{\mega \electronvolt}$ recirculation. From this it is possible to obtain a value for the difference of energy to the nominal energy.
+To measure the beam energy, a different approach is used. The energy monitor (ENMO) consist of 2 cavities in the RTM3. One is located in the last recirculation pipe, the other one on the part of the beam line, where the acceleration takes place. The two monitors are synchronized to the master oscillation and measure the phase of the bunches of electrons. During their travel from the first cavity to the second cavity, the beam passes through the magnet and does one half turn. If the energy is slightly higher, the radius of the turn will be slightly larger. This means that there is an extra time between the two bunches, that can be measured as a small phase shift in the $\SI{570}{\mega \electronvolt}$ recirculation. From this it is possible to obtain a value for the difference of the actual energy from the nominal energy.
 
 \subsection{Beam stabilization}
 
@@ -395,7 +405,7 @@ The beam stabilization is an essential component of the experiment. The values o
 
 \subsection{Voltage to Frequency Converter}
 
-Some parameters which describe the beam are needed in order to take into account possible effect in the measure of the transverse asymmetry. The relevant data are the position in the $(x,y)$ plane, the incident angles on the target, the current and energy of the beam. All this values are collected using the already existing monitors. \\
+Some beam parameters are needed in order to take into account possible effects in the measurement of the transverse asymmetry. The relevant data are the position in the $(x,y)$ plane, the incident angles on the target, the current and energy of the beam. All this values are collected using the already existing monitors.
 To collect the data from the monitors, single and multichannel, synchronous voltage-to-frequency converters (AD7742) are used. This devices contain an analog modulator that is able to convert the input voltage into an output pulse train, whose frequency is proportional to the input voltage. 
 
 \begin{wrapfloat}{figure}{I}{0pt}
@@ -420,8 +430,9 @@ V_{in} =  V_{ref}[2 \cdot \dfrac{N_{pulses} - 5 \% N_{CLKN}}{40 \% N_{CLKN}} - 1
 
 \subsection{Nino Board} \label{NINO}
 
-The NINO board is our data acquisition system for the PMT counts. It is made by $32$ analog input channels and it is powered with $\pm \SI{5}{\volt}$. Each channel has an attenuator, and the signal passes through that before going to the Comparator, which compares the signal to the threshold. The Output signal is a Low-voltage differential signal (LVDS). Each comparator can handle eight channels and for each of them it is possible to define a global threshold. With the current settings of NINO board, it is possible to change the threshold of each channel acting on another value, the attenuation, which decreases the value of the global threshold. Attenuation and threshold are set using 12 bit DACs, corresponding to interval of $(0 ; 4095)$. \medskip
-The NINO board is designed in such a way that collects the Input charge of the signal, operating with a $\SI{30}{\pico \farad}$ capacitor. The output signal amplitude is proportional to the input charge, and it is sent to the discriminator. Our interest is only to count the number of scattered electron, so we do not intend to measure the input charge, but only a signal is produced or not.
+The NINO board is our data acquisition system for the PMT counts. It is made by $32$ analog input channels and it is powered with $\pm \SI{5}{\volt}$. Each channel has an attenuator, and the signal passes through that before going to the comparator, which compares the signal to the threshold. The output signal is a Low-voltage differential signal (LVDS). Each comparator can handle eight channels and for each of them it is possible to define a global threshold. 
+The threshold of the NINO board can be controlled with two values, that are named threshold \textit{Thr} and attenuation \textit{Att}. A \textit{Thr} value is shared by 4 adjacent channels, while each channel has is own value of \textit{Att}. In this way it is possible to define a different vale of the threshold for each individual channel. The \textit{Att} value decrease the global threshold selected with \textit{Thr}. These two parameters are set in the DAQ program, using 12 bit DACs, corresponding to interval of $(0 ; 4095)$.
+The NINO board is designed in such a way that collects the Input charge of the signal, operating with a $\SI{30}{\pico \farad}$ capacitor. The output signal amplitude is proportional to the input charge, and it is sent to the discriminator. Our interest is only to count the number of scattered electron, so we do not intend to measure the input charge, but only if a signal is produced or not.
 
 \begin{figure}[hbtp]
 \centering
@@ -430,8 +441,8 @@ The NINO board is designed in such a way that collects the Input charge of the s
 \label{fig:NinoBoard}
 \end{figure}
 
-Two Nino board are used in the experiment, one for detector A and one for detector B. For the experiment discussed in this thesis, we will use only 8 channel for detector A and 3 channel for detector B, since this is the number of the input signals coming from the two detectors. For the future experiments more channel will be used, splitting the analog input signal in 4 different signal, sending it to 4 different input channel of the board. This is useful because changing individually the attenuation value, we can define 4 different thresholds for the same signal coming from a single PMT. This is useful to compare different values of threshold, for example to study how the noise affects the measurement, and see what is the right compromise between signal and noise  .
-The way we selected the threshold is explained in the following chapter (Analysis).
+Two Nino board are used in the experiment, one for detector A and one for detector B. For the experiment discussed in this thesis, we will use only 8 channel for detector A and 3 channel for detector B, since this is the number of the input signals coming from the two detectors. For the future experiments more channel will be used, splitting the analog input signal in 4 different signal, sending it to 4 different input channel of the board. This is useful because changing individually the attenuation value, we can define 4 different thresholds for the same signal coming from a single PMT, and compare different values of threshold, for example to study how the noise affects the measurement, finding the best compromise between signal to noise ratio.
+The way we selected the threshold is explained in chapter.
 
 \subsection{Master Board}
 
