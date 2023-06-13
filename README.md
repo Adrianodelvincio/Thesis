@@ -5,9 +5,9 @@
 LAST THINGS TO DO:
 
 - [] beam stabilization
-- [] alignment of the scattering plane to the detector
+- [x] alignment of the scattering plane to the detector
 - [] Model description
-- [] Compton Moller polarimeters
+- [x] Compton Moller polarimeters
 - [] Master board
 
 - [x] definire i cuts e binning mediato per ogni monitor 
