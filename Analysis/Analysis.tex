@@ -1,40 +1,21 @@
 \chapter{Detectors Test, Alignment and Calibration.} \label{analysis}
-\commento{
-\begin{outline}[enumerate]
-\1 development of the analysis program.
-\1 testing the analysis program with montecarlo data.
-\1 Test of the detectors in the Lab.
-\1 Beam line description.
-\1 Data Analysis
-	\2 thresholds scan
-	\2 Rates on $Pb^{208}$.
-	\2 Beam related asymmetry correction.
-	\2 $C^{12}$ Asymmetry.
-\end{outline}}
 
 \paragraph{}
-In this chapter we discuss the electronic test that have been carried out in the laboratory, and the calibrations that need to be done
-in order to calculate, from the raw data, the final data ready for the analysis.
-During the lab test we check that the photo-multipliers are working and can reveal real signal, and that the electronics for the detector read-out is in good status.
-Instead the calibrations consist in the determination of the scaling factors, needed by the analysis program, to convert the Raw Data collected by the \textit{VFC}s to data with the correct physical units. The important beam parameters are the $X,Y$ impact point coordinates of the beam, the beam energy $E$, the beam current $I$ and the scattering angles $\theta_{x}$ and $\theta_{y}$. In the end, we discuss the auto-calibration procedure, which is needed in order to correct the data, removing non-desired effects due to the presence of an offset in the PMTs counts.
-
+In this chapter we discuss the electronic test that have been carried out in the laboratory, and the calibrations needed in order to calculate, from the raw data, the quantities needed for the analysis.
+The test in the lab consisted in checking that the photo-multipliers and the data acquisition electronics.
+The calibrations consist in the determination of the scaling factors, needed by the analysis program, to convert the raw data collected by the \textit{VFC}s to data in physical units. The important beam parameters are the impact point coordinates of the beam $X,Y$, the beam energy $E$, the beam current $I$ and the scattering angles $\theta_{x}$ and $\theta_{y}$. In the end, we discuss the auto-calibration procedure, to remove non-desired effects due to the presence of an offset in the PMTs counts.
 
 
 \section{Nino Board}
-In this section we explain briefly simple test that we performed to control that the two detectors are working properly. Before going into detail it is important to describe again the operation of the NINO board, which interfaces directly with detectors.
-The Nino board, which digitizes the signal from the PMTS, has two parameters which can be used to select the internal threshold of the discriminator, to cut out the low amplitude signals, that are indicated as threshold and attenuation. The threshold and attenuation values can be adjusted changing the settings of the DAQ program.
-For our purpose, we fix the threshold values equal to $600$ for all the detectors. We remind the reader that the values should be in the range ($0,4000$). 
-It is desirable to work with the "physical" values, i.e switch from these arbitrary units to the correct value in $\SI{}{\milli \volt}$. The relation between attenuation and threshold it is not linear, the reason is that the NINO board is designed in such a way that collects the input charge coming from the signal. In principle it is even not possible to define a unique value for the threshold in $\SI{}{\milli \volt}$, because signals that produce the same charge can have shape and amplitude different from each other. In simple word, from the definition of the current:
+In this section we explain briefly the tests that we performed to check that the two detectors are working properly.
+The Nino board, which digitizes the signal from the PMTs, has two parameters that need to be defined: \textit{Thr} and \textit{Att}. These parameters are part of the settings of the DAQ program which controls the NINO board.
 
-\begin{align}
-Q = I \, \cdot \, time
-\end{align}
-
+It is desirable to work with the "physical" values, i.e switch from these arbitrary units to the correct value in $\SI{}{\milli \volt}$. The relation between attenuation and threshold it is not linear, the reason is that the NINO board is designed in such a way that collects the input charge coming from the signal. In principle it is even not possible to define a unique value for the threshold in $\SI{}{\milli \volt}$, because signals that produce the same charge can have shape and amplitude different from each other.
 Signal with a large time width and a small amplitude can generate the same accumulation of charge with respect to narrow signal with high voltage amplitude. Despite this, some data have been acquired by the A1 collaboration, with which it's possible to define a raw conversion function from attenuation units to threshold. The basic idea is to fix the time-length and the shape of signal and vary the amplitude, then we can observe the minimum value of attenuation for which the NINO board collects the input signal. We are aware that for electrons that hit the detectors, the shape of the signal is different, and are not fixed, however this conversion function provides a rough estimate of the threshold value.
 
 \begin{figure}[hbtp]
 \centering
-\subfloat[][\emph{Threshold dependence against attenuation. The values are obtained for a fixed shape of the input signal.} \label{fig:ThrvsAtt}]{
+\subfloat[][\emph{Threshold dependence against attenuation. The values are obtained for a fixed shape of the input signal and a fixed value of \textit{Thr} = 750.} \label{fig:ThrvsAtt}]{
 \includegraphics[scale=0.5]{Analysis/Calibrations/ThrvsAtt.pdf}}
 \end{figure}
 
@@ -54,26 +35,27 @@ The values obtained from the fit are:
 
 \section{Detector Test}
 
-Before the Beam time, some test with the two detectors were performed, to check that the PMTs were still working after some years of inactivity, and that the new electronic was able to count properly the pulses and store the data. For this studies, we didn't have a radioactive sources to employ. Anyway, with a radioactive source the shape of the signal would be different from the expected, since the typical energies of nuclear decay are $ \SI{1}{\mega \electronvolt} \gtrsim  E$, with little production of Cherenkov light in the fused-silica bars. The approach we used is to exploit the cosmic rays as a probe, and we moved the two detectors in the workshop of the accelerator. 
+Before the Beam time, some test with the two detectors were performed, to check that the PMTs were still working after some years of inactivity, and that the new electronics was able to count properly the pulses and store the data. For this studies, we didn't have a radioactive sources to employ. Anyway the signal shape using radioactive sources is expected to be different from signal of the $\SI{570}{\mega \electronvolt}$ electrons used in the experiment. The typical energies of nuclear decay are in the order of $E \simeq \SI{1}{\mega \electronvolt}$,  with consequently only a small production of Cherenkov light, difficult to detect. A different approach is followed, using cosmic rays rate as a probe. 
+The cosmic rays are able to produce Cherenkov light in the fused-silica bars, in fact the refractive index is $n = 1.45$, and a particle emits Cherenkov light when its $\beta = \frac{v}{c}$ is more than $\frac{1}{n} = 0.69$. The principal component of the cosmic rays at sea level is made by muons, produced in the electromagnetic and hadronic showers in high atmosphere. The energy of the muons reaching sea level is about $\SI{4}{\giga \electronvolt}$, over the threshold for Cherenkov production.
+Knowing that the expected number of event for cosmic rays is about $1 \frac{event}{\SI{}{\centi \meter\squared} \SI{}{\minute}}$ we can compute the expected values for the number of events. We decided to take 1 minute long acquisition for both the two detectors, this leads to $70$ expected events for detector B  and  $210$ events for detector A. These values are a rough estimate, because the effective area seen by the each PMT is less than the area of the fused-silica bar, as explained in section \ref{detectors}.  
+The first step is to select a good work point for the threshold. So, fixing the value of the threshold parameter for the NINO board, we took several acquisitions, each of them one minute long, increasing the attenuation (figure \ref{fig:AttB}). We powered the PMTs with a negative voltage around $\SI{-1000}{\volt}$, as suggested in the data-sheet, and covered the Cherenkov detector with a shielding blanket, to avoid ambient light simulating a signal.
 
-Knowing that the expected number of event for cosmic rays is about $1 \frac{event}{\SI{}{\centi \meter\squared} \SI{}{\second}}$ we can compute the expected values for the number of events. We decided to take 1 minute long acquisition for both the two detectors, this leads to $70$ expected events for detector B  and  $210$ events for detector A.  \smallskip
-
-The first step is to select a good point of work for the threshold. So, fixing the value of the threshold parameter for the NINO board, we took several acquisitions, each of them one minute long, increasing each time the attenuation. We powered the pmts with a negative voltage around $ \SI{-1000}{\volt}$, as suggested in the data-sheets, and covered the cherenkov detector with a shielding blanket, to avoid ambient light simulating a signal.
-
-\begin{figure}[hbtp]
+\begin{figure}[!ht]
 \centering
-\subfloat[][\emph{Attenuation scan for Detector B}]{
-\includegraphics[width = 0.45\textwidth]{Analysis/AttenuationB.pdf}}
+\includegraphics[width = 0.85\textwidth]{Analysis/AttenuationB.pdf}
+\caption{Attenuation scan for Detector B.}
+\label{fig:AttB}
 \end{figure}
 
-We observed a small knee in the plot, around the zone of 580 − 600 of attenuation, where the number of counts was almost constant, roughly equal to the number of expected events from muons hitting the detector. Then we observe a big edge for attenuation = 1000. Looking at the plot \ref{fig:ThrvsAtt}, we assume that the attenuation values are so high that electronic noise is no longer rejected, in fact the counts grow enormously. The attenuation was set at 600 as a starting point for the experiment.
+We observed a small knee, around the zone of 580 − 600 of \textit{Att}, where the number of counts was almost constant, roughly equal to the number of expected events from muons hitting the detector. Then we observe a big edge for attenuation = 700. Looking at the plot \ref{fig:ThrvsAtt}, we assume that the attenuation values are so high that electronic noise is no longer rejected, in fact the counts grow enormously. The \textit{Att} was set at 600 as a starting point for the experiment.
+\newpage
+Once the attenuation is set, we have studied the statistical fluctuation of the counts. 10 acquisitions, each of them \SI{1}{\minute} long are collected and reported in table \ref{tab:CountB}.
 
-The next step was to study the statistical fluctuation of the counts, so we collected 10 acquisitions, each of them 1 min long. The measured values are reported in the table below:
-
-\begin{center}
+\begin{table}[!htb]
+\centering
 \begin{tabular}{c|c|c|c}
 \hline 
-Pmt: & 1 & 2 & 3 \\
+$n^{\circ}$ acquisition & B0 & B1 & B2 \\
 \hline 
 1 & 58 & 60 & 62 \\  
 2 & 62 & 55 & 59 \\ 
@@ -87,90 +69,115 @@ Pmt: & 1 & 2 & 3 \\
 10 & 60 & 61 & 66\\
 \hline
 \end{tabular} 
-\end{center}
+\caption{Detector B counts for $10$ acquisition of $\SI{1}{\minute}$ long, with \textit{Att} equal to 600.}
+\label{tab:CountB}
+\end{table}
 
-These data are interesting, we can check if the counts are following the theoretical distribution of the events expected for cosmic rays at sea level. If the PMTs are working in a good mode, we know that the number of counts should be Poisson-distributed:
+These data are interesting, we can check if the counts are following the theoretical distribution of the events expected for cosmic rays at sea level. If the PMTs are working well, we know that the number of counts should be Poisson-distributed:
 
 \begin{equation}
 Pdf(\mu,k) =  \frac{\mu^{k}}{k!} e^{-\mu}
 \end{equation}
 
-The variance of the Poisson distribution is equal to the mean of the counts, and we expect the same behaviour also for the sample mean and the sample variance:
+The variance of the Poisson distribution is equal to the mean of the counts, and we expect the same behaviour also for the sample mean and the sample variance, the values are computed and reported in table \ref{tab:Bcounts}
 
-\begin{align*}
-\begin{split}
-\mu_{1} = 62.8	\qquad \sigma^{2}_{1} = 54.40 \qquad r_{12} = 0.66\\
-\mu_{2} = 59.6	\qquad \sigma^{2}_{2} = 57.15 \qquad r_{23} = 0.65\\
-\mu_{3} = 63.9	\qquad \sigma^{2}_{3} = 46.98 \qquad r_{13} = 0.35 \\
-\end{split}
-\end{align*}
+\begin{table}[ht]
+\centering
+\begin{tabular}{c|c|c|c}
+\hline 
+PMT & $\mu$ & $\sigma^{2}$ & Correlation $C_{ij}$ \\
+\hline
+1 	& 62.8	& 54.4	& $C_{11} = 0.66$\\
+2 	& 59.6	& 57.2	& $C_{23} = 0.65$\\
+3	& 63.9	& 47.0  & $C_{13} = 0.35$\\
+\hline
+\end{tabular}
+\caption{Mean, variance and correlation coefficient for detector B and PMT in overlap.}
+\label{tab:Bcounts}
+\end{table}
 
-We report also the correlation $r_{xy}$ between the pmt. The result are fine: we are able to see a positive correlation between adjacent PMT, and as expected the correlation is lower in the case of the more distant. This is explained by the lower probability that the photons of Cherenkov radiation light up at the same time pmts that are far away from each other.
+We report also the correlation $r_{xy}$ between the PMTs. The result are fine: we are able to see a positive correlation between adjacent PMT, and as expected the correlation is lower in the case of the more distant. This is explained by the lower probability that the photons of Cherenkov radiation light up at the same time pmts that are far away from each other.
 We can test that the data follow a Poisson distribution using the well-known Gosset test, defined as:
 
 \begin{equation}
-\chi^{2}_{n-1} = \sum_{i = 1}^{n} \dfrac{(Oss_{i} - Att_{i})}{Att_{i}}
+\chi^{2}_{n-1} = \sum_{i = 1}^{n} \dfrac{(Obs_{i} - Exp_{i})}{Exp_{i}}
 \end{equation}
 
-We report the result obtained with the data for detector B, the test shows that there is good agreement with the hypothesis that the count are Poisson-distributed.
+where $Obs$ are the observed counts, and $Exp$ are the expected counts.
+We report the results for detector B in table \ref{tab:GossetB}. The test shows that there is good agreement with the hypothesis that the count are Poisson-distributed.
 
 \begingroup
 \setlength{\tabcolsep}{8pt} % Default value: 6pt
 \renewcommand{\arraystretch}{1.2} % Default value: 1
-\begin{center}
+\begin{table}[htb]
+\centering
 \begin{tabular}{c|c|c|c}
 \hline 
 Pmt: & 1 & 2 & 3 \\ 
 \hline
 $\chi^{2}_{9}$ & 8.52 & 8.45 & 6.37 \\ 
 \hline
-\end{tabular} 
-\end{center}
+\end{tabular}
+\caption{Gosset test for detector B}
+\label{tab:GossetB} 
+\end{table}
 \endgroup
 
-To convince oneself that the pmt are actually measuring signals given by the passage of cosmic rays, and not only noise, we placed one pmt in coincidence with the others. Unfortunately, the DAQ is not designed to take coincidences. Because of this, we can use the correlation coefficient:  If a positive correlation between the counts is observe, we can conclude that a certain number of signals is triggered by the same passage of particles, (typically muons). The PMT that we used for coincidence was placed above detector B, roughly at the center of the fused silica bar.
+At this point, to convince oneself that the detector B is measuring signals given by the passage of cosmic rays, and not only noise, a fourth PMT (a spare component left in the lab) was used. This other PMT is coupled to a small block of fused silica (\SI{5}{\centi \meter} $\times$ \SI{5}{\centi \meter}), and was placed in overlap with detector B, roughly in correspondence of B2.
+Unfortunately, the DAQ is not designed to take coincidences, so a different procedure is needed to check is the PMTs are triggered by the same passage of particles. We have acquired 10 acquisition one minute long, as before, measuring the counts of detector B and a PMT in overlap, . This different PMT is indicated with $Ov$. 
+It is useful to compute the correlation coefficient: if a positive correlation between the counts is observed, then a certain number of signals is triggered by the same passage of particles. The result for detector B are reported in table \ref{tab:OverlapB}:
 
-\begin{center}
-\begin{tabular}{c|c|c|c|c}
+\begin{table}[ht]
+\centering
+\begin{tabular}{ccccc}
 \hline 
-pmt & 0 & 1 & 2 & 4 (in coincidence) \\ 
+$n^{\circ}$ acquisition  & B0 & B1 & B2 & PMT in overlap \\ 
 \hline 
 1 & 63 & 57 & 72 & 28 \\ 
-\hline 
+ 
 2 & 55 & 51 & 64 & 18 \\ 
-\hline 
+ 
 3 & 62 & 53 & 75 & 27 \\ 
-\hline 
+ 
 4 & 71 & 62 & 75 & 33 \\ 
-\hline 
+ 
 5 & 68 & 59 & 49 & 23 \\ 
-\hline 
+ 
 6 & 57 & 55 & 63 & 18 \\ 
-\hline 
+ 
 7 & 70 & 64 & 64 & 24 \\ 
-\hline 
+ 
 8 & 50 & 69 & 69 & 25 \\ 
-\hline 
+ 
 9 & 65 & 62 & 62 & 19 \\ 
-\hline 
+ 
 10 & 74 & 71 & 77 & 28 \\ 
-\hline 
+\hline
 \end{tabular} 
-\end{center} 
+\caption{Detector B counts for 10 acquisitions of $\SI{1}{\minute}$ long, with PMT $Ov$ is overlap.}
+\label{tab:OverlapB}
+\end{table} 
 
-With these data, we report the sample mean, the variance and the correlation between the counts:
+The sample mean, the variance and the correlation between the detector B and the PMT in overlap are reported in table \ref{tab:ResultBB}.
 
-\begin{equation*}
-\begin{split}
-\mu_{0} = 63.5 \qquad \sigma^{2} = 58.9 \qquad r_{04} = 0.49 \\
-\mu_{1} = 60.3 \qquad \sigma^{2} = 43.3 \qquad r_{14} = 0.38 \\
-\mu_{2} = 67.0 \qquad \sigma^{2} = 71.1 \qquad r_{24} = 0.65 \\
-\end{split}
-\end{equation*}
+\begin{table}[ht]
+\centering
+\begin{tabular}{c|c|c|c}
+\hline 
+PMT & $\mu$ & $\sigma^{2}$ & Correlation \\
+\hline
+1 	& 63.5	& 58.9	& 0.49 \\
+2 	& 60.3	& 43.3	& 0.38 \\
+3	& 67.0	& 71.1  & 0.65 \\
+\hline
+\end{tabular}
+\caption{Mean, variance and correlation coefficient for detector B and PMT in overlap.}
+\label{tab:ResultBB}
+\end{table}
 
-The pmt number 4, that is the pmt in coincidence with the detector, was placed geometrically over the pmt number 2. 
-We observe a positive correlation for the values $r_{04},r_{14},r_{24}$, the correlation is higher for the pmt number 2, and less for 0 and 1, for a geometrical reason. \smallskip
+A positive correlation is measured for all the PMTs of detector B. This indicates that a certain amount of signal are detected simultaneously, this strongly suggest that the 
 
+ 
 \begingroup
 \setlength{\tabcolsep}{8pt} % Default value: 6pt
 \renewcommand{\arraystretch}{1.2} % Default value: 1
@@ -279,7 +286,8 @@ We observe negative correlation between the pmts, something not expected. After 
 
 \section{Calibration}
 
-For the transverse asymmetry on $^{12}C$ represent an ideal test for the new electronic system. Previous measurements of the $A_{n}$ have been performed at MAMI for carbon target (\cite{}). For this beam-time, the red spectrometer is placed at the angle of $+22.5^{\circ}$, and the blue one at $-22.5^{\circ}$, respect to the longitudinal direction. For these two angle, we have the same kinematics and $Q^{2}$ values of the previous measurement. The exact values are reported here: 
+For the transverse asymmetry on $^{12}C$ represent an ideal test for the new electronic system. Previous measurements of the $A_{n}$ have been performed at MAMI for carbon target (\cite{Esser:2018vdp}). For this beam-time, the red spectrometer is placed at the angle of $+22.5^{\circ}$, and the blue one at $-22.5^{\circ}$, respect to the longitudinal direction.
+For these two angle, we have the same kinematics and $Q^{2}$ values of the previous measurement. The $Q^{2}$ value was measured for a low current beam ($I = \SI{5}{\nano \ampere}$) with the spectrometers detectors. The $Q^{2}$ values are reported with and without rejecting the inelastic scattered electrons. The inelastic scattered electrons rejected imposing an energy threshold. 
 
 \begin{flushleft}
 \begin{align*}
@@ -295,8 +303,9 @@ The $Q^{2}$ values is the same of the last measurement performed at MAMI, and is
 \subsection{Alignment of the Scattering Plane.}
 
 The scattered electrons are deflected upward by the magnetic field inside the spectrometers A and B. However, the spectrometer detectors and systems are not directly used to measure the transverse asymmetry, due to the high current intensity, which would damage the electronics.
-Instead of the spectrometer detectors, the scattered electrons are measured by the two detectors A and B, described in section \ref{detectors}, installed between the drift chamber and the scintillator of the spectrometer (see figure \ref{fig:internal}). So the scattered particles must be aligned to the fused-silica bars, primarily.
-This procedure is performed using a low current mode of the beam ($I = \SI{5}{\nano \ampere}$). For this mode the spectrometer systems can be used to detect the particles. Because we know the position of our detector A and B inside the spectrometers, we can use the Cherenkov detector of the spectrometer to visualize where the electrons are deflected. Changing the configuration of the magnetic field, we orient the electrons towards the fused-silica bars of detector A and B. Once we achieved a good alignment, we turned off the spectrometers system, performing subsequent calibrations using only our detectors. 
+Instead of the spectrometer detectors, the scattered electrons are measured by the two detectors A and B, described in section \ref{detectors}, installed between the drift chamber and the scintillator panel (see figure \ref{fig:internal}). So the scattered particles must be aligned to the fused-silica bars, primarily.
+This procedure is performed using a low current mode of the beam ($I = \SI{5}{\nano \ampere}$). For this mode the spectrometer systems can be used to detect the particles. Because we know the position of our detector A and B inside the spectrometers, we can use the Cherenkov detector to visualize where the electrons are deflected. Changing the configuration of the magnetic field, the electrons trajectory is oriented in such a way that is intersects the detectors A and B. For detector A the scattered electron beam has been aligned to pass over the fused silica, in correspondence of pmt A7. For detector B the same procedure was done, aligning the scattered beam in correspondence of pmt B0. 
+ Once we achieved a good alignment, we turned off the spectrometers system, performing the other necessary calibrations with only detector A and B. 
 
 \subsection{Beam Monitor Calibration, XY Monitor}
 
@@ -450,8 +459,7 @@ From this we obtain the value $C_{E18} = +1595.2$ necessary to convert from Volt
 \newpage
 \subsection{Calibration of the PMTs}
 
-\commento{Here it's important to show the plots I made during the beam time. I have to mention the Leo tecniques for the correct interpretation of counts vs attenuation.}
-During the beam time, several scans in attenuation were performed, before switching MAMI to produce the polarized beam, to choose the best working point for the PMTS of the detectors. The same procedure used in the laboratory was followed, so with a beam intensity of $\SI{10}{\micro \ampere}$ we acquire data run one minute long, increasing each time the attenuation.
+During the beam time, several scans in attenuation were performed, before switching MAMI to produce the polarized beam, to choose the best working point for the PMTS of the detectors. The same procedure used in the laboratory was followed, so with a beam intensity of $\SI{10}{\micro \ampere}$ we acquire data run one minute long, varying each time the attenuation.
 
 \begin{figure}[hbtp]
 \centering
@@ -461,8 +469,7 @@ During the beam time, several scans in attenuation were performed, before switch
 {\includegraphics[width = 0.5\textwidth]{Analysis/CalibrationPMT/AttenuationScanA.pdf}}
 \end{figure}
 
-From the fit we obtain three values for the signal Peak, given in attenuaton units.
-We can check the idea behind this, visualizing the PMT count in a different way. Because we would like to visualize the number of electrons that generate a certain signal in the detector, we can think of differentiating the data showed in the plot \ref{fig:AttScan}. The differentiation consist in the difference between the Counts at a certain point and the previous one, and dividing by the increment in attenuation:
+From the fit we obtain three values for the signal Peak, given in \textit{Att} units. We can check the idea behind this, visualizing the PMT count in a different way. Because we would like to visualize the number of electrons that generate a certain signal in the detector, we can think of differentiating the data showed in the plot \ref{fig:AttScan}. The differentiation consist in the difference between the Counts at a certain point and the previous one, and dividing by the increment in attenuation:
 
 \begin{align*}
 Spectra = \frac{N(att_{i}) - N(att_{i-1})}{att_{i} - att_{i-1}} 

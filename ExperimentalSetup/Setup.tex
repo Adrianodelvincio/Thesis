@@ -1,6 +1,6 @@
 \chapter{Experimental setup} 
 
-\paragraph{} This chapter presents briefly the structure and the characteristics of the Mainz microtron accelerator (MAMI), where the experiment is setup and the transverse asymmetry is measured. Particular attention is given in the the description of the beam monitors, different from the standard of particle accelerators. Following an overview of MAMI and the acceleration stages, the experimental hall, the detectors and the electronic devices used to acquire and process the data are presented. 
+\paragraph{} This chapter presents briefly the structure and the characteristics of the Mainz microtron accelerator (MAMI), where the experiment is setup and the transverse asymmetry is measured. Particular attention is given in the the description of the beam monitors that measure the beam parameters. Following an overview of MAMI and the acceleration stages, the experimental hall, the detectors and the electronic devices used to acquire and process the data are presented. 
 
 \section{Overview of the Experiment} \label{FirstDescription}
 
@@ -259,15 +259,16 @@ For this experiment we are going to measure the transverse asymmetry at one fixe
 made via two thin blocks of fused-silica that are coupled to PMTs. When a scattered electron hits the fused-silica (refractive index $n = 1.45$) Cherenkov light is emitted. The emitted Cherenkov light can extract one electron in the photocathode, which will be amplified by the PMT dynode structure. This sequence of event triggers the PMT and produce an output signal.
 
 In the experiment two detectors are installed and read-out independently. The detector A is placed at an angle of $+\theta$, while detector B is placed at $-\theta$. We expect to measure the same absolute value of the transverse asymmetry, with an opposite sign due to the different orientation. 
-The two detector are made by 3 PMTs and 8 PMTs coupled with two blocks of fused-silica, as shown in \ref{fig:NostriDetector}:
+The two detector are made by 3 PMTs and 8 PMTs coupled with two blocks of fused-silica, as shown in \ref{fig:DetectorAB}.
 
 \begin{figure}[hbtp]
 \centering
-\subfloat[][\emph{Detector B scheme.}]{
+\subfloat[][\emph{Detector B}]{
 \includegraphics[width = 0.40\textwidth ]{ExperimentalSetup/Detectors/DetectorB.pdf}}
-\subfloat[][\emph{Detector A scheme.}]{
+\subfloat[][\emph{Detector A}]{
 \includegraphics[width = 0.55\textwidth ]{ExperimentalSetup/Detectors/detectorA.pdf}}
-\label{fig:NostriDetector}
+\caption{Detector A and B scheme. Each PMT is coupled to the same fused silica bar. The PMTs located at the edges of the fused-silica bars are expected to measure lower rates with respect to the PMTs located near the center. The output signals have negative voltage and are read out by the NINO board.}
+\label{fig:DetectorAB}
 \end{figure}
 
 These two detectors are placed inside the spectrometers presented in \ref{fig:TwoDetectors}, between the top of the drift-chamber, which occupies the first third in height of the spectrometer, and just below the panel of scintillator. During the experiment, the drift chamber of the spectrometers is turn off, and also the PMTs coupled to the spectrometer scintillators are not powered.
@@ -281,7 +282,7 @@ With the new electronics, the single electrons are counted, and this will enable
 \subfloat[][\emph{Detector A}]
 	{\includegraphics[width = 0.45\textwidth]{figures/IMG_20221110_122246.pdf}} \quad
 	\label{fig:Detectors}
-\caption{Picture of the two detector taken in the clean room. The white blocks are the fused silica that produces the Cherenkov light, the cylinders below are the PMTs.}
+\caption{Picture of the two detector taken in the clean room. The white blocks are the fused silica bars that produces the Cherenkov light, the cylinders below are the PMTs, triggered by the passage of the particle. }
 \end{figure}
 
 Here we report the characteristic of the two detector that are relevant for the data analysis: 
@@ -292,13 +293,15 @@ Here we report the characteristic of the two detector that are relevant for the 
 \item Number of dynodes of the PMT: 12
 \item The Power voltage for the PMT in negative, in the range of ($\SI{-900}{\volt}$, $\SI{-1100}{\volt}$)
 \item refraction index $n$ of the fused-silica is $1.45$.
+\item maximum gain of $22 \cdot 10^{6}$.
 \end{itemize}
 
+The Pmts are coupled to the fused-silica with an optical grease suited for ultraviolet light. The PMTs positioned at the center of the fused-silica bar an effective area that is larger respect to the PMTs at the edge and their rates are expected to be higher compared with other PMTs. 
 
 \section{Beam Monitors}
 
 In MAMI, several monitors are placed along the beam line to check the beam quality and measure parameters such as current intensity, energy and relative position of the beam. This section summarizes the operating principles of the monitors installed at MAMI. Some details will be given in the appendix, for a complete discussion please refer to the following paper \cite{M_Dehn}.
-The monitors available at MAMI are constitutes by resonant cavities. With the resonant cavities it is possible to measure the various quantities, with the underlying physical principle that the passage of charged particles through these cavities can excitate some electromagnetic resonant modes\footnote{TM mode, where the magnetic field is completely transverse respect to particle momenta} which can be detected and analyzed by an analog circuit to measure the beam parameters.
+The monitors available at MAMI are constitutes by resonant cavities. With the resonant cavities it is possible to measure the various quantities, with the underlying physical principle that the passage of charged particles through these cavities excites some electromagnetic resonant modes\footnote{TM mode, where the magnetic field is completely transverse respect to particle momenta} (see figure \ref{fig:CylindricMonit}) which can be detected and analyzed by an analog circuit to measure the beam parameters.
 Before going into the details, it is necessary to define some quantities that will be used later in the discussion. We define the Shunt-impedance $r_{s}$ as:
 
 \begin{equation}
@@ -323,7 +326,7 @@ When the beam travels through the cavity, the particles lose energy that excites
 P = i^{2} r_{s}
 \end{equation}
 
-An antenna is used to decouple part of the energy from the cavity and send it to a circuit which produces an analog output signal. Indicating with $\kappa$ the coupling constant of the antenna, the previous relation needs to be modified introducing a new factor $ \frac{\kappa}{(1 + \kappa)^2}$. In a cylindrical resonator, the type installed at MAMI, the resonance frequencies of the different oscillation modes are expressed by the formula: 
+Where $i$ is the beam current. An antenna is used to decouple part of the energy from the cavity and send it to a circuit which produces an analog output signal. Indicating with $\kappa$ the coupling constant of the antenna, the previous relation needs to be modified introducing a new factor $ \frac{\kappa}{(1 + \kappa)^2}$. In a cylindrical resonator, the type installed at MAMI, the resonance frequencies of the different oscillation modes are expressed by the formula: 
 
 \begin{align*}
 f_{m,n,p} = \frac{c}{2\pi \sqrt{\epsilon_{r} \mu_{r}}} \sqrt{\bigl(\frac{x_{m,n}}{R} \bigl)^{2} + \bigl(\frac{p \pi}{L} \bigl)^{2}}
@@ -345,14 +348,16 @@ If the frequency of the beam bunch is equal to the resonant frequency $f_{m,n,p}
 \centering
 \includegraphics[width = 0.6 \textwidth]{ExperimentalSetup/Monitors.pdf}
 \caption{Scheme of the Cylindrical cavities installed at MAMI. In red we have the $TM_{110}$ mode, used to measure the position of the beam, in yellow the $TM_{010}$ mode, to measure the intensity of the beam.}
+\label{fig:CylindricMonit}
 \end{figure}
 
-Depending on the $TM$ mode excited, we have a different signal in the cavity, so a different signal collected by the antenna. The relevant quantity that is detected is the power $P_{HF}$ absorbed by the antenna. For the $TM_{010}$ mode, the power is 
+Depending on the $TM$ mode excited, we have a different signal in the cavity, so a different signal collected by the antenna. The relevant quantity that is detected is the power $P_{HF}$ absorbed by the antenna, that is proportional to the power loss $P$ of the beam. For the $TM_{010}$ mode,  the power absorbed by the antenna is: 
 
 \begin{equation}
 P_{HF} = i^{2} r_{010} \frac{\kappa}{(1 + \kappa)^{2}}
 \end{equation}
 
+Where $\kappa$ is a coupling constant between the electromagnetic field of the cavity and the antenna.
 The power absorbed by the antenna is directly dependent on the beam current. Because the values are typically in the range of $\SI{}{\pico \watt}$ to $\SI{}{\milli \watt }$, the signal is processed in close proximity of the installed monitors. In the signal processing, the input signal of the antenna in coupled to the master-oscillation signal, so the output signal is given by the formula:
 
 \begin{equation}
@@ -377,17 +382,17 @@ P_{HF} = i^{2} r_{110} \frac{\kappa}{(1 + \kappa)^{2}} K x^{2}
 The output signal, that is read by our setup, is proportional to the square root of the absorbed power:
 
 \begin{equation}
-\sqrt{P_{HF}} = constant \cdot U \, \cdot \, i   \cdot x
+U = \sqrt{P_{HF}} = constant \, \cdot \, i   \cdot x
 \end{equation} 
 
 The beam parameter are then given inverting the above formula 
 
 \begin{equation} \label{eq:SignalToVfc}
-x \simeq \frac{\sqrt{P_{HF}}}{i}
+x \propto \frac{\sqrt{P_{HF}}}{i}
 \end{equation}
 
 Where the exact conversion coefficients are not known, and are determined during the calibration phase, at the beginning of the beam time.
-To measure the beam energy, a different approach is used. The energy monitor (ENMO) consist of 2 cavities in the RTM3. One is located in the last recirculation pipe, the other one on the part of the beam line, where the acceleration takes place. The two monitors are synchronized to the master oscillation and measure the phase of the bunches of electrons. During their travel from the first cavity to the second cavity, the beam passes through the magnet and does one half turn. If the energy is slightly higher, the radius of the turn will be slightly larger. This means that there is an extra time between the two bunches, that can be measured as a small phase shift in the $\SI{570}{\mega \electronvolt}$ recirculation. From this it is possible to obtain a value for the difference of the actual energy from the nominal energy.
+To measure the beam energy, a different approach is used. The energy monitor (ENMO) consists of 2 cavities in the RTM3. One is located in the last recirculation pipe, the other one on the part of the beam line, where the acceleration takes place. The two monitors are synchronized to the master oscillation and measure the phase of the bunches of electrons. During their travel from the first cavity to the second cavity, the beam passes through the magnet and does one half turn. If the energy is slightly higher, the radius of the turn will be slightly larger. This means that there is an extra time between the two bunches, that can be measured as a small phase shift in the $\SI{570}{\mega \electronvolt}$ recirculation. From this it is possible to obtain a value for the difference of the actual energy from the nominal energy.
 
 \subsection{Beam stabilization}
 
@@ -411,28 +416,27 @@ To collect the data from the monitors, single and multichannel, synchronous volt
 \begin{wrapfloat}{figure}{I}{0pt}
 \includegraphics[width=0.5\textwidth]{ExperimentalSetup/Vfc.pdf}
 \caption{Frequency versus Voltage}
+\label{fig:VoltageToFrequency}
 \vspace{10pt}
 \end{wrapfloat}
 
 The VFCs are powered with an external voltage of $\SI{5}{\volt}$. They measure an input voltage in the range of ($-V_{ref}$, $V_{ref}$). An external clock signal, with a frequency $F_{CLKIN} = \SI{5.88}{\mega \hertz}$ is created externally and synchronous to the gate-length.
 The analog input signal is sampled with by a switched capacitor, with a rate that is equal to $F_{CLKIN}$.
-The comparator produces a number pulses; the frequency of the output signal is proportional to the input voltage, with $-V_{ref}$ equal to $0.5 \% \cdot f_{CLKIN}$ and $+V_{ref}$ equal to $0.45 \% \cdot f_{CLKIN}$ \cite{VfcDatasheet}, where the first correspond to $\SI{0.0}{ \volt}$ in input and the second to $V_{ref}$. The relation between the output frequency and the input voltage is the following:
-
-\begin{equation}
-V_{in} = V_{ref} (2 \frac{f_{out} - 5\% F_{CLKIN}}{40 \% \cdot F_{CLKIN}} -1)
-\end{equation}
-
-The data are acquired counting the number of pulses that come from the comparator, so we can substitute to $f$ the number of pulses (the two quantities are proportional), and we end with:
+The comparator produces a number pulses; the frequency of the output signal is proportional to the input voltage, with $-V_{ref}$ equal to $5 \% \cdot f_{CLKIN}$ and $+V_{ref}$ equal to $45 \% \cdot f_{CLKIN}$ \cite{VfcDatasheet}, where the first correspond to $\SI{0.0}{ \volt}$ in input and the second to $V_{ref}$ (see figure \ref{fig:VoltageToFrequency}). The data are acquired counting the number of pulses from the comparator, which are proportional to the frequency, so we can substitute to $f$ the number of pulses, and we end up with the equation \ref{eq:Vfc}
 
 \begin{equation} \label{eq:Vfc}
-V_{in} =  V_{ref}[2 \cdot \dfrac{N_{pulses} - 5 \% N_{CLKN}}{40 \% N_{CLKN}} - 1]
+V_{in} =  V_{ref}[2 \cdot \dfrac{N_{pulses} - 5 \% N_{CLKIN}}{40 \% N_{CLKN}} - 1]
 \end{equation}
 
 \subsection{Nino Board} \label{NINO}
 
-The NINO board is our data acquisition system for the PMT counts. It is made by $32$ analog input channels and it is powered with $\pm \SI{5}{\volt}$. Each channel has an attenuator, and the signal passes through that before going to the comparator, which compares the signal to the threshold. The output signal is a Low-voltage differential signal (LVDS). Each comparator can handle eight channels and for each of them it is possible to define a global threshold. 
-The threshold of the NINO board can be controlled with two values, that are named threshold \textit{Thr} and attenuation \textit{Att}. A \textit{Thr} value is shared by 4 adjacent channels, while each channel has is own value of \textit{Att}. In this way it is possible to define a different vale of the threshold for each individual channel. The \textit{Att} value decrease the global threshold selected with \textit{Thr}. These two parameters are set in the DAQ program, using 12 bit DACs, corresponding to interval of $(0 ; 4095)$.
-The NINO board is designed in such a way that collects the Input charge of the signal, operating with a $\SI{30}{\pico \farad}$ capacitor. The output signal amplitude is proportional to the input charge, and it is sent to the discriminator. Our interest is only to count the number of scattered electron, so we do not intend to measure the input charge, but only if a signal is produced or not.
+The NINO board is our data acquisition system for the PMT counts. It is made by $32$ analog input channels and it is powered with $\pm \SI{5}{\volt}$. Each input channel has attenuation circuit, the attenuator, that reduces the amplitude of the input signal, which is then sent to a discriminator. Each discriminator handles the signals coming from $8$ channels. 
+The NINO board (figure \ref{fig:NinoBoard}) is designed in such a way that it measures the charge of the input signal and produces a signal whose width is proportional to the input charge. This signal is then processed by the discriminator, which compares the signal to an internal threshold. 
+
+Two values are used to control the threshold of the discriminator and the attenuation, and are named \textit{Thr} and \textit{Att}, respectively. The \textit{Thr} value is shared by 4 adjacent channels, while each channel has is own value of \textit{Att}. These two parameters are set in the DAQ program, using 12 bit DACs, corresponding to interval of $(0 ; 4095)$. \textit{Thr} selects the threshold of the discriminator, that correspond to a certain value of the charge. The \textit{Att} value controls the input voltage of attenuator: 
+the higher is the value of \textit{Att}, the lower is the attenuation of the signal.
+
+With the combination of \textit{Att} and \textit{Thr} it is possible to define a  different value of threshold for each individual channel, in the end. Regarding this experiment, we are interested in counting the number of signal over the threshold, and the total charge produced by the input signal is not accumulated. 
 
 \begin{figure}[hbtp]
 \centering
