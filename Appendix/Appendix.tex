@@ -37,8 +37,8 @@ The raw values from these monitors are collected and stored in binary files, and
 
 In the above formula we divide by the beam current $I$, because the output signal of position and energy the monitors are proportional to the intensity of the beam, and need to be normalized. For the current monitor, the signal is directly proportional to the current, so the denominator is omitted.
 The important quantities that are computed by the analysis program are: $X$, $Y$, position of the beam on the target, $\theta_{x}$ and $\theta_{y}$ scattering angles, current $I$ and energy $E$. 
-We now briefly present the function implemented to process the raw data and retrieve these quantities. \medskip
-The position $X$ and $Y$ are computed assuming that the accelerated electrons are moving in a straight line. Looking at the figure \ref{fig:BeamTraje}, using a reference system with the origin coincident to the center of the target, the beam trajectory is described by the following equation:
+We now briefly present the function implemented to process the raw data and retrieve these quantities.
+The position $X$ and $Y$ are computed as explained in section \ref{}. In brevity, assuming that the beam is moving in a straight line, the  beam trajectory is described by:
 
 \begin{align*}
 y &= m_{y} \cdot z + q_{y} \\
@@ -46,21 +46,13 @@ x &= m_{x} \cdot z + q_{x}
 \end{align*}
 
 The values that we are looking for are $q_{x}$ and $q_{y}$, x and y intercept. 
-
-\begin{figure}[hbtp]
-\centering
-\includegraphics[scale=0.75]{Appendix/scheme.pdf}
-\caption{Figure of the beam trajectory, the position $X$ and $Y$ are measured by the monitors (blue boxes). Assuming a linear motion of the particles, the hitting positions on the target are computed.}
-\label{fig:BeamTraje}
-\end{figure}
-
-Imposing in the above equations the passage through the points ($Z_{25}$;$X_{25}$) and ($Z_{21}$;$X_{21}$) (identical procedure for $Y$) we can resolve the system for $q_{x}$, obtaining:
+Imposing in the above equations the passage through the points ($Z_{25}$;$X_{25}$) and ($Z_{21}$;$X_{21}$), the intercepts of the equation are given by:
 
 \begin{equation}
 q_{x} = \dfrac{Z_{25} \cdot X_{21} - Z_{21} \cdot X_{25}}{Z_{25} - Z_{21}}
 \end{equation} 
 
-the solution for $q_{y}$ is identical. The scattering angles $\theta_{x}$ and $\theta_{y}$ are instead related to the slope $m$, knowing that $tan(\theta) = m$. The angles are given by the formula:
+The scattering angles $\theta_{x}$ and $\theta_{y}$ are instead related to the slope $m$, knowing that $tan(\theta) = m$. The angles are given by the formula:
 
 \begin{equation}
 \theta_{x} = \dfrac{X_{25} - X_{21}}{Z_{25} - Z_{21}}
