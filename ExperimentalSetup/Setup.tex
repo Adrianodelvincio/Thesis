@@ -400,25 +400,18 @@ The beam stabilization is an essential component of the experiment. The values o
 The beam position in the transverse plane is constantly adjusted by the magnets in the beam line. For beam current and energy, the control program acts on the laser of the beam source and the klystrons in the three racetrack microtrons described in section \ref{ExperimentalHall}. Two types of stabilization are made by the control program: the first is made to avoid long term drifts by pulling back the beam back to nominal conditions every $\simeq \SI{10}{\second}$. Simultaneously, a fast stabilization prevents fast fluctuation, reacting quickly to every disturbance of the beam. 
 
 \section{Electronics}
-\commento{Short introduction about the old electronics setup and why a new versions is needed, then describe all the electronics used for our experiment:
-\begin{itemize}
-\item Nino board for collecting the data from the PMTs
-\item VFCs for collecting the data from X21,X25,Y21,Y25,ENMO,I21,I13
-\item master board for collecting the monitors data/controlling the source/wobbler magnets.
-\item small boxes for switching from new electronic read-out to the old electronics read-out (spectrometers DAQ)
-\end{itemize}}
-
 \subsection{Voltage to Frequency Converter} \label{VFCss} 
 
 Some beam parameters are needed in order to take into account possible effects in the measurement of the transverse asymmetry. The relevant data are the position in the $(x,y)$ plane, the incident angles on the target, the current and energy of the beam. All this values are collected using the already existing monitors.
 To collect the data from the monitors, single and multichannel, synchronous voltage-to-frequency converters (AD7742) are used. This devices contain an analog modulator that is able to convert the input voltage into an output pulse train, whose frequency is proportional to the input voltage. 
 
-\begin{wrapfloat}{figure}{I}{0pt}
+\begin{figure}[htb]
+\centering
 \includegraphics[width=0.5\textwidth]{ExperimentalSetup/Vfc.pdf}
 \caption{Frequency versus Voltage}
 \label{fig:VoltageToFrequency}
 \vspace{10pt}
-\end{wrapfloat}
+\end{figure}
 
 The VFCs are powered with an external voltage of $\SI{5}{\volt}$. They measure an input voltage in the range of ($-V_{ref}$, $V_{ref}$). An external clock signal, with a frequency $F_{CLKIN} = \SI{5.88}{\mega \hertz}$ is created externally and synchronous to the gate-length.
 The analog input signal is sampled with by a switched capacitor, with a rate that is equal to $F_{CLKIN}$.
@@ -430,13 +423,22 @@ V_{in} =  V_{ref}[2 \cdot \dfrac{N_{pulses} - 5 \% N_{CLKIN}}{40 \% N_{CLKN}} - 
 
 \subsection{Nino Board} \label{NINO}
 
-The NINO board is our data acquisition system for the PMT counts. It is made by $32$ analog input channels and it is powered with $\pm \SI{5}{\volt}$. Each input channel has attenuation circuit, the attenuator, that reduces the amplitude of the input signal, which is then sent to a discriminator. Each discriminator handles the signals coming from $8$ channels. 
-The NINO board (figure \ref{fig:NinoBoard}) is designed in such a way that it measures the charge of the input signal and produces a signal whose width is proportional to the input charge. This signal is then processed by the discriminator, which compares the signal to an internal threshold. 
+The NINO board \ref{fig:NinoBoard} is our data acquisition system for the PMT counts (see paper \cite{1352067}, for a reference). It is made by $32$ analog input channels and it is powered with $\pm \SI{5}{\volt}$.
+Each input channel receive a differential signal from the detector, and has attenuation circuit that reduces the amplitude of the input signal. After passing the attenuator, the signal is sent to the input stage (see figure \ref{fig:InputStage}) of the NINO chip, a current-to-voltage converter, that produces an output signal whose amplitude is proportional to the total charge of the input signal.
 
-Two values are used to control the threshold of the discriminator and the attenuation, and are named \textit{Thr} and \textit{Att}, respectively. The \textit{Thr} value is shared by 4 adjacent channels, while each channel has is own value of \textit{Att}. These two parameters are set in the DAQ program, using 12 bit DACs, corresponding to interval of $(0 ; 4095)$. \textit{Thr} selects the threshold of the discriminator, that correspond to a certain value of the charge. The \textit{Att} value controls the input voltage of attenuator: 
-the higher is the value of \textit{Att}, the lower is the attenuation of the signal.
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.3\textwidth]{ExperimentalSetup/InputStage.png}
+\caption{Input stage of the NINO chip. The input signal coming from the detector passes an attenuation circuit, and then are sent to the input stage, in this figure. The output, at node N2, is connected to the discriminator and an amplification stage.}
+\label{fig:InputStage}
+\end{figure}
 
-With the combination of \textit{Att} and \textit{Thr} it is possible to define a  different value of threshold for each individual channel, in the end. Regarding this experiment, we are interested in counting the number of signal over the threshold, and the total charge produced by the input signal is not accumulated. 
+After passing the input stage, the signal pass through a discriminator and a block of 4 operational amplifiers.
+There are 4 discriminator in the NINO chip, and each of them can handle signals coming from $8$ different channels. The discriminator selects the signals by a threshold values in $\SI{}{\volt}$. However, the signal that arrives to the discriminator is proportional to the input charge of the signal coming from the detector, so in the end the NINO board is sensitive to the input charge. The discriminator threshold can be set in the range of (\SI{10}{\pico \ampere}, \SI{100}{\pico \ampere}). 
+The output signal after the discriminator and the amplification block is a LVDS (low voltage differential signaling) with a fixed shape, and a width that is proportional to the input charge.
+ 
+Regarding the data acquisition system, two values are import to control the discriminator threshold and the attenuator, and are named \textit{Thr} and \textit{Att}, respectively. The NINO chip is designed in such a way that the \textit{Thr} value is shared by 4 adjacent channels. On the contrary each channel has is own value of \textit{Att}. Acting simultaneously on \textit{Thr} and \textit{Att} is possible to define a global threshold for each channel, individually.
+These two parameters are set in the DAQ program, using 12 bit DACs, corresponding to interval of $(0 ; 4095)$. \textit{Thr} selects the threshold of the discriminator. The \textit{Att} value controls the input voltage of attenuator: the higher is the value of \textit{Att}, the lower is the attenuation of the signal.
 
 \begin{figure}[hbtp]
 \centering
@@ -445,8 +447,7 @@ With the combination of \textit{Att} and \textit{Thr} it is possible to define a
 \label{fig:NinoBoard}
 \end{figure}
 
-Two Nino board are used in the experiment, one for detector A and one for detector B. For the experiment discussed in this thesis, we will use only 8 channel for detector A and 3 channel for detector B, since this is the number of the input signals coming from the two detectors. For the future experiments more channel will be used, splitting the analog input signal in 4 different signal, sending it to 4 different input channel of the board. This is useful because changing individually the attenuation value, we can define 4 different thresholds for the same signal coming from a single PMT, and compare different values of threshold, for example to study how the noise affects the measurement, finding the best compromise between signal to noise ratio.
-The way we selected the threshold is explained in chapter.
+Two Nino board are used in the experiment, one for detector A and one for detector B. For the experiment discussed in this thesis, we will use only 8 channel for detector A and 3 channel for detector B, since this is the number of the input signals coming from the two detectors. For the future experiments more channels will be used, splitting the analog input signal in 4, and sending it to 4 different input channel of the board. This is useful because changing individually the attenuation value, we can define 4 different thresholds for the same signal and compare different values of threshold, to study how the noise affects the measurement, finding the best compromise between signal to noise ratio. The \textit{Thr} and \textit{Att} selection is explained in chapter \ref{analysis}.
 
 \subsection{Master Board}
 

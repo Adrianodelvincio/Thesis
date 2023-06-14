@@ -7,31 +7,33 @@ The calibrations consist in the determination of the scaling factors, needed by 
 
 
 \section{Nino Board}
-In this section we explain briefly the tests that we performed to check that the two detectors are working properly.
-The Nino board, which digitizes the signal from the PMTs, has two parameters that need to be defined: \textit{Thr} and \textit{Att}. These parameters are part of the settings of the DAQ program which controls the NINO board.
 
-It is desirable to work with the "physical" values, i.e switch from these arbitrary units to the correct value in $\SI{}{\milli \volt}$. The relation between attenuation and threshold it is not linear, the reason is that the NINO board is designed in such a way that collects the input charge coming from the signal. In principle it is even not possible to define a unique value for the threshold in $\SI{}{\milli \volt}$, because signals that produce the same charge can have shape and amplitude different from each other.
-Signal with a large time width and a small amplitude can generate the same accumulation of charge with respect to narrow signal with high voltage amplitude. Despite this, some data have been acquired by the A1 collaboration, with which it's possible to define a raw conversion function from attenuation units to threshold. The basic idea is to fix the time-length and the shape of signal and vary the amplitude, then we can observe the minimum value of attenuation for which the NINO board collects the input signal. We are aware that for electrons that hit the detectors, the shape of the signal is different, and are not fixed, however this conversion function provides a rough estimate of the threshold value.
+In this section we study the characteristics of the Nino board, which digitizes the signal from the PMTs. The NINO board has two parameters: \textit{Thr}, that controls the discriminator and \textit{Att}, which controls the attenuator circuit. These parameters are part of the settings of the DAQ program which controls the NINO board.
+Because the values of \textit{Thr} and \textit{Att} are defined in arbitrary units, it is desirable to find a conversion formula to obtain the value of the threshold in physical units, as \SI{}{\milli \volt}.
+Because of the NINO sensitivity to the input charge, it is not simple to define a unique value for the threshold in \SI{}{\milli \volt}, because the input charge of the detector signal depend on the shape, amplitude and time length. For example, signal with a large time and a small amplitude can generate the same charge with respect to narrow signal with high voltage amplitude. Despite this, some data have been acquired by the A1 collaboration, with which it's possible to define a raw conversion function from attenuation units to threshold. The idea behind  is to generate, with a wave generator, signals with fixed time length and shape, varying only the amplitude, and use them as input of the NINO board.
+The data available were collected following this procedure. Unfortunately, these data were taken with an input signal shape that different from the signal shape of our experiment \footnote{Apart from this, it is not even true that the shape of the signals produced by the detectors is constant.}. We are aware that the conversion formula obtained with these data is only a rough estimation, however it can be useful to get an idea of the threshold values, in \SI{}{\milli \volt}.
 
 \begin{figure}[hbtp]
 \centering
-\subfloat[][\emph{Threshold dependence against attenuation. The values are obtained for a fixed shape of the input signal and a fixed value of \textit{Thr} = 750.} \label{fig:ThrvsAtt}]{
-\includegraphics[scale=0.5]{Analysis/Calibrations/ThrvsAtt.pdf}}
+\includegraphics[scale=0.5]{Analysis/Calibrations/ThrvsAtt.pdf}
+\caption{Threshold dependence versus attenuation. The input signals have a fixed shape and time length. The data are collected following this procedure: with a fixed amplitude of signal, the \textit{Att} is set to $4000$, the maximum, and decreased progressively, until the NINO board starts missing some pulses. All the data are acquired with a fixed value of \textit{Thr} = 750.} \label{fig:ThrvsAtt}
 \end{figure}
 
-The data shown represent the values of the amplitude of the input signals (in $\SI{}{\milli \volt}$) versus attenuation, the function used for the conversion is obtained from the fit of the data, the function used is the following: 
+The data shown represent the values of the amplitude of the input signals (in $\SI{}{\milli \volt}$) versus the values of \textit{Att}, and are taken for a fixed value of \textit{Att} = 750. The function used for the conversion is obtained from the fit of the data, the function used is the following: 
 
 \begin{equation}
-Threshold = \dfrac{a}{(att - b)^{3}} + c
+Threshold \, [\SI{}{\milli \volt}]= \dfrac{a}{(att - b)^{3}} + c
 \end{equation}
 
-The values obtained from the fit are:
+The parameters of the formula are estimated using the function \textit{curve-fit} of the python library \textit{schipy}:
 
 \begin{itemize}
 \item $a = - 802111053 \, \frac{\SI{}{\milli \volt}}{[arb.unit]}$
 \item $b = 382 \, [arb. unit]$
 \item $c =  \SI{-6.1}{\milli \volt}$
 \end{itemize}
+
+As we can see, the relation between threshold and \textit{Att} is not linear. Around the values $400$ - $700$ we observe high variability. For values higher than $700$, the threshold is low and almost constant. This mean that the attenuation, controlled by the attenuator in the input channel of the NINO board, is reduced progressively as 	\textit{Att} increases. 
 
 \section{Detector Test}
 
@@ -335,9 +337,9 @@ For the calibration of the X Y monitors, special targets are used. In the target
 
 \begin{wrapfloat}{figure}{I}{0pt}
 \centering
-\includegraphics[width = 0.45\textwidth]{ExperimentalSetup/target.pdf}
-\caption{\label{fig:targetFrame} Target frame installed during the experiment, on the top we have the two targets made by three carbon wires that are used to calibrate the positions monitors. Then the carbon target and the two lead targets.}
-\vspace{-150pt}
+\includegraphics[width = 0.35\textwidth]{ExperimentalSetup/target.pdf}
+\caption{\label{fig:targetFrame} Target frame, on the top we have the two targets made by three carbon wires that are used to calibrate the positions monitors. Then the carbon target and the two lead targets.}
+\vspace{-120pt}
 \end{wrapfloat}
 
 The procedure to measure the scaling factor used to convert from the raw-data in $\SI{}{\volt}$ to $\SI{}{\micro \meter}$, is the following: we ask MAMI operators to slowly change the beam position, in the horizontal and vertical direction for the horizontal and vertical target. The beam position can be changed by varying the magnetic field produced by the \textit{Wobbler 16} magnets (see figure \ref{fig:BeamLine}). 
@@ -994,6 +996,7 @@ A7 & $1.7 \pm 0.2$ \\
 \label{tab:Chisq}
 \end{table}
 
+Recalling the equation \ref{eq:Error}, where we assumed that $A$ a normal distributed variable, now we can confirm our initial assumption. 
 To extract the asymmetry $A_{n}$ from the data, we assume a linear model where the asymmetries depend on the beam parameters, in the way we discussed in section \ref{Model}. The contributions due to variations of the beam within an events are described with 5 parameters, that are  $A_{x},A_{y},A_{\theta_{x}},A_{\theta_{y}},A_{E}$.
 The data are analyzed both using python libraries, and with a fit program implemented in the framework of this thesis. To analyze the data with python, it is used the \textit{curvefit} function implemented in the python library \textit{scipy}. We also implemented a dedicated program to interface directly to the analysis program, the fit program, that is written in \textit{C++} code. The fit program implements the ordinary least square algorithm (OLS), a well know algorithm used in linear regression. The OLS algorithm is basic algorithm, easy to implement and robust. 
 In linear regression it is assumed that :
