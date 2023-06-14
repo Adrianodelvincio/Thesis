@@ -4,7 +4,7 @@
 
 LAST THINGS TO DO:
 
-- [] beam stabilization
+- [x] beam stabilization
 - [x] alignment of the scattering plane to the detector
 - [] Model description
 - [x] Compton Moller polarimeters
@@ -26,7 +26,7 @@ LAST THINGS TO DO:
 Introduzione 
 - [x] scrivere abstract/introduzione di carattere generale
 - [x] Iniziare ad impostare l'introduzione, dalle stelle di neutroni all'asimmetria trasversa
-- [] ampliare parte sulla descrizione dell'asimmetria transversa
+- [x] ampliare parte sulla descrizione dell'asimmetria transversa
 
 
 Capitolo sulla teoria:
@@ -42,8 +42,8 @@ Capitolo Setup sperimentale:
 - [x] descrizione acceleratore MAMI.
 - [x] spiegare il funzionamento polarimetro Moller e Compton, spiegare perchè sarà utilizzato il moller in futuro.
 - [x] rivedere spiegazione della polarizzazione degli elettroni.
-- [] Come si stima l'errore sistematico?
-- [] discutere la stabilizzazione del fascio.
+- [x] Come si stima l'errore sistematico?
+- [x] discutere la stabilizzazione del fascio.
 - [x] pockels cell.
 
 Capitolo di Analisi:

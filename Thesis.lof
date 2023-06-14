@@ -20,7 +20,7 @@
 \contentsline {figure}{\numberline {3.11}{\ignorespaces Picture of the two detector taken in the clean room. The white blocks are the fused silica bars that produces the Cherenkov light, the cylinders below are the PMTs, triggered by the passage of the particle. \relax }}{36}{figure.caption.22}%
 \contentsline {figure}{\numberline {3.12}{\ignorespaces Scheme of the Cylindrical cavities installed at MAMI. In red we have the $TM_{110}$ mode, used to measure the position of the beam, in yellow the $TM_{010}$ mode, to measure the intensity of the beam.\relax }}{38}{figure.caption.23}%
 \contentsline {figure}{\numberline {3.13}{\ignorespaces Plot of the phase $\phi $ versus the output signal. The phase optimization was done selecting the working point in correspondence of the peak.\relax }}{38}{figure.caption.24}%
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Frequency versus Voltage\relax }}{39}{figure.caption.25}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Frequency versus Voltage\relax }}{40}{figure.caption.25}%
 \contentsline {figure}{\numberline {3.15}{\ignorespaces Nino Board\relax }}{40}{figure.caption.26}%
 \contentsline {figure}{\numberline {3.16}{\ignorespaces Scheme of the master-board, the device that coordinates all the electronics for the experiments, and send the data to the computer in the control room.\relax }}{41}{figure.caption.27}%
 \addvspace {10\p@ }
@@ -52,12 +52,12 @@
 \contentsline {figure}{\numberline {5.7}{\ignorespaces Histogram of the Asymmetry for Detector A.\relax }}{71}{figure.caption.72}%
 \contentsline {figure}{\numberline {5.8}{\ignorespaces Correlation plots of positions and angles.\relax }}{72}{figure.caption.75}%
 \contentsline {figure}{\numberline {5.9}{\ignorespaces Plot of the Asymmetry versus time. The plot show the average over all the events collected from $t = 0$ to $t = t_{1}$. Each line represents $A_{n}$ measured for PMT (in \leavevmode {\color {blue}blue} detector B and in \leavevmode {\color {red}red} detector A). The values are corrected for the beam polarization, multiplying by $\frac {1}{p}$. No further correction is applied.\relax }}{73}{figure.caption.76}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces PMT A0 asymmetries versus X beam position. Because of the statistical uncertainties, it is not possible to visualize a linear dependence in the data.\relax }}{74}{figure.caption.77}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces $A$ versus $\delta x$, $\delta y$ and $\delta E$. The plot are generated with 50 equally spaced bins. The red line is the best fit with a linear model.\relax }}{74}{figure.caption.78}%
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Averaged asymmetries versus the beam parameters $\delta X$, $\delta Y$ and $\delta E$. The x axis is divided in $19$ intervals, and for each of them we average the asymmetries $A$. \relax }}{75}{figure.caption.79}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Detector A asymmetries versus X beam position. Because of the statistical uncertainties, it is not possible to visualize a linear dependence in the data.\relax }}{74}{figure.caption.77}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces $A$ versus $\delta x$, $\delta y$ and $\delta E$. The plot are generated with 50 equally spaced bins. The red line is the best fit with a linear model.\relax }}{75}{figure.caption.78}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Averaged asymmetries versus the beam parameters $\delta X$, $\delta Y$ and $\delta E$. The x axis is divided in $19$ intervals, and for each of them we average the asymmetries $A$. \relax }}{76}{figure.caption.79}%
 \contentsline {figure}{\numberline {5.13}{\ignorespaces Plot of the PMT counts versus the $X$ position. The $X$ position was slowly changed during the acquisition.\relax }}{77}{figure.caption.81}%
-\contentsline {figure}{\numberline {5.14}{\ignorespaces rates on lead Target as function of the beam current. The rates for each PMT of detector A (on the left), and detector B (on the right) are reported.\relax }}{79}{figure.caption.84}%
+\contentsline {figure}{\numberline {5.14}{\ignorespaces rates on lead Target as function of the beam current. The rates for each PMT of detector A (on the left), and detector B (on the right) are reported.\relax }}{80}{figure.caption.84}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Plot of $\overline {A}_{n}$. The result are corrected by the beam asymmetry current and polarization. The black line represent the overall value $A_{n}$ computed with the formula \ref {eq:FinalValue}. $\overline {\delta I}$.\relax }}{82}{figure.caption.88}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Plot of $\overline {A}_{n}$. The result are corrected by the beam asymmetry current and polarization. The black line represent the overall value $A_{n}$ computed with the formula \ref {eq:FinalValue}. $\overline {\delta I}$.\relax }}{84}{figure.caption.88}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1}{\ignorespaces Scheme of the beam line, the target is on the left side of the picture.\relax }}{89}{figure.caption.94}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Scheme of the beam line, the target is on the left side of the picture.\relax }}{91}{figure.caption.94}%
