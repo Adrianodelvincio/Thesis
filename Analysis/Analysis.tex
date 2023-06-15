@@ -488,22 +488,23 @@ For these three values of $\delta E$ we perform a linear fit, studying the depen
 The $c_{E}$ conversion parameter is obtained taking the coefficient parameter $m$ from the fit and substituting in the expression:
 
 \begin{align*}
-C_{E18} =  \frac{\SI{22.6}{\kilo \electronvolt}}{m}
+C_{E} =  \frac{\SI{22.6}{\kilo \electronvolt}}{m}
 \end{align*}
 
-From this we obtain the value $C_{E18} = +1595.2$ necessary to convert from Voltage units to $\SI{}{\kilo \electronvolt}$. Using the value, we can show an histogram of $\delta E$ in physical units, as a check of our procedure:
+From this we obtain the value $c_{E} = +1595.2$ necessary to convert from Voltage units to $\SI{}{\kilo \electronvolt}$. Using the value, we can show an histogram of $\delta E$ in physical units, as a check of our procedure (see figure \ref{fig:CheckEnmo})
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width = 0.45\textwidth]{Analysis/ENMOCheck20.pdf}
 \includegraphics[width = 0.45\textwidth]{Analysis/ENMOCheck15.pdf} 
 \caption{Plot for the physical quantities computed in the data tree, for two different current of the beam (on the left $\SI{20}{\micro \ampere}$, $\SI{15}{\micro \ampere}$ on the right)}
+\label{fig:CheckEnmo}
 \end{figure}
 
 
 \subsection{Calibration of the PMTs} \label{PMTsCalib}
 
-Several scans in attenuation of the NINO board were performed on the beam, to choose the best working point for the PMTs of the detectors. The same procedure used in the laboratory was followed: with a beam intensity of $\SI{10}{\micro \ampere}$ we acquired data run one minute long, varying the attenuation. 
+Several scans in attenuation of the NINO board were performed on the beam, to choose the best working point for the PMTs of the detectors. The same procedure used in the laboratory was followed: with a beam intensity of $\SI{10}{\micro \ampere}$ we acquired data runs one minute long, varying the attenuation. 
 
 \begin{figure}[hbtp]
 \centering
@@ -520,20 +521,21 @@ The PMTs counts in \ref{fig:AttScan} are visualized in a different way. It is pr
 Spectra = \frac{N(att_{i}) - N(att_{i-1})}{att_{i} - att_{i-1}} 
 \end{equation}
 
+In this way we compute a discrete derivative of the plot showed in figure \ref{fig:AttScan}, which represent $\frac{\partial N}{\partial att}$. This represents the counts increment versus attenuation, see figure \ref{fig:Spectra}. \newpage
+
 \begin{figure}[!hbtp]
 \centering
-\subfloat[][\emph{B0} \label{fig:Spectra}]
+\subfloat[][\emph{B0} ]
 {\includegraphics[scale = 0.4]{Analysis/CalibrationPMT/B0.pdf}}
 \subfloat[][\emph{B1}]
 {\includegraphics[scale = 0.4]{Analysis/CalibrationPMT/B1.pdf}}
 \subfloat[][\emph{B2}]
 {\includegraphics[scale = 0.4]{Analysis/CalibrationPMT/B2.pdf}}
 \caption{Reconstructed spectra for Detector B}
+\label{fig:Spectra}
 \end{figure}
 
-In this way we compute a discrete derivative of the plot showed in figure \ref{fig:AttScan}, which represent $\frac{\partial N}{\partial att}$. This represents the counts increment versus attenuation, see figure \ref{fig:Spectra}.
-This plot are used to identify a good point to select the attenuation values. If we look at the plots \ref{fig:ThrvsAtt}, we can see that the physical threshold does not scale linearly with changing the attenuation value, and for high values of attenuation, the threshold falls quickly at zero. 
-Looking at the signal spectra, we identify the first peak as the electron signal. The other peak, for higher attenuation values (on the right), correspond to very low threshold values, and it is identified as the background noise. 
+These plots are used to identify a good point to select the attenuation values. If we look at the plots \ref{fig:ThrvsAtt}, we can see that the physical threshold does not scale linearly with changing the \textit{Att} value, and for high values of \textit{Att}, the threshold falls quickly at zero. Looking at the signal spectra, we identify the first peak as the electron signal. The other peak (on the right), correspond to very low threshold values, and it is identified as background noise. 
 We selected the values of the attenuation between the peaks of the two distributions, maximizing the signal acceptance and trying to reject the background as much as possible.
 Our discussion so far is sufficient to carry out the calibration of the PMTs and take data to measure the asymmetry. However, we would like to identify the physical threshold in $\SI{}{\milli \volt}$ instead of attenuation unit. We can use the conversion function that we discussed in figure \ref{fig:ThrvsAtt}:
 
@@ -547,12 +549,11 @@ With this conversion, we show the same plots in \ref{fig:Spectra}, with the valu
 \begin{figure}[!ht]
 \centering
 \subfloat[][]{\includegraphics[width = 0.4\textwidth]{Analysis/CalibrationPMT/voltB0.pdf} }
-\subfloat[][]{\includegraphics[width = 0.4\textwidth]{Analysis/CalibrationPMT/voltB1.pdf} }\\
+\subfloat[][]{\includegraphics[width = 0.4\textwidth]{Analysis/CalibrationPMT/voltB1.pdf}}\\
 \subfloat[][]{\includegraphics[width = 0.4\textwidth ]{Analysis/CalibrationPMT/voltB2.pdf}}
 \end{figure}
 
 We know see clearly two peaks, the signal and the background, that are reversed respect to figure \ref{fig:Spectra}.
-
 We discuss now a simple model that we used to describe how the PMT Counts vary when we raise the attenuation. From the plot \ref{fig:Spectra}, we assume that the two peaks are described by two gaussian distributions. Now if we think about the the probability for a signal to pass the selection, this quantity is equal to the probability of being in below the attenuation value. Using now the fact that the probability are given by the cumulative of the gaussian distribution (probability of being in the right tail) it is straightforward to deduce:
 
 \begin{align*}
