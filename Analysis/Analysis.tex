@@ -331,7 +331,7 @@ Instead of the spectrometer detectors, the scattered electrons are measured by t
 This procedure is performed using a low current mode of the beam ($I = \SI{5}{\nano \ampere}$). For this mode the spectrometer systems can be used to detect the particles. Because we know the position of our detector A and B inside the spectrometers, we can use the Cherenkov detector to visualize where the electrons are deflected. Changing the configuration of the magnetic field, the electrons trajectory is oriented in such a way that is intersects the detectors A and B. For detector A the scattered electron beam has been aligned to pass over the fused silica, in correspondence of pmt A7. For detector B the same procedure was done, aligning the scattered beam in correspondence of pmt B0. 
  Once we achieved a good alignment, we turned off the spectrometers system, performing the other necessary calibrations with only detector A and B. 
 
-\subsection{Beam Monitor Calibration, XY Monitor}
+\subsection{Beam Monitor Calibration, XY Monitor} \label{XYpos}
 
 For the calibration of the X Y monitors, special targets are used. In the target frame (see figure \ref{fig:targetFrame}) there are two targets made by three carbon wires that are mounted at a known distance from each other, horizontally and vertically aligned. The distance between the center of the two external wires is measured, and it is equal to $ d_{horizontal} = \SI{2.38}{\milli \meter}$ for the horizontal wires and $d_{vertical} = \SI{2.33}{\milli \meter}$ for the other one.
 
@@ -501,7 +501,7 @@ From this we obtain the value $C_{E18} = +1595.2$ necessary to convert from Volt
 \end{figure}
 
 
-\subsection{Calibration of the PMTs}
+\subsection{Calibration of the PMTs} \label{PMTsCalib}
 
 Several scans in attenuation of the NINO board were performed on the beam, to choose the best working point for the PMTs of the detectors. The same procedure used in the laboratory was followed: with a beam intensity of $\SI{10}{\micro \ampere}$ we acquired data run one minute long, varying the attenuation. 
 
@@ -589,7 +589,7 @@ This model is used to fit the data shown in figure \ref{fig:AttScan}. The result
 \caption{Best fit result for the model defined in equation \ref{eq:ModelAtt}}
 \end{table}
 
-From these result we measure the mean $\mu_{1}$ and $\mu_{2}$ for the signal and the background given in attenuation units. The correct value of attenuation is set between the two observed peaks, in order to rejects the background and take only the signal coming from the scattered electrons. The same procedure was followed also for the detector A, the plots are not reported here, for brevity, but in the appendix.
+From these result we measure the mean $\mu_{1}$ and $\mu_{2}$ for the signal and the background given in attenuation units. The correct value of attenuation is set between the two observed peaks, in order to rejects the background and take only the signal coming from the scattered electrons. The same procedure was followed also for the detector A, the plots are not reported, for brevity.
 
 With these procedure, the \textit{Att} value has been selected. The values are reported in table \ref{tab:AttSettings}
 
@@ -705,11 +705,11 @@ Several values are saved with the number of scattered electrons, for each event.
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width = 0.6\textwidth]{Analysis/EventClass.pdf}
-\caption{Scheme of the Event class, the structure of the data tree is shown here in a simplified version, for the complete reference see appendix.}
+\caption{Scheme of the Event class, the structure of the data tree is explained in the appendix.}
 \label{fig:DataTree}
 \end{figure}
 
-The analysis program read the binaries files, convert from binary to decimal values and compute the beam parameters from the raw data of the monitors,   filling the data tree shown in the figure. The Scheme above contains only the more relevant variables, and complete list is given in the appendix. We have 5 different classes, that are contained in the main \textit{Event} class. The asymmetry values are stored in the two separated classes, \textit{Det A} and \textit{Det B}. The Analysis program read and analyze one event at a time, can produce also histograms for a fast visualization of the data, and generates the final output files in \textit{txt} format for the data analysis.  
+The analysis program read the binaries files, convert from binary to decimal values and compute the beam parameters from the raw data of the monitors,   filling the data tree shown in the figure. We have 5 different classes, that are contained in the main \textit{Event} class. The asymmetry values are stored in the two separated classes, \textit{Det A} and \textit{Det B}. The Analysis program read and analyze one event at a time, can produce also histograms for a fast visualization of the data, and generates the final output files in \textit{txt} format for the data analysis.  
 
 \chapter{Asymmetry on Carbon and Rates on Lead Target.}
 

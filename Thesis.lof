@@ -43,7 +43,7 @@
 \contentsline {figure}{\numberline {4.16}{\ignorespaces Best fit for the data of counts versus attenuation, for detector B.\relax }}{59}{figure.caption.55}%
 \contentsline {figure}{\numberline {4.17}{\ignorespaces Auto-calibration: in this plot we have the voltage value of I21 monitor. The current is first stabilized around $\SI {10}{\micro \ampere }$, then it is raised from $\SI {9}{\micro \ampere }$ (the step lower down) to $\SI {11.125}{\micro \ampere }$ in step of $\SI {0.125}{\micro \ampere }$.\relax }}{60}{figure.caption.58}%
 \contentsline {figure}{\numberline {4.18}{\ignorespaces Scheme of the data flow.\relax }}{62}{figure.caption.61}%
-\contentsline {figure}{\numberline {4.19}{\ignorespaces Scheme of the Event class, the structure of the data tree is shown here in a simplified version, for the complete reference see appendix.\relax }}{63}{figure.caption.62}%
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Scheme of the Event class, the structure of the data tree is explained in the appendix.\relax }}{63}{figure.caption.62}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces On the left, counts versus time for all the runs acquired during the beam time. On the right the measured asymmetry versus time. The conversion from event number to time is made knowing that each event correspond to $\SI {80}{\milli \second }$. A total of 22 hours of beam was collected.\relax }}{67}{figure.caption.64}%
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Histogram for the beam parameters.\relax }}{68}{figure.caption.66}%
@@ -61,5 +61,4 @@
 \contentsline {figure}{\numberline {5.14}{\ignorespaces rates on lead Target as function of the beam current. The rates for each PMT of detector A (on the left), and detector B (on the right) are reported.\relax }}{82}{figure.caption.85}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Plot of $\overline {A}_{n}$. The result are corrected by the beam asymmetry current and polarization. The black line represent the overall value $A_{n}$ computed with the formula \ref {eq:FinalValue}. $\overline {\delta I}$.\relax }}{86}{figure.caption.89}%
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {1}{\ignorespaces Scheme of the beam line, the target is on the left side of the picture.\relax }}{93}{figure.caption.95}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Scheme of the beam line, the target is on the left side of the picture.\relax }}{91}{figure.caption.95}%
