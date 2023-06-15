@@ -421,6 +421,21 @@ The comparator produces a number pulses; the frequency of the output signal is p
 V_{in} =  V_{ref}[2 \cdot \dfrac{N_{pulses} - 5 \% N_{CLKIN}}{40 \% N_{CLKN}} - 1]
 \end{equation}
 
+\subsection{Master Board}
+
+The VFCs described in the previous section are measuring the beam parameters along the beam line. A figure of the beam line is in section \ref{XYpos}, where the various position of the monitors is shown.
+The data collected by the VFCs are firstly acquired by the master board, in figure \ref{fig:MasterBoard}, and then sent to the A1 computer, which will produce the data package. The VFCs are synchronized by the master board clock, with a frequency of \SI{5.88}{\mega \hertz}. This is also the reference frequency for the VFCs output signal. 
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = \textwidth]{ExperimentalSetup/masterboard.pdf}
+\caption{Scheme of the master-board, the device that coordinates all the electronics for the experiments, and send the data to the computer in the control room.}
+\label{fig:MasterBoard}
+\end{figure}
+
+The \textit{onewire} is a special bus which will be used in future for temperature measurement in the VFC, to check if there are temperature drift and effects on the outputs signals. The master board sends also the gate length signal to the MAMI source, where the polarized beam is generated, and to the detectors, needed to communicate and synchronize the sub-events. 
+For experiment with lead target, the master board will also controls the one of the magnets (\textit{wobbler 16}, in figure \ref{fig:BeamLine}). With lead target, the beam position is constantly changed, artificially. Consequently the beam hitting point on the target is varying, to avoid melting. In the end, the master board is synchronized to the power grid, is order to reduce possible systematics effect connected to the $\SI{50}{\hertz}$ frequency, as discussed in section \ref{FirstDescription}.
+
 \subsection{Nino Board} \label{NINO}
 
 The NINO board \ref{fig:NinoBoard} is our data acquisition system for the PMT counts (see paper \cite{1352067}, for a reference). It is made by $32$ analog input channels and it is powered with $\pm \SI{5}{\volt}$.
@@ -434,27 +449,19 @@ Each input channel receive a differential signal from the detector, and has atte
 \end{figure}
 
 After passing the input stage, the signal pass through a discriminator and a block of 4 operational amplifiers.
-There are 4 discriminator in the NINO chip, and each of them can handle signals coming from $8$ different channels. The discriminator selects the signals by a threshold values in $\SI{}{\volt}$. However, the signal that arrives to the discriminator is proportional to the input charge of the signal coming from the detector, so in the end the NINO board is sensitive to the input charge. The discriminator threshold can be set in the range of (\SI{10}{\pico \ampere}, \SI{100}{\pico \ampere}). 
-The output signal after the discriminator and the amplification block is a LVDS (low voltage differential signaling) with a fixed shape, and a width that is proportional to the input charge.
- 
-Regarding the data acquisition system, two values are import to control the discriminator threshold and the attenuator, and are named \textit{Thr} and \textit{Att}, respectively. The NINO chip is designed in such a way that the \textit{Thr} value is shared by 4 adjacent channels. On the contrary each channel has is own value of \textit{Att}. Acting simultaneously on \textit{Thr} and \textit{Att} is possible to define a global threshold for each channel, individually.
-These two parameters are set in the DAQ program, using 12 bit DACs, corresponding to interval of $(0 ; 4095)$. \textit{Thr} selects the threshold of the discriminator. The \textit{Att} value controls the input voltage of attenuator: the higher is the value of \textit{Att}, the lower is the attenuation of the signal.
+There are 4 discriminator in the NINO chip, and each of them can handle signals coming from $8$ different channels. The discriminator selects the signals by a threshold values in $\SI{}{\volt}$. 
 
-\begin{figure}[hbtp]
+\begin{figure}[!ht]
 \centering
-\includegraphics[width = 0.75\textwidth]{ExperimentalSetup/NINO.pdf}
-\caption{Nino Board}
+\includegraphics[width = 0.6\textwidth]{ExperimentalSetup/NINO.pdf}
+\caption{Nino Board, The input channels are at the bottom of the figure.}
 \label{fig:NinoBoard}
 \end{figure}
 
+However, the signal that arrives to the discriminator is proportional to the input charge of the signal coming from the detector, so in the end the NINO board is sensitive to the input charge. The discriminator threshold can be set in the range of (\SI{10}{\pico \ampere}, \SI{100}{\pico \ampere}). 
+The output signal after the discriminator and the amplification block is a LVDS (low voltage differential signaling) with a fixed shape, and a width that is proportional to the input charge. Regarding the data acquisition system, two values are import to control the discriminator threshold and the attenuator, and are named \textit{Thr} and \textit{Att}, respectively. The NINO chip is designed in such a way that the \textit{Thr} value is shared by 4 adjacent channels. On the contrary each channel has is own value of \textit{Att}. Acting simultaneously on \textit{Thr} and \textit{Att} is possible to define a global threshold for each channel, individually.
+These two parameters are set in the DAQ program, using 12 bit DACs, corresponding to interval of $(0 ; 4095)$. \textit{Thr} selects the threshold of the discriminator. The \textit{Att} value controls the input voltage of attenuator: the higher is the value of \textit{Att}, the lower is the attenuation of the signal.
 Two Nino board are used in the experiment, one for detector A and one for detector B. For the experiment discussed in this thesis, we will use only 8 channel for detector A and 3 channel for detector B, since this is the number of the input signals coming from the two detectors. For the future experiments more channels will be used, splitting the analog input signal in 4, and sending it to 4 different input channel of the board. This is useful because changing individually the attenuation value, we can define 4 different thresholds for the same signal and compare different values of threshold, to study how the noise affects the measurement, finding the best compromise between signal to noise ratio. The \textit{Thr} and \textit{Att} selection is explained in chapter \ref{analysis}.
 
-\subsection{Master Board}
 
-\begin{figure}[hbtp]
-
-\centering
-\includegraphics[width = \textwidth]{ExperimentalSetup/masterboard.pdf}
-\caption{Scheme of the master-board, the device that coordinates all the electronics for the experiments, and send the data to the computer in the control room.}
-\end{figure}
 
