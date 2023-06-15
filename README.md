@@ -4,12 +4,13 @@
 
 LAST THINGS TO DO:
 
+- [] Master board
+- [] Model description
 - [x] beam stabilization
 - [x] alignment of the scattering plane to the detector
-- [] Model description
 - [x] Compton Moller polarimeters
-- [] Master board
 
+Cosa fatte all'inizio
 - [x] definire i cuts e binning mediato per ogni monitor 
 - [x] fare fit per ogni monitor
 - [x] mettere gli errori statistici ai punti
