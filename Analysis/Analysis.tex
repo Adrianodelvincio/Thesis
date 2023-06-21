@@ -333,19 +333,18 @@ This procedure is performed using a low current mode of the beam ($I = \SI{5}{\n
 
 \subsection{Beam Monitor Calibration, XY Monitor} \label{XYpos}
 
-For the calibration of the X Y monitors, special targets are used. In the target frame (see figure \ref{fig:targetFrame}) there are two targets made by three carbon wires that are mounted at a known distance from each other, horizontally and vertically aligned. The distance between the center of the two external wires is measured, and it is equal to $ d_{horizontal} = \SI{2.38}{\milli \meter}$ for the horizontal wires and $d_{vertical} = \SI{2.33}{\milli \meter}$ for the other one.
+For the calibration of the X Y monitors, special targets are used. In the target frame (see figure \ref{fig:targetFrame}) there are two targets made by three carbon wires that are mounted at a known distance from each other, horizontally and vertically aligned. 
 
-\begin{wrapfloat}{figure}{I}{0pt}
+\begin{wrapfloat}{figure}{I}{0.5\textwidth}
 \centering
 \includegraphics[width = 0.35\textwidth]{ExperimentalSetup/target.pdf}
-\caption{\label{fig:targetFrame} Target frame, on the top we have the two targets made by three carbon wires that are used to calibrate the positions monitors. Then the carbon target and the two lead targets.}
-\vspace{-120pt}
+\caption{\label{fig:targetFrame} Target frame, on the top the three carbon wires that are used to calibrate the positions monitors. Then the carbon target and two lead targets.}
+\vspace{-50pt}
 \end{wrapfloat}
 
-The procedure to measure the scaling factor used to convert from the raw-data in $\SI{}{\volt}$ to $\SI{}{\micro \meter}$, is the following: we ask MAMI operators to slowly change the beam position, in the horizontal and vertical direction for the horizontal and vertical target. The beam position can be changed by varying the magnetic field produced by the \textit{Wobbler 16} magnets (see figure \ref{fig:BeamLine}). 
-During this slow variation, the detectors measure the rate of scattered electrons, that increases when the beam hits one of the three wires and decreases when the beam is centered between two wires. We plot the detector counts versus the $XY$ monitors values, in voltage, and we estimate the position of the two external peaks. This values can be used, together with the distance $d_{horizontal};d_{vertical}$ already measured, to compute the scaling factors. This procedure is repeated for $X21/Y21$ and $X25/Y25$ monitors. We plot the PMT rate versus the $X25,X21,Y25,Y21$, given in $\SI{}{\volt}$. 
+The distance between the center of the two external wires is measured, and it is equal to $ d_{horizontal} = \SI{2.38}{\milli \meter}$ for the horizontal wires and $d_{vertical} = \SI{2.33}{\milli \meter}$ for the other one. The procedure to measure the scaling factor used to convert from the raw-data in $\SI{}{\volt}$ to $\SI{}{\micro \meter}$, is the following: we ask MAMI operators to slowly change the beam position, in the horizontal and vertical direction for the horizontal and vertical target. The beam position can be changed by varying the magnetic field produced by the \textit{Wobbler 16} magnets (see figure \ref{fig:BeamLine}). 
+During this slow variation, the detectors measure the rate of scattered electrons, that increases when the beam hits one of the three wires and decreases when the beam is centered between two wires. We plot the detector counts versus the $XY$ monitors values, in voltage, and we estimate the position of the two external peaks. This values can be used, together with the distance $d_{horizontal},d_{vertical}$ already measured, to compute the scaling factors. This procedure is repeated for $X21/Y21$ and $X25/Y25$ monitors. We plot the PMT rate versus the $X25,X21,Y25,Y21$, given in $\SI{}{\volt}$. 
 To identify the three peaks in of the carbon target, we fit the data using a gaussian model (see figure \ref{fig:HorizontalCalibration}). The mean $\mu$ represents the center of the wire, given in $\SI{}{\volt}$.
-\newpage
 Looking at the Beam line, we assume that the beam travels in a straight line. Let's consider the \textit{Wobbler 16} magnet the "$0$" of a coordinate system, with the $z$ axis pointing to the target (left direction in the beam scheme).
 \begin{figure}[hbtp]
 \centering
@@ -1035,14 +1034,14 @@ $I$            & -0.03 & -0.02 & 0.03  & 0.03 & 0.26 & 1\\
 
 The correlation between $(\theta_{x},X);(\theta_{y},Y)$ the values for the correlation are high compared to the other parameters. 
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
 \centering
 \subfloat[][\emph{}]{
-\includegraphics[width = 0.33 \textwidth]{Analysis/Fit/X_Xp.pdf} }
+\includegraphics[width = 0.45 \textwidth]{Analysis/Fit/X_Xp.pdf} }
 \subfloat[][\emph{}]{
-\includegraphics[width = 0.33 \textwidth]{Analysis/Fit/Y_Yp.pdf}} 
+\includegraphics[width = 0.45 \textwidth]{Analysis/Fit/Y_Yp.pdf}} \\
 \subfloat[][\emph{}]{
-\includegraphics[width = 0.33 \textwidth]{Analysis/Fit/Y_X.pdf}}
+\includegraphics[width = 0.45 \textwidth]{Analysis/Fit/Y_X.pdf}}
 \caption{Correlation plots of positions and angles.}
 \label{fig:CorrelationBeam}
 \end{figure}
@@ -1075,7 +1074,7 @@ For a better visualization of the data, especially to observe the dependence of 
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width = 0.75\textwidth]{Analysis/Fit/A_vs_X.pdf}
-\caption{Detector A asymmetries versus X beam position. Because of the statistical uncertainties, it is not possible to visualize a linear dependence in the data.}
+\caption{Detector A asymmetries versus X beam position. Because of the statistical uncertainties, it is not possible to visualize a linear dependence in the data. Each dot is colored depending on the density of points.}
 \label{fig:AsymmetryA0vrX}
 \end{figure}
 

@@ -4,8 +4,8 @@
 
 LAST THINGS TO DO:
 
-- [] Master board
 - [] Model description
+- []x Master board
 - [x] beam stabilization
 - [x] alignment of the scattering plane to the detector
 - [x] Compton Moller polarimeters
