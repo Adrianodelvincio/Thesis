@@ -3,31 +3,31 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Detector B counts for $10$ acquisition of $\SI {1}{\minute }$ long, with \textit {Att} equal to 600.\relax }}{44}{table.caption.30}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Mean, variance and correlation coefficient for detector B and PMT in overlap.\relax }}{44}{table.caption.31}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Gosset test for detector B\relax }}{44}{table.caption.32}%
-\contentsline {table}{\numberline {4.4}{\ignorespaces Detector B counts for 10 acquisitions of $\SI {1}{\minute }$ long, with PMT $Ov$ in overlap.\relax }}{45}{table.caption.33}%
-\contentsline {table}{\numberline {4.5}{\ignorespaces Mean, variance and correlation coefficient for detector B and PMT in overlap.\relax }}{45}{table.caption.34}%
-\contentsline {table}{\numberline {4.6}{\ignorespaces PMTs A2,A1,A0 counts for 10 acquisition of \SI {1}{\minute } long.\relax }}{45}{table.caption.36}%
-\contentsline {table}{\numberline {4.7}{\ignorespaces Mean, variance and correlation coefficient for detector A and PMT in overlap.\relax }}{45}{table.caption.37}%
-\contentsline {table}{\numberline {4.8}{\ignorespaces Gosset Test for PMTs A2,A1,A0 of detector A.\relax }}{46}{table.caption.38}%
-\contentsline {table}{\numberline {4.9}{\ignorespaces Correlation coefficient between the PMTs (A2,A1,A0) and the PMT in overlap.\relax }}{46}{table.caption.39}%
-\contentsline {table}{\numberline {4.10}{\ignorespaces Best fit result for the model defined in equation \ref {eq:ModelAtt}\relax }}{54}{table.caption.54}%
-\contentsline {table}{\numberline {4.11}{\ignorespaces Attenuation settings for both the detectors.\relax }}{55}{table.caption.55}%
-\contentsline {table}{\numberline {4.12}{\ignorespaces Angular coefficient and offset obtained for the auto-calibration. The third column is contains the estimation of $c$, as defined in equation \ref {eq:Systematic}\relax }}{58}{table.caption.58}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Detector B counts for $10$ acquisition of $\SI {1}{\minute }$ long, with \textit {Att} equal to 600.\relax }}{44}{table.caption.29}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Mean, variance and correlation coefficient for detector B and PMT in overlap.\relax }}{44}{table.caption.30}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Gosset test for detector B\relax }}{44}{table.caption.31}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Detector B counts for 10 acquisitions of $\SI {1}{\minute }$ long, with PMT $Ov$ in overlap.\relax }}{45}{table.caption.32}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces Mean, variance and correlation coefficient for detector B and PMT in overlap.\relax }}{45}{table.caption.33}%
+\contentsline {table}{\numberline {4.6}{\ignorespaces PMTs A2,A1,A0 counts for 10 acquisition of \SI {1}{\minute } long.\relax }}{45}{table.caption.35}%
+\contentsline {table}{\numberline {4.7}{\ignorespaces Mean, variance and correlation coefficient for detector A and PMT in overlap.\relax }}{45}{table.caption.36}%
+\contentsline {table}{\numberline {4.8}{\ignorespaces Gosset Test for PMTs A2,A1,A0 of detector A.\relax }}{46}{table.caption.37}%
+\contentsline {table}{\numberline {4.9}{\ignorespaces Correlation coefficient between the PMTs (A2,A1,A0) and the PMT in overlap.\relax }}{46}{table.caption.38}%
+\contentsline {table}{\numberline {4.10}{\ignorespaces Best fit result for the model defined in equation \ref {eq:ModelAtt}\relax }}{54}{table.caption.53}%
+\contentsline {table}{\numberline {4.11}{\ignorespaces Attenuation settings for both the detectors.\relax }}{55}{table.caption.54}%
+\contentsline {table}{\numberline {4.12}{\ignorespaces Angular coefficient and offset obtained for the auto-calibration. The third column is contains the estimation of $c$, as defined in equation \ref {eq:Systematic}\relax }}{58}{table.caption.57}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Beam parameters:\relax }}{65}{table.caption.65}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces Example of the Polarity sequence and PMT counts that are saved in the analysis program. The values of the PMT counts given are for example.\relax }}{66}{table.caption.66}%
-\contentsline {table}{\numberline {5.3}{\ignorespaces Reduced $\chi ^{2}$ for the gaussian fit of the asymmetry data.\relax }}{70}{table.caption.72}%
-\contentsline {table}{\numberline {5.4}{\ignorespaces Correlation coefficient between beam parameters.\relax }}{70}{table.caption.73}%
-\contentsline {table}{\numberline {5.5}{\ignorespaces $\chi ^{2} _{ndf}$ for the different models used to fit the data show in figure \ref {fig:DifferentModels}\relax }}{75}{table.caption.79}%
-\contentsline {table}{\numberline {5.6}{\ignorespaces Average counts per pmt, for time length of $\SI {20}{\milli \second }$.\relax }}{76}{table.caption.81}%
-\contentsline {table}{\numberline {5.7}{\ignorespaces Values for the false asymmetry, computed with the slow horizontal and vertical variation mode.\relax }}{77}{table.caption.82}%
-\contentsline {table}{\numberline {5.8}{\ignorespaces Lead rates, the values are measured for a target width of $\SI {0.5}{\milli \meter }$.\relax }}{79}{table.caption.84}%
-\contentsline {table}{\numberline {5.9}{\ignorespaces Estimated time needed for the upcoming experiments to measure the transverse asymmetry for Lead with an aimed precision of $1.7 \, ppm$ for detector A and $2.8 \, ppm$ for detector B.\relax }}{79}{table.caption.85}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Beam parameters:\relax }}{65}{table.caption.64}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Example of the Polarity sequence and PMT counts that are saved in the analysis program. The values of the PMT counts given are for example.\relax }}{66}{table.caption.65}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Reduced $\chi ^{2}$ for the gaussian fit of the asymmetry data.\relax }}{70}{table.caption.71}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Correlation coefficient between beam parameters.\relax }}{70}{table.caption.72}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces $\chi ^{2} _{ndf}$ for the different models used to fit the data show in figure \ref {fig:DifferentModels}\relax }}{75}{table.caption.78}%
+\contentsline {table}{\numberline {5.6}{\ignorespaces Average counts per pmt, for time length of $\SI {20}{\milli \second }$.\relax }}{76}{table.caption.80}%
+\contentsline {table}{\numberline {5.7}{\ignorespaces Values for the false asymmetry, computed with the slow horizontal and vertical variation mode.\relax }}{77}{table.caption.81}%
+\contentsline {table}{\numberline {5.8}{\ignorespaces Lead rates, the values are measured for a target width of $\SI {0.5}{\milli \meter }$.\relax }}{79}{table.caption.83}%
+\contentsline {table}{\numberline {5.9}{\ignorespaces Estimated time needed for the upcoming experiments to measure the transverse asymmetry for Lead with an aimed precision of $1.7 \, ppm$ for detector A and $2.8 \, ppm$ for detector B.\relax }}{79}{table.caption.84}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Averaged asymmetries over all the events. The values are corrected subtracting $\overline {A}_{I}$ and considering the effective polarization $p$ of the beam\relax }}{82}{table.caption.86}%
-\contentsline {table}{\numberline {6.2}{\ignorespaces Fit result with the linear model, for detector A.\relax }}{83}{table.caption.88}%
-\contentsline {table}{\numberline {6.3}{\ignorespaces Fit result with the linear model, for detector B.\relax }}{84}{table.caption.89}%
-\contentsline {table}{\numberline {6.4}{\ignorespaces Overall result for detector A and B.\relax }}{84}{table.caption.90}%
-\contentsline {table}{\numberline {6.5}{\ignorespaces Analysis result for the data with polarization loss\relax }}{84}{table.caption.91}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces Averaged asymmetries over all the events. The values are corrected subtracting $\overline {A}_{I}$ and considering the effective polarization $p$ of the beam\relax }}{82}{table.caption.85}%
+\contentsline {table}{\numberline {6.2}{\ignorespaces Fit result with the linear model, for detector A.\relax }}{83}{table.caption.87}%
+\contentsline {table}{\numberline {6.3}{\ignorespaces Fit result with the linear model, for detector B.\relax }}{84}{table.caption.88}%
+\contentsline {table}{\numberline {6.4}{\ignorespaces Overall result for detector A and B.\relax }}{84}{table.caption.89}%
+\contentsline {table}{\numberline {6.5}{\ignorespaces Analysis result for the data with polarization loss\relax }}{84}{table.caption.90}%
