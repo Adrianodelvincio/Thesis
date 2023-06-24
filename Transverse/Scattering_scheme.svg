@@ -25,17 +25,50 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="1.2595945"
-     inkscape:cx="455.30525"
-     inkscape:cy="290.56969"
+     inkscape:zoom="1.1789508"
+     inkscape:cx="455.48974"
+     inkscape:cy="299.41877"
      inkscape:window-width="1920"
      inkscape:window-height="1043"
-     inkscape:window-x="1366"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
      id="defs2">
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect3381"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect1398"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect546"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
     <linearGradient
        id="linearGradient22743"
        inkscape:swatch="solid">
@@ -684,5 +717,40 @@
          style="font-size:7px;stroke-width:0.458"
          x="27.654921"
          y="97.883865">Legend</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.349;stroke-linejoin:bevel;stroke-miterlimit:0.2;stroke-dasharray:none;stroke-opacity:1"
+       d="m 81.202963,34.606234 c 1.102397,0.08633 2.204511,0.172636 3.068458,0.676507 0.863946,0.50387 1.489775,1.424985 1.831215,2.264654 0.341439,0.839669 0.398658,1.597861 0.413807,2.156957 0.01515,0.559095 -0.01173,0.919102 -0.03859,1.278875"
+       id="path1396"
+       inkscape:path-effect="#path-effect1398"
+       inkscape:original-d="m 81.202963,34.606234 c 1.102378,0.08657 2.204492,0.172879 3.306344,0.258921 0.626118,0.921417 1.251947,1.842532 1.877526,2.763404 0.05749,0.758486 0.114704,1.516679 0.171659,2.27462 -0.02662,0.360289 -0.05349,0.720297 -0.08064,1.080048" />
+    <text
+       xml:space="preserve"
+       style="font-size:6px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-linejoin:bevel;stroke-miterlimit:0.2;stroke-dasharray:none;stroke-opacity:1"
+       x="88.601028"
+       y="36.10289"
+       id="text2446"><tspan
+         sodipodi:role="line"
+         id="tspan2444"
+         style="font-size:6px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-dasharray:none"
+         x="88.601028"
+         y="36.10289">θ</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6px;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-linejoin:bevel;stroke-miterlimit:0.2;stroke-dasharray:none;stroke-opacity:1"
+       x="120.70676"
+       y="129.41231"
+       id="text2446-3"><tspan
+         sodipodi:role="line"
+         id="tspan2444-6"
+         style="font-size:6px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-dasharray:none"
+         x="120.70676"
+         y="129.41231">θ</tspan></text>
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.3;stroke-linejoin:bevel;stroke-miterlimit:0.2;stroke-dasharray:none;stroke-opacity:1"
+       d="m 126.378,121.47556 c -0.0347,1.2313 -0.0695,2.46234 0.20137,3.41027 0.27084,0.94792 0.84693,1.61266 1.5537,2.08397 0.70676,0.4713 1.54405,0.74928 2.38104,1.02717"
+       id="path3379"
+       inkscape:path-effect="#path-effect3381"
+       inkscape:original-d="m 126.378,121.47556 c -0.0345,1.23131 -0.0692,2.46235 -0.10418,3.69312 0.57641,0.66506 1.1525,1.3298 1.72838,1.99432 0.83758,0.27826 1.67487,0.55624 2.51191,0.83397"
+       sodipodi:nodetypes="cccc" />
   </g>
 </svg>
