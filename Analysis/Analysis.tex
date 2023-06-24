@@ -10,8 +10,8 @@ The calibrations consist in the determination of the scaling factors, needed by 
 
 In this section we study the characteristics of the Nino board, which digitizes the signal from the PMTs. The NINO board has two parameters: \textit{Thr}, that controls the discriminator and \textit{Att}, which controls the attenuator circuit. These parameters are part of the settings of the DAQ program which controls the NINO board.
 Because the values of \textit{Thr} and \textit{Att} are defined in arbitrary units, it is desirable to find a conversion formula to obtain the value of the threshold in physical units, as \SI{}{\milli \volt}.
-Because of the NINO sensitivity to the input charge, it is not simple to define a unique value for the threshold in \SI{}{\milli \volt}, because the input charge of the detector signal depend on the shape, amplitude and time length. For example, signal with a large time and a small amplitude can generate the same charge with respect to narrow signal with high voltage amplitude. Despite this, some data have been acquired by the A1 collaboration, with which it's possible to define a raw conversion function from attenuation units to threshold. The idea behind  is to generate, with a wave generator, signals with fixed time length and shape, varying only the amplitude, and use them as input of the NINO board.
-The data available were collected following this procedure. Unfortunately, these data were taken with an input signal shape that different from the signal shape of our experiment \footnote{Apart from this, it is not even true that the shape of the signals produced by the detectors is constant.}. We are aware that the conversion formula obtained with these data is only a rough estimation, however it can be useful to get an idea of the threshold values, in \SI{}{\milli \volt}.
+Because of the NINO sensitivity to the input charge, it is not simple to define a unique value for the threshold in \SI{}{\milli \volt}, because the input charge of the detector signal depend on the shape, amplitude and time length. For example, signal with a large time and a small amplitude can generate the same charge with respect to narrow signal with high voltage amplitude. Despite this, some data have been acquired by the A1 collaboration, with which it is possible to define a raw conversion function from attenuation units to threshold. The idea behind  is to generate, with a wave generator, signals with fixed time length and shape, varying only the amplitude, and use them as input of the NINO board.
+The data available were collected following this procedure. Unfortunately, these data were taken with an input signal shape that different from the signal shape of our experiment. We are aware that the conversion formula obtained with these data is only a rough estimation, however it can be useful to get an idea of the threshold values, in \SI{}{\milli \volt}.
 
 \begin{figure}[hbtp]
 \centering
@@ -33,12 +33,12 @@ The parameters of the formula are estimated using the function \textit{curve-fit
 \item $c =  \SI{-6.1}{\milli \volt}$
 \end{itemize}
 
-As we can see, the relation between threshold and \textit{Att} is not linear. Around the values $400$ - $700$ we observe high variability. For values higher than $700$, the threshold is low and almost constant. This mean that the attenuation, controlled by the attenuator in the input channel of the NINO board, is reduced progressively as 	\textit{Att} increases. 
+As we can see, the relation between threshold and \textit{Att} is not linear. Around the values $400$ - $700$ we observe large variability. For values higher than $700$, the threshold is low and almost constant. This mean that the attenuation, controlled by the attenuator in the input channel of the NINO board, is reduced progressively as 	\textit{Att} increases. 
 
 \section{Detector Test}
 
-Before the Beam time, some test with the two detectors were performed, to check that the PMTs were still working after some years of inactivity, and that the new electronics was able to count properly the pulses and store the data. For this studies, we didn't have a radioactive sources to employ. Anyway the signal shape using radioactive sources is expected to be different from signal of the $\SI{570}{\mega \electronvolt}$ electrons used in the experiment. The typical energies of nuclear decay are in the order of $E \simeq \SI{1}{\mega \electronvolt}$,  with consequently only a small production of Cherenkov light, difficult to detect. A different approach is followed, using cosmic rays rate as a probe. 
-The cosmic rays are able to produce Cherenkov light in the fused-silica bars, in fact the refractive index is $n = 1.45$, and a particle emits Cherenkov light when its $\beta = \frac{v}{c}$ is more than $\frac{1}{n} = 0.69$. The principal component of the cosmic rays at sea level is made by muons, produced in the electromagnetic and hadronic showers in high atmosphere. The energy of the muons reaching sea level is about $\SI{4}{\giga \electronvolt}$, $\beta$ for these particles is:
+Before the beam time, some test with the two detectors were performed, to check that the PMTs were still working after some years of inactivity, and that the new electronics was able to count properly the pulses and store the data. For this studies, we didn't have a radioactive sources to employ. Anyway the signal shape using radioactive sources is expected to be different from signal of the $\SI{570}{\mega \electronvolt}$ electrons used in the experiment. The typical energies of nuclear decay are in the order of $E \simeq \SI{1}{\mega \electronvolt}$,  with consequently only a small production of Cherenkov light, difficult to detect. A different approach is followed, using cosmic rays rate as a probe. 
+The cosmic rays are able to produce Cherenkov light in the fused-silica bars, since the refractive index is $n = 1.45$, and a particle emits Cherenkov light when its $\beta = \frac{v}{c}$ is more than $\frac{1}{n} = 0.69$. The principal component of the cosmic rays at sea level is made by muons, produced in the electromagnetic and hadronic showers in high atmosphere. The energy of the muons reaching sea level is about $\SI{4}{\giga \electronvolt}$, $\beta$ for these particles is:
 
 \begin{equation}
 \beta_{\mu} = \dfrac{p}{E} = \dfrac{\sqrt{E^{2} - m_{\mu}^{2}}}{ E^{2}} \simeq 0.99
@@ -102,7 +102,7 @@ PMT & $\mu$ & $\sigma^{2}$ & Correlation $C_{ij}$ \\
 \label{tab:Bcounts}
 \end{table}
 
-We report also the correlation $C_{ij}$ between the PMTs. The result are fine: we are able to see a positive correlation between adjacent PMT, and as expected the correlation is lower in the case of the more distant. This is explained by the lower probability that the photons of Cherenkov radiation light up at the same time pmts that are far away from each other.
+We report also the correlation $C_{ij}$ between the PMTs. The result are fine: we are able to see a positive correlation between adjacent PMT, and as expected the correlation is lower in the case of the more distant. This is explained by the lower probability that the photons of Cherenkov radiation light up at the same time PMTs that are far away from each other.
 We can test that the data follow a Poisson distribution using the well-known Gosset test, defined as:
 
 \begin{equation}
@@ -110,7 +110,7 @@ We can test that the data follow a Poisson distribution using the well-known Gos
 \end{equation}
 
 where $Obs$ are the observed counts, and $Exp$ are the expected counts.
-We report the results for detector B in table \ref{tab:GossetB}. The test shows that there is good agreement with the hypothesis that the count are Poisson-distributed.
+We report the results for detector B in table \ref{tab:GossetB}. The test shows that there is good agreement with the hypothesis that the counts are Poisson-distributed.
 
 \begingroup
 \setlength{\tabcolsep}{8pt} % Default value: 6pt
@@ -129,9 +129,17 @@ $\chi^{2}_{9}$ & 8.52 & 8.45 & 6.37 \\
 \end{table}
 \endgroup
 
-At this point, to convince oneself that the detector B is measuring signals given by the passage of cosmic rays, and not only noise, a fourth PMT (a spare component left in the lab) was used. This other PMT is coupled to a small block of fused silica (\SI{5}{\centi \meter} $\times$ \SI{5}{\centi \meter}), and was placed in overlap with detector B, roughly in correspondence of B2.
-Unfortunately, the DAQ is not designed to take coincidences, so a different procedure is needed to check is the PMTs are triggered by the same passage of particles. We have acquired 10 acquisition one minute long, as before, measuring the counts of detector B and a PMT in overlap, . This different PMT is indicated with $Ov$. 
-It is useful to compute the correlation coefficient: if a positive correlation between the counts is observed, then a certain number of signals is triggered by the same passage of particles. The result for detector B are reported in table \ref{tab:OverlapB}:
+At this point, to convince oneself that the detector B is measuring signals given by the passage of cosmic rays, and not only noise, a fourth PMT (a spare component left in the lab) was used. This other PMT was coupled to a small block of fused silica (\SI{5}{\centi \meter} $\times$ \SI{5}{\centi \meter}), and was placed in overlap with detector B, roughly in correspondence of B2. A first check was to look for coincidence signals at the oscilloscope, between detector B and the PMT in overlap.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width = 0.4\textwidth]{Analysis/IMG_20221027_170925.jpg} 
+\caption{Coincidence signal between PMTs B0 and B2 acquired with the oscilloscope.}
+\label{fig:CoincidenceSignal}
+\end{figure}
+
+Then we have acquired 10 acquisition one minute long, as before, measuring the counts of detector B and a PMT in overlap. Unfortunately, the DAQ is not designed to take coincidences, so a different procedure was followed to check is the PMTs are triggered by the same passage of particles. 
+The correlation coefficient between the PMT in overlap and the detectors is a good statistic for this purpose: if a positive correlation between the counts is observed, then a certain number of signals is triggered by the same passage of particles. The result for detector B are reported in table \ref{tab:OverlapB}:
 
 \begin{table}[ht]
 \centering
@@ -164,7 +172,7 @@ $n^{\circ}$ acquisition  & B0 & B1 & B2 & $Ov$ \\
 \label{tab:OverlapB}
 \end{table} 
 
-The sample mean, the variance and the correlation between the detector B and the PMT in overlap are reported in table \ref{tab:ResultBB}.
+The sample mean, the variance and the correlation between the detector B and the PMT in overlap are reported in table \ref{tab:ResultBB}. The result for the Gosset test are reported in table \ref{tab:GossetForOver}.
 
 \begin{table}[ht]
 \centering
@@ -186,38 +194,23 @@ A positive correlation is measured for all the PMTs of detector B. This indicate
 \begingroup
 \setlength{\tabcolsep}{8pt} % Default value: 6pt
 \renewcommand{\arraystretch}{1.2} % Default value: 1
-\begin{center}
+\begin{table}[ht]
+\centering
 \begin{tabular}{c|c|c|c|c}
 \hline 
    & B0 & B1 & B2 & PMT in overlap \\ 
 \hline
 $\chi^{2}_{9}$ & 8.95 & 6.44 & 10.96 & 9.52\\ 
 \hline
-\end{tabular} 
-\end{center}
+\end{tabular}
+\caption{Gosset test for detector B and the PMT in overlap, for the 10 acquisition in table \ref{tab:OverlapB}}
+\label{tab:GossetForOver}
+\end{table}
 \endgroup
-\smallskip
 
-\commento{We also check at the oscilloscope if we were able to observe three negative peaks at the same time: 
-\begin{figure}
-\centering
-\includegraphics[width = 0.5\textwidth]{Analysis/IMG_20221027_170925.jpg} 
-\caption{Signal shape at the oscilloscope, we observed the coincidence between the three pmts.}
-\end{figure}}
+The same procedure was followed also for detector A (see figure \ref{fig:ScatDetA}). We analyzed 4 signal at a time, because during these lab test we had only one NINO board, with only 4 channels available. The tests for the set of PMTs (A7,A6,A5,A4,A3) showed good result: the distribution of the counts was in agreement with the expected and the correlation coefficient between nearby PMTs and the PMT is overlap was different from zero and positive. For the set of PMTs (A2,A1,A0), some issues have emerged. Primarily the counts did not vary during the scan in \textit{Att} and this has made impossible to identify a value for the \textit{Att}. To study the behaviour of the counts, once again 10 acquisitions were acquired, and are reported in table \ref{tab:PmtAproblem}. \newpage
 
-The same procedure was followed also for detector A (see figure \ref{fig:ScatDetA}). We analyzed 4 signal at a time, because during these lab test we had only one NINO board, with only 4 channels available.
-
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width = 0.75\textwidth]{Analysis/AttenuationA(4-7).pdf}
-\caption{Attenuation scan for Detector A, for the pmt 4-5-6-7}
-\label{fig:ScatDetA}
-\end{figure}
-
-The tests for the set of PMTs (A7,A6,A5,A4,A3) showed good result: the distribution of the counts was in agreement with the expected and the correlation coefficient between nearby PMTs and the PMT is overlap was different from zero and positive.
-For the set of PMTs (A2,A1,A0), some issues have emerged. Primarily the counts did not vary during the scan in \textit{Att} and this has made impossible to identify a value for the \textit{Att}. To study the behaviour of the counts, once again 10 acquisitions were acquired, and are reported in \ref{tab:PmtAproblem}.
-
-\begin{table}[!htb]
+\begin{table}[htb]
 \centering
 \begin{tabular}{lcccc}
 \hline 
@@ -305,44 +298,50 @@ $Ov$ & 1 & -0.18  & -0.21  & -0.06  \\
 \caption{Correlation coefficient between the PMTs (A2,A1,A0) and the PMT in overlap.}
 \end{table}
 
-
 We observe negative correlation between the pmts, something not expected. After some investigations, we find out that the program which controls the NINO board had a bug: the program partially overwrote some detector B settings for detector A as well. Since detector B has only three pmt's, the problem affected the PMT's with the same numbering as detector A. After fixing this issue we repeated the same test, without finding any problem. 
 
+\begin{figure}[!htb]
+\centering
+\includegraphics[width = 0.75\textwidth]{Analysis/AttenuationA(4-7).pdf}
+\caption{Attenuation scan for Detector A, for the pmt 4-5-6-7}
+\label{fig:ScatDetA}
+\end{figure}
+
+\newpage
 \section{Calibration}
 
-For the transverse asymmetry on $^{12}C$ represent an ideal test for the new electronic system. Previous measurements of the $A_{n}$ have been performed at MAMI for carbon target (\cite{Esser:2018vdp}). For this experiment, the red spectrometer is placed at the angle of $+22.5^{\circ}$, and the blue one at $-22.5^{\circ}$, respect to the longitudinal direction.
-For these two angle, we have the same kinematics and $Q^{2}$ values of the previous measurement. The $Q^{2}$ value was measured for a low current beam ($I = \SI{5}{\nano \ampere}$) with the spectrometers detectors. The $Q^{2}$ values are reported with and without rejecting the inelastic scattered electrons. The inelastic scattered electrons rejected imposing an energy threshold. 
+For the transverse asymmetry on $^{12}C$ represent an ideal test for the new electronic system. Previous measurements of the $A_{n}$ have been performed at MAMI for carbon target (\cite{Esser:2018vdp}). For this experiment, the red spectrometer is placed at the angle of $+22.5^{\circ}$, and the blue one at $-22.5^{\circ}$, with respect to the longitudinal direction. For these two angle, we have the same kinematics and $Q^{2}$ values of the previous measurement. The $Q^{2}$ value was measured for a low current beam ($I = \SI{5}{\nano \ampere}$) with the spectrometers detectors. The $Q^{2}$ values are reported with and without rejecting the inelastic scattered electrons. The inelastic scattered electrons are rejected imposing an energy threshold. 
 
 \begin{flushleft}
 \begin{align*}
-& det. A : \qquad Q^{2} = \SI{0.0413}{\giga \electronvolt \squared} \qquad \textnormal{without Cut} \\
-& det. A : \qquad Q^{2} = \SI{0.0395}{\giga \electronvolt \squared} \qquad \textnormal{with Cut} \\
+& det. A : \qquad Q^{2} = \SI{0.041}{\giga \electronvolt \squared} \qquad \textnormal{without Cut} \\
+& det. A : \qquad Q^{2} = \SI{0.039}{\giga \electronvolt \squared} \qquad \textnormal{with Cut} \\
 & det. B : \qquad Q^{2} = \SI{0.041}{\giga \electronvolt \squared} \qquad \textnormal{without Cut} \\
 & det. B : \qquad Q^{2} = \SI{0.041}{\giga \electronvolt \squared} \qquad \textnormal{with Cut} 
 \end{align*} 
 \end{flushleft}
 
-The $Q^{2}$ values is the same of the last measurement performed at MAMI, and is measured with and without rejecting the inelastic electrons. 
+The $Q^{2}$ values are the same of the last measurement performed at MAMI, and are measured with and without rejecting the inelastic electrons. 
 
 \subsection{Alignment of the Scattering Plane.}
 
 The scattered electrons are deflected upward by the magnetic field inside the spectrometers A and B. However, the spectrometer detectors and systems are not directly used to measure the transverse asymmetry, due to the high current intensity, which would damage the electronics.
-Instead of the spectrometer detectors, the scattered electrons are measured by the two detectors A and B, described in section \ref{detectors}, installed between the drift chamber and the scintillator panel (see figure \ref{fig:internal}). So the scattered particles must be aligned to the fused-silica bars, primarily.
-This procedure is performed using a low current mode of the beam ($I = \SI{5}{\nano \ampere}$). For this mode the spectrometer systems can be used to detect the particles. Because we know the position of our detector A and B inside the spectrometers, we can use the Cherenkov detector to visualize where the electrons are deflected. Changing the configuration of the magnetic field, the electrons trajectory is oriented in such a way that is intersects the detectors A and B. For detector A the scattered electron beam has been aligned to pass over the fused silica, in correspondence of pmt A7. For detector B the same procedure was done, aligning the scattered beam in correspondence of pmt B0. 
+Instead of the spectrometer detectors, the scattered electrons are measured by the two detectors A and B, described in section \ref{detectors}, installed between the drift chamber and the scintillator panel (see figure \ref{fig:internal}). So the scattered particles must be aligned to the fused-silica bars.
+This procedure is performed using a low current mode of the beam ($I = \SI{5}{\nano \ampere}$). For this mode the spectrometer systems can be used to detect the particles. Because we know the position of our detector A and B inside the spectrometers, we can use the Cherenkov detector to visualize where the electrons are deflected. Changing the configuration of the magnetic field, the electrons trajectory is oriented in such a way that is intersects the detectors A and B. For detector A the scattered electron beam has been aligned to pass over the fused silica in correspondence of PMT A7. For detector B the same procedure was done, aligning the scattered beam in correspondence of PMT B0. 
  Once we achieved a good alignment, we turned off the spectrometers system, performing the other necessary calibrations with only detector A and B. 
 
 \subsection{Beam Monitor Calibration, XY Monitor} \label{XYpos}
 
 For the calibration of the X Y monitors, special targets are used. In the target frame (see figure \ref{fig:targetFrame}) there are two targets made by three carbon wires that are mounted at a known distance from each other, horizontally and vertically aligned. 
 
-\begin{wrapfloat}{figure}{I}{0.5\textwidth}
+\begin{wrapfloat}{figure}{I}{0.4\textwidth}
 \centering
-\includegraphics[width = 0.35\textwidth]{ExperimentalSetup/target.pdf}
+\includegraphics[width = 0.4\textwidth]{ExperimentalSetup/target.pdf}
 \caption{\label{fig:targetFrame} Target frame, on the top the three carbon wires that are used to calibrate the positions monitors. Then the carbon target and two lead targets.}
-\vspace{-50pt}
+\vspace{-0pt}
 \end{wrapfloat}
 
-The distance between the center of the two external wires is measured, and it is equal to $ d_{horizontal} = \SI{2.38}{\milli \meter}$ for the horizontal wires and $d_{vertical} = \SI{2.33}{\milli \meter}$ for the other one. The procedure to measure the scaling factor used to convert from the raw-data in $\SI{}{\volt}$ to $\SI{}{\micro \meter}$, is the following: we ask MAMI operators to slowly change the beam position, in the horizontal and vertical direction for the horizontal and vertical target. The beam position can be changed by varying the magnetic field produced by the \textit{Wobbler 16} magnets (see figure \ref{fig:BeamLine}). 
+The distance between the center of the two external wires is measured, to be $ d_{horizontal} = \SI{2.38}{\milli \meter}$ for the horizontal wires and $d_{vertical} = \SI{2.33}{\milli \meter}$ for the vertical wires. The procedure to measure the scaling factor used to convert from the raw-data in $\SI{}{\volt}$ to $\SI{}{\micro \meter}$, is the following: we ask MAMI operators to slowly change the beam position, in the horizontal and vertical direction for the horizontal and vertical target. The beam position can be changed by varying the magnetic field produced by the \textit{Wobbler 16} magnets (see figure \ref{fig:BeamLine}). 
 During this slow variation, the detectors measure the rate of scattered electrons, that increases when the beam hits one of the three wires and decreases when the beam is centered between two wires. We plot the detector counts versus the $XY$ monitors values, in voltage, and we estimate the position of the two external peaks. This values can be used, together with the distance $d_{horizontal},d_{vertical}$ already measured, to compute the scaling factors. This procedure is repeated for $X21/Y21$ and $X25/Y25$ monitors. We plot the PMT rate versus the $X25,X21,Y25,Y21$, given in $\SI{}{\volt}$. 
 To identify the three peaks in of the carbon target, we fit the data using a gaussian model (see figure \ref{fig:HorizontalCalibration}). The mean $\mu$ represents the center of the wire, given in $\SI{}{\volt}$.
 Looking at the Beam line, we assume that the beam travels in a straight line. Let's consider the \textit{Wobbler 16} magnet the "$0$" of a coordinate system, with the $z$ axis pointing to the target (left direction in the beam scheme).
@@ -443,7 +442,7 @@ The calibrations consist in retrieving $m$ and $q$ with a linear fit. Then the p
 \end{figure}
 
 The values obtained from the fit of nominal beam current vs. voltage values are shown in the figure \ref{fig:PimoCalib}. The $\chi^{2}$ values are higher than the expected. This is not unexpected, the errors in both the plots are computed with the sampling standard deviation formula applied to the sequence of voltage values $I21 \, I13$ ($\sigma_{vfc}$, the standard deviation computed for each step in plot \ref{fig:ScanCurrent}), and it is related to precision of the analog to digital converter VFCs. The errors are then propagated to the $y$ axis showed in the plot. 
-Yet, we are underestimating the error associated with nominal current $I$, in fact the accuracy associated with the beam current, set by the accelerator operators is not known, and we suspect that is not negligible compared to $\sigma_{VFCs}$.
+Yet, we are underestimating the error associated with the nominal beam current $I$ set by the accelerator operators, whose  accuracy is not known. We suspect that is not negligible compared to $\sigma_{VFCs}$.
 
 \subsection{Energy Monitor (ENMO) calibration.} 
 
@@ -508,26 +507,35 @@ Several scans in attenuation of the NINO board were performed on the beam, to ch
 \begin{figure}[hbtp]
 \centering
 \subfloat[][\emph{Attenuation scan for the PMTs of detector B} ]
-{\includegraphics[width = 0.5\textwidth]{Analysis/CalibrationPMT/AttenuationScanB.pdf}}
+{\includegraphics[width = 0.75\textwidth]{Analysis/CalibrationPMT/AttenuationScanB.pdf}}
+\caption{Scan in attenuation of the NINO board, with $\SI{10}{\micro \ampere}$. Each point represents the averaged of the counts made on all sub-events of a single data run. Each data run is $\SI{1}{\minute}$ long, which correspond to $3000$ sub-events.}
+\label{fig:AttScanB}
+\end{figure}
+
+\begin{figure}[hbtp]
+\centering
+\commento{
+\subfloat[][\emph{Attenuation scan for the PMTs of detector B} ]
+{\includegraphics[width = 0.5\textwidth]{Analysis/CalibrationPMT/AttenuationScanB.pdf}} \\}
 \subfloat[][\emph{Attenuation scan for the PMTs of detector B}]
-{\includegraphics[width = 0.5\textwidth]{Analysis/CalibrationPMT/AttenuationScanA.pdf}}
+{\includegraphics[width = 0.75\textwidth]{Analysis/CalibrationPMT/AttenuationScanA.pdf}}
 \caption{Scan in attenuation of the NINO board, with $\SI{10}{\micro \ampere}$. Each point represents the averaged of the counts made on all sub-events of a single data run. Each data run is $\SI{1}{\minute}$ long, which correspond to $3000$ sub-events.}\label{fig:AttScan}
 \end{figure}
 
-The PMTs counts in \ref{fig:AttScan} are visualized in a different way. It is preferable to visualize the increment of number of signals that pass the threshold selection of NINO board. For this reason, we want to differentiate the data showed in the plots. This procedure consist in computing the difference between the Counts at a certain point and the previous one, and dividing by the increment in attenuation, in equation \ref{eq:Differentiang}.
+The PMTs counts in \ref{fig:AttScan} and \ref{fig:AttScanB} are visualized in a different way. It is preferable to visualize the increment of number of signals that pass the threshold selection of NINO board. For this reason, we want to differentiate the data showed in the plots. This procedure consist in computing the difference between the counts at a certain point and the previous one, and dividing by the increment in attenuation, in equation \ref{eq:Differentiang}.
 
 \begin{equation} \label{eq:Differentiang}
 Spectra = \frac{N(att_{i}) - N(att_{i-1})}{att_{i} - att_{i-1}} 
 \end{equation}
 
-In this way we compute a discrete derivative of the plot showed in figure \ref{fig:AttScan}, which represent $\frac{\partial N}{\partial att}$. This represents the counts increment versus attenuation, see figure \ref{fig:Spectra}. \newpage
+With this formula we compute $\frac{\partial N}{\partial att}$, the discrete derivative of the data shown in figure \ref{fig:AttScan}.
 
 \begin{figure}[!hbtp]
 \centering
 \subfloat[][\emph{B0} ]
 {\includegraphics[scale = 0.4]{Analysis/CalibrationPMT/B0.pdf}}
 \subfloat[][\emph{B1}]
-{\includegraphics[scale = 0.4]{Analysis/CalibrationPMT/B1.pdf}}
+{\includegraphics[scale = 0.4]{Analysis/CalibrationPMT/B1.pdf}}\\
 \subfloat[][\emph{B2}]
 {\includegraphics[scale = 0.4]{Analysis/CalibrationPMT/B2.pdf}}
 \caption{Reconstructed spectra for Detector B}
@@ -552,7 +560,7 @@ With this conversion, we show the same plots in \ref{fig:Spectra}, with the valu
 \subfloat[][]{\includegraphics[width = 0.4\textwidth ]{Analysis/CalibrationPMT/voltB2.pdf}}
 \end{figure}
 
-We know see clearly two peaks, the signal and the background, that are reversed respect to figure \ref{fig:Spectra}.
+We now see clearly two peaks, the signal and the background, that are reversed respect to figure \ref{fig:Spectra}.
 We discuss now a simple model that we used to describe how the PMT Counts vary when we raise the attenuation. From the plot \ref{fig:Spectra}, we assume that the two peaks are described by two gaussian distributions. Now if we think about the the probability for a signal to pass the selection, this quantity is equal to the probability of being in below the attenuation value. Using now the fact that the probability are given by the cumulative of the gaussian distribution (probability of being in the right tail) it is straightforward to deduce:
 
 \begin{align*}
@@ -567,12 +575,13 @@ N(att) = \frac{n_{1} + n_{2}}{2} + (\frac{n_{1}}{2}) Erf(\dfrac{x - \mu_{1}}{\sq
 \end{split}
 \end{equation}
 
-This model is used to fit the data shown in figure \ref{fig:AttScan}. The result is shown in figure \ref{fig:}, the parameters obtained from the fit are reported below:
+This model is used to fit the data shown in figure \ref{fig:AttScan}. The result is shown in figure \ref{fig:BestFitAtt}, the parameters obtained from the fit are reported below:
 
 \begin{figure}[!ht]
 \centering
 \includegraphics[width = 0.65\textwidth ]{Analysis/CalibrationPMT/Fit_attenuation.pdf}
 \caption{Best fit for the data of counts versus attenuation, for detector B.}
+\label{fig:BestFitAtt}
 \end{figure}
 
 \begin{table}[!ht]
@@ -589,9 +598,8 @@ This model is used to fit the data shown in figure \ref{fig:AttScan}. The result
 \caption{Best fit result for the model defined in equation \ref{eq:ModelAtt}}
 \end{table}
 
-From these result we measure the mean $\mu_{1}$ and $\mu_{2}$ for the signal and the background given in attenuation units. The correct value of attenuation is set between the two observed peaks, in order to rejects the background and take only the signal coming from the scattered electrons. The same procedure was followed also for the detector A, the plots are not reported, for brevity.
-
-With these procedure, the \textit{Att} value has been selected. The values are reported in table \ref{tab:AttSettings}
+From these result we measure the mean $\mu_{1}$ and $\mu_{2}$ for the signal and the background given in attenuation units. The correct value of attenuation is set between the two observed peaks, in order to reject the background and take only the signal coming from the scattered electrons. The same procedure was followed also for the detector A, the plots are not reported, for brevity.
+With this procedure, the \textit{Att} value has been selected. The values are reported in table \ref{tab:AttSettings}
 
 \begin{table}[ht]
 \centering
@@ -607,7 +615,16 @@ PMT $n^{\circ}$& B0 & B1 & B2 & A0 & A1 & A2 & A3 & A4 & A5 & A6 & A7 \\
 
 \subsection{Auto-calibration Procedure} \label{Autocalib}
 
-In this section we present the last calibration technique needed in the data-process. The auto-calibration is a special operation mode of the MAMI accelerator, during which the beam current is made to vary in a controlled way. Through these special runs is possible to obtain again the current scaling factor that we discussed in section \ref{CurrentCalibration} and  it is possible to study the linearity of the PMTs. From a linear fit of the PMTs counts vs. current intensity the angular coefficient and the offset are measured. The offset is particular important because give rise of a possible systematic error that influence the final asymmetry result. It is simple to demonstrate this, if a relation of the type $N = mI + N_{0} $ holds. Consider the following quantity:
+In this section we present the last calibration technique needed in the data-process. The auto-calibration is a special operation mode of the MAMI accelerator, during which the beam current is made to vary in a controlled way. Through these special runs is possible to obtain again the current scaling factor that we discussed in section \ref{CurrentCalibration} and  it is possible to study the linearity of the PMTs. During the auto-calibration, the beam current is raised from $\SI{9}{\micro \ampere}$ to $\SI{11.125}{\micro \ampere}$ in step of $\SI{0.125}{\micro \ampere}$, as shown in figure \ref{fig:Autocalibration}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width = 0.75\textwidth]{Analysis/Autocalib/Current.pdf}
+\caption{Auto-calibration: in this plot we have the voltage value of I21 monitor. The current is first stabilized around $\SI{10}{\micro \ampere}$, then it is raised from $\SI{9}{\micro \ampere}$ (the step lower down) to $\SI{11.125}{\micro \ampere}$ in step of $\SI{0.125}{\micro \ampere}$.}
+\label{fig:Autocalibration}
+\end{figure}
+
+ From a linear fit of the PMTs counts vs. current intensity the angular coefficient and the offset are measured. The offset is particular important because give rise of a possible systematic error that influence the final asymmetry result. It is simple to demonstrate this, if a relation of the type $N = mI + N_{0} $ holds. Consider the following quantity:
 
 \begin{align*}
 \overline{N} = \frac{N_{\uparrow} + N_{\downarrow}}{2}
@@ -633,19 +650,9 @@ We are supposing that the offset $N_{0}$, we assume that the present offset does
 A^{'} = \dfrac{N_{\uparrow} - N{\downarrow}}{N_{\uparrow} + N{\downarrow}} = \dfrac{A_{n} (2mI)}{ (2mI) + 2N_{0} } = A_{n} \dfrac{1}{1 + \frac{N_{0}}{mI}} = A_{n}\cdot c
 \end{equation} 
 
-In the last passage we learn that the presence of an offset can decrease the reconstructed asymmetry. So it is important to determine quantitatively $N_{0}$ and $m$ in order to be able to correct for this effect. The strategy used is quite simple: every three hours of production data, we asked MAMI to start the auto-calibration program. With all the auto-calibration runs, we estimate $N_{0}$ for each PMT, separately. Then All this quantities are saved in a file so that the analysis program can retrieve the parameters and subtract them from the PMT counts.
-In this way every three hours the PMT are corrected, taking care also of the possibility that the the linearity of the PMTs can change after hours of use of the PMTs (for example it can decrease the efficiency).
-During the auto-calibration, the beam current is raised from $\SI{9}{\micro \ampere}$ to $\SI{11.125}{\micro \ampere}$ in step of $\SI{0.125}{\micro \ampere}$:
+In the last passage we learn that the presence of an offset can decrease the reconstructed asymmetry. So it is important to determine quantitatively $N_{0}$ and $m$ in order to be able to correct for this effect. The strategy used is quite simple: every three hours of production data, we asked MAMI to start the auto-calibration program. With all the auto-calibration runs, we estimate $N_{0}$ for each PMT, separately. Then all this quantities are saved in a file so that the analysis program can retrieve the parameters and subtract them from the PMT counts.
+In this way every three hours the PMT are corrected, taking care also of the possibility that the the linearity of the PMTs can change after hours of use of the PMTs (for example it can decrease the efficiency). With a linear fit we can estimate the angular scale coefficient and the offset to convert from I21 voltage values to physical values of the current. The procedure in repeated for the $8$ auto-calibration acquisition we had during the beam time, so we can also take care of possible time variations.
 
-\begin{figure}[!ht]
-\centering
-\includegraphics[width = 0.5\textwidth]{Analysis/Autocalib/Current.pdf}
-\caption{Auto-calibration: in this plot we have the voltage value of I21 monitor. The current is first stabilized around $\SI{10}{\micro \ampere}$, then it is raised from $\SI{9}{\micro \ampere}$ (the step lower down) to $\SI{11.125}{\micro \ampere}$ in step of $\SI{0.125}{\micro \ampere}$.}
-\label{fig:Autocalibration}
-\end{figure}
-
-With a linear fit we can estimate the scale and the offset to convert from I21 voltage values to physical values of the current. The procedure in repeated for the $8$ auto-calibration acquisition we had during the beam time, so we can also take care of possible variations during the time.
-\newpage
 \begin{figure}[!hbtp]
 \centering
 \subfloat[][\emph{Current scan for detector A, the error are \\ multiplied by a factor of $20$.}]{
@@ -681,8 +688,8 @@ The figures are referred to the data acquired for the first auto-calibration. We
 \label{table:PMToffset}
 \end{table}
 
-Ignoring the presence of the offset lead two consequences: the reconstructed asymmetry is lower, on average $ \simeq 10\%$ less than expected, and the Counts are overestimated. Because the error depend on the PMT counts, as seen in equation \ref{eq:Error}, this two effect combined add up and decrease the accuracy of the asymmetry measurement
-The value $c$ reported in the caption \ref{result} can be compared with $c$ in table \ref{result}, computed as the ratio between $\frac{A_{not corr.}}{A_{corr}}$, where $A_{not corr.}$ stands for the asymmetry result not corrected for the offset and $A_{corr}$ are the result with offset corrected. 
+Ignoring the presence of the offset leads to two consequences: the reconstructed asymmetry is lower, on average $ \simeq 10\%$ less than expected, and the counts are overestimated. Because the error depend on the PMT counts, as seen in equation \ref{eq:Error}, this two effect combined add up and decrease the accuracy of the asymmetry measurement
+The value $c$ reported in the chapter \ref{result} can be compared with $c$ in table \ref{result}, computed as the ratio between $\frac{A_{not corr}}{A_{corr}}$, where $A_{not corr}$ stands for the asymmetry result not corrected for the offset and $A_{corr}$ are the result with offset corrected. 
 
 \section{Data Tree Implementation}
 
@@ -709,7 +716,7 @@ Several values are saved with the number of scattered electrons, for each event.
 \label{fig:DataTree}
 \end{figure}
 
-The analysis program read the binaries files, convert from binary to decimal values and compute the beam parameters from the raw data of the monitors,   filling the data tree shown in the figure. We have 5 different classes, that are contained in the main \textit{Event} class. The asymmetry values are stored in the two separated classes, \textit{Det A} and \textit{Det B}. The Analysis program read and analyze one event at a time, can produce also histograms for a fast visualization of the data, and generates the final output files in \textit{txt} format for the data analysis.  
+The analysis program reads the binaries files, converts from binary to decimal values and computes the beam parameters from the raw data of the monitors, filling the data tree shown in the figure. We have 5 different classes, that are contained in the main \textit{Event} class. The asymmetry values are stored in the two separated classes, \textit{Det A} and \textit{Det B}. The analysis program read and analyze one event at a time, can produce also histograms for a fast visualization of the data, and generates the final output files in \textit{txt} format for the data analysis.  
 
 \chapter{Asymmetry on Carbon and Rates on Lead Target.}
 
@@ -719,17 +726,16 @@ The amount of data that are available corresponds to 23 hours of acquisitions, t
  
 \section{Model for Fitting the Data} \label{Model}
 
-
-One of the problems of the measurement is to take into consideration the various contributions that can change the value of the asymmetry measured by the experimental apparatus. The raw values of the asymmetry can be affected by the variation of the beam parameters during the time. Let's summarize quickly these effects:
+One of the problems of the measurement is to take into consideration the various contributions that can change the value of the asymmetry measured by the experimental apparatus. The raw values of the asymmetry can be affected by the variation of the beam parameters during the time. Let's summarize quickly the effects that can affect the PMT counts:
 \begin{itemize}
-\item the PMTs counts  can depend on the $(x,y)$ impact position of the beam on the target
+\item variation of the $(x,y)$ impact position of the beam on the target
 \item the variations of the incident angles $\theta_{x}$and $\theta_{y}$ on the target.
 \item the uncertainty associated with the energy of the beam, a change in the energy associated with the polarization of the beam leads to different rates for the cross section.
 \item the uncertainty associated with the current of the beam, in particular a difference in the 
 efficiency of the source in producing electrons polarized in the two opposite directions.
 \end{itemize}
 
-All this quantity, which we will indicate in general with $\delta q$ can influence the asymmetry measurement, considering also that the expected asymmetry is in the order of ten part per million, and small asymmetry introduced by fluctuations on the beam parameters are not negligible. Correcting directly the false asymmetries that arise from those uncertainties is a tough task, and it is easier to adopt a different strategy rather than the analytical/numerical calculation of each of them. Knowing that the beam parameters produced by MAMI are quite stable over the time, we can assume that the measured asymmetry are well described by a linear model as the following:
+All these quantities, which we will indicate in general with $\delta q$ can influence the asymmetry measurement, considering also that the expected asymmetry is in the order of ten part per million, and small asymmetries caused by fluctuations on the beam parameters are not negligible. Correcting directly the false asymmetries that arise from these uncertainties is a difficult task, and it is easier to adopt a different strategy rather than the analytical/numerical calculation of each of them. Knowing that the beam parameters produced by MAMI are quite stable over the time, we can assume that the measured asymmetry are well described by a linear model as the following:
 
 \begin{equation}
 A_{tot} = A_{physical} \cdot P + \delta_{I} + A_{x} \delta x + A_{y} \delta y + A_{\theta_{x}} \delta \theta_{x} + A_{\theta_{y}} \delta \theta_{y}+ A_{E} \delta E 
@@ -737,7 +743,7 @@ A_{tot} = A_{physical} \cdot P + \delta_{I} + A_{x} \delta x + A_{y} \delta y + 
 
 $A_{physical}$ is the aim of the experiment, $A_{x}$ and $A_{y}$ are the coefficients induced by the variation of the position of the beam, $A_{\theta_{x}}$ and $A_{\theta_{y}}$ are the coefficients associated to angles, $A_{E}$ is the coefficients associated to the beam energy and P is the polarization percentage. 
 This is a first order approximation, which is valid for small variation of the beam parameters ($\delta x, \delta y, \delta \theta_{x}, \delta \theta_{y}, \delta_{E}$).
-We must clarify now what we mean with $\delta x, \delta y, \delta \theta_{x}, \delta \theta_{y}, delta_{E}$. Recalling the event structure, that we discussed in section \ref{FirstDescription}, we have a sequence of 4 different sub-events, with a polarization pattern that is randomly selected between $\uparrow,\downarrow,\downarrow, \uparrow$ and $\downarrow,\uparrow,\uparrow,\downarrow$. During the $\SI{20}{\milli \second}$ of time length of each sub-event, the beam monitors make a single measurement of the beam parameters, and the data are saved in the data tree. The task of the analysis program is to use this raw data to calculate the relevant parameters for the analysis. Because we are working with asymmetries, the absolute values of the parameters listed above is not relevant, instead what is relevant are the differences between different polarization states of the beam. Assuming this, $\delta x, \delta y, \delta \theta_{x}, \delta \theta_{y}, \delta_{E}$ are defined by equation \ref{eq:BeamParameter}:
+We must clarify now what we mean with $\delta x, \delta y, \delta \theta_{x}, \delta \theta_{y}, \delta_{E}$. Recalling the event structure, that we discussed in section \ref{FirstDescription}, we have a sequence of 4 different sub-events, with a polarization pattern that is randomly selected between $\uparrow,\downarrow,\downarrow, \uparrow$ and $\downarrow,\uparrow,\uparrow,\downarrow$. During the $\SI{20}{\milli \second}$ of time length of each sub-event, the beam monitors provide a single measurement of the beam parameters, and the data are saved in the data tree. The task of the analysis program is to use this raw data to calculate the relevant parameters for the analysis. Because we are working with asymmetries, the absolute values of the parameters listed above is not relevant, instead what is relevant are the differences between different polarization states of the beam. Assuming this, $\delta x, \delta y, \delta \theta_{x}, \delta \theta_{y}, \delta_{E}$ are defined by equation \ref{eq:BeamParameter}:
 
 \begin{equation} \label{eq:BeamParameter}
 \begin{split}
@@ -782,7 +788,7 @@ This is a direct consequence of the fact that the luminosity is proportional to 
 \section{Data Pre-selection and Fit}
 
 After all the calibration are performed, the analysis program is ready to produce the data-files suitable to analyze the asymmetry data for Carbon. Before proceeding with the linear fit, however, it is necessary to visualize the data to check that there are no anomalous behaviors. In fact the data can contain moments of loss of the beam current and sudden interruptions, loss of the beam polarization and even setting errors by MAMI operators can affect the experiment. Carbon data were taken from November 2nd to 4th, and consist of $28$ runs, each $1$ hour long.
-The first step is to observe the PMT counts and the current trend, in order to be able to identify sudden interruptions of the beam, outliers and to check the behaviour. Here we show the trend over time for the series runs: 
+The first step is to observe the PMT counts and the current trend, in order to be able to identify sudden interruptions of the beam, outliers and to check the behaviour. In figure \ref{fig::CountTrend} we show the trend over time for the of series runs.
 
 \begin{figure}[hbtp]
 \centering
@@ -794,17 +800,18 @@ The first step is to observe the PMT counts and the current trend, in order to b
 \label{fig::CountTrend}
 \end{figure}
 
-This plot show that after 10 h of data acquisition the PMT counts (see plot \ref{fig::CountTrend}) dropped rapidly. In the current vs time (figure \ref{fig::CurrentTrend}) there is not a corresponding decrease in beam intensity. Also the $x,y$ position (\ref{fig::PositionTrend}) and the energy monitor of the beam do not show unexpected behavior, so we reject the possibility that the beam was not properly aligned to the target.
+This plot show that after 10 h of data acquisition the PMT counts (see plot (a) in figure \ref{fig::CountTrend}) dropped rapidly. In the current vs time (figure \ref{fig::CurrentTrend}) there is not a corresponding decrease in beam intensity. Also the $x,y$ position (\ref{fig::PositionTrend}) and the energy monitor of the beam do not show unexpected behavior, so we reject the possibility that the beam was not properly aligned to the target.
 For all the PMTs of this suspecious data run, the counts are equal to the offsets measured with the auto-calibration run. 
 This indicates that there was a failure in the data acquisition program, which controls the NINO board. These data are rejected completely from the analysis.
-In plot \ref{fig::CountTrend} and \ref{fig::CurrentTrend} we observe abrupt variations of the asymmetry at $13.5 h$ and $19 h$, while other variations are less appreciable. These data correspond to loss of the beam intensity for a short periods of time, and are rejected as outliers. 
+In plot \ref{fig::CountTrend} we observe abrupt variations of the asymmetry at $13.5 h$ and $19 h$, while other variations are less appreciable. These data correspond to loss of the beam intensity for a short periods of time, and are rejected as outliers. 
 
 \begin{figure}[hbtp]
 \centering
-\subfloat[][\emph{Current trend over time.} \label{fig::CurrentTrend}]{
+\subfloat[][\emph{Current trend over time.}]{
 \includegraphics[width = 0.45 \textwidth]{Analysis/Dataselection/CurrentTrend.pdf}}
-\subfloat[][\emph{$X,Y$ beam position over time} \label{fig::PositionTrend}]{
-\includegraphics[width = 0.45\textwidth]{Analysis/Dataselection/XYtrend.pdf} }
+\subfloat[][\emph{$X,Y$ beam position over time} ]{
+\includegraphics[width = 0.45\textwidth]{Analysis/Dataselection/XYtrend.pdf}}
+\caption{On the left, current trend versus time for all the runs acquired. On the right the X and Y position versus time.}\label{fig::PositionTrend}
 \end{figure}
 
 Now we focus our attention on the correlated-difference values. These quantities, are used as independent variables for the fit, as explained before, are defined as 
@@ -813,7 +820,7 @@ Now we focus our attention on the correlated-difference values. These quantities
 \delta x =  \frac{(X_{up,1} + X_{up,2})}{2} - \frac{(X_{down,1} + X_{down,2})}{2}
 \end{align*}
 
-and are calculated within each single event, to identify the differences with respect to the various quantities such as position, energy, etc., which correspond to different states of polarization. For every of these quantities a correspondent histogram is shown in figure \ref{fig:BeamParameters}. These plots are useful to quantify the stability of the beam: we expect that all the correlated differences are distributed around zero, which implies that there is no systematic difference when the beam has one polarization state respect to the other. The mean $\mu$ and the standard deviation $\sigma$ of the distributions are reported in the table (\ref{Tab:parametri}) 
+and are calculated within each single event, to identify the differences with respect to the various quantities such as position, energy, etc., which correspond to different states of polarization. For each of these quantities a correspondent histogram is shown in figure \ref{fig:BeamParameters}. These plots are useful to quantify the stability of the beam: we expect that all the correlated differences are distributed around zero, which implies that there is no systematic difference when the beam has one polarization state with respect to the other. The mean $\mu$ and the standard deviation $\sigma$ of the distributions are reported in the table (\ref{Tab:parametri}) 
 
 \begin{figure}[!hbtp]
 \centering 
@@ -855,8 +862,7 @@ Looking at the values of the mean and the corresponding error $\sigma$ reported 
 With our assumption that the false asymmetries are well described by a linear model, observing that $\mu$ is small and compatible with zero for all the parameters, together with the evidence that $\delta q$ are distributed symmetrical around zero, leads to the cancellation of all the false asymmetries, as can be seen in equation \ref{eq:CancelOut} :
 
 \begin{align} \label{eq:CancelOut}
-\overline{A} = A_{n} \cdot P + \overline{\delta_{I}} + \overline{\delta_{x}}A_{x} + & \overline{\delta_{y}} A_{y} + \overline{\delta_{\theta_{x}}} A_{\theta_{x}} + \overline{\delta_{\theta_{y}}} A_{\theta_{y}} + \overline{\delta_{E}}A_{E} = \\
-& A_{n} \cdot P + \overline{\delta_{I}} + A_{x}\cdot 0 + A_{y} \cdot 0 +  A_{\theta_{x}} \cdot 0 +  A_{\theta_{y}} \cdot 0 + A_{E} \cdot 0 = A_{n} \cdot P + \overline{\delta_{I}}
+\overline{A} = A_{n} \cdot P + \overline{\delta_{I}} + \overline{\delta_{x}}A_{x} + & \overline{\delta_{y}} A_{y} + \overline{\delta_{\theta_{x}}} A_{\theta_{x}} + \overline{\delta_{\theta_{y}}} A_{\theta_{y}} + \overline{\delta_{E}}A_{E} = A_{n} \cdot P + \overline{\delta_{I}}
 \end{align}  
 
 We will discuss later, when we will introduce the fit results, whether our assumption reflects the reality. We assume that the only false asymmetry that has an effect is $\delta I$: $\overline{\delta I}$ is equal $-1.23 \, ppm$, and we will subtract that to the final result:
@@ -867,12 +873,11 @@ A_{n} = \overline{A_{tot}} - \overline{\delta I}
 
 \section{Polarization Loss}
 
-After discussing the removal of the outliers, now will discuss in details the issue regarding the polarization of the beam. To observe a \transv, it is essential to have a correctly polarized beam.
-Unfortunately, we found out that by mistake part of the data where acquired with a beam made by non-polarized electrons. The reason is that during the second night of the experiment, MAMI operators who controls the quality of the beam switched from polarized beam to non-polarized, unintentionally. These wrong data were acquired during the night of 2nd December and we discovered this problem only the next day. We had no indication of how many hours of beam were lost. Because this happened during the night, nobody could save the polarization measurement of the beam and identify the runs affected by this problem.
-This issue introduces a big systematic error that is potentially decreases the reconstructed $A_{n}$. It is important to identify the runs that share this problem, otherwise the measurements are affected by a bias that is not possible to disentangle from other systematic effects related to the electronics system of the experiment. 
+After discussing the removal of the outliers, now will discuss in details the issue regarding the polarization of the beam. To observe a \transv, it is essential to have a correctly polarized beam. Unfortunately, we found out that by mistake part of the data were acquired with a non-polarized beam. The reason is that during the second night of the experiment, MAMI operators who controls the quality of the beam switched from polarized beam to non-polarized, unintentionally. These wrong data were acquired during the night of 2nd December and we discovered this problem only the next day. We had no indication of how many hours of beam were lost. Since this happened during the night, nobody could save the polarization measurement of the beam and identify the runs affected by this problem.
+This issue introduces a big systematic error that decreases the reconstructed $A_{n}$. It is important to identify the runs that share this problem, otherwise the measurements are affected by a bias that is not possible to disentangle from other systematic effects related to the electronics system of the experiment. 
 All the stabilization monitors were active and the data show apparently the same behaviour of the data with the correct polarization. We can not proceed with an arbitrary cut of the data, because there is the risk to cut off also good data or perform an incomplete removal. The next phase of the analysis is focused on describing a method used to identify the data taken with unpolarized beam and remove them from the analysis.
  
-The procedure to identify the runs without polarization rely on the estimation of the correlation coefficient of the PMTs counts. For every event we have two type of polarization sequence. The polarization $P$ of each sub-event is identified with $+1$ and $-1$, that correspond to up and down $P$. This values are part of the data tree, and form a sequence $p_{i}$ of the type: $+1-1-1+1$, where i is the index to the i-th sub-events analyzed . If the $P$ is different from zero, we expect, caused by the transverse asymmetry, a difference in the number of scattered electrons between sub-events with different $p_{i}$ (see table \ref{tab:PolarizationSequence}).
+The procedure to identify the runs without polarization rely on the estimation of the correlation coefficient of the PMTs counts. For every event we have two type of polarization sequence. The polarization $P$ of each sub-event is identified with $+1$ and $-1$, that correspond to up and down $P$. This values are part of the data tree, and form a sequence $p_{i}$ of the type: $+1-1-1+1$, where i is the index to the i-th sub-events analyzed. If the actual $P$ is different from zero, we expect a difference in the number of scattered electrons between sub-events with different $p_{i}$, caused by the transverse asymmetry (see table \ref{tab:PolarizationSequence}).
 
 \begin{table}[hbtp]
 \centering
@@ -889,7 +894,7 @@ Other PMT & ... & ... & ... & ... & ... & ... & ... & ... \\
 \label{tab:PolarizationSequence}
 \end{table}
 
-This leads to a positive/negative correlation between the sequence $p_{i}$ and the PMT data. In case of $\vec{P} = 0$, the expected values for the correlation should be zero.
+This leads to a positive/negative correlation between the sequence $p_{i}$ and the PMT data. In case of $P = 0$, the expected values for the correlation should be zero.
 We applied this strategy with the hope to identify the blocks of data with $P = 0$, also using the knowledge that the polarization was turned off at some point during the night. The correlation $c$ between $p_{i}$ and the PMT sequence $N_{i}$ of counts is measured every $t = 1 h$, corresponding to $45000$ events. We plot the averaged correlation for detector A and B, and the correlation of the two detectors together (with the reverse sign for detector B) in figure \ref{fig:PolarityCheck}.
 
 \begin{figure}[hbtp]
@@ -902,7 +907,7 @@ We applied this strategy with the hope to identify the blocks of data with $P = 
 \label{fig:PolarityCheck}
 \end{figure}
 
-The correlations coefficient $c$ is clearly dependent on the $\vec{P}$. is we observe that $c$ is compatible with zero, we have an evidence of the block of runs to be removed from the analysis.
+If we observe that $c$ is compatible with zero, we have an indication of the block of runs to be removed from the analysis.
 The values are reported in figure \ref{fig:PolarityCheck}. The errors for each point are computed with the formula:
 
 \begin{align*}
@@ -938,8 +943,8 @@ The values are not compatible with zero, but are compatible with each other. It 
 
 \section{Fit with a Linear Model}
 
-At this point, it is interesting to study the distribution of the asymmetries measured by the two detectors. Our main assumption is that the asymmetries values are distributed following a normal distribution, around the physical value $A_{n}$. We have produced several histograms for the measurements of every PMT (see figure \ref{fig:AsymmtriesB0B1B2},\ref{fig:AsymmtriesA0A1A2A3} and \ref{fig:AsymmtriesA4A5A6A7}). The data without polarization are not included in the histograms. For every histogram we use a gaussian function to fit the data, the reduced $\chi^{2}$ is reported in the table \ref{tab:Chisq}.
-We see a good agreement with the hypothesis of normal distributed data.
+At this point, it is interesting to study the distribution of the asymmetries measured by the two detectors. Our main assumption is that the asymmetries values are distributed following a normal distribution, around the physical value $A_{n}$. We have produced several histograms for the measurements of every PMT (see figure \ref{fig:AsymmtriesB0B1B2},\ref{fig:AsymmtriesA0A1A2A3} and \ref{fig:AsymmtriesA4A5A6A7}). The data without polarization are not included in the histograms. For every histogram we use a gaussian function to fit the data, the reduced $\chi^{2}$ is reported in table \ref{tab:Chisq}.
+We see a good agreement with the hypothesis of normally distributed data.
 
 \begin{figure}[!ht]
 \centering
@@ -997,10 +1002,8 @@ A7 & $1.7 \pm 0.2$ \\
 \label{tab:Chisq}
 \end{table}
 
-Recalling the equation \ref{eq:Error}, where we assumed that $A$ a normal distributed variable, now we can confirm our initial assumption. 
-To extract the asymmetry $A_{n}$ from the data, we assume a linear model where the asymmetries depend on the beam parameters, in the way we discussed in section \ref{Model}. The contributions due to variations of the beam within an events are described with 5 parameters, that are  $A_{x},A_{y},A_{\theta_{x}},A_{\theta_{y}},A_{E}$.
-The data are analyzed both using python libraries, and with a fit program implemented in the framework of this thesis. To analyze the data with python, it is used the \textit{curvefit} function implemented in the python library \textit{scipy}. We also implemented a dedicated program to interface directly to the analysis program, the fit program, that is written in \textit{C++} code. The fit program implements the ordinary least square algorithm (OLS), a well know algorithm used in linear regression. The OLS algorithm is basic algorithm, easy to implement and robust. 
-In linear regression it is assumed that :
+Recalling equation \ref{eq:Error}, where we assumed that $A$ is a normally distributed variable, now we can confirm our initial assumption. To extract the asymmetry $A_{n}$ from the data, we assume a linear model where the asymmetries depend on the beam parameters, in the way we discussed in section \ref{Model}. The contributions due to variations of the beam within an events are described with 5 parameters, that are  $A_{x},A_{y},A_{\theta_{x}},A_{\theta_{y}},A_{E}$.
+The data are analyzed both using python libraries, and with a fit program implemented in the framework of this thesis. To analyze the data with python, it is used the \textit{curvefit} function implemented in the python library \textit{scipy}. We also implemented a dedicated program to interface directly to the analysis program, the fit program, that is written in \textit{C++} code. The fit program implements the ordinary least square algorithm (OLS), a well know algorithm used in linear regression. The OLS algorithm is a basic algorithm, easy to implement and robust. In linear regression it is assumed that :
 
 \begin{equation}
  y \, = \, \vec{x} \cdot \vec{\beta} + \epsilon
@@ -1046,7 +1049,7 @@ The correlation between $(\theta_{x},X);(\theta_{y},Y)$ the values for the corre
 \label{fig:CorrelationBeam}
 \end{figure}
 
-The plots in figure \ref{fig:CorrelationBeam} confirm the linear dependence between the parameters. For the $\theta_{x}$ versus the $X$ position the data are distributed in line, and the data are completely anti-correlated. For the $\theta_{y}$ versus $Y$, the data are distributed following parallel lines, that have the same angular coefficient but different offsets. The lines are equally spaced, this means that the beam parameter $\delta Y$ is translated ,for a part of the events, by a multiple of some quantity $\delta l_{y}$. With the linear fit we estimate that $\delta l_{y} = 0.017 \pm 0.001 \, \SI{}{\micro \meter}$. This effect could reproduce the data structure that we observe in plot \textit{b} of figure \ref{fig:CorrelationBeam}. 
+The plots in figure \ref{fig:CorrelationBeam} confirm the linear dependence between the parameters. For the $\theta_{x}$ versus the $X$ position the data are distributed on a line, with complete anti-correlation. For the $\theta_{y}$ versus $Y$, the data are distributed following parallel lines, that have the same angular coefficient but different offsets. The lines are equally spaced, meaning that the beam parameter $\delta Y$ is translated, for a fraction of the events, by a multiple of some quantity $\delta l_{y}$. With the linear fit we estimate that $\delta l_{y} = 0.017 \pm 0.001 \, \SI{}{\micro \meter}$. This effect could reproduce the data structure that we observe in plot \textit{b} of figure \ref{fig:CorrelationBeam}. 
 
 \commento{
 \begin{figure}[hbtp]
@@ -1056,9 +1059,9 @@ The plots in figure \ref{fig:CorrelationBeam} confirm the linear dependence betw
 \label{fig:XXpvsTime }
 \end{figure}}
 
-It is clear that the have to modify the model to fit the data. We decided to include as linear independent variables only : $I,X,Y,E$. Before proceeding with the fit, it is interesting to study how $A_{n}$ evolves increasing the data. What we intend is to plot the averaged values $\overline{A_{n}}$ as the number of events increases, where the average is made on all data collected from time $t = 0$ up to time $t = t_{1}$, s show in figure (\ref{fig:AsymOverTime}). 
+It is clear that we have to modify the model to fit the data. We decided to include as linear independent variables only : $I,X,Y,E$. Before proceeding with the fit, it is interesting to study how $A_{n}$ evolves increasing the data size. This can be seen by plotting the averaged values $\overline{A_{n}}$ as the number of events increases, where the average is made on all data collected from time $t = 0$ up to time $t = t_{1}$, as shown in figure \ref{fig:AsymOverTime}. 
 
-\begin{figure}[hbtp]
+\begin{figure}[!hbtp]
 \centering
 \subfloat[][\emph{Averaged asymmetries for each PMT.}]{
 \includegraphics[width = 0.5 \textwidth]{Analysis/Dataselection/AveragedAsymmetry.pdf}}
@@ -1068,19 +1071,19 @@ It is clear that the have to modify the model to fit the data. We decided to inc
 \label{fig:AsymOverTime}
 \end{figure}
 
-These plots are useful to check that the asymmetries converge to a certain value, and that there are no steep variations that could be related to the presence of remaining outliers. Besides this we observe that the sign of the asymmetries for the two detectors are opposite, in agreement with what we expect from the different kinematics, with the sign of the asymmetry given by the sign of the projection of the cross product $\vec{k} \times \vec{k}'$ along the axis orthogonal to the scattering plane. For detector A the cross product projection is positive, while for the detector B it is negative.
+These plots are useful to check that the asymmetries converge to a certain value, and that there are no steep variations that could be related to the presence of remaining outliers. We observe that the sign of the asymmetries for the two detectors are opposite, in agreement with what we expect from the different kinematics, with the sign of the asymmetry given by the sign of the projection of the cross product $\vec{k} \times \vec{k}'$ along the axis orthogonal to the scattering plane. For detector A the cross product projection is positive, while for the detector B it is negative.
 For a better visualization of the data, especially to observe the dependence of the asymmetry on the beam parameters measured, it is useful to plot $A$ versus each of the beam parameters. Unfortunately, the statistical error associated to the asymmetry is too high to appreciate whether there is a linear dependence in the data. For example, in figure \ref{fig:AsymmetryA0vrX} we plot the asymmetries $A$ versus $X$.
 
-\begin{figure}[hbtp]
+\begin{figure}[!hbtp]
 \centering
-\includegraphics[width = 0.75\textwidth]{Analysis/Fit/A_vs_X.pdf}
+\includegraphics[width = 0.55\textwidth]{Analysis/Fit/A_vs_X.pdf}
 \caption{Detector A asymmetries versus X beam position. Because of the statistical uncertainties, it is not possible to visualize a linear dependence in the data. Each dot is colored depending on the density of points.}
 \label{fig:AsymmetryA0vrX}
 \end{figure}
 
 The statistical error associated to $A$ is too high to identify a trend in the values. A different approach is to divide the $x$ axis in small intervals, and average the asymmetries in each interval. In a plot of this type each point represents the overall asymmetry for a particular interval of $X$ ,$Y$ or $E$.
  
-\begin{figure}[hbtp]
+\begin{figure}[!hbtp]
 \centering
 \subfloat[][]{ 	\includegraphics[width = 0.45\textwidth]{Analysis/Fit/pmtA0_X.pdf}}
 \subfloat[][]{ 	\includegraphics[width = 0.45\textwidth]{Analysis/Fit/pmtA0_Y.pdf}}\\
@@ -1089,9 +1092,9 @@ The statistical error associated to $A$ is too high to identify a trend in the v
 \end{figure} 
 
 We report for brevity only the values for PMT A0 of detector A. In this case is simpler to identify the presence of a linear dependence in the data. The errors are computed with the formula defined in equation \ref{eq:Error}, considering each interval separately.
-Another approach that we can use to further reduce the fluctuations due to the high statistical error of $A_{n}$ is to do an additional average for all the PMTs of each detector. This procedure decreases the error of a factor $\sqrt{8}$ for detector A and $\sqrt{3}$ for detector B. However, this does not take into account the different linear dependencies on the beam parameters for the various PMTs , and therefore is not immune from a possible bias. 
+Another approach that we can use to further reduce the fluctuations due to the high statistical error of $A_{n}$ is to do an additional average for all the PMTs of each detector. This procedure decreases the error of a factor $\sqrt{8}$ for detector A and $\sqrt{3}$ for detector B. However, this does not take into account the different linear dependencies on the beam parameters for the various PMTs, and therefore is not immune from a possible bias. 
 
-\begin{figure}[hbtp]
+\begin{figure}[!hbtp]
 \centering
 \subfloat[][\emph{ $A$ versus $\delta x$, the linear model is the red line, the second used to fit the data is a polynomial, represented in blue.}]{ \includegraphics[width = 0.5\textwidth]{Analysis/Fit/Xfit.pdf}}
 \subfloat[][\emph{ $A$ versus $\delta y$, the linear model is the red line, the second used to fit the data is a polynomial, represented in blue.}]{ \includegraphics[width = 0.5\textwidth]{Analysis/Fit/Yfit.pdf}}\\
@@ -1147,7 +1150,7 @@ A_{tot} = A_{phy} \cdot P + \delta_{I} + A_{x} \delta x + A_{y} \delta y + A_{E}
 A_{tot} = A_{phy} \cdot P + \delta_{I} + A_{x} \delta x + A_{y} \delta y + A_{E} \delta E + c_{x} \, \delta x^{5} + c_{y} \, \delta y^{5} + c_{E} \, \delta E ^{3}
 \end{equation}}
 
-the result of the fit are reported in \ref{tb:resultA}, together with the final result of the asymmetry for detector A and B.
+the result of the fit are reported in table \ref{tab:resultA}, together with the final result of the asymmetry for detector A and B.
 
 \section{False Asymmetries}
 
