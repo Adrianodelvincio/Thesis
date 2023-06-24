@@ -1092,17 +1092,18 @@ The statistical error associated to $A$ is too high to identify a trend in the v
 \end{figure} 
 
 We report for brevity only the values for PMT A0 of detector A. In this case is simpler to identify the presence of a linear dependence in the data. The errors are computed with the formula defined in equation \ref{eq:Error}, considering each interval separately.
-Another approach that we can use to further reduce the fluctuations due to the high statistical error of $A_{n}$ is to do an additional average for all the PMTs of each detector. This procedure decreases the error of a factor $\sqrt{8}$ for detector A and $\sqrt{3}$ for detector B. However, this does not take into account the different linear dependencies on the beam parameters for the various PMTs, and therefore is not immune from a possible bias. 
+Another approach that we used to further reduce the fluctuations related to the statistical error of $A_{n}$ is an additional average over all the PMTs of each detector. The result is shown in figure \ref{fig:DifferentModels}.
 
-\begin{figure}[!hbtp]
+\begin{figure}[!ht]
 \centering
-\subfloat[][\emph{ $A$ versus $\delta x$, the linear model is the red line, the second used to fit the data is a polynomial, represented in blue.}]{ \includegraphics[width = 0.5\textwidth]{Analysis/Fit/Xfit.pdf}}
-\subfloat[][\emph{ $A$ versus $\delta y$, the linear model is the red line, the second used to fit the data is a polynomial, represented in blue.}]{ \includegraphics[width = 0.5\textwidth]{Analysis/Fit/Yfit.pdf}}\\
-\subfloat[][\emph{ $A$ versus $\delta E$, the linear model is the red line, the second used to fit the data is a polynomial, represented in blue.}]{ \includegraphics[width = 0.5\textwidth]{Analysis/Fit/Efit.pdf}}
-\caption{Averaged asymmetries versus the beam parameters $\delta X$, $\delta Y$ and $\delta E$. The x axis is divided in $19$ intervals, and for each of them we average the asymmetries $A$. }
+\subfloat[][\emph{ $A$ versus $\delta x$}]{ \includegraphics[width = 0.5\textwidth]{Analysis/Fit/Xfit.pdf}}
+\subfloat[][\emph{ $A$ versus $\delta y$}]{ \includegraphics[width = 0.5\textwidth]{Analysis/Fit/Yfit.pdf}}\\
+\subfloat[][\emph{ $A$ versus $\delta E$}]{ \includegraphics[width = 0.6\textwidth]{Analysis/Fit/Efit.pdf}}
+\caption{Averaged asymmetries versus the beam parameters $\delta X$, $\delta Y$ and $\delta E$. The x axis is divided in $19$ intervals, and for each of them we average the asymmetries $A$. The linear model is the red line, the second used to fit the data is a polynomial, represented in blue. }
 \label{fig:DifferentModels}
 \end{figure}
 
+ This procedure decreases the error of a factor $\sqrt{8}$ for detector A and $\sqrt{3}$ for detector B. However, this does not take into account the different linear dependencies on the beam parameters for the various PMTs, and therefore is not immune from a possible bias. 
 We have explored different models to describe the asymmetry dependence on beam parameters. The first one is the linear model: 
 
 \begin{equation}
@@ -1121,10 +1122,9 @@ A = c \, \delta E^{3} + A_{E} \, \delta E + A_{phys}
 \end{equation}
 
 The choice of an odd exponent is due to the observation that $A$ increases near the edges of the plot with opposite sign.
-
 The values of the fit parameters are reported in the plots of figures . The $\chi^{2}$ of the fit are reported in table \ref{tab:ChisqDiffModel}
 
-\begin{table}[ht]
+\begin{table}[!ht]
 \centering
 \begin{tabular}{c|c|c|c}
 \hline 
@@ -1139,7 +1139,7 @@ alternative model $\chi^{2}_{16}$ & 76 & 55 & 78 \\
 
 The $\chi^{2}$ values are higher that the expected and we observe that the values for the model 2 are lower than the ones of linear fit.
 This high values can be explained with two considerations: the first one is that this procedure of averaging the data based on $x$ interval leads to the loss of information that can influence the fit, the second consideration is that we are ignoring the possible error in the determination of $\delta x$.
-Despite this, we observe that using a model with more complicated dependencies does not change  the values of $A_{phys}$. Because of this we do not see a strong evidence to change the linear model. The model that is used to extract the asymmetry is given in equation \ref{eq:ModelloUsato}. 
+Despite of this, we observe that using a model with more complicated dependencies does not change  the values of $A_{phys}$. Therefore we do not see a strong reason to change the linear model. The model that is used to extract the asymmetry is given in equation \ref{eq:ModelloUsato}. 
 
 \begin{equation} \label{eq:ModelloUsato}
 A_{tot} = A_{phy} \cdot P + \delta_{I} + A_{x} \delta x + A_{y} \delta y + A_{E} \delta E 
@@ -1152,23 +1152,25 @@ A_{tot} = A_{phy} \cdot P + \delta_{I} + A_{x} \delta x + A_{y} \delta y + A_{E}
 
 the result of the fit are reported in table \ref{tab:resultA}, together with the final result of the asymmetry for detector A and B.
 
+
+
 \section{False Asymmetries}
 
 Until now the values for the false asymmetries were threated as the parameters of the fit. In this section we will investigate how we can obtain another different estimations, useful to check the validity of all the process of analysis of the data.
 
 For $\frac{dA}{dX}$ and $\frac{dA}{dY}$, we conceptually exploit the possibility of varying the position of the beam on the target, as we did during one of the calibration phases. Using the same \textit{wobbler 16} we asked MAMI to slowly change the beam position on the X and Y monitor. The change in position has the effect to modify the rates for the two detector, and from them it is possible to extract estimate the two false asymmetries related to the beam position. Now we will see how the two quantities are related.
-From the plot \ref{fig:SlowPosition} we see that the counts are scaling linearly with the beam position, so we assume that the $N$ are given by
+From the plot \ref{fig:SlowPosition} we see that the counts are changing linearly with the beam position, so we assume that the $N$ are given by
 
 \begin{align*}
 N(x,...) = N_{0} + m \cdot (x - x_{0})
 \end{align*}
 
-it is clear that the linear model can't be always good, at some point the electron will be deflected completely out of the detector, and so the counts will fall rapidly to zero. However, the magnets used to deflect the beam are producing small variation in the position, on the order of hundredths of a millimeters.
+it is clear that the linear model has limits, and at some point the electron will be deflected completely out of the detector, with the counts will falling rapidly to zero. However, the magnets used to deflect the beam are producing small variation in the position, on the order of hundredths of a millimeters.
 Let's suppose that the beam position for two sub-events is $x_{1}$ and $x_{2}$, we can calculate the asymmetry between the two event, taking care of the possible effects due to the different position. We write explicitly: 
 
 \begin{equation}
 \begin{split}
-Asym = \dfrac{N(x_{1}) - N(x_{2})}{N(x_{1}) + N(x_{2})} = \dfrac{N_{0} + m \cdot (x_{1} - x_{0}) - N_{0} - m \cdot (x_{2} - x_{0})}{N(x_{1}) + N(x_{2})} =  \dfrac{m}{2 N_{0} + m \cdot (x_{1} +  x_{2}) - 2m x_{0}}(x_{1} -  x_{2})
+Asym = \dfrac{N(x_{1}) - N(x_{2})}{N(x_{1}) + N(x_{2})} = \dfrac{N_{0} + m \cdot (x_{1} - x_{0}) - N_{0} - m \cdot (x_{2} - x_{0})}{N(x_{1}) + N(x_{2})} = \\ \dfrac{m}{2 N_{0} + m \cdot (x_{1} +  x_{2}) - 2m x_{0}}(x_{1} -  x_{2})
 \end{split}
 \end{equation}
 
@@ -1244,7 +1246,7 @@ For the energy asymmetry, a different method is necessary. We directly compute t
 We start from the formula of the expected rates:
 
 \begin{equation}
-\frac{events}{time} = n_{e} N_{t} v_{e} \frac{\partial \sigma}{\partial \Omega} (\partial \Omega_{a}) \epsilon 
+\frac{events}{time} = n_{e} N_{t} v_{e} \frac{\partial \sigma}{\partial \Omega} (\Delta \Omega_{a}) \epsilon 
 \end{equation} 
 
 Where:
@@ -1252,7 +1254,7 @@ Where:
 \item $n_{e}$ electron density of the beam.
 \item $N_t$ Number of scattering centers of the carbon target.
 \item $v_{e}$ electron speed.
-\item $\partial \Omega_{a}$ solid angle acceptance of the spectrometers.
+\item $\Delta \Omega_{a}$ solid angle acceptance of the spectrometers.
 \item $\epsilon$ detector efficiency.
 \end{itemize}
 
@@ -1262,7 +1264,7 @@ We do not need to compute directly the expected rate for the two detectors, beca
 A = A_{n} + \dfrac{\sigma(E_{1}) - \sigma(E_{2})}{\sigma(E_{1}) + \sigma(E_{2})}
 \end{align*}
 
-Because $\partial \Omega_{a}$ is a common term in the numerator and in the denominator, we can simplify the expression and substitute $\sigma $ with $ \frac{\partial \sigma}{ \partial \Omega}$.
+Because $\Delta \Omega_{a}$ is a common term in the numerator and in the denominator, we can simplify the expression and substitute $\sigma $ with $ \frac{\partial \sigma}{ \partial \Omega}$.
 The Mott cross section is given by the formula below:
 
 \begin{equation} \label{eq:Mott}
@@ -1299,13 +1301,13 @@ We compute the above formula withe the constant A,B,C,D defined in \ref{eq:Mott}
 A_{E} = - \frac{1}{2} \dfrac{2 + CE_{0}}{E_{0} + E_{0}^{2}C} 
 \end{equation}
 
-The result, applying the above formula is $A_{e} = -1.75 \, \frac{ppm}{\SI{}{\kilo \electronvolt}}$. We can compare this result with the values obtained from the fit. The results are in agreement with the sign, if fact we expect a negative effect related to the beam variation. However, the false asymmetries from the fit are 1 order higher than the values computed here. A possible reason could be that we are underestimating other contributions that seems to be important with the energy variation. The estimation of the contribution of the false asymmetries to $A$ is not accurate. This may be due to the correlation between the beam parameters, that combines together the different effects, or secondary effects that are not included in the calculation of the coefficients. 
-Estimate the parameters through the linear fit seems to be easier. An alternative method may be to exploit Monte Carlo simulations of the entire experimental apparatus, which are however expensive, compared to linear regression.
+Applying the above formula, we end with $A_{E} = -1.75 \, \frac{ppm}{\SI{}{\kilo \electronvolt}}$. We can compare this result with the values obtained from the fit, that are reported in table \ref{tab:resultA}. There is at least an agreement on the sign, with an expected negative effect related to the beam variation. However, the false asymmetries from the fit are one order of magnitude higher than the values computed here. An explanation could be that the energy variation is correlated to other beam parameters, or effects that are not considered in this analysis. Usually correlated data alters the result of the regression algorithms, which are not able to estimate the value of the coefficients. Looking at the values reported in table \ref{tab:CorrMatrix}, we observe a positive correlation between current and energy. Even if the correlation is not high, it still might cause a combination of effects which can be responsible for the lower values of $A_{e}$ measured with the fit.
+Since it is not possible to compute analytically the correlation between the beam parameters parameters, the linear fit seems to be an easier method. An alternative approach may include Monte Carlo simulations of the beam, to take care of possible correlation between the various beam parameters, which in contrast are computationally expensive, compared to linear regression.
 
 \section{Rates on Lead}
 
 After all the calibrations are done, we proceeded with the measurement of the rates on lead target, one of the objectives of the experiment.
-The lead target installed is a made of a thin layer with a thickness of $\SI{0.5}{\milli \meter}$, and it is not isotopically pure.
+The lead target installed is made of a thin layer with a thickness of $\SI{0.5}{\milli \meter}$, and it is not isotopically pure.
 We took $14$ acquisitions lasting $\simeq 2,5$ minutes, which corresponds to $6950$ events. For each of these acquisitions we set the beam current at different values, ranging from $\SI{10}{\micro \ampere}$ to $\SI{22}{\micro \ampere}$ of intensity. The rates are then reported as a function of the current and linear model is used to fit the data.
 
 \begin{figure}[hbtp]
@@ -1347,13 +1349,13 @@ The PMT Counts with this target, increase from $100$ counts for detector B to $5
 
 Where $N$ is the counts per sub-event, while  $n$ is the number of event analyzed.
 Let's suppose that we want to obtain, for each PMTs, a statistical error not greater than $4,8 \, ppm$. With this accuracy, the overall result A will have an error given by $\frac{4.8 \, ppm}{\sqrt{8}} \simeq 1.7 \, ppm$, equal to the statistical error that we have obtained for the measurement of $A_{n}$ with $^{12}C$ ( see table \ref{tab:RisultatiBellissimiFinali}) while for detector B an overall result of $2.8 \, ppm$.
-We have computed the time needed to achieve this accuracy for both the two detectors, given in total hours of experiment. This values are not casual: as we will see in the next part of this chapter, we managed to obtain this accuracy for the same measurement on carbon  
+We have computed the time needed to achieve this accuracy for both detectors, given in total hours of experiment. This values are arbitrary: as shown in chapter \ref{result}, the transverse asymmetry on carbon has been measured with the same accuracy.  
 
 \begin{table}[h]
 \centering
 \begin{tabular}{c|c|c}
 \hline
-   current I &   T [h] Det A &   T [h] Det B \\
+   current I \SI{}{\micro \ampere} &   T [h] Det A &   T [h] Det B \\
 \hline
         10   &       344 &      1487  \\
         12.5 &       277 &      1185   \\

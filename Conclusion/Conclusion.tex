@@ -1,14 +1,14 @@
 \chapter{Final Result and Conclusion} \label{result}
 
 In this chapter we show the result obtained for the \transv measured on carbon during the experiment.
-The first result that we report is the values of asymmetry $\overline{A}_{n}$ computed as the average over all the events, after applying the various cut discussed before to remove wrong data and outliers. The values reported in tables \ref{table:NotCorrected} \ref{table:OffsetCorrected} are corrected by te beam polarization ($A_{raw} \times \frac{1}{P}$) and by the current asymmetry:
+The first result that we report is the values of asymmetry $\overline{A}_{n}$ computed as the average over all the events, after applying the various cut discussed before to remove wrong data and outliers. The values reported in tables \ref{table:NotCorrected} \ref{table:OffsetCorrected} are corrected for beam polarization ($A_{raw} \times \frac{1}{P}$) and for the current asymmetry:
 
 \begin{equation}
 \overline{A}_{n} = \frac{\overline{A}_{raw}}{P} - \overline{A}_{I}
 \end{equation}
 
-The sign of the asymmetry is given by the sign of the cross product between $\vec{k}$ incident electron and $\vec{k'}$ scattered electron. The results have positive sign for detector A and negative sign for detector B, in agreement with the kinematics.
-In section \ref{Autocalib} we have discussed possible effects that arise from the presence of a PMT offset when we check the linearity of the PMTs respect to the beam current variation. This systematic effect tends to decrease the reconstructed values of the asymmetry by a factor $c$, computed in equation \ref{eq:Systematic}. The predicted value of $c$ reported in table \ref{table:PMToffset}; we also compute the ratio between the final asymmetries with and without subtracting the offset, that is reported in table \ref{table:Cfactor}. The values of $c$ computed in these two ways are coherent.
+The sign of the asymmetry is given by the sign of the cross product between the momenta $\vec{k}$ of the incident electron and $\vec{k'}$ the scattered electron. It is positive for detector A and negative for detector B, according to the kinematics.
+In section \ref{Autocalib} we have discussed possible effects that arise from the presence of an offset when we consider the linearity of the PMTs as a function of the beam current variation. This systematic effect tends to decrease the reconstructed values of the asymmetry by a factor $c$, computed in equation \ref{eq:Systematic}. The predicted value of $c$ is reported in table \ref{table:PMToffset}; we also compute the ratio between the final asymmetries with and without subtracting the offset, that is shown in table \ref{table:Cfactor}. The values of $c$ computed in these two ways are coherent.
 
 \begin{table}[hbtp]
 \centering
@@ -33,7 +33,7 @@ In section \ref{Autocalib} we have discussed possible effects that arise from th
 \hline
 \end{tabular}
 \egroup
-} \qquad
+} \quad
 \subfloat[][\emph{Asymmetries with offsets subtracted}\label{table:OffsetCorrected}]{
 \bgroup
 \def\arraystretch{1.1}
@@ -55,8 +55,8 @@ In section \ref{Autocalib} we have discussed possible effects that arise from th
 \hline
 \end{tabular}
 \egroup}
-\qquad
-\subfloat[][\emph{$c$ factor, as defined in \ref{eq:Systematic}} \label{table:Cfactor}]{
+\quad
+\subfloat[][\emph{$c$ factor, as defined in equation \ref{eq:Systematic}} \label{table:Cfactor}]{
 \bgroup
 \def\arraystretch{1.1}
 \begin{tabular}{c|c} 
@@ -80,14 +80,14 @@ In section \ref{Autocalib} we have discussed possible effects that arise from th
 \caption{Averaged asymmetries over all the events. The values are corrected subtracting $\overline{A}_{I}$ and considering the effective polarization $p$ of the beam}
 \end{table}
 
-The results reported in table \ref{table:OffsetCorrected} are show in plot \ref{fig:FirstVal}.
-To Obtain a final asymmetry for detector A and B, the asymmetries for each plot are averaged using the formula:
+The results reported in table \ref{table:OffsetCorrected} are shown the in plot of figure \ref{fig:FirstVal}.
+To obtain a final asymmetry for detector A and B, the asymmetries for each plot are averaged using the formula:
 
 \begin{equation} \label{eq:FinalValue}
 A_{n} = \sum_{i = 0}^{n_{PMT}} \dfrac{ w_{i} A_{i}}{\sum_{i = 0}^{n_{PMT}} w_{i}}
 \end{equation}
 
-With $w_{i} = \frac{1}{\sigma^{2}_{i}}$. The above equation is the error-weighted mean, used to combine measurements with different statistical error. 
+With $w_{i} = \frac{1}{\sigma^{2}_{i}}$.  
 
 \begin{figure}[hbtp]
 \centering
@@ -97,7 +97,7 @@ $\overline{\delta I}$.}
 \label{fig:FirstVal}
 \end{figure}
 
-The result obtained for both the two detector are reported here. The two values are in agreement with the expected sign and compatible with the previous measurement performed at MAMI \cite{Esser:2018vdp}. 
+The result for the two detectors are in agreement with the expected sign and compatible with the previous measurement performed at MAMI \cite{Esser:2018vdp}. 
 
 \begin{itemize}
 \item Asymmetry for detector A, $A_{A} =  23.6 \pm 1.7$ ppm.
@@ -150,7 +150,7 @@ the result for detector B:
 \caption{Fit result with the linear model, for detector B.}
 \end{table}
 
-The final results of the \transv for the two detectors, for a $Q^{2} = \SI{0.04}{\giga \electronvolt \squared}$, computed with the weighted mean are then:
+The final results of the \transv for the two detectors, for a $Q^{2} = \SI{0.04}{\giga \electronvolt \squared}$ are shown in table \ref{tab:RisultatiBellissimiFinali}
 
 \begin{table}[h]
 \centering
@@ -195,9 +195,9 @@ In this section we report the result obtained for the block of runs that showed 
 \label{tab:PolTab}
 \end{table}
 
-The overall values are $-5 \pm 2$ for detector A and $-8 \pm 5$ for detector B. The two values are compatible with each other
+The overall values are $-5 \pm 2$ for detector A and $-8 \pm 5$ for detector B. The two values are compatible with each other and much smaller than the values obtained with polarization.
 
 \section{Conclusion and Outlook} 
 
-The transverse asymmetry for $^{12}C$ target, at a $Q^{2} = \SI{0.04}{\giga \electronvolt \squared}$ has been measured with the new counting-based data acquisition systems. The measurement are reported in table \ref{tab:RisultatiBellissimiFinali}, and are in agreement with the theoretical sign due to the different scattering kinematic for detector A and B. These measurement are in agreement with the measurement reported in \cite{Esser:2018vdp}, $23.9  \pm 1 (stat) \pm 0.7 (syst)  \, ppm$ for detector A and $ -21.9 \pm 1.5 (stat) \pm 1.6 (syst) \, ppm$.
+The transverse asymmetry for $^{12}C$ target, at a $Q^{2} = \SI{0.04}{\giga \electronvolt \squared}$ has been measured with the new counting-based data acquisition systems. The values are in agreement with the theoretical sign due to the different scattering kinematics of detector A and B. These measurement are in agreement with the measurement reported in \cite{Esser:2018vdp}, which are $23.9  \pm 1 (stat) \pm 0.7 (syst)  \, ppm$ for detector A and $ -21.9 \pm 1.5 (stat) \pm 1.6 (syst) \, ppm$.
 These results are encouraging: with the new electronic setup we have obtained similar values for the transverse asymmetry with respect to the old measurement, that were based on the integration of the PMT current, instead of the detection of the single electron pulses. With this new electronic, it will be possible to measure, for the first time, at MAMI, the transverse asymmetry for lead target, important in prevision of the future parity-violating experiment that will take place at MESA accelerator.
