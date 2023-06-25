@@ -50,19 +50,20 @@ At the $\alpha$ leading order, the two scattering processes that give rise to th
 
 \begin{figure}[hbtp]
 \[
+\feynmandiagram [scale = 1, transform shape][ vertical = c to d]{
+	a [particle = \(e^{-}\)] -- [fermion, thick] c -- [fermion, thick] g [particle = \(e^{-}\)],
+	c -- [photon, edge label' = \(\gamma\), momentum = {[arrow style = blue]\(k\)}] d [blob],
+	h [particle = \(^{12}C\)] -- [fermion, thick] d -- [fermion, thick] j [particle = \(^{12}C\)],
+	};
+\qquad \qquad \qquad
 \feynmandiagram [scale = 1, transform shape][baseline = (h), horizontal = d to j]{
 	a [particle = \(e^{-}\)] -- [fermion, thick] c -- [fermion, thick, edge label' = \(e\), momentum = {[arrow style = blue]\(k_{1}\)}] f -- [fermion, thick] g [particle = \(e^{-}\)],
 	c -- [photon, edge label = \(\gamma\)] d [blob],
 	f -- [photon, edge label = \(\gamma\)] j [blob],
 	h [particle = \(^{12}C\)]-- d -- [fermion, thick] j -- k [particle = \(^{12}C\)] ,
 	};
-\qquad \qquad \qquad
-\feynmandiagram [scale = 1, transform shape][ vertical = c to d]{
-	a [particle = \(e^{-}\)] -- [fermion, thick] c -- [fermion, thick] g [particle = \(e^{-}\)],
-	c -- [photon, edge label' = \(\gamma\), momentum = {[arrow style = blue]\(k\)}] d [blob],
-	h [particle = \(^{12}C\)] -- [fermion, thick] d -- [fermion, thick] j [particle = \(^{12}C\)],
-	};
 \]
+
 \caption{TPE and OPE diagrams in electron nucleus scattering.}
 \label{fig:FeynmannDiagrams}
 \end{figure}
@@ -85,7 +86,7 @@ $A_{1}$ term in the scattering amplitude correspond to the charge form factor of
 A_{1} = 2Z F_{N}(Q^{2})
 \end{align*} 
 
-Where $Q^{2}$ is the transferred momentum in the scattering process. The one photon exchange amplitude, corresponding to the right diagram in figure \ref{fig:FeynmannDiagrams}, is computed applying the Feynmann rules: the first interaction vertex, at the top of the diagram, connects the incoming and outgoing electron. The electron is represented by a spinor, and the QED vertex with spinors gives: 
+Where $Q^{2}$ is the transferred momentum in the scattering process. The one photon exchange amplitude, corresponding to the left diagram in figure \ref{fig:FeynmannDiagrams}, is computed applying the Feynmann rules: the first interaction vertex, at the top of the diagram, connects the incoming and outgoing electron. The electron is represented by a spinor, and the QED vertex with spinors gives: 
 
 \begin{equation}
 \overline{u}(k') (-ie \gamma^{\nu}) u(k) ,
@@ -127,13 +128,13 @@ The imaginary part $A_{2}$ is related to the two-photon exchange. To compute thi
 \Im(A_{2}) = e^{4} \frac{1}{(2\pi)^{2}} \int \dfrac{l_{\mu \nu} \cdot W^{\mu \nu}}{2E_{1} Q_{1}^{2} Q_{2}^{2}} d^{3}\vec{k_{1}}
 \end{equation}
 
-Two new terms appear in this expression. The first term is $l_{\mu \nu}$, named leptonic tensor. This term is given computing the Amplitude for the upper part of the diagram, which involve the incident and scattered electron:
+Two new terms appear in this expression. The first term is $l_{\mu \nu}$, named leptonic tensor. This term is given computing the amplitude for the upper part of the diagram, which involve the incident and scattered electron:
 
 \begin{equation}
 l_{\mu \nu} = \overline{u}(k') \gamma_{\nu} (\slashed{k}_{1} + m_{e}) \gamma_{\mu} u(k)
 \end{equation}
 
-In this expression is immediate to recognize the Feynmann rules for fermion vertex. The term $(\slashed{k_{1} + m_{e}})$ comes from the fermion propagator of the internal electron, which is:
+In this expression it is immediate to recognize the Feynmann rules for fermion vertex. The term $(\slashed{k_{1} + m_{e}})$ comes from the fermion propagator of the internal electron, which is:
 
 \begin{align*}
 \dfrac{i(\slashed{p} + m)}{p^{2} + m^{2}}
@@ -152,13 +153,13 @@ For the inelastic contributions, the structure of the hadronic tensor is differe
 W^{\mu \nu} = 2 \pi W_{1}(\omega^{2},Q_{1}^{2}) \Bigl( -g^{\mu \nu} + \dfrac{P^{\mu}q_{1}^{\nu} +  P^{\nu}q_{2}^{\mu}}{(P \overline{K})} - \dfrac{q_{1} q_{2}}{(P \overline{K})^{2}}P^{\mu}P^{\nu} \Bigl)
 \end{equation}
 
-Several assumption are made to treat this new term. The structure function, for forward scattering angles, can be approximated by a function containing the Compton form factor of the nucleus, neglecting some dependence on $Q_{1,2}$ that let to simplify the integral in equation \ref{eq:integral}. It is beyond our scope to go into a detailed description, which can be found in the articles (\cite{Gorchtein_2006}, \cite{Gorchtein_2008}, \cite{Koshchii_2021}). We emphasize however that for the estimation of the inelastic intermediate state, theoretical calculation are affected by the approximation of forward angles and other assumptions due to lack of data in the dependence of some important variables, such as the Compton form factor for carbon 12, the Compton slope parameter and the use of the approximated Callavan-Gross relation. In summary, the theoretical prediction for the \transv are reliable for small scattering angle, that correspond to lower values ​​in transfer momentum $Q$; the experimental data measure by PREX \cite{HAPPEX:2012fud} for $^{1}H$, $^{4}He$, and $^{12}C$ at $Q$ values of $\SI{0.31}{\giga \electronvolt}$, $\SI{0.28}{\giga \electronvolt}$ and $\SI{0.1}{\giga \electronvolt}$, respectively, are in agreement with the theoretical prediction. The measurement performed at MAMI for $^{12}C$ \cite{Esser:2018vdp} is with higher values of transfer momentum ($Q = \SI{0.2}{\giga \electronvolt}$) and shows a reasonable agreement with the theoretical prediction, considering also the systematic uncertainties associated to the poorly known Compton slope parameter. The model which describes the transverse asymmetry is:
+Several assumption are made to treat this new term. The structure function, for forward scattering angles, can be approximated by a function containing the Compton form factor of the nucleus, neglecting some dependence on $Q_{1,2}$ that let to simplify the integral in equation \ref{eq:integral}. It is beyond our scope to go into a detailed description, which can be found in the articles (\cite{Gorchtein_2006}, \cite{Gorchtein_2008}, \cite{Koshchii_2021}). We emphasize however that for the estimation of the inelastic intermediate state, theoretical calculation are affected by the approximation of forward angles and other assumptions due to lack of data in the dependence of some important variables, such as the Compton form factor for $^{12}C$, the Compton slope parameter and the use of the approximated Callavan-Gross relation. In summary, the theoretical prediction for the \transv are reliable for small scattering angle, that correspond to lower values ​​in transfer momentum $Q$; the experimental data measure by PREX \cite{HAPPEX:2012fud} for $^{1}H$, $^{4}He$, and $^{12}C$ at $Q$ values of $\SI{0.31}{\giga \electronvolt}$, $\SI{0.28}{\giga \electronvolt}$ and $\SI{0.1}{\giga \electronvolt}$, respectively, are in agreement with the theoretical prediction. The measurement performed at MAMI for $^{12}C$ \cite{Esser:2018vdp} is with higher values of transfer momentum ($Q = \SI{0.2}{\giga \electronvolt}$) and shows a reasonable agreement with the theoretical prediction, considering also the systematic uncertainties associated to the poorly known Compton slope parameter. The model which describes the transverse asymmetry is:
 
 \begin{equation}
-A_{N} = C_{0} \cdot log(\dfrac{Q^{2}}{m_{e}^{2} c^{2}}) \dfrac{F_{Compton}(Q^{2})}{F_{ch}(Q^{2})}
+A_{N} = C_{0} \cdot log(\dfrac{Q^{2}}{m_{e}^{2} c^{2}}) \dfrac{F_{Compton}(Q^{2})}{F_{N}(Q^{2})}
 \end{equation}
 
-Where $F_{ch}$ is the charge form factor, $F_{Compton}$ is the Compton form factor of the nucleus, and $C_{0} = \dfrac{- m_{e} E_{Lab} \sigma_{\gamma p} M A}{8 \pi^{2} \sqrt(2) Z}$, where $\sigma_{\gamma p}$ is the proton photo-absorption cross section, $A$ the mass number. 
+Where $F_{N}$ is the charge form factor, $F_{Compton}$ is the Compton form factor of the nucleus, and $C_{0} = \dfrac{- m_{e} E_{Lab} \sigma_{\gamma p} M A}{8 \pi^{2} \sqrt(2) Z}$, where $\sigma_{\gamma p}$ is the proton photo-absorption cross section, $A$ the mass number. 
 The theory presented so far is quite successful in describing the data, but it fails completely with $^{208}Pb$ nucleus, as PREX reported a measurement of $0$ transverse asymmetry \cite{HAPPEX:2012fud}. This could suggest that theory fails to describe $A_{n}$ for heavy elements; on the other hand it represents an unexpected improvement for the PV scattering experiment. It is important therefore to repeat independently the measurement of the $A_{n}$ for $^{208}Pb$, to confirm or question the result reported by PREX.
 
 \begin{figure}[hbtp]
@@ -169,7 +170,7 @@ The theory presented so far is quite successful in describing the data, but it f
 
 \section{Concept of the Experiment}
 
-We have seen so far how the Transverse Asymmetry is related to the interference between two scattering amplitude, and the theoretical model used to describe the process. The goal from an experimental point of view is to measure this quantity. The challenge is to obtain a valid measure of $A_{n}$, which is of the order of $20$ part per million (ppm), taking into consideration all the possible effects that can interfere. To measure $A_{n}$, the straightforward method is to prepare an electron beam, with polarized electron, and send it to a fixed target. The scattered electrons are then collected by a detector placed at a certain angle, with the transverse asymmetry obtained by:
+We have seen so far how the transverse asymmetry is related to the interference between two scattering amplitude, and the theoretical model used to describe the process. The goal from an experimental point of view is to measure this quantity. The challenge is to obtain a valid measure of $A_{n}$, which is of the order of $20$ part per million (ppm), taking into consideration all the possible effects that can interfere. To measure $A_{n}$, the straightforward method is to prepare an electron beam, with polarized electron, and send it to a fixed target. The scattered electrons are then collected by a detector placed at a certain angle, with the transverse asymmetry obtained by:
 
 \begin{equation}
 A_{N} (Q) = \dfrac{N_{\uparrow}(Q) - N_{\downarrow}(Q)}{N_{\uparrow}(Q) + N_{\downarrow}(Q)}  
@@ -179,28 +180,10 @@ In an experiment of this type, several requirements need to be satisfied, in ord
 
 \begin{itemize}
 \item The accelerator must produce a polarized beam, stable over the time, with an high polarization percentage, in order to amplify the effect.
-\item The Beam energy needs to be quite stable, and should not depend on the Polarization state of the electrons. A change in the Beam energy associated with the polarization state can lead to a different count rate for $N_{\uparrow}$ and $N_{\downarrow}$, and would create an undesired contribution that adds to the $A_{n}$.
-\item The beam must be correctly aligned with the target, with a stable position. If the position of the target changes according to the polarization of the electrons, it will produce another contribution to the total asymmetry.
+\item The beam energy needs to be quite stable, and should not depend on the polarization state of the electrons. A change in the beam energy associated with the polarization state can lead to a different count rate for $N_{\uparrow}$ and $N_{\downarrow}$, and would create false asymmetries that adds to the $A_{n}$.
+\item The beam must be correctly aligned with the target, with a stable position. If the interaction position changes with to the polarization of the electrons, it will produce another false asymmetry.
 \item The beam current should not depend on the polarization state of the electrons. If the beam source depends on the polarization, we will have a difference in the event rate and then another false asymmetry.
 \item It is necessary to reject possible double elastic scattering events, which may contribute to the total asymmetry. 
 \end{itemize}
 
-All this demands can be satisfied with an accelerator that has stabilization devices with great precision and that can sustain high beam intensities. This last request is necessary to accumulate enough statistics to measure the transverse asymmetry with an accuracy about 1 ppm, in view of the future PV experiments. We can quantify how the statistical error varies according to the amount of data available. With the assumption that $N_{\uparrow,\downarrow}$ are gaussian distributed variables, we can compute the expected variance
-
-\begin{equation}
-Var[A_{n}] = \dfrac{1 - A^{2}}{N_{\uparrow} + N_{\downarrow}} 
-\end{equation}
-
-For a single measurement of the $A_{n}$. For multiple $n$ measurements, the variance scales as $\frac{1}{n}$.
-Because $A_{n}$ is expected to be smaller respect to 1, we can approximate the above formula:
-\begin{equation} 
-V[A_{n}] = \dfrac{1}{2N \cdot n}  \label{eq:Error}
-\end{equation}
-
-The error associated to the reconstructed asymmetry is the square root of the above quantity. If we impose that the error must be $\le 1ppm$ we can easily obtain that the quantity $n\cdot N$:
-
-\begin{align*}
-n\cdot N > \frac{1}{2} \cdot 10^{12}
-\end{align*} 
-
-We will see later that achievable rates $N_{\uparrow,\downarrow}$ are in the range (20000,60000) counts per event for a carbon target. This number can not be increased at will by acting on the beam current. The first reason is oblivious: the beam source can produce only a certain amount of electrons before loosing, furthermore a beam with great intensity for an extended periods of time can damage the carbon target up to the risk of melting it. Another idea might be to increase the thickness of the target, to take advantage of the larger cross section. However, by doing so, the number of double scattering events would be increased. To avoid the problem of the double scattering, the nuclear physic community which deals with PV experiments respects the convention that the target thickness should be less than the $10 \%$ of the radiation length of the material.
+All this demands can be satisfied with an accelerator that has stabilization devices with great precision and that can sustain high beam intensities. This last requirement is necessary to accumulate enough statistics to measure the transverse asymmetry with an accuracy about 1 ppm, in view of the future PV experiments.
