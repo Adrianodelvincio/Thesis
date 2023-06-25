@@ -1,15 +1,13 @@
 \chapter{Experimental setup} 
 
-\paragraph{} This chapter presents briefly the structure and the characteristics of the Mainz microtron accelerator (MAMI), where the experiment is setup and the transverse asymmetry is measured. Particular attention is given in the the description of the beam monitors that measure the beam parameters. Following an overview of MAMI and the acceleration stages, the experimental hall, the detectors and the electronic devices used to acquire and process the data are presented. 
+\paragraph{} The Mainz Microtron Accelerator (MAMI), where the experiment is set up and the transverse asymmetry is measured, is briefly described in this chapter.  The description of the beam monitors used to measure the beam parameters is given a special consideration. Following an overview of the experimental hall, the detectors and the electronic devices used to acquire and process the data. 
 
 \section{Overview of the Experiment} \label{FirstDescription}
 
-To measure the Beam-Normal single spin asymmetry, a polarized beam of $ \SI{570}{\mega \electronvolt}$ is sent against a $\SI{10}{\milli \meter}$ thick $^{12}C$ target. The detectors consist of two fused-silica bars coupled to 3 (detector B) and 8 (detector A) PMTs, which collect the Cherenkov light emitted when an electron pass through the fused-silica. 
-The detector are placed inside the two spectrometer of the A1 hall, whose standard detectors are not used in this experiment because of the high beam current ($ \SI{20}{\micro \ampere}$) that is above their limits of operation. 
-The cross-section asymmetry between the two orientations of the electron spin is the goal of the measurement. The PMT signals are collected and digitalized by the \textbf{NINO} board, after a threshold selection, and sent to the A1 control room computer, where the DAQ program collect the data together with all the data coming from the beam monitors. The produced  binary files are later analyzed by the analysis program, which is a significant part of the work done in the framework of the thesis. 
-The data collected are divided in \textit{events} made by 4 \textit{sub-events} in sequence. Each event corresponds to a temporal window of $\simeq \SI{80}{\milli \second}$, where each sub-event is $\SI{20}{\milli \second}$ long.
-Here it is important to clarify that, unlike the majority of experiments in high energy physics, an event is not a single interaction, but is made by all the electrons interacting with the detectors during the specified time interval. The division into sub-events reflects the polarization sequence of the beam. The PMT counts and the beam monitor values are saved for each sub-event, along with the time length of the event (measured in clock cycles by the NINO electronic board) and other values which are required to process beam monitor data.
-The general structure of the event is the following: 
+To measure the Beam Normal Single Spin Asymmetry, a polarized beam of $ \SI{570}{\mega \electronvolt}$ is directed towards a  $^{12}C$ target that is $\SI{10}{\milli \meter}$ thick. The detectors are made up of two fused-silica bars coupled to 3 (detector B) and 8 (detector A) PMTs, which are used to gather the Cherenkov light released when an electron passes through the fused-silica. The detector are placed inside the two spectrometers of the A1 hall. Due to the high beam current ($ \SI{20}{\micro \ampere}$), which is above their operating
+limits, the standard detectors of the spectrometers are not employed in this experiment. The experiment aims to measure the cross-section asymmetry between the two electron spin orientations. The PMT signals are collected and digitalized by the \textbf{NINO} board, after a threshold selection, and sent to the A1 control room computer, where the DAQ program collect the data together with all the data coming from the beam monitors. The produced  binary files are later analyzed by the analysis program, which is a significant part of the work done in the framework of the thesis. 
+The data collected are divided in \textit{events} made by 4 \textit{sub-events} in sequence. Each event corresponds to a temporal window of $\simeq \SI{80}{\milli \second}$, where each sub-event is $\SI{20}{\milli \second}$ long. This structure into sub-events reflects the polarization sequence of the beam.
+Unlike the majority of experiments in high energy physics, an event is not a single interaction, but is made by all the electrons interacting with the detectors during the specified time interval. The PMT counts and the beam monitor values are saved for each sub-event, along with their time length (measured in clock cycles by the NINO electronic board) and other values which are required to process beam monitor data. The general structure of the event is the shown in figure \ref{fig:EventStructure} 
 
 \begin{figure}[hbtp] 
 \centering
@@ -18,13 +16,14 @@ The general structure of the event is the following:
 \label{fig:EventStructure}
 \end{figure}
 
-The particular choice of $\SI{20}{\milli \second}$ for the sub-event is made to avoid undesirable effects generated by the power grid frequency ($\SI{50}{\hertz}$). The gate-length of each sub-events is synchronized with the period of the power grid frequency: this ensures that an entire oscillation of the current of the power grid takes place within the same sub-event. This cancels out the $\SI{50}{\hertz}$ noise and avoid to produce effects between nearby sub-events.
-For each event we have a single measurement of $A_{n}$, defined as the asymmetry between the $\uparrow$ and $\downarrow$ sub-events. It is important to avoid the creation of fake asymmetries by correlated noise or other external sources. For this reason polarization states are concatenated following the two patterns $\uparrow, \downarrow, \downarrow, \uparrow$ and $\uparrow, \downarrow, \downarrow, \uparrow$. At the beginning of an event one of the two polarization pattern is selected using a De Bruijn sequence. A De Bruijn sequence of order n is defined as a cyclic sequence where every sub-sequence of length n appear only once. We have two different polarization pattern, the ones shown in the figure, that can be represented as $1$ and $0$. For this experiment, the De Bruijn sequence is of order $n = 6$ bits; this correspond to all the possible sequences of $1$ and $0$ with a length equal to $6$, which are $64$ different sub-sequence.
+The particular choice of $\SI{20}{\milli \second}$ for each sub-event is made to reduce undesirable effects relate to the power grid frequency ($\SI{50}{\hertz}$). The gate-length of each sub-events is synchronized with the period of the power grid frequency: this ensures that an entire oscillation of the current takes place within the same sub-event. This cancels out the $\SI{50}{\hertz}$ noise and avoid to produce effects between nearby sub-events.
+
+An event corresponds to a single value measured of $A_{n}$, defined as the asymmetry between the $\uparrow$ and $\downarrow$ sub-events. To avoid the creation of false asymmetries by correlated noise or other external sources the polarization states are concatenated following the two patterns $\uparrow, \downarrow, \downarrow, \uparrow$ and $\uparrow, \downarrow, \downarrow, \uparrow$. Which sequence an event belongs to is decided using a De Bruijn sequence. A De Bruijn sequence of order n is defined as a cyclic sequence where every sub-sequence of length $n$ appears only once. We have two different polarization pattern, the ones shown in the figure, that can be represented as $1$ and $0$. For this experiment, the De Bruijn sequence is of order $n = 6$ bits, corresponding to all the possible sequences of $1$ and $0$ with a length equal to $6$, which are $64$ different sub-sequence.
 It is possible to demonstrate that the number of exactly $N_{bruijn}$ sequences is: 
 \begin{align*}
 N_{bruijn} = \frac{(k!)^{k^{n-1}}}{k^{n}}
 \end{align*}
-If we substitute in the formula above $k=2$ and $n = 6$, we have a total of $\simeq 67 \cdot 10^{6}$ different sequences. The seed of the De Bruijn sequence is generated with a pseudo random number generator, and the sequence is used to select between $\uparrow,\downarrow,\downarrow, \uparrow$  and $\downarrow,\uparrow,\uparrow,\downarrow$. At this point it could be objected why so much care is taken in choosing randomly the two sequences. At a first glance is certainly easier to select one of the two polarization pattern and reproduce it for every sub-event. However, this would not protect from systematic effects that arise from electronic or beam noise with frequencies similar to the frequency of the polarization pattern. For instance electronic noise with a frequency of roughly $\SI{10}{\hertz}$ could in principle increase the rates for one polarizations state and decrease the other. The adopted solution to reduce possible effect is to randomize the pattern selection. There is another reason why a De Bruijn sequence is useful. During each polarization flip, we observe a short, transient reduction of the beam current. This reduction in the beam intensity has more influence on patterns where there are more inversion of the polarization respect to the other. With a De Bruijn sequence we ensure that we have a identical number of pairs of patterns, meaning that:
+If we substitute in the formula above $k=2$ and $n = 6$, we have a total of $\simeq 67 \cdot 10^{6}$ different sequences. The seed of the De Bruijn sequence is generated with a pseudo random number generator, and the sequence is used to select between $\uparrow,\downarrow,\downarrow, \uparrow$  and $\downarrow,\uparrow,\uparrow,\downarrow$. At this point it could be objected why so much care is taken in choosing randomly the two sequences. At a first glance is certainly easier to select one of the two polarization pattern and reproduce it for every sub-event. However, this would not protect from systematic effects that arise from electronic or beam noise with frequencies similar to the frequency of the polarization pattern. For instance electronic noise with  $ f \simeq \SI{10}{\hertz}$ could in principle increase the rates for one polarizations state and decrease the other one. The adopted solution to reduce effects of this type is to randomize the pattern selection. Besides this, there is another reason why a De Bruijn sequence is useful. During each polarization flip, we observe a short, transient reduction of the beam current. This reduction in the beam intensity has more influence on patterns where there are more inversion of the polarization respect to the other. With a De Bruijn sequence we ensure that we have a identical number of pairs of patterns, meaning that:
 
 \begin{itemize}
 \item $25\%$ : $\uparrow,\downarrow,\downarrow, \uparrow$ ; $\uparrow,\downarrow,\downarrow, \uparrow$
@@ -33,12 +32,12 @@ If we substitute in the formula above $k=2$ and $n = 6$, we have a total of $\si
 \item $25\%$ : $\uparrow,\downarrow,\downarrow, \uparrow$ ; $\downarrow,\uparrow, \uparrow,\downarrow$
 \end{itemize}
 
-In the top rows we have 4 inversion, while in the two lower rows we have 5 inversion.
-The other details of the experiments are presented in the following section. In the next section the operating principles of MAMI electron accelerator, where the experiment is setup, are presented.
+In the top rows we have 4 inversions, while in the two lower rows we have 5 inversions.
+Other details of the experiments are presented in this chapter. In the next section the operating principles of MAMI electron accelerator are discussed.
 
 \section{Mami}
 
-MAMI is the electron accelerator located in Mainz, which provides a continuous wave \footnote{The electron beam is made by bunches of electrons, in sequence. In MAMI the separation between subsequent bunches is so small that it is not possible, with the available instrumentation, to distinguish it from a continuous flow of particles.}, high intensity, polarized beam for nuclear physics fixed-target experiments. The concept of the Mainz microtron accelerator was developed in the early 1970s, when the researchers of the nuclear physics institute were investigating the possibility of generalizing the concept of the racetrack microtron (RTM), that consists in a linear accelerator (linac) and two deflection magnets ($180^{\circ}$ magnet, see figure \ref{fig:RaceTrackSketch}). The particles recirculate, due to the deflection magnets, several times in the linac, and each time they gain energy.  The goal of the collaboration which developed MAMI was to produce a continuous beam, with energies above $\SI{1}{\giga \electronvolt}$ and beam intensities up to $\SI{100}{\micro \ampere}$.
+MAMI is the electron accelerator located in Mainz, which provides a continuous wave \footnote{The electron beam is made by bunches of electrons, in sequence. In MAMI the separation between subsequent bunches is so small that it is not possible, with the available instrumentation, to distinguish it from a continuous flow of particles.}, high intensity, polarized beam for nuclear physics fixed-target experiments. The concept of the Mainz microtron accelerator was developed in the early 1970s, when the researchers of the nuclear physics institute were investigating the possibility of generalizing the concept of the racetrack microtron (RTM), that consists in a linear accelerator (linac) and two deflection magnets ($180^{\circ}$ magnet, see figure \ref{fig:RaceTrackSketch}). The bending magnets make the particles recirculate several times in the linac, and each time they gain energy. MAMI is developed to produce a continuous beam, with energies above $\SI{1}{\giga \electronvolt}$ and beam intensities starting from $\SI{1}{\nano \ampere}$ up to $\SI{100}{\micro \ampere}$.
 
 \begin{figure}[hbtp]
 
@@ -48,32 +47,32 @@ MAMI is the electron accelerator located in Mainz, which provides a continuous w
 \label{fig:RaceTrackSketch}
 \end{figure}
 
-A racetrack microtron, is characterized by the energy gain per-cycle $\delta E$ given by the high-frequency electromagnetic field (HF). The energy gain for a single acceleration cavity of the linac is: 
+A racetrack microtron is characterized by the energy gain per-cycle, $\delta E$, given by the high-frequency electromagnetic field (HF). The energy gain for a single acceleration cavity of the linac is: 
 
 \begin{align*}
 \delta E \, = \, e U_{Linac} \cdot cos(\phi)
 \end{align*} 
 
-$U_{Linac}$ is the maximum voltage of the linac, and $\phi$ is the phase of the beam relative to the maximum of HF. Because the particle are accelerated by the linac, the beam consist in individual packets (bunches) whose rate correspond to the frequency of HF. In order for the electrons to be accelerated for each recirculation step, they must arrive at the beginning of the linac with the correct phase $\phi$. Therefore the flight-time per cycle must be an integer or a multiple of the HF period. The time of flight is made of two terms: the first is the time that an electron needs to travel in the magnetic field of two $180^{\circ}$ bending magnets, that is the cyclotron period, while the second term is given by the straight sections. 
+$U_{Linac}$ is the maximum voltage of the linac, and $\phi$ is the phase of the beam relative to the maximum of HF. The beam consist in individual packets (bunches) of electrons, whose rate correspond to the frequency of HF. To be accelerated during each recirculation step, the electron bunches must arrive at entrance of the linac with the correct phase $\phi$. Therefore the electron time of flight per cycle must be an integer or a multiple of the HF period. The time of flight is made of two terms: the first is the time needed to travel in the magnetic field of two $180^{\circ}$ bending magnets, equal to the cyclotron period; the second term is instead given by the straight sections, and remains constant for relativistic motion. 
 
 \begin{equation} \label{eq:TimeofFlight}
 T = \dfrac{2 \pi \gamma m_{e} }{qB} + \dfrac{L}{v}
 \end{equation}
 
-where $B$ is the magnetic field, $q$ and $m_{e}$ are the charge and mass of the electron, and $L$ is the length of the straight section of the accelerator. The frequency is the given by the formula:
+where $B$ is the magnetic field, $q$ and $m_{e}$ are the charge and mass of the electron, and $L$ is the length of the straight section of the accelerator. The frequency is given by the formula:
 
 \begin{equation} \label{eq:frequency}
 f = \dfrac{qB}{2 \pi \gamma m_{e} + \frac{LqB}{v}} 
 \end{equation}
 
-From this overview two conclusion can be drawn:
+From these two equations two conclusion can be drawn:
 
 \begin{itemize}
 \item To accelerate slow electrons, with $\gamma = (1,10)$, a magnetic field of $\SI{0.1}{\tesla}$ is used, in order to work with frequencies of ($\SI{2}{\giga \hertz}$,$\SI{4}{\giga \hertz}$), that are easy to control. However with higher energies, and with a small magnetic field, the bending radii is higher and uneconomical.
 \item For high energy electrons $\gamma > 10$, to reduce the size of the deflection magnets, it is useful to increase the magnetic field up to $\SI{1}{\tesla}$ of more, with the same band of frequencies $\simeq \SI{}{\giga \hertz}$.
 \end{itemize}
 
-These conclusions justify the structure of MAMI: a cascade of microtrons to reach progressively higher energies with the same acceleration frequency at each stage. MAMI is composed by a sequence of 4 different microtrons, reaching $\SI{1.6}{\giga \electronvolt}$. 
+This justify the structure of MAMI: a cascade of microtrons to reach progressively higher energies, with the same acceleration frequency at each stage. In MAMI there is a sequence of 4 different microtrons, that are able to accelerate particle up to $\SI{1.6}{\giga \electronvolt}$. 
 
 \begin{figure}[hbtp]
 \centering
@@ -82,7 +81,7 @@ These conclusions justify the structure of MAMI: a cascade of microtrons to reac
 \label{fig:Accelerator}
 \end{figure}
 
-The first stage, shown in figure \ref{fig:Accelerator}, is composed by two small microtrons. The first microtron RTM1 accelerate the particles to $\SI{14}{\mega \electronvolt}$ in 18 revolutions. The electrons are then sent to the second microtron that can accelerate up to $\SI{180}{\mega \electronvolt}$. After passing the first stage, the beam is sent to the RTM3 (race track microtron 3), a large microtron with an end point energy of $\SI{855}{\mega \electronvolt}$. These 3 microtrons forms MAMI-B, which started operation in 1990-91. A fourth stage, MAMI-C, was built and started operation in 2007. This fourth stage is made by 4 bending magnets, with a bending angle of $90^{\circ}$, and it is designed to achieve energies of $\SI{1.6}{\giga \electronvolt}$. The design is different from the other race-track microtrons, and will not be explained, as it is not necessary for the experiment to reach such high energies.
+The first stage, shown in figure \ref{fig:Accelerator}, is composed by two small microtrons. The first microtron, RTM1, accelerates the particles up to $\SI{14}{\mega \electronvolt}$ in 18 revolutions. Then the electrons are sent to the RTM2, second microtron that can reach an energy of $\SI{180}{\mega \electronvolt}$. After passing this first stage, the beam is directed towards the RTM3 (race track microtron 3), in the adjacent room, that is large microtron with an end point energy of $\SI{855}{\mega \electronvolt}$. The sequence of RTM1, RTM2 and RTM3 forms MAMI-B, which is operating since 1990-91. A fourth stage, MAMI-C, was built and started operation in 2007. This fourth stage is made by 4 bending magnets, with a bending angle of $90^{\circ}$, and it is designed to achieve energies of $\SI{1.6}{\giga \electronvolt}$. MAMI-C design is different from the other race-track microtrons, and it is not discussed, as it is not necessary for the experiment to reach such high energies.
 
 \begin{figure}[hbtp]
 \centering
@@ -90,25 +89,25 @@ The first stage, shown in figure \ref{fig:Accelerator}, is composed by two small
 \caption{Picture of the Racetrack RTM3 in MAMI-B. The Green square at the bottom is one of the deflector magnets, the other one is below the point where the photo was taken. The linac stage is on the left. The tubes at the center of the figure are the paths that the particle cross during the recirculation. The further away from the linac the greater the energy.}
 \end{figure}
 
-The operation principles of a microtron are simple to be described. First we consider the gyro-radius for relativist electrons of energy $E$, that is:
+The operation principles of a microtron is simple to be described. First we consider the gyro-radius for relativist electrons of energy $E$, that is:
 
 \begin{equation}
 \qquad r = \dfrac{E \beta}{qcB}
 \end{equation}
 
-To have a coherent conditions, we must have that the flight-time $\tau = \frac{\lambda}{c}$ of the first recirculation must be an integer multiple of the HF wavelength $\lambda_{HF} = \frac{c}{f_{HF}}$, see equation \ref{eq:frequency}. This means that:
+To have a coherent conditions, we must have that the flight time $\tau = \frac{\lambda}{c}$ of the first recirculation must be an integer multiple of the HF wavelength $\lambda_{HF} = \frac{c}{f_{HF}}$, as shown in equation \ref{eq:frequency}. This means that:
 
 \begin{align*}
 \lambda = \tau c =\dfrac{ 2 \pi c r }{\beta c} + \frac{Lc}{v} = \dfrac{2 \pi E}{q B} + L = m \lambda_{HF}
 \end{align*}
 
-For the other recirculation, we must have that the flight-time at energies $E_{n} = E_{n-1} + \delta E$ must be increased by an integer multiple of HF, too. This lead to the second equation:
+For the subsequent recirculations, the flight-time at energies $E_{n} = E_{n-1} + \delta E$ must be increased by an integer multiple of HF, too. This lead to a second equation:
 
 \begin{align*}
 \dfrac{2 \pi \delta E}{q B} = n \lambda_{HF}
 \end{align*}
 
-The minimum gain per cycle is then determined only by the strength of the magnetic field and wavelength $\lambda_{HF}$. These two equations together controls the dynamic of the race-track microtrons.
+The minimum gain per cycle is then determined only by the strength of the magnetic field and wavelength $\lambda_{HF}$. The system of these two equations controls the dynamic of the race-track microtrons, and determines the working point of the accelerator.
 
 \subsection{Polarized Beam}
 
