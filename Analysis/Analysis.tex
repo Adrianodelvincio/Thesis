@@ -2,9 +2,7 @@
 
 \paragraph{}
 In this chapter we discuss the electronic test that have been carried out in the laboratory, and the calibrations needed in order to calculate, from the raw data, the quantities needed for the analysis.
-The test in the lab consisted in checking that the photo-multipliers and the data acquisition electronics.
-The calibrations consist in the determination of the scaling factors, needed by the analysis program, to convert the raw data collected by the \textit{VFC}s to data in physical units. The important beam parameters are the impact point coordinates of the beam $X,Y$, the beam energy $E$, the beam current $I$ and the scattering angles $\theta_{x}$ and $\theta_{y}$. In the end, we discuss the auto-calibration procedure, to remove non-desired effects due to the presence of an offset in the PMTs counts.
-
+The test in the lab consisted in checking the photo-multipliers tubes and the data acquisition electronics. The calibrations consist of determining the scaling factors required by the analysis program, to convert the raw data collected by the \textit{VFC}s to data in physical units. The important beam parameters are the impact point coordinates of the beam $X,Y$, the beam energy $E$, the beam current $I$ and the scattering angles $\theta_{x}$ and $\theta_{y}$. In the end, we discuss the auto-calibration procedure, which eliminates undesirable effects caused by the presence of an offset in the PMTs counts.
 
 \section{Nino Board}
 
@@ -326,25 +324,23 @@ The $Q^{2}$ values are the same of the last measurement performed at MAMI, and a
 \subsection{Alignment of the Scattering Plane.}
 
 The scattered electrons are deflected upward by the magnetic field inside the spectrometers A and B. However, the spectrometer detectors and systems are not directly used to measure the transverse asymmetry, due to the high current intensity, which would damage the electronics.
-Instead of the spectrometer detectors, the scattered electrons are measured by the two detectors A and B, described in section \ref{detectors}, installed between the drift chamber and the scintillator panel (see figure \ref{fig:internal}). So the scattered particles must be aligned to the fused-silica bars.
-This procedure is performed using a low current mode of the beam ($I = \SI{5}{\nano \ampere}$). For this mode the spectrometer systems can be used to detect the particles. Because we know the position of our detector A and B inside the spectrometers, we can use the Cherenkov detector to visualize where the electrons are deflected. Changing the configuration of the magnetic field, the electrons trajectory is oriented in such a way that is intersects the detectors A and B. For detector A the scattered electron beam has been aligned to pass over the fused silica in correspondence of PMT A7. For detector B the same procedure was done, aligning the scattered beam in correspondence of PMT B0. 
- Once we achieved a good alignment, we turned off the spectrometers system, performing the other necessary calibrations with only detector A and B. 
+Consequently, the scattered electrons are measured by the detectors A and B, described in section \ref{detectors}, which are installed between the drift chamber and the scintillator panel (see figure \ref{fig:internal}) of the spectrometers. At the start of the experiment, the scattered particles must be aligned to the fused-silica bars.
+This procedure is performed using a low current mode of the beam ($I = \SI{5}{\nano \ampere}$). For this mode the spectrometer systems can be used to detect the particles. Since the position of our detector A and B  inside the spectrometers is known, we can use the Cherenkov detector to visualize where the electrons. Changing the configuration of the magnetic field, the electrons trajectory is oriented in such a way that is intersects the detectors A and B. For detector A the scattered electron beam has been aligned to pass over the fused silica in correspondence of PMT A7, therefore this PMT measures higher rates. For detector B the same procedure was done, aligning the scattered beam in correspondence of PMT B0. Once the alignment is done, we turned off the spectrometers system, performing the other necessary calibrations with the detector A and B. 
 
 \subsection{Beam Monitor Calibration, XY Monitor} \label{XYpos}
 
-For the calibration of the X Y monitors, special targets are used. In the target frame (see figure \ref{fig:targetFrame}) there are two targets made by three carbon wires that are mounted at a known distance from each other, horizontally and vertically aligned. 
+The values measured by the beam monitors are digitalized by the VFCs. The analysis program converts the raw counts in voltage values with the formula shown in equation \ref{eq:Vfc}. For the calibration of the XY position monitors, special targets are used. In the target frame (see figure \ref{fig:targetFrame}) there are two targets made by three carbon wires that are mounted at a known distance from each other, horizontally and vertically aligned. 
 
-\begin{wrapfloat}{figure}{I}{0.4\textwidth}
+\begin{wrapfloat}{figure}{I}{0.5\textwidth}
 \centering
-\includegraphics[width = 0.4\textwidth]{ExperimentalSetup/target.pdf}
+\includegraphics[width = 0.45\textwidth]{ExperimentalSetup/target.pdf}
 \caption{\label{fig:targetFrame} Target frame, on the top the three carbon wires that are used to calibrate the positions monitors. Then the carbon target and two lead targets.}
 \vspace{-0pt}
 \end{wrapfloat}
 
-The distance between the center of the two external wires is measured, to be $ d_{horizontal} = \SI{2.38}{\milli \meter}$ for the horizontal wires and $d_{vertical} = \SI{2.33}{\milli \meter}$ for the vertical wires. The procedure to measure the scaling factor used to convert from the raw-data in $\SI{}{\volt}$ to $\SI{}{\micro \meter}$, is the following: we ask MAMI operators to slowly change the beam position, in the horizontal and vertical direction for the horizontal and vertical target. The beam position can be changed by varying the magnetic field produced by the \textit{Wobbler 16} magnets (see figure \ref{fig:BeamLine}). 
-During this slow variation, the detectors measure the rate of scattered electrons, that increases when the beam hits one of the three wires and decreases when the beam is centered between two wires. We plot the detector counts versus the $XY$ monitors values, in voltage, and we estimate the position of the two external peaks. This values can be used, together with the distance $d_{horizontal},d_{vertical}$ already measured, to compute the scaling factors. This procedure is repeated for $X21/Y21$ and $X25/Y25$ monitors. We plot the PMT rate versus the $X25,X21,Y25,Y21$, given in $\SI{}{\volt}$. 
-To identify the three peaks in of the carbon target, we fit the data using a gaussian model (see figure \ref{fig:HorizontalCalibration}). The mean $\mu$ represents the center of the wire, given in $\SI{}{\volt}$.
-Looking at the Beam line, we assume that the beam travels in a straight line. Let's consider the \textit{Wobbler 16} magnet the "$0$" of a coordinate system, with the $z$ axis pointing to the target (left direction in the beam scheme).
+The distance between the center of the two external wires is measured, to be $ d_{horizontal} = \SI{2.38}{\milli \meter}$ for the horizontal wires and $d_{vertical} = \SI{2.33}{\milli \meter}$ for the vertical wires. The procedure to measure the scaling factor used to convert from the raw-data in $\SI{}{\volt}$ to $\SI{}{\micro \meter}$, is the following: we ask MAMI operators to gradually shift the beam position, in the horizontal direction horizontal wire target and in the vertical direction for the vertical target. The beam position is changed by varying the magnetic field produced by the \textit{Wobbler 16} magnets (see figure \ref{fig:BeamLine}). During the position shift, the detectors measure the rate of scattered electrons, that increases when the beam hits one of the three wires and decreases when the beam is centered between two wires. We plot the detector counts versus the $XY$ monitors values, in voltage, and we estimate the position of the two external peaks. This values can be used, together with the distance $d_{horizontal},d_{vertical}$ already measured, to compute the scaling factors. This procedure is repeated for $X21/Y21$ and $X25/Y25$ monitors. We plot the PMT rate versus the $X25,X21,Y25,Y21$, given in $\SI{}{\volt}$. 
+To identify the three peaks of the carbon target, we fit the data using a gaussian model (see figure \ref{fig:HorizontalCalibration}). The mean $\mu$ represents the center of the wire, given in $\SI{}{\volt}$.
+We assume that the beam travels in a straight line beginning at the \textit{Wobbler 16} magnet, that in our convection is the origin of coordinate system, with the $z$ axis oriented toward to the target (left direction in the beam scheme).
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width = 0.75\textwidth]{figures/XYMOCalibBeamLine.pdf}
@@ -352,19 +348,19 @@ Looking at the Beam line, we assume that the beam travels in a straight line. Le
 \label{fig:BeamLine}
 \end{figure} 
 
-The Beam parameters are measured by the Monitors $X/Y_{21}, X/Y_{25}$, which are located at some distance respect to the target. Suppose we are working only with the $Y_{25}$ monitor (the procedure is the same for the others). The Beam $y$ position is described by:
+The Beam parameters are measured by the Monitors $X/Y_{21}, X/Y_{25}$, which are located at some distance with respect to the target. For the $Y_{25}$ monitor (the procedure is the same for the others) the beam $y$ position is described by:
 
 \begin{align*}
-Y_{beam} = m \cdot (Z - Z_{wobbler 16})
+Y_{beam} = m \cdot (Z_{Y25})
 \end{align*}
 
-In the scheme \ref{fig:BeamLine} the distance between the various monitor is reported. The longitudinal distance between $Y_{25}$ monitor and the \textit{wobbler 16} magnet is $Z - Z_{wobbler16} = \SI{1.57}{\meter}$. The Position on the target is given by $Y_{target} = m \cdot Z_{target}$. With these simple equations then:
+Where $Z_{Y25}$ is the longitudinal distance between the \textit{wobbler16} magnet and the $Y25$ monitor. From the scheme \ref{fig:BeamLine}, the longitudinal distance between $Y_{25}$ monitor and the \textit{wobbler16} magnet is $\SI{1.57}{\meter}$. The Position on the target is given by $Y_{target} = m \cdot Z_{target}$. The scaling factor is given by:
 
 \begin{equation}
 c_{Y25} = \dfrac{d_{vertical} [\SI{}{\milli \meter}]}{ Y_{target}} 
 \end{equation}
 
-$c_{Y25}$ indicates the scaling factor of the monitor. This procedure is repeated and the scaling factor $c_{Y25}$, $c_{Y21}$ , $c_{X25}$, $c_{X21}$ are measured. The analysis program uses these quantities to compute the beam position on the target, and from that the incident angles in the $X,Y$ directions, which are needed for the analysis.
+where $c_{Y25}$ indicates the scaling factor of the monitor. This procedure is repeated for all the monitors, and the scaling factor $c_{Y25}$, $c_{Y21}$ , $c_{X25}$, $c_{X21}$ are measured. The analysis program uses these quantities to compute the beam position on the target, and from that the incident angles with respect to the $X,Y$ directions, which are needed for the analysis.
 
 \begin{figure}[hbtp]
 \centering
@@ -376,18 +372,16 @@ $c_{Y25}$ indicates the scaling factor of the monitor. This procedure is repeate
 \label{fig:HorizontalCalibration}
 \end{figure}
 
-With the scaling factor, the analysis program can calculate $X$ and $Y$ values in the correct physical units. The final result are reported in the plot \ref{fig:CheckHori}; the distance between the two external peaks in the PMT counts are in agreement with the distance $d_{x}  = \SI{2.38}{\milli \meter}$.
- 
-\begin{figure}[hbtp]
+The analysis program calculate $X$ and $Y$ values in \SI{}{\micro \meter}, combining the values measured by the two monitors (see figure \ref{fig:BeamTraje}).
+
+\begin{figure}[!hbtp]
 \centering
-\includegraphics[width=0.45\textwidth]{Analysis/XcheckB.pdf} 
-\includegraphics[width=0.45\textwidth]{Analysis/XcheckA.pdf}
-\caption{plot of the PMT Count against the physical values computed by the analysis program. Now the position of the three peaks correspond to the expected values measured for the target.}
-\label{fig:CheckHori}
+\includegraphics[scale=0.75]{Appendix/scheme.pdf}
+\caption{Figure of the beam trajectory, the position $X$ and $Y$ are measured by the monitors (blue boxes). Assuming a linear motion of the particles, the hitting positions on the target are computed.}
+\label{fig:BeamTraje}
 \end{figure}
 
-For brevity, we report only the plot for the $X$ position. The result for $Y$ are analogous. The position $X$ and $Y$ are computed combining the values measured by the two monitors (see figure \ref{fig:BeamTraje}).
-For the calculation of the position the reference system has the origin coincident to the center of the target. The beam trajectory is described by the following equation:
+The functions used are implemented considering a reference system with the origin coincident to the center of the target, and the $Z$ axis oriented towards the \textit{Wobbler16} magnet. The beam trajectory is described by the following equation:
 
 \begin{align*}
 y &= m_{y} \cdot z + q_{y} \\
@@ -406,23 +400,30 @@ the solution for $q_{y}$ is identical. The scattering angles $\theta_{x}$ and $\
 \begin{equation}
 \theta_{x} = \dfrac{X_{25} - X_{21}}{Z_{25} - Z_{21}}
 \end{equation}
+
+To check that the functions are well implemented, we plot in figure \ref{fig:CheckHori} the PMTs counts versus the $X$ beam position on the target. the distance between the two external peaks, reported in the plot, is in agreement with the expected distance $d_{x}  = \SI{2.38}{\milli \meter}$.
+ 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[scale=0.75]{Appendix/scheme.pdf}
-\caption{Figure of the beam trajectory, the position $X$ and $Y$ are measured by the monitors (blue boxes). Assuming a linear motion of the particles, the hitting positions on the target are computed.}
-\label{fig:BeamTraje}
+\includegraphics[width=0.45\textwidth]{Analysis/XcheckB.pdf} 
+\includegraphics[width=0.45\textwidth]{Analysis/XcheckA.pdf}
+\caption{Plot of the PMT Count versus the X and Y positions given in \SI{}{\milli \meter}.}
+\label{fig:CheckHori}
 \end{figure}
+
+For brevity, we report only the plot for the $X$ position. The result for $Y$ are analogous.
 
 \subsection{Current (PIMO) Calibration} \label{CurrentCalibration}
 
-The last two calibration needed for the analysis are the energy and the current of the beam, which are indicated with PIMO (current monitor) and ENMO (energy monitor). The values that we measure are given by VFCs counts, that are explained in section \ref{VFCss}. We need to determine the scaling factor and possible offsets to convert these quantities in physical units. For this beam time the current is measured in $\SI{}{\micro \ampere}$ and the beam energy is given in $\SI{}{\kilo \electronvolt}$.
+Other two calibration parameters required are about the energy and the current of the beam, and are measured with PIMO (current monitor) and ENMO (energy monitor).  In the analysis, the current is given in $\SI{}{\micro \ampere}$ and the beam energy in $\SI{}{\kilo \electronvolt}$.
 
-For the current monitors I13 and I21, the raw counts are converted in digitalized voltage values with the formula shown in equation \ref{eq:Vfc}. The relation between these values given in $\SI{}{\volt}$ and the real values in $\SI{}{\micro \ampere}$ and $\SI{}{\electronvolt}$ is linear:
+The relation between the values measured in $\SI{}{\volt}$ units and the real values in $\SI{}{\micro \ampere}$ and $\SI{}{\electronvolt}$ is linear:
+
 \begin{align*}
 I(\SI{}{\micro \ampere}) = m I(\SI{}{\volt}) + q
 \end{align*}
 
-To determine the two coefficients, the beam current was raised from $\SI{10}{\micro \ampere}$ to $\SI{22}{\micro \ampere}$ in several step. For each step we compare the nominal values of the current with the values in $\SI{}{\volt}$ measured. The following plot show the procedure described:
+For the current monitor, the two coefficients are determined raising the beam current from $\SI{10}{\micro \ampere}$ to $\SI{22}{\micro \ampere}$ in several step. For each step we compare the nominal values of the current with the values measured in $\SI{}{\volt}$, the values are shown in figure \ref{fig:ScanCurrent}
 
 \begin{figure}[ht]
 \centering
@@ -431,7 +432,7 @@ To determine the two coefficients, the beam current was raised from $\SI{10}{\mi
 \label{fig:ScanCurrent}
 \end{figure}
 
-The calibrations consist in retrieving $m$ and $q$ with a linear fit. Then the parameters are added in the standard configuration file, together with the other calibration parameters, and can be loaded by the analysis program to process the data.  
+with a linear fit, $m$ and $q$ are determined. These parameters are added in the standard configuration file, where the analysis program loads all the coefficients needed to process the data.
 
 \begin{figure}[hbtp]
 \centering
@@ -441,40 +442,47 @@ The calibrations consist in retrieving $m$ and $q$ with a linear fit. Then the p
 \label{fig:PimoCalib}
 \end{figure}
 
-The values obtained from the fit of nominal beam current vs. voltage values are shown in the figure \ref{fig:PimoCalib}. The $\chi^{2}$ values are higher than the expected. This is not unexpected, the errors in both the plots are computed with the sampling standard deviation formula applied to the sequence of voltage values $I21 \, I13$ ($\sigma_{vfc}$, the standard deviation computed for each step in plot \ref{fig:ScanCurrent}), and it is related to precision of the analog to digital converter VFCs. The errors are then propagated to the $y$ axis showed in the plot. 
-Yet, we are underestimating the error associated with the nominal beam current $I$ set by the accelerator operators, whose  accuracy is not known. We suspect that is not negligible compared to $\sigma_{VFCs}$.
+The coefficients measured with the fit are shown in the figure \ref{fig:PimoCalib}. The errors shown in both the plots are given by the sampling standard deviation formula, applied to each step in plot \ref{fig:ScanCurrent}. The error $\sigma_{vfc}$ is related to uncertainty of VFCs and beam monitors, and is propagated to the $y$ axis. 
+Yet, we are underestimating the error associated with the nominal beam current $I$, whose accuracy is not known. We suspect that is not negligible compared to $\sigma_{vfc}$.
 
 \subsection{Energy Monitor (ENMO) calibration.} 
 
-The ENMO calibration is performed in a different way from the other monitors. The energy calibrations are performed by MAMI operators, and exploit the polarity signal which controls the beam polarization at the source of the acceleration. MAMI operators use the signal to create artificially a difference in the beam energy that is correlated to the beam polarization, with the last two sub-events having a higher energy with respect to the first two. The energy difference is nominally $\SI{22.6}{\kilo \electronvolt}$. Because we know the nominal difference, the calibration consist in computing the correct scaling factor which convert from $\SI{}{\volt}$ to $\SI{}{\kilo \electronvolt}$. The quantity that is relevant for the calibration is $\delta E$ (with $E_{18}$ being the energy monitor) is:
+The ENMO calibration is performed in a different way from the other monitors. exploiting the polarity signal which controls the beam polarization at the source of the acceleration. The MAMI operators use the signal to create artificially a difference in the beam energy that is correlated to the beam polarization, with the last two sub-events having a higher energy with respect to the first two. The energy difference is nominally $\SI{22.6}{\kilo \electronvolt}$. Since the nominal difference is known, the scaling factor which convert from $\SI{}{\volt}$ to $\SI{}{\kilo \electronvolt}$ is easy to compute. The energy difference between the sub-events $\delta E$ (with $E_{18}$ being the energy monitor) is defined as:
 
 \begin{equation*}
 \delta E = \frac{E_{18}[2] + E_{18}[3]}{2} - \frac{E_{18}[0] + E_{18}[1]}{2} 
 \end{equation*}
 
-An histogram of $\delta E$ should show a single peak whose values correspond to $\SI{22.6}{\kilo \electronvolt}$.
-For this calibration, we took 3 different acquisition, which differ for the different values of the beam current. We remind that, as the output voltage signal from the XY monitor, also the energy monitor is proportional to the current, as mentioned in equation \ref{eq:SignalToVfc}. The relation between energy $E \, \SI{}{\kilo \electronvolt}$ and the signal amplitude of the energy monitor $U \, \SI{}{\volt}$ is given by equation \ref{eq:EnergyVolt}
+The measured values of $\delta E$ are shown in an histogram in figure \ref{fig:EnergyCalibration}. Three runs, collected with different currents of the beam, were collected. As the output voltage signal from the XY monitor, also the energy monitor is proportional to the current, as mentioned in equation \ref{eq:SignalToVfc}. The relation between energy $E \, \SI{}{\kilo \electronvolt}$ and the signal amplitude of the energy monitor $U \, \SI{}{\volt}$ is given by:
 
 \begin{equation} \label{eq:EnergyVolt}
  E \, [\SI{}{\kilo \electronvolt}] = c_{E} \cdot \dfrac{ U \, [\SI{}{\volt}]}{i}
 \end{equation}
 
-So, if we invert the relation we have that:
+So, if we invert the relation, we have that:
 
 \begin{equation}
 c_{E} = \frac{E}{U} \, \cdot i
 \end{equation}  
 
-This is the final formula to compute the correct conversion factor for the energy monitor. For this calibration we have 3 different acquisition, that differs only for the beam current. For one acquisition we set the beam current to $0$, to observe the presence of an offset. For the other two we set the current to $\SI{15}{\micro \ampere}$ and $\SI{20}{\micro \ampere}$.
+This is the formula to compute the conversion factor for the energy monitor. The beam current was set to 0, \SI{15}{\micro \ampere} and \SI{20}{\micro \ampere}. The run with zero current is useful to check presence of an offset.
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width = 0.45\textwidth]{Analysis/ENMOvoltage20.pdf}
 \includegraphics[width = 0.45\textwidth]{Analysis/ENMOvoltage15.pdf} 
 \caption{Histograms or $\delta E$ with the beam current $\SI{20}{\micro \ampere}$ on the left and $\SI{15}{\micro \ampere}$ on the right.}
+\label{fig:EnergyCalibration}
 \end{figure}
 
-For these three values of $\delta E$ we perform a linear fit, studying the dependence on the beam current, which is expected to be linear (see figure \ref{fig:EnmoFit}).
+
+To study the dependence on the current, a linear fit is done (see figure \ref{fig:EnmoFit}). The $c_{E}$ conversion parameter is obtained taking the coefficient parameter $m$ from the fit and substituting in the expression:
+
+\begin{align*}
+C_{E} =  \frac{\SI{22.6}{\kilo \electronvolt}}{m}
+\end{align*}
+
+From this we obtain the value $c_{E} = +1595.2$ necessary to convert from Voltage units to $\SI{}{\kilo \electronvolt}$.
 
 \begin{figure}[!h]
 \centering
@@ -483,13 +491,7 @@ For these three values of $\delta E$ we perform a linear fit, studying the depen
 \label{fig:EnmoFit}
 \end{figure}
 
-The $c_{E}$ conversion parameter is obtained taking the coefficient parameter $m$ from the fit and substituting in the expression:
-
-\begin{align*}
-C_{E} =  \frac{\SI{22.6}{\kilo \electronvolt}}{m}
-\end{align*}
-
-From this we obtain the value $c_{E} = +1595.2$ necessary to convert from Voltage units to $\SI{}{\kilo \electronvolt}$. Using the value, we can show an histogram of $\delta E$ in physical units, as a check of our procedure (see figure \ref{fig:CheckEnmo})
+To check the procedure, in figure \ref{fig:CheckEnmo} we plot $\delta E$ given in physical units. For \SI{15}{\micro \ampere} $\delta E = 23.519 \pm 0.014 \SI{}{\kilo \electronvolt}$ and for \SI{20}{\micro \ampere} $\delta E = 22.600 \pm 0.007 \SI{}{\kilo \electronvolt}$.
 
 \begin{figure}[!h]
 \centering
@@ -499,7 +501,7 @@ From this we obtain the value $c_{E} = +1595.2$ necessary to convert from Voltag
 \label{fig:CheckEnmo}
 \end{figure}
 
-
+\newpage
 \subsection{Calibration of the PMTs} \label{PMTsCalib}
 
 Several scans in attenuation of the NINO board were performed on the beam, to choose the best working point for the PMTs of the detectors. The same procedure used in the laboratory was followed: with a beam intensity of $\SI{10}{\micro \ampere}$ we acquired data runs one minute long, varying the attenuation. 
@@ -655,17 +657,24 @@ In this way every three hours the PMT are corrected, taking care also of the pos
 
 \begin{figure}[!hbtp]
 \centering
-\subfloat[][\emph{Current scan for detector A, the error are \\ multiplied by a factor of $20$.}]{
+\subfloat[][\emph{Current scan for detector A, the error are multiplied by a factor of $20$.}]{
 \includegraphics[width = 0.49\textwidth]{Analysis/Autocalib/fitA0-3.pdf}}
-\subfloat[][\emph{Current scan for detector A, the error are \\ multiplied by a factor of $20$.}]{
-\includegraphics[width = 0.49\textwidth]{Analysis/Autocalib/fitA4-7.pdf}} \\
-\subfloat[][\emph{Current scan for detector B, the error are multiplied by a factor of $20$.}]{
-\includegraphics[width = 0.5\textwidth]{Analysis/Autocalib/fitB.pdf}} \\
-%\caption{PMT Rates vs current (from I21 monitor), linear model is used to fit the data.}
+\subfloat[][\emph{Current scan for detector A, the error are multiplied by a factor of $20$.}]{
+\includegraphics[width = 0.49\textwidth]{Analysis/Autocalib/fitA4-7.pdf}}
+\caption{PMT Rates vs current (from I21 monitor), linear model is used to fit the data.} 
+\label{fig:AutocalibFit}
 \end{figure}
 
-The figures are referred to the data acquired for the first auto-calibration. We report the values of slope and offset measured during the first auto-calibration run. These data are valuable because we can compute the decreasing factor $c$ that appears in equation \ref{eq:Systematic}:
-\begin{table}[h]
+\begin{figure}[!hbtp]
+\centering
+\subfloat[][\emph{Current scan for detector B, the error are multiplied by a factor of $20$.}]{
+\includegraphics[width = 0.5\textwidth]{Analysis/Autocalib/fitB.pdf}} \\
+\caption{PMT Rates vs current (from I21 monitor), linear model is used to fit the data.} 
+\label{fig:AutoBcalibFit}
+\end{figure}
+
+The figures shown in \ref{fig:AutocalibFit} and \ref{fig:AutoBcalibFit} are referred to the data acquired for the first auto-calibration run; the values of slope and offset measured during the first auto-calibration are in table \ref{tab:PMToffset}. These data are valuable because we can compute $c$, the factor that appears in equation \ref{eq:Systematic}:
+\begin{table}[!h]
 \centering
 \begin{tabular}{c|c|c|c}
 \hline
@@ -685,7 +694,7 @@ The figures are referred to the data acquired for the first auto-calibration. We
 \hline
 \end{tabular}
 \caption{Angular coefficient and offset obtained for the auto-calibration. The third column is contains the estimation of $c$, as defined in equation \ref{eq:Systematic}}
-\label{table:PMToffset}
+\label{tab:PMToffset}
 \end{table}
 
 Ignoring the presence of the offset leads to two consequences: the reconstructed asymmetry is lower, on average $ \simeq 10\%$ less than expected, and the counts are overestimated. Because the error depend on the PMT counts, as seen in equation \ref{eq:Error}, this two effect combined add up and decrease the accuracy of the asymmetry measurement
@@ -693,23 +702,23 @@ The value $c$ reported in the chapter \ref{result} can be compared with $c$ in t
 
 \section{Data Tree Implementation}
 
-Referring to figure \ref{fig:EventStructure}, we now discuss briefly the structure of the data that is implemented in the analysis program, important to clarify how data analysis will be developed.
-The base class that is implemented in the analysis program is the \textit{Event} class. As we mention above in section \ref{FirstDescription}, we do not intend to keep track of the single scattered electron, instead we analyze time series of $\SI{80}{\milli \second}$, in which we simply count all the electrons detected in this time interval. The work-flow of the analysis program is load the binary file collected during the beam time, parsing  one event at a time and processing the raw-data from the beam monitors and the detectors. During the execution of the program data files in \textit{.txt} are generated and filled with the processed data ready. The output data-file can be analyzed with any software package, such as root or python, to get the value of the asymmetry $A_{n}$. 
-The picture shows that every event is divided into $4$ sub-events. For each different sub-event a precise state of the polarization is defined, 
-$+1$ for $S = \uparrow$ and $-1$ for $S = \downarrow$. Every sub-event is $\SI{20}{\milli \second}$ long; during this time interval master-board receives all the data coming from the monitors and the detectors and sent them to the data-acquisition program (DAQ) that produces the binary-files, which are the input of the main analy\begin{figure}[hbtp]
+We now discuss briefly the structure of the data that is implemented in the analysis program, important to clarify how data analysis will be developed.
+The base class that is implemented in the analysis program is the \textit{Event} class. As we mention above in section \ref{FirstDescription}, we do not intend to keep track of the single scattered electron, instead we analyze time series of $\SI{80}{\milli \second}$, in which we simply count all the electrons detected in this time interval. The work-flow of the analysis program is load the binary file collected during the beam time, parsing  one event at a time and processing the raw-data from the beam monitors and the detectors (see figure \ref{fig:DataFlow}). 
 
+\begin{figure}[!hbtp]
 \centering
 \includegraphics[width = 0.75\textwidth]{Analysis/Electronic_scheme.pdf}
 \caption{Scheme of the data flow.}
+\label{fig:DataFlow}
 \end{figure}
-sis program.
 
- It is important to note that for each sub-event, a single measurement is acquired from the beam monitors, which is intended as a time average of the various signals on the 20 milliseconds of sub-event duration. The sampling rate is then equal to $\SI{50}{\hertz}$.
+During the execution of the program data files in \textit{.txt} are generated and filled with the processed data ready. The output data-file can be analyzed with any software package, such as root or python, to get the value of the asymmetry $A_{n}$. 
+Referring to the figure \ref{fig:EventStructure}, we remind that every event is divided into $4$ sub-events. For each different sub-event a precise state of the polarization is defined, $+1$ for $S = \uparrow$ and $-1$ for $S = \downarrow$. Every sub-event is $\SI{20}{\milli \second}$ long; during this time interval master-board receives all the data coming from the monitors and the detectors and sent them to the data-acquisition program (DAQ) that produces the binary-files, which are the input of the main analysis program. It is important to note that for each sub-event, a single measurement is acquired from the beam monitors, which is intended as a time average of the various signals on the 20 milliseconds of sub-event duration. The sampling rate is then equal to $\SI{50}{\hertz}$.
 This structure of the data is quite specific. The main reason for this setup is connected with the need to avoid as much as possible that the variations of intensity, position and energy of the beams induce an effect that add to $A_{n}$. Considering only small time series, it is assumed that the beam is quite stable, in order to reduce undesired effects.
 Nevertheless, the contribution of these effects, which are indicated for brevity as false asymmetries, is considered in the final model.
 Several values are saved with the number of scattered electrons, for each event. The general structure of the data tree, with the important quantities, is reported here figure \ref{fig:DataTree}
 
-\begin{figure}[hbtp]
+\begin{figure}[!hbtp]
 \centering
 \includegraphics[width = 0.6\textwidth]{Analysis/EventClass.pdf}
 \caption{Scheme of the Event class, the structure of the data tree is explained in the appendix.}
@@ -721,11 +730,13 @@ The analysis program reads the binaries files, converts from binary to decimal v
 \chapter{Asymmetry on Carbon and Rates on Lead Target.}
 
 \paragraph{}
-After performing all the necessary calibrations, the collected data are analyzed, to determine the transverse asymmetry on carbon. In this chapter we outline the steps involved in pre-selecting the data (such as removing events with significant variations in the beam parameters) and in analyzing the asymmetry of the two detectors, in order to arrive at a single estimate of $A_{n}$. A section is dedicated to the measurement with lead target; through the measurement of the expected counts per sub-event, we calculate the amount of statistics needed to measure the transverse asymmetry on $Pb$ with an accuracy of $ \simeq 1/\ \, ppm$. Finally, we discuss the problem of the false asymmetries that can influence the final result, using different methods to calculate their contribution. The amount of data collected during the experiment is 23 hours of beam time, which corresponds roughly to 1 million of events. 
+Once the calibrations are completed, the data are analyzed, to determine the transverse asymmetry on $^{12}C$. In this chapter we outline the steps involved in pre-selecting the data and in analyzing the asymmetry of the two detectors. The amount of data collected during the experiment is 23 hours of beam time, which corresponds roughly to 1 million of events.
+
+A section is dedicated to the measurement with lead target; through these measurement, we calculate the amount of statistics needed to measure the transverse asymmetry on $Pb$ with an accuracy of $ \simeq 1/\ \, ppm$. Finally, we discuss the problem of the false asymmetries, that could influence the final result, trying to calculate their contribution directly. 
  
 \section{Model for Fitting the Data} \label{Model}
 
-One of the problems of the measurement is to take into consideration the various contributions that can change the value of the asymmetry measured by the experimental apparatus. The raw values of the asymmetry can be affected by the variation of the beam parameters during the time. Let's summarize quickly the effects that can affect the PMT counts:
+One of the problems of the measurement is to take into consideration the various contributions that can change the value of the asymmetry measured by the experimental apparatus. The PMTs counts, and consequently the measured asymmetries, can be affected by the variation of the beam parameters during the time. These effects are summarized in the list below:
 \begin{itemize}
 \item variation of the $(x,y)$ impact position of the beam on the target
 \item the variations of the incident angles $\theta_{x}$and $\theta_{y}$ on the target.
@@ -734,7 +745,7 @@ One of the problems of the measurement is to take into consideration the various
 efficiency of the source in producing electrons polarized in the two opposite directions.
 \end{itemize}
 
-All these quantities, which we will indicate in general with $\delta q$ can influence the asymmetry measurement, considering also that the expected asymmetry is in the order of ten part per million, and small asymmetries caused by fluctuations on the beam parameters are not negligible. Correcting directly the false asymmetries that arise from these uncertainties is a difficult task, and it is easier to adopt a different strategy rather than the analytical/numerical calculation of each of them. Knowing that the beam parameters produced by MAMI are quite stable over the time, we can assume that the measured asymmetry are well described by a linear model as the following:
+All these quantities, which we will indicate in general with $\delta q$, could be correlated to false asymmetries, which influence the measured values of $A_{n}$. Furthermore, $A_{n}$ is expected to be small, in the order of ten part per million, and and beam variations can not be neglected. Correcting directly the false asymmetries that arise from these uncertainties is a difficult task, and it is easier to adopt a different strategy rather than the analytical/numerical calculation of each of them. Knowing that the beam parameters produced by MAMI are quite stable over the time, we can assume that the measured asymmetry are well described by a linear model as the following:
 
 \begin{equation}
 A_{tot} = A_{physical} \cdot P + \delta_{I} + A_{x} \delta x + A_{y} \delta y + A_{\theta_{x}} \delta \theta_{x} + A_{\theta_{y}} \delta \theta_{y}+ A_{E} \delta E 
