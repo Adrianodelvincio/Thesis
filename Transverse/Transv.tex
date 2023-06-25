@@ -2,12 +2,11 @@
 \chapter{Transverse Asymmetry} \label{transv}
 
 \paragraph{}
-The theory behind the transverse asymmetry is discussed in this chapter. The \transv arises from interference between two scattering amplitudes, the exchange of one and two virtual photons, which has a close relationship to the time-reversal operator. The scattering amplitude, given by electromagnetic interaction between the incident electron and the nucleus, is discussed, as well as with the limits of the theory developed to describe the experimental data. This chapter introduces also the problem of PREX anomalous observation of zero $A_{n}$ for lead target. Following that, we discuss the general formula of $A_{n}$ and we study how the measurement accuracy varies increasing the statistics. 
+The theory behind the transverse asymmetry is discussed in this chapter. The \transv arises from interference between two scattering amplitudes, the exchange of one and two virtual photons, which has a close relationship to the time-reversal operator. The scattering amplitude, given by electromagnetic interaction between the incident electron and the nucleus, is discussed, as well as the limits of the theory which describes the experimental data. This chapter introduces also the problem of PREX anomalous observation of zero $A_{n}$ for $^{208}Pb$. In conclusion, we discuss the general formula of $A_{n}$ and we study how the measurement accuracy varies increasing the statistics. 
 
 \section{Description of the Process}
 
-The Beam Normal Single Spin Asymmetry (BNSSA) originates from the interference of two scattering processes. The theory of the electron scattering against a spin $0$ target is extensively treated in \cite{Gorchtein_2008}.
-To understand why the interference of this two scattering amplitude give rise to an asymmetry, we first have to look at the kinematics of the experiment, shown in figure \ref{fig:ScatteringSchemeFinal}
+The Beam Normal Single Spin Asymmetry (BNSSA) originates from the interference of two scattering processes. The kinematics of the experiment, shown in figure \ref{fig:ScatteringSchemeFinal}, is useful to understand why the presence of an asymmetry in the cross section is related to the time-reversal operator. The theory of the electron scattering against a spin $0$ target is extensively treated in \cite{Gorchtein_2008}
 
 \begin{figure}[hbtp] 
 \centering
@@ -16,7 +15,7 @@ To understand why the interference of this two scattering amplitude give rise to
 \label{fig:ScatteringSchemeFinal}
 \end{figure}
 
-In the figure we can compare the two situation before and after applying the Time-reversal operator, $\hat{T}$. Looking at the picture we can understand that: 
+In the figure we can compare the two situation before and after applying the time-reversal operator, $\hat{T}$. It is evident that: 
 
 \begin{itemize}
 \item Before applying $\hat{T}$, we have the incoming electron with $\vec{k}$ momenta and the nucleus with $\vec{P}$ momenta. Applying $\hat{T}$ will exchange the incoming electron and nucleus with the outgoing electron and nucleus.
@@ -30,7 +29,7 @@ The time-reversal operator exchanges the two different cases of electron scatter
 A = \frac{\sigma_{\uparrow} - \sigma_{\downarrow}}{\sigma_{\uparrow} + \sigma_{\downarrow}}
 \end{equation}
 
-A non-zero asymmetry depends on how the time-reversal act on the elastic amplitude of the process. Therefore is important to see more in detail the structure of the $\hat{T}$ operator. We know that $\hat{T}$ is an anti-unitary operator that can be always decomposed as:
+Since a non-zero asymmetry is observed, between $\sigma_{\uparrow}$ and $\sigma_{\downarrow}$ (and therefore also in the amplitudes $A_{\uparrow}$ and $A_{\downarrow}$), and given that the $\sigma_{\uparrow}$ and $\sigma_{\downarrow}$ are connected by the time-reversal transformation, we can state that the asymmetry originates by the behaviour of the scattering amplitude when $\hat{T}$ operator is applied to the system. Therefore is important to see more in detail the structure of the $\hat{T}$. $\hat{T}$ is an anti-unitary operator that can be always decomposed as:
 
 \begin{align*}
 \hat{T} = U \cdot K
@@ -52,7 +51,7 @@ At the $\alpha$ leading order, the two scattering processes that give rise to th
 \begin{figure}[hbtp]
 \[
 \feynmandiagram [scale = 1, transform shape][baseline = (h), horizontal = d to j]{
-	a [particle = \(e^{-}\)] -- [fermion, thick] c -- [fermion, thick ] f -- [fermion, thick] g [particle = \(e^{-}\)],
+	a [particle = \(e^{-}\)] -- [fermion, thick] c -- [fermion, thick, edge label' = \(e\), momentum = {[arrow style = blue]\(k_{1}\)}] f -- [fermion, thick] g [particle = \(e^{-}\)],
 	c -- [photon, edge label = \(\gamma\)] d [blob],
 	f -- [photon, edge label = \(\gamma\)] j [blob],
 	h [particle = \(^{12}C\)]-- d -- [fermion, thick] j -- k [particle = \(^{12}C\)] ,
@@ -60,7 +59,7 @@ At the $\alpha$ leading order, the two scattering processes that give rise to th
 \qquad \qquad \qquad
 \feynmandiagram [scale = 1, transform shape][ vertical = c to d]{
 	a [particle = \(e^{-}\)] -- [fermion, thick] c -- [fermion, thick] g [particle = \(e^{-}\)],
-	c -- [photon, edge label' = \(\gamma\), momentum = {[arrow style = red]\(k\)}] d [blob],
+	c -- [photon, edge label' = \(\gamma\), momentum = {[arrow style = blue]\(k\)}] d [blob],
 	h [particle = \(^{12}C\)] -- [fermion, thick] d -- [fermion, thick] j [particle = \(^{12}C\)],
 	};
 \]
@@ -74,25 +73,26 @@ The important quantity to compute the cross section is the scattering amplitude.
 S = i \dfrac{e^{2}}{Q^{2}} \overline{u}(k') [ \, m_{e} A_{2} + A_{1} \slashed{P} \,] u(k)
 \end{equation}
 
-Where in this expression, $\vec{P}$ is given by the formula
+Where $\vec{P}$ is given by:
 
 \begin{equation}
 \vec{P} = \frac{\vec{p} + \vec{p}'}{2} .
 \end{equation}
 
-The $A_{1}$ term in the scattering amplitude is given by the form factor of the nucleus:
+$A_{1}$ term in the scattering amplitude correspond to the charge form factor of the nucleus:
 
 \begin{align*}
 A_{1} = 2Z F_{N}(Q^{2})
 \end{align*} 
 
-Where $Q^{2}$ is the transferred momentum in the scattering process. The one photon exchange amplitude, corresponding to the right diagram in figure \ref{fig:FeynmannDiagrams}, is computed applying the feynmann rules. The first interaction vertex connect the incoming and outgoing electron. The electron is represented by a spinor, and the expression is given by: 
+Where $Q^{2}$ is the transferred momentum in the scattering process. The one photon exchange amplitude, corresponding to the right diagram in figure \ref{fig:FeynmannDiagrams}, is computed applying the Feynmann rules: the first interaction vertex, at the top of the diagram, connects the incoming and outgoing electron. The electron is represented by a spinor, and the QED vertex with spinors gives: 
 
 \begin{equation}
 \overline{u}(k') (-ie \gamma^{\nu}) u(k) ,
 \end{equation} 
 
-For the other vertex, which involves the carbon nucleus, we have to apply the feynmann rules for spin 0 particles, that correspond to:
+where $u(k')$ and $u(k)$ are the spinors for the outgoing and incoming electron.
+For the other vertex, which involves the carbon nucleus, we have to apply the Feynmann rules for spin 0 particles, that correspond to:
 
 \begin{equation}
 -ie(p + p')_{\mu} \cdot Z F_{N}(Q^{2}).
@@ -105,7 +105,7 @@ The lagrangian term for a vertex of this type is given by the formula:
 \Lagr_{interaction} = +ieA_{\mu}(\Phi \partial^{\mu} \Phi^{\dag} - \Phi^{\dag}\partial_{\mu} \Phi)
 \end{equation}}
 
-The last term to consider is the feynmann propagator for the virtual photon:
+The last term to consider is the Feynmann propagator for the virtual photon:
 
 \begin{equation}
 \frac{-i \eta_{\mu \nu}}{Q^{2}}
@@ -117,7 +117,7 @@ considering all this terms together gives the scattering amplitude of the one ph
 A_{n} = -\frac{m_{e}}{\sqrt{s}} tan \bigl (\frac{\theta_{CM}}{2} \bigl) \dfrac{\Im(A_{2})}{ZF_{N}(Q^{2})}
 \end{equation}
 
-Looking at this formula, the theoretical effort to compute the transverse asymmetry is given by the imaginary part of $A_{2}$. The calculation of this quantity is theoretically challenging, due to the fact that at energies of $\simeq \SI{1}{\giga \electronvolt}$ of incident electrons, contributions from intermediate excited states become important. Because of this, the contribution of $A_{2}$ are given by the sum of elastic intermediate state and inelastic terms, which involve hadronic excitations.
+Looking at this formula, the theoretical effort to compute the transverse asymmetry is given by the imaginary part of $A_{2}$. The calculation of this quantity is theoretically challenging, since at energies of $\simeq \SI{1}{\giga \electronvolt}$ for the incident electrons, contributions from intermediate excited states become important. The various contribution of $A_{2}$ are given by the sum of the elastic intermediate state and inelastic terms, which involve hadronic excitations.
 
 \subsection{Hadronic Tensor}
 
@@ -133,13 +133,13 @@ Two new terms appear in this expression. The first term is $l_{\mu \nu}$, named 
 l_{\mu \nu} = \overline{u}(k') \gamma_{\nu} (\slashed{k}_{1} + m_{e}) \gamma_{\mu} u(k)
 \end{equation}
 
-In this expression is immediate to recognize the feynmann rules for fermion vertex. The term $(\slashed{k_{1} + m_{e}})$ comes from the fermion propagator of the internal electron, which is:
+In this expression is immediate to recognize the Feynmann rules for fermion vertex. The term $(\slashed{k_{1} + m_{e}})$ comes from the fermion propagator of the internal electron, which is:
 
 \begin{align*}
 \dfrac{i(\slashed{p} + m)}{p^{2} + m^{2}}
 \end{align*}
 
-The other term is $W^{\mu \nu}$, the hadronic tensor. For the elastic contribution this term is simply given by the feynmann rules for vertex with spin 0 particles, with the proper correction of the form factor, so we can write:
+The other term is $W^{\mu \nu}$, the hadronic tensor. For the elastic contribution this term is simply given by the Feynmann rules for vertex with spin 0 particles, with the proper correction of the form factor, so we can write:
 
 \begin{equation}
 W_{\mu \nu} = \pi \delta((p + k - k_{1})^{2} - M^{2}) (2p + q_{1})_{\mu} (2p' + q_{2})_{\nu} \times Z^{2} F_{N}(Q_{1})  F_{N}(Q_{2})

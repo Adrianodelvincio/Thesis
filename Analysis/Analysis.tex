@@ -850,7 +850,7 @@ and are calculated within each single event, to identify the differences with re
 \label{fig:BeamParameters}
 \end{figure}
 
-Every histogram is generated with $100$ bins. For the current asymmetry, we discovered that the values of the VFCs resistance which controls $V_{ref}$ value was set too high. Because of this, the precision of the monitor is low, compared to the other, and we observe isolated peaks in the plot. This indicated that for the incoming experiment we have to increase $V_{ref}$ in order to to have a precision comparable to that of other monitors.
+Every histogram is generated with $100$ bins. For the current asymmetry, we discovered that the values of the VFCs resistance, which controls $V_{ref}$ value, was set too high. The resolution of this monitor is low, compared to the others, as we can see in the corresponding histograms, where the data are distributed around isolated peaks. This suggest to increase $V_{ref}$ of the VFCs, for the incoming experiment, to achieve a precision comparable with the other monitors.
 
 \begin{table}[hbtp]
 \centering
@@ -885,9 +885,9 @@ A_{n} = \overline{A_{tot}} - \overline{\delta I}
 \newpage
 \section{Polarization Loss}
 
-After discussing the removal of the outliers, now will discuss in details the issue regarding the polarization of the beam. To observe a \transv, it is essential to have a correctly polarized beam. Unfortunately, we found out that by mistake part of the data were acquired with a non-polarized beam. The reason is that during the second night of the experiment, MAMI operators who controls the quality of the beam switched from polarized beam to non-polarized, unintentionally. These wrong data were acquired during the night of 2nd December and we discovered this problem only the next day. We had no indication of how many hours of beam were lost. Since this happened during the night, nobody could save the polarization measurement of the beam and identify the runs affected by this problem.
-This issue introduces a big systematic error that decreases the reconstructed $A_{n}$. It is important to identify the runs that share this problem, otherwise the measurements are affected by a bias that is not possible to disentangle from other systematic effects related to the electronics system of the experiment. 
-All the stabilization monitors were active and the data show apparently the same behaviour of the data with the correct polarization. We can not proceed with an arbitrary cut of the data, because there is the risk to cut off also good data or perform an incomplete removal. The next phase of the analysis is focused on describing a method used to identify the data taken with unpolarized beam and remove them from the analysis.
+After discussing the removal of the outliers, now will discuss in details the issue regarding the polarization of the beam. To observe a transverse asymmetry, it is essential to have a correctly polarized beam. Unfortunately, we found out that  part of the data were acquired by mistake with a non-polarized beam. The reason is that during the second night of the experiment, MAMI operators who controls the quality of the beam, switched from polarized beam to non-polarized, unintentionally. These wrong data were acquired during the night of 2nd December and we discovered this problem only the next day. We had no indication of how many hours of beam were lost. Since this happened during the night, nobody could save the polarization measurement, and identify the runs affected by this problem.
+This issue introduces a big systematic error that decreases the measurement of $A_{n}$. To proceed in the analysis, it is important to identify the runs sharing this problem, otherwise the measurements are affected by a bias that is not possible to disentangle from other systematic effects related to the electronics system of the experiment. 
+All the stabilization monitors were active and the data apparently show the same behaviour of the data with the correct polarization. We can not proceed with an arbitrary cut of the data, because there is the risk to cut off also good data or perform an incomplete removal. The next phase of the analysis is focused on describing a method used to identify the data taken with unpolarized beam and remove them from the analysis.
  
 The procedure to identify the runs without polarization rely on the estimation of the correlation coefficient of the PMTs counts. For every event we have two type of polarization sequence. The polarization $P$ of each sub-event is identified with $+1$ and $-1$, that correspond to up and down $P$. This values are part of the data tree, and form a sequence $p_{i}$ of the type: $+1-1-1+1$, where i is the index to the i-th sub-events analyzed. If the actual $P$ is different from zero, we expect a difference in the number of scattered electrons between sub-events with different $p_{i}$, caused by the transverse asymmetry (see table \ref{tab:PolarizationSequence}).
 
@@ -923,7 +923,6 @@ We applied this strategy with the hope to identify the blocks of data with $P = 
 \label{fig:PolarityCheck2}
 \end{figure}
 
-
 If we observe that $c$ is compatible with zero, we have an indication of the block of runs to be removed from the analysis.
 The values are reported in figure \ref{fig:PolarityCheck}. The errors for each point are computed with the formula:
 
@@ -931,7 +930,7 @@ The values are reported in figure \ref{fig:PolarityCheck}. The errors for each p
 \sigma_{c} = \sqrt{\dfrac{1 - c^{2}}{N - 2}}
 \end{align*} 
 
-The plots show also the expected values for the $c$ computed with a simple simulation, using the values of $A_{n} = 22.5 ppm$ and $P = 0.79$ as an input. The simulation results are obtained following these steps:
+The plots show the expected values for the correlation coefficient, computed with a simple simulation, using the values of $A_{n} = 22.5 ppm$ and $P = 0.79$ as an input. The simulation results are obtained following these steps:
 
 \begin{itemize}
 \item A sequence of the type $+1,-1,-1,+1$ is generated, long $45000$ events.
@@ -1027,7 +1026,7 @@ The data are analyzed both using python libraries, and with a fit program implem
 \end{equation}
 
 $\vec{x}$ are the independent variables, $\vec{\beta}$ are the parameters and $\epsilon$ is a noise parameter, that is supposed to be gaussian (however, the robustness of the OLS algorithm allows relaxing this request). Another important assumption is that the linear variables are not correlated. 
-This last requirement is particularly important, as correlated data cannot be processed with either of the two algorithms used. Before proceeding with the fit, it is necessary to verify this assumption. The correlation matrix for the beam parameters is reported in a table \ref{tab:CorrMatrix}.
+This last requirement is particularly important, as correlated data can not be processed with either of the two algorithms used. Before proceeding with the fit, it is necessary to verify this assumption. The correlation matrix for the beam parameters is reported in a table \ref{tab:CorrMatrix}.
 
 \begin{table}[!h]
 \centering
@@ -1173,7 +1172,7 @@ the result of the fit are reported in table \ref{tab:resultA}, together with the
 
 \section{False Asymmetries}
 
-Until now the values for the false asymmetries were threated as the parameters of the fit. In this section we will investigate how we can obtain another different estimations, useful to check the validity of all the process of analysis of the data.
+In the data analysis, the values of the false asymmetries have been threated as parameters of the linear fit. In this section we will investigate how we can obtain another different estimations, useful to check the validity of all the process of analysis of the data.
 
 For $\frac{dA}{dX}$ and $\frac{dA}{dY}$, we conceptually exploit the possibility of varying the position of the beam on the target, as we did during one of the calibration phases. Using the same \textit{wobbler 16} we asked MAMI to slowly change the beam position on the X and Y monitor. The change in position has the effect to modify the rates for the two detector, and from them it is possible to extract estimate the two false asymmetries related to the beam position. Now we will see how the two quantities are related.
 From the plot \ref{fig:SlowPosition} we see that the counts are changing linearly with the beam position, so we assume that the $N$ are given by
@@ -1255,7 +1254,7 @@ The values for the false asymmetries obtained with this method are:
 \caption{ Values for the false asymmetry, computed with the slow horizontal and vertical variation mode.}
 \end{table}
 
-These values are not in agreement with $A_{x}$ and $A_{y}$ obtained from the fit (\ref{tb:resultA}). This may be due to the high correlation with the $\theta_{x}$ beam parameter. The negative correlation with $\theta_{x}$ means that when $\delta X$ increases $\delta \theta_{x}$ decreases, and then the false asymmetries combined together, with the result that it is not possible to disentangle the two contributions. 
+These values are not in agreement with $A_{x}$ and $A_{y}$ obtained from the fit (\ref{tab:resultA}). This may be due to the high correlation with the $\theta_{x}$ beam parameter. The negative correlation with $\theta_{x}$ means that when $\delta X$ increases $\delta \theta_{x}$ decreases, and then the false asymmetries combined together. Using linear regression, it is not possible to disentangle the effects of the correlation in the data, and therefore the corresponding coefficient of the fit are not reliable. 
 
 \subsection{Energy Asymmetry}
 
