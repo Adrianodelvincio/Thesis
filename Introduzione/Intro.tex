@@ -11,6 +11,9 @@
 \item Mention the other experiment, like PREX, that measure zero $A_{n}$ for Lead.
 \end{itemize}}
 
+\paragraph{}
+The physic motivation for the MREX experiment are the topic of the first chapter of this thesis. Starting from the semi-empirical formula for the binding energy of the nuclei, a simplified model is introduced, which describes some properties of the nuclear matter, in the case of dominant neutron density. With this it is possible to introduce $L$, the slope of the symmetry energy at saturation density, and the connection between this quantity and the neutron skin thickness and the radius of neutron stars. MREX will measure the neutron skin thickness via parity-violating experiment, as explained in a section of this chapter. The chapter ends with the basic concepts of the transverse asymmetry, the primary focus of this thesis, and the concept of the experiment to measure this quantity.
+
 \section{The Mainz Radius Experiment}
 
 The Mainz Radius Experiment (MREX), at the Mainz nuclear physics institute, is an experimental campaign with the aim of investigating the nature of atomic nuclei, by measuring the neutron skin thickness of $^{208}Pb$. The characteristics of atomic nuclei are mainly determined by the strong interaction, whose existence was firstly speculated by Yukawa in 1935. The strong interaction is responsible of a broad range of phenomena: from the nature of the nuclei, the compositions of baryons and meson to the exotic structure of neutron stars. Hence, nuclear physics offers many answers to fundamental questions that are important also in other fields of physics. The neutron stars, which are among the most researched astrophysical objects, are particularly well suited to study theories of dense nuclear matter. It can be surprising to think that, despite having differences of so many orders of magnitude, neutron rich nuclei and neutron stars share the same fundamental physics description, given by the the Equation Of State (EOS) of nuclear matter \cite{Thiel_2019}. The EOS represents the fundamental relation between state variables such as temperature, energy, pressure and the neutron-proton asymmetry. Specifically, the goal of the MREX experiment is to determine an important parameter of the EOS, the slope of the symmetry energy at saturation density $L$, which controls the change in energy due to presence of an asymmetry between neutron and proton densities. This parameters plays an important role for the determination of the radius of the neutron stars and it is also responsible for a peculiar characteristic shown by heavy nuclei: the neutron skin thickness. The neutron skin thickness $\delta r_{np}$ is a phenomena that affect heavy nuclei, which consists in the accumulation of the excess of neutrons near the surface, producing a neutral layer of neutrons. It is defined as: 
@@ -172,7 +175,7 @@ In this expression, M and $R_{NS}$ are the neutron star mass and radius, and $k_
 
  This limits is in slightly tension with the larger values measured by PREX collaboration, suggesting that the symmetry energy, for slightly higher density as in neutron stars, decreases with respect to the typical density found in atomic nuclei. This increment and decrement may be an indication of the presence of phase transition in the interior of neutron stars.
 
-\begin{figure}[hbtp]
+\begin{figure}[!hbtp]
 \centering
 \includegraphics[width = 0.5\textwidth]{Introduzione/UpdatedPlot.png}
 \caption{ Polarizability $\Lambda$ versus neutron star radius. The point are the prediction of different theoretical models. The first upper bound with $90 \%$ credibility is shown in the figure, with a blue dotted line, and the revisited upper bound, in yellow. On the x axis, two variables are shown, the predicted neutron star radius and neutron skin thickness of lead.}
@@ -182,4 +185,127 @@ In this expression, M and $R_{NS}$ are the neutron star mass and radius, and $k_
 
 \section{Transverse Asymmetry}
 
-The parity-violating scattering has numerous advantages for extracting the neutron-skin thickness of nuclei. However, the asymmetry to measure is rather small. To measure such asymmetries, it is necessary to reduce as much as possible the systematic effects, that can alter the result of the measurement. One of the main sources of background for the measurement of $A_{PV}$ is a different process that concerns transverse polarized electrons. The different polarization of the electrons produce an asymmetry, called beam normal single spin asymmetry (BNSSA), or transverse asymmetry $A_{n}$. Since such asymmetries are typically one order of magnitude larger than the parity-violating ones, a small normal component of the beam polarization during parity-violating experiments can produce a systematic effect that changes the final result. The subject of this thesis is the measurement of transverse asymmetry $A_{n}$ for carbon target, performed at MAMI, the Mainz microton accelerator. The choice of carbon target is due to the fact that the transverse asymmetry for $^{12}C$ is well known and already measured at MAMI; the expected asymmetry is roughly $20 \, ppm$, thus it is particularly suited for the commissioning of the new experimental setup. Such asymmetries are challenging because they require calculation of box diagrams with intermediate excited states \cite{Gorchtein_2008}, which will be threated in chapter \ref{transv}. After the determination on $A_{n}$ for $^{12}C$, the next phase of the MREX experiment will be the determination of the transverse asymmetry for $^{208}Pb$. As already mentioned, this is mandatory to constrain the systematic effects in PV experiments. However, it is also interesting because in the last measurement performed by PREX \cite{HAPPEX:2012fud} the transverse asymmetry for $^{208}Pb$ target is compatible with zero, with a complete disagreement with the theoretical predictions. Since the theoretical prediction for hydrogen, helium, carbon and zirconium are in agreement with theory, a second, independent measurement of the BNSSA for lead is interesting, to confirm the measurement performed by PREX.  
+The parity-violating scattering has numerous advantages for extracting the neutron-skin thickness of nuclei. However, the asymmetry to measure is rather small. To measure such asymmetries, it is necessary to reduce as much as possible the systematic effects, that can alter the result of the measurement. One of the main sources of background for the measurement of $A_{PV}$ is a different process that concerns transverse polarized electrons. The different polarization of the electrons produce an asymmetry, called beam normal single spin asymmetry (BNSSA), or transverse asymmetry $A_{n}$. Since such asymmetries are typically one order of magnitude larger than the parity-violating ones, a small normal component of the beam polarization during parity-violating experiments can produce a systematic effect that changes the final result. The subject of this thesis is the measurement of transverse asymmetry $A_{n}$ for carbon target, performed at MAMI, the Mainz microton accelerator. The choice of carbon target is due to the fact that the transverse asymmetry for $^{12}C$ is well known and already measured at MAMI; the expected asymmetry is roughly $20 \, ppm$, thus it is particularly suited for the commissioning of the new experimental setup. Such asymmetries are challenging because they require calculation of box diagrams with intermediate excited states \cite{Gorchtein_2008}. After the determination on $A_{n}$ for $^{12}C$, the next phase of the MREX experiment will be the determination of the transverse asymmetry for $^{208}Pb$. As already mentioned, this is mandatory to constrain the systematic effects in PV experiments. However, it is also interesting because in the last measurement performed by PREX \cite{HAPPEX:2012fud} the transverse asymmetry for $^{208}Pb$ target is compatible with zero, with a complete disagreement with the theoretical predictions. Since the theoretical prediction for hydrogen, helium, carbon and zirconium are in agreement with theory, a second, independent measurement of the BNSSA for lead is interesting, to confirm the measurement performed by PREX.  
+
+\subsection{Description of the Process}
+
+The Beam Normal Single Spin Asymmetry (BNSSA) arises from the interference of two scattering amplitudes (the exchange of one and two virtual photons) which has a close relationship to the time-reversal operator \cite{Gorchtein_2008}. 
+The kinematics of the experiment, involving the elastic scattering between an electron and $^{12}C$ nucleus, is shown in figure \ref{fig:ScatteringSchemeFinal}.
+
+\begin{figure}[hbtp] 
+\centering
+\includegraphics[width = 0.6\textwidth]{Transverse/scattering.pdf}
+\caption{Scheme of the scattering process in the center of mass frame. In blue the incident electron and nucleus, in red the outgoing electron and nucleus. All the quantities are referred to the center of mass frame. The small arrow over the vector represent the electron spin, lying in the normal plane.}
+\label{fig:ScatteringSchemeFinal}
+\end{figure}
+
+ The transverse asymmetry is defined as the cross-section asymmetry due to the different transverse polarization state of the incoming electron:
+
+\begin{equation}
+A = \frac{\sigma_{\uparrow} - \sigma_{\downarrow}}{\sigma_{\uparrow} + \sigma_{\downarrow}}
+\end{equation}
+
+it is useful to understand the reason why the presence of an asymmetry in the cross section is related to the time-reversal operator. Looking at the figure of the kinematics, we can compare the two situation before and after applying the time-reversal operator, $\hat{T}$. It is evident that: 
+
+\begin{itemize}
+\item Before applying $\hat{T}$, we have the incoming electron with $\vec{k}$ momenta and the nucleus with $\vec{P}$ momenta. Applying $\hat{T}$ will exchange the incoming electron and nucleus with the outgoing electron and nucleus.
+\item The $\hat{T}$ operator flips also the spin of the incoming electron.
+\item Considering that the process is elastic, the kinematic is the same with and without applying the the Time-reversal operator. 
+\end{itemize}
+ 
+The time-reversal operator exchanges the two different cases of electron scattering with UP and DOWN polarized electron. Since a non-zero asymmetry is observed, between $\sigma_{\uparrow}$ and $\sigma_{\downarrow}$ (and therefore also in the amplitudes $A_{\uparrow}$ and $A_{\downarrow}$), and given that the $\sigma_{\uparrow}$ and $\sigma_{\downarrow}$ are connected by the time-reversal transformation, we can state that the asymmetry originates by the behaviour of the scattering amplitude when $\hat{T}$ operator is applied to the system. Therefore is important to see more in detail the structure of the $\hat{T}$. $\hat{T}$ is an anti-unitary operator that can be always decomposed as:
+
+\begin{align*}
+\hat{T} = U \cdot K
+\end{align*} 
+Where $U$ is an unitary operator, while $K$ is the complex conjugation operator that generates the complex conjugate of the coefficients in front of the state vectors. If we consider a ket describing a system, we have that:
+
+\begin{equation}
+Kc \ket{\alpha} = c^{*} K \ket{\alpha}
+\end{equation}
+
+Now, let's consider the total amplitude of our system. We want to apply the $\hat{T}$ operator. We assume that the amplitude of the system consist of two term, one real and one imaginary, which correspond to the two different scattering processes. Since the electromagnetic interaction conserve $CP$ symmetry, also $T$ is conserved. However the time reversal operator changes the relative sign between the real and complex terms of the scattering amplitude. Therefore, the value of the cross-section is changed when the time reversal operator is applied to the system, and this give rise to the asymmetry $A_{n}$. At the $\alpha$ leading order, the two scattering processes that give rise to the asymmetry involve the one-photon-exchange (OPE) and two-photon-exchange (TPE) Feynmann diagrams, that are show in figure \ref{fig:FeynmannDiagrams}  
+
+\begin{figure}[hbtp]
+\[
+\feynmandiagram [scale = 1, transform shape][ vertical = c to d]{
+	a [particle = \(e^{-}\)] -- [fermion, thick] c -- [fermion, thick] g [particle = \(e^{-}\)],
+	c -- [photon, edge label' = \(\gamma\), momentum = {[arrow style = blue]\(k\)}] d [blob],
+	h [particle = \(^{12}C\)] -- [fermion, thick] d -- [fermion, thick] j [particle = \(^{12}C\)],
+	};
+\qquad \qquad \qquad
+\feynmandiagram [scale = 1, transform shape][baseline = (h), horizontal = d to j]{
+	a [particle = \(e^{-}\)] -- [fermion, thick] c -- [fermion, thick, edge label' = \(e\), momentum = {[arrow style = blue]\(k_{1}\)}] f -- [fermion, thick] g [particle = \(e^{-}\)],
+	c -- [photon, edge label = \(\gamma\)] d [blob],
+	f -- [photon, edge label = \(\gamma\)] j [blob],
+	h [particle = \(^{12}C\)]-- d -- [fermion, thick] j -- k [particle = \(^{12}C\)] ,
+	};
+\]
+
+\caption{TPE and OPE diagrams in electron nucleus scattering.}
+\label{fig:FeynmannDiagrams}
+\end{figure}
+
+The important quantity to compute the cross section is the scattering amplitude. The scattering amplitude is given by the two contributions: the exchange of a single virtual photon $A_{1}$ and the terms given by the two photon exchange $A_{2}$. In general we can write that the total scattering amplitude $S$ \cite{Gorchtein_2008}:
+
+\begin{equation}
+S = \dfrac{e^{2}}{Q^{2}} \overline{u}(k') [ \, m_{e} A_{2} + A_{1} \slashed{P} \,] u(k)
+\end{equation}
+
+Where $\vec{P}$ is given by:
+
+\begin{equation}
+\vec{P} = \frac{\vec{p} + \vec{p}'}{2} .
+\end{equation}
+
+$A_{1}$ term in the scattering amplitude correspond to the charge form factor of the nucleus:
+
+\begin{align*}
+A_{1} = 2Z F_{N}(Q^{2})
+\end{align*} 
+
+Where $Q^{2}$ is the transferred momentum in the scattering process. 
+
+The first term of the scattering amplitude $A_{1}$ is T-even, and it is purely real, so it is the imaginary part of the two photon exchange amplitude which gives rise $A_{n}$. In the end, the expression that connects the scattering amplitudes to the \transv is given by:
+
+\begin{equation} \label{eq:integral}
+A_{n} = -\frac{m_{e}}{\sqrt{s}} tan \bigl (\frac{\theta_{CM}}{2} \bigl) \dfrac{\Im(A_{2})}{ZF_{N}(Q^{2})}
+\end{equation}
+
+Looking at this formula, the theoretical effort to compute the transverse asymmetry is given by the imaginary part of $A_{2}$. The imaginary part $A_{2}$ is related to the two-photon exchange. To compute this quantity, we have to perform an integration over the internal momenta of the electron $k_{1}$. However theoretical calculations of this quantity are challenging, since at energies of $\simeq \SI{1}{\giga \electronvolt}$ for the incident electrons, contributions from intermediate excited states become important. The various contribution of $A_{2}$ are given by the sum of the elastic intermediate state and inelastic terms, which involve hadronic excitations.
+The inelastic intermediate states are studied and modeled in (\cite{Gorchtein_2006}, \cite{Gorchtein_2008}, \cite{Koshchii_2021}). It is beyond our scope to go into a detailed description, we only want to emphasize that in the theoretical calculation several approximations are made, for instance the prediction is reliabel only for forward scattering angles, furthermore different assumptions of important variables are made due to lack of data, such as the Compton form factor for $^{12}C$, the Compton slope parameter and the use of the approximated Callavan-Gross relation. 
+In summary, the theoretical prediction for the \transv are reliable for small scattering angle, that correspond to lower values ​​in transfer momentum $Q$; the experimental data measure by PREX \cite{HAPPEX:2012fud} for $^{1}H$, $^{4}He$, and $^{12}C$ at $Q$ values of $\SI{0.31}{\giga \electronvolt}$, $\SI{0.28}{\giga \electronvolt}$ and $\SI{0.1}{\giga \electronvolt}$, respectively, are in agreement with the theoretical prediction. The measurement performed at MAMI for $^{12}C$ \cite{Esser:2018vdp} is with higher values of transfer momentum ($Q = \SI{0.2}{\giga \electronvolt}$) and shows a reasonable agreement with the theoretical prediction, considering also the systematic uncertainties associated to the poorly known Compton slope parameter. The model which describes the transverse asymmetry is:
+
+\begin{equation}
+A_{N} = C_{0} \cdot log(\dfrac{Q^{2}}{m_{e}^{2} c^{2}}) \dfrac{F_{Compton}(Q^{2})}{F_{N}(Q^{2})}
+\end{equation}
+
+Where $F_{N}$ is the charge form factor, $F_{Compton}$ is the Compton form factor of the nucleus, and $C_{0} = \dfrac{- m_{e} E_{Lab} \sigma_{\gamma p} M A}{8 \pi^{2} \sqrt(2) Z}$, where $\sigma_{\gamma p}$ is the proton photo-absorption cross section, $A$ the mass number. 
+The theory presented so far is quite successful in describing the data, but it fails completely with $^{208}Pb$ nucleus, as PREX reported a measurement of $0$ transverse asymmetry \cite{HAPPEX:2012fud}. This could suggest that theory fails to describe $A_{n}$ for heavy elements; on the other hand it represents an unexpected improvement for the PV scattering experiment. It is important therefore to repeat independently the measurement of the $A_{n}$ for $^{208}Pb$, to confirm or question the result reported by PREX.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[scale = 0.5]{Transverse/medium.png}
+\caption{Transverse asymmetry measured at MAMI for $^{12}C$ target \cite{Esser:2018vdp}. Theoretical calculation for $E_{beam} = \SI{570}{\mega \electronvolt}$  is shown.}
+\end{figure}
+
+
+\subsection{Concept of the Experiment}
+
+We have seen so far how the transverse asymmetry is related to the interference between two scattering amplitude, and the theoretical model used to describe the process. The goal from an experimental point of view is to measure this quantity. The challenge is to obtain a valid measure of $A_{n}$, which is of the order of $20$ part per million (ppm), taking into consideration all the possible effects that can interfere. To measure $A_{n}$, the straightforward method is to prepare an electron beam, with polarized electron, and send it to a fixed target. The scattered electrons are then collected by a detector placed at a certain angle, with the transverse asymmetry obtained by:
+
+\begin{equation}
+A_{N} (Q) = \dfrac{N_{\uparrow}(Q) - N_{\downarrow}(Q)}{N_{\uparrow}(Q) + N_{\downarrow}(Q)}  
+\end{equation} 
+
+In an experiment of this type, several requirements need to be satisfied, in order to measure $A_{n}$ effectively:
+
+\begin{itemize}
+\item The accelerator must produce a polarized beam, stable over the time, with an high polarization percentage, in order to amplify the effect.
+\item The beam energy needs to be quite stable, and should not depend on the polarization state of the electrons. A change in the beam energy associated with the polarization state can lead to a different count rate for $N_{\uparrow}$ and $N_{\downarrow}$, and would create false asymmetries that adds to the $A_{n}$.
+\item The beam must be correctly aligned with the target, with a stable position. If the interaction position changes with to the polarization of the electrons, it will produce another false asymmetry.
+\item The beam current should not depend on the polarization state of the electrons. If the beam source depends on the polarization, we will have a difference in the event rate and then another false asymmetry.
+\item It is necessary to reject possible double elastic scattering events, which may contribute to the total asymmetry. 
+\end{itemize}
+
+All this demands can be satisfied with an accelerator that has stabilization devices with great precision and that can sustain high beam intensities. This last requirement is necessary to accumulate enough statistics to measure the transverse asymmetry with an accuracy about 1 ppm, in view of the future PV experiments.
