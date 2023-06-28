@@ -25,12 +25,15 @@ N_{bruijn} = \frac{(k!)^{k^{n-1}}}{k^{n}}
 \end{align*}
 If we substitute in the formula above $k=2$ and $n = 6$, we have a total of $\simeq 67 \cdot 10^{6}$ different sequences. The seed of the De Bruijn sequence is generated with a pseudo random number generator, and the sequence is used to select between $\uparrow,\downarrow,\downarrow, \uparrow$  and $\downarrow,\uparrow,\uparrow,\downarrow$. At this point it could be objected why so much care is taken in choosing randomly the two sequences. At a first glance is certainly easier to select one of the two polarization pattern and reproduce it for every sub-event. However, this would not protect from systematic effects that arise from electronic or beam noise with frequencies similar to the frequency of the polarization pattern. For instance electronic noise with  $ f \simeq \SI{10}{\hertz}$ could in principle increase the rates for one polarizations state and decrease the other one. The adopted solution to reduce effects of this type is to randomize the pattern selection. Besides this, there is another reason why a De Bruijn sequence is useful. During each polarization flip, we observe a short, transient reduction of the beam current. This reduction in the beam intensity has more influence on patterns where there are more inversion of the polarization respect to the other. With a De Bruijn sequence we ensure that we have a identical number of pairs of patterns, meaning that:
 
+
 \begin{itemize}
+\centering
 \item $25\%$ : $\uparrow,\downarrow,\downarrow, \uparrow$ ; $\uparrow,\downarrow,\downarrow, \uparrow$
 \item $25\%$ : $\downarrow,\uparrow, \uparrow,\downarrow$ ; $\downarrow,\uparrow, \uparrow,\downarrow$
 \item $25\%$ : $\downarrow,\uparrow, \uparrow,\downarrow$ ; $\uparrow,\downarrow,\downarrow, \uparrow$
 \item $25\%$ : $\uparrow,\downarrow,\downarrow, \uparrow$ ; $\downarrow,\uparrow, \uparrow,\downarrow$
 \end{itemize}
+
 
 In the top rows we have 4 inversions, while in the two lower rows we have 5 inversions.
 Other details of the experiments are presented in this chapter. In the next section the operating principles of MAMI electron accelerator are discussed.

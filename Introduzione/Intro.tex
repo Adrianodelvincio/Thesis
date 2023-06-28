@@ -130,13 +130,26 @@ The theoretical calculation of $A_{pv}$ includes the interference between the ex
 A_{PV} \simeq \dfrac{G_{F} Q^{2}}{4 \pi \alpha} \cdot \dfrac{Q_{W} F_{W}(Q^{2})}{Z F_{ch}(Q^{2})} ,
 \end{equation} 
 
-where $G_{F}$ is the Fermi constant, $Q^{2}$ is the transferred momentum, Z and $Q_{W}$ are the electric and weak charge of the nucleus, $F_{ch}$ and $F_{W}$ are the charged and weak form factors of the nucleus. The charge form factor of the lead nucleus is known with high accuracy (precision of 0.02 \%), so in this limit the only quantity that is unknown is $F_{W}(Q^{2})$. In the long wavelength approximation, the weak form factor at single value of momentum transfer is given by:
+where $G_{F}$ is the Fermi constant, $Q^{2}$ is the transferred momentum, Z and $Q_{W}$ are the electric and weak charge of the nucleus, $F_{ch}$ and $F_{W}$ are the charged and weak form factors of the nucleus. The charge form factor of the lead nucleus is known with high accuracy (precision of 0.02 \%), so in this limit the only quantity that is unknown is $F_{W}(Q^{2})$. In the long wavelength approximation, isolating various moments of the spacial distribution, the weak form factor at single value of momentum transfer is given by:
 
-\begin{equation}
+\begin{equation} \label{eq:WeakForm}
 F_{W}(Q^{2}) = \frac{1}{Q_{W}} \int \rho_{W}(r) \dfrac{sin(Qr)}{Qr} d^{3}r = (1 - \frac{Q^{2}}{6} R^{2}_{W} + \frac{Q^{4}}{120}R^{4}_{W} + ...)  
 \end{equation}
 
-The form factor is normalized in such a way that $F_{W}(Q^{2} = 0) = 1$. The weak charge radius correspond to $R^{2}_{W} = -6 \frac{\partial F_{W}}{\partial Q^{2}}\Bigr|_{\substack{Q^{2} = 0}}$. Now it is clear that parity-violating experiment are a promising method to extract information about neutron density. The difficulty is represented by the small values of $A_{pv}$ asymmetry. The value for lead is expected to be $\simeq 0.6 \, ppm$. This requires high statistic to reduce the uncertainty of the measurement and high control over the systematic effects. In 2012 the PREX collaboration measured for the first time the neutron skin through parity-violating experiment \cite{Abrahamyan:2012gp}, obtaining:
+Where the weak form factor $F_{W}$ is normalized in such a way that $F_{W}(Q^{2} = 0) = 1$, and  the weak charge radius $R_{W}$ is introduced, defined as:
+
+\begin{equation}
+R_{W} = \frac{1}{Q_{W}} \int r^{2} \rho_{W}(r) d^{3}r
+\end{equation}
+
+Using the expansion in equation \ref{eq:WeakForm}, the weak charge radius correspond to $R^{2}_{W} = -6 \frac{\partial F_{W}}{\partial Q^{2}}\Bigr|_{\substack{Q^{2} = 0}}$. In principle $R_{W}$ follows from the derivative of the form factor with respect to $Q^{2}$ at $q = 0$. Since the measurement performed by PREX, and the future measurement of MREX are at a finite $q$, one needs to assume some information about the form of the weak density $\rho_{W}$. The form of the weak density and $F_{W}$ is assumed to be well described by the Helm model \cite{PhysRev.104.1466}. This model depends on two parameters that are adjusted to reproduce the value of $F_{W}(q)$ at the measured value $q$. With this method, the weak radius $R_{W}$ ins extracted from $A_{pv}$, as explained in \cite{Horowitz:2012tj}:
+
+\begin{equation}
+R_{W} = 5.83 \pm 0.18 (exp.) \pm 0.03 (model) \SI{}{\femto \meter}
+\end{equation}
+
+The lats step to calculate $\delta r_{np}$ is to connect $r_{n}$ to $R_{W}$. This is done by writing $\rho_{W}$ in terms of the proton and neutron densities $\rho_{p}$ and $\rho_{n}$ and the weak charges $q_{p}$ and $q_{n}$, as explained in \cite{Horowitz:2012tj}. With this last passage, the neutron skin thickness of $^{208}Pb$ is obtained.
+ Now it is clear that parity-violating experiment are a promising method to extract information about neutron density. The difficulty is represented by the small values of $A_{pv}$ asymmetry. The value for lead is expected to be $\simeq 0.6 \, ppm$. This requires high statistic to reduce the uncertainty of the measurement and high control over the systematic effects. In 2012 the PREX collaboration measured for the first time the neutron skin through parity-violating experiment \cite{Abrahamyan:2012gp}, obtaining:
 
 \begin{equation} \label{eq:Prex}
 \delta r_{np} = 0.33^{+0.16}_{-0.18} \SI{}{\femto \meter}
