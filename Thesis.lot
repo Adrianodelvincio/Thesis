@@ -16,18 +16,18 @@
 \contentsline {table}{\numberline {3.12}{\ignorespaces Attenuation settings for both the detectors.\relax }}{54}{table.caption.58}%
 \contentsline {table}{\numberline {3.13}{\ignorespaces Angular coefficient and offset obtained for the auto-calibration. The third column is contains the estimation of $c$, as defined in equation \ref {eq:Systematic}\relax }}{57}{table.caption.62}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Beam parameters:\relax }}{62}{table.caption.69}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Beam parameters table, in the second column the mean $\mu $ with the standard deviation $\sigma _{\mu }$ of the mean is shown. The third column is $\sigma $, the standard deviation of the distributions in figures \ref {fig:BeamParameters}.\relax }}{62}{table.caption.69}%
 \contentsline {table}{\numberline {4.2}{\ignorespaces Example of the Polarity sequence and PMT counts that are saved in the analysis program. The values of the PMT counts given are for example.\relax }}{64}{table.caption.70}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Reduced $\chi ^{2}$ for the gaussian fit of the asymmetry data.\relax }}{66}{table.caption.77}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Reduced $\chi ^{2}$ for the gaussian fit of the asymmetry data.\relax }}{67}{table.caption.76}%
 \contentsline {table}{\numberline {4.4}{\ignorespaces Correlation coefficient between beam parameters.\relax }}{68}{table.caption.78}%
-\contentsline {table}{\numberline {4.5}{\ignorespaces $\chi ^{2} _{ndf}$ for the different models used to fit the data show in figure \ref {fig:DifferentModels}\relax }}{72}{table.caption.84}%
-\contentsline {table}{\numberline {4.6}{\ignorespaces Average counts per pmt, for time length of $\SI {20}{\milli \second }$.\relax }}{74}{table.caption.86}%
-\contentsline {table}{\numberline {4.7}{\ignorespaces Values for the false asymmetry, computed with the slow horizontal and vertical variation mode.\relax }}{74}{table.caption.87}%
-\contentsline {table}{\numberline {4.8}{\ignorespaces Lead rates, the values are measured for a target width of $\SI {0.5}{\milli \meter }$.\relax }}{76}{table.caption.89}%
-\contentsline {table}{\numberline {4.9}{\ignorespaces Estimated time needed for the upcoming experiments to measure the transverse asymmetry for Lead with an aimed precision of $1.7 \, ppm$ for detector A and $2.8 \, ppm$ for detector B.\relax }}{77}{table.caption.90}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces $\chi ^{2} _{ndf}$ for the different models used to fit the data show in figure \ref {fig:DifferentModels}\relax }}{70}{table.caption.83}%
+\contentsline {table}{\numberline {4.6}{\ignorespaces Average counts per pmt, for time length of $\SI {20}{\milli \second }$.\relax }}{73}{table.caption.85}%
+\contentsline {table}{\numberline {4.7}{\ignorespaces Values for the false asymmetry, computed with the slow horizontal and vertical variation mode.\relax }}{73}{table.caption.86}%
+\contentsline {table}{\numberline {4.8}{\ignorespaces Lead rates, the values are measured for a target width of $\SI {0.5}{\milli \meter }$.\relax }}{75}{table.caption.88}%
+\contentsline {table}{\numberline {4.9}{\ignorespaces Estimated time needed for the upcoming experiments to measure the transverse asymmetry for Lead with an aimed precision of $1.7 \, ppm$ for detector A and $2.8 \, ppm$ for detector B.\relax }}{76}{table.caption.89}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Averaged asymmetries over all the events. The values are corrected subtracting $\overline {A}_{I}$ and considering the effective polarization $p$ of the beam\relax }}{79}{table.caption.91}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces Fit result with the linear model, for detector A.\relax }}{81}{table.caption.93}%
-\contentsline {table}{\numberline {5.3}{\ignorespaces Fit result with the linear model, for detector B.\relax }}{81}{table.caption.94}%
-\contentsline {table}{\numberline {5.4}{\ignorespaces Overall result for detector A and B.\relax }}{81}{table.caption.95}%
-\contentsline {table}{\numberline {5.5}{\ignorespaces Analysis result for the data with polarization loss\relax }}{82}{table.caption.96}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Averaged asymmetries over all the events. The values are corrected subtracting $\overline {A}_{I}$ and considering the effective polarization $p$ of the beam\relax }}{77}{table.caption.90}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Fit result with the linear model, for detector A.\relax }}{79}{table.caption.92}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Fit result with the linear model, for detector B.\relax }}{79}{table.caption.93}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Overall result for detector A and B.\relax }}{79}{table.caption.94}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces Analysis result for the data with polarization loss\relax }}{80}{table.caption.95}%

@@ -65,10 +65,10 @@ With these values, the analysis program compute the differences between differen
 The data tree contains other two classes: detector A and detector B. Each detector class is structured in a number of sub-classes equal to the number of the PMTs, where the counts are stored and processed. The raw data are saved in the variable \textit{rawCounts}, that contains 4 integer number, one for each sub-events. Then the analysis program load the parameters saved in the standard configuration files, where the PMTs offset measured during the auto-calibration are stored. The \textit{offsetCorrectedCounts} are given by equation \ref{eq:OffCorr}
 
 \begin{equation} \label{eq:OffCorr}
-offsetCorrectedCounts = \dfrac{rawCounts}{N_{0}^{i}}
+offsetCorrectedCounts = rawCounts - N_{i}
 \end{equation} 
 
-where $N_{0}^{i}$ is the offset measured for PMT i. Other two variables, \textit{positivePolarityCounts} and \textit{negativePolarityCounts} are given by the sum of the offsetcorrectedCounts for sub-events with the same polarization. The \textit{asymmetry} is given by the formula \ref{eq:AsymmFormula}
+where $N_{i}$ is the offset measured for PMT i. Other two variables, \textit{positivePolarityCounts} and \textit{negativePolarityCounts} are given by the sum of the offsetcorrectedCounts for sub-events with the same polarization. The \textit{asymmetry} is given by the formula \ref{eq:AsymmFormula}
 
 \begin{equation} \label{eq:AsymmFormula}
 asymmetry = \dfrac{(Pc[1] + Pc[2]) - (Nc[1] + Nc[2])}{(Pc[1] + Pc[2]) + (Nc[1] + Nc[2])}
