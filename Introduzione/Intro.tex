@@ -22,7 +22,7 @@ The Mainz Radius Experiment (MREX), at the Mainz nuclear physics institute, is a
 \delta r_{np} = \sqrt{\vphantom{r^{2}_{p}}<r^{2}_{n}>} - \sqrt{<r^{2}_{p}>} ,
 \end{equation}
 
-Where $<r^{2}>_{n}$ and $<r^{2}>_{p}$ are the rms radii of proton and neutron distributions. The neutron skin thickness is sensitive to $L$, so an accurate determination of $\delta r_{np}$ provides significant constrains on the value of $L$, which can be used as an input to many theoretical models of the structure of the neutrons stars.
+where, $<r^{2}_{n}>$ and $<r^{2}_{p}>$ are the rms radii of proton and neutron distributions. The neutron skin thickness is sensitive to $L$, so an accurate determination of $\delta r_{np}$ provides significant constrains on the value of $L$, which can be used as an input to many theoretical models of the structure of the neutrons stars.
 There are numerous challenges in determining $\delta r_{np}$. $r_{p}$ is measured with high accuracy with the electrons elastic scattering experiments, whereas the determination of $r_{n}$ has traditionally relied on hadronic experiments, such as proton-nucleus scattering, $\pi^{0}$ photo-production, $\alpha$ and $\pi$ nucleus scattering. These processes suffer from large and often uncontrolled theoretical uncertainties that compromise the extraction of $r_{n}$. The most promising method, that is the least model dependent, is parity-violating electron scattering, where longitudinal polarized electrons are elastically scattered off an unpolarized target. This method consists in the measurement of the cross-section asymmetry between right and left handed electrons:
 
 \begin{equation}
@@ -57,14 +57,14 @@ We stress the fact that the liquid-drop model has the underlying assumption that
 \epsilon (\rho_{0}, \alpha) = -\frac{E_{B}}{A} = -a_{V} + a_{asym} \bigl(\dfrac{\rho_{n} - \rho_{p}}{\rho_{n} + \rho_{p}} \bigl)^{2} ,
 \end{equation}
 
-Where we have introduced the proton and neutron densities $\rho_{n}$ and $\rho_{p}$, and the saturation density $\rho_{0}$. We notice that the surface term and the pairing terms vanish for $A \xrightarrow \infty$, and we are neglecting the Coulomb term $a_{c}$ \footnote{This term is relevant in presence of a $\rho_{p} \neq 0 $, but neutron star can be assumed globally with almost zero electric charge, so this will not give a contribution.}.
+Where we have introduced the proton and neutron densities $\rho_{n}$ and $\rho_{p}$, and the saturation density $\rho_{0}$. We notice that the surface term and the pairing terms vanish for $A \rightarrow \infty$, and we are neglecting the Coulomb term $a_{c}$ \footnote{This term is relevant in presence of a $\rho_{p} \neq 0 $, but neutron star can be assumed globally with almost zero electric charge, so this will not give a contribution.}.
 In reality, this simple equation is only an approximation, because the nuclear matter doesn't behave like an ideal liquid drop, and it is not incompressible. To describe the response of the nuclear matter to density variation, as well as temperature, etc. we need the equation of state (EOS) of the system, the fundamental relation that binds all these quantities together. In the ideal limit of $T = 0$, the EOS for neutron stars depends on $\rho$, the conserved baryon density, and neutron-proton asymmetry $\alpha$. Starting from equation \ref{eq:WrongEOS}, the energy density is expanded in a power series of $\alpha = \dfrac{\rho_{n} - \rho_{p}}{\rho_{n} + \rho_{p}}$:
 
 \begin{equation}
 \epsilon (\rho,\alpha) \simeq \epsilon_{snm} + \alpha ^{2} S(\rho) + O(\alpha ^{4}) ,
 \end{equation}
 
-Where the energy is split in two terms, with $\epsilon_{snm} = \epsilon (\rho, \alpha = 0)$ that represents the energy density for symmetry nuclear matter, with equal amount of neutrons and protons. Since the the strong force does not depend on the isospin, no odd power of $\alpha$ appears in the expansion; or in other words, neglecting electromagnetic interaction and weak interaction, the EOS depends only on the relative asymmetry between neutrons and protons and it does not matter if such an asymmetry is biased towards protons or neutrons. The term $S(\rho)$ is the symmetry energy, and represents the cost of converting symmetric nuclear matter ($\alpha = 0$) to pure neutrons matter, as in the case of neutron star. Now we can proceed considering the saturation density. A further expansion around $\rho$ is done, following \cite{Piekarewicz_2009}:
+where the energy is split in two terms, with $\epsilon_{snm} = \epsilon (\rho, \alpha = 0)$ representing the energy density for snm, i.e with equal amount of neutrons and protons. Since the the strong force does not depend on the isospin, no odd power of $\alpha$ appears in the expansion; or in other words, neglecting electromagnetic interaction and weak interaction, the EOS depends only on the relative asymmetry between neutrons and protons and it does not matter if such an asymmetry is biased towards protons or neutrons. The term $S(\rho)$ is the symmetry energy, and represents the cost of converting symmetric nuclear matter ($\alpha = 0$) to pure neutrons matter, as in the case of neutron star. Now we can proceed considering the saturation density. A further expansion around $\rho_{0}$ is done, following \cite{Piekarewicz_2009}:
 	
 \begin{equation} \label{eq:Lfirst}
 \begin{split}
@@ -110,8 +110,8 @@ From this expression we learn that the slope of the symmetry energy is essential
  \caption{\textit{On the right} Neutron skin thickness of $^{208}Pb$ as a function of the slope of the symmetry energy $L$. Each dot represent the a value of $L$ and $\delta r_{np}$ as predicted by various theoretical models. The error bars represent $\pm \SI{0.06}{\femto \meter}$ and $\pm \SI{0.03}{\femto \meter}$ for the future experiments of PREX-II and MREX. Notice the different scale for x and y axis, a small uncertainty for the neutron skin measurement correspond to an higher uncertainty for the values of $L$. \textit{On the left} Covariance ellipse displaying the correlation between $L$ and the neutron skin thickness, for FSUGold model. The covariance $\rho$ is equal to 0.995.}
 \label{fig:LvsR}
 \end{figure}
- 
-Following such a strong linear correlation, a measurement of the neutron skin gives access to $L$. 
+
+Because of such a strong linear correlation, a measurement of the neutron skin gives access to $L$. 
   
 \section{Parity-violating Scattering Experiment}
 
@@ -127,7 +127,7 @@ A_{pv} = \dfrac{\sigma_{R} - \sigma_{L}}{\sigma_{R} + \sigma_{L}} ,
 The theoretical calculation of $A_{pv}$ includes the interference between the exchange of virtual $\gamma$ and $Z^{0}$. In the Born approximation $A_{pv}$ is directly proportional to the weak form factor, and is given by:
 
 \begin{equation} \label{eq:BornLimit}
-A_{PV} \simeq \dfrac{G_{F} Q^{2}}{4 \pi \alpha} \cdot \dfrac{Q_{W} F_{W}(Q^{2})}{Z F_{ch}(Q^{2})} ,
+A_{pv} \simeq \dfrac{G_{F} Q^{2}}{4 \pi \alpha} \cdot \dfrac{Q_{W} F_{W}(Q^{2})}{Z F_{ch}(Q^{2})} ,
 \end{equation} 
 
 where $G_{F}$ is the Fermi constant, $Q^{2}$ is the transferred momentum, Z and $Q_{W}$ are the electric and weak charge of the nucleus, $F_{ch}$ and $F_{W}$ are the charged and weak form factors of the nucleus. The charge form factor of the lead nucleus is known with high accuracy (precision of 0.02 \%), so in this limit the only quantity that is unknown is $F_{W}(Q^{2})$. In the long wavelength approximation, isolating various moments of the spacial distribution, the weak form factor at single value of momentum transfer is given by:
@@ -184,9 +184,9 @@ However, the situation is rapidly changing with the beginning of the gravitation
 \Lambda = \frac{2}{3} k_{2} \big( \dfrac{c^{2} R_{NS}}{GM} \big)^{5}
 \end{equation}
 
-In this expression, M and $R_{NS}$ are the neutron star mass and radius, and $k_{2}$ is the second tidal Love number \cite{Binnington:2009bb}, which is computed from the quadrupole component of the gravitational field induced by the companion. With the first detection, an upper limit $\Lambda < 800$ was placed, corresponding to an upper limit of $R_{NS}^{1.4} < \SI{13.76}{\kilo \meter}$ \cite{Fattoyev_2018} for radius of a neutron star with $1.4$ solar masses (see figure \ref{fig:NeutronSkinandLambda}). Because of the strong correlation between $R_{NS}$, $L$ and $\delta r_{np}$, an indirect constrain on the neutron skin thickness of $^{208}Pb$ was obtained: $\delta r_{np} < \SI{0.25}{\femto \meter}$. However, a more recent analysis \cite{LIGOScientific:2018cki} of GW170817 has placed a more stringent limit on the Tidal polarizability, with $\Lambda_{1.4} = 190^{+190}$.
+In this expression, M and $R_{NS}$ are the neutron star mass and radius, and $k_{2}$ is the second tidal Love number \cite{Binnington:2009bb}, which is computed from the quadrupole component of the gravitational field induced by the companion. With the first detection, an upper limit $\Lambda < 800$ was placed, corresponding to an upper limit of $R_{NS}^{1.4} < \SI{13.76}{\kilo \meter}$ \cite{Fattoyev_2018} for radius of a neutron star with $1.4$ solar masses (see figure \ref{fig:NeutronSkinandLambda}). Because of the strong correlation between $R_{NS}$, $L$ and $\delta r_{np}$, an indirect constrain on the neutron skin thickness of $^{208}Pb$ was obtained: $\delta r_{np} < \SI{0.25}{\femto \meter}$. However, a more recent analysis \cite{LIGOScientific:2018cki} of GW170817 has placed a more stringent limit on the Tidal polarizability, with $\Lambda_{1.4} = 190^{+390}_{-120}$.
 
- This limits is in slightly tension with the larger values measured by PREX collaboration, suggesting that the symmetry energy, for slightly higher density as in neutron stars, decreases with respect to the typical density found in atomic nuclei. This increment and decrement may be an indication of the presence of phase transition in the interior of neutron stars.
+ This limits is in slight tension with the larger values measured by PREX collaboration, suggesting that the symmetry energy, for slightly higher density as in neutron stars, decreases with respect to the typical density found in atomic nuclei. This increment and decrement may be an indication of the presence of phase transition in the interior of neutron stars.
 
 \begin{figure}[!hbtp]
 \centering
@@ -221,7 +221,7 @@ A = \frac{\sigma_{\uparrow} - \sigma_{\downarrow}}{\sigma_{\uparrow} + \sigma_{\
 it is useful to understand the reason why the presence of an asymmetry in the cross section is related to the time-reversal operator. Looking at the figure of the kinematics, we can compare the two situation before and after applying the time-reversal operator, $\hat{T}$. It is evident that: 
 
 \begin{itemize}
-\item Before applying $\hat{T}$, we have the incoming electron with $\vec{k}$ momenta and the nucleus with $\vec{P}$ momenta. Applying $\hat{T}$ will exchange the incoming electron and nucleus with the outgoing electron and nucleus.
+\item Before applying $\hat{T}$, we have the incoming electron with $\vec{k}$ momenta and the nucleus with $\vec{p}$ momenta. Applying $\hat{T}$ will exchange the incoming electron and nucleus with the outgoing electron and nucleus.
 \item The $\hat{T}$ operator flips also the spin of the incoming electron.
 \item Considering that the process is elastic, the kinematic is the same with and without applying the the Time-reversal operator. 
 \end{itemize}
