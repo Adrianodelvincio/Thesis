@@ -2,102 +2,189 @@
 %\usepackage[utf8]{inputenc}
 \usepackage[output-decimal-marker={,}]{siunitx}
 \usepackage[compat=1.1.0]{tikz-feynman}
-\author{Adriano Del Vincio}
-\title{Beam normal single spin asymmetry measurement at MAMI}
-\usetheme{Madrid}
+\newcommand{\commento}[1]{}
+
+%TITOLO TESI
+%\usetheme{Madrid}
+\usetheme{CambridgeUS}
+\author[Adriano Del Vincio]{Adriano Del Vincio 562946\\ \footnotesize Relatori: prof. Francesco Forti, Prof. Concettina Sfienti}
+\institute[Università di Pisa]{\textbf {Università di Pisa}}
+\title{Tesi di Laurea}
+\subtitle{Commissioning and First Data Analysis of the Mainz Radius Experiment}
+\date{20/07/2023}
+\titlegraphic{\includegraphics[width=0.3\textwidth]{MarchioUnipi.pdf}}
+
 
 \begin{document}
-
+%TITOLO 
 \frame{\titlepage}
 
-\begin{frame}{Beam-time 29/11/2022 - 5/12/2022}
-\framesubtitle{Beam normal single spin asymmetry}
-During the last beam-time, several mesurements were performed at Mainz Mikrotron MAMI. The last data acquisition campaign had the following goals:
+% 1 INTRODUZIONE MREX 
+\begin{frame}{MREX Experiment}
+
+Prima slide della presentazione, introduzione di carattere generale all'esperimento MREX. In particolare:
 
 \begin{itemize}
-\item Test the new data acquisition system, developed for the new setup with a low rate signals ($\simeq \SI{1}{\mega \hertz} $). 
-\item Measure the trasverse asymmetry $A_{n}$ of $^{12}C$.
-\item Measure the expected rates on $^{208}Pb$ target, in anticipation of the future mesurement of $A_{n}$ for lead. 
-\item Long term goal: acquire more knowledge on the systematic effects that the transverse asymmetry has on the measurement of the Parity-violating asymmetry.
+\item introduzione esperimento MREX
+\item dove si svolge
+\item cosa si vuole misurare
 \end{itemize}
+\end{frame}
+
+%\begin{frame}{MREX Experiment}
+%\end{frame}
+
+% 3 MREX e Neutron Skin
+\begin{frame}{MREX and Neutron Skin Thickness}
+
+Neutron Skin thickness, definizione generale. Collegamento tra equazione di stato della materia nucleare e neutron skin
 
 \end{frame}
 
-\begin{frame}{A first look the physics of the problem}
+% 4 SLOPE OF THE SYMMETRY ENERGY
+\begin{frame}{Symmetry Energy}
 
-Before moving on to the experimental details, we identify the kinematics of the experiment. For the beam normal single spin asymmetry, the electrons are polarized in the normal plane identified by the $\frac{\vec{k'} \wedge \vec{k}}{ |\vec{k}| |\vec{k'}|}$ 
-
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width = 0.35\textwidth]{figures/SmartSelect_20221204_171028_Samsung Notes.jpg}
-\hspace{2cm}
-\includegraphics[width = 0.30\textwidth]{figures/IMG_20221124_144946.jpg} 
-\caption{(very) schematic figure of the experiment on the left, Spektrometers B (blue) and A on right, view is from the beam dump}
-\end{figure}
-The position of the two dectector is fixed at $\simeq 23 ^{\circ}$, that correspond to a $Q^{2} = \SI{0.04} {\giga \electronvolt}$
+Cosa è l'energia di simmetria, come è collegata con il comportamento della materia nucleare di neutroni 
 
 \end{frame}
 
-\begin{frame}{Structure of the event}
+% 5 Neutron Skin and Neutron Star Radius
+\begin{frame}{Neutron Skin and Neutron Star Radius}
 
-The trasverse asymmetry is defined as the ratio between the sum and the difference of the elastic cross section for the two different polarized electrons: 
+Collegamento Neutron Skin Thickness e stelle di neutroni. Cenni alle misure di eventi di coalescenza di stelle di neutroni e deformabilità.
+
+\end{frame}
+
+% 6 Neutron Skin, misurare la densità spaziale di neutroni del nucleo di Piombo
+\begin{frame}{Measurement of the Neutron Spacial Distribution of Lead}
+
+Misura della densità spaziale di neutroni, cenno ai limiti degli esperimenti con particelle alpha e pioni. Introduzione alla Parity Violating asymmetry.
+
+\end{frame}
+
+% 7 PARITY VIOLATING ASYMMETRY
+\begin{frame}{Parity Violating Asmmetry}
+
+Come è definita $A_{pv}$, come è possibile misurarla, caratteristiche dell'esperimento.
+
+\end{frame}
+
+% 8 INTRODUZIONE ALLA TRANSVERSE ASYMMETRY
+\begin{frame}{Transverse Asymmetry}
+
+Argomento principale della tesi: misura dell'asimmetria trasversa, fondo sistematico di $A_{pv}$ da determinare. Introduzione alla fisica del processo 
+\\ 
+The transverse asymmetry is defined as the ratio between the sum and the difference of the elastic cross section for the two different polarized electrons: 
 
 \begin{equation*}
 A_{transverse} = \dfrac{\sigma_{\uparrow} -  \sigma_{\downarrow}}{\sigma_{\uparrow} + \sigma_{\downarrow}}
 \end{equation*}
 
-straightforward this quantity can be measured with the asymmetry in the counts of a detector. With the following convention, the beam is polarized (using a de bruijn sequence) in one of the two possible configuration of the spin. So an event corresponds to the integration of all particles scattered during 80 ms window. 
+Before moving on to the experimental details, we identify the kinematics of the experiment. For the beam normal single spin asymmetry, the electrons are polarized in the normal plane identified by the $\frac{\vec{k'} \wedge \vec{k}}{ |\vec{k}| |\vec{k'}|}$ 
+\end{frame}
+
+% 9 DESCRIZIONE DEL PROCESSO
+\begin{frame}{Description of the Process}
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width = 0.5\textwidth]{figures/EventStructure.jpg}
-\caption{Event sequence: all the particle}
+\includegraphics[width = 0.65\textwidth]{figures/scattering.pdf}
+\hspace{1cm}
 \end{figure}
 
-
 \end{frame}
-
-
-\begin{frame}{Scattering process}
-
-The following one is the diagram we are interest to calculate,  the one loop correction to the electron-nucleus elastic scattering. This diagram give rise to a non-zero imaginary part of the elastic amplitude, that is related to the transverse asymmetry.
-
-\begin{figure}[hbtp]
-\feynmandiagram [scale = 0.8, transform shape][baseline = (h), horizontal = d to j]{
-	a [particle=\(e^{-}\)] -- c -- f -- g [particle = \(e^{-}\)],
-	c -- [boson, edge label'= \(\gamma\)] d,
-	f -- [boson, edge label'= \(\gamma\)] j,
-	h [particle = \(C^{12}\)]-- d -- j -- k [particle = \(C^{12}\)] ,
-};
-\hspace{2cm}
-\includegraphics[width = 0.30\textwidth]{figures/time.jpg} 
-\end{figure}
-
-If we consider the same scattering process, but after applying $\hat{T}$ operator, the spin of the electron is reversed. This means that the asymmetry is directly correlated to Time-reversal simmetry. 
-
-\end{frame}
-
-
 
 \begin{frame}{Scattering Process}
 
-The incident beam is made by $\SI{570}{\mega \electronvolt}$ electrons, that are polarized along the trasverse axes ($\uparrow$ and $\downarrow$). The physical quantity to measure is the asymmetry between the number of scattered electrons, due to the change of the polarity:
+The incident beam is made by $\SI{570}{\mega \electronvolt}$ electrons, that are polarized along the transverse axes ($\uparrow$ and $\downarrow$). The physical quantity to measure is the asymmetry between the number of scattered electrons, due to the change of the polarity:
 
 \begin{equation}
 asym = \frac{N_{+} - N_{-}}{N_{+} + N_{-}} \text{(expected $\sim$ +/- 20 ppm, Q = \SI{0.2}{\giga\electronvolt c^{-1}})}
 \end{equation}
 
-It's possible to obtain a final formula for the trasverse Asymmetry, writing the Amplitude of the 1-loop diagram, considering the elastic intermediate state and the inelastic intermediate state (whose contribution is higher):
+It's possible to obtain a final formula for the transverse Asymmetry, writing the Amplitude of the 1-loop diagram, considering the elastic intermediate state and the inelastic intermediate state (whose contribution is higher):
 
 \begin{equation}
 A_{n} \simeq C_{0} \log \frac{Q^{2}}{m^2_e c^2} \frac{F_{Compton} (Q^2)}{F_{ch}(Q^2)}
 \end{equation}
 
-It's possible to perform analytical calculation for the inelastic intermediate state, however for the inelastic term, some parametrizations are needed.
+MENZIONARE PREX!!!
 
 \end{frame}
 
-\begin{frame}
+
+% 10 BEAM TIME, OBIETTIVI DELL'ESPERIMENTO
+\begin{frame}{Beam-time 29/11/2022 - 5/12/2022}
+\framesubtitle{Beam Normal Single Spin Asymmetry at MAMI}
+During the last beam-time, several measurements were performed at Mainz Mikrotron MAMI. The last data acquisition campaign had the following goals:
+
+\begin{itemize}
+\item Test the new data acquisition system, developed for the new setup with a low rate signals ($\simeq \SI{1}{\mega \hertz} $). 
+\item Measure the transverse asymmetry $A_{n}$ of $^{12}C$.
+\item Measure the expected rates on $^{208}Pb$ target, in anticipation of the future measurement of $A_{n}$ for lead. 
+\item Long term goal: acquire more knowledge on the systematic effects that the transverse asymmetry has on the measurement of the Parity-violating asymmetry.
+\end{itemize}
+\end{frame}
+
+% 11 MAMI ACCELERATORE
+\begin{frame}{MAMI Electron Accelerator}
+
+Schema dell'acceleratore e descrizione breve del suo funzionamento
+
+\end{frame}
+
+% 12 Sala Sperimentale
+\begin{frame}{Experimental Hall}
+
+Immagine A1.
+
+\end{frame}
+
+% 13 SCHEMA DETECTORS
+
+\begin{frame}{Detectors}
+
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[width = 0.4\textwidth ]{figures/DetectorB.pdf}
+\hspace{1cm}
+\includegraphics[width = 0.5\textwidth ]{figures/detectorA.pdf}
+\end{figure}
+
+\commento{The detectors are made by 9 and 3 pmts coupled to a fused-silica material, exploiting the Cherenkov light produced when a particle travel inside the material.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.3\textwidth]{figures/504px-Blackfalcon.jpg}
+\hspace{2cm}
+\includegraphics[width = 0.4\textwidth]{figures/DetectorA.jpg}
+\caption{Detector B on the left, detector A on the right.}
+\end{figure}}
+
+\end{frame}
+
+% 14 NINO BOARD
+\begin{frame}{NINO Board}
+
+Nino board, immagine + spiegazione di come sono acquisiti i segnali.
+
+\end{frame}
+
+% 15 Struttura dell'evento
+\begin{frame}{Structure of the event}
+
+The Data are divided in a series of events (\SI{80}{\milli \second}), that correspond to 4 sequential sub-event. For each sub-event there is a precise polarization of the Beam. For each sub-event all the scattering electrons are counted.uring . 
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.75\textwidth]{figures/EventStructure.pdf}
+\caption{Event sequence: all the particle}
+\end{figure}
+
+\end{frame}
+
+% 16 Problema delle false asimmetrie
+\begin{frame}{False Asymmetries}
 The counts of the pmts can be slightly different due to the variation of the position of the beam on the target, the variations of the incident angles, the uncertain associated with the energy and the current of the beam. All this quantity can influence the asymmetry measured by the pmts, considering also that the expected asymmetry is in the order of ten part per million, and small asymmetry introduced by fluctuations of the beam parameters are not negligible:
 \newline
 \newline
@@ -106,137 +193,103 @@ Asym = A_{physical} \cdot P + \delta_{I} + A_{x} \delta x + A_{y} \delta y + A_{
 \end{equation}
 \end{frame}
 
-\begin{frame}{The Detectors}
-The detectors are made by 9 and 3 pmts coupled to a fused-silica material, exploiting the Cherenkov light produced when a particle travel inside the material.
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width = 0.3\textwidth]{figures/504px-Blackfalcon.jpg}
-\hspace{2cm}
-\includegraphics[width = 0.4\textwidth]{figures/IMG_20221110_122246.jpg}
-\caption{Detector B on the left, detector A on the right.}
-\end{figure}
+\begin{frame}{MAMI Beam Monitors}
+
+Descrizione dei principi di funzionamento dei monitors di MAMI.
 
 \end{frame}
 
-\begin{frame}{Read-out}
 
-The pmt signals are read-out by a Nino-board, shown in figure: This device collects the number of pulses directly from the pmts. It’s made by discriminators which compare the input signals (on the left side) to a signal that can be adjusted manually with the pvDaq.py scripts. Three parameters are important for the DAQ and calibration of the pmt: the Voltage supply of the pmts, the threshold (always fixed) and the Attenuation.
+\begin{frame}{Voltage to Frequency Converter}
 
-\begin{figure}[hbtp]
- 
- \centering
- \includegraphics[width = 0.37\textwidth]{figures/NinoBoard.jpg}
- \caption{Nino-Board, on the right the input channels for the signals}
- \end{figure}
-  
-\end{frame}
-
-\begin{frame}
-
-Here we present a picture of the MasterBoard, the core of the electronics system, which controls and supervises the following functions:
-
-\begin{itemize}
-\item it controls the X and Y signals to the Wobbler, to avoid melting the target.
-\item it sends the signals to the Source, to change the polarity of the beam ($\simeq 0.79$).
-\item it Manages the data from all the beam monitors: X21/25/26, Y21/25/26, I21, I13, ENMO.
-
-\end{itemize}
-
-
-\begin{figure}
-\centering
-\includegraphics[width = 0.5\textwidth]{figures/MasterBoard.jpg}
-\end{figure}
- 
-\end{frame}
-
-
-\begin{frame}{The Detectors}
-The detectors are placed inside the two spektrometers, which were used only to align the two detectors to the elastic scattering line (changing the magnetic field).
-
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width = 0.5\textwidth]{figures/twoSpektrometer.jpg}
-\hspace{1cm}
-\includegraphics[width = 0.3\textwidth]{figures/InsideDetector.jpg} 
-\caption{Spektrometers B and A on the left, view of the inside with the detector A in position.}
-\end{figure}
-
+Breve descrizione di come funzionano i voltage to frequency converter
 
 \end{frame}
 
-\begin{frame}{Vfc I21 calibration}
+% 17 SCHEMA GENERALE DELL'ESPERIMENTO
+\begin{frame}{General Scheme of the Experiment}
+
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width = 0.7\textwidth]{figures/Calib_I21_from_Pb_runs.png}
-\caption{ Calibration of the VFC I21 monitor, for me measurement of the beam current.}
+\includegraphics[width = 0.9\textwidth]{figures/Electronic_scheme.pdf}
+\caption{Scheme of the experiment.}
 \end{figure}
+\end{frame}
+
+% 18 1 DETECTOR TEST
+\begin{frame}{Detector Tests}
 
 \end{frame}
 
-\begin{frame}{Calibration of the pmt}
-
-\begin{figure}[hbtp]
-\caption{pmt Count spekA, the threshold was selected at the edge of the knee for each pmt.}
-\centering
-\includegraphics[width = 0.8\textwidth]{figures/Calibration.png}
-\end{figure}
+% 18 CALIBRATION OF THE BEAM PARAMETERS
+\begin{frame}{Calibration of the Beam Parameters}
 
 \end{frame}
 
-\begin{frame}{Calibration of the pmt}
-
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width = 0.8\textwidth]{figures/CalibrationB.png}
-\caption{Calibration of the pmt of detectorB, the threshold was selected at the edge of the knee for each pmt.}
-\end{figure}
+\begin{frame}{Beam Position}
 
 \end{frame}
 
-\begin{frame}{XY calibration}
+\begin{frame}{Beam Energy}
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width = 0.4\textwidth]{figures/HorizontalCalibration.png}
-\includegraphics[width = 0.4\textwidth]{figures/VerticalCalibration.png} 
-\caption{Vertical and horizontal calibration. Knowing the distance between the center of the first wire and the last one, it is possible to obtain the scaling factor for X and Y position on the target.}
-\end{figure}
+\end{frame}
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width = 0.35\textwidth]{figures/YcheckA.png} 
-\includegraphics[width = 0.35\textwidth]{figures/XcheckA.png}
-\caption{Check plots, produced after computing the correct scaling factor.}
-\end{figure}
+\begin{frame}{Beam Current}
 
- 
+\end{frame}
+
+\begin{frame}{Auto-Calibration procedure}
+
+\end{frame}
+
+% 19 DATA ANALYSIS
+\begin{frame}{Analysis on Carbon Target}
+
+\end{frame}
+
+% 20 Model for Fitting the Data
+\begin{frame}{Model For Fitting the Data}
+
+Modello lineare tra asimmetria e beam parameters, discutere differenza corrente e altri parametri del fascio. 
+
+\end{frame}
+
+% 21 Data Selection
+\begin{frame}{Data Selection}
+
 
 
 \end{frame}
 
-\begin{frame}{Expected error}
+% 22 Polarization Loss
+\begin{frame}{Polarization Loss}
 
-The expected error is recostruncting the asymmetry is now computed:
+Discutere la rilevante perdita di polarizzazione che è avvenuta ed il modo in cui si sono identificati questi dati.
+
+\end{frame}
+
+% 23 FIT TO DATA, CORRELATION
+\begin{frame}{Beam Parameters Correlation}
+
+\end{frame}
+
+% 24 EXPECTED ERROR
+\begin{frame}{Variance of the Asymmetry Data}
+
+The statistical error of the measured asymmetries is now computed:
 
 \begin{gather*}
 Var[A_{asym}] = Var[\dfrac{N_{\uparrow} - N_{\downarrow}}{ N_{\uparrow} + N_{\downarrow}}] \simeq \dfrac{Var[N_{\uparrow} - N_{\downarrow}]}{(N_{\uparrow} + N_{\downarrow})^{2}} \\
 \frac{2Var[N]}{4N^{2}} = \frac{1}{2N} \qquad \sigma = \frac{1}{\sqrt{2N}}
 \end{gather*}
 
-This is the $\sigma$ supposing that the pmt's Counts are gaussian distributed, with $\mu$ equal to $\sigma^{2}$. The rms associated to the sample mean decrease as the $\sqrt{N_{measure}}$. 
+Where it is supposed that the PMTs counts are normal distributed, with $\mu$ equal to $\sigma^{2}$. The rms associated to the sample mean decreases as the $\sqrt{N_{measure}}$. 
 
-Considering a $\mu = 10000$ and $3 \cdot 10^{6}$ data (often used during the simulation) the error is about $4 ppm$. Therefore, considering $5\cdot 10^{5}$ data, but $\mu = 40000$, a factor of $4$ more scattered electron (as we observed in the real data), we obtain an error of $\simeq 5ppm$.
-
-\begin{figure}[hbtp]
-\caption{Pmt 4, asymmetry on the left, pmt counts on the right}
-\centering
-\includegraphics[width = 0.4\textwidth]{figures/ASYM_A4.pdf}
-\includegraphics[width = 0.4\textwidth]{figures/pmtA4.pdf} 
-\end{figure}
+Considering $5\cdot 10^{5}$ events and $\mu = 40000$ counts per PMT (similar to what was measured for detector A) we obtain an error of $\simeq 5ppm$.
 
 \end{frame}
+
 
 \begin{frame}
 
@@ -244,34 +297,39 @@ Here a plot about the trend of the asymmetry as the data increases. The band is 
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width = 0.85\textwidth]{figures/asymmetries_all.png}
-\caption{Raw asymmetry for detector A,B as a function of the number of data}
+\includegraphics[width = 0.70\textwidth]{figures/AveragedAsymmetry.pdf}
 \end{figure}
 
 \end{frame}
 
-\begin{frame}{Preliminary results}
+
+% VISUALIZATION OF THE DATA
+\begin{frame}{Visualization of the Data}
+
+\end{frame}
+
+\begin{frame}{Results}
 
 For each pmt, we present the raw values of the asymmetry, obtained by subtracting the Raw current asymmetry, that is roughly $-1.11$ ppm , then we compute the averaged values:
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width = 0.75\textwidth]{figures/RawResults.png}
+\includegraphics[width = 0.65\textwidth]{figures/FirstResult.pdf}
 \caption{Asymmetries obtained for each pmt. The asymmetries are corrected subtracting the current asymmetries, without any further fit procedure.}
 \end{figure}
 \end{frame}
 
-\begin{frame}{Preliminary results}
+\begin{frame}{Results}
  
-Combining the result of each pmt, assuming all the asymmetries measured are indipendent of each other, we obtain the following quantities for Beam normal single spin asymetries:
+Combining the result of each pmt, assuming all the asymmetries measured are independent of each other, we obtain the following quantities for Beam normal single spin asymmetries:
 
 \begin{gather*}
-\hat{Asym} =  \frac{\Sigma_{i} Asym_{i} \frac{1}{w_{i}}}{\frac{1}{w_{i}}} \qquad w_{i} = \frac{1}{\sigma^{2}_{i}}
+\hat{A} =  \frac{\Sigma_{i} A_{i} \frac{1}{w_{i}}}{\frac{1}{w_{i}}} \qquad w_{i} = \frac{1}{\sigma^{2}_{i}}
 \end{gather*}
 
 We obtain the following:
 \begin{equation}
-A_{detA} = (20.45 \pm 1.6) ppm  \qquad A_{detB} = (-23.19  \pm 4.18)ppm
+A_{A} = (23.1 \pm 1.7) ppm  \qquad A_{B} = (-21  \pm 5)ppm
 \end{equation}
 
 Reversing the sign of the asymmetry for detB we notice that the two measurement are consistent, and this show the good behaviour of the electronic setup used for the experiment. 
@@ -279,13 +337,10 @@ Reversing the sign of the asymmetry for detB we notice that the two measurement 
 \end{frame}
 
 \begin{frame}{Rates on Lead}
-
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width = 0.8\textwidth]{figures/Rates_on_Lead.png}
-\caption{Rate for Lead target, pmts of detector A}
+\includegraphics[width = \textwidth]{figures/LeadRates.pdf}
 \end{figure}
-
 
 \end{frame}
 
