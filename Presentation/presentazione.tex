@@ -2,58 +2,117 @@
 %\usepackage[utf8]{inputenc}
 \usepackage[output-decimal-marker={,}]{siunitx}
 \usepackage[compat=1.1.0]{tikz-feynman}
+\usepackage{amsmath}
+\usepackage[most]{tcolorbox}
+
+
 \newcommand{\commento}[1]{}
+\setbeamercolor{block title}{fg=white, bg=orange}
+
+\newtcolorbox{mysidebyside}[1][]{
+    notitle, sidebyside,
+    sidebyside align=center seam,
+    halign=center,
+    lefthand width=.3\textwidth,
+    #1
+}
 
 %TITOLO TESI
 %\usetheme{Madrid}
 \usetheme{CambridgeUS}
 \author[Adriano Del Vincio]{Adriano Del Vincio 562946\\ \footnotesize Relatori: prof. Francesco Forti, Prof. Concettina Sfienti}
 \institute[Università di Pisa]{\textbf {Università di Pisa}}
-\title{Tesi di Laurea}
-\subtitle{Commissioning and First Data Analysis of the Mainz Radius Experiment}
+\title[Tesi di Laurea]{Commissioning and First Data Analysis of the Mainz Radius Experiment}
+\subtitle{}
 \date{20/07/2023}
 \titlegraphic{\includegraphics[width=0.3\textwidth]{MarchioUnipi.pdf}}
-
+\setbeamerfont{title}{shape=\itshape,family=\rmfamily}
 
 \begin{document}
+\setlength{\belowdisplayskip}{0pt}
+\setlength{\abovedisplayskip}{0pt}
+
+
 %TITOLO 
 \frame{\titlepage}
 
+
 % 1 INTRODUZIONE MREX 
-\begin{frame}{MREX Experiment}
+\begin{frame}{The Mainz Radius Experiment}
+\framesubtitle{MREX}
 
-Prima slide della presentazione, introduzione di carattere generale all'esperimento MREX. In particolare:
+The Mainz Radius Experiment is an experimental campaign at the nuclear physics institute of Mainz, with the aim of investigating the properties of nuclear matter with imbalance in the number of protons and neutrons.
 
-\begin{itemize}
-\item introduzione esperimento MREX
-\item dove si svolge
-\item cosa si vuole misurare
-\end{itemize}
+\begin{block}{Objective}
+Determination of the neutron spacial density for $^{208}Pb$ nucleus, through the elastic electron scattering. From an accurate determination of the neutron spacial distribution, the \textit{Neutron Skin Thickness} of $^{208}Pb$ is measured.
+\end{block}
+
+\begin{columns}[T]
+\begin{column}{.7\textwidth}
+The results of the experiment will be valuable to constrain the Equation of 	State (EOS) of nuclear matter. It has also implications for the structure of neutron 		star.
+\end{column}
+\begin{column}{.3\textwidth}
+\centering
+\includegraphics[width = 0.75\textwidth]{figures/lead.pdf}
+\end{column}
+\end{columns}
 \end{frame}
-
-%\begin{frame}{MREX Experiment}
-%\end{frame}
 
 % 3 MREX e Neutron Skin
 \begin{frame}{MREX and Neutron Skin Thickness}
 
-Neutron Skin thickness, definizione generale. Collegamento tra equazione di stato della materia nucleare e neutron skin
+\begin{definition}
+The neutron skin thickness is defined as the difference between rms radius of neutron and proton spacial distributions:
+\begin{equation}
+\delta r_{np} = \sqrt{\vphantom{r^{2}_{p}}<r^{2}_{n}>} - \sqrt{<r^{2}_{p}>} ,
+\end{equation}
+\end{definition}
 
+\begin{columns}[T]
+\begin{column}{.5\textwidth}
+In neutron rich nuclei, the spacial distribution of neutrons in more extended than proton spacial distribution.
+Theoretical models link the Neutron skin thickness of heavy nuclei, such as $^{208}Pb$, with the \textbf{slope of the symmetry energy L}.
+\end{column}
+\begin{column}{.5\textwidth}
+\centering
+\includegraphics[width = 1\textwidth]{figures/SpacialDistribution.png}
+\end{column}
+\end{columns}
 \end{frame}
 
 % 4 SLOPE OF THE SYMMETRY ENERGY
 \begin{frame}{Symmetry Energy}
 
+The symmetry energy $S(\rho)$ is the key component of the equation of state which controls the neutron skin thickness. $S(\rho)$ quantifies the change in energy related to the neutron-proton asymmetry. 
+
+\begin{equation}
+\begin{split}
+\epsilon(\rho, \alpha) &= \epsilon_{SNM}(\rho) + \alpha^{2} S(\rho) + O(\alpha^{4}) \\
+\epsilon(\rho) &= J + L \cdot (\dfrac{\rho - \rho_{0}}{3 \rho_{0}}) + ...
+\end{split}
+\end{equation}
+
 Cosa è l'energia di simmetria, come è collegata con il comportamento della materia nucleare di neutroni 
+
+\begin{center}
+\includegraphics[scale=0.3]{figures/LvsR.pdf}
+\end{center}
 
 \end{frame}
 
 % 5 Neutron Skin and Neutron Star Radius
 \begin{frame}{Neutron Skin and Neutron Star Radius}
-
-Collegamento Neutron Skin Thickness e stelle di neutroni. Cenni alle misure di eventi di coalescenza di stelle di neutroni e deformabilità.
-
+\begin{columns}[T]
+\begin{column}{.5\textwidth}
+The slope of the symmetry energy is related to both the neutron skin of lead and neutron star radius. The radius of the neutron star is determined from the Tolman–Oppenheimer–Volkoff (TOV) equation. Giving the pressure $P_{c}$ at the center of the star, the radius $R$ can be determined. But for neutron star, the pressure at the center is strongly related to the pressure of pure neutron matter, in large part determined by $L$.
+\end{column}
+\begin{column}{.5\textwidth}
+\centering
+\includegraphics[scale=0.50]{figures/LvsRns.pdf}
+\end{column}
+\end{columns}
 \end{frame}
+
 
 % 6 Neutron Skin, misurare la densità spaziale di neutroni del nucleo di Piombo
 \begin{frame}{Measurement of the Neutron Spacial Distribution of Lead}
@@ -126,6 +185,19 @@ During the last beam-time, several measurements were performed at Mainz Mikrotro
 \end{itemize}
 \end{frame}
 
+% 15 Struttura dell'evento
+\begin{frame}{Structure of the event}
+
+The Data are divided in a series of events (\SI{80}{\milli \second}), that correspond to 4 sequential sub-event. For each sub-event there is a precise polarization of the Beam. For each sub-event all the scattering electrons are counted.uring . 
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.75\textwidth]{figures/EventStructure.pdf}
+\caption{Event sequence: all the particle}
+\end{figure}
+
+\end{frame}
+
 % 11 MAMI ACCELERATORE
 \begin{frame}{MAMI Electron Accelerator}
 
@@ -167,19 +239,6 @@ Immagine A1.
 \begin{frame}{NINO Board}
 
 Nino board, immagine + spiegazione di come sono acquisiti i segnali.
-
-\end{frame}
-
-% 15 Struttura dell'evento
-\begin{frame}{Structure of the event}
-
-The Data are divided in a series of events (\SI{80}{\milli \second}), that correspond to 4 sequential sub-event. For each sub-event there is a precise polarization of the Beam. For each sub-event all the scattering electrons are counted.uring . 
-
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width = 0.75\textwidth]{figures/EventStructure.pdf}
-\caption{Event sequence: all the particle}
-\end{figure}
 
 \end{frame}
 
