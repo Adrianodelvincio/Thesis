@@ -4,18 +4,12 @@
 \usepackage[compat=1.1.0]{tikz-feynman}
 \usepackage{amsmath}
 \usepackage[most]{tcolorbox}
-
+\tikzfeynmanset{every blob = {minimum size = 2mm}}
 
 \newcommand{\commento}[1]{}
 \setbeamercolor{block title}{fg=white, bg=orange}
 
-\newtcolorbox{mysidebyside}[1][]{
-    notitle, sidebyside,
-    sidebyside align=center seam,
-    halign=center,
-    lefthand width=.3\textwidth,
-    #1
-}
+\beamertemplatenavigationsymbolsempty
 
 %TITOLO TESI
 %\usetheme{Madrid}
@@ -115,17 +109,42 @@ The slope of the symmetry energy is related to both the neutron skin of lead and
 
 
 % 6 Neutron Skin, misurare la densità spaziale di neutroni del nucleo di Piombo
+\commento{
 \begin{frame}{Measurement of the Neutron Spacial Distribution of Lead}
 
 Misura della densità spaziale di neutroni, cenno ai limiti degli esperimenti con particelle alpha e pioni. Introduzione alla Parity Violating asymmetry.
 
-\end{frame}
+\end{frame}}
 
 % 7 PARITY VIOLATING ASYMMETRY
-\begin{frame}{Parity Violating Asmmetry}
+\begin{frame}
+\frametitle{Parity Violating Asymmetry}
+\framesubtitle{Measurement of the Neutron Spacial Distribution of Lead}
 
-Come è definita $A_{pv}$, come è possibile misurarla, caratteristiche dell'esperimento.
+The determination of the neutron spacial distribution relies on the electron nucleus elastic scattering experiment, planned at the future MESA accelerator, in Mainz. 
+The neutron spacial distribution is measured via the parity violating scattering, where longitudinal polarized electrons scatter from a fixed lead target. The key quantity is the asymmetry in the cross-section due to the different polarization state of the beam,
 
+\begin{equation}
+A_{pv} = \dfrac{\sigma_{R} - \sigma_{L}}{\sigma_{R} + \sigma_{L}}
+\end{equation}
+
+The asymmetry is due to the interference between two Feynmann diagrams.
+
+\begin{figure}
+\[
+\feynmandiagram [scale =  0.8, transform shape][vertical = c to d]{
+	a [particle = \(e^{-}\)] -- [fermion, thick] c -- [fermion, thick] g [particle = \(e^{-}\)],
+	c -- [photon, edge label' = \(\gamma\), momentum = {[arrow style = blue]\(k\)}] d,
+	h [particle = \(^{12}C\)] -- [fermion, thick] d -- [fermion, thick] j [particle = \(^{12}C\)],
+	};
+\qquad \qquad
+\feynmandiagram [scale = 0.8, transform shape][vertical = c to d]{
+	a [particle = \(e^{-}\)] -- [fermion, thick] c -- [fermion, thick] g [particle = \(e^{-}\)],
+	c -- [photon, edge label' = \(Z\), momentum = {[arrow style = blue]\(k\)}] d,
+	h [particle = \(^{12}C\)] -- [fermion, thick] d -- [fermion, thick] j [particle = \(^{12}C\)],
+	};
+\]
+\end{figure}
 \end{frame}
 
 % 8 INTRODUZIONE ALLA TRANSVERSE ASYMMETRY
@@ -139,17 +158,36 @@ The transverse asymmetry is defined as the ratio between the sum and the differe
 A_{transverse} = \dfrac{\sigma_{\uparrow} -  \sigma_{\downarrow}}{\sigma_{\uparrow} + \sigma_{\downarrow}}
 \end{equation*}
 
-Before moving on to the experimental details, we identify the kinematics of the experiment. For the beam normal single spin asymmetry, the electrons are polarized in the normal plane identified by the $\frac{\vec{k'} \wedge \vec{k}}{ |\vec{k}| |\vec{k'}|}$ 
+Before moving on to the experimental details, we identify the kinematics of the experiment. For the beam normal single spin asymmetry, the electrons are polarized in the normal plane identified by the $\frac{\vec{k'} \wedge \vec{k}}{ |\vec{k}| |\vec{k'}|}$
+
+\begin{figure}[hbtp]
+\[
+\feynmandiagram [scale = 0.8, transform shape][vertical = c to d]{
+	a [particle = \(e^{-}\)] -- [fermion, thick] c -- [fermion, thick] g [particle = \(e^{-}\)],
+	c -- [photon, edge label' = \(\gamma\), momentum = {[arrow style = blue]\(k\)}] d [blob],
+	h [particle = \(^{12}C\)] -- [fermion, thick] d -- [fermion, thick] j [particle = \(^{12}C\)],
+	};
+\qquad \qquad \qquad
+\feynmandiagram [scale = 0.8, transform shape][baseline = (h), horizontal = d to j]{
+	a [particle = \(e^{-}\)] -- [fermion, thick] c -- [fermion, thick, edge label' = \(e\), momentum = {[arrow style = blue]\(k_{1}\)}] f -- [fermion, thick] g [particle = \(e^{-}\)],
+	c -- [photon, edge label = \(\gamma\)] d [blob],
+	f -- [photon, edge label = \(\gamma\)] j [blob],
+	h [particle = \(^{12}C\)]-- d -- [fermion, thick] j -- k [particle = \(^{12}C\)] ,
+	};
+\]
+\end{figure}
 \end{frame}
 
 % 9 DESCRIZIONE DEL PROCESSO
 \begin{frame}{Description of the Process}
 
+The transverse asymmetry arises considering the time reversal operator. The time reversal operator reverses all the momenta and the spin direction.
+
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width = 0.65\textwidth]{figures/scattering.pdf}
-\hspace{1cm}
+\includegraphics[width = 0.8\textwidth]{figures/ScatteringScheme.pdf}
 \end{figure}
+
 
 \end{frame}
 
