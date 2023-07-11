@@ -23,8 +23,8 @@
 \setbeamerfont{title}{shape=\itshape,family=\rmfamily}
 
 \begin{document}
-\setlength{\belowdisplayskip}{0pt}
-\setlength{\abovedisplayskip}{0pt}
+\setlength{\belowdisplayskip}{3pt}
+\setlength{\abovedisplayskip}{3pt}
 
 
 %TITOLO 
@@ -84,9 +84,7 @@ The symmetry energy $S(\rho)$ is the key component of the equation of state whic
 \epsilon(\rho, \alpha) &= \epsilon_{SNM}(\rho) + \alpha^{2} S(\rho) + O(\alpha^{4}) \\
 \epsilon(\rho) &= J + L \cdot (\dfrac{\rho - \rho_{0}}{3 \rho_{0}}) + ...
 \end{split}
-\end{equation}
-
-Cosa è l'energia di simmetria, come è collegata con il comportamento della materia nucleare di neutroni 
+\end{equation} 
 
 \begin{center}
 \includegraphics[scale=0.3]{figures/LvsR.pdf}
@@ -98,7 +96,8 @@ Cosa è l'energia di simmetria, come è collegata con il comportamento della mat
 \begin{frame}{Neutron Skin and Neutron Star Radius}
 \begin{columns}[T]
 \begin{column}{.5\textwidth}
-The slope of the symmetry energy is related to both the neutron skin of lead and neutron star radius. The radius of the neutron star is determined from the Tolman–Oppenheimer–Volkoff (TOV) equation. Giving the pressure $P_{c}$ at the center of the star, the radius $R$ can be determined. But for neutron star, the pressure at the center is strongly related to the pressure of pure neutron matter, in large part determined by $L$.
+The slope of the symmetry energy is related to both the \textbf{neutron skin} of lead and \textbf{neutron star radius}. The radius of the neutron star is determined from Tolman-Oppenheimer-Volkoff (TOV) equation.
+ Giving the pressure $P_{c}$ at the center of the star, the radius $R$ can be determined. But for neutron star, the pressure at the center is strongly related to the \textbf{pressure of pure neutron matter}, in large part determined by $L$.
 \end{column}
 \begin{column}{.5\textwidth}
 \centering
@@ -216,10 +215,10 @@ MENZIONARE PREX!!!
 During the last beam-time, several measurements were performed at Mainz Mikrotron MAMI. The last data acquisition campaign had the following goals:
 
 \begin{itemize}
-\item Test the new data acquisition system, developed for the new setup with a low rate signals ($\simeq \SI{1}{\mega \hertz} $). 
-\item Measure the transverse asymmetry $A_{n}$ of $^{12}C$.
-\item Measure the expected rates on $^{208}Pb$ target, in anticipation of the future measurement of $A_{n}$ for lead. 
-\item Long term goal: acquire more knowledge on the systematic effects that the transverse asymmetry has on the measurement of the Parity-violating asymmetry.
+\item Test the new \textbf{data acquisition system}, developed for the new setup with a low rate signals ($\simeq \SI{1}{\mega \hertz} $). 
+\item Measure the \textbf{transverse asymmetry} $A_{n}$ of $^{12}C$.
+\item Measure the expected \textbf{rates} on $^{208}Pb$ target, in anticipation of the future measurement of $A_{n}$ for lead. 
+\item Long term goal: acquire more knowledge on the \textbf{systematic effects} that the transverse asymmetry has on the measurement of the Parity-violating asymmetry.
 \end{itemize}
 \end{frame}
 
@@ -230,7 +229,7 @@ The Data are divided in a series of events (\SI{80}{\milli \second}), that corre
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width = 0.75\textwidth]{figures/EventStructure.pdf}
+\includegraphics[width = 0.85\textwidth]{figures/EventStructure.pdf}
 \caption{Event sequence: all the particle}
 \end{figure}
 
@@ -239,14 +238,46 @@ The Data are divided in a series of events (\SI{80}{\milli \second}), that corre
 % 11 MAMI ACCELERATORE
 \begin{frame}{MAMI Electron Accelerator}
 
-Schema dell'acceleratore e descrizione breve del suo funzionamento
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.75\textwidth]{figures/mami.png}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Race Track Microtron Scheme}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.95\textwidth]{figures/RacetrackMicrotronSketch.pdf}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{RTM3}{Race Track Microtron 3 of MAMI}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.80\textwidth]{figures/Racetrack.pdf}
+\end{figure}
 
 \end{frame}
 
 % 12 Sala Sperimentale
-\begin{frame}{Experimental Hall}
+\begin{frame}{A1 Experimental Hall}{MAMI Electron Accelerator}
 
-Immagine A1.
+\begin{columns}[T]
+\begin{column}{.5\textwidth}
+In MAMI A1, three large spectrometers are positioned on a rail track around the scattering chamber. For the experiment, only the red and blue spectrometers were used.
+\begin{center}
+\includegraphics[width = 1\textwidth]{figures/twoSpektrometer.pdf}
+\end{center}
+\end{column}
+\begin{column}{.5\textwidth}
+\centering
+\includegraphics[width = 0.95\textwidth]{figures/A1_Dietro.pdf}
+\end{column}
+\end{columns}
 
 \end{frame}
 
@@ -274,14 +305,12 @@ Immagine A1.
 \end{frame}
 
 % 14 NINO BOARD
-\begin{frame}{NINO Board}
-
-Nino board, immagine + spiegazione di come sono acquisiti i segnali.
-
+\begin{frame}[t]{NINO Asic Board}{Data Acquisition Electronics}
+\includegraphics[width = \textwidth]{figures/NINO.pdf}
 \end{frame}
 
 % 16 Problema delle false asimmetrie
-\begin{frame}{False Asymmetries}
+\begin{frame}[t]{False Asymmetries}
 The counts of the pmts can be slightly different due to the variation of the position of the beam on the target, the variations of the incident angles, the uncertain associated with the energy and the current of the beam. All this quantity can influence the asymmetry measured by the pmts, considering also that the expected asymmetry is in the order of ten part per million, and small asymmetry introduced by fluctuations of the beam parameters are not negligible:
 \newline
 \newline
@@ -372,7 +401,7 @@ Discutere la rilevante perdita di polarizzazione che è avvenuta ed il modo in c
 \end{frame}
 
 % 24 EXPECTED ERROR
-\begin{frame}{Variance of the Asymmetry Data}
+\begin{frame}[t]{Variance of the Asymmetry Data}
 
 The statistical error of the measured asymmetries is now computed:
 
@@ -407,28 +436,28 @@ Here a plot about the trend of the asymmetry as the data increases. The band is 
 
 \begin{frame}{Results}
 
-For each pmt, we present the raw values of the asymmetry, obtained by subtracting the Raw current asymmetry, that is roughly $-1.11$ ppm , then we compute the averaged values:
+Final asymmetry result for each PMTs:
+\begin{center}
+\includegraphics[width = 0.80\textwidth]{figures/FirstResult.pdf}
+\end{center}
 
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width = 0.65\textwidth]{figures/FirstResult.pdf}
-\end{figure}
 \end{frame}
 
 \begin{frame}{Results}
  
-Combining the result of each pmt, assuming all the asymmetries measured are independent of each other, we obtain the following quantities for Beam normal single spin asymmetries:
+To combining the result of each PMTs, the formula used is: 
 
 \begin{gather*}
 \hat{A} =  \frac{\Sigma_{i} A_{i} \frac{1}{w_{i}}}{\frac{1}{w_{i}}} \qquad w_{i} = \frac{1}{\sigma^{2}_{i}}
 \end{gather*}
 
-We obtain the following:
+the final value of the BNSSA is:
+
 \begin{equation}
-A_{A} = (23.1 \pm 1.7) ppm  \qquad A_{B} = (-21  \pm 5)ppm
+A_{A} = (23.1 \pm 1.7) \, ppm  \qquad A_{B} = (-21 \pm 5) \, ppm
 \end{equation}
 
-Reversing the sign of the asymmetry for detB we notice that the two measurement are consistent, and this show the good behaviour of the electronic setup used for the experiment. 
+Reversing the sign of the asymmetry for Det. B we notice that the two measurement are consistent within $1 \, \sigma$. 
 
 \end{frame}
 
