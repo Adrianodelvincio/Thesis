@@ -198,13 +198,24 @@ The incident beam is made by $\SI{570}{\mega \electronvolt}$ electrons, that are
 asym = \frac{N_{+} - N_{-}}{N_{+} + N_{-}} \text{(expected $\sim$ +/- 20 ppm, Q = \SI{0.2}{\giga\electronvolt c^{-1}})}
 \end{equation}
 
-It's possible to obtain a final formula for the transverse Asymmetry, writing the Amplitude of the 1-loop diagram, considering the elastic intermediate state and the inelastic intermediate state (whose contribution is higher):
+
+
+\begin{columns}[T]
+\begin{column}{.5\textwidth}
+
+The prediction for the transverse asymmetry is given by the formula below:
 
 \begin{equation}
 A_{n} \simeq C_{0} \log \frac{Q^{2}}{m^2_e c^2} \frac{F_{Compton} (Q^2)}{F_{ch}(Q^2)}
 \end{equation}
 
-MENZIONARE PREX!!!
+
+\end{column}
+\begin{column}{.5\textwidth}
+\centering
+\includegraphics[width = \textwidth]{figures/PREXMeasure.png}
+\end{column}
+\end{columns}
 
 \end{frame}
 
@@ -312,8 +323,6 @@ In MAMI A1, three large spectrometers are positioned on a rail track around the 
 % 16 Problema delle false asimmetrie
 \begin{frame}[t]{False Asymmetries}
 The counts of the pmts can be slightly different due to the variation of the position of the beam on the target, the variations of the incident angles, the uncertain associated with the energy and the current of the beam. All this quantity can influence the asymmetry measured by the pmts, considering also that the expected asymmetry is in the order of ten part per million, and small asymmetry introduced by fluctuations of the beam parameters are not negligible:
-\newline
-\newline
 \begin{equation}
 Asym = A_{physical} \cdot P + \delta_{I} + A_{x} \delta x + A_{y} \delta y + A_{\theta_{x}} \delta \theta_{x} + A_{\theta_{y}} \delta \theta_{y}+ A_{E} \delta E 
 \end{equation}
@@ -321,9 +330,9 @@ Asym = A_{physical} \cdot P + \delta_{I} + A_{x} \delta x + A_{y} \delta y + A_{
 
 
 \begin{frame}{MAMI Beam Monitors}
-
-Descrizione dei principi di funzionamento dei monitors di MAMI.
-
+\begin{center}
+\includegraphics[width = 0.75\textwidth]{figures/Monitors.pdf}
+\end{center}
 \end{frame}
 
 
@@ -351,9 +360,17 @@ Breve descrizione di come funzionano i voltage to frequency converter
 % 18 CALIBRATION OF THE BEAM PARAMETERS
 \begin{frame}{Calibration of the Beam Parameters}
 
+
 \end{frame}
 
-\begin{frame}{Beam Position}
+\begin{frame}{Beam Position}{Computing the beam spot (X,Y) coordinates on the target}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.9\textwidth]{figures/scheme.pdf}
+\end{figure}
+
+The beam is assumed following a straight path given by $x,y = m\cdot z + q_{x,y}$, the $(X,Y)$ coordinates are given by $q_{x,y}$
 
 \end{frame}
 
@@ -377,26 +394,35 @@ Breve descrizione di come funzionano i voltage to frequency converter
 % 20 Model for Fitting the Data
 \begin{frame}{Model For Fitting the Data}
 
-Modello lineare tra asimmetria e beam parameters, discutere differenza corrente e altri parametri del fascio. 
+
 
 \end{frame}
 
 % 21 Data Selection
 \begin{frame}{Data Selection}
 
-
-
 \end{frame}
 
 % 22 Polarization Loss
 \begin{frame}{Polarization Loss}
 
-Discutere la rilevante perdita di polarizzazione che è avvenuta ed il modo in cui si sono identificati questi dati.
+During the experiment, a relevant part of the data was affected by a loss of polarization of the beam:
+
+\begin{center}
+\includegraphics[width = 0.75\textwidth]{figures/OverallCorr.pdf}
+\end{center}
 
 \end{frame}
 
+
 % 23 FIT TO DATA, CORRELATION
 \begin{frame}{Beam Parameters Correlation}
+
+\begin{figure}
+\includegraphics[width = 0.4\textwidth]{figures/X_Xp.pdf}
+\includegraphics[width = 0.37\textwidth]{figures/Y_Yp.pdf} \\
+\includegraphics[width = 0.4\textwidth]{figures/Y_X.pdf}
+\end{figure}
 
 \end{frame}
 
