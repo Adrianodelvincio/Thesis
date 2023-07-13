@@ -213,7 +213,10 @@ A_{n} \simeq C_{0} \log \frac{Q^{2}}{m^2_e c^2} \frac{F_{Compton} (Q^2)}{F_{ch}(
 \end{column}
 \begin{column}{.5\textwidth}
 \centering
+\begin{figure}
 \includegraphics[width = \textwidth]{figures/PREXMeasure.png}
+\caption{Asymmetry versus transferred momentum for selected nuclei.}
+\end{figure}
 \end{column}
 \end{columns}
 
@@ -251,7 +254,8 @@ The Data are divided in a series of events (\SI{80}{\milli \second}), that corre
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width = 0.75\textwidth]{figures/mami.png}
+\includegraphics[width = 0.65\textwidth]{figures/mami.png}
+\caption{ \footnotesize Scheme of MAMI accelerator. RTM2 is the first acceleration stage, where the electrons are extracted from the source. RTM3 corresponds to the final acceleration stage of the experiment (\SI{570}{\mega \electronvolt}), A1 is the experiment hall where the experiment described is the thesis is set up.}
 \end{figure}
 
 \end{frame}
@@ -317,7 +321,18 @@ In MAMI A1, three large spectrometers are positioned on a rail track around the 
 
 % 14 NINO BOARD
 \begin{frame}[t]{NINO Asic Board}{Data Acquisition Electronics}
-\includegraphics[width = \textwidth]{figures/NINO.pdf}
+The NINO board is the DAQ system that counts the input signals coming from the Cherenkov detectors. 
+
+\begin{itemize}
+\item 32 input channels.
+\item Attenuation circuit for each input channel.
+\item Common current Threshold for 4 adjacent channels.
+\end{itemize}
+
+\begin{center}
+\includegraphics[width = 0.5\textwidth]{figures/NINO.pdf}
+\end{center}
+
 \end{frame}
 
 % 16 Problema delle false asimmetrie
@@ -328,19 +343,28 @@ Asym = A_{physical} \cdot P + \delta_{I} + A_{x} \delta x + A_{y} \delta y + A_{
 \end{equation}
 \end{frame}
 
+\begin{frame}[t]{MAMI Beam Monitors}
 
-\begin{frame}{MAMI Beam Monitors}
+At MAMI the beam parameters, as \textbf{X,Y} transverse positions, \textbf{Energy} and \textbf{Current} are measured by resonant cavities.
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
 \begin{center}
-\includegraphics[width = 0.75\textwidth]{figures/Monitors.pdf}
+\begin{figure}
+\includegraphics[width = 1\textwidth]{figures/Monitors.pdf}
+\caption{Scheme of the resonant cavity in MAMI, with the different electromagnetic modes excited by the beam passage.}
+\end{figure}
 \end{center}
+\end{column}
+\begin{column}{0.5\textwidth}
+The beam monitors are read-out with the voltage-to-frequency converters \textbf{VFC} devices, which produces an output signal whose frequency is proportional to the amplitude of the beam monitor signals. 
+\begin{figure}
+\includegraphics[width = 1\textwidth]{figures/Vfc.pdf}
+\end{figure}
+\end{column}
+\end{columns}
 \end{frame}
 
-
-\begin{frame}{Voltage to Frequency Converter}
-
-Breve descrizione di come funzionano i voltage to frequency converter
-
-\end{frame}
 
 % 17 SCHEMA GENERALE DELL'ESPERIMENTO
 \begin{frame}{General Scheme of the Experiment}
@@ -374,11 +398,7 @@ The beam is assumed following a straight path given by $x,y = m\cdot z + q_{x,y}
 
 \end{frame}
 
-\begin{frame}{Beam Energy}
-
-\end{frame}
-
-\begin{frame}{Beam Current}
+\begin{frame}{Beam Energy and Beam Current}
 
 \end{frame}
 
@@ -392,9 +412,25 @@ The beam is assumed following a straight path given by $x,y = m\cdot z + q_{x,y}
 \end{frame}
 
 % 20 Model for Fitting the Data
-\begin{frame}{Model For Fitting the Data}
+\begin{frame}[t]{Model For Fitting the Data}
 
+The final model that describes the asymmetry takes care of the possible false asymmetries, assuming a \textbf{linear dependence} on the beam parameters.
 
+\begin{equation}
+A_{tot} = A_{physical} \cdot P + \delta_{I} + A_{x} \delta x + A_{y} \delta y + A_{\theta_{x}} \delta \theta_{x} + A_{\theta_{y}} \delta \theta_{y}+ A_{E} \delta E 
+\end{equation}
+
+Each $\delta q$ is computed as the mean difference between up and down polarized sub-events:
+
+\begin{equation}
+\delta q = \dfrac{q_{\uparrow,0} + q_{\uparrow,1}}{2} - \dfrac{q_{\downarrow,0} + q_{\downarrow,1}}{2}
+\end{equation}
+
+The current asymmetry is defined differently. Because the scattering rate is proportional to the beam current, the model contains the current asymmetry directly:
+
+\begin{equation}
+\delta I = \dfrac{I_{\uparrow} - I_{\downarrow}}{I_{\uparrow} + I_{\downarrow}}
+\end{equation}
 
 \end{frame}
 

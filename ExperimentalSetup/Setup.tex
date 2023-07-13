@@ -461,8 +461,8 @@ For the experiment with the lead target, the master board will also control one 
 
 \subsection{Nino Board} \label{NINO}
 
-The NINO board shown in \ref{fig:NinoBoard} is our data acquisition system for the PMT counts (see paper \cite{1352067}). It is made by $32$ analog input channels and it is powered with $\pm \SI{5}{\volt}$.
-Each input channel receive a differential signal from the detector, and has attenuation circuit that reduces the amplitude of the input signal. After passing the attenuator, the signal is sent to the input stage of the NINO chip, a current-to-voltage converter, that produces an output signal whose amplitude is proportional to the total charge of the input signal.
+The NINO board shown in figure \ref{fig:NinoBoard} is our data acquisition system for the PMT counts (see paper \cite{1352067}). It is made by $32$ analog input channels and it is powered with $\pm \SI{5}{\volt}$.
+Each input channel receives a differential signal from the detector, and has an attenuation circuit that reduces the amplitude of the input signal. After passing the attenuator, the signal is sent to the input stage of the NINO chip, a current-to-voltage converter, that produces an output signal whose amplitude is proportional to the total charge of the input signal.
 
 \commento{
 \begin{figure}[hbtp]
@@ -480,11 +480,11 @@ After passing the input stage, the signal goes through a block of 4 cascaded ope
 \caption{Nino Board, The input channels are at the bottom of the figure.}
 \label{fig:NinoBoard}
 \end{figure}
-
+\newpage
 The signal that arrives to the discriminator is proportional to the input charge of the signal coming from the detector, so in the end the NINO board is sensitive to the input charge. The discriminator threshold can be set in the range of (\SI{10}{\pico \coulomb}, \SI{100}{\pico \coulomb}). 
 The output signal after the discriminator and the amplification block is a LVDS (low voltage differential signaling) with a fixed shape, and a width that is proportional to the input charge. Regarding the data acquisition system, two values are import to control the discriminator threshold and the attenuator, and are named \textit{Thr} and \textit{Att}, respectively. The NINO chip is designed in such a way that the \textit{Thr} value is shared by 4 adjacent channels. On the contrary each channel has is own value of \textit{Att}. Acting simultaneously on \textit{Thr} and \textit{Att} is possible to define a global threshold for each channel, individually.
-These two parameters are set in the DAQ program, using 12 bit DACs, corresponding to interval of $(0 ; 4095)$. \textit{Thr} selects the threshold of the discriminator. The \textit{Att} value controls the input voltage of attenuator: the higher is the value of \textit{Att}, the lower is the attenuation of the signal.
-Two Nino board are used in the experiment, one for detector A and one for detector B. For the experiment discussed in this thesis, we will use only 8 channel for detector A and 3 channel for detector B, since this is the number of the input signals coming from the two detectors. For the future experiments more channels will be used, splitting the analog input signal in 4, and sending it to 4 different input channel of the board. This is useful because changing individually the attenuation value, we can define 4 different thresholds for the same signal and compare different values of threshold, to study how the noise affects the measurement, finding the best compromise between signal to noise ratio. The \textit{Thr} and \textit{Att} selection is explained in chapter \ref{analysis}.
+These two parameters are set in the DAQ program, using 12 bit DACs, corresponding to an interval of $(0 ; 4095)$. \textit{Thr} selects the threshold of the discriminator. The \textit{Att} value controls the input voltage of attenuator: the higher is the value of \textit{Att}, the lower is the attenuation of the signal.
+Two Nino board are used in the experiment, one for detector A and one for detector B. For the experiment discussed in this thesis, we will use only 8 channels for detector A and 3 channels for detector B, since this is the number of the input signals coming from the two detectors. For the future experiments more channels will be used, splitting the analog input signal in 4, and sending it to 4 different input channel of the board. This is useful because changing individually the attenuation value, we can define 4 different thresholds for the same signal and compare different values of threshold, to study how the noise affects the measurement, finding the best compromise between signal to noise ratio. The \textit{Thr} and \textit{Att} selection is explained in chapter \ref{analysis}.
 
 
 
