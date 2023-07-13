@@ -4,6 +4,7 @@
 \usepackage[compat=1.1.0]{tikz-feynman}
 \usepackage{amsmath}
 \usepackage[most]{tcolorbox}
+\usepackage{bm}
 \tikzfeynmanset{every blob = {minimum size = 2mm}}
 
 \newcommand{\commento}[1]{}
@@ -100,8 +101,11 @@ The slope of the symmetry energy is related to both the \textbf{neutron skin} of
  Giving the pressure $P_{c}$ at the center of the star, the radius $R$ can be determined. But for neutron star, the pressure at the center is strongly related to the \textbf{pressure of pure neutron matter}, in large part determined by $L$.
 \end{column}
 \begin{column}{.5\textwidth}
+\begin{figure}
 \centering
 \includegraphics[scale=0.50]{figures/LvsRns.pdf}
+\caption{Covariance ellipses displaying the correlation between the neutron star radius and the slope of the symmetry energy, as predicted by FSUGold model.}
+\end{figure}
 \end{column}
 \end{columns}
 \end{frame}
@@ -148,9 +152,7 @@ The asymmetry is due to the interference between two Feynmann diagrams.
 
 % 8 INTRODUZIONE ALLA TRANSVERSE ASYMMETRY
 \begin{frame}{Transverse Asymmetry}
-
-Argomento principale della tesi: misura dell'asimmetria trasversa, fondo sistematico di $A_{pv}$ da determinare. Introduzione alla fisica del processo 
-\\ 
+ 
 The transverse asymmetry is defined as the ratio between the sum and the difference of the elastic cross section for the two different polarized electrons: 
 
 \begin{equation*}
@@ -187,7 +189,6 @@ The transverse asymmetry arises considering the time reversal operator. The time
 \includegraphics[width = 0.8\textwidth]{figures/ScatteringScheme.pdf}
 \end{figure}
 
-
 \end{frame}
 
 \begin{frame}{Scattering Process}
@@ -197,8 +198,6 @@ The incident beam is made by $\SI{570}{\mega \electronvolt}$ electrons, that are
 \begin{equation}
 asym = \frac{N_{+} - N_{-}}{N_{+} + N_{-}} \text{(expected $\sim$ +/- 20 ppm, Q = \SI{0.2}{\giga\electronvolt c^{-1}})}
 \end{equation}
-
-
 
 \begin{columns}[T]
 \begin{column}{.5\textwidth}
@@ -305,6 +304,7 @@ In MAMI A1, three large spectrometers are positioned on a rail track around the 
 \includegraphics[width = 0.4\textwidth ]{figures/DetectorB.pdf}
 \hspace{1cm}
 \includegraphics[width = 0.5\textwidth ]{figures/detectorA.pdf}
+\caption{Scheme of detector B (on the left) and detector A (on the right).}
 \end{figure}
 
 \commento{The detectors are made by 9 and 3 pmts coupled to a fused-silica material, exploiting the Cherenkov light produced when a particle travel inside the material.
@@ -337,7 +337,15 @@ The NINO board is the DAQ system that counts the input signals coming from the C
 
 % 16 Problema delle false asimmetrie
 \begin{frame}[t]{False Asymmetries}
-The counts of the pmts can be slightly different due to the variation of the position of the beam on the target, the variations of the incident angles, the uncertain associated with the energy and the current of the beam. All this quantity can influence the asymmetry measured by the pmts, considering also that the expected asymmetry is in the order of ten part per million, and small asymmetry introduced by fluctuations of the beam parameters are not negligible:
+The number of scattered electrons could depend on the beam parameters. Variation of the beam parameters can influence the measured asymmetries. The important beam parameters are:
+\begin{itemize}
+\item \textbf{X,Y} positions of the beam spot on the target.
+\item beam current \textbf{I}.
+\item beam energy \textbf{E}.
+\item incident angles of the beam {$\bm{\theta_{x}},\bm{\theta_{y}}$}
+\end{itemize}
+
+Considering that the expected asymmetry is expected to be $\simeq 20 \, ppm$, small fluctuation of the beam correlated to the polarization can produce false asymmetries. The effects can be summarized by the model:
 \begin{equation}
 Asym = A_{physical} \cdot P + \delta_{I} + A_{x} \delta x + A_{y} \delta y + A_{\theta_{x}} \delta \theta_{x} + A_{\theta_{y}} \delta \theta_{y}+ A_{E} \delta E 
 \end{equation}
@@ -407,7 +415,31 @@ The beam is assumed following a straight path given by $x,y = m\cdot z + q_{x,y}
 \end{frame}
 
 % 19 DATA ANALYSIS
-\begin{frame}{Analysis on Carbon Target}
+\begin{frame}[t]{Analysis on Carbon Target}
+
+Each event corresponds to a single measurement of the asymmetry $A$. With this experiment, an amount of $1$ million events have been collected. The asymmetry data are normal distributed:
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{figure}
+\includegraphics[width = \textwidth]{figures/B0.pdf}
+\end{figure}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{gather*}
+Var[A_{asym}] = Var[\dfrac{N_{\uparrow} - N_{\downarrow}}{ N_{\uparrow} + N_{\downarrow}}] \simeq \dfrac{Var[N_{\uparrow} - N_{\downarrow}]}{(N_{\uparrow} + N_{\downarrow})^{2}} \\
+\frac{2Var[N]}{4N^{2}} = \frac{1}{2N} \qquad \sigma = \frac{1}{\sqrt{2N}}
+\end{gather*}
+
+Where it is supposed that the PMTs counts are normal distributed, with $\mu$ equal to $\sigma^{2}$. The rms associated to the sample mean decreases as the $\sqrt{N_{measure}}$. With the statistical error is:
+
+\begin{equation}
+\sigma = \dfrac{1}{\sqrt{N \cdot N_{measure}}} 
+\end{equation}
+\end{column}
+\end{columns}
+
+Considering $5\cdot 10^{5}$ events and $\mu = 40000$ counts per PMT (similar to what was measured for detector A) we obtain an error of $\simeq 5ppm$.
 
 \end{frame}
 
@@ -462,23 +494,6 @@ During the experiment, a relevant part of the data was affected by a loss of pol
 
 \end{frame}
 
-% 24 EXPECTED ERROR
-\begin{frame}[t]{Variance of the Asymmetry Data}
-
-The statistical error of the measured asymmetries is now computed:
-
-\begin{gather*}
-Var[A_{asym}] = Var[\dfrac{N_{\uparrow} - N_{\downarrow}}{ N_{\uparrow} + N_{\downarrow}}] \simeq \dfrac{Var[N_{\uparrow} - N_{\downarrow}]}{(N_{\uparrow} + N_{\downarrow})^{2}} \\
-\frac{2Var[N]}{4N^{2}} = \frac{1}{2N} \qquad \sigma = \frac{1}{\sqrt{2N}}
-\end{gather*}
-
-Where it is supposed that the PMTs counts are normal distributed, with $\mu$ equal to $\sigma^{2}$. The rms associated to the sample mean decreases as the $\sqrt{N_{measure}}$. 
-
-Considering $5\cdot 10^{5}$ events and $\mu = 40000$ counts per PMT (similar to what was measured for detector A) we obtain an error of $\simeq 5ppm$.
-
-\end{frame}
-
-
 \begin{frame}
 
 Here a plot about the trend of the asymmetry as the data increases. The band is the error computed as showed in the previous slide, centered around the values of $+20ppm$ for detector A and $-20ppm$ for detector B.
@@ -506,20 +521,21 @@ Final asymmetry result for each PMTs:
 \end{frame}
 
 \begin{frame}{Results}
- 
-To combining the result of each PMTs, the formula used is: 
+
+
+The result of the analysis is obtained combining the measured asymmetries for PMTs. 
 
 \begin{gather*}
 \hat{A} =  \frac{\Sigma_{i} A_{i} \frac{1}{w_{i}}}{\frac{1}{w_{i}}} \qquad w_{i} = \frac{1}{\sigma^{2}_{i}}
 \end{gather*}
 
-the final value of the BNSSA is:
+the final values of the Beam Normal Single Spin asymmetries are:
 
 \begin{equation}
 A_{A} = (23.1 \pm 1.7) \, ppm  \qquad A_{B} = (-21 \pm 5) \, ppm
 \end{equation}
 
-Reversing the sign of the asymmetry for Det. B we notice that the two measurement are consistent within $1 \, \sigma$. 
+With a transfer momentum $Q = \SI{0.04}{\giga \electronvolt}$. Reversing the sign of the asymmetry for Det. B we notice that the two measurement are consistent within $1 \, \sigma$. 
 
 \end{frame}
 
