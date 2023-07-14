@@ -1,6 +1,6 @@
 \documentclass[9pt,a4paper]{beamer}
 %\usepackage[utf8]{inputenc}
-\usepackage[output-decimal-marker={,}]{siunitx}
+\usepackage[output-decimal-marker={.}]{siunitx}
 \usepackage[compat=1.1.0]{tikz-feynman}
 \usepackage{amsmath}
 \usepackage[most]{tcolorbox}
@@ -392,7 +392,6 @@ The beam monitors are read-out with the voltage-to-frequency converters \textbf{
 % 18 CALIBRATION OF THE BEAM PARAMETERS
 \begin{frame}{Calibration of the Beam Parameters}
 
-
 \end{frame}
 
 \begin{frame}{Beam Position}{Computing the beam spot (X,Y) coordinates on the target}
@@ -408,9 +407,38 @@ The beam is assumed following a straight path given by $x,y = m\cdot z + q_{x,y}
 
 \begin{frame}{Beam Energy and Beam Current}
 
+The conversion parameters from \SI{}{\volt} to \SI{}{\micro \ampere} and \SI{}{\kilo \electronvolt} are measured with a current and energy scan.
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{figure}
+\includegraphics[width = 0.95\textwidth]{figures/I21.pdf}
+\caption{ \footnotesize Current monitor I21. On the x axis the voltage signal of the PIMO monitor, on the y axis the nominal current of the beam.}
+\end{figure}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{figure}
+\includegraphics[width = 0.75\textwidth]{figures/ENMOvoltage15.pdf}
+\includegraphics[width = 0.75\textwidth]{figures/ENMOvoltage20.pdf}
+\caption{\footnotesize Calibration of the energy monitor. For the first histogram the current is \SI{15}{\micro \ampere}, \SI{20}{\micro \ampere} for the second one.}
+\end{figure}
+\end{column}
+\end{columns}
+
 \end{frame}
 
 \begin{frame}{Auto-Calibration procedure}
+
+Every 3 hours of beam, a special operation mode of MAMI is set. The current is raised in small steps, from $\SI{9}{\micro \ampere}$ to $\SI{11.125}{\micro \ampere}$. This is used to check the linearity of the PMTs through time, and to measure the PMT offset, that is subtracted later from the data.
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\includegraphics[width = \textwidth]{figures/Current.pdf}
+\end{column}
+\begin{column}{0.5\textwidth}
+\includegraphics[width = 0.9\textwidth]{figures/fitB.pdf}
+\end{column}
+\end{columns}
 
 \end{frame}
 
@@ -439,8 +467,12 @@ Where it is supposed that the PMTs counts are normal distributed, with $\mu$ equ
 \end{column}
 \end{columns}
 
-Considering $5\cdot 10^{5}$ events and $\mu = 40000$ counts per PMT (similar to what was measured for detector A) we obtain an error of $\simeq 5ppm$.
+Considering $5\cdot 10^{5}$ events and $\mu = 20000$ counts per PMT (similar to what was measured for detector B) 
 
+\begin{itemize}
+\centering
+\item $\sigma = 8 \, ppm$.
+\end{itemize}
 \end{frame}
 
 % 20 Model for Fitting the Data
@@ -468,6 +500,12 @@ The current asymmetry is defined differently. Because the scattering rate is pro
 
 % 21 Data Selection
 \begin{frame}{Data Selection}
+Before proceeding in the analysis, an accurate data selection was performed, to remove the outliers, as well as data affected by anomalous variation of the beam current.
+
+\begin{figure}
+\includegraphics[width = 0.5\textwidth]{figures/BeamExample.pdf}
+\end{figure}
+
 
 \end{frame}
 
@@ -540,10 +578,15 @@ With a transfer momentum $Q = \SI{0.04}{\giga \electronvolt}$. Reversing the sig
 \end{frame}
 
 \begin{frame}{Rates on Lead}
+
+The rates on lead target (\SI{1}{\milli \meter} thick) have been measured. The transverse asymmetry on lead will be the next step of MREX experiment. This measurement is mandatory to constrain the systematic error of PV experiment.
+
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width = \textwidth]{figures/LeadRates.pdf}
 \end{figure}
+
+Since the rates are lower for lead compared to carbon, the statistics needed to measure $A_{n}$ for $^{208}Pb$ is 23 times the statistic accumulated for carbon.
 
 \end{frame}
 
