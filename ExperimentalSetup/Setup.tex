@@ -274,7 +274,7 @@ When the particle is at the height of the platform in the figure \ref{fig:TwoDet
 \label{fig:internal}
 \end{SCfigure} 
 
-Despite the possibilities offered by the already existing setup, for the beam time of interest none of these components was used directly in the estimation of $A_{n}$. The reason is due to the high intensity of the beam that is used in the experiment, which is far from the optimal operating conditions of the components, that are suited for rates lower than the ones expected for beam normal single spin measurements. The spectrometers are used indirectly, for the alignment of scattered electrons to our detection system.
+Despite the possibilities offered by the already existing setup, for the beam time of interest none of these components was used directly in the estimation of $A_{n}$. The reason is due to the high intensity of the beam that is used in the experiment, which is far from the optimal operating conditions of the components, that are suited for rates lower than the ones expected for beam normal single spin measurements (for carbon target $\SI{1}{\mega \hertz}$, while for lead target $\SI{500}{\kilo \hertz}$). The spectrometers are used indirectly, for the alignment of scattered electrons to our detection system.
 
 
 \section{Detector Description} \label{detectors}
@@ -294,7 +294,7 @@ made via two thin blocks of fused-silica that are coupled to PMTs. When a scatte
 
 In the experiment two detectors are installed and read-out independently. The detector A is placed at an angle of $+\theta$, while detector B is placed at $-\theta$. We expect to measure the same absolute value of the transverse asymmetry, with an opposite sign due to the different orientation. 
 The two detector are made by 3 PMTs and 8 PMTs coupled with two blocks of fused-silica, as shown in \ref{fig:DetectorAB}.
-These two detectors are placed inside the spectrometers presented in \ref{fig:TwoDetectors}, between the top of the drift-chamber, which occupies the first third in height of the spectrometer, and just below the panel of scintillator. During the experiment, the drift chamber of the spectrometers is turn off, and also the PMTs coupled to the spectrometer scintillators are not powered.
+These two detectors are placed inside the spectrometers presented in \ref{fig:TwoDetectors}, between the top of the drift-chamber, which occupies the first third in height of the spectrometer, and just below the panel of scintillator. During the experiment, the drift chamber of the spectrometers is turn off, and also the PMTs coupled to the spectrometer scintillators are not powered. The scattered electrons will be detected only via the Cherenkov detectors in figure \ref{fig:DetectorAB}.
 As mentioned above, the scattered electron are deflected in the vertical direction by the magnetic field of the spectrometer. It is important to mention the differences between the new and the old electronic setup. In the old electronic setup the output signal of the PMTs was integrated during the time interval of each sub-event, and therefore the single scattered electron could not be counted. The advantage of this method is that the electronics is simpler. However, this old method is affected by a baseline noise and it is not good for the future experiments with lead target, where the expected rates are lower than the rates on carbon.
 With the new electronics, the single electrons are counted, and this will enable the future measurements with lead, improving the accuracy. 
 
@@ -438,7 +438,7 @@ Some beam parameters are needed in order to take into account possible effects i
 
 The VFCs are powered with an external voltage of $\SI{5}{\volt}$. They measure an input voltage in the range of ($-V_{ref}$, $V_{ref}$). An external clock signal, with a frequency $F_{CLKIN} = \SI{5.88}{\mega \hertz}$ is created externally and synchronous to the gate-length.
 The analog input signal is sampled with by a switched capacitor, with a rate that is equal to $F_{CLKIN}$.
-The comparator produces a number pulses; the frequency of the output signal is proportional to the input voltage, with $-V_{ref}$ equal to $5 \% \cdot f_{CLKIN}$ and $+V_{ref}$ equal to $45 \% \cdot f_{CLKIN}$ \cite{VfcDatasheet} \commento{, where the first correspond to $\SI{0.0}{ \volt}$ in input and the second to $V_{ref}$}(see figure \ref{fig:VoltageToFrequency}). The data are acquired counting the number of pulses from the comparator, which are proportional to the frequency, so we can substitute to $f$ the number of pulses, and we end up with the equation \ref{eq:Vfc}
+The comparator produces a certain number pulses, and the frequency of the output signal is proportional to the input voltage, with $-V_{ref}$ equal to $5 \% \cdot f_{CLKIN}$ and $+V_{ref}$ equal to $45 \% \cdot f_{CLKIN}$ \cite{VfcDatasheet} \commento{, where the first correspond to $\SI{0.0}{ \volt}$ in input and the second to $V_{ref}$}(see figure \ref{fig:VoltageToFrequency}). The data are acquired counting the number of pulses from the comparator, which are proportional to the frequency, so we can substitute to $f$ the number of pulses, and we end up with the equation \ref{eq:Vfc}
 
 \begin{equation} \label{eq:Vfc}
 V_{in} =  V_{ref}[2 \cdot \dfrac{N_{pulses} - 5 \% N_{CLKIN}}{40 \% N_{CLKN}} - 1]
@@ -462,7 +462,7 @@ For the experiment with the lead target, the master board will also control one 
 \subsection{Nino Board} \label{NINO}
 
 The NINO board shown in figure \ref{fig:NinoBoard} is our data acquisition system for the PMT counts (see paper \cite{1352067}). It is made by $32$ analog input channels and it is powered with $\pm \SI{5}{\volt}$.
-Each input channel receives a differential signal from the detector, and has an attenuation circuit that reduces the amplitude of the input signal. After passing the attenuator, the signal is sent to the input stage of the NINO chip, a current-to-voltage converter, that produces an output signal whose amplitude is proportional to the total charge of the input signal.
+Each input channel receives a differential signal from the detector, and has an attenuation circuit that reduces the amplitude of the input signal. After passing the attenuator, the signal is sent to the input stage of the NINO chip, a current-to-voltage converter, that produces an output signal whose pulse-width is proportional to the total charge of the input signal.
 
 \commento{
 \begin{figure}[hbtp]

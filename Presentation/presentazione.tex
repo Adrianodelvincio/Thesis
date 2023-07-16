@@ -24,8 +24,8 @@
 \setbeamerfont{title}{shape=\itshape,family=\rmfamily}
 
 \begin{document}
-\setlength{\belowdisplayskip}{3pt}
-\setlength{\abovedisplayskip}{3pt}
+%\setlength{\belowdisplayskip}{3pt}
+%\setlength{\abovedisplayskip}{3pt}
 
 
 %TITOLO 
@@ -64,6 +64,8 @@ The results of the experiment will be valuable to constrain the Equation of 	Sta
 \begin{column}{.5\textwidth}
 In neutron rich nuclei, the spacial distribution of neutrons in more extended than proton spacial distribution.
 Theoretical models link the Neutron skin thickness of heavy nuclei, such as $^{208}Pb$, with the \textbf{slope of the symmetry energy L}.
+\\ \medskip
+The neutron skin thickness is given by the competition of two terms of the nuclear binding energy: the surface term and the symmetry energy.
 \end{column}
 \begin{column}{.5\textwidth}
 \begin{figure}
@@ -80,16 +82,16 @@ Theoretical models link the Neutron skin thickness of heavy nuclei, such as $^{2
 
 The symmetry energy $S(\rho)$ is the key component of the equation of state which controls the neutron skin thickness. $S(\rho)$ quantifies the change in energy related to the neutron-proton asymmetry. 
 
+\begin{center}
+\includegraphics[scale=0.3]{figures/LvsR.pdf}
+\end{center}
+
 \begin{equation}
 \begin{split}
 \epsilon(\rho, \alpha) &= \epsilon_{SNM}(\rho) + \alpha^{2} S(\rho) + O(\alpha^{4}) \\
 S(\rho) &= J + L \cdot (\dfrac{\rho - \rho_{0}}{3 \rho_{0}}) + ...
 \end{split}
 \end{equation} 
-
-\begin{center}
-\includegraphics[scale=0.3]{figures/LvsR.pdf}
-\end{center}
 
 \end{frame}
 
@@ -113,7 +115,6 @@ The slope of the symmetry energy is related to both the \textbf{neutron skin} of
 \end{column}
 \end{columns}
 \end{frame}
-
 
 % 6 Neutron Skin, misurare la densità spaziale di neutroni del nucleo di Piombo
 \commento{
@@ -183,6 +184,7 @@ Before moving on to the experimental details, we identify the kinematics of the 
 \end{figure}
 \end{frame}
 
+\commento{
 % 9 DESCRIZIONE DEL PROCESSO
 \begin{frame}{Description of the Process}
 
@@ -194,6 +196,7 @@ The transverse asymmetry arises considering the time reversal operator. The time
 \end{figure}
 
 \end{frame}
+}
 
 \begin{frame}{Scattering Process}
 
@@ -242,13 +245,18 @@ During the last beam-time, several measurements were performed at Mainz Mikrotro
 % 15 Struttura dell'evento
 \begin{frame}{Structure of the event}
 
+\begin{equation}
+A_{mes.} = \dfrac{(N_{1} + N_{4}) - (N_{2} + N_{3})}{(N_{1} + N_{4}) + (N_{2} + N_{3})}
+\end{equation}
+
 The Data are divided in a series of events (\SI{80}{\milli \second}), that correspond to 4 sequential sub-event. For each sub-event there is a precise polarization of the Beam. For each sub-event all the scattering electrons are counted.uring . 
 
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width = 0.85\textwidth]{figures/EventStructure.pdf}
-\caption{Event sequence: all the particle}
+\caption{Event sequence}
 \end{figure}
+
 
 \end{frame}
 
@@ -301,7 +309,7 @@ In MAMI A1, three large spectrometers are positioned on a rail track around the 
 
 % 13 SCHEMA DETECTORS
 
-\begin{frame}{Detectors}
+\begin{frame}{Cherenkov Detectors}
 
 \begin{figure}[!hbtp]
 \centering
@@ -377,7 +385,6 @@ The beam monitors are read-out with the voltage-to-frequency converters \textbf{
 \end{columns}
 \end{frame}
 
-
 % 17 SCHEMA GENERALE DELL'ESPERIMENTO
 \begin{frame}{General Scheme of the Experiment}
 
@@ -395,7 +402,21 @@ The beam monitors are read-out with the voltage-to-frequency converters \textbf{
 \end{frame}}
 
 % 18 CALIBRATION OF THE BEAM PARAMETERS
-\begin{frame}{Calibration of the Beam Parameters}
+\begin{frame}{Calibration of the Beam Parameters}{working point of the PMTS}
+
+\begin{figure}
+\includegraphics[width = 0.4\textwidth]{figures/AttenuationScanA.pdf}
+\includegraphics[width = 0.4\textwidth]{figures/AttenuationScanB.pdf}
+\caption{\footnotesize Counts versus attenuation value for PMTs of detector A (left plot) and B (right plot).}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width = 0.25\textwidth]{figures/spettro/B0.pdf}
+\includegraphics[width = 0.23\textwidth]{figures/spettro/B1.pdf}
+\includegraphics[width = 0.23\textwidth]{figures/spettro/B2.pdf}
+\end{figure}
+
 
 \end{frame}
 
@@ -548,11 +569,12 @@ Here a plot about the trend of the asymmetry as the data increases. The band is 
 
 \end{frame}
 
-
+\commento{
 % VISUALIZATION OF THE DATA
 \begin{frame}{Visualization of the Data}
 
 \end{frame}
+}
 
 \begin{frame}{Results}
 
@@ -592,7 +614,12 @@ The rates on lead target (\SI{1}{\milli \meter} thick) have been measured. The t
 \end{figure}
 
 Since the rates are lower for lead compared to carbon, the statistics needed to measure $A_{n}$ for $^{208}Pb$ is 23 times the statistic accumulated for carbon.
+\end{frame}
 
+\begin{frame}{Ringraziamenti}
+\begin{center}
+\color{red}{\Large \bf{GRAZIE A TUTTI PER L'ATTENZIONE}}
+\end{center}
 \end{frame}
 
 \end{document}
