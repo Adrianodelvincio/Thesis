@@ -44,7 +44,10 @@ Determination of the neutron spacial density for $^{208}Pb$ nucleus, through the
 
 \begin{columns}[T]
 \begin{column}{.7\textwidth}
-The results of the experiment will be valuable to constrain the Equation of 	State (EOS) of nuclear matter. It has also implications for the structure of neutron 		star.
+The neutron skin thickness is defined as the difference between rms radius of neutron and proton spacial distributions:
+\begin{equation}
+\delta r_{np} = \sqrt{\vphantom{r^{2}_{p}}<r^{2}_{n}>} - \sqrt{<r^{2}_{p}>} ,
+\end{equation}
 \end{column}
 \begin{column}{.3\textwidth}
 \centering
@@ -56,21 +59,18 @@ The results of the experiment will be valuable to constrain the Equation of 	Sta
 % 3 MREX e Neutron Skin
 \begin{frame}{MREX and Neutron Skin Thickness}
 
-\begin{definition}
-The neutron skin thickness is defined as the difference between rms radius of neutron and proton spacial distributions:
-\begin{equation}
-\delta r_{np} = \sqrt{\vphantom{r^{2}_{p}}<r^{2}_{n}>} - \sqrt{<r^{2}_{p}>} ,
-\end{equation}
-\end{definition}
-
+The results of the experiment will be valuable to constrain the Equation of 	State (\textbf{EOS}) of nuclear matter. The equation of state plays an important role for the description of the \textbf{neutron star structure}, specifically the determination of the radius.
 \begin{columns}[T]
 \begin{column}{.5\textwidth}
 In neutron rich nuclei, the spacial distribution of neutrons in more extended than proton spacial distribution.
 Theoretical models link the Neutron skin thickness of heavy nuclei, such as $^{208}Pb$, with the \textbf{slope of the symmetry energy L}.
 \end{column}
 \begin{column}{.5\textwidth}
+\begin{figure}
 \centering
 \includegraphics[width = 1\textwidth]{figures/SpacialDistribution.png}
+\caption{Neutron (black line) and proton (red line) spacial distributions as predicted by FSUGold model. The blue dots represents the experimental data of $^{208}Pb$ charge density.}
+\end{figure}
 \end{column}
 \end{columns}
 \end{frame}
@@ -83,7 +83,7 @@ The symmetry energy $S(\rho)$ is the key component of the equation of state whic
 \begin{equation}
 \begin{split}
 \epsilon(\rho, \alpha) &= \epsilon_{SNM}(\rho) + \alpha^{2} S(\rho) + O(\alpha^{4}) \\
-\epsilon(\rho) &= J + L \cdot (\dfrac{\rho - \rho_{0}}{3 \rho_{0}}) + ...
+S(\rho) &= J + L \cdot (\dfrac{\rho - \rho_{0}}{3 \rho_{0}}) + ...
 \end{split}
 \end{equation} 
 
@@ -99,6 +99,10 @@ The symmetry energy $S(\rho)$ is the key component of the equation of state whic
 \begin{column}{.5\textwidth}
 The slope of the symmetry energy is related to both the \textbf{neutron skin} of lead and \textbf{neutron star radius}. The radius of the neutron star is determined from Tolman-Oppenheimer-Volkoff (TOV) equation.
  Giving the pressure $P_{c}$ at the center of the star, the radius $R$ can be determined. But for neutron star, the pressure at the center is strongly related to the \textbf{pressure of pure neutron matter}, in large part determined by $L$.
+ 
+ \begin{equation}
+ P = \frac{1}{3} \rho_{0} L
+ \end{equation}
 \end{column}
 \begin{column}{.5\textwidth}
 \begin{figure}
@@ -138,13 +142,13 @@ The asymmetry is due to the interference between two Feynmann diagrams.
 \feynmandiagram [scale =  0.8, transform shape][vertical = c to d]{
 	a [particle = \(e^{-}\)] -- [fermion, thick] c -- [fermion, thick] g [particle = \(e^{-}\)],
 	c -- [photon, edge label' = \(\gamma\), momentum = {[arrow style = blue]\(k\)}] d,
-	h [particle = \(^{12}C\)] -- [fermion, thick] d -- [fermion, thick] j [particle = \(^{12}C\)],
+	h [particle = \(^{208}Pb\)] -- [fermion, thick] d -- [fermion, thick] j [particle = \(^{208}Pb\)],
 	};
 \qquad \qquad
 \feynmandiagram [scale = 0.8, transform shape][vertical = c to d]{
 	a [particle = \(e^{-}\)] -- [fermion, thick] c -- [fermion, thick] g [particle = \(e^{-}\)],
 	c -- [photon, edge label' = \(Z\), momentum = {[arrow style = blue]\(k\)}] d,
-	h [particle = \(^{12}C\)] -- [fermion, thick] d -- [fermion, thick] j [particle = \(^{12}C\)],
+	h [particle = \(^{208}Pb\)] -- [fermion, thick] d -- [fermion, thick] j [particle = \(^{208}Pb\)],
 	};
 \]
 \end{figure}
@@ -385,9 +389,10 @@ The beam monitors are read-out with the voltage-to-frequency converters \textbf{
 \end{frame}
 
 % 18 1 DETECTOR TEST
+\commento{
 \begin{frame}{Detector Tests}
 
-\end{frame}
+\end{frame}}
 
 % 18 CALIBRATION OF THE BEAM PARAMETERS
 \begin{frame}{Calibration of the Beam Parameters}
