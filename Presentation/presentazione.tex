@@ -123,14 +123,6 @@ The slope of the symmetry energy is related to both the \textbf{neutron skin} of
 \end{columns}
 \end{frame}
 
-% 5 Neutron Skin, misurare la densità spaziale di neutroni del nucleo di Piombo
-\commento{
-\begin{frame}{Measurement of the Neutron Spacial Distribution of Lead}
-
-Misura della densità spaziale di neutroni, cenno ai limiti degli esperimenti con particelle alpha e pioni. Introduzione alla Parity Violating asymmetry.
-
-\end{frame}}
-
 % 6 PARITY VIOLATING ASYMMETRY
 \begin{frame}
 \frametitle{Parity Violating Asymmetry}
@@ -210,20 +202,6 @@ The asymmetry arises from the interference of:
 \end{column}
 \end{columns}
 \end{frame}
-
-\commento{
-% 9 DESCRIZIONE DEL PROCESSO
-\begin{frame}{Description of the Process}
-
-The transverse asymmetry arises considering the time reversal operator. The time reversal operator reverses all the momenta and the spin direction.
-
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width = 0.8\textwidth]{figures/ScatteringScheme.pdf}
-\end{figure}
-
-\end{frame}
-}
 
 % 8 TRANSVERSE ASYMMETRY
 \begin{frame}{Transverse Asymmetry}
@@ -387,7 +365,7 @@ The beam parameters are measured to take care of possible false asymmetries that
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width = 0.9\textwidth]{figures/Electronic_scheme.pdf}
+\includegraphics[width = 1\textwidth]{figures/Electronic_scheme.pdf}
 \caption{Scheme of the experiment.}
 \end{figure}
 \end{frame}
@@ -415,11 +393,18 @@ During the last beam-time, several measurements were performed at Mainz Mikrotro
 \item Measure the expected \textbf{rates} on $^{208}Pb$ target, in anticipation of the future measurement of $A_{n}$ for lead. 
 \item Long term goal: acquire more knowledge on the \textbf{systematic effects} that the transverse asymmetry has on the measurement of the Parity-violating asymmetry.
 \end{itemize}
+
+Variation of the beam parameters can influence the measurements, inducing false asymmetries. These effects are corrected during the analysis. 
 \end{frame}
 
+
+
 % 16 Problema delle false asimmetrie
+\commento{
 \begin{frame}[t]{False Asymmetries}
-The number of scattered electrons could depend on the beam parameters. Variation of the beam parameters can influence the measured asymmetries. The important beam parameters are:
+
+Variation of the beam parameters can influence the measurements, inducing false asymmetries. The important parameters are:
+
 \begin{itemize}
 \item \textbf{X,Y} positions of the beam spot on the target.
 \item beam current \textbf{I}.
@@ -431,7 +416,7 @@ Considering that the expected asymmetry is expected to be $\simeq 20 \, ppm$, sm
 \begin{equation}
 Asym = A_{physical} \cdot P + \delta_{I} + A_{x} \delta x + A_{y} \delta y + A_{\theta_{x}} \delta \theta_{x} + A_{\theta_{y}} \delta \theta_{y}+ A_{E} \delta E 
 \end{equation}
-\end{frame}
+\end{frame}}
 
 % 18 CALIBRATION OF THE BEAM PARAMETERS
 \begin{frame}{Calibration of the PMTs}{working point of the PMTS}
@@ -547,7 +532,7 @@ Var[A_{asym}] = Var[\dfrac{N_{\uparrow} - N_{\downarrow}}{ N_{\uparrow} + N_{\do
 Where it is supposed that the PMTs counts are normal distributed, with $\mu$ equal to $\sigma^{2}$. The rms associated to the sample mean decreases as the $\sqrt{N_{measure}}$. With the statistical error is:
 
 \begin{equation}
-\sigma = \dfrac{1}{\sqrt{N \cdot N_{measure}}} 
+\sigma = \dfrac{1}{\sqrt{2 N \cdot N_{measure}}} 
 \end{equation}
 \end{column}
 \end{columns}
@@ -563,7 +548,16 @@ Considering $5\cdot 10^{5}$ events and $\mu = 20000$ counts per PMT (similar to 
 % 20 Model for Fitting the Data
 \begin{frame}[t]{Model For Fitting the Data}
 
-The final model that describes the asymmetry takes care of the possible false asymmetries, assuming a \textbf{linear dependence} on the beam parameters.
+Considering that $A$ for $^{12}C$ is expected to be $\simeq 20 \, ppm$, small fluctuations of the beam correlated to the polarization can produce false asymmetries. The important parameters are:
+
+\begin{itemize}
+\item \textbf{X,Y} positions of the beam spot on the target.
+\item beam current \textbf{I}.
+\item beam energy \textbf{E}.
+\item incident angles of the beam {$\bm{\theta_{x}},\bm{\theta_{y}}$}
+\end{itemize}
+
+The final model assumes a \textbf{linear dependence} on the beam parameters:
 
 \begin{equation}
 A_{tot} = A_{physical} \cdot P + \delta_{I} + A_{x} \delta x + A_{y} \delta y + A_{\theta_{x}} \delta \theta_{x} + A_{\theta_{y}} \delta \theta_{y}+ A_{E} \delta E 
@@ -685,6 +679,18 @@ The beam monitors are read-out with the voltage-to-frequency converters \textbf{
 \begin{figure}
 \includegraphics[width = 0.75\textwidth]{figures/Vfc.pdf}
 \end{figure}
+\end{frame}
+
+% 9 DESCRIZIONE DEL PROCESSO
+\begin{frame}[noframenumbering]{Description of the Process}
+
+The transverse asymmetry arises considering the time reversal operator. The time reversal operator reverses all the momenta and the spin direction.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width = 0.8\textwidth]{figures/ScatteringScheme.pdf}
+\end{figure}
+
 \end{frame}
 
 \end{document}
