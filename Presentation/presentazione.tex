@@ -239,6 +239,15 @@ A_{n} \simeq C_{0} \log \frac{Q^{2}}{m^2_e c^2} \frac{F_{Compton} (Q^2)}{F_{ch}(
 \begin{columns}[T]
 \begin{column}{0.40\textwidth}
 Scheme of the experimental campaign of MREX. The work of the thesis correspond to the first step of the diagram, the commissioning of the new setup for the measurement of the transverse asymmetry on $^{12}C$.
+
+\begin{itemize}
+\item Detector test in the laboratory.
+\item Development of the analysis program.
+\item Calibration of the Beam monitor to measure the beam parameters.
+\item Data analysis and extraction of the transverse asymmetry on $^{12}C$.
+\item Measurement of the rates with lead target.
+\end{itemize}
+
 \end{column}
 \begin{column}{0.60\textwidth}
 \begin{figure}
@@ -357,6 +366,7 @@ At MAMI the beam parameters, as \textbf{X,Y} transverse positions, \textbf{Energ
 \end{center}
 \end{column}
 \begin{column}{0.40\textwidth}
+Accurate calibration of the cavities voltage output performed as part of the analysis.
 The beam parameters are measured to take care of possible false asymmetries that arises from the variations of the beam parameters.
 \end{column}
 \end{columns}
@@ -394,7 +404,6 @@ Variation of the beam parameters can influence the measurements, inducing false 
 \end{frame}
 
 
-
 % 16 Problema delle false asimmetrie
 \commento{
 \begin{frame}[t]{False Asymmetries}
@@ -415,7 +424,7 @@ Asym = A_{physical} \cdot P + \delta_{I} + A_{x} \delta x + A_{y} \delta y + A_{
 \end{frame}}
 
 % 18 CALIBRATION OF THE BEAM PARAMETERS
-\begin{frame}{Calibration of the PMTs}{working point of the PMTS}
+\begin{frame}{PMTs Signal Optimization}{Adjustament of threshold}
 
 \begin{figure}
 \includegraphics[width = 0.4\textwidth]{figures/AttenuationScanA.pdf}
@@ -440,6 +449,8 @@ Asym = A_{physical} \cdot P + \delta_{I} + A_{x} \delta x + A_{y} \delta y + A_{
 
 \begin{frame}{Calibration of the Beam Monitors}{Beam Position (X,Y) on the target}
 
+Calibrate XY measurement by inserting a dedicated target with scattering wires at known distance and moving the beam across the target.
+
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width = 0.9\textwidth]{figures/scheme.pdf}
@@ -451,7 +462,7 @@ The beam is assumed following a straight path given by $x,y = m\cdot z + q_{x,y}
 
 \begin{frame}{Beam Energy and Beam Current}
 
-The conversion parameters from \SI{}{\volt} to \SI{}{\micro \ampere} and \SI{}{\kilo \electronvolt} are measured with a current and energy scan.
+The conversion parameters from \SI{}{\volt} to \SI{}{\micro \ampere} and \SI{}{\kilo \electronvolt} are measured with scans in current and energy around the nominal values.
 
 \begin{columns}
 \begin{column}{0.5\textwidth}
@@ -511,7 +522,7 @@ The Data are divided in a series of events (\SI{80}{\milli \second}), that corre
 
 \begin{frame}[t]{Analysis on Carbon Target}
 
-Each event corresponds to a single measurement of the asymmetry $A$. With this experiment, an amount of $1$ million events have been collected. The asymmetry data are normal distributed:
+Each event corresponds to a single measurement of the asymmetry $A$. With this experiment, an amount of $1$ million events have been collected. The asymmetry data are normally distributed:
 
 \begin{columns}
 \begin{column}{0.5\textwidth}
@@ -553,7 +564,7 @@ Considering that $A$ for $^{12}C$ is expected to be $\simeq 20 \, ppm$, small fl
 \item incident angles of the beam {$\bm{\theta_{x}},\bm{\theta_{y}}$}
 \end{itemize}
 
-The final model assumes a \textbf{linear dependence} on the beam parameters:
+The final model uses a \textbf{linear expansion} on the beam parameters, since the variations are small:
 
 \begin{equation}
 A_{tot} = A_{physical} \cdot P + \delta_{I} + A_{x} \delta x + A_{y} \delta y + A_{\theta_{x}} \delta \theta_{x} + A_{\theta_{y}} \delta \theta_{y}+ A_{E} \delta E 
@@ -573,8 +584,10 @@ The current asymmetry is defined differently. Because the scattering rate is pro
 
 \end{frame}
 
-% 23 FIT TO DATA, CORRELATION
+% 27 FIT TO DATA, CORRELATION
 \begin{frame}{Beam Parameters Correlation}
+
+Considering the correlations, the final parameters of the model are \textbf{I}, \textbf{X} , \textbf{Y} and \textbf{E}.
 
 \begin{figure}
 \includegraphics[width = 0.4\textwidth]{figures/X_Xp.pdf}
@@ -618,7 +631,7 @@ Final asymmetry result for each PMTs:
 The result of the analysis is obtained combining the measured asymmetries for PMTs. 
 
 \begin{gather*}
-\hat{A} =  \frac{\Sigma_{i} A_{i} \frac{1}{w_{i}}}{\frac{1}{w_{i}}} \qquad w_{i} = \frac{1}{\sigma^{2}_{i}}
+\overline{A} =  \frac{\Sigma_{i} A_{i} \frac{1}{w_{i}}}{\frac{1}{w_{i}}} \qquad w_{i} = \frac{1}{\sigma^{2}_{i}}
 \end{gather*}
 
 the final values of the Beam Normal Single Spin asymmetries are:
@@ -633,6 +646,7 @@ With a transfer momentum $Q = \SI{0.04}{\giga \electronvolt}$. Reversing the sig
 A_{A} = 23.9 \pm 1(stat) \pm 0.7 (syst) \, ppm  \qquad A_{B} = -21.9 \pm 1.5(stat) \pm 1.6(syst) \, ppm
 \end{equation}
 
+This demonstrates the validity of the new electronic setup that allows handling lower rates and paves the road to the future MREX measurements.
 
 \end{frame}
 
@@ -687,3 +701,4 @@ The transverse asymmetry arises considering the time reversal operator. The time
 \includegraphics[width = 0.8\textwidth]{figures/ScatteringScheme.pdf}
 \end{figure}
 \end{frame}
+\end{document}
