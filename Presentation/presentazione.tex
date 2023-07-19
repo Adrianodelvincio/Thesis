@@ -6,6 +6,8 @@
 \usepackage[most]{tcolorbox}
 \usepackage{bm}
 \tikzfeynmanset{every blob = {minimum size = 2mm}}
+\usepackage{caption}
+\captionsetup[figure]{labelformat=empty}
 
 \newcommand{\commento}[1]{}
 \setbeamercolor{block title}{fg=white, bg=orange}
@@ -370,12 +372,6 @@ The beam parameters are measured to take care of possible false asymmetries that
 \end{figure}
 \end{frame}
 
-% 18 1 DETECTOR TEST
-\commento{
-\begin{frame}{Detector Tests}
-
-\end{frame}}
-
 \begin{frame}[noframenumbering]{Data Analysis}
 \begin{center}
 \color{red}{\Large \bf{BEAM TIME AND CALIBRATIONS}}
@@ -537,7 +533,7 @@ Where it is supposed that the PMTs counts are normal distributed, with $\mu$ equ
 \end{column}
 \end{columns}
 
-Considering $5\cdot 10^{5}$ events and $\mu = 20000$ counts per PMT (similar to what was measured for detector B) 
+Considering $6.5\cdot 10^{5}$ events and $\mu = 20000$ counts per PMT (similar to what was measured for PMT B0):
 
 \begin{itemize}
 \centering
@@ -690,7 +686,4 @@ The transverse asymmetry arises considering the time reversal operator. The time
 \centering
 \includegraphics[width = 0.8\textwidth]{figures/ScatteringScheme.pdf}
 \end{figure}
-
 \end{frame}
-
-\end{document}
