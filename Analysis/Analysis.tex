@@ -26,9 +26,9 @@ Threshold \, [\SI{}{\milli \volt}]= \dfrac{a}{(att - b)^{3}} + c
 The parameters of the formula are estimated using the function \textit{curve-fit} of the python library \textit{schipy}:
 
 \begin{itemize}
-\item $a = - 802111053 \, \frac{\SI{}{\milli \volt}}{[arb.unit]}$
-\item $b = 382 \, [arb. unit]$
-\item $c =  \SI{-6.1}{\milli \volt}$
+\item $(a = - 802.1  \pm 1.1) \cdot 10^{6} \, \frac{\SI{}{\milli \volt}}{[arb.unit]}$
+\item $b = 282.51 \pm 0.06 \, [arb. unit]$
+\item $c = -6.147 \pm 0.009 \, \SI{}{\milli \volt} $
 \end{itemize}
 
 As we can see, the relation between threshold and \textit{Att} is not linear. Around the values $400$ - $700$ we observe large variability. For values higher than $700$, the threshold is low and almost constant. This mean that the attenuation, controlled by the attenuator in the input channel of the NINO board, is reduced progressively as 	\textit{Att} increases. 
@@ -104,7 +104,7 @@ We report also the correlation $C_{ij}$ between the PMTs. The result are fine: w
 We can test that the data follow a Poisson distribution using the well-known Gosset test, defined as:
 
 \begin{equation}
-\chi^{2}_{n-1} = \sum_{i = 1}^{n} \dfrac{(Obs_{i} - Exp_{i})}{Exp_{i}}
+\chi^{2}_{n-1} = \sum_{i = 1}^{n} \dfrac{(Obs_{i} - Exp_{i})^{2}}{Exp_{i}}
 \end{equation}
 
 where $Obs$ are the observed counts, and $Exp$ are the expected counts.
